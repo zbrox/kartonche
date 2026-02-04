@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#MISE description="Run UI tests"
+
+set -euo pipefail
+
+if [ -n "${1:-}" ]; then
+  # Run specific UI test
+  xcodebuild test \
+    -project "$PROJECT" \
+    -scheme "$SCHEME" \
+    -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
+    -only-testing:"$1"
+else
+  # Run all UI tests
+  xcodebuild test \
+    -project "$PROJECT" \
+    -scheme "$SCHEME" \
+    -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
+    -only-testing:kartoncheUITests
+fi

@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+#MISE description="Interactive helper to add a new merchant (template)"
+
+set -euo pipefail
+
+echo "🆕 Add New Merchant"
+echo "===================="
+echo ""
+echo "This will guide you through adding a merchant to $MERCHANTS_FILE"
+echo ""
+
+read -p "Merchant ID (e.g., bg.billa): " merchant_id
+read -p "English name: " name_en
+read -p "Bulgarian name (Cyrillic): " name_bg
+
+echo ""
+echo "Available categories:"
+echo "  - grocery"
+echo "  - fuel"
+echo "  - pharmacy"
+echo "  - retail"
+echo "  - restaurant"
+echo "  - other"
+read -p "Category: " category
+
+echo ""
+echo "Available barcode types:"
+echo "  - qr"
+echo "  - code128"
+echo "  - ean13"
+echo "  - pdf417"
+echo "  - aztec"
+read -p "Barcode type: " barcode_type
+
+read -p "Website (optional, press Enter to skip): " website
+read -p "Brand color (hex, e.g., #FF0000, optional): " color
+
+echo ""
+echo "Generated KDL entry:"
+echo "===================="
+echo ""
+echo "merchant id=\"$merchant_id\" {"
+echo "    name \"$name_en\""
+echo "    name-bg \"$name_bg\""
+echo "    category \"$category\""
+echo "    barcode-type \"$barcode_type\""
+[ -n "$website" ] && echo "    website \"$website\""
+[ -n "$color" ] && echo "    suggested-color \"$color\""
+echo "}"
+echo ""
+echo "⚠️  Copy this entry and manually add it to $MERCHANTS_FILE"
+echo "⚠️  Then run: mise run validate-merchants"

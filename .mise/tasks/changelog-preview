@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#MISE description="Preview CHANGELOG for unreleased changes"
+
+set -euo pipefail
+
+echo "📋 Preview of unreleased changes:"
+echo "=================================="
+echo ""
+
+if command -v git-cliff >/dev/null 2>&1; then
+  git cliff --unreleased
+else
+  echo "❌ git-cliff not found"
+  echo "Install with: brew install git-cliff"
+  echo "Or visit: https://git-cliff.org/docs/installation"
+  exit 1
+fi
+
+echo ""
+echo "To update CHANGELOG.md: mise run changelog-update"

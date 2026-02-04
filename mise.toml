@@ -1,0 +1,22 @@
+# mise configuration for kartonche iOS app
+# Tasks are in .mise/tasks/ directory
+
+[env]
+# Xcode project configuration
+PROJECT = "kartonche.xcodeproj"
+SCHEME = "kartonche"
+CONFIGURATION = "Debug"
+
+# iOS Simulator - let Xcode choose default device
+# Override with: mise set IOS_DEVICE="iPhone 15 Pro"
+IOS_DEVICE = ""
+
+# Generated code output
+GENERATED_DIR = "kartonche/Generated"
+
+# Merchant database paths
+MERCHANTS_FILE = "Merchants/merchants.kdl"
+MERCHANTS_SCHEMA = "Merchants/schema.kdl"
+
+# Changelog
+CLIFF_CONFIG = "cliff.toml"
