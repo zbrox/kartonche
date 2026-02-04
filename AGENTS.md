@@ -134,10 +134,49 @@ struct MyFeatureTests {
 
 ### Comments
 - Use `//` for single-line comments
-- Document complex logic or non-obvious behavior
+- **ONLY add comments for:**
+  - **DocStrings:** Public API documentation for auto-generated docs
+  - **Non-obvious logic:** Complex algorithms, workarounds, or implementation details that aren't immediately clear
+  - **Context:** Why something is done a certain way, not what it does
+- **NEVER add comments that simply restate what the code does**
 - Don't state the obvious
 - Keep comments up to date with code changes
 - Use `// MARK: -` to organize code sections in longer files
+
+**Bad examples:**
+```swift
+// This function runs the car engine
+func runCarEngine() { ... }
+
+// Set the color to red
+cardColor = .red
+
+// Loop through all cards
+for card in cards { ... }
+```
+
+**Good examples:**
+```swift
+// MARK: - Public API
+
+/// Generates a barcode image for the given data and type.
+/// - Parameters:
+///   - data: The barcode data to encode
+///   - type: The barcode format (QR, EAN-13, etc.)
+/// - Returns: A high-resolution UIImage, or nil if generation fails
+func generateBarcode(data: String, type: BarcodeType) -> UIImage? { ... }
+
+// Core Image generates small QR codes, scale up 10x for display
+let transform = CGAffineTransform(scaleX: 10, y: 10)
+
+// Work around iOS 26.2 bug where brightness doesn't restore on iPad
+if UIDevice.current.userInterfaceIdiom == .pad {
+    // Force brightness restore after 100ms delay
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        UIScreen.main.brightness = originalBrightness
+    }
+}
+```
 
 ### Version Control
 This project should use jj (Jujutsu) for version control:
