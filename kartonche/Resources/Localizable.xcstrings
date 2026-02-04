@@ -1,0 +1,127 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Add Card" : {
+      "comment" : "Button to create a new loyalty card",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добавяне на карта"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "comment" : "Button to cancel an action",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отказ"
+          }
+        }
+      }
+    },
+    "Close" : {
+      "comment" : "Button to dismiss a view",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Затваряне"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "comment" : "Button to delete an item",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изтриване"
+          }
+        }
+      }
+    },
+    "Edit" : {
+      "comment" : "Button to edit an item",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Редактиране"
+          }
+        }
+      }
+    },
+    "Loyalty Cards" : {
+      "comment" : "Main screen title",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Карти за лоялност"
+          }
+        }
+      }
+    },
+    "Save" : {
+      "comment" : "Button to save changes",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Запазване"
+          }
+        }
+      }
+    },
+    "Scan Barcode" : {
+      "comment" : "Button to scan a barcode with camera",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сканиране на баркод"
+          }
+        }
+      }
+    },
+    "Search" : {
+      "comment" : "Search action",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Търсене"
+          }
+        }
+      }
+    },
+    "Select a card" : {
+      "comment" : "Detail view placeholder text",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изберете карта"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "comment" : "Settings screen title",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Настройки"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
