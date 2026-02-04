@@ -10,46 +10,67 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query private var cards: [LoyaltyCard]
 
     var body: some View {
         NavigationSplitView {
             List {
-                ForEach(items) { item in
+                ForEach(cards) { card in
                     NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text(card.name)
+                                .font(.headline)
+                            Text(card.storeName)
+                                .font(.subheadline)
+                            Text(card.cardNumber)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
                     } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        VStack(alignment: .leading) {
+                            Text(card.name)
+                                .font(.headline)
+                            Text(card.storeName)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
                     }
                 }
-                .onDelete(perform: deleteItems)
+                .onDelete(perform: deleteCards)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                    Button(action: addTestCard) {
+                        Label(String(localized: "Add Card"), systemImage: "plus")
                     }
                 }
             }
+            .navigationTitle(String(localized: "Loyalty Cards"))
         } detail: {
-            Text("Select an item")
+            Text(String(localized: "Select a card"))
         }
     }
 
-    private func addItem() {
+    private func addTestCard() {
         withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
+            let newCard = LoyaltyCard(
+                name: "Test Card",
+                storeName: "Test Store",
+                cardNumber: "1234567890",
+                barcodeType: .qr,
+                barcodeData: "1234567890"
+            )
+            modelContext.insert(newCard)
         }
     }
 
-    private func deleteItems(offsets: IndexSet) {
+    private func deleteCards(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(items[index])
+                modelContext.delete(cards[index])
             }
         }
     }
@@ -57,5 +78,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: LoyaltyCard.self, inMemory: true)
 }
