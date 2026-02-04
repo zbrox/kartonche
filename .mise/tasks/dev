@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#MISE description="Clean build + run all tests"
+#MISE depends=["clean", "build", "test-all"]
+
+set -euo pipefail
+
+echo "✅ Dev workflow complete"

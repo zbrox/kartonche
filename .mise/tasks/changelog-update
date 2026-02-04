@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#MISE description="Update CHANGELOG.md from git history"
+
+set -euo pipefail
+
+echo "📝 Updating CHANGELOG.md..."
+
+if ! command -v git-cliff >/dev/null 2>&1; then
+  echo "❌ git-cliff not found"
+  echo "Install with: brew install git-cliff"
+  exit 1
+fi
+
+git cliff --output CHANGELOG.md
+
+if [ $? -eq 0 ]; then
+  echo "✅ CHANGELOG.md updated successfully"
+  echo ""
+  echo "Review the changes:"
+  echo "  git diff CHANGELOG.md"
+else
+  echo "❌ Failed to update CHANGELOG.md"
+  exit 1
+fi

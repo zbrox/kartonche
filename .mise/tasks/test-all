@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#MISE description="Run all tests (unit + UI)"
+
+set -euo pipefail
+
+xcodebuild test \
+  -project "$PROJECT" \
+  -scheme "$SCHEME" \
+  -destination 'platform=iOS Simulator,name=iPhone 16 Pro'

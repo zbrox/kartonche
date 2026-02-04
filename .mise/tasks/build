@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#MISE description="Build the app (Debug configuration)"
+
+set -euo pipefail
+
+xcodebuild \
+  -project "$PROJECT" \
+  -scheme "$SCHEME" \
+  -configuration "$CONFIGURATION" \
+  build
