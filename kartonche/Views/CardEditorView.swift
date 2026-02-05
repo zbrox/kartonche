@@ -15,6 +15,7 @@ struct CardEditorView: View {
     @Environment(\.dismiss) private var dismiss
     
     let card: LoyaltyCard?
+    let merchantTemplate: MerchantTemplate?
     
     @State private var name: String
     @State private var storeName: String
@@ -31,6 +32,7 @@ struct CardEditorView: View {
     
     init(card: LoyaltyCard? = nil, merchantTemplate: MerchantTemplate? = nil, program: ProgramTemplate? = nil) {
         self.card = card
+        self.merchantTemplate = merchantTemplate
         
         if let card = card {
             // Edit mode - use card data
@@ -158,6 +160,7 @@ struct CardEditorView: View {
             existingCard.barcodeData = barcodeData
             existingCard.notes = notes.isEmpty ? nil : notes
             existingCard.color = selectedColor?.toHex()
+            existingCard.secondaryColor = merchantTemplate?.secondaryColor
             existingCard.isFavorite = isFavorite
         } else {
             let newCard = LoyaltyCard(
@@ -167,6 +170,7 @@ struct CardEditorView: View {
                 barcodeType: barcodeType,
                 barcodeData: barcodeData,
                 color: selectedColor?.toHex(),
+                secondaryColor: merchantTemplate?.secondaryColor,
                 notes: notes.isEmpty ? nil : notes,
                 isFavorite: isFavorite
             )

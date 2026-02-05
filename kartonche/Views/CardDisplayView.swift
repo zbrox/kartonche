@@ -16,33 +16,37 @@ struct CardDisplayView: View {
     @StateObject private var screenManager = ScreenManager()
     
     var body: some View {
+        let primaryColor = card.color.flatMap { Color(hex: $0) } ?? Color.accentColor
+        let secondaryColor = card.secondaryColor.flatMap { Color(hex: $0) } ?? Color.white
+        
         ZStack {
-            // High contrast background
             Color.white
                 .ignoresSafeArea()
             
-            VStack(spacing: 24) {
-                Spacer()
-                
-                // Card info
+            VStack(spacing: 0) {
+                // Colored header with card info
                 VStack(spacing: 8) {
-                    Text(card.name)
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundStyle(.black)
-                    
                     Text(card.storeName)
                         .font(.title3)
-                        .foregroundStyle(.gray)
+                        .fontWeight(.semibold)
+                    
+                    Text(card.name)
+                        .font(.title2)
+                        .fontWeight(.bold)
                     
                     if !card.cardNumber.isEmpty {
                         Text(card.cardNumber)
                             .font(.caption)
-                            .foregroundStyle(.gray)
                     }
                 }
+                .foregroundStyle(secondaryColor)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 24)
+                .background(primaryColor)
                 
-                // Barcode
+                Spacer()
+                
+                // White section with barcode
                 BarcodeImageView(
                     data: card.barcodeData,
                     type: card.barcodeType
@@ -52,14 +56,14 @@ struct CardDisplayView: View {
                 
                 Spacer()
                 
-                // Dismiss button
+                // Colored close button
                 Button(action: { dismiss() }) {
                     Text(String(localized: "Close"))
                         .font(.headline)
-                        .foregroundStyle(.white)
+                        .foregroundStyle(secondaryColor)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.blue)
+                        .background(primaryColor)
                         .cornerRadius(12)
                 }
                 .padding(.horizontal, 32)
