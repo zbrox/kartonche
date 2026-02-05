@@ -14,6 +14,25 @@ struct BarcodeGenerator {
         case invalidData
         case filterCreationFailed
         case imageGenerationFailed
+        case ean13RequiresExactly13Digits(provided: Int)
+        
+        var localizedDescription: String {
+            switch self {
+            case .invalidData:
+                return String(localized: "Invalid barcode data")
+            case .filterCreationFailed:
+                return String(localized: "Failed to create barcode filter")
+            case .imageGenerationFailed:
+                return String(localized: "Failed to generate barcode image")
+            case .ean13RequiresExactly13Digits(let provided):
+                let format = NSLocalizedString(
+                    "EAN-13 requires exactly 13 digits (provided: %d)",
+                    bundle: .main,
+                    comment: "Error message for EAN-13 digit validation"
+                )
+                return String(format: format, provided)
+            }
+        }
     }
     
     static func generate(
@@ -64,7 +83,7 @@ struct BarcodeGenerator {
         // EAN-13 must be exactly 13 digits
         let digits = data.filter { $0.isNumber }
         guard digits.count == 13 else {
-            return .failure(.invalidData)
+            return .failure(.ean13RequiresExactly13Digits(provided: digits.count))
         }
         
         // Use Code128 generator as fallback for EAN-13

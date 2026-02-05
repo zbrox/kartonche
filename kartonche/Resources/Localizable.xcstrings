@@ -69,6 +69,9 @@
         }
       }
     },
+    "EAN-13 requires exactly 13 digits (provided: %lld)" : {
+
+    },
     "Edit" : {
       "comment" : "Button to edit an item",
       "localizations" : {
@@ -80,7 +83,16 @@
         }
       }
     },
+    "Failed to create barcode filter" : {
+
+    },
+    "Failed to generate barcode image" : {
+
+    },
     "Favorite" : {
+
+    },
+    "Invalid barcode data" : {
 
     },
     "Loyalty Cards" : {
@@ -165,6 +177,50 @@
     },
     "Store Name" : {
 
+    },
+    "Invalid barcode data" : {
+      "comment" : "Error message for invalid barcode data",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Невалидни данни за баркод"
+          }
+        }
+      }
+    },
+    "Failed to create barcode filter" : {
+      "comment" : "Error message when barcode filter creation fails",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неуспешно създаване на баркод филтър"
+          }
+        }
+      }
+    },
+    "Failed to generate barcode image" : {
+      "comment" : "Error message when barcode image generation fails",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неуспешно генериране на баркод изображение"
+          }
+        }
+      }
+    },
+    "EAN-13 requires exactly 13 digits (provided: %d)" : {
+      "comment" : "Error message for EAN-13 digit validation",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EAN-13 изисква точно 13 цифри (въведени: %d)"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
