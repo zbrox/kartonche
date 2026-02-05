@@ -1,5 +1,30 @@
 # kartonche - Implementation TODO
 
+## Overall Progress (as of 2026-02-05)
+
+**Completed Sprints:**
+- ✅ Sprint 0: Project Setup (mise, documentation, planning)
+- ✅ Sprint 1: Foundation (models, permissions, localization setup)
+- ✅ Sprint 2: Barcode Core (generation, display, scanning, utilities)
+- ✅ Sprint 3: Card Management UI (list, display, editor, navigation)
+- ✅ Sprint 4: Merchant Database (KDL database, code generator, selection UI)
+
+**In Progress:**
+- ⚠️ Sprint 8: Testing (partial - BarcodeGenerator, Model, MerchantTemplate tests done)
+
+**Not Started:**
+- ❌ Sprint 5: Photo Import
+- ❌ Sprint 6: Widgets
+- ❌ Sprint 7: Polish & Features (search, sort, favorites tracking, empty states)
+- ❌ Sprint 9: CI/CD & Documentation
+- ❌ Sprint 10: MVP Release Prep
+
+**Key Decisions:**
+- iCloud/CloudKit sync SKIPPED (requires paid Apple Developer account)
+- Local-only storage with SwiftData
+
+---
+
 ## Sprint 0: Project Setup ✅
 
 - [x] Research Apple Wallet integration
@@ -14,175 +39,176 @@
 - [x] Create ARCHITECTURE.md
 - [x] Create cliff.toml
 - [x] Create initial CHANGELOG.md
-- [ ] Create TODO.md (this file)
-- [ ] Create mise.toml
-- [ ] Create mise task files
-- [ ] Test all mise tasks work
+- [x] Create TODO.md (this file)
+- [x] Create mise.toml
+- [x] Create mise task files
+- [x] Test all mise tasks work
 
 ---
 
-## Sprint 1: Foundation & Setup (Days 1-3)
+## Sprint 1: Foundation & Setup ✅ (mostly complete)
 
-### Data Models
-- [ ] Create `BarcodeType` enum (qr, code128, ean13, pdf417, aztec)
-- [ ] Create `LoyaltyCard` SwiftData model with all properties
-- [ ] Write unit tests for model validation
-- [ ] Test model persistence with SwiftData
+### Data Models ✅
+- [x] Create `BarcodeType` enum (qr, code128, ean13, pdf417, aztec)
+- [x] Create `LoyaltyCard` SwiftData model with all properties
+- [x] Write unit tests for model validation
+- [x] Test model persistence with SwiftData
 
-### iCloud Sync Configuration
-- [ ] Update `kartoncheApp.swift` ModelConfiguration for CloudKit
-- [ ] Enable iCloud capability in Xcode project
-- [ ] Enable CloudKit capability
-- [ ] Add CloudKit container identifier
-- [ ] Test sync between two devices/simulators
+### iCloud Sync Configuration ❌ (SKIPPED - requires paid developer account)
+- [x] Update `kartoncheApp.swift` ModelConfiguration for local storage
+- [-] Enable iCloud capability in Xcode project (SKIPPED)
+- [-] Enable CloudKit capability (SKIPPED)
+- [-] Add CloudKit container identifier (SKIPPED)
+- [-] Test sync between two devices/simulators (SKIPPED)
 
-### Localization Setup
-- [ ] Create `Localizable.xcstrings` String Catalog
-- [ ] Add Bulgarian as language
-- [ ] Add initial strings (10-15 common UI elements)
-- [ ] Follow neutral form guidelines (no imperatives)
+### Localization Setup ✅ (partial)
+- [x] Create `Localizable.xcstrings` String Catalog
+- [x] Add Bulgarian as language
+- [x] Add initial strings (10-15 common UI elements)
+- [x] Follow neutral form guidelines (no imperatives)
 - [ ] Test language switching
+- [ ] Complete all string translations (many still empty)
 
-### Permissions Setup
-- [ ] Add `NSCameraUsageDescription` to Info.plist (Bulgarian + English)
-- [ ] Add `NSPhotoLibraryUsageDescription` to Info.plist
-- [ ] Create `PermissionManager` utility class
-- [ ] Implement camera permission checking/requesting
-- [ ] Test permission flows
+### Permissions Setup ✅
+- [x] Add `NSCameraUsageDescription` to Info.plist (Bulgarian + English)
+- [x] Add `NSPhotoLibraryUsageDescription` to Info.plist
+- [x] Create `PermissionManager` utility class
+- [x] Implement camera permission checking/requesting
+- [x] Test permission flows
 
 ---
 
-## Sprint 2: Barcode Core (Days 4-7)
+## Sprint 2: Barcode Core ✅
 
-### Barcode Generation
-- [ ] Create `BarcodeGenerator` utility using Core Image
-- [ ] Implement QR code generation (`CIQRCodeGenerator`)
-- [ ] Implement Code128 generation (`CICode128BarcodeGenerator`)
-- [ ] Implement EAN-13 generation (`CIBarcodeGenerator`)
-- [ ] Implement PDF417 generation (`CIPDF417BarcodeGenerator`)
-- [ ] Implement Aztec generation (`CIAztecCodeGenerator`)
-- [ ] Write unit tests for all barcode types
-- [ ] Handle scaling/interpolation correctly
+### Barcode Generation ✅
+- [x] Create `BarcodeGenerator` utility using Core Image
+- [x] Implement QR code generation (`CIQRCodeGenerator`)
+- [x] Implement Code128 generation (`CICode128BarcodeGenerator`)
+- [x] Implement EAN-13 generation (`CIBarcodeGenerator`)
+- [x] Implement PDF417 generation (`CIPDF417BarcodeGenerator`)
+- [x] Implement Aztec generation (`CIAztecCodeGenerator`)
+- [x] Write unit tests for all barcode types
+- [x] Handle scaling/interpolation correctly
 
-### Barcode Display Component
-- [ ] Create `BarcodeImageView` SwiftUI component
-- [ ] Set `.interpolation(.none)` for sharp edges
-- [ ] Make responsive to different sizes
-- [ ] Add high contrast background
+### Barcode Display Component ✅
+- [x] Create `BarcodeImageView` SwiftUI component
+- [x] Set `.interpolation(.none)` for sharp edges
+- [x] Make responsive to different sizes
+- [x] Add high contrast background
 - [ ] Test on physical device screen
 
-### Barcode Scanning
-- [ ] Create `BarcodeScannerView` wrapping VisionKit
-- [ ] Check `DataScannerViewController.isSupported`
-- [ ] Configure for all barcode symbologies
-- [ ] Handle scanned data callback
-- [ ] Error handling for unsupported devices
+### Barcode Scanning ✅
+- [x] Create `BarcodeScannerView` wrapping VisionKit
+- [x] Check `DataScannerViewController.isSupported`
+- [x] Configure for all barcode symbologies
+- [x] Handle scanned data callback
+- [x] Error handling for unsupported devices
 - [ ] Test on physical device (required for camera)
 
-### Screen Management Utilities
-- [ ] Create `BrightnessManager` class
-- [ ] Implement brightness save/restore
-- [ ] Create `ScreenManager` class
-- [ ] Implement idle timer disable/enable
-- [ ] Test cleanup on view disappear
+### Screen Management Utilities ✅
+- [x] Create `BrightnessManager` class
+- [x] Implement brightness save/restore
+- [x] Create `ScreenManager` class
+- [x] Implement idle timer disable/enable
+- [x] Test cleanup on view disappear
 
 ---
 
-## Sprint 3: Card Management UI (Days 8-12)
+## Sprint 3: Card Management UI ✅ (mostly complete)
 
-### Main Card List
-- [ ] Create `CardListView` (replace ContentView)
-- [ ] Implement `@Query` for all cards
-- [ ] Create `CardRowView` component
+### Main Card List ✅
+- [x] Create `CardListView` (replace ContentView)
+- [x] Implement `@Query` for all cards
+- [x] Create `CardRowView` component
 - [ ] Add search functionality
 - [ ] Implement sort options (alphabetical, recent, favorites)
-- [ ] Add swipe-to-delete action
-- [ ] Add favorite toggle (star icon)
+- [x] Add swipe-to-delete action
+- [x] Add favorite toggle (star icon)
 - [ ] Create empty state view
 - [ ] Localize all strings
 
-### Card Display View
-- [ ] Create `CardDisplayView` for full-screen display
-- [ ] Integrate `BarcodeImageView`
-- [ ] Integrate `BrightnessManager` (boost on appear)
-- [ ] Integrate `ScreenManager` (keep awake)
-- [ ] Show card name and number
-- [ ] Add dismiss gesture/button
-- [ ] Test brightness restore on dismiss
-- [ ] Verify idle timer re-enabled
+### Card Display View ✅
+- [x] Create `CardDisplayView` for full-screen display
+- [x] Integrate `BarcodeImageView`
+- [x] Integrate `BrightnessManager` (boost on appear)
+- [x] Integrate `ScreenManager` (keep awake)
+- [x] Show card name and number
+- [x] Add dismiss gesture/button
+- [ ] Test brightness restore on dismiss (on device)
+- [ ] Verify idle timer re-enabled (on device)
 
-### Card Editor
-- [ ] Create `CardEditorView` with form
-- [ ] All fields: name, store, number, barcode type, notes, color
-- [ ] Color picker for customization
-- [ ] Save/Cancel buttons
-- [ ] Delete button (with confirmation)
-- [ ] Form validation
+### Card Editor ✅
+- [x] Create `CardEditorView` with form
+- [x] All fields: name, store, number, barcode type, notes, color
+- [x] Color picker for customization
+- [x] Save/Cancel buttons
+- [x] Delete button (with confirmation)
+- [x] Form validation
 - [ ] Localize all strings
 
-### Manual Card Entry
-- [ ] Create `ManualCardEntryView`
-- [ ] Barcode type picker
-- [ ] Text field for barcode data
+### Manual Card Entry ⚠️ (integrated into editor, not separate view)
+- [x] Barcode type picker (in CardEditorView)
+- [x] Text field for barcode data (in CardEditorView)
 - [ ] Preview of generated barcode as user types
-- [ ] Validation for barcode format
-- [ ] Save button creates card
+- [x] Validation for barcode format
+- [x] Save button creates card
 - [ ] Localize all strings
 
-### Navigation
-- [ ] Wire up navigation from list to display
-- [ ] Wire up navigation from list to editor
-- [ ] Wire up add card flow
-- [ ] Test back navigation
-- [ ] Test state preservation
+### Navigation ✅
+- [x] Wire up navigation from list to display
+- [x] Wire up navigation from list to editor
+- [x] Wire up add card flow
+- [x] Test back navigation
+- [x] Test state preservation
 
 ---
 
-## Sprint 4: Merchant Database (Days 13-15)
+## Sprint 4: Merchant Database ✅
 
-### KDL Database Setup
-- [ ] Create `Merchants/` directory
-- [ ] Create `merchants.kdl` with initial Bulgarian merchants (15-20)
-  - [ ] Billa, Kaufland, Lidl (grocery)
-  - [ ] OMV, Lukoil, Shell (fuel)
-  - [ ] Sopharmacy, Subra (pharmacy)
-  - [ ] Other popular Bulgarian stores
-- [ ] Create `schema.kdl` for validation
-- [ ] Create `Merchants/README.md` contributor guide
-- [ ] Follow flexible naming (Cyrillic or Latin)
+### KDL Database Setup ✅
+- [x] Create `Merchants/` directory
+- [x] Create `merchants.kdl` with initial Bulgarian merchants (14 total)
+  - [x] Billa, Kaufland, Lidl, Фантастико, T MARKET (grocery)
+  - [x] OMV, Lukoil, Shell, Petrol, EKO (fuel)
+  - [x] Sopharmacy, Subra (pharmacy)
+  - [x] dm drogerie markt, CCC (retail)
+- [x] Create `schema.kdl` for validation
+- [x] Create `Merchants/README.md` contributor guide
+- [x] Follow flexible naming (Cyrillic or Latin)
 
-### Build Script
-- [ ] Create `Scripts/generate-merchants/` directory
-- [ ] Create `Package.swift` with kdl-swift dependency
-- [ ] Create Swift script to parse KDL
-- [ ] Generate `MerchantTemplates.swift` code
-- [ ] Implement change detection (git hash)
-- [ ] Add error handling and validation
-- [ ] Test script locally
+### Build Script ✅
+- [x] Create `Scripts/generate-merchants/` directory
+- [x] Create `Package.swift` with kdl-swift dependency
+- [x] Create Swift script to parse KDL
+- [x] Generate `MerchantTemplates.swift` code
+- [ ] Implement change detection (git hash) - TODO
+- [x] Add error handling and validation
+- [x] Test script locally
 
-### Xcode Integration
-- [ ] Add "Run Script" build phase
-- [ ] Script calls `mise run generate-merchants`
-- [ ] Runs before "Compile Sources"
-- [ ] Create `kartonche/Generated/` directory
-- [ ] Add `Generated/` to `.gitignore`
-- [ ] Test build-time generation
+### Xcode Integration ✅
+- [ ] Add "Run Script" build phase - not needed, using mise
+- [x] Script calls `mise run generate-merchants`
+- [x] Runs before compile (manual for now)
+- [x] Create `kartonche/Generated/` directory
+- [x] Add `Generated/` to `.gitignore`
+- [x] Test build-time generation
 
-### Merchant Selection UI
-- [ ] Create `MerchantSelectionView`
-- [ ] Search bar with autocomplete
-- [ ] Filter `MerchantTemplate.search(query)`
-- [ ] Show merchant name (Bulgarian), category, barcode type
-- [ ] "Add Custom Card" button at bottom
-- [ ] Localize all strings
-- [ ] Test Bulgarian search (Cyrillic input)
+### Merchant Selection UI ✅
+- [x] Create `MerchantSelectionView`
+- [x] Search bar with autocomplete
+- [x] Filter `MerchantTemplate.search(query)`
+- [x] Show merchant name (Bulgarian), category, barcode type
+- [x] "Add Custom Card" button at bottom (manual entry)
+- [ ] Localize all strings (hardcoded Bulgarian for now)
+- [x] Test Bulgarian search (Cyrillic input)
 
-### Quick Add Flow
-- [ ] Integrate merchant selection into add card flow
-- [ ] Pre-fill card name, barcode type from template
-- [ ] Skip to barcode scanner directly
-- [ ] Create card with merchant info
-- [ ] Test end-to-end quick add
+### Quick Add Flow ✅
+- [x] Integrate merchant selection into add card flow
+- [x] Pre-fill card name, barcode type from template
+- [x] Pre-fill suggested colors from template
+- [ ] Skip to barcode scanner directly (goes to editor first)
+- [x] Create card with merchant info
+- [ ] Test end-to-end quick add (needs device testing)
 
 ---
 
@@ -268,13 +294,13 @@
 
 ---
 
-## Sprint 8: Testing & Bug Fixes (Days 25-27)
+## Sprint 8: Testing & Bug Fixes (Days 25-27) ⚠️ (partial)
 
-### Unit Tests
-- [ ] Test `BarcodeGenerator` all formats
+### Unit Tests ⚠️ (partial)
+- [x] Test `BarcodeGenerator` all formats
 - [ ] Test `BarcodeType` enum
-- [ ] Test `LoyaltyCard` model validation
-- [ ] Test `MerchantTemplate.search()`
+- [x] Test `LoyaltyCard` model validation
+- [x] Test `MerchantTemplate.search()`
 - [ ] Test barcode data validation
 - [ ] Achieve >70% code coverage for utilities
 
