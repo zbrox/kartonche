@@ -12,7 +12,7 @@
 - ✅ Sprint 9: CI/CD (GitHub Actions for merchant validation and automated testing)
 
 **Partially Complete:**
-- ⚠️ Sprint 7: Polish & Features (search ✅, sort ✅, empty states ✅, recently used ✅, favorites tracking partial, color picker pending)
+- ⚠️ Sprint 7: Polish & Features (search ✅, sort ✅, empty states ✅, recently used ✅, favorites ✅, color picker pending)
 
 **Not Started:**
 - ❌ Sprint 5: Photo Import
@@ -266,11 +266,11 @@
 
 ## Sprint 7: Polish & Features (Days 22-24)
 
-### Favorites System
-- [ ] Add star/heart button to card row
-- [ ] Toggle `isFavorite` flag
-- [ ] "Favorites" section at top of list (optional filter)
-- [ ] Update widget when favorites change
+### Favorites System ✅
+- [x] Add star button to card row (yellow fill when favorited)
+- [x] Toggle `isFavorite` flag (tap star to toggle)
+- [x] "Favorites" sort option (favorites appear first)
+- [ ] Update widget when favorites change (pending Sprint 6 - Widgets)
 
 ### Recently Used Tracking ✅
 - [x] Update `lastUsedDate` when card displayed
