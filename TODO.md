@@ -12,7 +12,7 @@
 - ✅ Sprint 9: CI/CD (GitHub Actions for merchant validation and automated testing)
 
 **Partially Complete:**
-- ⚠️ Sprint 7: Polish & Features (search ✅, sort ✅, empty states ✅, favorites tracking pending, color picker pending)
+- ⚠️ Sprint 7: Polish & Features (search ✅, sort ✅, empty states ✅, recently used ✅, favorites tracking partial, color picker pending)
 
 **Not Started:**
 - ❌ Sprint 5: Photo Import
@@ -272,10 +272,11 @@
 - [ ] "Favorites" section at top of list (optional filter)
 - [ ] Update widget when favorites change
 
-### Recently Used Tracking
-- [ ] Update `lastUsedDate` when card displayed
-- [ ] Sort option: "Recently Used"
-- [ ] Show "last used" timestamp in detail view
+### Recently Used Tracking ✅
+- [x] Update `lastUsedDate` when card displayed
+- [x] Sort option: "Recently Used"
+- [x] Localize sort option strings (Alphabetical, Recent, Favorites)
+- [ ] Show "last used" timestamp in detail view (optional enhancement)
 
 ### Visual Customization
 - [ ] Color picker in card editor
