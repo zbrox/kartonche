@@ -17,6 +17,7 @@ final class LoyaltyCard {
     var barcodeType: BarcodeType
     var barcodeData: String
     var color: String?
+    var secondaryColor: String?
     var notes: String?
     var isFavorite: Bool
     var createdDate: Date
@@ -33,6 +34,7 @@ final class LoyaltyCard {
         barcodeType: BarcodeType,
         barcodeData: String,
         color: String? = nil,
+        secondaryColor: String? = nil,
         notes: String? = nil,
         isFavorite: Bool = false,
         createdDate: Date = Date(),
@@ -46,6 +48,7 @@ final class LoyaltyCard {
         self.barcodeType = barcodeType
         self.barcodeData = barcodeData
         self.color = color
+        self.secondaryColor = secondaryColor
         self.notes = notes
         self.isFavorite = isFavorite
         self.createdDate = createdDate

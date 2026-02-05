@@ -24,6 +24,16 @@ struct MerchantSelectionView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section {
+                    Button {
+                        addCustomCard()
+                    } label: {
+                        Label("Ръчно добавяне на карта", systemImage: "plus.circle.fill")
+                            .font(.headline)
+                    }
+                }
+                .listRowBackground(Color.accentColor.opacity(0.1))
+                
                 ForEach(MerchantCategory.allCases, id: \.self) { category in
                     if let merchants = groupedMerchants[category], !merchants.isEmpty {
                         Section(category.displayName) {
@@ -36,14 +46,6 @@ struct MerchantSelectionView: View {
                                 .buttonStyle(.plain)
                             }
                         }
-                    }
-                }
-                
-                Section {
-                    Button {
-                        addCustomCard()
-                    } label: {
-                        Label("Добави карта ръчно", systemImage: "plus.circle")
                     }
                 }
             }
