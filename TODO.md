@@ -4,24 +4,25 @@
 
 **Completed Sprints:**
 - ✅ Sprint 0: Project Setup (mise, documentation, planning)
-- ✅ Sprint 1: Foundation (models, permissions, localization setup)
+- ✅ Sprint 1: Foundation (models, permissions, **complete Bulgarian localization**)
 - ✅ Sprint 2: Barcode Core (generation, display, scanning, utilities)
-- ✅ Sprint 3: Card Management UI (list, display, editor, navigation)
+- ✅ Sprint 3: Card Management UI (list, display, editor, navigation, **search, sort, empty states**)
 - ✅ Sprint 4: Merchant Database (KDL database, code generator, selection UI)
+- ✅ Sprint 8: Testing (BarcodeType, BarcodeGenerator, Model, MerchantTemplate, ScreenManager, BrightnessManager tests)
 
-**In Progress:**
-- ⚠️ Sprint 8: Testing (partial - BarcodeGenerator, Model, MerchantTemplate tests done)
+**Partially Complete:**
+- ⚠️ Sprint 7: Polish & Features (search ✅, sort ✅, empty states ✅, favorites tracking pending, color picker pending)
 
 **Not Started:**
 - ❌ Sprint 5: Photo Import
 - ❌ Sprint 6: Widgets
-- ❌ Sprint 7: Polish & Features (search, sort, favorites tracking, empty states)
 - ❌ Sprint 9: CI/CD & Documentation
 - ❌ Sprint 10: MVP Release Prep
 
 **Key Decisions:**
 - iCloud/CloudKit sync SKIPPED (requires paid Apple Developer account)
 - Local-only storage with SwiftData
+- Bulgarian as PRIMARY language (клубна карта terminology)
 
 ---
 
@@ -61,13 +62,14 @@
 - [-] Add CloudKit container identifier (SKIPPED)
 - [-] Test sync between two devices/simulators (SKIPPED)
 
-### Localization Setup ✅ (partial)
+### Localization Setup ✅
 - [x] Create `Localizable.xcstrings` String Catalog
 - [x] Add Bulgarian as language
 - [x] Add initial strings (10-15 common UI elements)
-- [x] Follow neutral form guidelines (no imperatives)
-- [ ] Test language switching
-- [ ] Complete all string translations (many still empty)
+- [x] Follow neutral form guidelines (using gerunds like Добавяне, Затваряне)
+- [x] Complete all string translations (15+ strings)
+- [x] Use correct Bulgarian terminology (клубна карта, not карта за лоялност)
+- [ ] Test language switching on device
 
 ### Permissions Setup ✅
 - [x] Add `NSCameraUsageDescription` to Info.plist (Bulgarian + English)
@@ -296,12 +298,15 @@
 
 ## Sprint 8: Testing & Bug Fixes (Days 25-27) ⚠️ (partial)
 
-### Unit Tests ⚠️ (partial)
+### Unit Tests ✅ (good coverage)
 - [x] Test `BarcodeGenerator` all formats
-- [ ] Test `BarcodeType` enum
+- [x] Test `BarcodeType` enum (all cases, display names, codable, raw values)
 - [x] Test `LoyaltyCard` model validation
-- [x] Test `MerchantTemplate.search()`
-- [ ] Test barcode data validation
+- [x] Test `MerchantTemplate.search()` (13 tests)
+- [x] Test `ScreenManager` (idle timer management)
+- [x] Test `BrightnessManager` (state management, safety checks)
+- [ ] Test `PermissionManager` (camera/photo permissions)
+- [ ] Test barcode data validation in `BarcodeGenerator`
 - [ ] Achieve >70% code coverage for utilities
 
 ### UI Tests
