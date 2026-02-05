@@ -264,7 +264,7 @@ See [TODO.md](TODO.md) for detailed implementation plan.
 
 ## License
 
-MIT License - See [LICENSE](LICENSE) file (coming soon)
+MIT License - See [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
