@@ -365,6 +365,39 @@
           }
         }
       }
+    },
+    "Alphabetical" : {
+      "comment" : "Sort option by name",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "По азбучен ред"
+          }
+        }
+      }
+    },
+    "Recent" : {
+      "comment" : "Sort option by recently used",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Последно използвани"
+          }
+        }
+      }
+    },
+    "Favorites" : {
+      "comment" : "Sort option by favorites",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Любими"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
