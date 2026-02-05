@@ -17,7 +17,7 @@ struct kartoncheApp: App {
         let modelConfiguration = ModelConfiguration(
             schema: schema,
             isStoredInMemoryOnly: false,
-            cloudKitDatabase: .automatic
+            cloudKitDatabase: .none
         )
 
         do {
