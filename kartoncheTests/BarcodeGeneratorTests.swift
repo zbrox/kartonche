@@ -13,7 +13,7 @@ struct BarcodeGeneratorTests {
     
     @Test func generateQRCode() {
         let result = BarcodeGenerator.generate(
-            data: "https://example.com",
+            from: "https://example.com",
             type: .qr,
             scale: 5.0
         )
@@ -29,7 +29,7 @@ struct BarcodeGeneratorTests {
     
     @Test func generateCode128() {
         let result = BarcodeGenerator.generate(
-            data: "ABC123",
+            from: "ABC123",
             type: .code128,
             scale: 3.0
         )
@@ -45,7 +45,7 @@ struct BarcodeGeneratorTests {
     
     @Test func generateEAN13() {
         let result = BarcodeGenerator.generate(
-            data: "1234567890123",
+            from: "1234567890123",
             type: .ean13,
             scale: 3.0
         )
@@ -61,7 +61,7 @@ struct BarcodeGeneratorTests {
     
     @Test func generatePDF417() {
         let result = BarcodeGenerator.generate(
-            data: "PDF417DATA",
+            from: "PDF417DATA",
             type: .pdf417,
             scale: 3.0
         )
@@ -77,7 +77,7 @@ struct BarcodeGeneratorTests {
     
     @Test func generateAztec() {
         let result = BarcodeGenerator.generate(
-            data: "AZTECCODE",
+            from: "AZTECCODE",
             type: .aztec,
             scale: 5.0
         )
@@ -93,7 +93,7 @@ struct BarcodeGeneratorTests {
     
     @Test func emptyDataReturnsError() {
         let result = BarcodeGenerator.generate(
-            data: "",
+            from: "",
             type: .qr,
             scale: 5.0
         )
@@ -108,7 +108,7 @@ struct BarcodeGeneratorTests {
     
     @Test func defaultScaleWorks() {
         let result = BarcodeGenerator.generate(
-            data: "TEST",
+            from: "TEST",
             type: .qr
         )
         
