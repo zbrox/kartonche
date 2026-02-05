@@ -13,19 +13,59 @@
       }
     },
     "Add your first loyalty card" : {
-
+      "comment" : "Empty state message",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добавете първата си клубна карта"
+          }
+        }
+      }
     },
     "Are you sure you want to delete this card?" : {
-
+      "comment" : "Confirmation dialog message",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сигурни ли сте, че искате да изтриете тази карта?"
+          }
+        }
+      }
     },
     "Attach Photo" : {
-
+      "comment" : "Button to attach photo to card",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Прикачване на снимка"
+          }
+        }
+      }
     },
     "Barcode Data" : {
-
+      "comment" : "Label for barcode data field",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Данни за баркод"
+          }
+        }
+      }
     },
     "Barcode Type" : {
-
+      "comment" : "Label for barcode type field",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тип баркод"
+          }
+        }
+      }
     },
     "Cancel" : {
       "comment" : "Button to cancel an action",
@@ -39,13 +79,37 @@
       }
     },
     "Card Color" : {
-
+      "comment" : "Label for card color picker",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Цвят на картата"
+          }
+        }
+      }
     },
     "Card Name" : {
-
+      "comment" : "Label for card name field",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Име на картата"
+          }
+        }
+      }
     },
     "Card Number" : {
-
+      "comment" : "Label for card number field",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Номер на картата"
+          }
+        }
+      }
     },
     "Close" : {
       "comment" : "Button to dismiss a view",
@@ -70,7 +134,15 @@
       }
     },
     "EAN-13 requires exactly 13 digits (provided: %lld)" : {
-
+      "comment" : "Error message for EAN-13 validation",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EAN-13 изисква точно 13 цифри (въведени: %lld)"
+          }
+        }
+      }
     },
     "Edit" : {
       "comment" : "Button to edit an item",
@@ -84,16 +156,48 @@
       }
     },
     "Failed to create barcode filter" : {
-
+      "comment" : "Error message for barcode filter creation",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неуспешно създаване на баркод филтър"
+          }
+        }
+      }
     },
     "Failed to generate barcode image" : {
-
+      "comment" : "Error message for barcode generation",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неуспешно генериране на баркод изображение"
+          }
+        }
+      }
     },
     "Favorite" : {
-
+      "comment" : "Label for favorite toggle",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Любима"
+          }
+        }
+      }
     },
     "Invalid barcode data" : {
-
+      "comment" : "Error message for invalid barcode",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Невалидни данни за баркод"
+          }
+        }
+      }
     },
     "Loyalty Cards" : {
       "comment" : "Main screen title",
@@ -101,19 +205,43 @@
         "bg" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Карти за лоялност"
+            "value" : "Клубни карти"
           }
         }
       }
     },
     "No Cards" : {
-
+      "comment" : "Empty state title",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Няма карти"
+          }
+        }
+      }
     },
     "No cards matching '%@'" : {
-
+      "comment" : "Empty search results message",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Няма карти, съответстващи на '%@'"
+          }
+        }
+      }
     },
     "Notes" : {
-
+      "comment" : "Label for notes field",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бележки"
+          }
+        }
+      }
     },
     "Save" : {
       "comment" : "Button to save changes",
@@ -173,10 +301,26 @@
       }
     },
     "Sort" : {
-
+      "comment" : "Sort menu label",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сортиране"
+          }
+        }
+      }
     },
     "Store Name" : {
-
+      "comment" : "Label for store name field",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Име на магазина"
+          }
+        }
+      }
     },
     "Invalid barcode data" : {
       "comment" : "Error message for invalid barcode data",
