@@ -29,16 +29,40 @@ struct CardEditorView: View {
     
     private var isEditMode: Bool { card != nil }
     
-    init(card: LoyaltyCard? = nil) {
+    init(card: LoyaltyCard? = nil, merchantTemplate: MerchantTemplate? = nil, program: ProgramTemplate? = nil) {
         self.card = card
-        _name = State(initialValue: card?.name ?? "")
-        _storeName = State(initialValue: card?.storeName ?? "")
-        _cardNumber = State(initialValue: card?.cardNumber ?? "")
-        _barcodeType = State(initialValue: card?.barcodeType ?? .qr)
-        _barcodeData = State(initialValue: card?.barcodeData ?? "")
-        _notes = State(initialValue: card?.notes ?? "")
-        _selectedColor = State(initialValue: card?.color.flatMap { Color(hex: $0) })
-        _isFavorite = State(initialValue: card?.isFavorite ?? false)
+        
+        if let card = card {
+            // Edit mode - use card data
+            _name = State(initialValue: card.name)
+            _storeName = State(initialValue: card.storeName)
+            _cardNumber = State(initialValue: card.cardNumber)
+            _barcodeType = State(initialValue: card.barcodeType)
+            _barcodeData = State(initialValue: card.barcodeData)
+            _notes = State(initialValue: card.notes ?? "")
+            _selectedColor = State(initialValue: card.color.flatMap { Color(hex: $0) })
+            _isFavorite = State(initialValue: card.isFavorite)
+        } else if let merchant = merchantTemplate, let program = program {
+            // New card from merchant template
+            _name = State(initialValue: program.name ?? merchant.name)
+            _storeName = State(initialValue: merchant.name)
+            _cardNumber = State(initialValue: "")
+            _barcodeType = State(initialValue: program.barcodeType)
+            _barcodeData = State(initialValue: "")
+            _notes = State(initialValue: "")
+            _selectedColor = State(initialValue: Color(hex: merchant.suggestedColor))
+            _isFavorite = State(initialValue: false)
+        } else {
+            // New custom card - empty
+            _name = State(initialValue: "")
+            _storeName = State(initialValue: "")
+            _cardNumber = State(initialValue: "")
+            _barcodeType = State(initialValue: .qr)
+            _barcodeData = State(initialValue: "")
+            _notes = State(initialValue: "")
+            _selectedColor = State(initialValue: nil)
+            _isFavorite = State(initialValue: false)
+        }
     }
     
     var body: some View {

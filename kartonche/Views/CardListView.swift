@@ -15,8 +15,11 @@ struct CardListView: View {
     
     @State private var searchText = ""
     @State private var sortOption: SortOption = .alphabetical
-    @State private var showingAddCard = false
+    @State private var showingMerchantSelection = false
     @State private var selectedCard: LoyaltyCard?
+    @State private var showingCardEditor = false
+    @State private var selectedMerchant: MerchantTemplate?
+    @State private var selectedProgram: ProgramTemplate?
     
     enum SortOption: String, CaseIterable {
         case alphabetical = "Alphabetical"
@@ -81,8 +84,15 @@ struct CardListView: View {
                     addButton
                 }
             }
-            .sheet(isPresented: $showingAddCard) {
-                CardEditorView()
+            .sheet(isPresented: $showingMerchantSelection) {
+                MerchantSelectionView { merchant, program in
+                    selectedMerchant = merchant
+                    selectedProgram = program
+                    showingCardEditor = true
+                }
+            }
+            .sheet(isPresented: $showingCardEditor) {
+                CardEditorView(merchantTemplate: selectedMerchant, program: selectedProgram)
             }
             .sheet(item: $selectedCard) { card in
                 CardEditorView(card: card)
@@ -128,7 +138,7 @@ struct CardListView: View {
         } actions: {
             if searchText.isEmpty {
                 Button(String(localized: "Add Card")) {
-                    showingAddCard = true
+                    showingMerchantSelection = true
                 }
                 .buttonStyle(.borderedProminent)
             }
@@ -148,7 +158,7 @@ struct CardListView: View {
     }
     
     private var addButton: some View {
-        Button(action: { showingAddCard = true }) {
+        Button(action: { showingMerchantSelection = true }) {
             Label(String(localized: "Add Card"), systemImage: "plus")
         }
     }
