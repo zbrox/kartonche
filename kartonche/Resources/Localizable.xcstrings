@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%lld програми" : {
+
+    },
     "Add Card" : {
       "comment" : "Button to create a new loyalty card",
       "localizations" : {

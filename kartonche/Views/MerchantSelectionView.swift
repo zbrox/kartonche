@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct MerchantSelectionView: View {
-    @Environment(\.dismiss) private var dismiss
     @State private var searchText = ""
+    @Binding var isPresented: Bool
     
     let onSelect: (MerchantTemplate, ProgramTemplate?) -> Void
     
@@ -43,7 +43,6 @@ struct MerchantSelectionView: View {
                                 } label: {
                                     MerchantRowView(merchant: merchant)
                                 }
-                                .buttonStyle(.plain)
                             }
                         }
                     }
@@ -58,7 +57,7 @@ struct MerchantSelectionView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Отказ") {
-                        dismiss()
+                        isPresented = false
                     }
                 }
             }
@@ -66,15 +65,7 @@ struct MerchantSelectionView: View {
     }
     
     private func selectMerchant(_ merchant: MerchantTemplate) {
-        if merchant.programs.count == 1 {
-            onSelect(merchant, merchant.programs.first)
-            dismiss()
-        } else {
-            // TODO: Show program selection sheet for multi-program merchants
-            // For now, just use first program
-            onSelect(merchant, merchant.programs.first)
-            dismiss()
-        }
+        onSelect(merchant, merchant.programs.first)
     }
     
     private func addCustomCard() {
@@ -91,12 +82,11 @@ struct MerchantSelectionView: View {
             ),
             nil
         )
-        dismiss()
     }
 }
 
 #Preview {
-    MerchantSelectionView { merchant, program in
+    MerchantSelectionView(isPresented: .constant(true)) { merchant, program in
         print("Selected: \(merchant.name)")
     }
 }

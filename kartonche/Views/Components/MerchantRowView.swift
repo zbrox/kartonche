@@ -39,9 +39,18 @@ struct MerchantRowView: View {
             
             Spacer()
             
-            // Barcode type badge (if single program)
+            // Barcode type badge
             if merchant.hasSingleProgram, let program = merchant.programs.first {
+                // Single program - show barcode type
                 Text(program.barcodeType.displayName)
+                    .font(.caption)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(Color.secondary.opacity(0.2))
+                    .cornerRadius(4)
+            } else if !merchant.programs.isEmpty {
+                // Multiple programs - show count
+                Text("\(merchant.programs.count) програми")
                     .font(.caption)
                     .padding(.horizontal, 8)
                     .padding(.vertical, 4)
