@@ -10,7 +10,7 @@ import UIKit
 
 struct BarcodeGenerator {
     
-    enum GenerationError: Error {
+    enum GenerationError: Error, Equatable {
         case invalidData
         case filterCreationFailed
         case imageGenerationFailed
@@ -40,9 +40,12 @@ struct BarcodeGenerator {
         type: BarcodeType,
         scale: CGFloat = 10.0
     ) -> Result<UIImage, GenerationError> {
+        guard !data.isEmpty else {
+            return .failure(.invalidData)
+        }
+        
         let context = CIContext()
         
-        // EAN-13 requires special handling with CIBarcodeDescriptor
         if type == .ean13 {
             return generateEAN13(from: data, scale: scale, context: context)
         }
