@@ -8,13 +8,13 @@ if [ -n "${1:-}" ]; then
   xcodebuild test \
     -project "$PROJECT" \
     -scheme "$SCHEME" \
-    -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
+    -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
     -only-testing:"$1"
 else
   # Run all unit tests
   xcodebuild test \
     -project "$PROJECT" \
     -scheme "$SCHEME" \
-    -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
+    -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
     -only-testing:kartoncheTests
 fi
