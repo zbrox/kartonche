@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Generate Swift code from Merchants/merchants.kdl
+# usage: Generate merchant templates from KDL database
+
+set -euo pipefail
+
+MERCHANTS_FILE="Merchants/merchants.kdl"
+OUTPUT_FILE="kartonche/Generated/MerchantTemplates.swift"
+
+# Create Generated directory if missing
+mkdir -p kartonche/Generated
+
+# Run generator
+echo "Generating merchant templates from $MERCHANTS_FILE..."
+swift run --package-path Scripts/generate-merchants generate-merchants \
+    --input "$MERCHANTS_FILE" \
+    --output "$OUTPUT_FILE"
+
+echo "✓ Generated $OUTPUT_FILE"

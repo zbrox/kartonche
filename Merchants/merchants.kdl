@@ -1,0 +1,158 @@
+// Community-maintained database of Bulgarian loyalty card merchants
+// Format: KDL (https://kdl.dev)
+// See README.md for contribution guidelines
+
+// Grocery Stores
+
+merchant id="bg.billa" {
+    name "BILLA"
+    other-names "Била" "Billa"
+    category "grocery"
+    barcode-type "ean13"
+    website "https://www.billa.bg"
+    suggested-color "#FFED00"
+    secondary-color "#000000"
+}
+
+merchant id="bg.kaufland" {
+    name "Kaufland"
+    other-names "Кауфланд"
+    category "grocery"
+    website "https://www.kaufland.bg"
+    suggested-color "#FF0000"
+    secondary-color "#FFFFFF"
+    
+    program id="regular" {
+        name "Kaufland Card"
+        barcode-type "ean13"
+    }
+    
+    program id="plus" {
+        name "Kaufland Card Plus"
+        barcode-type "ean13"
+    }
+}
+
+merchant id="bg.lidl" {
+    name "Lidl"
+    other-names "Лидл"
+    category "grocery"
+    barcode-type "qr"
+    website "https://www.lidl.bg"
+    suggested-color "#0050AA"
+    secondary-color "#FFFFFF"
+}
+
+merchant id="bg.fantastico" {
+    name "Фантастико"
+    other-names "Fantastico"
+    category "grocery"
+    barcode-type "ean13"
+    website "https://www.fantastico.bg"
+    suggested-color "#00A651"
+    secondary-color "#FFFFFF"
+}
+
+merchant id="bg.tmarket" {
+    name "T MARKET"
+    other-names "Т Маркет" "T-Market" "TMarket"
+    category "grocery"
+    barcode-type "code128"
+    website "https://tmarket.bg"
+    suggested-color "#E30613"
+    secondary-color "#FFFFFF"
+}
+
+// Fuel Stations
+
+merchant id="bg.omv" {
+    name "OMV"
+    category "fuel"
+    barcode-type "code128"
+    website "https://www.omv.bg"
+    suggested-color "#ED1C24"
+    secondary-color "#FFFFFF"
+}
+
+merchant id="bg.lukoil" {
+    name "LUKOIL"
+    other-names "Лукойл"
+    category "fuel"
+    barcode-type "code128"
+    website "https://www.lukoil.bg"
+    suggested-color "#E4032E"
+    secondary-color "#FFFFFF"
+}
+
+merchant id="bg.shell" {
+    name "Shell"
+    other-names "Шел"
+    category "fuel"
+    barcode-type "code128"
+    website "https://www.shell.bg"
+    suggested-color "#FBCE07"
+    secondary-color "#000000"
+}
+
+merchant id="bg.petrol" {
+    name "Petrol"
+    other-names "Петрол"
+    category "fuel"
+    barcode-type "code128"
+    website "https://www.petrol.bg"
+    suggested-color "#009FE3"
+    secondary-color "#FFFFFF"
+}
+
+merchant id="bg.eko" {
+    name "EKO"
+    other-names "Еко"
+    category "fuel"
+    barcode-type "code128"
+    website "https://www.eko.bg"
+    suggested-color "#FF6600"
+    secondary-color "#FFFFFF"
+}
+
+// Pharmacies
+
+merchant id="bg.sopharmacy" {
+    name "Sopharmacy"
+    other-names "Софармаси" "Софарма"
+    category "pharmacy"
+    barcode-type "ean13"
+    website "https://www.sopharmacy.bg"
+    suggested-color "#009639"
+    secondary-color "#FFFFFF"
+}
+
+merchant id="bg.subra" {
+    name "Subra"
+    other-names "Субра"
+    category "pharmacy"
+    barcode-type "ean13"
+    website "https://www.subra.bg"
+    suggested-color "#E30613"
+    secondary-color "#FFFFFF"
+}
+
+// Retail
+
+merchant id="bg.dm" {
+    name "dm drogerie markt"
+    other-names "дм" "dm"
+    category "retail"
+    barcode-type "qr"
+    website "https://www.dm.bg"
+    suggested-color "#004A93"
+    secondary-color "#FFFFFF"
+}
+
+merchant id="bg.ccc" {
+    name "CCC"
+    category "retail"
+    barcode-type "code128"
+    website "https://www.ccc.bg"
+    suggested-color "#000000"
+    secondary-color "#FFFFFF"
+}
