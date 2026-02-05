@@ -368,10 +368,10 @@
 - [ ] Add screenshots (after MVP complete)
 - [ ] Link to ARCHITECTURE.md, AGENTS.md
 
-### License
-- [ ] Choose open source license (MIT recommended)
-- [ ] Add LICENSE file
-- [ ] Add copyright headers to files
+### License ✅
+- [x] Choose open source license (MIT)
+- [x] Add LICENSE file
+- [ ] Add copyright headers to files (optional - not required for MIT)
 
 ---
 
