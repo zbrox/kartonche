@@ -23,6 +23,18 @@
         }
       }
     },
+    "Alphabetical" : {
+      "comment" : "Sort option by name",
+      "extractionState" : "stale",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "По азбучен ред"
+          }
+        }
+      }
+    },
     "Are you sure you want to delete this card?" : {
       "comment" : "Confirmation dialog message",
       "localizations" : {
@@ -133,8 +145,20 @@
         }
       }
     },
+    "EAN-13 requires exactly 13 digits (provided: %d)" : {
+      "comment" : "Error message for EAN-13 digit validation",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EAN-13 изисква точно 13 цифри (въведени: %d)"
+          }
+        }
+      }
+    },
     "EAN-13 requires exactly 13 digits (provided: %lld)" : {
       "comment" : "Error message for EAN-13 validation",
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -184,6 +208,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Любима"
+          }
+        }
+      }
+    },
+    "Favorites" : {
+      "comment" : "Sort option by favorites",
+      "extractionState" : "stale",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Любими"
           }
         }
       }
@@ -243,6 +279,18 @@
         }
       }
     },
+    "Recent" : {
+      "comment" : "Sort option by recently used",
+      "extractionState" : "stale",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Последно използвани"
+          }
+        }
+      }
+    },
     "Save" : {
       "comment" : "Button to save changes",
       "localizations" : {
@@ -279,6 +327,7 @@
     },
     "Select a card" : {
       "comment" : "Detail view placeholder text",
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -322,82 +371,29 @@
         }
       }
     },
-    "Invalid barcode data" : {
-      "comment" : "Error message for invalid barcode data",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Невалидни данни за баркод"
-          }
-        }
-      }
+    "Аптеки" : {
+
     },
-    "Failed to create barcode filter" : {
-      "comment" : "Error message when barcode filter creation fails",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Неуспешно създаване на баркод филтър"
-          }
-        }
-      }
+    "Бензиностанции" : {
+
     },
-    "Failed to generate barcode image" : {
-      "comment" : "Error message when barcode image generation fails",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Неуспешно генериране на баркод изображение"
-          }
-        }
-      }
+    "Добави карта ръчно" : {
+
     },
-    "EAN-13 requires exactly 13 digits (provided: %d)" : {
-      "comment" : "Error message for EAN-13 digit validation",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "EAN-13 изисква точно 13 цифри (въведени: %d)"
-          }
-        }
-      }
+    "Други" : {
+
     },
-    "Alphabetical" : {
-      "comment" : "Sort option by name",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "По азбучен ред"
-          }
-        }
-      }
+    "Избор на магазин" : {
+
     },
-    "Recent" : {
-      "comment" : "Sort option by recently used",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Последно използвани"
-          }
-        }
-      }
+    "Отказ" : {
+
     },
-    "Favorites" : {
-      "comment" : "Sort option by favorites",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Любими"
-          }
-        }
-      }
+    "Търсене на магазин" : {
+
+    },
+    "Хранителни магазини" : {
+
     }
   },
   "version" : "1.0"

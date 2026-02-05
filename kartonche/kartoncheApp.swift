@@ -29,7 +29,7 @@ struct kartoncheApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CardListView()
         }
         .modelContainer(sharedModelContainer)
     }
