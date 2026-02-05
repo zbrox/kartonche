@@ -8,7 +8,12 @@
 import SwiftUI
 import SwiftData
 
-/// Main view displaying the list of loyalty cards
+struct PendingCard: Identifiable {
+    let id = UUID()
+    let merchant: MerchantTemplate
+    let program: ProgramTemplate?
+}
+
 struct CardListView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var allCards: [LoyaltyCard]
@@ -16,10 +21,8 @@ struct CardListView: View {
     @State private var searchText = ""
     @State private var sortOption: SortOption = .alphabetical
     @State private var showingMerchantSelection = false
+    @State private var pendingCard: PendingCard?
     @State private var selectedCard: LoyaltyCard?
-    @State private var showingCardEditor = false
-    @State private var selectedMerchant: MerchantTemplate?
-    @State private var selectedProgram: ProgramTemplate?
     
     enum SortOption: String, CaseIterable {
         case alphabetical = "Alphabetical"
@@ -85,14 +88,13 @@ struct CardListView: View {
                 }
             }
             .sheet(isPresented: $showingMerchantSelection) {
-                MerchantSelectionView { merchant, program in
-                    selectedMerchant = merchant
-                    selectedProgram = program
-                    showingCardEditor = true
+                MerchantSelectionView(isPresented: $showingMerchantSelection) { merchant, program in
+                    pendingCard = PendingCard(merchant: merchant, program: program)
+                    showingMerchantSelection = false
                 }
             }
-            .sheet(isPresented: $showingCardEditor) {
-                CardEditorView(merchantTemplate: selectedMerchant, program: selectedProgram)
+            .sheet(item: $pendingCard) { pending in
+                CardEditorView(merchantTemplate: pending.merchant, program: pending.program)
             }
             .sheet(item: $selectedCard) { card in
                 CardEditorView(card: card)
