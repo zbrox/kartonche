@@ -12,7 +12,7 @@
 - ✅ Sprint 9: CI/CD (GitHub Actions for merchant validation and automated testing)
 
 **Partially Complete:**
-- ⚠️ Sprint 7: Polish & Features (search ✅, sort ✅, empty states ✅, recently used ✅, favorites ✅, color picker pending)
+- ⚠️ Sprint 7: Polish & Features (search ✅, sort ✅, empty states ✅, recently used ✅, favorites ✅, colors ✅, minor enhancements pending)
 
 **Not Started:**
 - ❌ Sprint 5: Photo Import
@@ -278,23 +278,24 @@
 - [x] Localize sort option strings (Alphabetical, Recent, Favorites)
 - [ ] Show "last used" timestamp in detail view (optional enhancement)
 
-### Visual Customization
-- [ ] Color picker in card editor
-- [ ] Store hex color in model
-- [ ] Apply color to card row background/accent
-- [ ] Preview color in editor
+### Visual Customization ✅
+- [x] Color picker in card editor
+- [x] Store hex color in model
+- [x] Apply color to card row (vertical bar indicator)
+- [x] Pre-fill color from merchant templates
+- [x] Color conversion utilities (hex to Color, Color to hex)
 
-### Search & Filter
-- [ ] Search bar in card list
-- [ ] Filter by card name, store name
-- [ ] Filter by category (if merchant template used)
-- [ ] Clear search button
+### Search & Filter ✅
+- [x] Search bar in card list
+- [x] Filter by card name, store name, card number
+- [x] Clear search button (native SwiftUI searchable)
+- [ ] Filter by category (optional enhancement)
 
-### Empty States
-- [ ] "No cards yet" with friendly message
-- [ ] "Add your first card" CTA button
-- [ ] Onboarding hints for new users
-- [ ] "No search results" state
+### Empty States ✅
+- [x] "No cards yet" with friendly message
+- [x] "Add your first card" CTA button
+- [x] "No search results" state with search term
+- [ ] Onboarding hints for new users (optional enhancement)
 
 ---
 
