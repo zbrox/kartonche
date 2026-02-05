@@ -1,0 +1,127 @@
+// KDL Schema for merchants.kdl
+// Validates merchant loyalty card database structure
+
+document {
+    info {
+        title "Bulgarian Merchant Loyalty Card Database Schema"
+        description "Schema for community-maintained database of Bulgarian loyalty card merchants"
+        version "1.0.0"
+    }
+    
+    node "merchant" {
+        min 1
+        description "A merchant with loyalty card program(s)"
+        
+        prop "id" {
+            required #true
+            description "Unique reverse-domain identifier (e.g., bg.billa)"
+            pattern r"^bg\.[a-z0-9]+$"
+        }
+        
+        value {
+            max 0
+            description "Merchant node should not have positional values"
+        }
+        
+        children {
+            node "name" {
+                min 1
+                max 1
+                description "Official brand name as displayed"
+                value {
+                    type "string"
+                    min-length 1
+                }
+            }
+            
+            node "other-names" {
+                max 1
+                description "Alternative names for search (Cyrillic variants, abbreviations)"
+                value {
+                    type "string"
+                    min 0
+                    description "Zero or more search variant strings"
+                }
+            }
+            
+            node "category" {
+                min 1
+                max 1
+                description "Merchant category for UI grouping"
+                value {
+                    type "string"
+                    enum "grocery" "fuel" "pharmacy" "retail"
+                }
+            }
+            
+            node "barcode-type" {
+                max 1
+                description "Barcode type for single-program merchants (omit if using program nodes)"
+                value {
+                    type "string"
+                    enum "qr" "code128" "ean13" "pdf417" "aztec"
+                }
+            }
+            
+            node "website" {
+                max 1
+                description "Official website URL"
+                value {
+                    type "string"
+                    pattern r"^https?://.*"
+                }
+            }
+            
+            node "suggested-color" {
+                max 1
+                description "Brand color in hex format for UI circle background"
+                value {
+                    type "string"
+                    pattern r"^#[0-9A-Fa-f]{6}$"
+                }
+            }
+            
+            node "secondary-color" {
+                max 1
+                description "Text color for initials on colored background"
+                value {
+                    type "string"
+                    pattern r"^#[0-9A-Fa-f]{6}$"
+                }
+            }
+            
+            node "program" {
+                min 0
+                description "Loyalty program details (for multi-program merchants)"
+                
+                prop "id" {
+                    required #true
+                    description "Unique program identifier within merchant"
+                    pattern r"^[a-z0-9_-]+$"
+                }
+                
+                children {
+                    node "name" {
+                        min 1
+                        max 1
+                        description "Loyalty program name"
+                        value {
+                            type "string"
+                            min-length 1
+                        }
+                    }
+                    
+                    node "barcode-type" {
+                        min 1
+                        max 1
+                        description "Barcode type for this program"
+                        value {
+                            type "string"
+                            enum "qr" "code128" "ean13" "pdf417" "aztec"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

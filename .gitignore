@@ -97,6 +97,9 @@ iOSInjectionProject/
 # Generated code (build-time)
 kartonche/Generated/
 
+# Build scripts
+Scripts/generate-merchants/.build/
+
 # macOS
 .DS_Store
 
