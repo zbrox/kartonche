@@ -120,11 +120,11 @@
 - [x] Create `CardListView` (replace ContentView)
 - [x] Implement `@Query` for all cards
 - [x] Create `CardRowView` component
-- [ ] Add search functionality
-- [ ] Implement sort options (alphabetical, recent, favorites)
+- [x] Add search functionality
+- [x] Implement sort options (alphabetical, recent, favorites)
 - [x] Add swipe-to-delete action
 - [x] Add favorite toggle (star icon)
-- [ ] Create empty state view
+- [x] Create empty state view
 - [ ] Localize all strings
 
 ### Card Display View ✅
