@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Combine
 
 /// Manages screen brightness for optimal barcode scanning
 @MainActor
-final class BrightnessManager {
+final class BrightnessManager: ObservableObject {
     
     private var originalBrightness: CGFloat?
     

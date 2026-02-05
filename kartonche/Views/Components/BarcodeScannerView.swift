@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Vision
 import VisionKit
 
 /// SwiftUI wrapper for VisionKit's DataScannerViewController

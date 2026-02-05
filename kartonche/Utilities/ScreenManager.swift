@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Combine
 
 /// Manages screen idle timer to prevent sleep during barcode display
 @MainActor
-final class ScreenManager {
+final class ScreenManager: ObservableObject {
     
     private var wasIdleTimerDisabled: Bool = false
     
