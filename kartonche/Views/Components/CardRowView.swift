@@ -18,6 +18,7 @@ struct CardRowView: View {
             RoundedRectangle(cornerRadius: 4)
                 .fill(Color(hex: card.color) ?? .accentColor)
                 .frame(width: 4, height: 44)
+                .accessibilityHidden(true)
             
             // Card info
             VStack(alignment: .leading, spacing: 4) {
@@ -34,6 +35,8 @@ struct CardRowView: View {
                         .foregroundStyle(.tertiary)
                 }
             }
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel(accessibilityCardLabel)
             
             Spacer()
             
@@ -46,6 +49,8 @@ struct CardRowView: View {
                         .font(.caption)
                 }
                 .foregroundStyle(card.isExpired ? .red : (card.isExpiringSoon ? .orange : .secondary))
+                .accessibilityElement(children: .combine)
+                .accessibilityLabel(accessibilityExpirationLabel(expirationDate))
             }
             
             // Favorite star
@@ -54,8 +59,28 @@ struct CardRowView: View {
                     .foregroundStyle(card.isFavorite ? .yellow : .gray)
             }
             .buttonStyle(.plain)
+            .accessibilityLabel(card.isFavorite ? String(localized: "Remove from favorites") : String(localized: "Add to favorites"))
+            .accessibilityAddTraits(.isButton)
         }
         .padding(.vertical, 4)
+    }
+    
+    private var accessibilityCardLabel: String {
+        var label = "\(card.name), \(card.storeName)"
+        if !card.cardNumber.isEmpty {
+            label += ", " + String(localized: "card number") + " \(card.cardNumber)"
+        }
+        return label
+    }
+    
+    private func accessibilityExpirationLabel(_ date: Date) -> String {
+        if card.isExpired {
+            return String(localized: "Expired on") + " \(formatShortDate(date))"
+        } else if card.isExpiringSoon {
+            return String(localized: "Expiring soon on") + " \(formatShortDate(date))"
+        } else {
+            return String(localized: "Expires on") + " \(formatShortDate(date))"
+        }
     }
     
     private func formatShortDate(_ date: Date) -> String {
