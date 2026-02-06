@@ -26,7 +26,6 @@ struct CardEditorView: View {
     @State private var selectedColor: Color?
     @State private var isFavorite: Bool
     @State private var showingDeleteConfirmation = false
-    @State private var photoItem: PhotosPickerItem?
     @State private var showingScanner = false
     @State private var scannedBarcode: ScannedBarcode?
     @State private var photoPickerItem: PhotosPickerItem?
@@ -143,12 +142,6 @@ struct CardEditorView: View {
                 Section {
                     TextField("Notes", text: $notes, axis: .vertical)
                         .lineLimit(3...6)
-                }
-                
-                Section {
-                    PhotosPicker(selection: $photoItem, matching: .images) {
-                        Label("Attach Photo", systemImage: "photo")
-                    }
                 }
                 
                 if isEditMode {
