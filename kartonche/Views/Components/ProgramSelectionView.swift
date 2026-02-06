@@ -34,9 +34,12 @@ struct ProgramSelectionView: View {
                                 .padding(.vertical, 4)
                                 .background(Color.secondary.opacity(0.2))
                                 .cornerRadius(4)
+                                .accessibilityLabel(Text("Barcode type"))
                         }
                         .padding(.vertical, 4)
                     }
+                    .accessibilityElement(children: .combine)
+                    .accessibilityLabel("\(program.name ?? merchant.name), \(program.barcodeType.displayName)")
                 }
             }
             .navigationTitle(String(localized: "Choose Program"))

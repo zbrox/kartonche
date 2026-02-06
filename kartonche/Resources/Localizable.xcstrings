@@ -105,6 +105,17 @@
         }
       }
     },
+    "Barcode type" : {
+      "comment" : "Accessibility label for barcode type badge",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "тип баркод"
+          }
+        }
+      }
+    },
     "card number" : {
       "comment" : "Accessibility label for card number",
       "localizations" : {
