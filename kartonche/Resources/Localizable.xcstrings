@@ -83,6 +83,28 @@
         }
       }
     },
+    "Barcode preview" : {
+      "comment" : "Accessibility label for barcode preview image",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Преглед на баркод"
+          }
+        }
+      }
+    },
+    "Barcode for scanning" : {
+      "comment" : "Accessibility label for barcode display",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Баркод за сканиране"
+          }
+        }
+      }
+    },
     "card number" : {
       "comment" : "Accessibility label for card number",
       "localizations" : {
@@ -405,6 +427,17 @@
         }
       }
     },
+    "Opens camera to scan barcode" : {
+      "comment" : "Accessibility hint for camera scan button",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отваря камера за сканиране на баркод"
+          }
+        }
+      }
+    },
     "No Cards" : {
       "comment" : "Empty state title",
       "localizations" : {
@@ -508,6 +541,17 @@
         }
       }
     },
+    "Select photo from library to scan barcode" : {
+      "comment" : "Accessibility hint for photo scan button",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Избира снимка от библиотеката за сканиране на баркод"
+          }
+        }
+      }
+    },
     "Search" : {
       "comment" : "Search action",
       "localizations" : {
@@ -538,6 +582,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Изберете кой баркод да използвате"
+          }
+        }
+      }
+    },
+    "Show this to the cashier to scan" : {
+      "comment" : "Accessibility hint for barcode display",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Покажете това на касиера за сканиране"
           }
         }
       }

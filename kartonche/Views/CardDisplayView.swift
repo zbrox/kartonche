@@ -44,6 +44,8 @@ struct CardDisplayView: View {
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 24)
                 .background(primaryColor)
+                .accessibilityElement(children: .combine)
+                .accessibilityLabel("\(card.name), \(card.storeName)" + (card.cardNumber.isEmpty ? "" : ", " + String(localized: "card number") + " \(card.cardNumber)"))
                 
                 Spacer()
                 
@@ -54,6 +56,9 @@ struct CardDisplayView: View {
                 )
                 .frame(maxWidth: .infinity)
                 .padding(.horizontal, 32)
+                .accessibilityLabel(String(localized: "Barcode for scanning"))
+                .accessibilityValue("\(card.barcodeType.displayName), \(card.barcodeData)")
+                .accessibilityHint(String(localized: "Show this to the cashier to scan"))
                 
                 Spacer()
                 
