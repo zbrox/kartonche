@@ -74,8 +74,11 @@ struct CardEditorView: View {
             Form {
                 Section {
                     TextField("Card Name", text: $name)
+                        .accessibilityIdentifier("cardNameField")
                     TextField("Store Name", text: $storeName)
+                        .accessibilityIdentifier("storeNameField")
                     TextField("Card Number", text: $cardNumber)
+                        .accessibilityIdentifier("cardNumberField")
                 }
                 
                 Section {
@@ -85,6 +88,7 @@ struct CardEditorView: View {
                         } label: {
                             Label(String(localized: "Scan Barcode"), systemImage: "barcode.viewfinder")
                         }
+                        .accessibilityIdentifier("scanBarcodeButton")
                     }
                     
                     Picker("Barcode Type", selection: $barcodeType) {
@@ -92,8 +96,10 @@ struct CardEditorView: View {
                             Text(type.displayName).tag(type)
                         }
                     }
+                    .accessibilityIdentifier("barcodeTypePicker")
                     
                     TextField("Barcode Data", text: $barcodeData)
+                        .accessibilityIdentifier("barcodeDataField")
                     
                     if !barcodeData.isEmpty {
                         BarcodeImageView(data: barcodeData, type: barcodeType)
@@ -143,6 +149,7 @@ struct CardEditorView: View {
                         saveCard()
                     }
                     .disabled(!isValid)
+                    .accessibilityIdentifier("saveButton")
                 }
             }
             .confirmationDialog(

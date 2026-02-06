@@ -31,6 +31,7 @@ struct MerchantSelectionView: View {
                         Label("Ръчно добавяне на карта", systemImage: "plus.circle.fill")
                             .font(.headline)
                     }
+                    .accessibilityIdentifier("customCardButton")
                 }
                 .listRowBackground(Color.accentColor.opacity(0.1))
                 
@@ -43,6 +44,7 @@ struct MerchantSelectionView: View {
                                 } label: {
                                     MerchantRowView(merchant: merchant)
                                 }
+                                .accessibilityIdentifier("merchant_\(merchant.id)")
                             }
                         }
                     }
@@ -59,6 +61,7 @@ struct MerchantSelectionView: View {
                     Button("Отказ") {
                         isPresented = false
                     }
+                    .accessibilityIdentifier("cancelButton")
                 }
             }
         }
