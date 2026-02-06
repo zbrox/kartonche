@@ -109,3 +109,5 @@ Scripts/generate-merchants/.build/
 # mise
 .mise/cache/
 .mise.local.toml
+SPRINT-PLAN.md
+TODO.md
