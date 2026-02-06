@@ -416,6 +416,171 @@
         }
       }
     },
+    "Add Location" : {
+      "comment" : "Button to add a location to a card",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добавяне на местоположение"
+          }
+        }
+      }
+    },
+    "All Cards" : {
+      "comment" : "Section header for all cards",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Всички карти"
+          }
+        }
+      }
+    },
+    "Card will appear when you're nearby" : {
+      "comment" : "Location section footer text",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Картата ще се появи когато сте наблизо"
+          }
+        }
+      }
+    },
+    "Card will appear when you're within this distance" : {
+      "comment" : "Radius slider description",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Картата ще се появи когато сте в това разстояние"
+          }
+        }
+      }
+    },
+    "Coordinates" : {
+      "comment" : "Section header for lat/lng coordinates",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Координати"
+          }
+        }
+      }
+    },
+    "Detection Radius" : {
+      "comment" : "Section header for radius setting",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Радиус на откриване"
+          }
+        }
+      }
+    },
+    "Edit Location" : {
+      "comment" : "Navigation title for editing location",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Редактиране на местоположение"
+          }
+        }
+      }
+    },
+    "Latitude" : {
+      "comment" : "Label for latitude coordinate",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Географска ширина"
+          }
+        }
+      }
+    },
+    "Location Name" : {
+      "comment" : "Label for location name field",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Име на местоположението"
+          }
+        }
+      }
+    },
+    "Locations" : {
+      "comment" : "Section header for locations list",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Местоположения"
+          }
+        }
+      }
+    },
+    "Longitude" : {
+      "comment" : "Label for longitude coordinate",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Географска дължина"
+          }
+        }
+      }
+    },
+    "Nearby" : {
+      "comment" : "Section header for nearby cards",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Наблизо"
+          }
+        }
+      }
+    },
+    "Radius: %dm" : {
+      "comment" : "Location radius display",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Радиус: %dm"
+          }
+        }
+      }
+    },
+    "Search Address" : {
+      "comment" : "Placeholder for address search field",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Търсене на адрес"
+          }
+        }
+      }
+    },
+    "Search Results" : {
+      "comment" : "Section header for address search results",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Резултати от търсенето"
+          }
+        }
+      }
+    },
     "Multiple Barcodes Found" : {
       "comment" : "Alert title when multiple barcodes detected",
       "localizations" : {
