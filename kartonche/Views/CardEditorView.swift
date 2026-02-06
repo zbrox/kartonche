@@ -25,6 +25,8 @@ struct CardEditorView: View {
     @State private var notes: String
     @State private var selectedColor: Color?
     @State private var isFavorite: Bool
+    @State private var expirationDate: Date?
+    @State private var hasExpirationDate: Bool
     @State private var showingDeleteConfirmation = false
     @State private var showingScanner = false
     @State private var scannedBarcode: ScannedBarcode?
@@ -50,6 +52,8 @@ struct CardEditorView: View {
             _notes = State(initialValue: card.notes ?? "")
             _selectedColor = State(initialValue: card.color.flatMap { Color(hex: $0) })
             _isFavorite = State(initialValue: card.isFavorite)
+            _expirationDate = State(initialValue: card.expirationDate)
+            _hasExpirationDate = State(initialValue: card.expirationDate != nil)
         } else if let merchant = merchantTemplate, let program = program {
             // New card from merchant template
             _name = State(initialValue: program.name ?? merchant.name)
@@ -60,6 +64,8 @@ struct CardEditorView: View {
             _notes = State(initialValue: "")
             _selectedColor = State(initialValue: Color(hex: merchant.suggestedColor))
             _isFavorite = State(initialValue: false)
+            _expirationDate = State(initialValue: nil)
+            _hasExpirationDate = State(initialValue: false)
         } else {
             // New custom card - empty
             _name = State(initialValue: "")
@@ -70,6 +76,8 @@ struct CardEditorView: View {
             _notes = State(initialValue: "")
             _selectedColor = State(initialValue: nil)
             _isFavorite = State(initialValue: false)
+            _expirationDate = State(initialValue: nil)
+            _hasExpirationDate = State(initialValue: false)
         }
     }
     
@@ -137,6 +145,27 @@ struct CardEditorView: View {
                     ), supportsOpacity: false)
                     
                     Toggle("Favorite", isOn: $isFavorite)
+                }
+                
+                Section {
+                    Toggle(String(localized: "Has Expiration Date"), isOn: $hasExpirationDate)
+                        .onChange(of: hasExpirationDate) { oldValue, newValue in
+                            if newValue && expirationDate == nil {
+                                // Initialize with a date 1 year from now when toggle is enabled
+                                expirationDate = Calendar.current.date(byAdding: .year, value: 1, to: Date())
+                            }
+                        }
+                    
+                    if hasExpirationDate {
+                        DatePicker(
+                            String(localized: "Expiration Date"),
+                            selection: Binding(
+                                get: { expirationDate ?? Date() },
+                                set: { expirationDate = $0 }
+                            ),
+                            displayedComponents: .date
+                        )
+                    }
                 }
                 
                 Section {
@@ -271,6 +300,7 @@ struct CardEditorView: View {
             existingCard.color = selectedColor?.toHex()
             existingCard.secondaryColor = merchantTemplate?.secondaryColor
             existingCard.isFavorite = isFavorite
+            existingCard.expirationDate = hasExpirationDate ? expirationDate : nil
         } else {
             let newCard = LoyaltyCard(
                 name: name,
@@ -281,7 +311,8 @@ struct CardEditorView: View {
                 color: selectedColor?.toHex(),
                 secondaryColor: merchantTemplate?.secondaryColor,
                 notes: notes.isEmpty ? nil : notes,
-                isFavorite: isFavorite
+                isFavorite: isFavorite,
+                expirationDate: hasExpirationDate ? expirationDate : nil
             )
             modelContext.insert(newCard)
         }

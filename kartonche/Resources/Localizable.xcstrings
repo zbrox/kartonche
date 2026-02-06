@@ -194,6 +194,41 @@
         }
       }
     },
+    "Expiration Date" : {
+      "comment" : "Label for expiration date picker",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дата на изтичане"
+          }
+        }
+      }
+    },
+    "Expired" : {
+      "comment" : "Badge for expired cards",
+      "extractionState" : "stale",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изтекла"
+          }
+        }
+      }
+    },
+    "Expiring Soon" : {
+      "comment" : "Badge and sort option for cards expiring soon",
+      "extractionState" : "stale",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изтича скоро"
+          }
+        }
+      }
+    },
     "Failed to create barcode filter" : {
       "comment" : "Error message for barcode filter creation",
       "localizations" : {
@@ -246,6 +281,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Любими"
+          }
+        }
+      }
+    },
+    "Has Expiration Date" : {
+      "comment" : "Toggle for enabling expiration date",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Има дата на изтичане"
           }
         }
       }

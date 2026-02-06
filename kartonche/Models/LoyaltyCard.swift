@@ -22,6 +22,7 @@ final class LoyaltyCard {
     var isFavorite: Bool
     var createdDate: Date
     var lastUsedDate: Date?
+    var expirationDate: Date?
     
     @Attribute(.externalStorage)
     var cardImage: Data?
@@ -39,6 +40,7 @@ final class LoyaltyCard {
         isFavorite: Bool = false,
         createdDate: Date = Date(),
         lastUsedDate: Date? = nil,
+        expirationDate: Date? = nil,
         cardImage: Data? = nil
     ) {
         self.id = id
@@ -53,6 +55,20 @@ final class LoyaltyCard {
         self.isFavorite = isFavorite
         self.createdDate = createdDate
         self.lastUsedDate = lastUsedDate
+        self.expirationDate = expirationDate
         self.cardImage = cardImage
+    }
+    
+    /// Returns true if the card has expired
+    var isExpired: Bool {
+        guard let expirationDate = expirationDate else { return false }
+        return expirationDate < Date()
+    }
+    
+    /// Returns true if the card expires within the next 30 days
+    var isExpiringSoon: Bool {
+        guard let expirationDate = expirationDate else { return false }
+        let thirtyDaysFromNow = Calendar.current.date(byAdding: .day, value: 30, to: Date()) ?? Date()
+        return expirationDate > Date() && expirationDate <= thirtyDaysFromNow
     }
 }
