@@ -18,19 +18,10 @@ merchant id="bg.kaufland" {
     name "Kaufland"
     other-names "Кауфланд"
     category "grocery"
+    barcode-type "ean13"
     website "https://www.kaufland.bg"
     suggested-color "#FF0000"
     secondary-color "#FFFFFF"
-    
-    program id="regular" {
-        name "Kaufland Card"
-        barcode-type "ean13"
-    }
-    
-    program id="plus" {
-        name "Kaufland Card Plus"
-        barcode-type "ean13"
-    }
 }
 
 merchant id="bg.lidl" {
@@ -139,8 +130,8 @@ merchant id="bg.subra" {
 // Retail
 
 merchant id="bg.dm" {
-    name "dm drogerie markt"
-    other-names "дм" "dm"
+    name "dm"
+    other-names "дм" "dm drogerie markt"
     category "retail"
     barcode-type "qr"
     website "https://www.dm.bg"
