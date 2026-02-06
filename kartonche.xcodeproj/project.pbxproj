@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0B91F2C42F36A2FC003F33AC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B91F2C32F36A2FC003F33AC /* WidgetKit.framework */; };
+		0B91F2C62F36A2FC003F33AC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B91F2C52F36A2FC003F33AC /* SwiftUI.framework */; };
+		0B91F2D72F36A2FD003F33AC /* kartoncheWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0B91F2C12F36A2FC003F33AC /* kartoncheWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		0B5B57B72F33F2C9005DCCA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -21,17 +27,74 @@
 			remoteGlobalIDString = 0B5B57A62F33F2C8005DCCA8;
 			remoteInfo = kartonche;
 		};
+		0B91F2D52F36A2FD003F33AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B5B579F2F33F2C8005DCCA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B91F2C02F36A2FC003F33AC;
+			remoteInfo = kartoncheWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0B91F2DC2F36A2FD003F33AC /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0B91F2D72F36A2FD003F33AC /* kartoncheWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0B5B57A72F33F2C8005DCCA8 /* kartonche.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kartonche.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5B57B62F33F2C9005DCCA8 /* kartoncheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kartoncheTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5B57C02F33F2C9005DCCA8 /* kartoncheUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kartoncheUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B91F2C12F36A2FC003F33AC /* kartoncheWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = kartoncheWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B91F2C32F36A2FC003F33AC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		0B91F2C52F36A2FC003F33AC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		0B91F2DE2F36A36A003F33AC /* kartoncheWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kartoncheWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		0B91F2D82F36A2FD003F33AC /* Exceptions for "kartoncheWidget" folder in "kartoncheWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 0B91F2C02F36A2FC003F33AC /* kartoncheWidgetExtension */;
+		};
+		0B91F2E42F36A425003F33AC /* Exceptions for "kartonche" folder in "kartoncheWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/BarcodeType.swift,
+				Models/CardLocation.swift,
+				Models/LoyaltyCard.swift,
+				Utilities/BarcodeGenerator.swift,
+				Utilities/SharedDataManager.swift,
+			);
+			target = 0B91F2C02F36A2FC003F33AC /* kartoncheWidgetExtension */;
+		};
+		0B91F2EA2F36A4FE003F33AC /* Exceptions for "kartonche" folder in "kartonche" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 0B5B57A62F33F2C8005DCCA8 /* kartonche */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		0B5B57A92F33F2C8005DCCA8 /* kartonche */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				0B91F2EA2F36A4FE003F33AC /* Exceptions for "kartonche" folder in "kartonche" target */,
+				0B91F2E42F36A425003F33AC /* Exceptions for "kartonche" folder in "kartoncheWidgetExtension" target */,
+			);
 			path = kartonche;
 			sourceTree = "<group>";
 		};
@@ -43,6 +106,14 @@
 		0B5B57C32F33F2C9005DCCA8 /* kartoncheUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = kartoncheUITests;
+			sourceTree = "<group>";
+		};
+		0B91F2C72F36A2FC003F33AC /* kartoncheWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				0B91F2D82F36A2FD003F33AC /* Exceptions for "kartoncheWidget" folder in "kartoncheWidgetExtension" target */,
+			);
+			path = kartoncheWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -69,15 +140,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0B91F2BE2F36A2FC003F33AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B91F2C62F36A2FC003F33AC /* SwiftUI.framework in Frameworks */,
+				0B91F2C42F36A2FC003F33AC /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		0B5B579E2F33F2C8005DCCA8 = {
 			isa = PBXGroup;
 			children = (
+				0B91F2DE2F36A36A003F33AC /* kartoncheWidgetExtension.entitlements */,
 				0B5B57A92F33F2C8005DCCA8 /* kartonche */,
 				0B5B57B92F33F2C9005DCCA8 /* kartoncheTests */,
 				0B5B57C32F33F2C9005DCCA8 /* kartoncheUITests */,
+				0B91F2C72F36A2FC003F33AC /* kartoncheWidget */,
+				0B91F2C22F36A2FC003F33AC /* Frameworks */,
 				0B5B57A82F33F2C8005DCCA8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,8 +171,18 @@
 				0B5B57A72F33F2C8005DCCA8 /* kartonche.app */,
 				0B5B57B62F33F2C9005DCCA8 /* kartoncheTests.xctest */,
 				0B5B57C02F33F2C9005DCCA8 /* kartoncheUITests.xctest */,
+				0B91F2C12F36A2FC003F33AC /* kartoncheWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0B91F2C22F36A2FC003F33AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B91F2C32F36A2FC003F33AC /* WidgetKit.framework */,
+				0B91F2C52F36A2FC003F33AC /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,10 +195,12 @@
 				0B5B57A32F33F2C8005DCCA8 /* Sources */,
 				0B5B57A42F33F2C8005DCCA8 /* Frameworks */,
 				0B5B57A52F33F2C8005DCCA8 /* Resources */,
+				0B91F2DC2F36A2FD003F33AC /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0B91F2D62F36A2FD003F33AC /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				0B5B57A92F33F2C8005DCCA8 /* kartonche */,
@@ -163,6 +258,28 @@
 			productReference = 0B5B57C02F33F2C9005DCCA8 /* kartoncheUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		0B91F2C02F36A2FC003F33AC /* kartoncheWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B91F2D92F36A2FD003F33AC /* Build configuration list for PBXNativeTarget "kartoncheWidgetExtension" */;
+			buildPhases = (
+				0B91F2BD2F36A2FC003F33AC /* Sources */,
+				0B91F2BE2F36A2FC003F33AC /* Frameworks */,
+				0B91F2BF2F36A2FC003F33AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				0B91F2C72F36A2FC003F33AC /* kartoncheWidget */,
+			);
+			name = kartoncheWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = kartoncheWidgetExtension;
+			productReference = 0B91F2C12F36A2FC003F33AC /* kartoncheWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -184,6 +301,9 @@
 						CreatedOnToolsVersion = 26.2;
 						TestTargetID = 0B5B57A62F33F2C8005DCCA8;
 					};
+					0B91F2C02F36A2FC003F33AC = {
+						CreatedOnToolsVersion = 26.2;
+					};
 				};
 			};
 			buildConfigurationList = 0B5B57A22F33F2C8005DCCA8 /* Build configuration list for PBXProject "kartonche" */;
@@ -203,6 +323,7 @@
 				0B5B57A62F33F2C8005DCCA8 /* kartonche */,
 				0B5B57B52F33F2C9005DCCA8 /* kartoncheTests */,
 				0B5B57BF2F33F2C9005DCCA8 /* kartoncheUITests */,
+				0B91F2C02F36A2FC003F33AC /* kartoncheWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +344,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0B5B57BE2F33F2C9005DCCA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B91F2BF2F36A2FC003F33AC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,6 +381,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0B91F2BD2F36A2FC003F33AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -265,6 +400,11 @@
 			isa = PBXTargetDependency;
 			target = 0B5B57A62F33F2C8005DCCA8 /* kartonche */;
 			targetProxy = 0B5B57C12F33F2C9005DCCA8 /* PBXContainerItemProxy */;
+		};
+		0B91F2D62F36A2FD003F33AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B91F2C02F36A2FC003F33AC /* kartoncheWidgetExtension */;
+			targetProxy = 0B91F2D52F36A2FD003F33AC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -393,11 +533,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = kartonche/kartonche.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 55YA5S73Z7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = kartonche/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Камерата се използва за сканиране на баркодове от вашите клубни карти.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Местоположението се използва за показване на близки клубни карти.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Достъпът до снимките се използва за сканиране на баркодове от снимки.";
@@ -428,11 +570,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = kartonche/kartonche.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 55YA5S73Z7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = kartonche/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Камерата се използва за сканиране на баркодове от вашите клубни карти.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Местоположението се използва за показване на близки клубни карти.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Достъпът до снимките се използва за сканиране на баркодове от снимки.";
@@ -538,6 +682,68 @@
 			};
 			name = Release;
 		};
+		0B91F2DA2F36A2FD003F33AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = kartoncheWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 55YA5S73Z7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = kartoncheWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = kartoncheWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zbrox.kartonche.kartoncheWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0B91F2DB2F36A2FD003F33AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = kartoncheWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 55YA5S73Z7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = kartoncheWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = kartoncheWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zbrox.kartonche.kartoncheWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -573,6 +779,15 @@
 			buildConfigurations = (
 				0B5B57D12F33F2C9005DCCA8 /* Debug */,
 				0B5B57D22F33F2C9005DCCA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0B91F2D92F36A2FD003F33AC /* Build configuration list for PBXNativeTarget "kartoncheWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B91F2DA2F36A2FD003F33AC /* Debug */,
+				0B91F2DB2F36A2FD003F33AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
