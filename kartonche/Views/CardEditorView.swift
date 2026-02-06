@@ -101,6 +101,7 @@ struct CardEditorView: View {
                             Label(String(localized: "Scan Barcode"), systemImage: "barcode.viewfinder")
                         }
                         .accessibilityIdentifier("scanBarcodeButton")
+                        .accessibilityHint(String(localized: "Opens camera to scan barcode"))
                     }
                     
                     PhotosPicker(selection: $photoPickerItem, matching: .images) {
@@ -108,6 +109,7 @@ struct CardEditorView: View {
                     }
                     .disabled(isProcessingPhoto)
                     .accessibilityIdentifier("scanPhotoButton")
+                    .accessibilityHint(String(localized: "Select photo from library to scan barcode"))
                     
                     if isProcessingPhoto {
                         HStack {
@@ -135,6 +137,8 @@ struct CardEditorView: View {
                     if !barcodeData.isEmpty {
                         BarcodeImageView(data: barcodeData, type: barcodeType)
                             .frame(height: 120)
+                            .accessibilityLabel(String(localized: "Barcode preview"))
+                            .accessibilityValue("\(barcodeType.displayName), \(barcodeData)")
                     }
                 }
                 
