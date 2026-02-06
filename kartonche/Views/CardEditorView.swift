@@ -192,6 +192,7 @@ struct CardEditorView: View {
                     Button(String(localized: "Cancel")) {
                         dismiss()
                     }
+                    .accessibilityIdentifier("cancelButton")
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {

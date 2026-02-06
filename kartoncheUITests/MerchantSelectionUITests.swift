@@ -166,7 +166,7 @@ final class MerchantSelectionUITests: XCTestCase {
         cardNameField.typeText("Test")
         
         // Tap cancel
-        app.buttons["Cancel"].tap()
+        app.buttons["cancelButton"].tap()
         
         // Should return to main screen
         XCTAssertTrue(app.buttons["addCardButton"].waitForExistence(timeout: 3), "Should return to main screen")
