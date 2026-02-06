@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 import CoreLocation
+import WidgetKit
 
 struct PendingCard: Identifiable {
     let id = UUID()
@@ -17,6 +18,7 @@ struct PendingCard: Identifiable {
 
 struct CardListView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.openURL) private var openURL
     @Query private var allCards: [LoyaltyCard]
     
     @State private var searchText = ""
@@ -25,6 +27,7 @@ struct CardListView: View {
     @State private var merchantForProgramSelection: MerchantTemplate?
     @State private var pendingCard: PendingCard?
     @State private var selectedCard: LoyaltyCard?
+    @State private var navigationPath = NavigationPath()
     @StateObject private var locationManager = LocationManager()
     
     enum SortOption: String, CaseIterable {
@@ -84,7 +87,7 @@ struct CardListView: View {
     }
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $navigationPath) {
             Group {
                 if filteredAndSortedCards.isEmpty {
                     emptyStateView
@@ -96,6 +99,9 @@ struct CardListView: View {
             .navigationDestination(for: LoyaltyCard.self) { card in
                 CardDisplayView(card: card)
                     .navigationBarHidden(true)
+            }
+            .onOpenURL { url in
+                handleDeepLink(url)
             }
             .searchable(text: $searchText, prompt: String(localized: "Search"))
             .toolbar {
@@ -261,6 +267,9 @@ struct CardListView: View {
         withAnimation {
             modelContext.delete(card)
         }
+        
+        // Reload all widgets since card was deleted
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     private func deleteCards(offsets: IndexSet) {
@@ -268,6 +277,24 @@ struct CardListView: View {
             for index in offsets {
                 modelContext.delete(filteredAndSortedCards[index])
             }
+        }
+        
+        // Reload all widgets since cards were deleted
+        WidgetCenter.shared.reloadAllTimelines()
+    }
+    
+    private func handleDeepLink(_ url: URL) {
+        guard url.scheme == "kartonche",
+              url.host == "card",
+              let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
+              let queryItems = components.queryItems,
+              let idString = queryItems.first(where: { $0.name == "id" })?.value,
+              let cardID = UUID(uuidString: idString) else {
+            return
+        }
+        
+        if let card = allCards.first(where: { $0.id == cardID }) {
+            navigationPath.append(card)
         }
     }
 }

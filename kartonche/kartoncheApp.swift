@@ -10,28 +10,13 @@ import SwiftData
 
 @main
 struct kartoncheApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            LoyaltyCard.self,
-            CardLocation.self,
-        ])
-        let modelConfiguration = ModelConfiguration(
-            schema: schema,
-            isStoredInMemoryOnly: false,
-            cloudKitDatabase: .none
-        )
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    var sharedModelContainer: ModelContainer = SharedDataManager.createSharedModelContainer()
 
     var body: some Scene {
         WindowGroup {
             CardListView()
         }
         .modelContainer(sharedModelContainer)
+        .handlesExternalEvents(matching: ["*"])
     }
 }

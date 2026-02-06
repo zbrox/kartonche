@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 import PhotosUI
+import WidgetKit
 
 /// Editor view for creating or modifying a loyalty card
 struct CardEditorView: View {
@@ -405,6 +406,9 @@ struct CardEditorView: View {
             }
         }
         
+        // Reload all widgets to show updated card data
+        WidgetCenter.shared.reloadAllTimelines()
+        
         dismiss()
     }
     
@@ -415,6 +419,10 @@ struct CardEditorView: View {
                 await NotificationManager.shared.cancelNotifications(for: card)
             }
             modelContext.delete(card)
+            
+            // Reload all widgets since card was deleted
+            WidgetCenter.shared.reloadAllTimelines()
+            
             dismiss()
         }
     }
