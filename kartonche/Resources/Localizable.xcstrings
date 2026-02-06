@@ -51,6 +51,7 @@
     },
     "Attach Photo" : {
       "comment" : "Button to attach photo to card",
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
