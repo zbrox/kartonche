@@ -1,7 +1,20 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@, %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@, %2$@"
+          }
+        }
+      }
+    },
     "%lld програми" : {
+
+    },
+    "%lldm" : {
 
     },
     "Add Card" : {
@@ -11,6 +24,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Добавяне на карта"
+          }
+        }
+      }
+    },
+    "Add Location" : {
+      "comment" : "Button to add a location to a card",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добавяне на местоположение"
           }
         }
       }
@@ -33,6 +57,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Добавете първата си клубна карта"
+          }
+        }
+      }
+    },
+    "All Cards" : {
+      "comment" : "Section header for all cards",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Всички карти"
           }
         }
       }
@@ -83,17 +118,6 @@
         }
       }
     },
-    "Barcode preview" : {
-      "comment" : "Accessibility label for barcode preview image",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Преглед на баркод"
-          }
-        }
-      }
-    },
     "Barcode for scanning" : {
       "comment" : "Accessibility label for barcode display",
       "localizations" : {
@@ -105,6 +129,17 @@
         }
       }
     },
+    "Barcode preview" : {
+      "comment" : "Accessibility label for barcode preview image",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Преглед на баркод"
+          }
+        }
+      }
+    },
     "Barcode type" : {
       "comment" : "Accessibility label for barcode type badge",
       "localizations" : {
@@ -112,17 +147,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "тип баркод"
-          }
-        }
-      }
-    },
-    "card number" : {
-      "comment" : "Accessibility label for card number",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "номер на карта"
           }
         }
       }
@@ -171,6 +195,17 @@
         }
       }
     },
+    "card number" : {
+      "comment" : "Accessibility label for card number",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "номер на карта"
+          }
+        }
+      }
+    },
     "Card Number" : {
       "comment" : "Label for card number field",
       "localizations" : {
@@ -178,6 +213,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Номер на картата"
+          }
+        }
+      }
+    },
+    "Card will appear when you're nearby" : {
+      "comment" : "Location section footer text",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Картата ще се появи когато сте наблизо"
+          }
+        }
+      }
+    },
+    "Card will appear when you're within this distance" : {
+      "comment" : "Radius slider description",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Картата ще се появи когато сте в това разстояние"
           }
         }
       }
@@ -204,6 +261,17 @@
         }
       }
     },
+    "Coordinates" : {
+      "comment" : "Section header for lat/lng coordinates",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Координати"
+          }
+        }
+      }
+    },
     "Delete" : {
       "comment" : "Button to delete an item",
       "localizations" : {
@@ -211,6 +279,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Изтриване"
+          }
+        }
+      }
+    },
+    "Detection Radius" : {
+      "comment" : "Section header for radius setting",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Радиус на откриване"
           }
         }
       }
@@ -249,6 +328,17 @@
         }
       }
     },
+    "Edit Location" : {
+      "comment" : "Navigation title for editing location",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Редактиране на местоположение"
+          }
+        }
+      }
+    },
     "Expiration Date" : {
       "comment" : "Label for expiration date picker",
       "localizations" : {
@@ -262,6 +352,7 @@
     },
     "Expired" : {
       "comment" : "Badge for expired cards",
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -293,17 +384,6 @@
         }
       }
     },
-    "Expiring soon on" : {
-      "comment" : "Accessibility label for card expiring soon",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изтича скоро на"
-          }
-        }
-      }
-    },
     "Expiring Soon" : {
       "comment" : "Badge and sort option for cards expiring soon",
       "extractionState" : "stale",
@@ -312,6 +392,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Изтича скоро"
+          }
+        }
+      }
+    },
+    "Expiring soon on" : {
+      "comment" : "Accessibility label for card expiring soon",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изтича скоро на"
           }
         }
       }
@@ -405,94 +496,6 @@
         }
       }
     },
-    "Loyalty Cards" : {
-      "comment" : "Main screen title",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Клубни карти"
-          }
-        }
-      }
-    },
-    "Add Location" : {
-      "comment" : "Button to add a location to a card",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавяне на местоположение"
-          }
-        }
-      }
-    },
-    "All Cards" : {
-      "comment" : "Section header for all cards",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Всички карти"
-          }
-        }
-      }
-    },
-    "Card will appear when you're nearby" : {
-      "comment" : "Location section footer text",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картата ще се появи когато сте наблизо"
-          }
-        }
-      }
-    },
-    "Card will appear when you're within this distance" : {
-      "comment" : "Radius slider description",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картата ще се появи когато сте в това разстояние"
-          }
-        }
-      }
-    },
-    "Coordinates" : {
-      "comment" : "Section header for lat/lng coordinates",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Координати"
-          }
-        }
-      }
-    },
-    "Detection Radius" : {
-      "comment" : "Section header for radius setting",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Радиус на откриване"
-          }
-        }
-      }
-    },
-    "Edit Location" : {
-      "comment" : "Navigation title for editing location",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Редактиране на местоположение"
-          }
-        }
-      }
-    },
     "Latitude" : {
       "comment" : "Label for latitude coordinate",
       "localizations" : {
@@ -537,46 +540,13 @@
         }
       }
     },
-    "Nearby" : {
-      "comment" : "Section header for nearby cards",
+    "Loyalty Cards" : {
+      "comment" : "Main screen title",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Наблизо"
-          }
-        }
-      }
-    },
-    "Radius: %dm" : {
-      "comment" : "Location radius display",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Радиус: %dm"
-          }
-        }
-      }
-    },
-    "Search Address" : {
-      "comment" : "Placeholder for address search field",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Търсене на адрес"
-          }
-        }
-      }
-    },
-    "Search Results" : {
-      "comment" : "Section header for address search results",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Резултати от търсенето"
+            "value" : "Клубни карти"
           }
         }
       }
@@ -592,6 +562,17 @@
         }
       }
     },
+    "Nearby" : {
+      "comment" : "Section header for nearby cards",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Наблизо"
+          }
+        }
+      }
+    },
     "No barcodes found in image" : {
       "comment" : "Error message when no barcodes detected",
       "localizations" : {
@@ -599,17 +580,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Няма открити баркодове в изображението"
-          }
-        }
-      }
-    },
-    "Opens camera to scan barcode" : {
-      "comment" : "Accessibility hint for camera scan button",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отваря камера за сканиране на баркод"
           }
         }
       }
@@ -646,6 +616,35 @@
           }
         }
       }
+    },
+    "Opens camera to scan barcode" : {
+      "comment" : "Accessibility hint for camera scan button",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отваря камера за сканиране на баркод"
+          }
+        }
+      }
+    },
+    "programs" : {
+
+    },
+    "Radius: %dm" : {
+      "comment" : "Location radius display",
+      "extractionState" : "stale",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Радиус: %dm"
+          }
+        }
+      }
+    },
+    "Radius: %lldm" : {
+
     },
     "Recent" : {
       "comment" : "Sort option by recently used",
@@ -717,17 +716,6 @@
         }
       }
     },
-    "Select photo from library to scan barcode" : {
-      "comment" : "Accessibility hint for photo scan button",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избира снимка от библиотеката за сканиране на баркод"
-          }
-        }
-      }
-    },
     "Search" : {
       "comment" : "Search action",
       "localizations" : {
@@ -735,6 +723,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Търсене"
+          }
+        }
+      }
+    },
+    "Search Address" : {
+      "comment" : "Placeholder for address search field",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Търсене на адрес"
+          }
+        }
+      }
+    },
+    "Search Results" : {
+      "comment" : "Section header for address search results",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Резултати от търсенето"
           }
         }
       }
@@ -751,6 +761,17 @@
         }
       }
     },
+    "Select photo from library to scan barcode" : {
+      "comment" : "Accessibility hint for photo scan button",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Избира снимка от библиотеката за сканиране на баркод"
+          }
+        }
+      }
+    },
     "Select which barcode to use" : {
       "comment" : "Alert message for multiple barcode selection",
       "localizations" : {
@@ -758,17 +779,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Изберете кой баркод да използвате"
-          }
-        }
-      }
-    },
-    "Show this to the cashier to scan" : {
-      "comment" : "Accessibility hint for barcode display",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Покажете това на касиера за сканиране"
           }
         }
       }
@@ -781,6 +791,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Настройки"
+          }
+        }
+      }
+    },
+    "Show this to the cashier to scan" : {
+      "comment" : "Accessibility hint for barcode display",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Покажете това на касиера за сканиране"
           }
         }
       }
