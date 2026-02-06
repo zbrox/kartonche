@@ -126,6 +126,17 @@
         }
       }
     },
+    "Choose Program" : {
+      "comment" : "Title for program selection view when merchant has multiple loyalty programs",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изберете програма"
+          }
+        }
+      }
+    },
     "Close" : {
       "comment" : "Button to dismiss a view",
       "localizations" : {

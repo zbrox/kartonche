@@ -21,6 +21,7 @@ struct CardListView: View {
     @State private var searchText = ""
     @State private var sortOption: SortOption = .alphabetical
     @State private var showingMerchantSelection = false
+    @State private var merchantForProgramSelection: MerchantTemplate?
     @State private var pendingCard: PendingCard?
     @State private var selectedCard: LoyaltyCard?
     
@@ -89,8 +90,29 @@ struct CardListView: View {
             }
             .sheet(isPresented: $showingMerchantSelection) {
                 MerchantSelectionView(isPresented: $showingMerchantSelection) { merchant, program in
+                    if merchant.programs.count > 1 {
+                        merchantForProgramSelection = merchant
+                        showingMerchantSelection = false
+                    } else {
+                        pendingCard = PendingCard(merchant: merchant, program: program)
+                        showingMerchantSelection = false
+                    }
+                }
+            }
+            .sheet(item: $merchantForProgramSelection) { merchant in
+                ProgramSelectionView(
+                    merchant: merchant,
+                    isPresented: Binding(
+                        get: { merchantForProgramSelection != nil },
+                        set: { newValue in
+                            if !newValue {
+                                merchantForProgramSelection = nil
+                            }
+                        }
+                    )
+                ) { program in
                     pendingCard = PendingCard(merchant: merchant, program: program)
-                    showingMerchantSelection = false
+                    merchantForProgramSelection = nil
                 }
             }
             .sheet(item: $pendingCard) { pending in
@@ -143,6 +165,7 @@ struct CardListView: View {
                     showingMerchantSelection = true
                 }
                 .buttonStyle(.borderedProminent)
+                .accessibilityIdentifier("addCardButton")
             }
         }
     }
