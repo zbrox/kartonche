@@ -165,9 +165,16 @@ struct CardEditorView: View {
                 Section {
                     Toggle(String(localized: "Has Expiration Date"), isOn: $hasExpirationDate)
                         .onChange(of: hasExpirationDate) { oldValue, newValue in
-                            if newValue && expirationDate == nil {
+                            if newValue {
                                 // Initialize with a date 1 year from now when toggle is enabled
-                                expirationDate = Calendar.current.date(byAdding: .year, value: 1, to: Date())
+                                if expirationDate == nil {
+                                    expirationDate = Calendar.current.date(byAdding: .year, value: 1, to: Date())
+                                }
+                                
+                                // Request notification permission when user enables expiration tracking
+                                Task {
+                                    await NotificationManager.shared.requestPermission()
+                                }
                             }
                         }
                     
@@ -352,6 +359,8 @@ struct CardEditorView: View {
     }
     
     private func saveCard() {
+        let savedCard: LoyaltyCard
+        
         if let existingCard = card {
             existingCard.name = name
             existingCard.storeName = storeName
@@ -363,6 +372,7 @@ struct CardEditorView: View {
             existingCard.secondaryColor = merchantTemplate?.secondaryColor
             existingCard.isFavorite = isFavorite
             existingCard.expirationDate = hasExpirationDate ? expirationDate : nil
+            savedCard = existingCard
         } else {
             let newCard = LoyaltyCard(
                 name: name,
@@ -383,6 +393,16 @@ struct CardEditorView: View {
                 location.card = newCard
                 modelContext.insert(location)
             }
+            savedCard = newCard
+        }
+        
+        // Schedule or cancel expiration notifications
+        Task {
+            if hasExpirationDate && expirationDate != nil {
+                await NotificationManager.shared.scheduleExpirationNotifications(for: savedCard)
+            } else {
+                await NotificationManager.shared.cancelNotifications(for: savedCard)
+            }
         }
         
         dismiss()
@@ -390,6 +410,10 @@ struct CardEditorView: View {
     
     private func deleteCard() {
         if let card = card {
+            // Cancel any pending notifications
+            Task {
+                await NotificationManager.shared.cancelNotifications(for: card)
+            }
             modelContext.delete(card)
             dismiss()
         }
