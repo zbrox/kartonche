@@ -14,12 +14,10 @@ struct CardRowView: View {
     
     var body: some View {
         HStack(spacing: 12) {
-            // Color indicator
-            if let colorHex = card.color {
-                RoundedRectangle(cornerRadius: 4)
-                    .fill(Color(hex: colorHex) ?? .gray)
-                    .frame(width: 4, height: 44)
-            }
+            // Color indicator (always show for consistent alignment)
+            RoundedRectangle(cornerRadius: 4)
+                .fill(Color(hex: card.color) ?? .accentColor)
+                .frame(width: 4, height: 44)
             
             // Card info
             VStack(alignment: .leading, spacing: 4) {
