@@ -60,8 +60,8 @@ struct BarcodeGenerator {
         
         filter.setValue(dataToEncode, forKey: "inputMessage")
         
-        if type == .qr, let qrFilter = filter as? CIFilter {
-            qrFilter.setValue("M", forKey: "inputCorrectionLevel")
+        if type == .qr {
+            filter.setValue("M", forKey: "inputCorrectionLevel")
         }
         
         guard let outputImage = filter.outputImage else {
