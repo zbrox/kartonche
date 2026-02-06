@@ -9,11 +9,14 @@ import SwiftUI
 import Vision
 import VisionKit
 
-/// SwiftUI wrapper for VisionKit's DataScannerViewController
-/// Scans barcodes using the device camera
+struct ScannedBarcode: Equatable {
+    let data: String
+    let symbology: VNBarcodeSymbology
+}
+
 struct BarcodeScannerView: UIViewControllerRepresentable {
     
-    @Binding var scannedCode: String?
+    @Binding var scannedBarcode: ScannedBarcode?
     let onDismiss: () -> Void
     
     func makeUIViewController(context: Context) -> DataScannerViewController {
@@ -38,23 +41,33 @@ struct BarcodeScannerView: UIViewControllerRepresentable {
         )
         
         scanner.delegate = context.coordinator
+        
+        // Start scanning immediately
+        try? scanner.startScanning()
+        
         return scanner
     }
     
     func updateUIViewController(_ uiViewController: DataScannerViewController, context: Context) {
-        // No updates needed
+        if !uiViewController.isScanning {
+            try? uiViewController.startScanning()
+        }
+    }
+    
+    static func dismantleUIViewController(_ uiViewController: DataScannerViewController, coordinator: Coordinator) {
+        uiViewController.stopScanning()
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(scannedCode: $scannedCode, onDismiss: onDismiss)
+        Coordinator(scannedBarcode: $scannedBarcode, onDismiss: onDismiss)
     }
     
     class Coordinator: NSObject, DataScannerViewControllerDelegate {
-        @Binding var scannedCode: String?
+        @Binding var scannedBarcode: ScannedBarcode?
         let onDismiss: () -> Void
         
-        init(scannedCode: Binding<String?>, onDismiss: @escaping () -> Void) {
-            self._scannedCode = scannedCode
+        init(scannedBarcode: Binding<ScannedBarcode?>, onDismiss: @escaping () -> Void) {
+            self._scannedBarcode = scannedBarcode
             self.onDismiss = onDismiss
         }
         
@@ -62,7 +75,10 @@ struct BarcodeScannerView: UIViewControllerRepresentable {
             switch item {
             case .barcode(let barcode):
                 if let payloadString = barcode.payloadStringValue {
-                    scannedCode = payloadString
+                    scannedBarcode = ScannedBarcode(
+                        data: payloadString,
+                        symbology: barcode.observation.symbology
+                    )
                     onDismiss()
                 }
             default:
@@ -71,11 +87,13 @@ struct BarcodeScannerView: UIViewControllerRepresentable {
         }
         
         func dataScanner(_ dataScanner: DataScannerViewController, didAdd addedItems: [RecognizedItem], allItems: [RecognizedItem]) {
-            // Auto-scan first barcode detected
             for item in addedItems {
                 if case .barcode(let barcode) = item {
                     if let payloadString = barcode.payloadStringValue {
-                        scannedCode = payloadString
+                        scannedBarcode = ScannedBarcode(
+                            data: payloadString,
+                            symbology: barcode.observation.symbology
+                        )
                         onDismiss()
                         return
                     }
@@ -93,7 +111,7 @@ struct BarcodeScannerView: UIViewControllerRepresentable {
 
 #Preview {
     BarcodeScannerView(
-        scannedCode: .constant(nil),
+        scannedBarcode: .constant(nil),
         onDismiss: {}
     )
 }
