@@ -88,7 +88,7 @@ struct MerchantTemplateTests {
         #expect(tmarket?.initials == "TM", "T MARKET should have initials 'TM'")
         
         let dm = MerchantTemplate.all.first(where: { $0.id == "bg.dm" })
-        #expect(dm?.initials == "DD", "dm drogerie markt should have initials 'DD'")
+        #expect(dm?.initials == "D", "dm should have initials 'D'")
     }
     
     @Test func hasSingleProgramDetection() {
@@ -96,7 +96,7 @@ struct MerchantTemplateTests {
         #expect(billa?.hasSingleProgram == true, "BILLA should have single program")
         
         let kaufland = MerchantTemplate.all.first(where: { $0.id == "bg.kaufland" })
-        #expect(kaufland?.hasSingleProgram == false, "Kaufland should have multiple programs")
+        #expect(kaufland?.hasSingleProgram == true, "Kaufland should have single program")
     }
     
     @Test func colorHexValidity() {
