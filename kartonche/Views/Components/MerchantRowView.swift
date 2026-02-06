@@ -22,6 +22,7 @@ struct MerchantRowView: View {
                     .font(.system(size: 18, weight: .bold))
                     .foregroundColor(Color(hex: merchant.secondaryColor) ?? Color.white)
             }
+            .accessibilityHidden(true)
             
             // Merchant info
             VStack(alignment: .leading, spacing: 4) {
@@ -59,6 +60,18 @@ struct MerchantRowView: View {
             }
         }
         .padding(.vertical, 4)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(accessibilityMerchantLabel)
+    }
+    
+    private var accessibilityMerchantLabel: String {
+        var label = merchant.displayName
+        if merchant.hasSingleProgram, let program = merchant.programs.first {
+            label += ", " + program.barcodeType.displayName
+        } else if merchant.programs.count > 1 {
+            label += ", \(merchant.programs.count) " + String(localized: "programs")
+        }
+        return label
     }
 }
 

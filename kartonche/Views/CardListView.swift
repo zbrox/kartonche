@@ -153,6 +153,12 @@ struct CardListView: View {
                         Label(String(localized: "Delete"), systemImage: "trash")
                     }
                 }
+                .accessibilityAction(named: Text("Edit")) {
+                    selectedCard = card
+                }
+                .accessibilityAction(named: Text("Delete")) {
+                    deleteCard(card)
+                }
             }
             .onDelete(perform: deleteCards)
         }
