@@ -318,7 +318,6 @@
     },
     "Scan Barcode" : {
       "comment" : "Button to scan a barcode with camera",
-      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {

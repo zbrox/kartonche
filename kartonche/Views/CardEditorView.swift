@@ -27,6 +27,8 @@ struct CardEditorView: View {
     @State private var isFavorite: Bool
     @State private var showingDeleteConfirmation = false
     @State private var photoItem: PhotosPickerItem?
+    @State private var showingScanner = false
+    @State private var scannedBarcode: ScannedBarcode?
     
     private var isEditMode: Bool { card != nil }
     
@@ -77,6 +79,14 @@ struct CardEditorView: View {
                 }
                 
                 Section {
+                    if BarcodeScannerView.isSupported {
+                        Button {
+                            showingScanner = true
+                        } label: {
+                            Label(String(localized: "Scan Barcode"), systemImage: "barcode.viewfinder")
+                        }
+                    }
+                    
                     Picker("Barcode Type", selection: $barcodeType) {
                         ForEach(BarcodeType.allCases, id: \.self) { type in
                             Text(type.displayName).tag(type)
@@ -143,6 +153,19 @@ struct CardEditorView: View {
                 Button("Delete", role: .destructive) {
                     deleteCard()
                 }
+            }
+            .sheet(isPresented: $showingScanner) {
+                BarcodeScannerView(scannedBarcode: $scannedBarcode) {
+                    showingScanner = false
+                }
+            }
+            .onChange(of: scannedBarcode) { oldValue, newValue in
+                guard let scanned = newValue else { return }
+                barcodeData = scanned.data
+                if let detectedType = BarcodeType(from: scanned.symbology) {
+                    barcodeType = detectedType
+                }
+                scannedBarcode = nil
             }
         }
     }
