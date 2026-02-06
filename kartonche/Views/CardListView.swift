@@ -29,6 +29,7 @@ struct CardListView: View {
         case alphabetical = "Alphabetical"
         case recent = "Recent"
         case favorites = "Favorites"
+        case expiring = "Expiring Soon"
         
         var localizedName: String {
             String(localized: String.LocalizationValue(rawValue))
@@ -59,6 +60,13 @@ struct CardListView: View {
                     return card1.name.localizedCompare(card2.name) == .orderedAscending
                 }
                 return card1.isFavorite && !card2.isFavorite
+            }
+        case .expiring:
+            cards.sort { card1, card2 in
+                // Cards with expiration dates first
+                let date1 = card1.expirationDate ?? .distantFuture
+                let date2 = card2.expirationDate ?? .distantFuture
+                return date1 < date2
             }
         }
         

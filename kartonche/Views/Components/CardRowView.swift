@@ -39,6 +39,17 @@ struct CardRowView: View {
             
             Spacer()
             
+            // Expiration indicator
+            if let expirationDate = card.expirationDate {
+                HStack(spacing: 4) {
+                    Image(systemName: card.isExpired ? "exclamationmark.triangle.fill" : "calendar")
+                        .font(.caption)
+                    Text(formatShortDate(expirationDate))
+                        .font(.caption)
+                }
+                .foregroundStyle(card.isExpired ? .red : (card.isExpiringSoon ? .orange : .secondary))
+            }
+            
             // Favorite star
             Button(action: onFavoriteToggle) {
                 Image(systemName: card.isFavorite ? "star.fill" : "star")
@@ -47,6 +58,12 @@ struct CardRowView: View {
             .buttonStyle(.plain)
         }
         .padding(.vertical, 4)
+    }
+    
+    private func formatShortDate(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d.M.yy"
+        return formatter.string(from: date)
     }
 }
 
