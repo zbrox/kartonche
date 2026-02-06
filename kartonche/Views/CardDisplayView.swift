@@ -14,6 +14,7 @@ struct CardDisplayView: View {
     
     @StateObject private var brightnessManager = BrightnessManager()
     @StateObject private var screenManager = ScreenManager()
+    @State private var screen: UIScreen?
     
     var body: some View {
         let primaryColor = card.color.flatMap { Color(hex: $0) } ?? Color.accentColor
@@ -70,10 +71,15 @@ struct CardDisplayView: View {
                 .padding(.bottom, 32)
             }
         }
+        .background(ScreenAccessor(screen: $screen))
         .onAppear {
             updateLastUsedDate()
-            brightnessManager.increaseForBarcode()
             screenManager.preventSleep()
+        }
+        .onChange(of: screen) { _, newScreen in
+            if let newScreen = newScreen {
+                brightnessManager.increaseForBarcode(screen: newScreen)
+            }
         }
         .onDisappear {
             brightnessManager.restore()
@@ -83,6 +89,25 @@ struct CardDisplayView: View {
     
     private func updateLastUsedDate() {
         card.lastUsedDate = Date()
+    }
+}
+
+/// UIViewRepresentable helper to access UIScreen from SwiftUI
+private struct ScreenAccessor: UIViewRepresentable {
+    @Binding var screen: UIScreen?
+    
+    func makeUIView(context: Context) -> UIView {
+        let view = UIView()
+        DispatchQueue.main.async {
+            self.screen = view.window?.windowScene?.screen
+        }
+        return view
+    }
+    
+    func updateUIView(_ uiView: UIView, context: Context) {
+        DispatchQueue.main.async {
+            self.screen = uiView.window?.windowScene?.screen
+        }
     }
 }
 

@@ -18,60 +18,65 @@ struct BrightnessManagerTests {
     
     @Test func increaseForBarcodeCompletesWithoutError() {
         let manager = BrightnessManager()
-        let originalBrightness = UIScreen.main.brightness
+        let screen = UIScreen.main
+        let originalBrightness = screen.brightness
         
         // Should complete without throwing or crashing
-        manager.increaseForBarcode()
+        manager.increaseForBarcode(screen: screen)
         
         // Cleanup
         manager.restore()
-        UIScreen.main.brightness = originalBrightness
+        screen.brightness = originalBrightness
     }
     
     @Test func restoreCompletesWithoutError() {
         let manager = BrightnessManager()
-        let originalBrightness = UIScreen.main.brightness
+        let screen = UIScreen.main
+        let originalBrightness = screen.brightness
         
-        manager.increaseForBarcode()
+        manager.increaseForBarcode(screen: screen)
         
         // Should complete without throwing or crashing
         manager.restore()
         
         // Cleanup
-        UIScreen.main.brightness = originalBrightness
+        screen.brightness = originalBrightness
     }
     
     @Test func multipleIncreasesDoNotCrash() {
         let manager = BrightnessManager()
-        let originalBrightness = UIScreen.main.brightness
+        let screen = UIScreen.main
+        let originalBrightness = screen.brightness
         
         // Multiple calls should be safe (guard prevents override)
-        manager.increaseForBarcode()
-        manager.increaseForBarcode()
-        manager.increaseForBarcode()
+        manager.increaseForBarcode(screen: screen)
+        manager.increaseForBarcode(screen: screen)
+        manager.increaseForBarcode(screen: screen)
         
         manager.restore()
         
         // Cleanup
-        UIScreen.main.brightness = originalBrightness
+        screen.brightness = originalBrightness
     }
     
     @Test func restoreWithoutIncreaseDoesNotCrash() {
         let manager = BrightnessManager()
-        let originalBrightness = UIScreen.main.brightness
+        let screen = UIScreen.main
+        let originalBrightness = screen.brightness
         
         // Should handle restore without increase gracefully
         manager.restore()
         
         // Cleanup
-        UIScreen.main.brightness = originalBrightness
+        screen.brightness = originalBrightness
     }
     
     @Test func multipleRestoresAreSafe() {
         let manager = BrightnessManager()
-        let originalBrightness = UIScreen.main.brightness
+        let screen = UIScreen.main
+        let originalBrightness = screen.brightness
         
-        manager.increaseForBarcode()
+        manager.increaseForBarcode(screen: screen)
         
         // Multiple restores should be safe (guard prevents issues)
         manager.restore()
@@ -79,6 +84,6 @@ struct BrightnessManagerTests {
         manager.restore()
         
         // Cleanup
-        UIScreen.main.brightness = originalBrightness
+        screen.brightness = originalBrightness
     }
 }

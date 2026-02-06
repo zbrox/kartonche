@@ -13,20 +13,25 @@ import Combine
 final class BrightnessManager: ObservableObject {
     
     private var originalBrightness: CGFloat?
+    private weak var screen: UIScreen?
     
     /// Increase screen brightness to maximum for barcode display
-    func increaseForBarcode() {
+    func increaseForBarcode(screen: UIScreen?) {
         guard originalBrightness == nil else { return }
+        guard let screen = screen else { return }
         
-        originalBrightness = UIScreen.main.brightness
-        UIScreen.main.brightness = 1.0
+        self.screen = screen
+        originalBrightness = screen.brightness
+        screen.brightness = 1.0
     }
     
     /// Restore original screen brightness
     func restore() {
         guard let original = originalBrightness else { return }
+        guard let screen = screen else { return }
         
-        UIScreen.main.brightness = original
+        screen.brightness = original
         originalBrightness = nil
+        self.screen = nil
     }
 }
