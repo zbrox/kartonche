@@ -29,6 +29,11 @@ struct CardEditorView: View {
     @State private var photoItem: PhotosPickerItem?
     @State private var showingScanner = false
     @State private var scannedBarcode: ScannedBarcode?
+    @State private var photoPickerItem: PhotosPickerItem?
+    @State private var isProcessingPhoto = false
+    @State private var scanError: String?
+    @State private var showingMultipleBarcodes = false
+    @State private var detectedBarcodes: [ScannedBarcode] = []
     
     private var isEditMode: Bool { card != nil }
     
@@ -89,6 +94,25 @@ struct CardEditorView: View {
                             Label(String(localized: "Scan Barcode"), systemImage: "barcode.viewfinder")
                         }
                         .accessibilityIdentifier("scanBarcodeButton")
+                    }
+                    
+                    PhotosPicker(selection: $photoPickerItem, matching: .images) {
+                        Label(String(localized: "Scan from Photo"), systemImage: "photo")
+                    }
+                    .disabled(isProcessingPhoto)
+                    .accessibilityIdentifier("scanPhotoButton")
+                    
+                    if isProcessingPhoto {
+                        HStack {
+                            ProgressView()
+                            Text(String(localized: "Scanning..."))
+                        }
+                    }
+                    
+                    if let error = scanError {
+                        Text(error)
+                            .font(.caption)
+                            .foregroundColor(.red)
                     }
                     
                     Picker("Barcode Type", selection: $barcodeType) {
@@ -174,7 +198,69 @@ struct CardEditorView: View {
                 }
                 scannedBarcode = nil
             }
+            .onChange(of: photoPickerItem) { oldValue, newValue in
+                guard let item = newValue else { return }
+                scanBarcodeFromPhoto(item)
+            }
+            .alert("Multiple Barcodes Found", isPresented: $showingMultipleBarcodes) {
+                ForEach(detectedBarcodes.indices, id: \.self) { index in
+                    Button(detectedBarcodes[index].data) {
+                        selectBarcode(detectedBarcodes[index])
+                    }
+                }
+                Button("Cancel", role: .cancel) {
+                    detectedBarcodes = []
+                }
+            } message: {
+                Text("Select which barcode to use")
+            }
         }
+    }
+    
+    private func scanBarcodeFromPhoto(_ item: PhotosPickerItem) {
+        isProcessingPhoto = true
+        scanError = nil
+        
+        Task {
+            do {
+                guard let imageData = try await item.loadTransferable(type: Data.self),
+                      let uiImage = UIImage(data: imageData) else {
+                    await MainActor.run {
+                        scanError = String(localized: "Failed to load image")
+                        isProcessingPhoto = false
+                        photoPickerItem = nil
+                    }
+                    return
+                }
+                
+                let barcodes = try await PhotoBarcodeScanner.scanBarcodes(from: uiImage)
+                
+                await MainActor.run {
+                    if barcodes.count == 1 {
+                        selectBarcode(barcodes[0])
+                    } else {
+                        detectedBarcodes = barcodes
+                        showingMultipleBarcodes = true
+                    }
+                    isProcessingPhoto = false
+                    photoPickerItem = nil
+                }
+            } catch {
+                await MainActor.run {
+                    scanError = error.localizedDescription
+                    isProcessingPhoto = false
+                    photoPickerItem = nil
+                }
+            }
+        }
+    }
+    
+    private func selectBarcode(_ barcode: ScannedBarcode) {
+        barcodeData = barcode.data
+        if let detectedType = BarcodeType(from: barcode.symbology) {
+            barcodeType = detectedType
+        }
+        detectedBarcodes = []
     }
     
     private var isValid: Bool {

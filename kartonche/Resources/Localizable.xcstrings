@@ -215,6 +215,17 @@
         }
       }
     },
+    "Failed to load image" : {
+      "comment" : "Error message when image cannot be loaded",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неуспешно зареждане на изображението"
+          }
+        }
+      }
+    },
     "Favorite" : {
       "comment" : "Label for favorite toggle",
       "localizations" : {
@@ -249,6 +260,17 @@
         }
       }
     },
+    "Invalid image format" : {
+      "comment" : "Error message for invalid image format",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Невалиден формат на изображението"
+          }
+        }
+      }
+    },
     "Loyalty Cards" : {
       "comment" : "Main screen title",
       "localizations" : {
@@ -256,6 +278,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Клубни карти"
+          }
+        }
+      }
+    },
+    "Multiple Barcodes Found" : {
+      "comment" : "Alert title when multiple barcodes detected",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Открити са множество баркодове"
+          }
+        }
+      }
+    },
+    "No barcodes found in image" : {
+      "comment" : "Error message when no barcodes detected",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Няма открити баркодове в изображението"
           }
         }
       }
@@ -327,6 +371,31 @@
         }
       }
     },
+    "Scan from Photo" : {
+      "comment" : "Button to scan barcode from photo",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сканиране от снимка"
+          }
+        }
+      }
+    },
+    "Scanning failed: %@" : {
+
+    },
+    "Scanning..." : {
+      "comment" : "Progress indicator while scanning photo",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сканиране..."
+          }
+        }
+      }
+    },
     "Search" : {
       "comment" : "Search action",
       "localizations" : {
@@ -346,6 +415,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Изберете карта"
+          }
+        }
+      }
+    },
+    "Select which barcode to use" : {
+      "comment" : "Alert message for multiple barcode selection",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изберете кой баркод да използвате"
           }
         }
       }
