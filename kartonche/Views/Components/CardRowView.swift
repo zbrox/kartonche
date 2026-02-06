@@ -17,7 +17,7 @@ struct CardRowView: View {
             // Color indicator (always show for consistent alignment)
             RoundedRectangle(cornerRadius: 4)
                 .fill(Color(hex: card.color) ?? .accentColor)
-                .frame(width: 4, height: 44)
+                .frame(width: 4)
                 .accessibilityHidden(true)
             
             // Card info

@@ -19,7 +19,7 @@ struct MerchantRowView: View {
                     .frame(width: 44, height: 44)
                 
                 Text(merchant.initials)
-                    .font(.system(size: 18, weight: .bold))
+                    .font(.body.weight(.bold))
                     .foregroundColor(Color(hex: merchant.secondaryColor) ?? Color.white)
             }
             .accessibilityHidden(true)
