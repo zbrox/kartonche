@@ -27,6 +27,9 @@ final class LoyaltyCard {
     @Attribute(.externalStorage)
     var cardImage: Data?
     
+    @Relationship(deleteRule: .cascade, inverse: \CardLocation.card)
+    var locations: [CardLocation] = []
+    
     init(
         id: UUID = UUID(),
         name: String,
