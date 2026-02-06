@@ -37,8 +37,17 @@ struct CardEditorView: View {
     @State private var detectedBarcodes: [ScannedBarcode] = []
     @State private var showingLocationEditor = false
     @State private var editingLocation: CardLocation?
+    @State private var pendingLocations: [CardLocation] = []
     
     private var isEditMode: Bool { card != nil }
+    
+    private var displayedLocations: [CardLocation] {
+        if let card = card {
+            return card.locations
+        } else {
+            return pendingLocations
+        }
+    }
     
     init(card: LoyaltyCard? = nil, merchantTemplate: MerchantTemplate? = nil, program: ProgramTemplate? = nil) {
         self.card = card
@@ -180,38 +189,36 @@ struct CardEditorView: View {
                 }
                 
                 // Locations section
-                if let card = card {
-                    Section {
-                        ForEach(card.locations) { location in
-                            Button {
-                                editingLocation = location
-                                showingLocationEditor = true
-                            } label: {
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text(location.name)
-                                        .foregroundStyle(.primary)
-                                    Text(location.address)
-                                        .font(.caption)
-                                        .foregroundStyle(.secondary)
-                                    Text(String(localized: "Radius: \(Int(location.radius))m"))
-                                        .font(.caption2)
-                                        .foregroundStyle(.tertiary)
-                                }
-                            }
-                        }
-                        .onDelete(perform: deleteLocations)
-                        
+                Section {
+                    ForEach(displayedLocations) { location in
                         Button {
-                            editingLocation = nil
+                            editingLocation = location
                             showingLocationEditor = true
                         } label: {
-                            Label(String(localized: "Add Location"), systemImage: "plus.circle.fill")
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(location.name)
+                                    .foregroundStyle(.primary)
+                                Text(location.address)
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                                Text(String(localized: "Radius: \(Int(location.radius))m"))
+                                    .font(.caption2)
+                                    .foregroundStyle(.tertiary)
+                            }
                         }
-                    } header: {
-                        Text(String(localized: "Locations"))
-                    } footer: {
-                        Text(String(localized: "Card will appear when you're nearby"))
                     }
+                    .onDelete(perform: deleteLocations)
+                    
+                    Button {
+                        editingLocation = nil
+                        showingLocationEditor = true
+                    } label: {
+                        Label(String(localized: "Add Location"), systemImage: "plus.circle.fill")
+                    }
+                } header: {
+                    Text(String(localized: "Locations"))
+                } footer: {
+                    Text(String(localized: "Card will appear when you're nearby"))
                 }
                 
                 if isEditMode {
@@ -279,10 +286,16 @@ struct CardEditorView: View {
                 Text("Select which barcode to use")
             }
             .sheet(isPresented: $showingLocationEditor) {
-                if let card = card {
-                    LocationEditorView(card: card, location: editingLocation) { location in
-                        saveLocation(location)
-                    }
+                // Create a temporary card for the LocationEditorView if we're in create mode
+                let editorCard = card ?? LoyaltyCard(
+                    name: name,
+                    storeName: storeName,
+                    cardNumber: cardNumber,
+                    barcodeType: barcodeType,
+                    barcodeData: barcodeData
+                )
+                LocationEditorView(card: editorCard, location: editingLocation) { location in
+                    saveLocation(location)
                 }
             }
         }
@@ -364,6 +377,12 @@ struct CardEditorView: View {
                 expirationDate: hasExpirationDate ? expirationDate : nil
             )
             modelContext.insert(newCard)
+            
+            // Add pending locations to the new card
+            for location in pendingLocations {
+                location.card = newCard
+                modelContext.insert(location)
+            }
         }
         
         dismiss()
@@ -377,22 +396,36 @@ struct CardEditorView: View {
     }
     
     private func deleteLocations(at offsets: IndexSet) {
-        guard let card = card else { return }
-        for index in offsets {
-            let location = card.locations[index]
-            modelContext.delete(location)
+        if let card = card {
+            // Edit mode: delete from card and database
+            for index in offsets {
+                let location = card.locations[index]
+                modelContext.delete(location)
+            }
+        } else {
+            // Create mode: remove from pending list
+            pendingLocations.remove(atOffsets: offsets)
         }
     }
     
     private func saveLocation(_ location: CardLocation) {
-        guard let card = card else { return }
-        
-        // If it's a new location, add it to the card
-        if !card.locations.contains(where: { $0.id == location.id }) {
-            location.card = card
-            modelContext.insert(location)
+        if let card = card {
+            // Edit mode: add to card immediately
+            if !card.locations.contains(where: { $0.id == location.id }) {
+                location.card = card
+                modelContext.insert(location)
+            }
+            // If editing existing location, changes are automatically persisted
+        } else {
+            // Create mode: add to pending list
+            if let index = pendingLocations.firstIndex(where: { $0.id == location.id }) {
+                // Update existing pending location
+                pendingLocations[index] = location
+            } else {
+                // Add new pending location
+                pendingLocations.append(location)
+            }
         }
-        // If editing existing location, changes are automatically persisted
     }
 }
 
