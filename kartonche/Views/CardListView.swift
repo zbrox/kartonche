@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import CoreLocation
 
 struct PendingCard: Identifiable {
     let id = UUID()
@@ -24,6 +25,7 @@ struct CardListView: View {
     @State private var merchantForProgramSelection: MerchantTemplate?
     @State private var pendingCard: PendingCard?
     @State private var selectedCard: LoyaltyCard?
+    @StateObject private var locationManager = LocationManager()
     
     enum SortOption: String, CaseIterable {
         case alphabetical = "Alphabetical"
@@ -34,6 +36,14 @@ struct CardListView: View {
         var localizedName: String {
             String(localized: String.LocalizationValue(rawValue))
         }
+    }
+    
+    private var nearbyCards: [(card: LoyaltyCard, distance: Double)] {
+        guard locationManager.authorizationStatus == .authorizedWhenInUse ||
+              locationManager.authorizationStatus == .authorizedAlways else {
+            return []
+        }
+        return locationManager.cardsNearby(allCards, radius: 1000.0)
     }
     
     private var filteredAndSortedCards: [LoyaltyCard] {
@@ -134,33 +144,71 @@ struct CardListView: View {
     
     private var cardListView: some View {
         List {
-            ForEach(filteredAndSortedCards) { card in
-                NavigationLink(value: card) {
-                    CardRowView(card: card) {
-                        toggleFavorite(card)
+            // Nearby Cards section
+            if !nearbyCards.isEmpty && searchText.isEmpty {
+                Section {
+                    ForEach(nearbyCards, id: \.card.id) { nearby in
+                        NavigationLink(value: nearby.card) {
+                            CardRowView(card: nearby.card, distance: nearby.distance) {
+                                toggleFavorite(nearby.card)
+                            }
+                        }
+                        .contextMenu {
+                            Button {
+                                selectedCard = nearby.card
+                            } label: {
+                                Label(String(localized: "Edit"), systemImage: "pencil")
+                            }
+                            
+                            Button(role: .destructive) {
+                                deleteCard(nearby.card)
+                            } label: {
+                                Label(String(localized: "Delete"), systemImage: "trash")
+                            }
+                        }
                     }
-                }
-                .contextMenu {
-                    Button {
-                        selectedCard = card
-                    } label: {
-                        Label(String(localized: "Edit"), systemImage: "pencil")
-                    }
-                    
-                    Button(role: .destructive) {
-                        deleteCard(card)
-                    } label: {
-                        Label(String(localized: "Delete"), systemImage: "trash")
-                    }
-                }
-                .accessibilityAction(named: Text("Edit")) {
-                    selectedCard = card
-                }
-                .accessibilityAction(named: Text("Delete")) {
-                    deleteCard(card)
+                } header: {
+                    Label(String(localized: "Nearby"), systemImage: "location.fill")
                 }
             }
-            .onDelete(perform: deleteCards)
+            
+            // All Cards section
+            Section {
+                ForEach(filteredAndSortedCards) { card in
+                    NavigationLink(value: card) {
+                        CardRowView(card: card) {
+                            toggleFavorite(card)
+                        }
+                    }
+                    .contextMenu {
+                        Button {
+                            selectedCard = card
+                        } label: {
+                            Label(String(localized: "Edit"), systemImage: "pencil")
+                        }
+                        
+                        Button(role: .destructive) {
+                            deleteCard(card)
+                        } label: {
+                            Label(String(localized: "Delete"), systemImage: "trash")
+                        }
+                    }
+                    .accessibilityAction(named: Text("Edit")) {
+                        selectedCard = card
+                    }
+                    .accessibilityAction(named: Text("Delete")) {
+                        deleteCard(card)
+                    }
+                }
+                .onDelete(perform: deleteCards)
+            } header: {
+                if !nearbyCards.isEmpty && searchText.isEmpty {
+                    Text(String(localized: "All Cards"))
+                }
+            }
+        }
+        .onAppear {
+            locationManager.requestLocation()
         }
     }
     

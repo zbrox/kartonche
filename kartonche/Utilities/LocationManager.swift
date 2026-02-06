@@ -49,7 +49,7 @@ class LocationManager: NSObject, ObservableObject {
     }
     
     /// Calculate distance in meters between two coordinates
-    static func distance(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) -> Double {
+    nonisolated static func distance(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) -> Double {
         let fromLocation = CLLocation(latitude: from.latitude, longitude: from.longitude)
         let toLocation = CLLocation(latitude: to.latitude, longitude: to.longitude)
         return fromLocation.distance(from: toLocation)

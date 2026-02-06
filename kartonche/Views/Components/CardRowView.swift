@@ -10,7 +10,14 @@ import SwiftUI
 /// Row view for displaying a loyalty card in the list
 struct CardRowView: View {
     let card: LoyaltyCard
+    let distance: Double? // Distance in meters (optional for nearby cards)
     let onFavoriteToggle: () -> Void
+    
+    init(card: LoyaltyCard, distance: Double? = nil, onFavoriteToggle: @escaping () -> Void) {
+        self.card = card
+        self.distance = distance
+        self.onFavoriteToggle = onFavoriteToggle
+    }
     
     var body: some View {
         HStack(spacing: 12) {
@@ -25,9 +32,22 @@ struct CardRowView: View {
                 Text(card.name)
                     .font(.headline)
                 
-                Text(card.storeName)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                HStack(spacing: 6) {
+                    Text(card.storeName)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                    
+                    // Distance badge for nearby cards
+                    if let distance = distance {
+                        HStack(spacing: 2) {
+                            Image(systemName: "location.fill")
+                                .font(.caption2)
+                            Text(formatDistance(distance))
+                                .font(.caption2)
+                        }
+                        .foregroundStyle(.blue)
+                    }
+                }
                 
                 if !card.cardNumber.isEmpty {
                     Text(card.cardNumber)
@@ -87,6 +107,15 @@ struct CardRowView: View {
         let formatter = DateFormatter()
         formatter.dateFormat = "d.M.yy"
         return formatter.string(from: date)
+    }
+    
+    private func formatDistance(_ meters: Double) -> String {
+        if meters < 1000 {
+            return "\(Int(meters))m"
+        } else {
+            let km = meters / 1000.0
+            return String(format: "%.1fkm", km)
+        }
     }
 }
 
