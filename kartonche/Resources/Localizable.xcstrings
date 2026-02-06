@@ -15,6 +15,17 @@
         }
       }
     },
+    "Add to favorites" : {
+      "comment" : "Accessibility label for favorite button",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добавяне към любими"
+          }
+        }
+      }
+    },
     "Add your first loyalty card" : {
       "comment" : "Empty state message",
       "localizations" : {
@@ -68,6 +79,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Данни за баркод"
+          }
+        }
+      }
+    },
+    "card number" : {
+      "comment" : "Accessibility label for card number",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "номер на карта"
           }
         }
       }
@@ -207,12 +229,44 @@
     },
     "Expired" : {
       "comment" : "Badge for expired cards",
-      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Изтекла"
+          }
+        }
+      }
+    },
+    "Expired on" : {
+      "comment" : "Accessibility label for expired date",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изтекла на"
+          }
+        }
+      }
+    },
+    "Expires on" : {
+      "comment" : "Accessibility label for expiration date",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изтича на"
+          }
+        }
+      }
+    },
+    "Expiring soon on" : {
+      "comment" : "Accessibility label for card expiring soon",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изтича скоро на"
           }
         }
       }
@@ -392,6 +446,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Последно използвани"
+          }
+        }
+      }
+    },
+    "Remove from favorites" : {
+      "comment" : "Accessibility label for unfavorite button",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Премахване от любими"
           }
         }
       }
