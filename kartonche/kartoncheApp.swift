@@ -13,6 +13,7 @@ struct kartoncheApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             LoyaltyCard.self,
+            CardLocation.self,
         ])
         let modelConfiguration = ModelConfiguration(
             schema: schema,
