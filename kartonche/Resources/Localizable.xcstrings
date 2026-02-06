@@ -239,6 +239,50 @@
         }
       }
     },
+    "Card Expiring Soon" : {
+      "comment" : "Notification title for 7-day expiration warning",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Картата изтича скоро"
+          }
+        }
+      }
+    },
+    "Card Expires Tomorrow" : {
+      "comment" : "Notification title for 1-day expiration warning",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Картата изтича утре"
+          }
+        }
+      }
+    },
+    "Your %@ card expires in 7 days" : {
+      "comment" : "Notification body for 7-day expiration warning",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вашата карта %@ изтича след 7 дни"
+          }
+        }
+      }
+    },
+    "Your %@ card expires tomorrow" : {
+      "comment" : "Notification body for 1-day expiration warning",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вашата карта %@ изтича утре"
+          }
+        }
+      }
+    },
     "Choose Program" : {
       "comment" : "Title for program selection view when merchant has multiple loyalty programs",
       "localizations" : {
