@@ -186,6 +186,7 @@ struct CardListView: View {
         Button(action: { showingMerchantSelection = true }) {
             Label(String(localized: "Add Card"), systemImage: "plus")
         }
+        .accessibilityIdentifier("addCardButton")
     }
     
     private func toggleFavorite(_ card: LoyaltyCard) {
