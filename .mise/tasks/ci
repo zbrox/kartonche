@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 #MISE description="Full CI check (generate merchants + build + test)"
+#usage: ci [--full]
+#arg: --full "Run all tests including UI tests (default: unit tests only)"
 
 set -euo pipefail
+
+FULL_TESTS=false
+if [ "${1:-}" = "--full" ]; then
+  FULL_TESTS=true
+fi
 
 echo "🔄 Running CI workflow..."
 echo ""
@@ -24,8 +31,13 @@ echo "Step 2/3: Building..."
 mise run build
 
 echo ""
-echo "Step 3/3: Running tests..."
-mise run test-all
+if [ "$FULL_TESTS" = true ]; then
+  echo "Step 3/3: Running all tests (unit + UI)..."
+  mise run test-all
+else
+  echo "Step 3/3: Running unit tests..."
+  mise run test
+fi
 
 echo ""
 echo "✅ CI workflow complete"
