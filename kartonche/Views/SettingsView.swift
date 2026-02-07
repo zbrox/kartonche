@@ -16,8 +16,10 @@ struct SettingsView: View {
     @State private var showingAlwaysExplanation = false
     @State private var showingNotificationPermission = false
     @State private var showingLocationPermission = false
+    @State private var showingNearbyNotificationsExplanation = false
     @State private var pendingNotificationCount = 0
     @State private var notificationsEnabled = false
+    @AppStorage("nearbyCardNotificationsEnabled") private var nearbyNotificationsEnabled = false
     
     var body: some View {
         NavigationStack {
@@ -130,6 +132,45 @@ struct SettingsView: View {
                     Text(String(localized: "Permissions"))
                 }
                 
+                // Nearby Card Notifications
+                Section {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(String(localized: "Nearby Card Notifications"))
+                                .font(.headline)
+                            Text(nearbyNotificationStatusText)
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                        
+                        Spacer()
+                        
+                        Toggle("", isOn: $nearbyNotificationsEnabled)
+                            .disabled(!canEnableNearbyNotifications)
+                            .onChange(of: nearbyNotificationsEnabled) { oldValue, newValue in
+                                handleNearbyNotificationsToggle(newValue)
+                            }
+                    }
+                    
+                    if !canEnableNearbyNotifications {
+                        if locationManager.authorizationStatus != .authorizedAlways {
+                            Text(String(localized: "'Always' location permission required for nearby notifications"))
+                                .font(.caption)
+                                .foregroundStyle(.orange)
+                        } else if notificationManager.authorizationStatus != .authorized {
+                            Text(String(localized: "Notification permission required"))
+                                .font(.caption)
+                                .foregroundStyle(.orange)
+                        }
+                    } else if nearbyNotificationsEnabled {
+                        Text(String(localized: "You'll be notified when you're near a saved card location"))
+                            .font(.caption)
+                            .foregroundStyle(.blue)
+                    }
+                } header: {
+                    Text(String(localized: "Location Features"))
+                }
+                
                 Section {
                     Text(String(localized: "Version \(appVersion)"))
                         .foregroundStyle(.secondary)
@@ -171,6 +212,20 @@ struct SettingsView: View {
                     },
                     onDeny: {
                         showingNotificationPermission = false
+                    }
+                )
+                .presentationDetents([.medium])
+            }
+            .sheet(isPresented: $showingNearbyNotificationsExplanation) {
+                NearbyNotificationsExplanationView(
+                    onEnable: {
+                        nearbyNotificationsEnabled = true
+                        showingNearbyNotificationsExplanation = false
+                        let cards = SharedDataManager.fetchAllCards()
+                        locationManager.startMonitoringCardLocations(cards)
+                    },
+                    onNotNow: {
+                        showingNearbyNotificationsExplanation = false
                     }
                 )
                 .presentationDetents([.medium])
@@ -238,6 +293,35 @@ struct SettingsView: View {
     
     private var appVersion: String {
         Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
+    }
+    
+    private var canEnableNearbyNotifications: Bool {
+        locationManager.authorizationStatus == .authorizedAlways &&
+        notificationManager.authorizationStatus == .authorized
+    }
+    
+    private var nearbyNotificationStatusText: String {
+        if !canEnableNearbyNotifications {
+            return String(localized: "Requires Always location + Notifications")
+        }
+        return nearbyNotificationsEnabled ? 
+            String(localized: "Enabled") : 
+            String(localized: "Disabled")
+    }
+    
+    private func handleNearbyNotificationsToggle(_ enabled: Bool) {
+        if enabled {
+            if !UserDefaults.standard.bool(forKey: "hasSeenNearbyNotificationsPrompt") {
+                showingNearbyNotificationsExplanation = true
+                nearbyNotificationsEnabled = false
+                UserDefaults.standard.set(true, forKey: "hasSeenNearbyNotificationsPrompt")
+            } else {
+                let cards = SharedDataManager.fetchAllCards()
+                locationManager.startMonitoringCardLocations(cards)
+            }
+        } else {
+            locationManager.stopAllMonitoring()
+        }
     }
 }
 

@@ -1,6 +1,19 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+      "shouldTranslate" : false
+    },
+    "'Always' location permission required for nearby notifications" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Необходимо е разрешение на степен ‘Винаги' за известия за близки местоположения"
+          }
+        }
+      }
+    },
     "%@ expires in 7 days" : {
       "localizations" : {
         "bg" : {
@@ -613,6 +626,16 @@
         }
       }
     },
+    "Enable Nearby Notifications" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Включване на известия за близост"
+          }
+        }
+      }
+    },
     "Enable Reminders" : {
       "localizations" : {
         "bg" : {
@@ -1004,6 +1027,16 @@
         }
       }
     },
+    "Location Features" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Функции за местоположение"
+          }
+        }
+      }
+    },
     "Location features require access to your location." : {
       "localizations" : {
         "bg" : {
@@ -1119,6 +1152,26 @@
         }
       }
     },
+    "Nearby Card Notifications" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Известия при близост до местоположение"
+          }
+        }
+      }
+    },
+    "Never forget your loyalty card at the store" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Никога не забравяйте клубната си карта в магазина"
+          }
+        }
+      }
+    },
     "No barcodes found in image" : {
       "comment" : "Error message when no barcodes detected",
       "localizations" : {
@@ -1179,6 +1232,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Бележки"
+          }
+        }
+      }
+    },
+    "Notification permission required" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Необходимо е разрешение за известия"
           }
         }
       }
@@ -1311,6 +1374,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Замяна на съществуващи"
+          }
+        }
+      }
+    },
+    "Requires Always location + Notifications" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изисква местоположение 'Винаги' + Известия"
+          }
+        }
+      }
+    },
+    "Respects iOS Focus modes and Do Not Disturb. Silent notifications only." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зачита iOS режими за фокус и 'Не безпокойте'. Само тихи известия."
           }
         }
       }
@@ -1596,6 +1679,26 @@
         }
       }
     },
+    "Tap to see your cards" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Докоснете, за да видите картите си"
+          }
+        }
+      }
+    },
+    "Tap to show your card" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Докоснете, за да покажете картата си"
+          }
+        }
+      }
+    },
     "This helps you:" : {
       "localizations" : {
         "bg" : {
@@ -1782,6 +1885,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Можете да изключите напомнянията по всяко време от Настройки."
+          }
+        }
+      }
+    },
+    "You'll be notified when you're near a saved card location" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ще бъдете уведомени, когато сте близо до запазено местоположение"
+          }
+        }
+      }
+    },
+    "You're near %lld saved locations" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вие сте близо до %lld запазени местоположения"
+          }
+        }
+      }
+    },
+    "You're near a saved location" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вие сте близо до запазено местоположение"
           }
         }
       }
