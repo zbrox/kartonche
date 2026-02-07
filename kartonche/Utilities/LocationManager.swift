@@ -9,6 +9,7 @@ import Foundation
 import CoreLocation
 import Combine
 import UIKit
+import WidgetKit
 
 /// Manages location services for finding nearby cards
 @MainActor
@@ -117,6 +118,15 @@ extension LocationManager: CLLocationManagerDelegate {
             self.isRequestingLocation = false
             if let location = locations.last {
                 self.currentLocation = location
+                
+                // Save location for widget use
+                SharedDataManager.saveLastKnownLocation(
+                    latitude: location.coordinate.latitude,
+                    longitude: location.coordinate.longitude
+                )
+                
+                // Reload widgets so they can use the new location
+                WidgetCenter.shared.reloadAllTimelines()
             }
         }
     }

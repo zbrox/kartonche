@@ -28,6 +28,9 @@ struct CardListView: View {
     @State private var pendingCard: PendingCard?
     @State private var selectedCard: LoyaltyCard?
     @State private var navigationPath = NavigationPath()
+    @State private var showingSettings = false
+    @State private var showingAlwaysPrompt = false
+    @State private var showAlwaysBanner = false
     @StateObject private var locationManager = LocationManager()
     
     enum SortOption: String, CaseIterable {
@@ -88,11 +91,18 @@ struct CardListView: View {
     
     var body: some View {
         NavigationStack(path: $navigationPath) {
-            Group {
-                if filteredAndSortedCards.isEmpty {
-                    emptyStateView
-                } else {
-                    cardListView
+            VStack(spacing: 0) {
+                // Info banner for Always permission
+                if showAlwaysBanner {
+                    alwaysPermissionBanner
+                }
+                
+                Group {
+                    if filteredAndSortedCards.isEmpty {
+                        emptyStateView
+                    } else {
+                        cardListView
+                    }
                 }
             }
             .navigationTitle(String(localized: "Loyalty Cards"))
@@ -106,8 +116,17 @@ struct CardListView: View {
             .searchable(text: $searchText, prompt: String(localized: "Search"))
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        showingSettings = true
+                    } label: {
+                        Image(systemName: "gear")
+                    }
+                }
+                
+                ToolbarItem(placement: .principal) {
                     sortMenu
                 }
+                
                 ToolbarItem(placement: .navigationBarTrailing) {
                     addButton
                 }
@@ -144,6 +163,12 @@ struct CardListView: View {
             }
             .sheet(item: $selectedCard) { card in
                 CardEditorView(card: card)
+            }
+            .sheet(isPresented: $showingSettings) {
+                SettingsView()
+            }
+            .sheet(isPresented: $showingAlwaysPrompt) {
+                AlwaysLocationExplanationView(locationManager: locationManager)
             }
         }
     }
@@ -213,6 +238,56 @@ struct CardListView: View {
                 }
             }
         }
+        .onAppear {
+            checkAlwaysPermissionConditions()
+            
+            // Request location for widgets if user has cards with locations
+            if allCards.contains(where: { !$0.locations.isEmpty }) {
+                locationManager.requestLocation()
+            }
+        }
+    }
+    
+    private var alwaysPermissionBanner: some View {
+        HStack(spacing: 12) {
+            Image(systemName: "info.circle.fill")
+                .foregroundStyle(.blue)
+                .font(.title3)
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text(String(localized: "Enable 'Always' Location"))
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                Text(String(localized: "Get better widget performance with background location"))
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+            
+            Spacer()
+            
+            Button {
+                SharedDataManager.markAlwaysBannerDismissed()
+                showAlwaysBanner = false
+                showingSettings = true
+            } label: {
+                Text(String(localized: "Enable"))
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+            }
+            .buttonStyle(.borderedProminent)
+            .controlSize(.small)
+            
+            Button {
+                SharedDataManager.markAlwaysBannerDismissed()
+                showAlwaysBanner = false
+            } label: {
+                Image(systemName: "xmark")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .padding()
+        .background(Color.blue.opacity(0.1))
     }
     
     private var emptyStateView: some View {
@@ -292,6 +367,33 @@ struct CardListView: View {
         
         if let card = allCards.first(where: { $0.id == cardID }) {
             navigationPath.append(card)
+        }
+    }
+    
+    private func checkAlwaysPermissionConditions() {
+        // Track app launches
+        SharedDataManager.incrementAppLaunchCount()
+        
+        // Check if we should show the Always permission prompt/banner
+        guard locationManager.authorizationStatus == .authorizedWhenInUse,
+              !allCards.filter({ !$0.locations.isEmpty }).isEmpty else {
+            return
+        }
+        
+        let launchCount = SharedDataManager.getAppLaunchCount()
+        let hasShownPrompt = SharedDataManager.hasShownAlwaysPrompt()
+        let hasDismissedBanner = SharedDataManager.hasDismissedAlwaysBanner()
+        
+        // Show one-time prompt after 3 launches (if not shown before)
+        if launchCount >= 3 && !hasShownPrompt {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                SharedDataManager.markAlwaysPromptShown()
+                showingAlwaysPrompt = true
+            }
+        }
+        // Otherwise show banner (if not dismissed)
+        else if !hasDismissedBanner {
+            showAlwaysBanner = true
         }
     }
 }

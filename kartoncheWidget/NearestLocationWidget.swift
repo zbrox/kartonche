@@ -21,21 +21,19 @@ struct NearestLocationProvider: TimelineProvider {
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<NearestLocationEntry>) -> ()) {
         let currentDate = Date()
-        
-        // Get current location
-        let locationManager = CLLocationManager()
-        let authStatus = locationManager.authorizationStatus
+        let allCards = SharedDataManager.fetchAllCards()
         
         var card: LoyaltyCard?
         var distance: Double?
         
-        if authStatus == .authorizedWhenInUse || authStatus == .authorizedAlways,
-           let userLocation = locationManager.location {
+        // Try to get last known location from shared storage
+        if let (latitude, longitude) = SharedDataManager.getLastKnownLocation() {
+            let userLocation = CLLocation(latitude: latitude, longitude: longitude)
+            
             // Find nearest card within 1km
-            let allCards = SharedDataManager.fetchAllCards()
             var nearestCard: (card: LoyaltyCard, distance: Double)?
             
-            for loyaltyCard in allCards {
+            for loyaltyCard in allCards where !loyaltyCard.locations.isEmpty {
                 for location in loyaltyCard.locations {
                     let cardLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
                     let dist = userLocation.distance(from: cardLocation)
@@ -52,10 +50,14 @@ struct NearestLocationProvider: TimelineProvider {
             distance = nearestCard?.distance
         }
         
-        // Fallback: Show first favorite with locations if no nearby card
+        // Fallback 1: Show first favorite with locations if no nearby card
         if card == nil {
-            let allCards = SharedDataManager.fetchAllCards()
             card = allCards.first(where: { $0.isFavorite && !$0.locations.isEmpty })
+        }
+        
+        // Fallback 2: Show any card with locations
+        if card == nil {
+            card = allCards.first(where: { !$0.locations.isEmpty })
         }
         
         let entry = NearestLocationEntry(date: currentDate, card: card, distance: distance)
