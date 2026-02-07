@@ -18,6 +18,7 @@ struct CardDisplayView: View {
     @StateObject private var screenManager = ScreenManager()
     @State private var screen: UIScreen?
     @State private var shareItem: ShareItem?
+    @State private var isNotesExpanded: Bool = false
     
     var body: some View {
         let primaryColor = card.color.flatMap { Color(hex: $0) } ?? Color.accentColor
@@ -77,6 +78,23 @@ struct CardDisplayView: View {
                 .accessibilityHint(String(localized: "Show this to the cashier to scan"))
                 
                 Spacer()
+                
+                // Collapsible notes section (only if notes exist)
+                if let notes = card.notes, !notes.isEmpty {
+                    DisclosureGroup(isExpanded: $isNotesExpanded) {
+                        Text(notes)
+                            .font(.body)
+                            .foregroundStyle(.primary)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.top, 8)
+                    } label: {
+                        Label(String(localized: "Notes"), systemImage: "note.text")
+                            .foregroundStyle(primaryColor)
+                    }
+                    .tint(primaryColor)
+                    .padding(.horizontal, 32)
+                    .padding(.bottom, 16)
+                }
                 
                 // Colored close button
                 Button(action: { dismiss() }) {
@@ -171,7 +189,7 @@ struct ActivityViewController: UIViewControllerRepresentable {
     }
 }
 
-#Preview {
+#Preview("Without notes") {
     CardDisplayView(
         card: LoyaltyCard(
             name: "Billa Club",
@@ -182,4 +200,17 @@ struct ActivityViewController: UIViewControllerRepresentable {
             color: "#FF0000"
         )
     )
+}
+
+#Preview("With notes") {
+    let card = LoyaltyCard(
+        name: "Billa Club",
+        storeName: "Billa",
+        cardNumber: "1234567890123",
+        barcodeType: .ean13,
+        barcodeData: "1234567890123",
+        color: "#FF0000"
+    )
+    card.notes = "Use this card for 5% discount on Fridays. Ask cashier about bonus points."
+    return CardDisplayView(card: card)
 }
