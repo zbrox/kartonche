@@ -15,6 +15,8 @@ enum GeocodingService {
     /// - Returns: A tuple containing a suggested name and full address
     /// - Throws: GeocodingError if the operation fails
     static func reverseGeocode(location: CLLocation) async throws -> (name: String, address: String) {
+        // TODO: Migrate to MapKit's MKGeocodingRequest when available in iOS 26+
+        // Currently using deprecated CLGeocoder for compatibility
         let geocoder = CLGeocoder()
         let placemarks = try await geocoder.reverseGeocodeLocation(location)
         
@@ -22,7 +24,7 @@ enum GeocodingService {
             throw GeocodingError.noResults
         }
         
-        // Generate name from nearby POI or area
+        // Generate name from nearby POI or area  
         let name = placemark.name ?? placemark.locality ?? String(localized: "Current Location")
         
         // Generate full address
