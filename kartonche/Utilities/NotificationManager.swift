@@ -2,13 +2,12 @@
 //  NotificationManager.swift
 //  kartonche
 //
-//  Created on 2026-02-06.
+//  Created on 2026-02-07.
 //
 
 import Foundation
 import UserNotifications
 import SwiftUI
-import UIKit
 import Combine
 
 /// Manages local notifications for card expiration reminders
@@ -18,121 +17,160 @@ class NotificationManager: ObservableObject {
     
     @Published var authorizationStatus: UNAuthorizationStatus = .notDetermined
     
-    private let notificationCenter = UNUserNotificationCenter.current()
+    private let center = UNUserNotificationCenter.current()
+    
+    // Notification identifiers
+    private func sevenDayIdentifier(for cardID: UUID) -> String {
+        "expiration-7day-\(cardID.uuidString)"
+    }
+    
+    private func oneDayIdentifier(for cardID: UUID) -> String {
+        "expiration-1day-\(cardID.uuidString)"
+    }
     
     private init() {
         Task {
-            await checkAuthorizationStatus()
+            await updateAuthorizationStatus()
         }
     }
     
-    /// Request notification permission from the user
+    // MARK: - Permission
+    
+    /// Request notification permission from user
     func requestPermission() async -> Bool {
         do {
-            let granted = try await notificationCenter.requestAuthorization(options: [.alert, .sound, .badge])
-            await checkAuthorizationStatus()
+            let granted = try await center.requestAuthorization(options: [.alert, .sound, .badge])
+            await updateAuthorizationStatus()
             return granted
         } catch {
-            print("Error requesting notification permission: \(error)")
+            print("Failed to request notification permission: \(error)")
             return false
         }
     }
     
     /// Check current authorization status
-    func checkAuthorizationStatus() async {
-        let settings = await notificationCenter.notificationSettings()
+    func updateAuthorizationStatus() async {
+        let settings = await center.notificationSettings()
         authorizationStatus = settings.authorizationStatus
     }
     
-    /// Schedule expiration notifications for a card
+    // MARK: - Schedule Notifications
+    
+    /// Schedule expiration reminder notifications for a card
     func scheduleExpirationNotifications(for card: LoyaltyCard) async {
-        guard let expirationDate = card.expirationDate else { return }
+        guard let expirationDate = card.expirationDate else {
+            // No expiration date, cancel any existing notifications
+            await cancelNotifications(for: card.id)
+            return
+        }
         
-        // Check permission status
-        await checkAuthorizationStatus()
+        // Check if expiration is in the future
+        guard expirationDate > Date() else {
+            // Already expired, don't schedule
+            await cancelNotifications(for: card.id)
+            return
+        }
         
-        // Only schedule if permission is granted
-        // Don't request again here - permission should be requested when user enables expiration toggle
-        guard authorizationStatus == .authorized else { return }
+        // Ensure we have permission
+        guard authorizationStatus == .authorized else {
+            return
+        }
         
-        // Cancel any existing notifications for this card
-        await cancelNotifications(for: card)
+        // Cancel existing notifications first
+        await cancelNotifications(for: card.id)
         
-        // Schedule 7-day warning
-        await scheduleNotification(
-            for: card,
-            daysBeforeExpiration: 7,
-            expirationDate: expirationDate
-        )
+        // Schedule 7-day reminder
+        if let sevenDaysBefore = Calendar.current.date(byAdding: .day, value: -7, to: expirationDate),
+           sevenDaysBefore > Date() {
+            await scheduleNotification(
+                identifier: sevenDayIdentifier(for: card.id),
+                title: String(localized: "Card Expiring Soon"),
+                body: String(localized: "\(card.name) expires in 7 days"),
+                date: sevenDaysBefore,
+                cardID: card.id
+            )
+        }
         
-        // Schedule 1-day warning
-        await scheduleNotification(
-            for: card,
-            daysBeforeExpiration: 1,
-            expirationDate: expirationDate
-        )
+        // Schedule 1-day reminder
+        if let oneDayBefore = Calendar.current.date(byAdding: .day, value: -1, to: expirationDate),
+           oneDayBefore > Date() {
+            await scheduleNotification(
+                identifier: oneDayIdentifier(for: card.id),
+                title: String(localized: "Card Expires Tomorrow"),
+                body: String(localized: "\(card.name) expires tomorrow"),
+                date: oneDayBefore,
+                cardID: card.id
+            )
+        }
     }
     
     /// Schedule a single notification
     private func scheduleNotification(
-        for card: LoyaltyCard,
-        daysBeforeExpiration days: Int,
-        expirationDate: Date
+        identifier: String,
+        title: String,
+        body: String,
+        date: Date,
+        cardID: UUID
     ) async {
-        guard let notificationDate = Calendar.current.date(
-            byAdding: .day,
-            value: -days,
-            to: expirationDate
-        ) else { return }
-        
-        // Don't schedule if the notification date is in the past
-        guard notificationDate > Date() else { return }
-        
         let content = UNMutableNotificationContent()
-        
-        if days == 7 {
-            content.title = String(localized: "Card Expiring Soon")
-            content.body = String(format: String(localized: "Your %@ card expires in 7 days"), card.name)
-        } else {
-            content.title = String(localized: "Card Expires Tomorrow")
-            content.body = String(format: String(localized: "Your %@ card expires tomorrow"), card.name)
-        }
-        
+        content.title = title
+        content.body = body
         content.sound = .default
-        content.categoryIdentifier = "CARD_EXPIRATION"
-        content.userInfo = ["cardID": card.id.uuidString]
         
-        // Create trigger for specific date
-        let dateComponents = Calendar.current.dateComponents(
+        // Add card ID to userInfo for deep linking
+        content.userInfo = ["cardID": cardID.uuidString]
+        
+        // Create date components for trigger
+        let components = Calendar.current.dateComponents(
             [.year, .month, .day, .hour, .minute],
-            from: notificationDate
+            from: date
         )
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         
-        // Create request with unique identifier
-        let identifier = "\(card.id.uuidString)-\(days)days"
-        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
+        
+        let request = UNNotificationRequest(
+            identifier: identifier,
+            content: content,
+            trigger: trigger
+        )
         
         do {
-            try await notificationCenter.add(request)
+            try await center.add(request)
+            print("Scheduled notification: \(identifier) for \(date)")
         } catch {
-            print("Error scheduling notification: \(error)")
+            print("Failed to schedule notification: \(error)")
         }
     }
+    
+    // MARK: - Cancel Notifications
     
     /// Cancel all notifications for a specific card
-    func cancelNotifications(for card: LoyaltyCard) async {
+    func cancelNotifications(for cardID: UUID) async {
         let identifiers = [
-            "\(card.id.uuidString)-7days",
-            "\(card.id.uuidString)-1days"
+            sevenDayIdentifier(for: cardID),
+            oneDayIdentifier(for: cardID)
         ]
-        notificationCenter.removePendingNotificationRequests(withIdentifiers: identifiers)
+        
+        center.removePendingNotificationRequests(withIdentifiers: identifiers)
+        print("Cancelled notifications for card: \(cardID)")
     }
     
-    /// Open system settings for notifications
-    func openSettings() {
-        if let url = URL(string: UIApplication.openSettingsURLString) {
-            UIApplication.shared.open(url)
-        }
+    /// Cancel all scheduled notifications
+    func cancelAllNotifications() async {
+        center.removeAllPendingNotificationRequests()
+        print("Cancelled all notifications")
+    }
+    
+    // MARK: - Query Notifications
+    
+    /// Get count of pending notifications
+    func getPendingNotificationCount() async -> Int {
+        let requests = await center.pendingNotificationRequests()
+        return requests.count
+    }
+    
+    /// Get all pending notifications
+    func getPendingNotifications() async -> [UNNotificationRequest] {
+        await center.pendingNotificationRequests()
     }
 }
