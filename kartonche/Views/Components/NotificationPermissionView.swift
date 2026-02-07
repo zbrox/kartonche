@@ -13,20 +13,22 @@ struct NotificationPermissionView: View {
     let onDeny: () -> Void
     
     var body: some View {
-        VStack(spacing: 24) {
+        VStack(spacing: 20) {
             Image(systemName: "bell.circle.fill")
-                .font(.system(size: 60))
+                .font(.system(size: 56))
                 .foregroundStyle(.blue)
+                .padding(.top, 8)
             
             Text(String(localized: "Expiration Reminders"))
                 .font(.title2)
                 .fontWeight(.bold)
             
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: 12) {
                 Text(String(localized: "Get notified before your cards expire so you never miss renewing them."))
+                    .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.center)
                 
-                VStack(alignment: .leading, spacing: 8) {
+                VStack(alignment: .leading, spacing: 6) {
                     Text(String(localized: "We'll remind you:"))
                         .fontWeight(.semibold)
                     
@@ -34,12 +36,17 @@ struct NotificationPermissionView: View {
                     Label(String(localized: "1 day before expiration"), systemImage: "clock.badge.exclamationmark")
                     Label(String(localized: "Tap notification to view card"), systemImage: "hand.tap")
                 }
+                .font(.subheadline)
                 
                 Text(String(localized: "You can disable reminders anytime in Settings."))
                     .font(.caption)
                     .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.center)
             }
+            .padding(.horizontal)
+            
+            Spacer()
             
             VStack(spacing: 12) {
                 Button {
@@ -58,8 +65,9 @@ struct NotificationPermissionView: View {
                 }
                 .buttonStyle(.bordered)
             }
+            .padding(.horizontal)
         }
-        .padding(32)
+        .padding()
     }
 }
 
@@ -69,20 +77,22 @@ struct NotificationPermissionDeniedView: View {
     let onCancel: () -> Void
     
     var body: some View {
-        VStack(spacing: 24) {
+        VStack(spacing: 20) {
             Image(systemName: "bell.slash.circle.fill")
-                .font(.system(size: 60))
+                .font(.system(size: 56))
                 .foregroundStyle(.orange)
+                .padding(.top, 8)
             
             Text(String(localized: "Notifications Disabled"))
                 .font(.title2)
                 .fontWeight(.bold)
             
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: 12) {
                 Text(String(localized: "Expiration reminders require notification access."))
+                    .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.center)
                 
-                VStack(alignment: .leading, spacing: 8) {
+                VStack(alignment: .leading, spacing: 6) {
                     Text(String(localized: "Enable in Settings:"))
                         .fontWeight(.semibold)
                     
@@ -90,7 +100,11 @@ struct NotificationPermissionDeniedView: View {
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
+                .font(.subheadline)
             }
+            .padding(.horizontal)
+            
+            Spacer()
             
             VStack(spacing: 12) {
                 Button {
@@ -109,8 +123,9 @@ struct NotificationPermissionDeniedView: View {
                 }
                 .buttonStyle(.bordered)
             }
+            .padding(.horizontal)
         }
-        .padding(32)
+        .padding()
     }
 }
 

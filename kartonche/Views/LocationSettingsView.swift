@@ -242,59 +242,58 @@ struct AlwaysLocationExplanationView: View {
     @ObservedObject var locationManager: LocationManager
     
     var body: some View {
-        NavigationStack {
-            VStack(spacing: 24) {
-                Spacer()
-                
-                Image(systemName: "location.circle.fill")
-                    .font(.system(size: 60))
-                    .foregroundStyle(.blue)
-                
-                Text(String(localized: "Upgrade to 'Always' Location"))
-                    .font(.title2)
-                    .fontWeight(.bold)
-                
-                VStack(alignment: .leading, spacing: 16) {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text(String(localized: "Better Widget Performance:"))
-                            .fontWeight(.semibold)
-                        
-                        Label(String(localized: "Widgets work when app is closed"), systemImage: "apps.iphone")
-                        Label(String(localized: "Fresher location data"), systemImage: "arrow.clockwise")
-                        Label(String(localized: "More accurate nearby store detection"), systemImage: "location.fill")
-                    }
+        VStack(spacing: 20) {
+            Image(systemName: "location.circle.fill")
+                .font(.system(size: 56))
+                .foregroundStyle(.blue)
+                .padding(.top, 8)
+            
+            Text(String(localized: "Upgrade to 'Always' Location"))
+                .font(.title2)
+                .fontWeight(.bold)
+            
+            VStack(alignment: .leading, spacing: 12) {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(String(localized: "Better Widget Performance:"))
+                        .fontWeight(.semibold)
                     
-                    Text(String(localized: "Your location is only used to find nearby stores. Battery impact is minimal."))
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
+                    Label(String(localized: "Widgets work when app is closed"), systemImage: "apps.iphone")
+                    Label(String(localized: "Fresher location data"), systemImage: "arrow.clockwise")
+                    Label(String(localized: "More accurate nearby store detection"), systemImage: "location.fill")
                 }
-                .padding(.horizontal)
+                .font(.subheadline)
                 
-                Spacer()
-                
-                VStack(spacing: 12) {
-                    Button {
-                        locationManager.requestAlwaysPermission()
-                        dismiss()
-                    } label: {
-                        Text(String(localized: "Upgrade to Always"))
-                            .frame(maxWidth: .infinity)
-                    }
-                    .buttonStyle(.borderedProminent)
-                    
-                    Button {
-                        dismiss()
-                    } label: {
-                        Text(String(localized: "Keep Current"))
-                            .frame(maxWidth: .infinity)
-                    }
-                    .buttonStyle(.bordered)
-                }
-                .padding()
+                Text(String(localized: "Your location is only used to find nearby stores. Battery impact is minimal."))
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity)
+                    .multilineTextAlignment(.center)
             }
-            .padding()
-            .navigationBarTitleDisplayMode(.inline)
+            .padding(.horizontal)
+            
+            Spacer()
+            
+            VStack(spacing: 12) {
+                Button {
+                    locationManager.requestAlwaysPermission()
+                    dismiss()
+                } label: {
+                    Text(String(localized: "Upgrade to Always"))
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.borderedProminent)
+                
+                Button {
+                    dismiss()
+                } label: {
+                    Text(String(localized: "Keep Current"))
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.bordered)
+            }
+            .padding(.horizontal)
         }
+        .padding()
         .presentationDetents([.medium, .large])
     }
 }
