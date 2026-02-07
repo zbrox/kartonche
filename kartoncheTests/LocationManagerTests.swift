@@ -39,7 +39,8 @@ struct LocationManagerTests {
         let distance1 = LocationManager.distance(from: point1, to: point2)
         let distance2 = LocationManager.distance(from: point2, to: point1)
         
-        #expect(distance1 == distance2)
+        // Use tolerance for floating-point comparison (1mm tolerance)
+        #expect(abs(distance1 - distance2) < 0.001, "Distance should be symmetric: \(distance1) vs \(distance2)")
     }
     
     // MARK: - CardLocation Tests

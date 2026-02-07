@@ -173,4 +173,55 @@ class NotificationManager: ObservableObject {
     func getPendingNotifications() async -> [UNNotificationRequest] {
         await center.pendingNotificationRequests()
     }
+    
+    // MARK: - Nearby Card Notifications
+    
+    /// Send notification when user enters a card location region
+    func sendNearbyCardNotification(for cardIDs: [UUID], regionID: String) async {
+        guard authorizationStatus == .authorized else { return }
+        
+        let content = UNMutableNotificationContent()
+        
+        if cardIDs.count == 1 {
+            // Single card - notification for one saved location
+            content.title = String(localized: "You're near a saved location")
+            content.body = String(localized: "Tap to show your card")
+            content.userInfo = [
+                "cardID": cardIDs[0].uuidString,
+                "type": "nearby_single"
+            ]
+        } else {
+            // Multiple cards - multiple saved locations at this spot
+            content.title = String(localized: "You're near \(cardIDs.count) saved locations")
+            content.body = String(localized: "Tap to see your cards")
+            content.userInfo = [
+                "cardIDs": cardIDs.map { $0.uuidString },
+                "type": "nearby_multiple"
+            ]
+        }
+        
+        // Silent notification (no sound)
+        content.sound = nil
+        content.interruptionLevel = .passive  // Respect Focus modes
+        
+        // Use region ID as notification identifier (allows clearing on exit)
+        let request = UNNotificationRequest(
+            identifier: "nearby-\(regionID)",
+            content: content,
+            trigger: nil  // Deliver immediately
+        )
+        
+        do {
+            try await center.add(request)
+        } catch {
+            print("Failed to send nearby card notification: \(error)")
+        }
+    }
+    
+    /// Clear nearby card notification when user exits region
+    func clearNearbyCardNotification(regionID: String) async {
+        let identifier = "nearby-\(regionID)"
+        center.removeDeliveredNotifications(withIdentifiers: [identifier])
+        center.removePendingNotificationRequests(withIdentifiers: [identifier])
+    }
 }
