@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+#MISE description="Clean build and show all warnings/errors"
+
+set -euo pipefail
+
+# Use IOS_DEVICE if set, otherwise default to iPhone 17 Pro
+DEVICE="${IOS_DEVICE:-iPhone 17 Pro}"
+
+echo "🧹 Cleaning build artifacts..."
+xcodebuild clean \
+  -project "$PROJECT" \
+  -scheme "$SCHEME" \
+  -configuration "$CONFIGURATION" \
+  >/dev/null 2>&1
+
+echo "🔍 Running clean build to check for warnings and errors..."
+echo ""
+
+# Clean build with xcbeautify's --quiet flag
+# This will only show tasks that have warnings or errors
+set +e
+xcodebuild \
+  -project "$PROJECT" \
+  -scheme "$SCHEME" \
+  -configuration "$CONFIGURATION" \
+  -destination "platform=iOS Simulator,name=$DEVICE" \
+  -quiet \
+  build 2>&1 | xcbeautify --quiet
+
+BUILD_EXIT_CODE=${PIPESTATUS[0]}
+set -e
+
+echo ""
+if [ $BUILD_EXIT_CODE -eq 0 ]; then
+  echo "✅ Check passed - no errors found"
+else
+  echo "❌ Check failed - build errors detected"
+  exit $BUILD_EXIT_CODE
+fi
