@@ -151,6 +151,16 @@
         }
       }
     },
+    "All cards are expired. Toggle 'Show Expired' in the sort menu to see them." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " Всички карти са изтекли. Превключете 'Показване на изтекли' в менюто за сортиране, за да ги видите"
+          }
+        }
+      }
+    },
     "All cards will be imported, even duplicates" : {
       "localizations" : {
         "bg" : {
@@ -1499,6 +1509,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Споделяне на карта"
+          }
+        }
+      }
+    },
+    "Show Expired" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показване на изтекли"
           }
         }
       }
