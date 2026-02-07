@@ -51,6 +51,15 @@
 				<key>public.mime-type</key>
 				<string>application/x-kartonche</string>
 			</dict>
+			<key>UTTypeIcons</key>
+			<dict>
+				<key>UTTypeIconBackgroundName</key>
+				<string>DocIconBackground</string>
+				<key>UTTypeIconBadgeName</key>
+				<string>DocIconBadge</string>
+				<key>UTTypeIconText</key>
+				<string>.kartonche</string>
+			</dict>
 		</dict>
 	</array>
 	<key>LSSupportsOpeningDocumentsInPlace</key>
