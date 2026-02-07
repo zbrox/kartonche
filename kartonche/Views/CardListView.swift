@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 import CoreLocation
 import WidgetKit
+import UniformTypeIdentifiers
 
 struct PendingCard: Identifiable {
     let id = UUID()
@@ -31,6 +32,14 @@ struct CardListView: View {
     @State private var showingSettings = false
     @State private var showingAlwaysPrompt = false
     @State private var showAlwaysBanner = false
+    @State private var shareItem: ShareItem?
+    @State private var importContainer: CardExportContainer?
+    @State private var showingImportPreview = false
+    
+    struct ShareItem: Identifiable {
+        let id = UUID()
+        let url: URL
+    }
     @StateObject private var locationManager = LocationManager()
     
     enum SortOption: String, CaseIterable {
@@ -111,7 +120,7 @@ struct CardListView: View {
                     .navigationBarHidden(true)
             }
             .onOpenURL { url in
-                handleDeepLink(url)
+                handleOpenURL(url)
             }
             .searchable(text: $searchText, prompt: String(localized: "Search"))
             .toolbar {
@@ -170,6 +179,25 @@ struct CardListView: View {
             .sheet(isPresented: $showingAlwaysPrompt) {
                 AlwaysLocationExplanationView(locationManager: locationManager)
             }
+            .sheet(item: $shareItem) { item in
+                ActivityViewController(activityItems: [item.url])
+                    .ignoresSafeArea()
+            }
+            .sheet(isPresented: $showingImportPreview) {
+                if let container = importContainer {
+                    ImportPreviewView(
+                        container: container,
+                        existingCards: allCards,
+                        onImport: { strategy in
+                            try await importCards(container: container, strategy: strategy)
+                        },
+                        onCancel: {
+                            showingImportPreview = false
+                            importContainer = nil
+                        }
+                    )
+                }
+            }
         }
     }
     
@@ -185,6 +213,12 @@ struct CardListView: View {
                             }
                         }
                         .contextMenu {
+                            Button {
+                                shareCard(nearby.card)
+                            } label: {
+                                Label(String(localized: "Share"), systemImage: "square.and.arrow.up")
+                            }
+                            
                             Button {
                                 selectedCard = nearby.card
                             } label: {
@@ -212,6 +246,12 @@ struct CardListView: View {
                         }
                     }
                     .contextMenu {
+                        Button {
+                            shareCard(card)
+                        } label: {
+                            Label(String(localized: "Share"), systemImage: "square.and.arrow.up")
+                        }
+                        
                         Button {
                             selectedCard = card
                         } label: {
@@ -335,6 +375,18 @@ struct CardListView: View {
         }
     }
     
+    private func shareCard(_ card: LoyaltyCard) {
+        do {
+            let data = try CardExporter.exportCard(card)
+            let fileName = CardExporter.generateFileName(cardCount: 1, cardName: card.name)
+            let fileURL = try CardExporter.createTemporaryFile(from: data, fileName: fileName)
+            
+            shareItem = ShareItem(url: fileURL)
+        } catch {
+            print("Failed to export card: \(error)")
+        }
+    }
+    
     private func deleteCard(_ card: LoyaltyCard) {
         withAnimation {
             modelContext.delete(card)
@@ -355,9 +407,44 @@ struct CardListView: View {
         WidgetCenter.shared.reloadAllTimelines()
     }
     
+    private func handleOpenURL(_ url: URL) {
+        // Check if it's a .kartonche file
+        if url.pathExtension == "kartonche" {
+            handleFileImport(url)
+        }
+        // Check if it's a deep link
+        else if url.scheme == "kartonche" {
+            handleDeepLink(url)
+        }
+    }
+    
+    private func handleFileImport(_ url: URL) {
+        do {
+            // Access the security-scoped resource
+            guard url.startAccessingSecurityScopedResource() else {
+                print("Failed to access security-scoped resource")
+                return
+            }
+            defer { url.stopAccessingSecurityScopedResource() }
+            
+            // Read the file data
+            let data = try Data(contentsOf: url)
+            
+            // Parse and validate
+            let container = try CardImporter.importFromData(data)
+            
+            // Show import preview
+            importContainer = container
+            showingImportPreview = true
+            
+        } catch {
+            print("Failed to import file: \(error)")
+            // TODO: Show error alert
+        }
+    }
+    
     private func handleDeepLink(_ url: URL) {
-        guard url.scheme == "kartonche",
-              url.host == "card",
+        guard url.host == "card",
               let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
               let queryItems = components.queryItems,
               let idString = queryItems.first(where: { $0.name == "id" })?.value,
@@ -368,6 +455,22 @@ struct CardListView: View {
         if let card = allCards.first(where: { $0.id == cardID }) {
             navigationPath.append(card)
         }
+    }
+    
+    @MainActor
+    private func importCards(container: CardExportContainer, strategy: CardImporter.ImportStrategy) async throws -> CardImporter.ImportResult {
+        let result = try await CardImporter.importCards(
+            from: container,
+            into: modelContext,
+            strategy: strategy
+        )
+        
+        // Reload widgets if cards were imported
+        if result.hasChanges {
+            WidgetCenter.shared.reloadAllTimelines()
+        }
+        
+        return result
     }
     
     private func checkAlwaysPermissionConditions() {
