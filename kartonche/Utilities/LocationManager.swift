@@ -34,6 +34,18 @@ class LocationManager: NSObject, ObservableObject {
         locationManager.requestWhenInUseAuthorization()
     }
     
+    /// Request "Always" location permission (for widgets)
+    /// Call this only after "When In Use" permission is already granted
+    func requestAlwaysPermission() {
+        guard authorizationStatus == .authorizedWhenInUse else { return }
+        locationManager.requestAlwaysAuthorization()
+    }
+    
+    /// Check if background location permission is granted
+    var hasBackgroundPermission: Bool {
+        authorizationStatus == .authorizedAlways
+    }
+    
     /// Request current location (just-in-time)
     func requestLocation() {
         guard authorizationStatus == .authorizedWhenInUse || authorizationStatus == .authorizedAlways else {
