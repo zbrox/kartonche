@@ -324,8 +324,8 @@ struct LocationEditorView: View {
             }
             
             address = "\(result.title), \(result.subtitle)"
-            latitude = mapItem.placemark.coordinate.latitude
-            longitude = mapItem.placemark.coordinate.longitude
+            latitude = mapItem.location.coordinate.latitude
+            longitude = mapItem.location.coordinate.longitude
             
             searchText = ""
             isSearching = false
@@ -390,7 +390,7 @@ struct LocationEditorView: View {
             // Wait a bit for location to be fetched
             try? await Task.sleep(for: .seconds(2))
             
-            guard let currentLocation = await locationManager.currentLocation else {
+            guard let currentLocation = locationManager.currentLocation else {
                 await MainActor.run {
                     currentLocationError = String(localized: "Unable to get current location")
                     isUsingCurrentLocation = false
