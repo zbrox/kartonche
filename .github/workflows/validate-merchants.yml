@@ -17,11 +17,17 @@ on:
 jobs:
   validate:
     name: Validate Merchant Database
-    runs-on: macos-latest
+    runs-on: macos-15
     
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      
+      - name: Select Xcode version
+        run: sudo xcode-select -s /Applications/Xcode_26.2.app/Contents/Developer
+      
+      - name: Show Xcode version
+        run: xcodebuild -version
       
       - name: Set up mise
         uses: jdx/mise-action@v2
