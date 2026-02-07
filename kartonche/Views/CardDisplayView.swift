@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import UIKit
+import UniformTypeIdentifiers
 
 /// Full-screen view for displaying a loyalty card barcode
 struct CardDisplayView: View {
@@ -15,6 +17,7 @@ struct CardDisplayView: View {
     @StateObject private var brightnessManager = BrightnessManager()
     @StateObject private var screenManager = ScreenManager()
     @State private var screen: UIScreen?
+    @State private var shareItem: ShareItem?
     
     var body: some View {
         let primaryColor = card.color.flatMap { Color(hex: $0) } ?? Color.accentColor
@@ -26,26 +29,39 @@ struct CardDisplayView: View {
             
             VStack(spacing: 0) {
                 // Colored header with card info
-                VStack(spacing: 8) {
-                    Text(card.storeName)
-                        .font(.title3)
-                        .fontWeight(.semibold)
-                    
-                    Text(card.name)
-                        .font(.title2)
-                        .fontWeight(.bold)
-                    
-                    if !card.cardNumber.isEmpty {
-                        Text(card.cardNumber)
-                            .font(.caption)
+                ZStack(alignment: .topTrailing) {
+                    VStack(spacing: 8) {
+                        Text(card.storeName)
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                        
+                        Text(card.name)
+                            .font(.title2)
+                            .fontWeight(.bold)
+                        
+                        if !card.cardNumber.isEmpty {
+                            Text(card.cardNumber)
+                                .font(.caption)
+                        }
                     }
+                    .foregroundStyle(secondaryColor)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 24)
+                    .accessibilityElement(children: .combine)
+                    .accessibilityLabel("\(card.name), \(card.storeName)" + (card.cardNumber.isEmpty ? "" : ", " + String(localized: "card number") + " \(card.cardNumber)"))
+                    
+                    // Share button in top right
+                    Button {
+                        shareCard()
+                    } label: {
+                        Image(systemName: "square.and.arrow.up")
+                            .font(.title2)
+                            .foregroundStyle(secondaryColor)
+                            .padding(16)
+                    }
+                    .accessibilityLabel(String(localized: "Share card"))
                 }
-                .foregroundStyle(secondaryColor)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 24)
                 .background(primaryColor)
-                .accessibilityElement(children: .combine)
-                .accessibilityLabel("\(card.name), \(card.storeName)" + (card.cardNumber.isEmpty ? "" : ", " + String(localized: "card number") + " \(card.cardNumber)"))
                 
                 Spacer()
                 
@@ -90,6 +106,28 @@ struct CardDisplayView: View {
             brightnessManager.restore()
             screenManager.restoreIdleTimer()
         }
+        .sheet(item: $shareItem) { item in
+            ActivityViewController(activityItems: [item.url])
+                .ignoresSafeArea()
+        }
+    }
+    
+    private func shareCard() {
+        do {
+            let data = try CardExporter.exportCard(card)
+            let fileName = CardExporter.generateFileName(cardCount: 1, cardName: card.name)
+            let fileURL = try CardExporter.createTemporaryFile(from: data, fileName: fileName)
+            
+            shareItem = ShareItem(url: fileURL)
+        } catch {
+            // TODO: Show error alert
+            print("Failed to export card: \(error)")
+        }
+    }
+    
+    struct ShareItem: Identifiable {
+        let id = UUID()
+        let url: URL
     }
     
     private func updateLastUsedDate() {
@@ -113,6 +151,23 @@ private struct ScreenAccessor: UIViewRepresentable {
         DispatchQueue.main.async {
             self.screen = uiView.window?.windowScene?.screen
         }
+    }
+}
+
+/// UIActivityViewController wrapper for SwiftUI
+struct ActivityViewController: UIViewControllerRepresentable {
+    let activityItems: [Any]
+    
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        let controller = UIActivityViewController(
+            activityItems: activityItems,
+            applicationActivities: nil
+        )
+        return controller
+    }
+    
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {
+        // No updates needed
     }
 }
 
