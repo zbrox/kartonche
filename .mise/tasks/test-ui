@@ -9,12 +9,14 @@ if [ -n "${1:-}" ]; then
     -project "$PROJECT" \
     -scheme "$SCHEME" \
     -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
-    -only-testing:"$1"
+    -quiet \
+    -only-testing:"$1" | xcbeautify
 else
   # Run all UI tests
   xcodebuild test \
     -project "$PROJECT" \
     -scheme "$SCHEME" \
     -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
-    -only-testing:kartoncheUITests
+    -quiet \
+    -only-testing:kartoncheUITests | xcbeautify
 fi

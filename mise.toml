@@ -1,6 +1,9 @@
 # mise configuration for kartonche iOS app
 # Tasks are in .mise/tasks/ directory
 
+[tools]
+xcbeautify = "latest"
+
 [env]
 # Xcode project configuration
 PROJECT = "kartonche.xcodeproj"
