@@ -89,12 +89,32 @@
         }
       }
     },
+    "A simple app for organizing your loyalty cards. Open source, privacy-focused, no account required." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Просто приложение за организиране на клубните ви карти. Отворен код, фокус върху поверителността, без регистрация."
+          }
+        }
+      }
+    },
     "About" : {
       "localizations" : {
         "bg" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Информация"
+          }
+        }
+      }
+    },
+    "Active" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Активно"
           }
         }
       }
@@ -149,6 +169,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Добавете първата си клубна карта"
+          }
+        }
+      }
+    },
+    "Add your first loyalty card to get started" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добавете първата си клубна карта, за да започнете"
           }
         }
       }
@@ -616,12 +646,12 @@
         }
       }
     },
-    "Enable location to see nearby cards and use location features" : {
+    "Enable location to see cards for nearby stores" : {
       "localizations" : {
         "bg" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Включете  достъпа местоположението, за да виждате близки карти и да използвате функции за местоположение"
+            "value" : "Включете местоположението, за да виждате карти за близки магазини"
           }
         }
       }
@@ -804,6 +834,16 @@
         }
       }
     },
+    "Features" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Функции"
+          }
+        }
+      }
+    },
     "File not found" : {
       "localizations" : {
         "bg" : {
@@ -864,6 +904,26 @@
         }
       }
     },
+    "Get reminded about your loyalty cards when you're near a store where you can use them." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Получавайте напомняния за клубните си карти, когато сте близо до магазин, където можете да ги използвате."
+          }
+        }
+      }
+    },
+    "Get reminded before your loyalty cards expire so you can renew them in time." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Получавайте напомняния преди клубните ви карти да изтекат, за да ги подновите навреме."
+          }
+        }
+      }
+    },
     "Go to Settings > Notifications > kartonche to enable reminders" : {
       "localizations" : {
         "bg" : {
@@ -901,6 +961,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Как да се обработят дубликатите"
+          }
+        }
+      }
+    },
+    "If you enable location features, your location is used only to show cards for nearby stores and is never sent to any server." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ако включите функциите за местоположение, то се използва само за показване на карти за близки магазини и никога не се изпраща към сървър."
           }
         }
       }
@@ -987,6 +1057,19 @@
         }
       }
     },
+    "kartonche" : {
+      "shouldTranslate" : false
+    },
+    "kartonche stores all data locally on your device. We don't collect, track, or share any personal information." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kartonche съхранява всички данни локално на устройството ви. Не събираме, проследяваме или споделяме лична информация."
+          }
+        }
+      }
+    },
     "Keep both" : {
       "localizations" : {
         "bg" : {
@@ -1003,6 +1086,46 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Запазване на текущо"
+          }
+        }
+      }
+    },
+    "Legal" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Правна информация"
+          }
+        }
+      }
+    },
+    "License" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лиценз"
+          }
+        }
+      }
+    },
+    "Limited" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ограничено"
+          }
+        }
+      }
+    },
+    "Location" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Местоположение"
           }
         }
       }
@@ -1027,12 +1150,22 @@
         }
       }
     },
-    "Location Features" : {
+    "Location data" : {
       "localizations" : {
         "bg" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Функции за местоположение"
+            "value" : "Данни за местоположение"
+          }
+        }
+      }
+    },
+    "Location data never leaves your device" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Данните за местоположение никога не напускат устройството ви"
           }
         }
       }
@@ -1120,12 +1253,35 @@
         }
       }
     },
-    "More accurate nearby cards" : {
+    "Minimal battery impact" : {
       "localizations" : {
         "bg" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "По-точно показване на карти до близкия магазин"
+            "value" : "Минимално влияние върху батерията"
+          }
+        }
+      }
+    },
+    "MIT License" : {
+      "shouldTranslate" : false
+    },
+    "More" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Още"
+          }
+        }
+      }
+    },
+    "More accurate nearby store detection" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "По-точно откриване на близки магазини"
           }
         }
       }
@@ -1172,6 +1328,36 @@
         }
       }
     },
+    "No account required" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не е необходима регистрация"
+          }
+        }
+      }
+    },
+    "No ads" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Без реклами"
+          }
+        }
+      }
+    },
+    "No analytics" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Без аналитика"
+          }
+        }
+      }
+    },
     "No barcodes found in image" : {
       "comment" : "Error message when no barcodes detected",
       "localizations" : {
@@ -1205,6 +1391,16 @@
         }
       }
     },
+    "No Results" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Няма резултати"
+          }
+        }
+      }
+    },
     "Not Now" : {
       "localizations" : {
         "bg" : {
@@ -1225,6 +1421,16 @@
         }
       }
     },
+    "Not set up" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не е настроено"
+          }
+        }
+      }
+    },
     "Notes" : {
       "comment" : "Label for notes field",
       "localizations" : {
@@ -1232,6 +1438,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Бележки"
+          }
+        }
+      }
+    },
+    "Notification Permission" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Разрешение за известия"
           }
         }
       }
@@ -1307,12 +1523,22 @@
         }
       }
     },
-    "Permissions" : {
+    "Permission" : {
       "localizations" : {
         "bg" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Разрешения"
+            "value" : "Разрешение"
+          }
+        }
+      }
+    },
+    "Permission required" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изисква се разрешение"
           }
         }
       }
@@ -1323,6 +1549,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Бензиностанции"
+          }
+        }
+      }
+    },
+    "Privacy" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поверителност"
+          }
+        }
+      }
+    },
+    "Privacy Policy" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Политика за поверителност"
           }
         }
       }
@@ -1357,6 +1603,16 @@
         }
       }
     },
+    "Rate on App Store" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оценяване в App Store"
+          }
+        }
+      }
+    },
     "Remove from favorites" : {
       "comment" : "Accessibility label for unfavorite button",
       "localizations" : {
@@ -1374,6 +1630,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Замяна на съществуващи"
+          }
+        }
+      }
+    },
+    "Report an Issue" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Докладване на проблем"
           }
         }
       }
@@ -1658,6 +1924,16 @@
         }
       }
     },
+    "Source Code" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изходен код"
+          }
+        }
+      }
+    },
     "Store Name" : {
       "comment" : "Label for store name field",
       "localizations" : {
@@ -1665,6 +1941,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Име на магазина"
+          }
+        }
+      }
+    },
+    "Support" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поддръжка"
+          }
+        }
+      }
+    },
+    "Support Development" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Подкрепа на разработката"
           }
         }
       }
@@ -1695,6 +1991,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Докоснете, за да покажете картата си"
+          }
+        }
+      }
+    },
+    "Thanks to early testers and friends who provided feedback." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Благодарности на ранните тестери и приятели, които дадоха обратна връзка."
+          }
+        }
+      }
+    },
+    "The app contains no advertising." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Приложението не съдържа реклами."
           }
         }
       }
@@ -1799,12 +2115,12 @@
         }
       }
     },
-    "Upgrade to 'Always' for better widget performance" : {
+    "Upgrade to 'Always' for nearby notifications and better widget performance" : {
       "localizations" : {
         "bg" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Надградете до 'Винаги' за по-добра производителност на инструментите"
+            "value" : "Надградете до 'Винаги' за известия при близост и по-добра производителност на инструментите"
           }
         }
       }
@@ -1839,12 +2155,28 @@
         }
       }
     },
-    "Version %@" : {
+    "Version %@ (%@)" : {
       "localizations" : {
         "bg" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Версия %@"
+            "value" : "Версия %1$@ (%2$@)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version %1$@ (%2$@)"
+          }
+        }
+      }
+    },
+    "We don't track how you use the app." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не проследяваме как използвате приложението."
           }
         }
       }
@@ -1855,6 +2187,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ще ви напомним:"
+          }
+        }
+      }
+    },
+    "What's New" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Какво ново"
           }
         }
       }
@@ -1919,6 +2261,26 @@
         }
       }
     },
+    "Your cards are stored only on your device." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Картите ви се съхраняват само на вашето устройство."
+          }
+        }
+      }
+    },
+    "Your cards, always ready" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Картите ви, винаги готови"
+          }
+        }
+      }
+    },
     "Your location is only used to calculate distance to saved stores." : {
       "localizations" : {
         "bg" : {
@@ -1929,12 +2291,22 @@
         }
       }
     },
-    "Your location is only used to find nearby cards. Battery impact is minimal." : {
+    "Your location is only used to find nearby stores" : {
       "localizations" : {
         "bg" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Местоположението ви се използва само за намиране на карти до най-близките магазини. Влиянието върху батерията е минимално."
+            "value" : "Местоположението ви се използва само за намиране на близки магазини"
+          }
+        }
+      }
+    },
+    "Your location is only used to find nearby stores. Battery impact is minimal." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Местоположението ви се използва само за намиране на близки магазини. Влиянието върху батерията е минимално."
           }
         }
       }

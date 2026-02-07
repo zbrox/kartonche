@@ -84,7 +84,7 @@ struct NearestLocationWidgetEntryView : View {
             NearestCardView(card: card, distance: entry.distance, family: family)
                 .widgetURL(createDeepLink(for: card))
         } else {
-            NearestPlaceholderView(family: family, message: "No nearby cards")
+            NearestPlaceholderView(family: family, message: "No nearby stores")
         }
     }
     

@@ -158,7 +158,7 @@ struct RectangularLockScreenWidgetEntryView : View {
                 Image(systemName: "creditcard")
                     .font(.system(size: 14))
                 
-                Text("No nearby cards")
+                Text("No nearby stores")
                     .font(.system(size: 12))
                     .foregroundColor(.secondary)
             }

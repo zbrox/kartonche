@@ -343,24 +343,38 @@ struct CardListView: View {
         .background(Color.blue.opacity(0.1))
     }
     
+    @ViewBuilder
     private var emptyStateView: some View {
-        ContentUnavailableView {
-            Label("No Cards", systemImage: "creditcard")
-        } description: {
-            if !searchText.isEmpty {
-                Text("No cards matching '\(searchText)'")
-            } else if !showExpiredCards && !allCards.filter({ $0.isExpired }).isEmpty {
-                Text(String(localized: "All cards are expired. Toggle 'Show Expired' in the sort menu to see them."))
-            } else {
-                Text("Add your first loyalty card")
+        if !searchText.isEmpty {
+            // Search with no results
+            ContentUnavailableView {
+                Label(String(localized: "No Results"), systemImage: "magnifyingglass")
+            } description: {
+                Text(String(localized: "No cards matching '\(searchText)'"))
             }
-        } actions: {
-            if searchText.isEmpty && (showExpiredCards || allCards.filter({ $0.isExpired }).isEmpty) {
+        } else if !showExpiredCards && !allCards.filter({ $0.isExpired }).isEmpty {
+            // All cards are expired and hidden
+            ContentUnavailableView {
+                Label(String(localized: "No Cards"), systemImage: "creditcard")
+            } description: {
+                Text(String(localized: "All cards are expired. Toggle 'Show Expired' in the sort menu to see them."))
+            }
+        } else if allCards.isEmpty {
+            // First launch - no cards at all
+            EmptyCardListView {
+                showingMerchantSelection = true
+            }
+        } else {
+            // Fallback
+            ContentUnavailableView {
+                Label(String(localized: "No Cards"), systemImage: "creditcard")
+            } description: {
+                Text(String(localized: "Add your first loyalty card"))
+            } actions: {
                 Button(String(localized: "Add Card")) {
                     showingMerchantSelection = true
                 }
                 .buttonStyle(.borderedProminent)
-                .accessibilityIdentifier("addCardButton")
             }
         }
     }
