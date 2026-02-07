@@ -28,7 +28,7 @@ struct MerchantSelectionView: View {
                     Button {
                         addCustomCard()
                     } label: {
-                        Label("Ръчно добавяне на карта", systemImage: "plus.circle.fill")
+                        Label("Add Card Manually", systemImage: "plus.circle.fill")
                             .font(.headline)
                     }
                     .accessibilityIdentifier("customCardButton")
@@ -52,13 +52,13 @@ struct MerchantSelectionView: View {
             }
             .searchable(
                 text: $searchText,
-                prompt: Text("Търсене на магазин")
+                prompt: Text("Search Merchant")
             )
-            .navigationTitle("Избор на магазин")
+            .navigationTitle("Select Merchant")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Отказ") {
+                    Button("Cancel") {
                         isPresented = false
                     }
                     .accessibilityIdentifier("cancelButton")

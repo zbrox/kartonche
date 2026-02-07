@@ -232,10 +232,10 @@ func generateSwiftCode(merchants: [MerchantData]) -> String {
         
         var displayName: String {
             switch self {
-            case .grocery: return String(localized: "Хранителни магазини")
-            case .fuel: return String(localized: "Бензиностанции")
-            case .pharmacy: return String(localized: "Аптеки")
-            case .retail: return String(localized: "Други")
+            case .grocery: return String(localized: "Grocery Stores")
+            case .fuel: return String(localized: "Gas Stations")
+            case .pharmacy: return String(localized: "Pharmacies")
+            case .retail: return String(localized: "Other")
             }
         }
     }

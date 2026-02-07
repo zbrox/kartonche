@@ -51,7 +51,7 @@ struct MerchantRowView: View {
                     .cornerRadius(4)
             } else if !merchant.programs.isEmpty {
                 // Multiple programs - show count
-                Text("\(merchant.programs.count) програми")
+                Text("\(merchant.programs.count) \(String(localized: "Programs"))")
                     .font(.caption)
                     .padding(.horizontal, 8)
                     .padding(.vertical, 4)
@@ -69,7 +69,7 @@ struct MerchantRowView: View {
         if merchant.hasSingleProgram, let program = merchant.programs.first {
             label += ", " + program.barcodeType.displayName
         } else if merchant.programs.count > 1 {
-            label += ", \(merchant.programs.count) " + String(localized: "programs")
+            label += ", \(merchant.programs.count) " + String(localized: "Programs")
         }
         return label
     }
