@@ -24,6 +24,7 @@ struct CardListView: View {
     
     @State private var searchText = ""
     @State private var sortOption: SortOption = .alphabetical
+    @AppStorage("showExpiredCards") private var showExpiredCards = true
     @State private var showingMerchantSelection = false
     @State private var merchantForProgramSelection: MerchantTemplate?
     @State private var pendingCard: PendingCard?
@@ -58,7 +59,14 @@ struct CardListView: View {
               locationManager.authorizationStatus == .authorizedAlways else {
             return []
         }
-        return locationManager.cardsNearby(allCards, radius: 1000.0)
+        var nearby = locationManager.cardsNearby(allCards, radius: 1000.0)
+        
+        // Filter expired cards if toggle is off
+        if !showExpiredCards {
+            nearby = nearby.filter { !$0.card.isExpired }
+        }
+        
+        return nearby
     }
     
     private var filteredAndSortedCards: [LoyaltyCard] {
@@ -71,6 +79,11 @@ struct CardListView: View {
                 card.storeName.localizedCaseInsensitiveContains(searchText) ||
                 card.cardNumber.localizedCaseInsensitiveContains(searchText)
             }
+        }
+        
+        // Filter expired cards
+        if !showExpiredCards {
+            cards = cards.filter { !$0.isExpired }
         }
         
         // Sort
@@ -334,13 +347,15 @@ struct CardListView: View {
         ContentUnavailableView {
             Label("No Cards", systemImage: "creditcard")
         } description: {
-            if searchText.isEmpty {
-                Text("Add your first loyalty card")
-            } else {
+            if !searchText.isEmpty {
                 Text("No cards matching '\(searchText)'")
+            } else if !showExpiredCards && !allCards.filter({ $0.isExpired }).isEmpty {
+                Text(String(localized: "All cards are expired. Toggle 'Show Expired' in the sort menu to see them."))
+            } else {
+                Text("Add your first loyalty card")
             }
         } actions: {
-            if searchText.isEmpty {
+            if searchText.isEmpty && (showExpiredCards || allCards.filter({ $0.isExpired }).isEmpty) {
                 Button(String(localized: "Add Card")) {
                     showingMerchantSelection = true
                 }
@@ -356,6 +371,12 @@ struct CardListView: View {
                 ForEach(SortOption.allCases, id: \.self) { option in
                     Text(option.localizedName).tag(option)
                 }
+            }
+            
+            Divider()
+            
+            Toggle(isOn: $showExpiredCards) {
+                Label(String(localized: "Show Expired"), systemImage: "calendar.badge.exclamationmark")
             }
         } label: {
             Label("Sort", systemImage: "arrow.up.arrow.down")
