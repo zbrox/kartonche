@@ -402,7 +402,7 @@ struct CardEditorView: View {
             if hasExpirationDate && expirationDate != nil {
                 await NotificationManager.shared.scheduleExpirationNotifications(for: savedCard)
             } else {
-                await NotificationManager.shared.cancelNotifications(for: savedCard)
+                await NotificationManager.shared.cancelNotifications(for: savedCard.id)
             }
         }
         
@@ -416,7 +416,7 @@ struct CardEditorView: View {
         if let card = card {
             // Cancel any pending notifications
             Task {
-                await NotificationManager.shared.cancelNotifications(for: card)
+                await NotificationManager.shared.cancelNotifications(for: card.id)
             }
             modelContext.delete(card)
             

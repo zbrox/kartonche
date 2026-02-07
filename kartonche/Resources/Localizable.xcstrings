@@ -1688,7 +1688,57 @@
     "Отказ": {},
     "Ръчно добавяне на карта": {},
     "Търсене на магазин": {},
-    "Хранителни магазини": {}
+    "Хранителни магазини": {},
+    "%@ expires in 7 days": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ изтича след 7 дни"
+          }
+        }
+      }
+    },
+    "%@ expires tomorrow": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ изтича утре"
+          }
+        }
+      }
+    },
+    "Enable Notifications": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разрешаване на известия"
+          }
+        }
+      }
+    },
+    "Get reminded before your cards expire": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Получавайте напомняния преди картите ви да изтекат"
+          }
+        }
+      }
+    },
+    "Allow": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разрешаване"
+          }
+        }
+      }
+    }
   },
   "version": "1.0"
 }
