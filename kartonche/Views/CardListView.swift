@@ -459,7 +459,7 @@ struct CardListView: View {
     
     @MainActor
     private func importCards(container: CardExportContainer, strategy: CardImporter.ImportStrategy) async throws -> CardImporter.ImportResult {
-        let result = try await CardImporter.importCards(
+        let result = try CardImporter.importCards(
             from: container,
             into: modelContext,
             strategy: strategy
