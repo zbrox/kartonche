@@ -541,6 +541,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = kartonche/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Камерата се използва за сканиране на баркодове от вашите клубни карти.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Местоположението се използва постоянно за показване на близки клубни карти в джаджи дори когато приложението е затворено.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Местоположението се използва за показване на близки клубни карти.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Достъпът до снимките се използва за сканиране на баркодове от снимки.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -578,6 +579,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = kartonche/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Камерата се използва за сканиране на баркодове от вашите клубни карти.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Местоположението се използва постоянно за показване на близки клубни карти в джаджи дори когато приложението е затворено.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Местоположението се използва за показване на близки клубни карти.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Достъпът до снимките се използва за сканиране на баркодове от снимки.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

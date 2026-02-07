@@ -213,9 +213,6 @@ struct CardListView: View {
                 }
             }
         }
-        .onAppear {
-            locationManager.requestLocation()
-        }
     }
     
     private var emptyStateView: some View {
