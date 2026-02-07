@@ -10,6 +10,7 @@ import SwiftData
 import CoreLocation
 import WidgetKit
 import UniformTypeIdentifiers
+import UIKit
 
 struct PendingCard: Identifiable {
     let id = UUID()
@@ -36,6 +37,8 @@ struct CardListView: View {
     @State private var shareItem: ShareItem?
     @State private var importContainer: CardExportContainer?
     @State private var showingImportPreview = false
+    @State private var showConfetti = false
+    @State private var previousCardCount = 0
     
     struct ShareItem: Identifiable {
         let id = UUID()
@@ -211,7 +214,23 @@ struct CardListView: View {
                     )
                 }
             }
+            .confetti(isActive: $showConfetti)
+            .onAppear {
+                previousCardCount = allCards.count
+            }
+            .onChange(of: allCards.count) { oldCount, newCount in
+                if previousCardCount == 0 && newCount == 1 {
+                    triggerFirstCardCelebration()
+                }
+                previousCardCount = newCount
+            }
         }
+    }
+    
+    private func triggerFirstCardCelebration() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+        showConfetti = true
     }
     
     private var cardListView: some View {
