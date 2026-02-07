@@ -1,0 +1,15 @@
+/* 
+ * InfoPlist.strings (English)
+ * kartonche
+ *
+ * Localized permission descriptions shown in iOS system dialogs
+ */
+
+/* Location permission - When In Use */
+"NSLocationWhenInUseUsageDescription" = "Location is used to show cards when you're near saved stores.";
+
+/* Location permission - Always (includes When In Use) */
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Location is always used to show nearby loyalty cards in widgets even when the app is closed.";
+
+/* Notification permission */
+"NSUserNotificationsUsageDescription" = "Notifications remind you before your loyalty cards expire.";

@@ -1,0 +1,15 @@
+/* 
+ * InfoPlist.strings (Bulgarian)
+ * kartonche
+ *
+ * Localized permission descriptions shown in iOS system dialogs
+ */
+
+/* Location permission - When In Use */
+"NSLocationWhenInUseUsageDescription" = "Местоположението се използва за показване на карти когато сте близо до запазени магазини.";
+
+/* Location permission - Always (includes When In Use) */
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Местоположението се използва постоянно за показване на близки клубни карти в инструменти дори когато приложението е затворено.";
+
+/* Notification permission */
+"NSUserNotificationsUsageDescription" = "Известията ви напомнят преди клубните карти да изтекат.";
