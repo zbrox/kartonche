@@ -204,7 +204,13 @@ This project should use jj (Jujutsu) for version control:
 - **Xcode:** 26.2+
 
 ## Dependencies
-Currently none. Project uses only Apple frameworks (SwiftUI, SwiftData, Foundation, XCTest).
+
+### Runtime Dependencies
+None. Project uses only Apple frameworks (SwiftUI, SwiftData, Foundation, XCTest).
+
+### Development Tools
+- **xcbeautify**: Pretty-print Xcode build output (managed by mise)
+- **jq**: JSON processor for parsing .xcstrings and .stringsdata files (managed by mise)
 
 ## Key Principles
 1. Keep code simple and readable - prefer clarity over cleverness
