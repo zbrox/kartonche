@@ -340,7 +340,11 @@ struct LocationEditorView: View {
             let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
             
             do {
-                let (geocodedName, geocodedAddress) = try await GeocodingService.reverseGeocode(location: location)
+                let mapItem = try await GeocodingService.reverseGeocode(location: location)
+                
+                // Extract name - prefer POI name, fall back to city
+                let geocodedName = mapItem.name ?? mapItem.addressRepresentations?.cityName ?? String(localized: "Current Location")
+                let geocodedAddress = mapItem.address?.fullAddress ?? mapItem.addressRepresentations?.fullAddress(includingRegion: false, singleLine: true) ?? String(localized: "Unknown Address")
                 
                 await MainActor.run {
                     // Auto-fill name if empty
@@ -399,7 +403,11 @@ struct LocationEditorView: View {
             }
             
             do {
-                let (geocodedName, geocodedAddress) = try await GeocodingService.reverseGeocode(location: currentLocation)
+                let mapItem = try await GeocodingService.reverseGeocode(location: currentLocation)
+                
+                // Extract name - prefer POI name, fall back to city
+                let geocodedName = mapItem.name ?? mapItem.addressRepresentations?.cityName ?? String(localized: "Current Location")
+                let geocodedAddress = mapItem.address?.fullAddress ?? mapItem.addressRepresentations?.fullAddress(includingRegion: false, singleLine: true) ?? String(localized: "Unknown Address")
                 
                 await MainActor.run {
                     // Auto-fill name if empty
