@@ -1,49 +1,47 @@
 # kartonche
 
-A modern, open-source iOS app for managing loyalty cards in Bulgaria.
+A modern, open-source iOS app for managing loyalty cards.
 
 ## Overview
 
-kartonche (картонче, "small card" in Bulgarian) is a native iOS app that helps you digitize and organize all your loyalty cards from Bulgarian stores, gas stations, pharmacies, and more. No more fumbling through your wallet at checkout - just open the app, select your card, and scan.
+kartonche (картонче, "small card" in Bulgarian) is a native iOS app that helps you digitize and organize all your loyalty cards. No more fumbling through your wallet at checkout - just open the app, select your card, and scan.
 
 ### Key Features
 
 - ✅ **Barcode Generation** - Generate QR, Code128, EAN-13, PDF417, and Aztec barcodes
-- ✅ **Barcode Scanning** - Scan physical cards with your camera using VisionKit
+- ✅ **Barcode Scanning** - Scan physical cards with your camera or photos using VisionKit
 - ✅ **Quick Access** - Display barcodes instantly with brightness boost and screen wake
-- ✅ **Merchant Templates** - Pre-configured templates for 14 popular Bulgarian stores
+- ✅ **Merchant Templates** - Pre-configured templates for popular stores
 - ✅ **Smart Search** - Search and sort cards by name, store, or recent usage
 - ✅ **Bulgarian-First** - Complete interface in Bulgarian with English fallback
-- 🚧 **Widgets** - Add favorite cards to your home screen (coming soon)
-- 💾 **Local Storage** - SwiftData-based storage (no paid developer account needed)
+- ✅ **Widgets** - Home screen and lock screen widgets for quick access
+- ✅ **Location Awareness** - Get notified when near stores with your saved cards
+- ✅ **Expiration Tracking** - Track card expiration dates with reminder notifications
+- ✅ **Export/Import** - Share cards via AirDrop or save to files
+- 💾 **Local Storage** - SwiftData-based storage (no cloud account required)
 
 ## Current Status
 
-🚀 **Alpha Release** - Core Features Complete
-
-**Completed Sprints:**
-- ✅ **Sprint 0:** Project setup, documentation, architecture
-- ✅ **Sprint 1:** Data models, permissions, complete Bulgarian localization
-- ✅ **Sprint 2:** Barcode generation (5 types), scanning, display utilities
-- ✅ **Sprint 3:** Card management UI (list, display, editor, search, sort)
-- ✅ **Sprint 4:** Merchant database (14 merchants, KDL format, code generator)
-- ✅ **Sprint 8:** Comprehensive unit tests (45 tests, 100% pass rate)
-- ✅ **Sprint 9:** CI/CD (GitHub Actions for validation and testing)
+🚀 **Alpha Release** - Feature Complete, Testing in Progress
 
 **What Works:**
 - ✅ Add/edit/delete loyalty cards
-- ✅ Generate all major barcode types
-- ✅ Scan barcodes with camera
-- ✅ Display cards with brightness boost
-- ✅ Search and sort cards
+- ✅ Generate all major barcode types (QR, Code128, EAN-13, PDF417, Aztec)
+- ✅ Scan barcodes with camera or from photos
+- ✅ Display cards with brightness boost and screen wake
+- ✅ Search and sort cards by name, store, or usage
 - ✅ Pre-configured merchant templates (BILLA, Kaufland, Lidl, OMV, Sopharmacy, etc.)
-- ✅ Full Bulgarian localization
+- ✅ Home screen and lock screen widgets
+- ✅ Location-based notifications when near stores
+- ✅ Expiration date tracking with reminders
+- ✅ Export/import cards via AirDrop
+- ✅ Full Bulgarian localization with VoiceOver and Dynamic Type support
 
 ## Quick Start
 
 **First time setup:**
 ```bash
-git clone https://github.com/yourusername/kartonche.git
+git clone https://github.com/zbrox/kartonche.git
 cd kartonche
 mise trust
 mise run generate-merchants
@@ -71,7 +69,7 @@ Open in Xcode simulator or connect an iOS 26.2+ device to test camera scanning.
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/kartonche.git
+git clone https://github.com/zbrox/kartonche.git
 cd kartonche
 ```
 
@@ -129,8 +127,7 @@ mise run ci                   # Full CI check
 kartonche/
 ├── AGENTS.md              # Guidelines for AI coding agents
 ├── ARCHITECTURE.md        # Technical architecture documentation
-├── TODO.md                # Sprint-by-sprint implementation plan
-├── CHANGELOG.md           # Auto-generated from commits
+├── CHANGELOG.md           # Version history (auto-generated)
 ├── mise.toml              # Development task configuration
 ├── .mise/tasks/           # Individual task scripts
 ├── kartonche/             # Main app code
@@ -153,16 +150,15 @@ kartonche/
 
 - **[AGENTS.md](AGENTS.md)** - Coding guidelines, localization rules, commit conventions
 - **[ARCHITECTURE.md](ARCHITECTURE.md)** - Technical decisions, data models, architecture patterns
-- **[TODO.md](TODO.md)** - Detailed implementation roadmap
-- **[CHANGELOG.md](CHANGELOG.md)** - Version history (auto-generated)
+- **[CHANGELOG.md](CHANGELOG.md)** - Version history (auto-generated from commits)
 
 ## Contributing
 
-We welcome contributions! This is an open-source project focused on the Bulgarian market.
+We welcome contributions!
 
 ### Merchant Database
 
-You can help by adding popular Bulgarian stores to our merchant template database:
+You can help by adding stores to our merchant template database:
 
 1. Run `mise run merchant-add` for interactive entry
 2. Or manually edit `Merchants/merchants.kdl` following the schema
@@ -185,7 +181,7 @@ All templates include pre-configured barcode types, suggested colors, and both B
 
 1. Read [AGENTS.md](AGENTS.md) for coding guidelines
 2. Follow conventional commits format
-3. Write tests for new features (we have 45 unit tests with 100% pass rate)
+3. Write tests for new features (we have 87 unit tests with 100% pass rate)
 4. Run `mise run test` before committing
 5. Ensure Bulgarian localization uses neutral forms (not imperatives)
 
@@ -210,12 +206,18 @@ mise run ci
 **Current test coverage:**
 - BarcodeType: 5 tests
 - BarcodeGenerator: 7 tests  
-- LoyaltyCard model: 4 tests
-- MerchantTemplate: 13 tests
-- ScreenManager: 3 tests
 - BrightnessManager: 5 tests
+- ColoredBarcodeDisplay: 4 tests
+- GeocodingService: 5 tests
+- LocationManager: 10 tests
+- LocationManagerGeofencing: 17 tests
+- MerchantTemplate: 13 tests
+- MerchantSelectionOrder: 4 tests
+- Model (LoyaltyCard): 4 tests
 - PermissionManager: 8 tests
-- **Total: 45 tests, 100% passing ✅**
+- PhotoBarcodeScanner: 1 test
+- ScreenManager: 3 tests
+- **Total: 87 tests, 100% passing ✅**
 
 ### Continuous Integration
 
@@ -235,32 +237,15 @@ See [.github/workflows/](.github/workflows/) for workflow definitions.
 - **Storage:** Local-only SwiftData (no cloud sync)
 - **Localization:** String Catalogs (Bulgarian primary, 15+ strings)
 - **Database:** KDL format with build-time code generation
-- **Testing:** Swift Testing framework (45 unit tests)
+- **Testing:** Swift Testing framework (87 unit tests)
 - **Dependencies:** Zero runtime dependencies! All native Apple frameworks
 
-## Roadmap
+## What's Next
 
-### MVP (Near Complete)
-- ✅ Core card management (add, edit, delete)
-- ✅ Barcode scanning and generation (5 types)
-- ✅ Merchant template database (14 merchants)
-- ✅ Bulgarian + English localization
-- ✅ Search and sort functionality
-- ✅ Comprehensive unit tests (45 tests)
-- ✅ CI/CD automation
-- 🚧 Photo import for cards
-- 🚧 Home screen widgets
-- 🚧 UI tests
-
-### Phase 2 (Future)
-- [ ] Recently used tracking and favorites
-- [ ] Color customization per card
-- [ ] Location-aware card suggestions
-- [ ] Background geofencing notifications
-- [ ] Export/import functionality
-- [ ] Apple Wallet integration (if user demand > 1000 users)
-
-See [TODO.md](TODO.md) for detailed implementation plan.
+- [ ] iCloud sync (CloudKit integration)
+- [ ] Apple Wallet integration
+- [ ] UI test coverage
+- [ ] App Store release
 
 ## License
 
@@ -268,13 +253,8 @@ MIT License - See [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
-Built with ❤️ for the Bulgarian community.
-
-Special thanks to:
-- Contributors who add merchant templates
-- Early testers providing feedback
-- The Bulgarian iOS developer community
+Thanks to early testers and friends who provided feedback.
 
 ---
 
-**Status:** Alpha | **Version:** 0.5.0-dev | **Platform:** iOS 26.2+ | **Tests:** 45/45 passing ✅
+**Status:** Alpha | **Version:** 2026.02 | **Platform:** iOS 26.2+ | **Tests:** 87/87 passing ✅

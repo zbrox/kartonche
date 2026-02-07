@@ -4,6 +4,7 @@
 [tools]
 xcbeautify = "latest"
 jq = "latest"
+git-cliff = "latest"
 
 [env]
 # Xcode project configuration
