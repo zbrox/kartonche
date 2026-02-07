@@ -7,6 +7,8 @@ on:
   push:
     branches:
       - main
+    tags:
+      - 'v*'
 
 jobs:
   test:
@@ -28,5 +30,10 @@ jobs:
         with:
           experimental: true
       
-      - name: Run CI workflow
-        run: mise run ci
+      - name: Run CI workflow (full tests on tags)
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/* ]]; then
+            mise run ci --full
+          else
+            mise run ci
+          fi
