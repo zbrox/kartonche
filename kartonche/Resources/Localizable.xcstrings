@@ -603,6 +603,16 @@
         }
       }
     },
+    "Enable location to see nearby cards and use location features" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Включете  достъпа местоположението, за да виждате близки карти и да използвате функции за местоположение"
+          }
+        }
+      }
+    },
     "Enable Reminders" : {
       "localizations" : {
         "bg" : {
@@ -980,6 +990,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Достъпът до местоположение е отказан"
+          }
+        }
+      }
+    },
+    "Location access is restricted by parental controls or device management" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Достъпът до местоположение е ограничен от родителски контрол или управление на устройството"
           }
         }
       }
