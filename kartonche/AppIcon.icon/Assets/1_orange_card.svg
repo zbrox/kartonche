@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="orangeCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFCA6E"/>
+      <stop offset="50%" stop-color="#FB8C00"/>
+      <stop offset="100%" stop-color="#EF6C00"/>
+    </linearGradient>
+  </defs>
+  
+  <g transform="translate(540, 560) rotate(8)">
+    <!-- Card body -->
+    <rect x="-330" y="-215" width="660" height="430" rx="44" ry="44" fill="url(#orangeCard)"/>
+
+    <!-- Star icon (top-right) -->
+    <g transform="translate(220, -130)">
+      <polygon points="0,-40 10,-14 38,-14 16,4 24,30 0,16 -24,30 -16,4 -38,-14 -10,-14" fill="white"/>
+    </g>
+    
+    <!-- Stamp area -->
+    <rect x="-270" y="25" width="540" height="140" rx="22" ry="22" fill="white"/>
+    
+    <!-- Stamped circles -->
+    <circle cx="-200" cy="95" r="26" fill="#FB8C00"/>
+    <circle cx="-130" cy="95" r="26" fill="#FB8C00"/>
+    <circle cx="-60" cy="95" r="26" fill="#FB8C00"/>
+    <circle cx="10" cy="95" r="26" fill="#FB8C00"/>
+    <circle cx="80" cy="95" r="26" fill="#FB8C00"/>
+    
+    <!-- Checkmarks -->
+    <g stroke="white" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <polyline points="-211,97 -202,107 -189,85"/>
+      <polyline points="-141,97 -132,107 -119,85"/>
+      <polyline points="-71,97 -62,107 -49,85"/>
+      <polyline points="-1,97 8,107 21,85"/>
+      <polyline points="69,97 78,107 91,85"/>
+    </g>
+    
+    <!-- Empty circles -->
+    <circle cx="150" cy="95" r="26" fill="white" stroke="#D4903C" stroke-width="3" stroke-dasharray="7,5"/>
+    <circle cx="220" cy="95" r="26" fill="white" stroke="#D4903C" stroke-width="3" stroke-dasharray="7,5"/>
+  </g>
+</svg>

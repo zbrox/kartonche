@@ -71,6 +71,7 @@
 		0B91F2E42F36A425003F33AC /* Exceptions for "kartonche" folder in "kartoncheWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				AppIcon.icon,
 				Models/BarcodeType.swift,
 				Models/CardLocation.swift,
 				Models/LoyaltyCard.swift,
