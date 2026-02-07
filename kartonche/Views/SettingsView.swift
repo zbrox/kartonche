@@ -7,15 +7,72 @@
 
 import SwiftUI
 import CoreLocation
+import UIKit
 
 struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
     @StateObject private var locationManager = LocationManager()
+    @StateObject private var notificationManager = NotificationManager.shared
     @State private var showingAlwaysExplanation = false
+    @State private var pendingNotificationCount = 0
+    @State private var notificationsEnabled = false
     
     var body: some View {
         NavigationStack {
             Form {
+                // Notification Settings
+                Section {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(String(localized: "Expiration Reminders"))
+                                .font(.headline)
+                            Text(notificationStatusText)
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                        
+                        Spacer()
+                        
+                        if notificationManager.authorizationStatus == .notDetermined {
+                            Button {
+                                Task {
+                                    await requestNotificationPermission()
+                                }
+                            } label: {
+                                Text(String(localized: "Enable"))
+                            }
+                            .buttonStyle(.bordered)
+                        } else if notificationManager.authorizationStatus == .denied {
+                            Button {
+                                openAppSettings()
+                            } label: {
+                                Text(String(localized: "Settings"))
+                            }
+                            .buttonStyle(.bordered)
+                        }
+                    }
+                    
+                    if notificationManager.authorizationStatus == .authorized && pendingNotificationCount > 0 {
+                        HStack {
+                            Text(String(localized: "Scheduled reminders"))
+                                .font(.subheadline)
+                            Spacer()
+                            Text("\(pendingNotificationCount)")
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    
+                    if notificationManager.authorizationStatus == .denied {
+                        Text(String(localized: "Go to Settings > Notifications > kartonche to enable reminders"))
+                            .font(.caption)
+                            .foregroundStyle(.orange)
+                    }
+                } header: {
+                    Text(String(localized: "Notifications"))
+                }
+                
+                // Location Settings
                 Section {
                     HStack {
                         VStack(alignment: .leading, spacing: 4) {
@@ -65,6 +122,47 @@ struct SettingsView: View {
             }
             .sheet(isPresented: $showingAlwaysExplanation) {
                 AlwaysLocationExplanationView(locationManager: locationManager)
+            }
+            .task {
+                await loadNotificationInfo()
+            }
+        }
+    }
+    
+    private var notificationStatusText: String {
+        switch notificationManager.authorizationStatus {
+        case .notDetermined:
+            return String(localized: "Not Set")
+        case .denied:
+            return String(localized: "Disabled")
+        case .authorized:
+            return String(localized: "Enabled")
+        case .provisional:
+            return String(localized: "Provisional")
+        case .ephemeral:
+            return String(localized: "Ephemeral")
+        @unknown default:
+            return String(localized: "Unknown")
+        }
+    }
+    
+    private func loadNotificationInfo() async {
+        await notificationManager.updateAuthorizationStatus()
+        pendingNotificationCount = await notificationManager.getPendingNotificationCount()
+        notificationsEnabled = notificationManager.authorizationStatus == .authorized
+    }
+    
+    private func requestNotificationPermission() async {
+        let granted = await notificationManager.requestPermission()
+        if granted {
+            await loadNotificationInfo()
+        }
+    }
+    
+    private func openAppSettings() {
+        if let url = URL(string: UIApplication.openSettingsURLString) {
+            Task { @MainActor in
+                UIApplication.shared.open(url)
             }
         }
     }
