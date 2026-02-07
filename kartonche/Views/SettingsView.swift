@@ -15,6 +15,7 @@ struct SettingsView: View {
     @StateObject private var notificationManager = NotificationManager.shared
     @State private var showingAlwaysExplanation = false
     @State private var showingNotificationPermission = false
+    @State private var showingLocationPermission = false
     @State private var pendingNotificationCount = 0
     @State private var notificationsEnabled = false
     
@@ -84,7 +85,21 @@ struct SettingsView: View {
                         
                         Spacer()
                         
-                        if locationManager.authorizationStatus == .authorizedWhenInUse {
+                        if locationManager.authorizationStatus == .notDetermined {
+                            Button {
+                                showingLocationPermission = true
+                            } label: {
+                                Text(String(localized: "Enable"))
+                            }
+                            .buttonStyle(.bordered)
+                        } else if locationManager.authorizationStatus == .denied {
+                            Button {
+                                openAppSettings()
+                            } label: {
+                                Text(String(localized: "Settings"))
+                            }
+                            .buttonStyle(.bordered)
+                        } else if locationManager.authorizationStatus == .authorizedWhenInUse {
                             Button {
                                 showingAlwaysExplanation = true
                             } label: {
@@ -94,7 +109,19 @@ struct SettingsView: View {
                         }
                     }
                     
-                    if locationManager.authorizationStatus == .authorizedWhenInUse {
+                    if locationManager.authorizationStatus == .notDetermined {
+                        Text(String(localized: "Enable location to see nearby cards and use location features"))
+                            .font(.caption)
+                            .foregroundStyle(.blue)
+                    } else if locationManager.authorizationStatus == .denied {
+                        Text(String(localized: "Settings > kartonche > Location > While Using the App"))
+                            .font(.caption)
+                            .foregroundStyle(.orange)
+                    } else if locationManager.authorizationStatus == .restricted {
+                        Text(String(localized: "Location access is restricted by parental controls or device management"))
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    } else if locationManager.authorizationStatus == .authorizedWhenInUse {
                         Text(String(localized: "Upgrade to 'Always' for better widget performance"))
                             .font(.caption)
                             .foregroundStyle(.blue)
@@ -121,6 +148,18 @@ struct SettingsView: View {
             }
             .sheet(isPresented: $showingAlwaysExplanation) {
                 AlwaysLocationExplanationView(locationManager: locationManager)
+            }
+            .sheet(isPresented: $showingLocationPermission) {
+                LocationPermissionView(
+                    onAllow: {
+                        showingLocationPermission = false
+                        locationManager.requestPermission()
+                    },
+                    onDeny: {
+                        showingLocationPermission = false
+                    }
+                )
+                .presentationDetents([.medium])
             }
             .sheet(isPresented: $showingNotificationPermission) {
                 NotificationPermissionView(
