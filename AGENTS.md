@@ -225,6 +225,7 @@ This project uses [mise](https://mise.jdx.dev/) for task automation and environm
 **Build and test:**
 ```bash
 mise run build          # Build the app (Debug)
+mise run check          # Clean build + show all warnings/errors
 mise run test           # Run unit tests
 mise run test-ui        # Run UI tests
 mise run test-all       # Run all tests
