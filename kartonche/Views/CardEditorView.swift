@@ -39,6 +39,7 @@ struct CardEditorView: View {
     @State private var showingLocationEditor = false
     @State private var editingLocation: CardLocation?
     @State private var pendingLocations: [CardLocation] = []
+    @State private var showingNotificationPermission = false
     
     private var isEditMode: Bool { card != nil }
     
@@ -172,9 +173,10 @@ struct CardEditorView: View {
                                     expirationDate = Calendar.current.date(byAdding: .year, value: 1, to: Date())
                                 }
                                 
-                                // Request notification permission when user enables expiration tracking
-                                Task {
-                                    await NotificationManager.shared.requestPermission()
+                                // Show permission explanation before requesting
+                                let status = NotificationManager.shared.authorizationStatus
+                                if status == .notDetermined {
+                                    showingNotificationPermission = true
                                 }
                             }
                         }
@@ -305,6 +307,21 @@ struct CardEditorView: View {
                 LocationEditorView(card: editorCard, location: editingLocation) { location in
                     saveLocation(location)
                 }
+            }
+            .sheet(isPresented: $showingNotificationPermission) {
+                NotificationPermissionView(
+                    onAllow: {
+                        showingNotificationPermission = false
+                        Task {
+                            await NotificationManager.shared.requestPermission()
+                        }
+                    },
+                    onDeny: {
+                        showingNotificationPermission = false
+                        hasExpirationDate = false
+                    }
+                )
+                .presentationDetents([.medium])
             }
         }
     }

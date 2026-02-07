@@ -14,6 +14,7 @@ struct SettingsView: View {
     @StateObject private var locationManager = LocationManager()
     @StateObject private var notificationManager = NotificationManager.shared
     @State private var showingAlwaysExplanation = false
+    @State private var showingNotificationPermission = false
     @State private var pendingNotificationCount = 0
     @State private var notificationsEnabled = false
     
@@ -35,9 +36,7 @@ struct SettingsView: View {
                         
                         if notificationManager.authorizationStatus == .notDetermined {
                             Button {
-                                Task {
-                                    await requestNotificationPermission()
-                                }
+                                showingNotificationPermission = true
                             } label: {
                                 Text(String(localized: "Enable"))
                             }
@@ -122,6 +121,20 @@ struct SettingsView: View {
             }
             .sheet(isPresented: $showingAlwaysExplanation) {
                 AlwaysLocationExplanationView(locationManager: locationManager)
+            }
+            .sheet(isPresented: $showingNotificationPermission) {
+                NotificationPermissionView(
+                    onAllow: {
+                        showingNotificationPermission = false
+                        Task {
+                            await requestNotificationPermission()
+                        }
+                    },
+                    onDeny: {
+                        showingNotificationPermission = false
+                    }
+                )
+                .presentationDetents([.medium])
             }
             .task {
                 await loadNotificationInfo()
