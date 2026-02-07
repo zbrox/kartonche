@@ -555,7 +555,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2026.02.1;
+				MARKETING_VERSION = 2026.02.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zbrox.kartonche;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -597,7 +597,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2026.02.1;
+				MARKETING_VERSION = 2026.02.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zbrox.kartonche;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -622,7 +622,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
-				MARKETING_VERSION = 2026.02.1;
+				MARKETING_VERSION = 2026.02.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zbrox.kartoncheTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
@@ -643,7 +643,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
-				MARKETING_VERSION = 2026.02.1;
+				MARKETING_VERSION = 2026.02.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zbrox.kartoncheTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
@@ -662,7 +662,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 2026.02.1;
+				MARKETING_VERSION = 2026.02.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zbrox.kartoncheUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
@@ -681,7 +681,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 2026.02.1;
+				MARKETING_VERSION = 2026.02.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zbrox.kartoncheUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
@@ -712,7 +712,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2026.02.1;
+				MARKETING_VERSION = 2026.02.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zbrox.kartonche.kartoncheWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -743,7 +743,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2026.02.1;
+				MARKETING_VERSION = 2026.02.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zbrox.kartonche.kartoncheWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
