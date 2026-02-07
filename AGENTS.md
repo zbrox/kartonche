@@ -233,6 +233,20 @@ mise run clean          # Clean build artifacts
 mise run dev            # Clean + build + test everything
 ```
 
+**Localization:**
+```bash
+mise run check-i18n     # Check localization completeness and issues
+```
+
+Checks for:
+- Missing Bulgarian translations (fails task if found)
+- Strings needing review
+- New untranslated strings  
+- Unused strings in catalog
+- Bulgarian keys without explicit translations
+
+Uses Xcode's .stringsdata mechanism for accurate detection.
+
 **Merchant database:**
 ```bash
 mise run merchants-list        # List all merchants

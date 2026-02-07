@@ -1,0 +1,369 @@
+#!/usr/bin/env bash
+#MISE description="Check localization completeness and issues"
+
+set -euo pipefail
+
+# Use IOS_DEVICE if set, otherwise default to iPhone 17 Pro
+DEVICE="${IOS_DEVICE:-iPhone 17 Pro}"
+
+# Detect if running in CI environment
+IS_CI=false
+if [ -n "${CI:-}" ] || [ -n "${GITHUB_ACTIONS:-}" ] || [ -n "${GITLAB_CI:-}" ] || [ -n "${JENKINS_HOME:-}" ] || [ -n "${TEAMCITY_VERSION:-}" ]; then
+  IS_CI=true
+fi
+
+# Set output style based on environment
+if [ "$IS_CI" = true ]; then
+  # Plain text for CI
+  INFO="[INFO]"
+  WARN="[WARN]"
+  ERROR="[ERROR]"
+  SUCCESS="[OK]"
+  TRASH="[UNUSED]"
+  NEW="[NEW]"
+else
+  # Emoji and colors for terminal
+  INFO="ℹ️ "
+  WARN="⚠️ "
+  ERROR="❌"
+  SUCCESS="✅"
+  TRASH="🗑️ "
+  NEW="📝"
+fi
+
+CATALOG="kartonche/Resources/Localizable.xcstrings"
+
+echo "${INFO}Checking localization for kartonche..."
+echo ""
+
+# Step 1: Build project to generate .stringsdata files
+if [ "$IS_CI" = true ]; then
+  echo "[INFO] Building project to extract string usage..."
+else
+  echo "🔨 Building project to extract string usage..."
+fi
+
+BUILD_LOG=$(mktemp)
+if ! xcodebuild clean build \
+  -project "$PROJECT" \
+  -scheme "$SCHEME" \
+  -configuration "$CONFIGURATION" \
+  -destination "platform=iOS Simulator,name=$DEVICE" \
+  -quiet > "$BUILD_LOG" 2>&1; then
+  echo "$ERROR Build failed - cannot check localization"
+  echo "$INFO Check build errors with: mise run check"
+  rm -f "$BUILD_LOG"
+  exit 1
+fi
+rm -f "$BUILD_LOG"
+
+# Step 2: Find DerivedData and collect .stringsdata files
+OBJROOT=$(xcodebuild -project "$PROJECT" -scheme "$SCHEME" -showBuildSettings 2>/dev/null | grep -m 1 "OBJROOT" | sed 's/.*= *//')
+STRINGSDATA_DIR="$OBJROOT"
+
+if [ ! -d "$STRINGSDATA_DIR" ]; then
+  echo "$ERROR Cannot find DerivedData intermediates directory: $STRINGSDATA_DIR"
+  exit 1
+fi
+
+# Step 3: Extract string usage from .stringsdata files
+USED_STRINGS_TEMP=$(mktemp)
+declare -A STRING_LOCATIONS
+
+find "$STRINGSDATA_DIR" -name "*.stringsdata" 2>/dev/null | while read -r file; do
+  SOURCE_FILE=$(jq -r '.source' "$file" 2>/dev/null)
+  if [ -n "$SOURCE_FILE" ] && [ "$SOURCE_FILE" != "null" ]; then
+    FILENAME=$(basename "$SOURCE_FILE")
+    jq -r '.tables.Localizable[]? | "\(.key)|\(.location.startingLine)"' "$file" 2>/dev/null | while IFS='|' read -r key line; do
+      if [ -n "$key" ]; then
+        echo "${key}|${FILENAME}:${line}"
+      fi
+    done
+  fi
+done | sort > "$USED_STRINGS_TEMP"
+
+# Build the STRING_LOCATIONS associative array
+while IFS='|' read -r key location; do
+  if [ -n "$key" ]; then
+    if [ -n "${STRING_LOCATIONS[$key]:-}" ]; then
+      STRING_LOCATIONS[$key]="${STRING_LOCATIONS[$key]}|${location}"
+    else
+      STRING_LOCATIONS[$key]="${location}"
+    fi
+  fi
+done < "$USED_STRINGS_TEMP"
+
+# Get unique used strings
+USED_STRINGS=$(cut -d'|' -f1 "$USED_STRINGS_TEMP" | sort -u)
+
+# Step 4: Analyze string catalog
+if [ ! -f "$CATALOG" ]; then
+  echo "$ERROR String catalog not found: $CATALOG"
+  exit 1
+fi
+
+# Get all strings from catalog
+ALL_CATALOG_STRINGS=$(jq -r '.strings | keys[]' "$CATALOG" | sort)
+
+# Find strings missing Bulgarian translations (exclude shouldTranslate: false)
+MISSING_TEMP=$(mktemp)
+jq -r '.strings | to_entries[] | select(.value.localizations.bg == null and (.value.shouldTranslate != false)) | .key' "$CATALOG" > "$MISSING_TEMP"
+
+# Find strings needing review
+REVIEW_TEMP=$(mktemp)
+jq -r '.strings | to_entries[] | select(.value.localizations.bg.stringUnit.state == "needs_review") | .key' "$CATALOG" 2>/dev/null > "$REVIEW_TEMP" || true
+
+# Find new strings (exclude shouldTranslate: false)
+NEW_TEMP=$(mktemp)
+jq -r '.strings | to_entries[] | select((.value.localizations.en.stringUnit.state == "new" or .value.localizations.bg.stringUnit.state == "new") and (.value.shouldTranslate != false)) | .key' "$CATALOG" 2>/dev/null > "$NEW_TEMP" || true
+
+# Find unused strings (in catalog but not in code)
+UNUSED_TEMP=$(mktemp)
+comm -23 <(echo "$ALL_CATALOG_STRINGS") <(echo "$USED_STRINGS") > "$UNUSED_TEMP"
+
+# Find strings marked as "do not translate"
+NO_TRANSLATE_TEMP=$(mktemp)
+jq -r '.strings | to_entries[] | select(.value.shouldTranslate == false) | .key' "$CATALOG" 2>/dev/null > "$NO_TRANSLATE_TEMP" || true
+
+# Categorize missing translations
+MISSING_FORMAT=()
+MISSING_BULGARIAN=()
+MISSING_ENGLISH=()
+
+while IFS= read -r key; do
+  if [ -z "$key" ]; then continue; fi
+  
+  # Check if format string
+  if echo "$key" | grep -qE '%[@dlLuUfFeEgGxXoOsSaA]|%[0-9]+\$|\\[ntfrbv]'; then
+    MISSING_FORMAT+=("$key")
+  # Check if contains Cyrillic
+  elif echo "$key" | grep -qE '[А-Яа-яЁё]'; then
+    MISSING_BULGARIAN+=("$key")
+  else
+    MISSING_ENGLISH+=("$key")
+  fi
+done < "$MISSING_TEMP"
+
+# Count totals
+TOTAL_STRINGS=$(echo "$ALL_CATALOG_STRINGS" | wc -l | xargs)
+MISSING_COUNT=$((${#MISSING_FORMAT[@]} + ${#MISSING_BULGARIAN[@]} + ${#MISSING_ENGLISH[@]}))
+REVIEW_COUNT=$(wc -l < "$REVIEW_TEMP" | xargs)
+NEW_COUNT=$(wc -l < "$NEW_TEMP" | xargs)
+UNUSED_COUNT=$(wc -l < "$UNUSED_TEMP" | xargs)
+NO_TRANSLATE_COUNT=$(wc -l < "$NO_TRANSLATE_TEMP" | xargs)
+TRANSLATED_COUNT=$((TOTAL_STRINGS - MISSING_COUNT - NO_TRANSLATE_COUNT))
+
+# Calculate percentage
+if [ "$TOTAL_STRINGS" -gt 0 ]; then
+  TRANSLATED_PCT=$(awk "BEGIN {printf \"%.1f\", ($TRANSLATED_COUNT / $TOTAL_STRINGS) * 100}")
+  MISSING_PCT=$(awk "BEGIN {printf \"%.1f\", ($MISSING_COUNT / $TOTAL_STRINGS) * 100}")
+else
+  TRANSLATED_PCT="0.0"
+  MISSING_PCT="0.0"
+fi
+
+# Step 5: Generate report
+
+# Missing translations section
+if [ "$IS_CI" = true ]; then
+  echo ""
+  echo "━━━ Missing Bulgarian Translations ($MISSING_COUNT) ━━━"
+else
+  echo "━━━ Missing Bulgarian Translations ($MISSING_COUNT) ━━━"
+fi
+echo ""
+
+if [ "$MISSING_COUNT" -eq 0 ]; then
+  echo "$SUCCESS No missing translations"
+else
+  # Show English strings
+  if [ ${#MISSING_ENGLISH[@]} -gt 0 ]; then
+    for key in "${MISSING_ENGLISH[@]}"; do
+      echo "$WARN \"$key\" (English)"
+      if [ -n "${STRING_LOCATIONS[$key]:-}" ]; then
+        IFS='|' read -ra LOCS <<< "${STRING_LOCATIONS[$key]}"
+        for loc in "${LOCS[@]}"; do
+          echo "   └─ Used in: $loc"
+        done
+      fi
+      echo ""
+    done
+  fi
+  
+  # Show Bulgarian keys
+  if [ ${#MISSING_BULGARIAN[@]} -gt 0 ]; then
+    for key in "${MISSING_BULGARIAN[@]}"; do
+      echo "$WARN \"$key\" (Bulgarian key - should have explicit translation)"
+      if [ -n "${STRING_LOCATIONS[$key]:-}" ]; then
+        IFS='|' read -ra LOCS <<< "${STRING_LOCATIONS[$key]}"
+        for loc in "${LOCS[@]}"; do
+          echo "   └─ Used in: $loc"
+        done
+      fi
+      echo ""
+    done
+  fi
+  
+  # Show format strings as INFO
+  if [ ${#MISSING_FORMAT[@]} -gt 0 ]; then
+    for key in "${MISSING_FORMAT[@]}"; do
+      echo "$INFO \"$key\" (Format string)"
+      if [ -n "${STRING_LOCATIONS[$key]:-}" ]; then
+        IFS='|' read -ra LOCS <<< "${STRING_LOCATIONS[$key]}"
+        for loc in "${LOCS[@]}"; do
+          echo "   └─ Used in: $loc"
+        done
+      fi
+      echo ""
+    done
+  fi
+  
+  # Fix suggestion
+  if [ "$IS_CI" = true ]; then
+    echo "[INFO] Fix: Open Xcode > kartonche > Resources > Localizable.xcstrings"
+    echo "       Add Bulgarian translations for the strings above"
+  else
+    echo "💡 Fix: Open Xcode > kartonche > Resources > Localizable.xcstrings"
+    echo "        Add Bulgarian translations for the strings above"
+  fi
+fi
+
+echo ""
+
+# Strings needing review section
+if [ "$IS_CI" = true ]; then
+  echo "━━━ Strings Needing Review ($REVIEW_COUNT) ━━━"
+else
+  echo "━━━ Strings Needing Review ($REVIEW_COUNT) ━━━"
+fi
+echo ""
+
+if [ "$REVIEW_COUNT" -eq 0 ]; then
+  echo "$SUCCESS No strings need review"
+else
+  while IFS= read -r key; do
+    if [ -n "$key" ]; then
+      echo "$WARN \"$key\""
+      if [ -n "${STRING_LOCATIONS[$key]:-}" ]; then
+        IFS='|' read -ra LOCS <<< "${STRING_LOCATIONS[$key]}"
+        for loc in "${LOCS[@]}"; do
+          echo "   └─ Used in: $loc"
+        done
+      fi
+      echo ""
+    fi
+  done < "$REVIEW_TEMP"
+fi
+
+echo ""
+
+# New strings section
+if [ "$IS_CI" = true ]; then
+  echo "━━━ New Strings ($NEW_COUNT) ━━━"
+else
+  echo "━━━ New Strings ($NEW_COUNT) ━━━"
+fi
+echo ""
+
+if [ "$NEW_COUNT" -eq 0 ]; then
+  echo "$SUCCESS No new strings pending translation"
+else
+  while IFS= read -r key; do
+    if [ -n "$key" ]; then
+      echo "$NEW \"$key\" - Marked as new, needs initial translation"
+      if [ -n "${STRING_LOCATIONS[$key]:-}" ]; then
+        IFS='|' read -ra LOCS <<< "${STRING_LOCATIONS[$key]}"
+        for loc in "${LOCS[@]}"; do
+          echo "   └─ Used in: $loc"
+        done
+      fi
+      echo ""
+    fi
+  done < "$NEW_TEMP"
+fi
+
+echo ""
+
+# Unused strings section
+if [ "$IS_CI" = true ]; then
+  echo "━━━ Potentially Unused Strings ($UNUSED_COUNT) ━━━"
+else
+  echo "━━━ Potentially Unused Strings ($UNUSED_COUNT) ━━━"
+fi
+echo ""
+
+if [ "$UNUSED_COUNT" -eq 0 ]; then
+  echo "$SUCCESS No unused strings detected"
+else
+  COUNT=0
+  while IFS= read -r key; do
+    if [ -n "$key" ]; then
+      echo "$TRASH \"$key\""
+      COUNT=$((COUNT + 1))
+      if [ "$COUNT" -ge 10 ]; then
+        REMAINING=$((UNUSED_COUNT - 10))
+        if [ "$REMAINING" -gt 0 ]; then
+          echo "$INFO ... and $REMAINING more"
+        fi
+        break
+      fi
+    fi
+  done < "$UNUSED_TEMP"
+  
+  if [ "$IS_CI" = true ]; then
+    echo ""
+    echo "[INFO] Tip: Remove unused strings to keep catalog clean"
+  else
+    echo ""
+    echo "💡 Tip: Remove unused strings to keep catalog clean"
+  fi
+fi
+
+echo ""
+
+# Summary section
+if [ "$IS_CI" = true ]; then
+  echo "━━━ Summary ━━━"
+  echo ""
+  echo "[INFO] Total strings in catalog: $TOTAL_STRINGS"
+  echo "[INFO] Fully translated: $TRANSLATED_COUNT (${TRANSLATED_PCT}%)"
+  echo "[INFO] Missing Bulgarian: $MISSING_COUNT (${MISSING_PCT}%)"
+  if [ "$MISSING_COUNT" -gt 0 ]; then
+    echo "       ├─ English strings: ${#MISSING_ENGLISH[@]}"
+    echo "       ├─ Bulgarian keys: ${#MISSING_BULGARIAN[@]}"
+    echo "       └─ Format strings: ${#MISSING_FORMAT[@]}"
+  fi
+  echo "[INFO] Needs review: $REVIEW_COUNT"
+  echo "[INFO] Do not translate: $NO_TRANSLATE_COUNT"
+  echo "[INFO] Unused: $UNUSED_COUNT"
+else
+  echo "━━━ Summary ━━━"
+  echo ""
+  echo "📊 Total strings in catalog: $TOTAL_STRINGS"
+  echo "$SUCCESS Fully translated: $TRANSLATED_COUNT (${TRANSLATED_PCT}%)"
+  if [ "$MISSING_COUNT" -gt 0 ]; then
+    echo "$WARN Missing Bulgarian: $MISSING_COUNT (${MISSING_PCT}%)"
+    echo "   ├─ English strings: ${#MISSING_ENGLISH[@]}"
+    echo "   ├─ Bulgarian keys: ${#MISSING_BULGARIAN[@]}"
+    echo "   └─ Format strings: ${#MISSING_FORMAT[@]}"
+  else
+    echo "$SUCCESS Missing Bulgarian: 0 (0.0%)"
+  fi
+  echo "$NEW Needs review: $REVIEW_COUNT"
+  echo "$INFO Do not translate: $NO_TRANSLATE_COUNT"
+  echo "$TRASH Unused: $UNUSED_COUNT"
+fi
+
+echo ""
+
+# Cleanup temp files
+rm -f "$USED_STRINGS_TEMP" "$MISSING_TEMP" "$REVIEW_TEMP" "$NEW_TEMP" "$UNUSED_TEMP"
+
+# Exit with appropriate code
+if [ "$MISSING_COUNT" -gt 0 ]; then
+  echo "$ERROR Check failed: $MISSING_COUNT strings missing Bulgarian translations"
+  exit 1
+else
+  echo "$SUCCESS All strings have Bulgarian translations!"
+  exit 0
+fi

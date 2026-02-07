@@ -3,6 +3,7 @@
 
 [tools]
 xcbeautify = "latest"
+jq = "latest"
 
 [env]
 # Xcode project configuration
