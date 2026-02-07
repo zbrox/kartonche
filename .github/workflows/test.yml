@@ -10,7 +10,7 @@ on:
 
 jobs:
   test:
-    name: Run Unit Tests
+    name: Run CI
     runs-on: macos-15
     
     steps:
@@ -23,31 +23,10 @@ jobs:
       - name: Select Xcode version
         run: sudo xcode-select -s /Applications/Xcode_26.2.app/Contents/Developer
       
-      - name: Show Xcode version
-        run: xcodebuild -version
-      
       - name: Set up mise
         uses: jdx/mise-action@v2
         with:
           experimental: true
       
-      - name: Generate merchant templates
-        run: mise run generate-merchants
-      
-      - name: Run unit tests
-        run: |
-          xcodebuild test \
-            -project kartonche.xcodeproj \
-            -scheme kartonche \
-            -only-testing:kartoncheTests \
-            -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
-            -quiet
-      
-      - name: Upload test results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-results
-          path: |
-            ~/Library/Developer/Xcode/DerivedData/*/Logs/Test/*.xcresult
-          retention-days: 7
+      - name: Run CI workflow
+        run: mise run ci
