@@ -60,8 +60,8 @@ struct CircularLockScreenWidget: Widget {
         StaticConfiguration(kind: kind, provider: CircularLockScreenProvider()) { entry in
             CircularLockScreenWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Kartonche")
-        .description("Quick access to your loyalty cards")
+        .configurationDisplayName(String(localized: "Kartonche", comment: "Lock screen circular widget name"))
+        .description(String(localized: "Quick access to your loyalty cards", comment: "Lock screen circular widget description"))
         .supportedFamilies([.accessoryCircular])
     }
 }
@@ -90,7 +90,7 @@ struct RectangularLockScreenProvider: TimelineProvider {
         
         if authStatus == .authorizedWhenInUse || authStatus == .authorizedAlways,
            let userLocation = locationManager.location {
-            // Find nearest card within 1km
+            // Find card for nearest store within 1km
             let allCards = SharedDataManager.fetchAllCards()
             var nearestCard: (card: LoyaltyCard, distance: Double)?
             
@@ -111,7 +111,7 @@ struct RectangularLockScreenProvider: TimelineProvider {
             distance = nearestCard?.distance
         }
         
-        // Fallback: Show first favorite with locations if no nearby card
+        // Fallback: Show first favorite with locations if no nearby store
         if card == nil {
             let allCards = SharedDataManager.fetchAllCards()
             card = allCards.first(where: { $0.isFavorite && !$0.locations.isEmpty })
@@ -162,7 +162,7 @@ struct RectangularLockScreenWidgetEntryView : View {
                     Image(systemName: "creditcard")
                         .font(.system(size: 14))
                     
-                    Text("No nearby stores")
+                    Text(String(localized: "No nearby stores", comment: "Lock screen rectangular widget message when no stores within 1km"))
                         .font(.system(size: 12))
                         .foregroundColor(.secondary)
                 }
@@ -197,8 +197,8 @@ struct RectangularLockScreenWidget: Widget {
         StaticConfiguration(kind: kind, provider: RectangularLockScreenProvider()) { entry in
             RectangularLockScreenWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Nearest Card")
-        .description("Shows your closest loyalty card")
+        .configurationDisplayName(String(localized: "Nearest Store", comment: "Lock screen rectangular widget name"))
+        .description(String(localized: "Shows card for nearest store", comment: "Lock screen rectangular widget description"))
         .supportedFamilies([.accessoryRectangular])
     }
 }
@@ -235,7 +235,7 @@ struct InlineLockScreenWidgetEntryView : View {
     var body: some View {
         HStack(spacing: 4) {
             Image(systemName: "creditcard.fill")
-            Text("Kartonche")
+            Text(String(localized: "Kartonche", comment: "Lock screen inline widget app name"))
         }
         .widgetURL(URL(string: "kartonche://")!)
         .containerBackground(for: .widget) {
@@ -251,8 +251,8 @@ struct InlineLockScreenWidget: Widget {
         StaticConfiguration(kind: kind, provider: InlineLockScreenProvider()) { entry in
             InlineLockScreenWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Open Kartonche")
-        .description("Quick access to open the app")
+        .configurationDisplayName(String(localized: "Open Kartonche", comment: "Lock screen inline widget name"))
+        .description(String(localized: "Quick access to open the app", comment: "Lock screen inline widget description"))
         .supportedFamilies([.accessoryInline])
     }
 }

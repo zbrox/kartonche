@@ -20,7 +20,7 @@ struct OpenFavoriteCardControl: ControlWidget {
                 if let card = configuration.selectedCard {
                     Label(card.name, systemImage: "star.fill")
                 } else {
-                    Label("Choose Card", systemImage: "star")
+                    Label(String(localized: "Choose Card", comment: "Control widget button label when no card configured"), systemImage: "star")
                 }
             }
         }

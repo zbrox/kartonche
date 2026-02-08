@@ -16,10 +16,10 @@ struct OpenNearestCardControl: ControlWidget {
             kind: "com.zbrox.kartonche.openNearestCard"
         ) {
             ControlWidgetButton(action: OpenNearestCardIntent()) {
-                Label("Nearest Store", systemImage: "location.fill")
+                Label(String(localized: "Nearest Store", comment: "Control widget button label for opening card of nearest store"), systemImage: "location.fill")
             }
         }
-        .displayName("Open Nearest Card")
-        .description("Opens card for the nearest store")
+        .displayName("Nearest Store Card")
+        .description("Opens card for nearest store location")
     }
 }

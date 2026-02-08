@@ -288,7 +288,7 @@ struct PlaceholderView: View {
                 .foregroundColor(.secondary)
             
             if family != .systemSmall {
-                Text("No Card Selected")
+                Text(String(localized: "No Card Selected", comment: "Individual card widget empty state message"))
                     .font(.caption)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -308,8 +308,8 @@ struct kartoncheWidget: Widget {
         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
             IndividualCardWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Loyalty Card")
-        .description("Display a specific loyalty card with scannable barcode")
+        .configurationDisplayName(String(localized: "Loyalty Card", comment: "Home screen widget name"))
+        .description(String(localized: "Display a specific loyalty card with scannable barcode", comment: "Home screen widget description"))
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }
