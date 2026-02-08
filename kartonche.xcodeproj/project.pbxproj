@@ -193,6 +193,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B5B57CA2F33F2C9005DCCA8 /* Build configuration list for PBXNativeTarget "kartonche" */;
 			buildPhases = (
+				EF209ABCBA474E908D645E7E /* Generate About Icon */,
 				0B5B57A32F33F2C8005DCCA8 /* Sources */,
 				0B5B57A42F33F2C8005DCCA8 /* Frameworks */,
 				0B5B57A52F33F2C8005DCCA8 /* Resources */,
@@ -360,6 +361,33 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EF209ABCBA474E908D645E7E /* Generate About Icon */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Scripts/generate-about-icon.sh",
+				"$(SRCROOT)/kartonche/AppIcon.icon/Assets/0_background.svg",
+				"$(SRCROOT)/kartonche/AppIcon.icon/Assets/1_orange_card.svg",
+				"$(SRCROOT)/kartonche/AppIcon.icon/Assets/2_blue_card.svg",
+			);
+			name = "Generate About Icon";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/kartonche/Assets.xcassets/AboutIcon.imageset/AboutIcon.png",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "source \"${SRCROOT}/Scripts/generate-about-icon.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0B5B57A32F33F2C8005DCCA8 /* Sources */ = {

@@ -27,7 +27,7 @@ struct AboutView: View {
             // App Header
             Section {
                 VStack(spacing: 12) {
-                    Image("AppIcon")
+                    Image("AboutIcon")
                         .resizable()
                         .frame(width: 80, height: 80)
                         .clipShape(RoundedRectangle(cornerRadius: 18))

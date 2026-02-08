@@ -96,6 +96,7 @@ iOSInjectionProject/
 
 # Generated code (build-time)
 kartonche/Generated/
+kartonche/Assets.xcassets/AboutIcon.imageset/*.png
 
 # Build scripts
 Scripts/generate-merchants/.build/
