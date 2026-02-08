@@ -31,10 +31,17 @@ struct MerchantRowView: View {
                     .foregroundColor(.primary)
                 
                 if let website = merchant.website {
-                    Text(website.replacingOccurrences(of: "https://", with: "")
-                                .replacingOccurrences(of: "www.", with: ""))
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+                    HStack(spacing: 2) {
+                        Text(website.replacingOccurrences(of: "https://", with: "")
+                                    .replacingOccurrences(of: "www.", with: ""))
+                        
+                        if !merchant.country.isEmpty {
+                            Text(merchant.countryFlag)
+                                .opacity(0.5)
+                        }
+                    }
+                    .font(.caption)
+                    .foregroundColor(.secondary)
                 }
             }
             
@@ -110,6 +117,7 @@ extension Color {
             id: "bg.billa",
             name: "BILLA",
             otherNames: ["Била"],
+            country: "BG",
             category: .grocery,
             website: "https://www.billa.bg",
             suggestedColor: "#FFED00",
@@ -121,6 +129,7 @@ extension Color {
             id: "bg.kaufland",
             name: "Kaufland",
             otherNames: ["Кауфланд"],
+            country: "BG",
             category: .grocery,
             website: "https://www.kaufland.bg",
             suggestedColor: "#FF0000",

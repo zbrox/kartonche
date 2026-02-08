@@ -61,6 +61,7 @@ struct ProgramSelectionView: View {
             id: "bg.kaufland",
             name: "Kaufland",
             otherNames: ["Кауфланд"],
+            country: "BG",
             category: .grocery,
             website: "https://www.kaufland.bg",
             suggestedColor: "#FF0000",

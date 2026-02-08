@@ -41,7 +41,8 @@ Merchants/
 merchant id="bg.storename" {
     name "Official Brand Name"
     other-names "Cyrillic Name" "Alt Spelling"
-    category "grocery"  // or "fuel", "pharmacy", "retail"
+    country "BG"  // ISO 3166-1 alpha-2 country code
+    category "grocery"  // or "fuel", "pharmacy", "retail", "wholesale"
     barcode-type "ean13"  // or "qr", "code128", "pdf417", "aztec"
     website "https://www.store.bg"
     suggested-color "#FF0000"
@@ -54,6 +55,7 @@ merchant id="bg.storename" {
 merchant id="bg.storename" {
     name "Official Brand Name"
     other-names "Cyrillic Name"
+    country "BG"
     category "grocery"
     website "https://www.store.bg"
     suggested-color "#FF0000"
@@ -122,8 +124,13 @@ mise run build
   - `"дм" "dm"` (for dm drogerie markt)
   - `"Софармаси" "Софарма"` (for Sopharmacy)
 
+#### `country` (required)
+- **Format:** ISO 3166-1 alpha-2 country code (uppercase)
+- **Examples:** `"BG"` (Bulgaria), `"DE"` (Germany), `"RO"` (Romania)
+- **Purpose:** Identifies which country the merchant operates in
+
 #### `category` (required)
-- **Options:** `"grocery"`, `"fuel"`, `"pharmacy"`, `"retail"`
+- **Options:** `"grocery"`, `"fuel"`, `"pharmacy"`, `"retail"`, `"wholesale"`
 - **Purpose:** Groups merchants in the UI
 
 #### `website` (optional but recommended)
@@ -164,6 +171,7 @@ For merchants with multiple loyalty card types:
 ```kdl
 merchant id="bg.example" {
     name "Example Store"
+    country "BG"
     category "grocery"
     
     program id="regular" {

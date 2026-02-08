@@ -2211,6 +2211,16 @@
         }
       }
     },
+    "Wholesale" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "На едро"
+          }
+        }
+      }
+    },
     "Widgets work when app is closed" : {
       "localizations" : {
         "bg" : {

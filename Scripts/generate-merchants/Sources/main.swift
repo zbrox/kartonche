@@ -66,6 +66,7 @@ struct MerchantData {
     let id: String
     let name: String
     let otherNames: [String]
+    let country: String
     let category: String
     let barcodeType: String?
     let website: String?
@@ -148,6 +149,10 @@ func parseKDL(fileURL: URL) throws -> [MerchantData] {
             throw GeneratorError.validationError("Merchant \(id) missing 'name'")
         }
         
+        guard let country = node.child("country")?.arg?.stringValue else {
+            throw GeneratorError.validationError("Merchant \(id) missing 'country'")
+        }
+        
         guard let category = node.child("category")?.arg?.stringValue else {
             throw GeneratorError.validationError("Merchant \(id) missing 'category'")
         }
@@ -200,6 +205,7 @@ func parseKDL(fileURL: URL) throws -> [MerchantData] {
             id: id,
             name: name,
             otherNames: otherNames,
+            country: country,
             category: category,
             barcodeType: barcodeType,
             website: website,
@@ -229,6 +235,7 @@ func generateSwiftCode(merchants: [MerchantData]) -> String {
         case fuel
         case pharmacy
         case retail
+        case wholesale
         
         var displayName: String {
             switch self {
@@ -236,6 +243,7 @@ func generateSwiftCode(merchants: [MerchantData]) -> String {
             case .fuel: return String(localized: "Gas Stations")
             case .pharmacy: return String(localized: "Pharmacies")
             case .retail: return String(localized: "Other")
+            case .wholesale: return String(localized: "Wholesale")
             }
         }
     }
@@ -254,6 +262,7 @@ func generateSwiftCode(merchants: [MerchantData]) -> String {
         let id: String
         let name: String
         let otherNames: [String]
+        let country: String
         let category: MerchantCategory
         let website: String?
         let suggestedColor: String?
@@ -261,6 +270,17 @@ func generateSwiftCode(merchants: [MerchantData]) -> String {
         let programs: [ProgramTemplate]
         
         var displayName: String { name }
+        
+        var countryFlag: String {
+            let base: UInt32 = 127397
+            return country.uppercased().unicodeScalars.compactMap {
+                UnicodeScalar(base + $0.value).map(String.init)
+            }.joined()
+        }
+        
+        var countryDisplayName: String {
+            Locale.current.localizedString(forRegionCode: country) ?? country
+        }
         
         var initials: String {
             let words = name.split(separator: " ")
@@ -309,6 +329,7 @@ func generateSwiftCode(merchants: [MerchantData]) -> String {
                     id: "\(merchant.id)",
                     name: "\(merchant.name)",
                     otherNames: \(otherNamesArray),
+                    country: "\(merchant.country)",
                     category: .\(merchant.category),
                     website: \(website),
                     suggestedColor: \(suggestedColor),
