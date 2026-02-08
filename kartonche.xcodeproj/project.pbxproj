@@ -193,6 +193,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B5B57CA2F33F2C9005DCCA8 /* Build configuration list for PBXNativeTarget "kartonche" */;
 			buildPhases = (
+				CACFCB9B26AE4452B717DF51 /* Generate Merchant Templates */,
 				EF209ABCBA474E908D645E7E /* Generate About Icon */,
 				0B5B57A32F33F2C8005DCCA8 /* Sources */,
 				0B5B57A42F33F2C8005DCCA8 /* Frameworks */,
@@ -363,6 +364,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		CACFCB9B26AE4452B717DF51 /* Generate Merchant Templates */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Scripts/generate-merchant-templates.sh",
+				"$(SRCROOT)/Merchants/merchants.kdl",
+			);
+			name = "Generate Merchant Templates";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/kartonche/Generated/MerchantTemplates.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "source \"${SRCROOT}/Scripts/generate-merchant-templates.sh\"\n";
+		};
 		EF209ABCBA474E908D645E7E /* Generate About Icon */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
