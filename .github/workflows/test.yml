@@ -13,7 +13,7 @@ on:
 jobs:
   test:
     name: Run CI
-    runs-on: macos-15
+    runs-on: macos-26
     
     steps:
       - name: Checkout code
@@ -34,26 +34,22 @@ jobs:
       
       - name: Verify simulator availability
         run: |
-          echo "📱 Verifying iOS 26.2 simulators..."
+          echo "📱 Verifying iPhone 17 Pro simulator..."
           echo ""
-          echo "Available iPhone 16 Pro simulators:"
-          xcrun simctl list devices iPhone available | grep -E "iPhone 16 Pro" || true
+          echo "Available iPhone simulators:"
+          xcrun simctl list devices iPhone available | grep "iPhone" | head -10
           echo ""
           
-          # Check if our target simulator exists
-          if xcrun simctl list devices | grep -q "iPhone 16 Pro (26.2)"; then
-            echo "✅ iPhone 16 Pro with iOS 26.2 is available"
+          if xcrun simctl list devices | grep -q "iPhone 17 Pro"; then
+            echo "✅ iPhone 17 Pro available"
           else
-            echo "⚠️  Warning: iPhone 16 Pro with iOS 26.2 not found"
-            echo ""
-            echo "Available iOS 26.x simulators:"
-            xcrun simctl list devices | grep "26\." || echo "No iOS 26.x simulators found"
+            echo "❌ iPhone 17 Pro not found"
             exit 1
           fi
       
       - name: Configure CI environment
         run: |
-          mise set IOS_DEVICE="iPhone 16 Pro"
+          mise set IOS_DEVICE="iPhone 17 Pro"
           mise set IOS_VERSION="26.2"
       
       - name: Run CI workflow (full tests on tags)
