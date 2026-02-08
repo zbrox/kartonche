@@ -262,6 +262,32 @@ struct CardListView: View {
                         .onTapGesture {
                             displayCard = nearby.card
                         }
+                        .swipeActions(edge: .leading) {
+                            Button {
+                                toggleFavorite(nearby.card)
+                            } label: {
+                                Label(
+                                    nearby.card.isFavorite ? String(localized: "Unfavorite", comment: "Swipe action to remove card from favorites") : String(localized: "Favorite", comment: "Swipe action to mark card as favorite"),
+                                    systemImage: nearby.card.isFavorite ? "star.slash.fill" : "star.fill"
+                                )
+                            }
+                            .tint(.yellow)
+                        }
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            Button(role: .destructive) {
+                                cardToDelete = nearby.card
+                                showingDeleteConfirmation = true
+                            } label: {
+                                Label(String(localized: "Delete"), systemImage: "trash")
+                            }
+                            
+                            Button {
+                                selectedCard = nearby.card
+                            } label: {
+                                Label(String(localized: "Edit"), systemImage: "pencil")
+                            }
+                            .tint(.blue)
+                        }
                         .contextMenu {
                             Button {
                                 shareCard(nearby.card)
@@ -298,6 +324,32 @@ struct CardListView: View {
                     .onTapGesture {
                         displayCard = card
                     }
+                    .swipeActions(edge: .leading) {
+                        Button {
+                            toggleFavorite(card)
+                        } label: {
+                            Label(
+                                card.isFavorite ? String(localized: "Unfavorite", comment: "Swipe action to remove card from favorites") : String(localized: "Favorite", comment: "Swipe action to mark card as favorite"),
+                                systemImage: card.isFavorite ? "star.slash.fill" : "star.fill"
+                            )
+                        }
+                        .tint(.yellow)
+                    }
+                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                        Button(role: .destructive) {
+                            cardToDelete = card
+                            showingDeleteConfirmation = true
+                        } label: {
+                            Label(String(localized: "Delete"), systemImage: "trash")
+                        }
+                        
+                        Button {
+                            selectedCard = card
+                        } label: {
+                            Label(String(localized: "Edit"), systemImage: "pencil")
+                        }
+                        .tint(.blue)
+                    }
                     .contextMenu {
                         Button {
                             shareCard(card)
@@ -326,7 +378,6 @@ struct CardListView: View {
                         showingDeleteConfirmation = true
                     }
                 }
-                .onDelete(perform: confirmDeleteCards)
             } header: {
                 if !nearbyCards.isEmpty && searchText.isEmpty {
                     Text(String(localized: "All Cards"))

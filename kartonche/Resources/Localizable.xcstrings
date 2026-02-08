@@ -930,7 +930,7 @@
       }
     },
     "Favorite" : {
-      "comment" : "Label for favorite toggle",
+      "comment" : "Swipe action to mark card as favorite",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2474,6 +2474,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Не може да се определи текущото местоположение"
+          }
+        }
+      }
+    },
+    "Unfavorite" : {
+      "comment" : "Swipe action to remove card from favorites",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Премахване от любими"
           }
         }
       }
