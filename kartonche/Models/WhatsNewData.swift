@@ -30,6 +30,32 @@ struct WhatsNewVersion {
 
 let whatsNewVersions: [WhatsNewVersion] = [
     WhatsNewVersion(
+        version: "2026.02.5",
+        features: [
+            WhatsNewFeature(
+                icon: "hand.draw",
+                titleEN: "Swipe Actions",
+                titleBG: "Действия при плъзгане",
+                descriptionEN: "Swipe cards to quickly favorite, edit, or delete",
+                descriptionBG: "Плъзнете карти за бързо означаване, редактиране или изтриване"
+            ),
+            WhatsNewFeature(
+                icon: "switch.2",
+                titleEN: "Control Center Widgets",
+                titleBG: "Инструменти за Контролен център",
+                descriptionEN: "Quick access to cards from Control Center",
+                descriptionBG: "Бърз достъп до карти от Контролния център"
+            ),
+            WhatsNewFeature(
+                icon: "paintpalette",
+                titleEN: "Redesigned Card Display",
+                titleBG: "Преработен дизайн на картите",
+                descriptionEN: "Cards now display with prominent brand colors",
+                descriptionBG: "Картите вече се показват с изявени цветове на марката"
+            ),
+        ]
+    ),
+    WhatsNewVersion(
         version: "2026.02.4",
         features: [
             WhatsNewFeature(

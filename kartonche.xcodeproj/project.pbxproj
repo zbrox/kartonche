@@ -594,6 +594,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = kartonche/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Kartonche;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Камерата се използва за сканиране на баркодове от вашите клубни карти.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Местоположението се използва постоянно за показване на близки клубни карти в джаджи дори когато приложението е затворено.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Местоположението се използва за показване на близки клубни карти.";
@@ -607,7 +609,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2026.02.4;
+				MARKETING_VERSION = 2026.02.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zbrox.kartonche;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -636,6 +638,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = kartonche/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Kartonche;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Камерата се използва за сканиране на баркодове от вашите клубни карти.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Местоположението се използва постоянно за показване на близки клубни карти в джаджи дори когато приложението е затворено.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Местоположението се използва за показване на близки клубни карти.";
@@ -649,7 +653,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2026.02.4;
+				MARKETING_VERSION = 2026.02.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zbrox.kartonche;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -674,7 +678,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
-				MARKETING_VERSION = 2026.02.4;
+				MARKETING_VERSION = 2026.02.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zbrox.kartoncheTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
@@ -695,7 +699,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
-				MARKETING_VERSION = 2026.02.4;
+				MARKETING_VERSION = 2026.02.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zbrox.kartoncheTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
@@ -714,7 +718,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 2026.02.4;
+				MARKETING_VERSION = 2026.02.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zbrox.kartoncheUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
@@ -733,7 +737,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 2026.02.4;
+				MARKETING_VERSION = 2026.02.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zbrox.kartoncheUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
@@ -764,7 +768,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2026.02.4;
+				MARKETING_VERSION = 2026.02.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zbrox.kartonche.kartoncheWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -795,7 +799,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2026.02.4;
+				MARKETING_VERSION = 2026.02.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zbrox.kartonche.kartoncheWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
