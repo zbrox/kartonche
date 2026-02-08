@@ -6,7 +6,8 @@ set -euo pipefail
 # Use environment variables with sensible defaults
 DEVICE="${IOS_DEVICE:-iPhone 16 Pro}"
 OS_VERSION="${IOS_VERSION:-26.2}"
-DESTINATION="platform=iOS Simulator,name=$DEVICE,OS=$OS_VERSION"
+ARCH="${IOS_ARCH:-arm64}"
+DESTINATION="platform=iOS Simulator,name=$DEVICE,OS=$OS_VERSION,arch=$ARCH"
 
 echo "🧹 Cleaning build artifacts..."
 xcodebuild clean \
