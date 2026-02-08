@@ -39,6 +39,8 @@ struct CardListView: View {
     @State private var showingImportPreview = false
     @State private var showConfetti = false
     @State private var previousCardCount = 0
+    @State private var showingDeleteConfirmation = false
+    @State private var cardToDelete: LoyaltyCard?
     
     struct ShareItem: Identifiable {
         let id = UUID()
@@ -214,6 +216,20 @@ struct CardListView: View {
                     )
                 }
             }
+            .alert(
+                String(localized: "Are you sure you want to delete this card?"),
+                isPresented: $showingDeleteConfirmation
+            ) {
+                Button(String(localized: "Cancel"), role: .cancel) {
+                    cardToDelete = nil
+                }
+                Button(String(localized: "Delete"), role: .destructive) {
+                    if let card = cardToDelete {
+                        deleteCard(card)
+                    }
+                    cardToDelete = nil
+                }
+            }
             .confetti(isActive: $showConfetti)
             .onAppear {
                 previousCardCount = allCards.count
@@ -258,7 +274,8 @@ struct CardListView: View {
                             }
                             
                             Button(role: .destructive) {
-                                deleteCard(nearby.card)
+                                cardToDelete = nearby.card
+                                showingDeleteConfirmation = true
                             } label: {
                                 Label(String(localized: "Delete"), systemImage: "trash")
                             }
@@ -291,7 +308,8 @@ struct CardListView: View {
                         }
                         
                         Button(role: .destructive) {
-                            deleteCard(card)
+                            cardToDelete = card
+                            showingDeleteConfirmation = true
                         } label: {
                             Label(String(localized: "Delete"), systemImage: "trash")
                         }
@@ -300,10 +318,11 @@ struct CardListView: View {
                         selectedCard = card
                     }
                     .accessibilityAction(named: Text("Delete")) {
-                        deleteCard(card)
+                        cardToDelete = card
+                        showingDeleteConfirmation = true
                     }
                 }
-                .onDelete(perform: deleteCards)
+                .onDelete(perform: confirmDeleteCards)
             } header: {
                 if !nearbyCards.isEmpty && searchText.isEmpty {
                     Text(String(localized: "All Cards"))
@@ -441,23 +460,20 @@ struct CardListView: View {
         }
     }
     
+    private func confirmDeleteCards(offsets: IndexSet) {
+        // For swipe-to-delete, we only handle single card deletion with confirmation
+        if let index = offsets.first {
+            cardToDelete = filteredAndSortedCards[index]
+            showingDeleteConfirmation = true
+        }
+    }
+    
     private func deleteCard(_ card: LoyaltyCard) {
         withAnimation {
             modelContext.delete(card)
         }
         
         // Reload all widgets since card was deleted
-        WidgetCenter.shared.reloadAllTimelines()
-    }
-    
-    private func deleteCards(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(filteredAndSortedCards[index])
-            }
-        }
-        
-        // Reload all widgets since cards were deleted
         WidgetCenter.shared.reloadAllTimelines()
     }
     
