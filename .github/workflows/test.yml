@@ -28,7 +28,6 @@ jobs:
       - name: Set up mise
         uses: jdx/mise-action@v2
         with:
-          version: latest
           install: false  # Don't auto-install tools, we control via tasks
           cache: true     # Cache mise itself and installed tools
           experimental: true
