@@ -299,17 +299,19 @@ This project uses GitHub Actions for continuous integration with mise for task a
 
 ### CI Environment
 
-**Runners:** macOS-15 (Intel x86_64)  
+**Runners:** macOS-26 (Apple Silicon arm64, public beta)  
 **Xcode:** 26.2  
 **Minimum iOS Target:** 26.2  
-**Test Device:** iPhone 16 Pro simulator (iOS 26.2)
+**Test Device:** iPhone 17 Pro simulator (iOS 26.2)
+
+**Note:** macOS-26 runners are currently in public beta. Monitor [GitHub Actions announcements](https://github.com/actions/runner-images) for stability updates.
 
 ### Environment Variables
 
 CI uses these environment variables for consistent builds:
 
 ```bash
-IOS_DEVICE="iPhone 16 Pro"    # Simulator device
+IOS_DEVICE="iPhone 17 Pro"    # Simulator device
 IOS_VERSION="26.2"             # iOS version (matches minimum target)
 ```
 
@@ -320,7 +322,7 @@ These are configured in `mise.toml` and explicitly set in the GitHub Actions wor
 All xcodebuild commands use complete destination specs to avoid "multiple matching destinations" warnings:
 
 ```bash
-platform=iOS Simulator,name=iPhone 16 Pro,OS=26.2
+platform=iOS Simulator,name=iPhone 17 Pro,OS=26.2
 ```
 
 This eliminates ambiguity and ensures consistent simulator selection in CI.
@@ -355,12 +357,13 @@ mise unset IOS_VERSION
 
 ### Available Simulators in CI
 
-GitHub Actions macOS-15 runners include:
+GitHub Actions macOS-26 runners include:
 
-- **iOS 18.x**: iPhone 16 Pro, iPhone 16, iPhone SE (3rd gen), iPads
-- **iOS 26.x**: iPhone 17 Pro, iPhone 16 Pro, iPhone Air, iPads
+- **iOS 26.0**: iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17 Pro Max, iPhone Air, iPads
+- **iOS 26.1**: iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17 Pro Max, iPhone Air, iPads
+- **iOS 26.2**: iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17 Pro Max, iPhone Air, iPads
 
-Full list: [GitHub Runner Images - macOS-15](https://github.com/actions/runner-images/blob/main/images/macos/macos-15-Readme.md)
+Full list: [GitHub Runner Images - macOS-26](https://github.com/actions/runner-images/blob/main/images/macos/macos-26-Readme.md)
 
 ### Troubleshooting CI Failures
 
@@ -368,7 +371,7 @@ Full list: [GitHub Runner Images - macOS-15](https://github.com/actions/runner-i
 
 **Fixed** by specifying complete destination in all build/test tasks:
 ```bash
-platform=iOS Simulator,name=iPhone 16 Pro,OS=26.2
+platform=iOS Simulator,name=iPhone 17 Pro,OS=26.2
 ```
 
 #### Simulator not available
