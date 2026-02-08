@@ -5,6 +5,7 @@
 xcbeautify = "latest"
 jq = "latest"
 git-cliff = "latest"
+imagemagick = "latest"
 
 [env]
 # Xcode project configuration

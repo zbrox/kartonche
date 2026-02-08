@@ -34,7 +34,10 @@ jobs:
       
       - name: Install build dependencies
         run: |
-          # librsvg provides rsvg-convert, required by "Generate About Icon" build phase
+          # "Generate About Icon" build phase requires:
+          # - rsvg-convert (from librsvg) to convert SVG layers to PNG
+          # - magick (from imagemagick) to composite PNG layers
+          # Note: imagemagick is managed via mise, librsvg is not available in mise registry
           brew install librsvg
       
       - name: Verify simulator availability
