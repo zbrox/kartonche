@@ -32,6 +32,11 @@ jobs:
           cache: true     # Cache mise itself and installed tools
           experimental: true
       
+      - name: Install build dependencies
+        run: |
+          # librsvg provides rsvg-convert, required by "Generate About Icon" build phase
+          brew install librsvg
+      
       - name: Verify simulator availability
         run: |
           echo "📱 Verifying iPhone 17 Pro simulator..."
