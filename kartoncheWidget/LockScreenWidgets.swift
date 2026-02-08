@@ -47,6 +47,9 @@ struct CircularLockScreenWidgetEntryView : View {
                 .font(.system(size: 24))
                 .foregroundColor(.white)
         }
+        .containerBackground(for: .widget) {
+            Color.clear
+        }
     }
 }
 
@@ -133,35 +136,40 @@ struct RectangularLockScreenWidgetEntryView : View {
     var entry: RectangularLockScreenEntry
     
     var body: some View {
-        if let card = entry.card {
-            HStack(spacing: 4) {
-                Image(systemName: "creditcard.fill")
-                    .font(.system(size: 14))
-                
-                VStack(alignment: .leading, spacing: 1) {
-                    Text(card.name)
-                        .font(.system(size: 14, weight: .semibold))
-                        .lineLimit(1)
+        Group {
+            if let card = entry.card {
+                HStack(spacing: 4) {
+                    Image(systemName: "creditcard.fill")
+                        .font(.system(size: 14))
                     
-                    if let distance = entry.distance {
-                        Text(distanceText(distance))
-                            .font(.system(size: 12))
-                            .foregroundColor(.secondary)
+                    VStack(alignment: .leading, spacing: 1) {
+                        Text(card.name)
+                            .font(.system(size: 14, weight: .semibold))
+                            .lineLimit(1)
+                        
+                        if let distance = entry.distance {
+                            Text(distanceText(distance))
+                                .font(.system(size: 12))
+                                .foregroundColor(.secondary)
+                        }
                     }
+                    
+                    Spacer()
                 }
-                
-                Spacer()
+                .widgetURL(createDeepLink(for: card))
+            } else {
+                HStack(spacing: 4) {
+                    Image(systemName: "creditcard")
+                        .font(.system(size: 14))
+                    
+                    Text("No nearby stores")
+                        .font(.system(size: 12))
+                        .foregroundColor(.secondary)
+                }
             }
-            .widgetURL(createDeepLink(for: card))
-        } else {
-            HStack(spacing: 4) {
-                Image(systemName: "creditcard")
-                    .font(.system(size: 14))
-                
-                Text("No nearby stores")
-                    .font(.system(size: 12))
-                    .foregroundColor(.secondary)
-            }
+        }
+        .containerBackground(for: .widget) {
+            Color.clear
         }
     }
     
@@ -192,5 +200,59 @@ struct RectangularLockScreenWidget: Widget {
         .configurationDisplayName("Nearest Card")
         .description("Shows your closest loyalty card")
         .supportedFamilies([.accessoryRectangular])
+    }
+}
+
+// MARK: - Inline Lock Screen Widget (Bottom positions)
+
+struct InlineLockScreenProvider: TimelineProvider {
+    func placeholder(in context: Context) -> InlineLockScreenEntry {
+        InlineLockScreenEntry(date: Date())
+    }
+
+    func getSnapshot(in context: Context, completion: @escaping (InlineLockScreenEntry) -> ()) {
+        let entry = InlineLockScreenEntry(date: Date())
+        completion(entry)
+    }
+    
+    func getTimeline(in context: Context, completion: @escaping (Timeline<InlineLockScreenEntry>) -> ()) {
+        let entry = InlineLockScreenEntry(date: Date())
+        
+        // Refresh once per day
+        let nextUpdate = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
+        let timeline = Timeline(entries: [entry], policy: .after(nextUpdate))
+        completion(timeline)
+    }
+}
+
+struct InlineLockScreenEntry: TimelineEntry {
+    let date: Date
+}
+
+struct InlineLockScreenWidgetEntryView : View {
+    var entry: InlineLockScreenEntry
+    
+    var body: some View {
+        HStack(spacing: 4) {
+            Image(systemName: "creditcard.fill")
+            Text("Kartonche")
+        }
+        .widgetURL(URL(string: "kartonche://")!)
+        .containerBackground(for: .widget) {
+            Color.clear
+        }
+    }
+}
+
+struct InlineLockScreenWidget: Widget {
+    let kind: String = "InlineLockScreenWidget"
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: InlineLockScreenProvider()) { entry in
+            InlineLockScreenWidgetEntryView(entry: entry)
+        }
+        .configurationDisplayName("Open Kartonche")
+        .description("Quick access to open the app")
+        .supportedFamilies([.accessoryInline])
     }
 }
