@@ -30,6 +30,7 @@ struct CardListView: View {
     @State private var merchantForProgramSelection: MerchantTemplate?
     @State private var pendingCard: PendingCard?
     @State private var selectedCard: LoyaltyCard?
+    @State private var displayCard: LoyaltyCard?
     @State private var navigationPath = NavigationPath()
     @State private var showingSettings = false
     @State private var showingAlwaysPrompt = false
@@ -133,9 +134,8 @@ struct CardListView: View {
                 }
             }
             .navigationTitle(String(localized: "Loyalty Cards"))
-            .navigationDestination(for: LoyaltyCard.self) { card in
+            .fullScreenCover(item: $displayCard) { card in
                 CardDisplayView(card: card)
-                    .navigationBarHidden(true)
             }
             .onOpenURL { url in
                 handleOpenURL(url)
@@ -255,10 +255,12 @@ struct CardListView: View {
             if !nearbyCards.isEmpty && searchText.isEmpty {
                 Section {
                     ForEach(nearbyCards, id: \.card.id) { nearby in
-                        NavigationLink(value: nearby.card) {
-                            CardRowView(card: nearby.card, distance: nearby.distance) {
-                                toggleFavorite(nearby.card)
-                            }
+                        CardRowView(card: nearby.card, distance: nearby.distance) {
+                            toggleFavorite(nearby.card)
+                        }
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            displayCard = nearby.card
                         }
                         .contextMenu {
                             Button {
@@ -289,10 +291,12 @@ struct CardListView: View {
             // All Cards section
             Section {
                 ForEach(filteredAndSortedCards) { card in
-                    NavigationLink(value: card) {
-                        CardRowView(card: card) {
-                            toggleFavorite(card)
-                        }
+                    CardRowView(card: card) {
+                        toggleFavorite(card)
+                    }
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        displayCard = card
                     }
                     .contextMenu {
                         Button {
@@ -523,7 +527,7 @@ struct CardListView: View {
         }
         
         if let card = allCards.first(where: { $0.id == cardID }) {
-            navigationPath.append(card)
+            displayCard = card
         }
     }
     
