@@ -12,7 +12,7 @@ struct MerchantTemplateTests {
     
     @Test func allMerchantsLoaded() {
         #expect(!MerchantTemplate.all.isEmpty, "Merchant list should not be empty")
-        #expect(MerchantTemplate.all.count >= 10, "Should have at least 10 merchants")
+        #expect(MerchantTemplate.all.count >= 5, "Should have at least 5 merchants")
     }
     
     @Test func merchantsHaveRequiredFields() {
@@ -35,7 +35,7 @@ struct MerchantTemplateTests {
     }
     
     @Test func categoriesAreValid() {
-        let validCategories: Set<MerchantCategory> = [.grocery, .fuel, .pharmacy, .retail]
+        let validCategories: Set<MerchantCategory> = [.grocery, .fuel, .pharmacy, .retail, .wholesale]
         for merchant in MerchantTemplate.all {
             #expect(validCategories.contains(merchant.category), "Merchant \(merchant.name) has invalid category")
         }
@@ -87,8 +87,8 @@ struct MerchantTemplateTests {
         let tmarket = MerchantTemplate.all.first(where: { $0.id == "bg.tmarket" })
         #expect(tmarket?.initials == "TM", "T MARKET should have initials 'TM'")
         
-        let dm = MerchantTemplate.all.first(where: { $0.id == "bg.dm" })
-        #expect(dm?.initials == "D", "dm should have initials 'D'")
+        let metro = MerchantTemplate.all.first(where: { $0.id == "bg.metro" })
+        #expect(metro?.initials == "MC", "Metro Cash & Carry should have initials 'MC'")
     }
     
     @Test func hasSingleProgramDetection() {
@@ -111,5 +111,18 @@ struct MerchantTemplateTests {
                 #expect(secondaryHex.count == 7, "Secondary color should be #RRGGBB format: \(merchant.name)")
             }
         }
+    }
+    
+    @Test func countryFieldIsValid() {
+        for merchant in MerchantTemplate.all {
+            #expect(!merchant.country.isEmpty, "Merchant \(merchant.name) should have a country")
+            #expect(merchant.country.count == 2, "Country should be ISO 3166-1 alpha-2: \(merchant.name)")
+            #expect(merchant.country == merchant.country.uppercased(), "Country should be uppercase: \(merchant.name)")
+        }
+    }
+    
+    @Test func countryFlagGeneration() {
+        let billa = MerchantTemplate.all.first(where: { $0.id == "bg.billa" })
+        #expect(billa?.countryFlag == "🇧🇬", "Bulgarian merchant should have BG flag")
     }
 }

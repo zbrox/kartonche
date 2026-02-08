@@ -77,6 +77,7 @@ struct MerchantSelectionView: View {
                 id: "",
                 name: "",
                 otherNames: [],
+                country: "",
                 category: .retail,
                 website: nil,
                 suggestedColor: nil,
