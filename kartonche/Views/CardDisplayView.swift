@@ -22,7 +22,7 @@ struct CardDisplayView: View {
     
     var body: some View {
         let primaryColor = card.color.flatMap { Color(hex: $0) } ?? Color.accentColor
-        let secondaryColor = card.secondaryColor.flatMap { Color(hex: $0) } ?? Color.white
+        let secondaryColor = card.secondaryColor.flatMap { Color(hex: $0) } ?? primaryColor.contrastingTextColor()
         
         ZStack {
             Color.white

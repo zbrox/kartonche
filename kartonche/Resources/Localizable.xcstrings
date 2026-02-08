@@ -234,6 +234,16 @@
         }
       }
     },
+    "Appearance" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изглед"
+          }
+        }
+      }
+    },
     "Are you sure you want to delete this card?" : {
       "comment" : "Confirmation dialog message",
       "localizations" : {
@@ -241,6 +251,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Сигурни ли сте, че искате да изтриете тази карта?"
+          }
+        }
+      }
+    },
+    "Auto" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Автоматично"
           }
         }
       }
@@ -487,6 +507,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Текущо местоположение"
+          }
+        }
+      }
+    },
+    "Custom" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ръчно избран"
+          }
+        }
+      }
+    },
+    "Custom Text Color" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ръчно избран цвят на текста"
           }
         }
       }
@@ -1991,6 +2031,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Докоснете, за да покажете картата си"
+          }
+        }
+      }
+    },
+    "Text Color" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Цвят на текста"
           }
         }
       }
