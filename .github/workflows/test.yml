@@ -37,8 +37,8 @@ jobs:
           # "Generate About Icon" build phase requires:
           # - rsvg-convert (from librsvg) to convert SVG layers to PNG
           # - magick (from imagemagick) to composite PNG layers
-          # Note: imagemagick is managed via mise, librsvg is not available in mise registry
-          brew install librsvg
+          # Both installed via Homebrew (mise asdf plugin for imagemagick is broken)
+          brew install librsvg imagemagick
       
       - name: Verify simulator availability
         run: |
