@@ -30,7 +30,33 @@ struct WhatsNewVersion {
 
 let whatsNewVersions: [WhatsNewVersion] = [
     WhatsNewVersion(
-        version: "2026.02",
+        version: "2026.02.4",
+        features: [
+            WhatsNewFeature(
+                icon: "info.circle",
+                titleEN: "About & What's New",
+                titleBG: "Относно и Какво ново",
+                descriptionEN: "Learn about new features and app info",
+                descriptionBG: "Научете за новите функции и информация за приложението"
+            ),
+            WhatsNewFeature(
+                icon: "note.text",
+                titleEN: "Collapsible Notes",
+                titleBG: "Сгъваеми бележки",
+                descriptionEN: "Tap to expand or collapse card notes",
+                descriptionBG: "Докоснете за разгъване или свиване на бележките"
+            ),
+            WhatsNewFeature(
+                icon: "flag",
+                titleEN: "Merchant Country Flags",
+                titleBG: "Флагове на държави",
+                descriptionEN: "See which country merchants are from",
+                descriptionBG: "Вижте от коя държава са търговците"
+            ),
+        ]
+    ),
+    WhatsNewVersion(
+        version: "2026.02.3",
         features: [
             WhatsNewFeature(
                 icon: "location.fill",
