@@ -14,16 +14,32 @@ DESTINATION="platform=iOS Simulator,name=$DEVICE,OS=$OS_VERSION,arch=$ARCH"
 
 echo "Building kartonche for $DEVICE (iOS $OS_VERSION)..."
 echo ""
+echo "=== Build Environment Debug ==="
+echo "PROJECT: $PROJECT"
+echo "SCHEME: $SCHEME"
+echo "CONFIGURATION: $CONFIGURATION"
+echo "DEVICE: $DEVICE"
+echo "OS_VERSION: $OS_VERSION"
+echo "ARCH: $ARCH"
+echo "DESTINATION: $DESTINATION"
+echo "PWD: $(pwd)"
+echo "Xcode: $(xcodebuild -version | head -1)"
+echo "=============================="
+echo ""
 
 # Capture build output and format with xcbeautify
 # Don't use -quiet in CI to see all errors
+# Capture both stdout and stderr
 set +e  # Don't exit on build failure, we want to see formatted errors
+
+# Save output to temp file in addition to piping to xcbeautify
+BUILD_LOG="/tmp/xcodebuild-$$.log"
 xcodebuild \
   -project "$PROJECT" \
   -scheme "$SCHEME" \
   -configuration "$CONFIGURATION" \
   -destination "$DESTINATION" \
-  build | xcbeautify
+  build 2>&1 | tee "$BUILD_LOG" | xcbeautify
 
 BUILD_EXIT_CODE=${PIPESTATUS[0]}
 set -e
@@ -31,8 +47,18 @@ set -e
 if [ $BUILD_EXIT_CODE -eq 0 ]; then
   echo ""
   echo "✅ Build succeeded"
+  rm -f "$BUILD_LOG"
 else
   echo ""
   echo "❌ Build failed with exit code $BUILD_EXIT_CODE"
+  echo ""
+  echo "=== Searching for errors in raw build log ==="
+  if [ -f "$BUILD_LOG" ]; then
+    grep -i "error:" "$BUILD_LOG" | head -20 || echo "No 'error:' lines found"
+    echo ""
+    echo "=== Last 50 lines of raw build log ==="
+    tail -50 "$BUILD_LOG"
+  fi
+  rm -f "$BUILD_LOG"
   exit $BUILD_EXIT_CODE
 fi
