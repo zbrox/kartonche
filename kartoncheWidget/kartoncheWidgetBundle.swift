@@ -16,5 +16,6 @@ struct kartoncheWidgetBundle: WidgetBundle {
         FavoritesCarouselWidget()
         CircularLockScreenWidget()
         RectangularLockScreenWidget()
+        InlineLockScreenWidget()
     }
 }
