@@ -12,9 +12,15 @@ PROJECT = "kartonche.xcodeproj"
 SCHEME = "kartonche"
 CONFIGURATION = "Debug"
 
-# iOS Simulator - let Xcode choose default device
-# Override with: mise set IOS_DEVICE="iPhone 15 Pro"
-IOS_DEVICE = ""
+# iOS Simulator configuration
+# Device name - use iPhone 17 Pro locally, iPhone 16 Pro in CI
+# Override with: mise set IOS_DEVICE="iPad Pro 11-inch (M5)"
+IOS_DEVICE = "iPhone 17 Pro"
+
+# iOS version for simulator - matches minimum deployment target (iOS 26.2+)
+# Used to create full destination spec: platform=iOS Simulator,name=<device>,OS=<version>
+# This eliminates "multiple matching destinations" warnings in CI
+IOS_VERSION = "26.2"
 
 # Generated code output
 GENERATED_DIR = "kartonche/Generated"

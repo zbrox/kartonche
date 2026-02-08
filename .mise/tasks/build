@@ -3,10 +3,14 @@
 
 set -euo pipefail
 
-# Use IOS_DEVICE if set, otherwise default to iPhone 17 Pro
-DEVICE="${IOS_DEVICE:-iPhone 17 Pro}"
+# Use environment variables with sensible defaults
+DEVICE="${IOS_DEVICE:-iPhone 16 Pro}"
+OS_VERSION="${IOS_VERSION:-26.2}"
 
-echo "Building kartonche for $DEVICE..."
+# Build full destination spec to avoid "multiple matching destinations" warning
+DESTINATION="platform=iOS Simulator,name=$DEVICE,OS=$OS_VERSION"
+
+echo "Building kartonche for $DEVICE (iOS $OS_VERSION)..."
 echo ""
 
 # Capture build output and format with xcbeautify
@@ -16,7 +20,7 @@ xcodebuild \
   -project "$PROJECT" \
   -scheme "$SCHEME" \
   -configuration "$CONFIGURATION" \
-  -destination "platform=iOS Simulator,name=$DEVICE" \
+  -destination "$DESTINATION" \
   -quiet \
   build | xcbeautify
 

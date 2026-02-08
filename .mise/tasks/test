@@ -3,12 +3,17 @@
 
 set -euo pipefail
 
+# Use environment variables with sensible defaults
+DEVICE="${IOS_DEVICE:-iPhone 16 Pro}"
+OS_VERSION="${IOS_VERSION:-26.2}"
+DESTINATION="platform=iOS Simulator,name=$DEVICE,OS=$OS_VERSION"
+
 if [ -n "${1:-}" ]; then
   # Run specific test
   xcodebuild test \
     -project "$PROJECT" \
     -scheme "$SCHEME" \
-    -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
+    -destination "$DESTINATION" \
     -quiet \
     -only-testing:"$1" | xcbeautify
 else
@@ -16,7 +21,7 @@ else
   xcodebuild test \
     -project "$PROJECT" \
     -scheme "$SCHEME" \
-    -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
+    -destination "$DESTINATION" \
     -quiet \
     -only-testing:kartoncheTests | xcbeautify
 fi
