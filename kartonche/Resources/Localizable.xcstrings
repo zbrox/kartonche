@@ -14,6 +14,9 @@
         }
       }
     },
+    "%@" : {
+      "shouldTranslate" : false
+    },
     "%@ expires in 7 days" : {
       "localizations" : {
         "bg" : {
@@ -46,6 +49,17 @@
       "shouldTranslate" : false
     },
     "%lld" : {
+      "shouldTranslate" : false
+    },
+    "%lld / %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld / %2$lld"
+          }
+        }
+      },
       "shouldTranslate" : false
     },
     "%lld %@" : {
@@ -351,6 +365,16 @@
         }
       }
     },
+    "Card" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Карта"
+          }
+        }
+      }
+    },
     "Card Color" : {
       "comment" : "Label for card color picker",
       "localizations" : {
@@ -469,6 +493,17 @@
         }
       }
     },
+    "Choose Card" : {
+      "comment" : "Control widget button label when no card configured",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Избор на карта"
+          }
+        }
+      }
+    },
     "Choose Program" : {
       "comment" : "Title for program selection view when merchant has multiple loyalty programs",
       "localizations" : {
@@ -476,6 +511,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Изберете програма"
+          }
+        }
+      }
+    },
+    "Choose which loyalty card to display" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Избери коя карта да е показана"
+          }
+        }
+      }
+    },
+    "Choose which loyalty card to open" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Избери коя карта да се отвори"
           }
         }
       }
@@ -569,6 +624,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Изключено"
+          }
+        }
+      }
+    },
+    "Display a specific loyalty card with scannable barcode" : {
+      "comment" : "Home screen widget description",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показване на конкретна клубна карта"
           }
         }
       }
@@ -874,6 +940,17 @@
         }
       }
     },
+    "Favorites Carousel" : {
+      "comment" : "Home screen widget name",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Любими"
+          }
+        }
+      }
+    },
     "Features" : {
       "localizations" : {
         "bg" : {
@@ -1100,6 +1177,10 @@
     "kartonche" : {
       "shouldTranslate" : false
     },
+    "Kartonche" : {
+      "comment" : "Control widget button label for app launcher\nLock screen circular widget name\nLock screen inline widget app name",
+      "shouldTranslate" : false
+    },
     "kartonche stores all data locally on your device. We don't collect, track, or share any personal information." : {
       "localizations" : {
         "bg" : {
@@ -1126,6 +1207,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Запазване на текущо"
+          }
+        }
+      }
+    },
+    "Launch Kartonche" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Стартиране на Kartonche"
           }
         }
       }
@@ -1282,6 +1373,17 @@
         }
       }
     },
+    "Loyalty Card" : {
+      "comment" : "Home screen widget name",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Клубна карта"
+          }
+        }
+      }
+    },
     "Loyalty Cards" : {
       "comment" : "Main screen title",
       "localizations" : {
@@ -1289,6 +1391,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Клубни карти"
+          }
+        }
+      }
+    },
+    "Mark cards as favorites to see them here" : {
+      "comment" : "Favorites carousel widget empty state message",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отбележете карти като любими, за да се появят тук"
           }
         }
       }
@@ -1337,6 +1450,17 @@
         }
       }
     },
+    "Navigate through your favorite cards with arrow buttons" : {
+      "comment" : "Home screen widget description",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Разглеждане на любими карти"
+          }
+        }
+      }
+    },
     "Nearby" : {
       "comment" : "Section header for nearby cards",
       "localizations" : {
@@ -1358,12 +1482,43 @@
         }
       }
     },
+    "Nearest Store" : {
+      "comment" : "Control widget button label for opening card of nearest store\nHome screen widget name\nLock screen rectangular widget name",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Най-близкият магазин"
+          }
+        }
+      }
+    },
+    "Nearest Store Card" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Карта за най-близкия магазин"
+          }
+        }
+      }
+    },
     "Never forget your loyalty card at the store" : {
       "localizations" : {
         "bg" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Никога не забравяйте клубната си карта в магазина"
+          }
+        }
+      }
+    },
+    "Next Card" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Следваща карта"
           }
         }
       }
@@ -1409,6 +1564,17 @@
         }
       }
     },
+    "No Card Selected" : {
+      "comment" : "Individual card widget empty state message",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Няма избрана карта"
+          }
+        }
+      }
+    },
     "No Cards" : {
       "comment" : "Empty state title",
       "localizations" : {
@@ -1427,6 +1593,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Няма карти, съответстващи на '%@'"
+          }
+        }
+      }
+    },
+    "No Favorites" : {
+      "comment" : "Favorites carousel widget empty state title",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нямате любими карти"
+          }
+        }
+      }
+    },
+    "No nearby stores" : {
+      "comment" : "Lock screen rectangular widget message when no stores within 1km\nNearest location widget message when no stores within 1km",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Няма близки магазини"
           }
         }
       }
@@ -1532,6 +1720,37 @@
         }
       }
     },
+    "Open Favorite Card" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отваряне на любима карта"
+          }
+        }
+      }
+    },
+    "Open Kartonche" : {
+      "comment" : "Lock screen inline widget name",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отваряне на Kartonche"
+          }
+        }
+      }
+    },
+    "Open Nearest Store Card" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отваряне на картата за най-близкия магазин"
+          }
+        }
+      }
+    },
     "Open Settings" : {
       "localizations" : {
         "bg" : {
@@ -1549,6 +1768,46 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Отваря камера за сканиране на баркод"
+          }
+        }
+      }
+    },
+    "Opens card for nearest store location" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отваряне на карта за най-близкия магазин"
+          }
+        }
+      }
+    },
+    "Opens the Kartonche app" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отваря Kartonche"
+          }
+        }
+      }
+    },
+    "Opens the loyalty card for the nearest store" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отваря картата за най-близкия магазин"
+          }
+        }
+      }
+    },
+    "Opens your selected favorite loyalty card" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отваря избрана любима карта"
           }
         }
       }
@@ -1593,6 +1852,16 @@
         }
       }
     },
+    "Previous Card" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Предишна карта"
+          }
+        }
+      }
+    },
     "Privacy" : {
       "localizations" : {
         "bg" : {
@@ -1629,6 +1898,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Временно"
+          }
+        }
+      }
+    },
+    "Quick access to open the app" : {
+      "comment" : "Lock screen inline widget description",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бърз достъп до Kartonche"
+          }
+        }
+      }
+    },
+    "Quick access to your loyalty cards" : {
+      "comment" : "Lock screen circular widget description",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бърз достъп до клубни карти"
           }
         }
       }
@@ -1829,6 +2120,26 @@
         }
       }
     },
+    "Select Card" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Избор на карта"
+          }
+        }
+      }
+    },
+    "Select Favorite Card" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Избор на любима карта"
+          }
+        }
+      }
+    },
     "Select Merchant" : {
       "localizations" : {
         "bg" : {
@@ -1932,6 +2243,26 @@
         }
       }
     },
+    "Show the next favorite card" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показване на следваща любима карта"
+          }
+        }
+      }
+    },
+    "Show the previous favorite card" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показване на предишна любима карта"
+          }
+        }
+      }
+    },
     "Show this to the cashier to scan" : {
       "comment" : "Accessibility hint for barcode display",
       "localizations" : {
@@ -1939,6 +2270,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Покажете това на касиера за сканиране"
+          }
+        }
+      }
+    },
+    "Shows card for nearest store" : {
+      "comment" : "Lock screen rectangular widget description",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показва карта за най-близкия магазин"
+          }
+        }
+      }
+    },
+    "Shows card for nearest store within 1km" : {
+      "comment" : "Home screen widget description",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показва карта за най-близкия магазин в радиус 1км"
           }
         }
       }

@@ -16,7 +16,7 @@ struct LaunchAppControl: ControlWidget {
             kind: "com.zbrox.kartonche.launchApp"
         ) {
             ControlWidgetButton(action: LaunchAppIntent()) {
-                Label("Kartonche", systemImage: "creditcard.fill")
+                Label(String(localized: "Kartonche", comment: "Control widget button label for app launcher"), systemImage: "creditcard.fill")
             }
         }
         .displayName("Launch Kartonche")

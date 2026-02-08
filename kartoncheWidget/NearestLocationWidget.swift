@@ -30,7 +30,7 @@ struct NearestLocationProvider: TimelineProvider {
         if let (latitude, longitude) = SharedDataManager.getLastKnownLocation() {
             let userLocation = CLLocation(latitude: latitude, longitude: longitude)
             
-            // Find nearest card within 1km
+            // Find card for nearest store within 1km
             var nearestCard: (card: LoyaltyCard, distance: Double)?
             
             for loyaltyCard in allCards where !loyaltyCard.locations.isEmpty {
@@ -50,7 +50,7 @@ struct NearestLocationProvider: TimelineProvider {
             distance = nearestCard?.distance
         }
         
-        // Fallback 1: Show first favorite with locations if no nearby card
+        // Fallback 1: Show first favorite with locations if no nearby store
         if card == nil {
             card = allCards.first(where: { $0.isFavorite && !$0.locations.isEmpty })
         }
@@ -84,7 +84,7 @@ struct NearestLocationWidgetEntryView : View {
             NearestCardView(card: card, distance: entry.distance, family: family)
                 .widgetURL(createDeepLink(for: card))
         } else {
-            NearestPlaceholderView(family: family, message: "No nearby stores")
+            NearestPlaceholderView(family: family, message: String(localized: "No nearby stores", comment: "Nearest location widget message when no stores within 1km"))
         }
     }
     
@@ -249,8 +249,8 @@ struct NearestLocationWidget: Widget {
         StaticConfiguration(kind: kind, provider: NearestLocationProvider()) { entry in
             NearestLocationWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Nearest Card")
-        .description("Shows your closest loyalty card within 1km")
+        .configurationDisplayName(String(localized: "Nearest Store", comment: "Home screen widget name"))
+        .description(String(localized: "Shows card for nearest store within 1km", comment: "Home screen widget description"))
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

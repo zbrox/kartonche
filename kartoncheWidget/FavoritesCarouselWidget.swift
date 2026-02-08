@@ -303,12 +303,12 @@ struct CarouselPlaceholderView: View {
                 .font(.system(size: 40))
                 .foregroundColor(.secondary)
             
-            Text("No Favorites")
+            Text(String(localized: "No Favorites", comment: "Favorites carousel widget empty state title"))
                 .font(.caption)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
             
-            Text("Mark cards as favorites to see them here")
+            Text(String(localized: "Mark cards as favorites to see them here", comment: "Favorites carousel widget empty state message"))
                 .font(.caption2)
                 .foregroundColor(.secondary.opacity(0.8))
                 .multilineTextAlignment(.center)
@@ -328,8 +328,8 @@ struct FavoritesCarouselWidget: Widget {
         StaticConfiguration(kind: kind, provider: FavoritesCarouselProvider()) { entry in
             FavoritesCarouselWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Favorites Carousel")
-        .description("Navigate through your favorite cards with arrow buttons")
+        .configurationDisplayName(String(localized: "Favorites Carousel", comment: "Home screen widget name"))
+        .description(String(localized: "Navigate through your favorite cards with arrow buttons", comment: "Home screen widget description"))
         .supportedFamilies([.systemMedium])
     }
 }

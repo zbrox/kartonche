@@ -75,6 +75,7 @@
 				Models/BarcodeType.swift,
 				Models/CardLocation.swift,
 				Models/LoyaltyCard.swift,
+				Resources/Localizable.xcstrings,
 				Utilities/BarcodeGenerator.swift,
 				Utilities/SharedDataManager.swift,
 			);

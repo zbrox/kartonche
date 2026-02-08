@@ -40,10 +40,10 @@ struct OpenFavoriteCardIntent: AppIntent {
     }
 }
 
-// MARK: - Open Nearest Card Intent
+// MARK: - Open Nearest Store Card Intent
 
 struct OpenNearestCardIntent: AppIntent {
-    static var title: LocalizedStringResource = "Open Nearest Card"
+    static var title: LocalizedStringResource = "Open Nearest Store Card"
     static var description: IntentDescription = "Opens the loyalty card for the nearest store"
     static var openAppWhenRun: Bool = true
     
@@ -58,7 +58,7 @@ struct OpenNearestCardIntent: AppIntent {
             return .result(opensIntent: OpenURLIntent(url))
         }
         
-        // Find nearest card within 1km
+        // Find card for nearest store within 1km
         let allCards = SharedDataManager.fetchAllCards()
         var nearestCard: (card: LoyaltyCard, distance: Double)?
         
@@ -75,7 +75,7 @@ struct OpenNearestCardIntent: AppIntent {
             }
         }
         
-        // Open nearest card or fallback to app
+        // Open card for nearest store or fallback to app
         let urlString: String
         if let card = nearestCard?.card {
             urlString = "kartonche://card?id=\(card.id.uuidString)"
