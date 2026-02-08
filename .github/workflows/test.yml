@@ -28,7 +28,34 @@ jobs:
       - name: Set up mise
         uses: jdx/mise-action@v2
         with:
+          version: latest
+          install: false  # Don't auto-install tools, we control via tasks
+          cache: true     # Cache mise itself and installed tools
           experimental: true
+      
+      - name: Verify simulator availability
+        run: |
+          echo "📱 Verifying iOS 26.2 simulators..."
+          echo ""
+          echo "Available iPhone 16 Pro simulators:"
+          xcrun simctl list devices iPhone available | grep -E "iPhone 16 Pro" || true
+          echo ""
+          
+          # Check if our target simulator exists
+          if xcrun simctl list devices | grep -q "iPhone 16 Pro (26.2)"; then
+            echo "✅ iPhone 16 Pro with iOS 26.2 is available"
+          else
+            echo "⚠️  Warning: iPhone 16 Pro with iOS 26.2 not found"
+            echo ""
+            echo "Available iOS 26.x simulators:"
+            xcrun simctl list devices | grep "26\." || echo "No iOS 26.x simulators found"
+            exit 1
+          fi
+      
+      - name: Configure CI environment
+        run: |
+          mise set IOS_DEVICE="iPhone 16 Pro"
+          mise set IOS_VERSION="26.2"
       
       - name: Run CI workflow (full tests on tags)
         run: |

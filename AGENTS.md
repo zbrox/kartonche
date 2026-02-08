@@ -293,6 +293,100 @@ mise set IOS_DEVICE="iPhone 15"   # Specific simulator
 
 All tasks are in `.mise/tasks/` directory. Tasks use bash with usage hints for autocomplete.
 
+## GitHub Actions CI Configuration
+
+This project uses GitHub Actions for continuous integration with mise for task automation.
+
+### CI Environment
+
+**Runners:** macOS-15 (Intel x86_64)  
+**Xcode:** 26.2  
+**Minimum iOS Target:** 26.2  
+**Test Device:** iPhone 16 Pro simulator (iOS 26.2)
+
+### Environment Variables
+
+CI uses these environment variables for consistent builds:
+
+```bash
+IOS_DEVICE="iPhone 16 Pro"    # Simulator device
+IOS_VERSION="26.2"             # iOS version (matches minimum target)
+```
+
+These are configured in `mise.toml` and explicitly set in the GitHub Actions workflow.
+
+### Full Destination Specification
+
+All xcodebuild commands use complete destination specs to avoid "multiple matching destinations" warnings:
+
+```bash
+platform=iOS Simulator,name=iPhone 16 Pro,OS=26.2
+```
+
+This eliminates ambiguity and ensures consistent simulator selection in CI.
+
+### Running CI Locally
+
+Simulate CI environment:
+
+```bash
+# Use same configuration as CI (already defaults in mise.toml)
+mise run ci           # CI workflow (unit tests only)
+mise run ci --full    # Full CI workflow (unit + UI tests)
+```
+
+### Testing on Different iOS Versions
+
+To test on different iOS versions or devices locally:
+
+```bash
+# Test on different device
+mise set IOS_DEVICE="iPad Pro 11-inch (M4)"
+mise run test
+
+# Test on different iOS version (if available locally)
+mise set IOS_VERSION="18.5"
+mise run test
+
+# Reset to defaults
+mise unset IOS_DEVICE
+mise unset IOS_VERSION
+```
+
+### Available Simulators in CI
+
+GitHub Actions macOS-15 runners include:
+
+- **iOS 18.x**: iPhone 16 Pro, iPhone 16, iPhone SE (3rd gen), iPads
+- **iOS 26.x**: iPhone 17 Pro, iPhone 16 Pro, iPhone Air, iPads
+
+Full list: [GitHub Runner Images - macOS-15](https://github.com/actions/runner-images/blob/main/images/macos/macos-15-Readme.md)
+
+### Troubleshooting CI Failures
+
+#### "Multiple matching destinations" warning
+
+**Fixed** by specifying complete destination in all build/test tasks:
+```bash
+platform=iOS Simulator,name=iPhone 16 Pro,OS=26.2
+```
+
+#### Simulator not available
+
+1. Check Xcode version is correctly selected (26.2 required for iOS 26.2)
+2. Verify simulator exists: `xcrun simctl list devices | grep "iPhone 16 Pro"`
+3. GitHub Actions occasionally has simulator availability issues - retry workflow
+4. CI includes verification step that fails fast with clear error if simulator unavailable
+
+#### Build failures on tags
+
+Tags trigger full test suite (`mise run ci --full`). This includes:
+- Unit tests (`kartoncheTests`)
+- UI tests (`kartoncheUITests`)
+- All merchant validation and generation
+
+Check specific test failures in xcbeautify output.
+
 ## Merchant Database
 
 ### Community-Maintained Templates
