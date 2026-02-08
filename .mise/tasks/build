@@ -16,14 +16,13 @@ echo "Building kartonche for $DEVICE (iOS $OS_VERSION)..."
 echo ""
 
 # Capture build output and format with xcbeautify
-# Use -quiet to reduce noise, xcbeautify will show warnings/errors prettily
+# Don't use -quiet in CI to see all errors
 set +e  # Don't exit on build failure, we want to see formatted errors
 xcodebuild \
   -project "$PROJECT" \
   -scheme "$SCHEME" \
   -configuration "$CONFIGURATION" \
   -destination "$DESTINATION" \
-  -quiet \
   build | xcbeautify
 
 BUILD_EXIT_CODE=${PIPESTATUS[0]}
