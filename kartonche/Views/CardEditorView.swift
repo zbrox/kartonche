@@ -25,6 +25,8 @@ struct CardEditorView: View {
     @State private var barcodeData: String
     @State private var notes: String
     @State private var selectedColor: Color?
+    @State private var selectedSecondaryColor: Color?
+    @State private var useAutoTextColor: Bool
     @State private var isFavorite: Bool
     @State private var expirationDate: Date?
     @State private var hasExpirationDate: Bool
@@ -42,6 +44,27 @@ struct CardEditorView: View {
     @State private var showingNotificationPermission = false
     
     private var isEditMode: Bool { card != nil }
+    
+    private var effectiveSecondaryColor: Color {
+        if useAutoTextColor {
+            return (selectedColor ?? .gray).contrastingTextColor()
+        }
+        return selectedSecondaryColor ?? .white
+    }
+    
+    private var cardInitials: String {
+        let displayName = name.isEmpty ? storeName : name
+        let words = displayName.split(separator: " ")
+        if words.count >= 2 {
+            return words.prefix(2)
+                .compactMap { $0.first.map(String.init) }
+                .joined()
+                .uppercased()
+        } else if let first = displayName.first {
+            return String(first).uppercased()
+        }
+        return "?"
+    }
     
     private var displayedLocations: [CardLocation] {
         if let card = card {
@@ -64,6 +87,8 @@ struct CardEditorView: View {
             _barcodeData = State(initialValue: card.barcodeData)
             _notes = State(initialValue: card.notes ?? "")
             _selectedColor = State(initialValue: card.color.flatMap { Color(hex: $0) })
+            _selectedSecondaryColor = State(initialValue: card.secondaryColor.flatMap { Color(hex: $0) })
+            _useAutoTextColor = State(initialValue: card.secondaryColor == nil)
             _isFavorite = State(initialValue: card.isFavorite)
             _expirationDate = State(initialValue: card.expirationDate)
             _hasExpirationDate = State(initialValue: card.expirationDate != nil)
@@ -76,6 +101,8 @@ struct CardEditorView: View {
             _barcodeData = State(initialValue: "")
             _notes = State(initialValue: "")
             _selectedColor = State(initialValue: Color(hex: merchant.suggestedColor))
+            _selectedSecondaryColor = State(initialValue: Color(hex: merchant.secondaryColor))
+            _useAutoTextColor = State(initialValue: merchant.secondaryColor == nil)
             _isFavorite = State(initialValue: false)
             _expirationDate = State(initialValue: nil)
             _hasExpirationDate = State(initialValue: false)
@@ -88,6 +115,8 @@ struct CardEditorView: View {
             _barcodeData = State(initialValue: "")
             _notes = State(initialValue: "")
             _selectedColor = State(initialValue: nil)
+            _selectedSecondaryColor = State(initialValue: nil)
+            _useAutoTextColor = State(initialValue: true)
             _isFavorite = State(initialValue: false)
             _expirationDate = State(initialValue: nil)
             _hasExpirationDate = State(initialValue: false)
@@ -156,12 +185,61 @@ struct CardEditorView: View {
                 }
                 
                 Section {
-                    ColorPicker("Card Color", selection: Binding(
+                    // Mini card preview
+                    HStack {
+                        Spacer()
+                        VStack(spacing: 8) {
+                            ZStack {
+                                Circle()
+                                    .fill(selectedColor ?? .gray)
+                                    .frame(width: 60, height: 60)
+                                
+                                Text(cardInitials)
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(effectiveSecondaryColor)
+                            }
+                            
+                            Text(name.isEmpty ? String(localized: "Card Name") : name)
+                                .font(.headline)
+                                .foregroundStyle(.primary)
+                            
+                            Text(storeName.isEmpty ? String(localized: "Store Name") : storeName)
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                        }
+                        .padding(.vertical, 8)
+                        Spacer()
+                    }
+                    
+                    ColorPicker(String(localized: "Card Color"), selection: Binding(
                         get: { selectedColor ?? .gray },
                         set: { selectedColor = $0 }
                     ), supportsOpacity: false)
                     
-                    Toggle("Favorite", isOn: $isFavorite)
+                    Picker(String(localized: "Text Color"), selection: $useAutoTextColor) {
+                        Text(String(localized: "Auto")).tag(true)
+                        Text(String(localized: "Custom")).tag(false)
+                    }
+                    .pickerStyle(.segmented)
+                    .onChange(of: useAutoTextColor) { _, newValue in
+                        if !newValue && selectedSecondaryColor == nil {
+                            selectedSecondaryColor = (selectedColor ?? .gray).contrastingTextColor()
+                        }
+                    }
+                    
+                    if !useAutoTextColor {
+                        ColorPicker(String(localized: "Custom Text Color"), selection: Binding(
+                            get: { selectedSecondaryColor ?? .white },
+                            set: { selectedSecondaryColor = $0 }
+                        ), supportsOpacity: false)
+                    }
+                } header: {
+                    Text(String(localized: "Appearance"))
+                }
+                
+                Section {
+                    Toggle(String(localized: "Favorite"), isOn: $isFavorite)
                 }
                 
                 Section {
@@ -387,7 +465,7 @@ struct CardEditorView: View {
             existingCard.barcodeData = barcodeData
             existingCard.notes = notes.isEmpty ? nil : notes
             existingCard.color = selectedColor?.toHex()
-            existingCard.secondaryColor = merchantTemplate?.secondaryColor
+            existingCard.secondaryColor = useAutoTextColor ? nil : selectedSecondaryColor?.toHex()
             existingCard.isFavorite = isFavorite
             existingCard.expirationDate = hasExpirationDate ? expirationDate : nil
             savedCard = existingCard
@@ -399,7 +477,7 @@ struct CardEditorView: View {
                 barcodeType: barcodeType,
                 barcodeData: barcodeData,
                 color: selectedColor?.toHex(),
-                secondaryColor: merchantTemplate?.secondaryColor,
+                secondaryColor: useAutoTextColor ? nil : selectedSecondaryColor?.toHex(),
                 notes: notes.isEmpty ? nil : notes,
                 isFavorite: isFavorite,
                 expirationDate: hasExpirationDate ? expirationDate : nil
