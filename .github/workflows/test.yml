@@ -51,6 +51,7 @@ jobs:
         run: |
           mise set IOS_DEVICE="iPhone 17 Pro"
           mise set IOS_VERSION="26.2"
+          mise set IOS_ARCH="arm64"
       
       - name: Run CI workflow (full tests on tags)
         run: |

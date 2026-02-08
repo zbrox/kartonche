@@ -322,7 +322,7 @@ These are configured in `mise.toml` and explicitly set in the GitHub Actions wor
 All xcodebuild commands use complete destination specs to avoid "multiple matching destinations" warnings:
 
 ```bash
-platform=iOS Simulator,name=iPhone 17 Pro,OS=26.2
+platform=iOS Simulator,name=iPhone 17 Pro,OS=26.2,arch=arm64
 ```
 
 This eliminates ambiguity and ensures consistent simulator selection in CI.
