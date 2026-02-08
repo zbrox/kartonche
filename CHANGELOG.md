@@ -5,7 +5,32 @@ All notable changes to kartonche will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [2026.02.5] - 2026-02-08
+
+### Bug Fixes
+
+- Add missing container backgrounds and inline widget for lock screen
+- Add complete iOS simulator destination specs
+- Remove invalid 'version: latest' from mise-action
+
+### Features
+
+- Add appearance section with color preview and secondary color customization
+- Redesign card barcode display with prominent brand colors
+- Add control widgets for Control Center and lock screen
+- Add swipe actions for edit and favorite in card list
+- Switch to macos-26 runner with iPhone 17 Pro simulator
+
+### Miscellaneous Tasks
+
+- Prepare widgets for i18n
+- Bump version to 2026.02.5
+
+### Refactoring
+
+- Consolidate Color extensions into shared utility file
+
+## [2026.02.4] - 2026-02-08
 
 ### Bug Fixes
 
@@ -16,10 +41,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remove unnecessary await in CardListView
 - Add iOS Simulator destination to build task
 - Migrate from deprecated CLGeocoder to MKReverseGeocodingRequest
+- Prevent permission sheet content from being cropped at top
+- Configure git to use HTTPS for SPM dependencies
 
 ### Documentation
 
 - Add TODO for GeocodingService deprecation
+- Update README and CHANGELOG for v2026.02
+- Update What's New with 2026.02.4 features
 
 ### Features
 
@@ -39,10 +68,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add 'Show Expired' filter toggle in card list
 - Add location permission request flow in Settings
 - Add location-based nearby card notifications
+- Add About page, settings refactor, and empty state onboarding
+- Add confetti celebration when adding first card
+- Run full tests only on tags, unit tests otherwise
+- Add collapsible notes section to card display view
+- Verify merchant data and add country field
+- Generate About icon from SVG layers at build time
+- Add merchant template generation as build phase
+- Add delete confirmation dialog to card list
 
 ### Miscellaneous Tasks
 
 - Remove TODO
+- Update CI to use macOS 15 with Xcode 26.2
+- Limit app to iPhone only
+- Update version to 2026.02.4
+
+### Refactoring
+
+- Simplify CI workflows to use mise tasks
+- Make i18n check support multiple languages dynamically
 
 ## [2026.02.3] - 2026-02-07
 
