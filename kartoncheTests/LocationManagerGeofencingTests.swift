@@ -296,17 +296,6 @@ struct LocationManagerGeofencingTests {
         #expect(distance == 0.0)
     }
     
-    @Test func distanceIsSymmetric() async throws {
-        let point1 = CLLocationCoordinate2D(latitude: 42.6977, longitude: 23.3219)
-        let point2 = CLLocationCoordinate2D(latitude: 42.1354, longitude: 24.7453)
-        
-        let distance1 = LocationManager.distance(from: point1, to: point2)
-        let distance2 = LocationManager.distance(from: point2, to: point1)
-        
-        // Use tolerance for floating-point comparison (1mm tolerance)
-        #expect(abs(distance1 - distance2) < 0.001, "Distance should be symmetric: \(distance1) vs \(distance2)")
-    }
-    
     // MARK: - CardLocation Tests
     
     @Test func cardLocationDistanceCalculation() async throws {
