@@ -191,8 +191,9 @@ class LocationManager: NSObject, ObservableObject {
 
 extension LocationManager: CLLocationManagerDelegate {
     nonisolated func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        let status = manager.authorizationStatus
         Task { @MainActor in
-            self.authorizationStatus = manager.authorizationStatus
+            self.authorizationStatus = status
         }
     }
     
@@ -225,14 +226,15 @@ extension LocationManager: CLLocationManagerDelegate {
     
     nonisolated func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         guard let circularRegion = region as? CLCircularRegion else { return }
+        let regionIdentifier = circularRegion.identifier
         
         Task { @MainActor in
             // Get cards associated with this region
-            if let cardIDs = self.cardIDs(for: circularRegion.identifier) {
+            if let cardIDs = self.cardIDs(for: regionIdentifier) {
                 // Send notification
                 await NotificationManager.shared.sendNearbyCardNotification(
                     for: cardIDs,
-                    regionID: circularRegion.identifier
+                    regionID: regionIdentifier
                 )
             }
         }
@@ -240,11 +242,12 @@ extension LocationManager: CLLocationManagerDelegate {
     
     nonisolated func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         guard let circularRegion = region as? CLCircularRegion else { return }
+        let regionIdentifier = circularRegion.identifier
         
         Task { @MainActor in
             // Clear notification
             await NotificationManager.shared.clearNearbyCardNotification(
-                regionID: circularRegion.identifier
+                regionID: regionIdentifier
             )
         }
     }

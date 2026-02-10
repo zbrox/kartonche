@@ -8,6 +8,7 @@
 import Testing
 @testable import kartonche
 
+@MainActor
 struct MerchantSelectionOrderTests {
     
     @Test func allMerchantsHavePrimaryColor() async throws {

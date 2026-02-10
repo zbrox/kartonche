@@ -9,6 +9,7 @@ import Testing
 import UIKit
 @testable import kartonche
 
+@MainActor
 struct BarcodeGeneratorTests {
     
     @Test func generateQRCode() {
