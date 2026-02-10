@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.zbrox.kartonche</string>
+		<string>group.com.zbrox.kartonche.app</string>
 	</array>
 </dict>
 </plist>

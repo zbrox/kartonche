@@ -47,6 +47,17 @@ extension Color {
         return String(format: "#%02X%02X%02X", r, g, b)
     }
     
+    /// Returns "rgb(R,G,B)" string for Apple Wallet pass.json
+    func toPassRGB() -> String? {
+        guard let components = UIColor(self).cgColor.components else { return nil }
+
+        let r = Int(components[0] * 255.0)
+        let g = Int(components[1] * 255.0)
+        let b = Int(components[2] * 255.0)
+
+        return "rgb(\(r),\(g),\(b))"
+    }
+
     /// Returns a contrasting text color (white or black) based on the background color's luminance
     func contrastingTextColor() -> Color {
         let uiColor = UIColor(self)

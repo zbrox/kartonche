@@ -11,7 +11,7 @@ import Observation
 /// Routes incoming URLs to the appropriate view state
 @Observable
 final class URLRouter {
-    private static let appGroupIdentifier = "group.com.zbrox.kartonche"
+    private static let appGroupIdentifier = SharedDataManager.appGroupIdentifier
     private static let pendingImportFilename = "pending_import.kartonche"
     
     /// URL of a .kartonche file waiting to be imported

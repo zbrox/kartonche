@@ -15,7 +15,7 @@ struct NavigateToNextCardIntent: AppIntent {
     nonisolated(unsafe) static var description: IntentDescription = "Show the next favorite card"
     
     func perform() async throws -> some IntentResult {
-        let defaults = UserDefaults(suiteName: "group.com.zbrox.kartonche")
+        let defaults = UserDefaults(suiteName: SharedDataManager.appGroupIdentifier)
         let currentIndex = defaults?.integer(forKey: "carouselIndex") ?? 0
         
         // Get total favorites count
@@ -33,7 +33,7 @@ struct NavigateToPreviousCardIntent: AppIntent {
     nonisolated(unsafe) static var description: IntentDescription = "Show the previous favorite card"
     
     func perform() async throws -> some IntentResult {
-        let defaults = UserDefaults(suiteName: "group.com.zbrox.kartonche")
+        let defaults = UserDefaults(suiteName: SharedDataManager.appGroupIdentifier)
         let currentIndex = defaults?.integer(forKey: "carouselIndex") ?? 0
         
         // Get total favorites count
@@ -62,7 +62,7 @@ struct FavoritesCarouselProvider: TimelineProvider {
         let favorites = SharedDataManager.fetchAllCards().filter { $0.isFavorite }
         
         // Get stored index from UserDefaults
-        let currentIndex = UserDefaults(suiteName: "group.com.zbrox.kartonche")?.integer(forKey: "carouselIndex") ?? 0
+        let currentIndex = UserDefaults(suiteName: SharedDataManager.appGroupIdentifier)?.integer(forKey: "carouselIndex") ?? 0
         let validIndex = favorites.isEmpty ? 0 : min(currentIndex, favorites.count - 1)
         
         let entry = FavoritesCarouselEntry(date: currentDate, favoriteCards: favorites, currentIndex: validIndex)
@@ -256,7 +256,7 @@ struct CarouselCardView: View {
         .widgetURL(createDeepLink(for: card))
         .onAppear {
             // Store current index for next reload
-            UserDefaults(suiteName: "group.com.zbrox.kartonche")?.set(currentIndex, forKey: "carouselIndex")
+            UserDefaults(suiteName: SharedDataManager.appGroupIdentifier)?.set(currentIndex, forKey: "carouselIndex")
         }
     }
     
@@ -285,13 +285,13 @@ struct CarouselCardView: View {
     
     private func navigateToPrevious() {
         let newIndex = currentIndex > 0 ? currentIndex - 1 : totalCards - 1
-        UserDefaults(suiteName: "group.com.zbrox.kartonche")?.set(newIndex, forKey: "carouselIndex")
+        UserDefaults(suiteName: SharedDataManager.appGroupIdentifier)?.set(newIndex, forKey: "carouselIndex")
         WidgetCenter.shared.reloadAllTimelines()
     }
     
     private func navigateToNext() {
         let newIndex = currentIndex < totalCards - 1 ? currentIndex + 1 : 0
-        UserDefaults(suiteName: "group.com.zbrox.kartonche")?.set(newIndex, forKey: "carouselIndex")
+        UserDefaults(suiteName: SharedDataManager.appGroupIdentifier)?.set(newIndex, forKey: "carouselIndex")
         WidgetCenter.shared.reloadAllTimelines()
     }
 }

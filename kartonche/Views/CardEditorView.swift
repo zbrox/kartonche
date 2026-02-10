@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 import PhotosUI
 import WidgetKit
+import PassKit
 
 /// Editor view for creating or modifying a loyalty card
 struct CardEditorView: View {
@@ -503,7 +504,14 @@ struct CardEditorView: View {
         
         // Reload all widgets to show updated card data
         WidgetCenter.shared.reloadAllTimelines()
-        
+
+        // Update Apple Wallet pass if one exists for this card
+        if walletPassExists(for: savedCard) {
+            Task {
+                try? await updateWalletPass(for: savedCard)
+            }
+        }
+
         dismiss()
     }
     
@@ -513,11 +521,15 @@ struct CardEditorView: View {
             Task {
                 await NotificationManager.shared.cancelNotifications(for: card.id)
             }
+
+            // Remove Apple Wallet pass if one exists
+            removeWalletPass(for: card)
+
             modelContext.delete(card)
-            
+
             // Reload all widgets since card was deleted
             WidgetCenter.shared.reloadAllTimelines()
-            
+
             dismiss()
         }
     }
@@ -535,6 +547,28 @@ struct CardEditorView: View {
         }
     }
     
+    private func walletPassExists(for card: LoyaltyCard) -> Bool {
+        PKPassLibrary().passes().contains {
+            $0.serialNumber == card.id.uuidString &&
+            $0.passTypeIdentifier == WalletPassConfiguration.passTypeIdentifier
+        }
+    }
+
+    private func updateWalletPass(for card: LoyaltyCard) async throws {
+        let passData = try WalletPassGenerator.generate(for: card)
+        let pass = try PKPass(data: passData)
+        PKPassLibrary().replacePass(with: pass)
+    }
+
+    private func removeWalletPass(for card: LoyaltyCard) {
+        if let pass = PKPassLibrary().passes().first(where: {
+            $0.serialNumber == card.id.uuidString &&
+            $0.passTypeIdentifier == WalletPassConfiguration.passTypeIdentifier
+        }) {
+            PKPassLibrary().removePass(pass)
+        }
+    }
+
     private func saveLocation(_ location: CardLocation) {
         if let card = card {
             // Edit mode: add to card immediately
