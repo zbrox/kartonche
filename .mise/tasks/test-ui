@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #MISE description="Run UI tests"
+#USAGE arg "[test]" help="Specific test to run (e.g., kartoncheUITests/MerchantSelectionUITests/testSearchMerchants)"
 
 set -euo pipefail
 
@@ -9,14 +10,14 @@ OS_VERSION="${IOS_VERSION:-26.2}"
 ARCH="${IOS_ARCH:-arm64}"
 DESTINATION="platform=iOS Simulator,name=$DEVICE,OS=$OS_VERSION,arch=$ARCH"
 
-if [ -n "${1:-}" ]; then
+if [ -n "${usage_test:-}" ]; then
   # Run specific UI test
   xcodebuild test \
     -project "$PROJECT" \
     -scheme "$SCHEME" \
     -destination "$DESTINATION" \
     -quiet \
-    -only-testing:"$1" | xcbeautify
+    -only-testing:"$usage_test" | xcbeautify
 else
   # Run all UI tests
   xcodebuild test \
