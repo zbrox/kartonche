@@ -73,6 +73,16 @@
       },
       "shouldTranslate" : false
     },
+    "%lld Cards" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld карти"
+          }
+        }
+      }
+    },
     "%lldm" : {
       "localizations" : {
         "bg" : {
@@ -473,6 +483,16 @@
         }
       }
     },
+    "Cards are exported as .kartonche files that can be shared and imported on other devices." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Картите се експортират като файлове с окончание .kartonche, които могат да се споделят и импортират обратно на това и други устройства."
+          }
+        }
+      }
+    },
     "Cards to import" : {
       "localizations" : {
         "bg" : {
@@ -586,6 +606,16 @@
         }
       }
     },
+    "Data" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Информация"
+          }
+        }
+      }
+    },
     "Delete" : {
       "comment" : "Button to delete an item",
       "localizations" : {
@@ -603,6 +633,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Отказано"
+          }
+        }
+      }
+    },
+    "Deselect All" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Никоя"
           }
         }
       }
@@ -876,12 +916,52 @@
         }
       }
     },
+    "Export" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Експортиране"
+          }
+        }
+      }
+    },
+    "Export (%lld)" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Експортиране (%lld)"
+          }
+        }
+      }
+    },
+    "Export All Cards" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Експортиране на всички"
+          }
+        }
+      }
+    },
     "Export date" : {
       "localizations" : {
         "bg" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Дата на експортиране"
+          }
+        }
+      }
+    },
+    "Export Failed" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Грешка при експортиране"
           }
         }
       }
@@ -1118,6 +1198,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Импортирането се провали"
+          }
+        }
+      }
+    },
+    "Import from File" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Импортиране от файл"
           }
         }
       }
@@ -2171,12 +2261,42 @@
         }
       }
     },
+    "Select All" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Всички"
+          }
+        }
+      }
+    },
     "Select Card" : {
       "localizations" : {
         "bg" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Избор на карта"
+          }
+        }
+      }
+    },
+    "Select Cards" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Избиране на карти"
+          }
+        }
+      }
+    },
+    "Select Cards to Export" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Избор на карти за експортиране"
           }
         }
       }
@@ -2607,17 +2727,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Надграждане на разрешението за местоположението ви"
-          }
-        }
-      }
-    },
-    "Upgrade to Always" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Надграждане до Винаги"
           }
         }
       }
