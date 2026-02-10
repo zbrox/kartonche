@@ -2,7 +2,7 @@
 
 ## Overview
 
-kartonche is a native iOS app for managing loyalty cards in Bulgaria. Built with SwiftUI and SwiftData, it provides card scanning, storage, and quick access via widgets.
+kartonche is a native iOS app for managing loyalty cards. Built with SwiftUI and SwiftData, it provides card scanning, storage, and quick access via widgets.
 
 ## Technology Stack
 
@@ -13,7 +13,7 @@ kartonche is a native iOS app for managing loyalty cards in Bulgaria. Built with
 - **Barcode Generation:** Core Image filters (CIBarcodeGenerator)
 - **Photo Import:** PhotosUI PhotosPicker
 - **Widgets:** WidgetKit
-- **Localization:** String Catalogs (Bulgarian primary, English secondary)
+- **Localization:** String Catalogs (English primary, Bulgarian secondary)
 
 **Zero third-party dependencies** - all Apple frameworks.
 
@@ -40,17 +40,18 @@ final class LoyaltyCard {
     var barcodeType: BarcodeType  // QR, Code128, EAN13, etc.
     var barcodeData: String       // Raw data for barcode
     var color: String?            // Hex color (user customization)
+    var secondaryColor: String?   // Secondary color for gradients
     var notes: String?            // Optional user notes
     var isFavorite: Bool          // Quick access flag
     var createdDate: Date
     var lastUsedDate: Date?       // Track usage for sorting
+    var expirationDate: Date?     // Card expiration (if applicable)
     
     @Attribute(.externalStorage)
     var cardImage: Data?          // Optional photo of physical card
     
-    // Phase 2:
-    // @Relationship(deleteRule: .cascade)
-    // var locations: [CardLocation]?
+    @Relationship(deleteRule: .cascade, inverse: \CardLocation.card)
+    var locations: [CardLocation] // Associated store locations
 }
 ```
 
@@ -70,14 +71,38 @@ enum BarcodeType: String, Codable {
 
 ```swift
 // Generated from Merchants/merchants.kdl at build time
-struct MerchantTemplate: Identifiable, Codable {
-    let id: String           // bg.billa
-    let name: String         // Billa
-    let nameBg: String       // Билла
+struct MerchantTemplate: Identifiable {
+    let id: String                    // e.g., "bg.billa"
+    let name: String                  // Primary name
+    let otherNames: [String]          // Alternate names (localized, abbreviations)
+    let country: String               // ISO country code
     let category: MerchantCategory
-    let barcodeType: BarcodeType
     let website: String?
     let suggestedColor: String?
+    let secondaryColor: String?
+    let programs: [ProgramTemplate]   // Loyalty programs offered
+}
+```
+
+### ProgramTemplate (Generated)
+
+```swift
+struct ProgramTemplate: Identifiable {
+    let id: String
+    let name: String?                 // Program name (nil if merchant has single program)
+    let barcodeType: BarcodeType
+}
+```
+
+### MerchantCategory (Enum)
+
+```swift
+enum MerchantCategory: String, Codable, CaseIterable {
+    case grocery    // Grocery Stores
+    case fuel       // Gas Stations
+    case pharmacy   // Pharmacies
+    case retail     // Other Retail
+    case wholesale  // Wholesale
 }
 ```
 
@@ -87,39 +112,53 @@ struct MerchantTemplate: Identifiable, Codable {
 kartonche/
 ├── Models/
 │   ├── LoyaltyCard.swift         # Main data model
+│   ├── CardLocation.swift        # Store location model
 │   ├── BarcodeType.swift         # Barcode format enum
-│   └── MerchantTemplate.swift    # GENERATED (not in git)
+│   ├── CardExportDTO.swift       # Export/import data transfer
+│   └── WhatsNewData.swift        # What's new content
 ├── Views/
 │   ├── CardListView.swift        # Main list view
-│   ├── CardDisplayView.swift    # Full-screen card display
-│   ├── CardEditorView.swift     # Edit card properties
-│   ├── AddCardView.swift        # Add card flow
-│   ├── ManualCardEntryView.swift
-│   ├── PhotoImportView.swift
+│   ├── CardDisplayView.swift     # Full-screen card display
+│   ├── CardEditorView.swift      # Edit card properties
 │   ├── MerchantSelectionView.swift
+│   ├── SettingsView.swift        # App settings
+│   ├── AboutView.swift           # About screen
+│   ├── ImportPreviewView.swift   # Import preview
 │   └── Components/
-│       ├── CardRowView.swift    # List item
-│       └── BarcodeImageView.swift
-├── Scanning/
-│   └── BarcodeScannerView.swift # VisionKit wrapper
+│       ├── CardRowView.swift     # List item
+│       ├── BarcodeImageView.swift
+│       ├── BarcodeScannerView.swift  # VisionKit wrapper
+│       ├── MerchantRowView.swift
+│       ├── EmptyCardListView.swift
+│       ├── LocationEditorView.swift
+│       └── MapLocationPicker.swift
 ├── Utilities/
-│   ├── BarcodeGenerator.swift   # Core Image barcode generation
-│   ├── PermissionManager.swift  # Camera/photo permissions
-│   ├── BrightnessManager.swift  # Screen brightness control
-│   └── ScreenManager.swift      # Idle timer management
-├── Widgets/
-│   ├── CardWidgets.swift        # Widget definitions
-│   ├── CardWidgetView.swift     # Widget UI
-│   └── CardWidgetEntry.swift    # Timeline entry
+│   ├── BarcodeGenerator.swift    # Core Image barcode generation
+│   ├── BarcodeTypeDetector.swift # Auto-detect barcode format
+│   ├── PermissionManager.swift   # Camera/photo permissions
+│   ├── BrightnessManager.swift   # Screen brightness control
+│   ├── ScreenManager.swift       # Idle timer management
+│   ├── LocationManager.swift     # Location services
+│   ├── GeocodingService.swift    # Address lookup
+│   ├── NotificationManager.swift # Local notifications
+│   ├── CardExporter.swift        # Export cards
+│   ├── CardImporter.swift        # Import cards
+│   └── PhotoBarcodeScanner.swift # Scan from photos
 ├── Generated/
-│   └── MerchantTemplates.swift  # Auto-generated (build time)
-├── Resources/
-│   ├── Localizable.xcstrings    # Bulgarian + English
-│   └── Assets.xcassets/
+│   └── MerchantTemplates.swift   # Auto-generated (build time)
+├── Assets.xcassets/              # Images, colors, app icon
+├── Localizable.xcstrings         # English + Bulgarian
 └── kartoncheApp.swift            # App entry + ModelContainer
 
+kartoncheWidget/                  # Widget extension target
+├── kartoncheWidget.swift         # Main widget
+├── FavoritesCarouselWidget.swift # Favorites carousel
+├── LockScreenWidgets.swift       # Lock screen widgets
+├── NearestLocationWidget.swift   # Location-based widget
+└── Assets.xcassets/
+
 Merchants/
-├── merchants.kdl                 # Community database
+├── merchants.kdl                 # Community database (seed data)
 ├── schema.kdl                    # KDL schema
 └── README.md                     # Contributor guide
 
@@ -210,7 +249,7 @@ Scripts/
 ## Error Handling
 
 ### Recoverable Errors
-- Show alert with user-friendly message (Bulgarian + English)
+- Show alert with user-friendly message (English + Bulgarian)
 - Log error details for debugging
 - Provide actionable next step ("Try Again", "Open Settings")
 
@@ -274,26 +313,13 @@ Scripts/
 ### Permissions
 - Camera: Just-in-time request when scanning
 - Photos: PhotosPicker (system handles permission)
-- Location: Phase 2, "When In Use" first, "Always" opt-in
+- Location: "When In Use" for store location features
+- Notifications: Local notifications for location-based reminders
 
 ### No Tracking
 - No analytics
-- No crash reporting (in MVP)
+- No crash reporting
 - No user data collection
-
-## Future Architecture (Phase 2)
-
-### Location Features
-- Add `CardLocation` model (1-to-many with `LoyaltyCard`)
-- `LocationManager` for current location
-- `GeofenceManager` for background monitoring (20-region limit)
-- Smart region prioritization (nearest 20)
-
-### Apple Wallet Integration
-- Backend required (pass signing)
-- Pass generation service
-- APNs for updates
-- Complex - defer until proven demand
 
 ## Build Process
 
