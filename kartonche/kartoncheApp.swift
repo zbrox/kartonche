@@ -16,6 +16,7 @@ struct kartoncheApp: App {
     var sharedModelContainer: ModelContainer = SharedDataManager.createSharedModelContainer()
     @StateObject private var locationManager = LocationManager()
     @StateObject private var notificationDelegate = NotificationDelegate()
+    @State private var fileImportManager = FileImportManager()
     @Environment(\.scenePhase) var scenePhase
 
     var body: some Scene {
@@ -45,6 +46,10 @@ struct kartoncheApp: App {
                     }
                 }
                 .environmentObject(locationManager)
+                .environment(fileImportManager)
+                .onOpenURL { url in
+                    fileImportManager.handleURL(url)
+                }
         }
         .modelContainer(sharedModelContainer)
         .handlesExternalEvents(matching: ["*"])

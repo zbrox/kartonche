@@ -51,33 +51,6 @@ struct CardExportDTO: Codable, Identifiable {
     /// Locations associated with this card
     let locations: [LocationExportDTO]
     
-    /// Convert from LoyaltyCard (SwiftData) to CardExportDTO (Codable)
-    init(from card: LoyaltyCard) {
-        self.id = card.id
-        self.name = card.name
-        self.storeName = card.storeName
-        self.cardNumber = card.cardNumber
-        self.barcodeType = card.barcodeType.rawValue
-        self.barcodeData = card.barcodeData
-        self.color = card.color
-        self.secondaryColor = card.secondaryColor
-        self.notes = card.notes
-        self.isFavorite = card.isFavorite
-        self.createdDate = card.createdDate
-        self.lastUsedDate = card.lastUsedDate
-        self.expirationDate = card.expirationDate
-        
-        // Convert image Data to base64 string for JSON serialization
-        if let imageData = card.cardImage {
-            self.cardImage = imageData.base64EncodedString()
-        } else {
-            self.cardImage = nil
-        }
-        
-        // Convert locations
-        self.locations = card.locations.map { LocationExportDTO(from: $0) }
-    }
-    
     /// Validate that this DTO can be safely converted to a LoyaltyCard
     func validate() throws {
         // Check required fields are not empty
@@ -87,10 +60,6 @@ struct CardExportDTO: Codable, Identifiable {
         
         guard !storeName.isEmpty else {
             throw CardImportError.invalidData("Store name is empty")
-        }
-        
-        guard !cardNumber.isEmpty else {
-            throw CardImportError.invalidData("Card number is empty")
         }
         
         guard !barcodeData.isEmpty else {
@@ -119,7 +88,43 @@ struct LocationExportDTO: Codable {
     let latitude: Double
     let longitude: Double
     let radius: Double
-    
+}
+
+// MARK: - SwiftData Integration (Main App Only)
+// These extensions depend on SwiftData models and are excluded from extensions
+// The MAIN_APP flag is set in the main app target's build settings
+
+#if MAIN_APP
+extension CardExportDTO {
+    /// Convert from LoyaltyCard (SwiftData) to CardExportDTO (Codable)
+    init(from card: LoyaltyCard) {
+        self.id = card.id
+        self.name = card.name
+        self.storeName = card.storeName
+        self.cardNumber = card.cardNumber
+        self.barcodeType = card.barcodeType.rawValue
+        self.barcodeData = card.barcodeData
+        self.color = card.color
+        self.secondaryColor = card.secondaryColor
+        self.notes = card.notes
+        self.isFavorite = card.isFavorite
+        self.createdDate = card.createdDate
+        self.lastUsedDate = card.lastUsedDate
+        self.expirationDate = card.expirationDate
+        
+        // Convert image Data to base64 string for JSON serialization
+        if let imageData = card.cardImage {
+            self.cardImage = imageData.base64EncodedString()
+        } else {
+            self.cardImage = nil
+        }
+        
+        // Convert locations
+        self.locations = card.locations.map { LocationExportDTO(from: $0) }
+    }
+}
+
+extension LocationExportDTO {
     init(from location: CardLocation) {
         self.id = location.id
         self.name = location.name
@@ -129,6 +134,7 @@ struct LocationExportDTO: Codable {
         self.radius = location.radius
     }
 }
+#endif
 
 /// Errors that can occur during import
 enum CardImportError: LocalizedError {

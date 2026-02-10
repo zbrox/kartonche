@@ -21,6 +21,7 @@ struct PendingCard: Identifiable {
 struct CardListView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.openURL) private var openURL
+    @Environment(FileImportManager.self) private var fileImportManager
     @Query private var allCards: [LoyaltyCard]
     
     @State private var searchText = ""
@@ -137,8 +138,17 @@ struct CardListView: View {
             .fullScreenCover(item: $displayCard) { card in
                 CardDisplayView(card: card)
             }
-            .onOpenURL { url in
-                handleOpenURL(url)
+            .onChange(of: fileImportManager.pendingImportURL) { oldURL, newURL in
+                if let url = newURL {
+                    handleFileImport(url)
+                    fileImportManager.clearPendingImport()
+                }
+            }
+            .onChange(of: fileImportManager.pendingDeepLinkURL) { oldURL, newURL in
+                if let url = newURL {
+                    handleDeepLink(url)
+                    fileImportManager.clearPendingDeepLink()
+                }
             }
             .searchable(text: $searchText, prompt: String(localized: "Search"))
             .toolbar {
@@ -532,38 +542,20 @@ struct CardListView: View {
         WidgetCenter.shared.reloadAllTimelines()
     }
     
-    private func handleOpenURL(_ url: URL) {
-        // Check if it's a .kartonche file
-        if url.pathExtension == "kartonche" {
-            handleFileImport(url)
-        }
-        // Check if it's a deep link
-        else if url.scheme == "kartonche" {
-            handleDeepLink(url)
-        }
-    }
-    
     private func handleFileImport(_ url: URL) {
         do {
-            // Access the security-scoped resource
             guard url.startAccessingSecurityScopedResource() else {
-                print("Failed to access security-scoped resource")
                 return
             }
             defer { url.stopAccessingSecurityScopedResource() }
             
-            // Read the file data
             let data = try Data(contentsOf: url)
-            
-            // Parse and validate
             let container = try CardImporter.importFromData(data)
             
-            // Show import preview
             importContainer = container
             showingImportPreview = true
             
         } catch {
-            print("Failed to import file: \(error)")
             // TODO: Show error alert
         }
     }

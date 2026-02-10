@@ -28,6 +28,10 @@
 			<array>
 				<string>com.zbrox.kartonche.card</string>
 			</array>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>kartonche</string>
+			</array>
 		</dict>
 	</array>
 	<key>UTExportedTypeDeclarations</key>
@@ -35,6 +39,7 @@
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
+				<string>public.item</string>
 				<string>public.data</string>
 				<string>public.content</string>
 			</array>
@@ -63,6 +68,10 @@
 		</dict>
 	</array>
 	<key>LSSupportsOpeningDocumentsInPlace</key>
-	<false/>
+	<true/>
+	<key>UISupportsDocumentBrowser</key>
+	<true/>
+	<key>UIFileSharingEnabled</key>
+	<true/>
 </dict>
 </plist>
