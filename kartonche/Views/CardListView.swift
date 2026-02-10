@@ -140,12 +140,14 @@ struct CardListView: View {
             }
             .onChange(of: urlRouter.pendingImportURL) { oldURL, newURL in
                 if let url = newURL {
+                    dismissActivePresentation()
                     handleFileImport(url)
                     urlRouter.clearPendingImport()
                 }
             }
             .onChange(of: urlRouter.pendingDeepLinkURL) { oldURL, newURL in
                 if let url = newURL {
+                    dismissActivePresentation()
                     handleDeepLink(url)
                     urlRouter.clearPendingDeepLink()
                 }
@@ -153,10 +155,12 @@ struct CardListView: View {
             .onAppear {
                 // Handle URLs that arrived before .onChange registered (cold launch)
                 if let url = urlRouter.pendingDeepLinkURL {
+                    dismissActivePresentation()
                     handleDeepLink(url)
                     urlRouter.clearPendingDeepLink()
                 }
                 if let url = urlRouter.pendingImportURL {
+                    dismissActivePresentation()
                     handleFileImport(url)
                     urlRouter.clearPendingImport()
                 }
@@ -553,6 +557,19 @@ struct CardListView: View {
         WidgetCenter.shared.reloadAllTimelines()
     }
     
+    private func dismissActivePresentation() {
+        displayCard = nil
+        showingSettings = false
+        showingMerchantSelection = false
+        merchantForProgramSelection = nil
+        pendingCard = nil
+        selectedCard = nil
+        showingAlwaysPrompt = false
+        shareItem = nil
+        showingImportPreview = false
+        importContainer = nil
+    }
+
     private func handleFileImport(_ url: URL) {
         do {
             guard url.startAccessingSecurityScopedResource() else {
