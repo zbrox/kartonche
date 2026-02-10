@@ -28,6 +28,15 @@ struct SettingsView: View {
                     }
                 }
                 
+                // Data
+                Section {
+                    NavigationLink {
+                        DataSettingsView()
+                    } label: {
+                        Label(String(localized: "Data"), systemImage: "externaldrive")
+                    }
+                }
+
                 // About
                 Section {
                     NavigationLink {
