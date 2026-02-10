@@ -9,9 +9,10 @@ import XCTest
 
 final class MerchantSelectionUITests: XCTestCase {
     
-    var app: XCUIApplication!
+    @MainActor var app: XCUIApplication!
     
-    override func setUpWithError() throws {
+    @MainActor
+    override func setUp() async throws {
         continueAfterFailure = false
         app = XCUIApplication()
         app.launch()
@@ -101,21 +102,25 @@ final class MerchantSelectionUITests: XCTestCase {
         app.buttons["addCardButton"].tap()
         XCTAssertTrue(app.buttons["customCardButton"].waitForExistence(timeout: 3))
         
-        // Find search field
-        let searchField = app.searchFields.firstMatch
-        XCTAssertTrue(searchField.exists, "Search field should exist")
+        // Verify both merchants exist before searching
+        XCTAssertTrue(app.buttons["merchant_bg.billa"].waitForExistence(timeout: 3), "Billa should exist before search")
+        XCTAssertTrue(app.buttons["merchant_bg.kaufland"].exists, "Kaufland should exist before search")
         
-        // Type search query
+        // Find search field by its prompt text
+        let searchField = app.searchFields["Search Merchant"]
+        XCTAssertTrue(searchField.waitForExistence(timeout: 3), "Search field should exist")
+        
+        // Tap and type (as recorded by Xcode)
         searchField.tap()
-        searchField.typeText("Lidl")
+        searchField.typeText("Kaufland")
         
-        // Lidl should be in results
-        let lidlButton = app.buttons["merchant_bg.lidl"]
-        XCTAssertTrue(lidlButton.waitForExistence(timeout: 3), "Lidl should appear in search results")
+        // Kaufland should be in results
+        let kauflandButton = app.buttons["merchant_bg.kaufland"]
+        XCTAssertTrue(kauflandButton.waitForExistence(timeout: 3), "Kaufland should appear in search results")
         
-        // Billa should not be visible (filtered out)
-        let billaButton = app.buttons["merchant_bg.billa"]
-        XCTAssertFalse(billaButton.exists, "Billa should be filtered out by search")
+        // Billa should be filtered out
+        let billaStillExists = app.buttons["merchant_bg.billa"].waitForExistence(timeout: 2)
+        XCTAssertFalse(billaStillExists, "Billa should be filtered out by search")
     }
     
     // MARK: - Card Editor Tests
@@ -124,7 +129,7 @@ final class MerchantSelectionUITests: XCTestCase {
     func testCreateCardWithMinimalData() throws {
         // Open merchant selection and choose custom
         app.buttons["addCardButton"].tap()
-        app.buttons["customCardButton"].waitForExistence(timeout: 3)
+        _ = app.buttons["customCardButton"].waitForExistence(timeout: 3)
         app.buttons["customCardButton"].tap()
         
         // Fill required fields
@@ -156,12 +161,12 @@ final class MerchantSelectionUITests: XCTestCase {
     func testCancelCardCreation() throws {
         // Open card editor
         app.buttons["addCardButton"].tap()
-        app.buttons["customCardButton"].waitForExistence(timeout: 3)
+        _ = app.buttons["customCardButton"].waitForExistence(timeout: 3)
         app.buttons["customCardButton"].tap()
         
         // Fill some data
         let cardNameField = app.textFields["cardNameField"]
-        cardNameField.waitForExistence(timeout: 3)
+        _ = cardNameField.waitForExistence(timeout: 3)
         cardNameField.tap()
         cardNameField.typeText("Test")
         
@@ -176,14 +181,14 @@ final class MerchantSelectionUITests: XCTestCase {
     
     @MainActor
     func testBarcodeScannerButton() throws {
-        // Only test on physical devices with camera support
-        guard UIDevice.current.userInterfaceIdiom != .pad || ProcessInfo.processInfo.environment["SIMULATOR_DEVICE_NAME"] == nil else {
+        // Skip on simulator - barcode scanner requires physical device with camera
+        if ProcessInfo.processInfo.environment["SIMULATOR_DEVICE_NAME"] != nil {
             throw XCTSkip("Barcode scanner requires physical device with camera")
         }
         
         // Open card editor
         app.buttons["addCardButton"].tap()
-        app.buttons["customCardButton"].waitForExistence(timeout: 3)
+        _ = app.buttons["customCardButton"].waitForExistence(timeout: 3)
         app.buttons["customCardButton"].tap()
         
         // Scan barcode button should exist on device
