@@ -112,3 +112,6 @@ Scripts/generate-merchants/.build/
 .mise.local.toml
 SPRINT-PLAN.md
 TODO.md
+
+# Pass signing credentials
+kartonche/Resources/PassAssets/*.pem

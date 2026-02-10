@@ -52,7 +52,7 @@ class ActionViewController: UIViewController {
     
     private func openMainApp(with fileURL: URL) {
         guard let sharedContainer = FileManager.default.containerURL(
-            forSecurityApplicationGroupIdentifier: "group.com.zbrox.kartonche"
+            forSecurityApplicationGroupIdentifier: "group.com.zbrox.kartonche.app"
         ) else {
             close()
             return

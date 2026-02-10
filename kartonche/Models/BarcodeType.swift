@@ -28,4 +28,18 @@ enum BarcodeType: String, Codable, CaseIterable {
             return "Aztec"
         }
     }
+
+    var supportsAppleWallet: Bool {
+        self != .ean13
+    }
+
+    var walletFormatString: String? {
+        switch self {
+        case .qr: return "PKBarcodeFormatQR"
+        case .code128: return "PKBarcodeFormatCode128"
+        case .pdf417: return "PKBarcodeFormatPDF417"
+        case .aztec: return "PKBarcodeFormatAztec"
+        case .ean13: return nil
+        }
+    }
 }

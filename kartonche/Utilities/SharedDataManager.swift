@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 enum SharedDataManager {
-    static let appGroupIdentifier = "group.com.zbrox.kartonche"
+    static let appGroupIdentifier = "group.com.zbrox.kartonche.app"
     
     private static var sharedUserDefaults: UserDefaults? {
         UserDefaults(suiteName: appGroupIdentifier)

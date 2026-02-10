@@ -2,22 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>group.com.zbrox.kartonche</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>kartonche</string>
-			</array>
-		</dict>
-	</array>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>kartonche</string>
+			</array>
 			<key>CFBundleTypeName</key>
 			<string>Kartonche Card File</string>
 			<key>CFBundleTypeRole</key>
@@ -28,12 +19,25 @@
 			<array>
 				<string>com.zbrox.kartonche.card</string>
 			</array>
-			<key>CFBundleTypeExtensions</key>
+		</dict>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>group.com.zbrox.kartonche.app</string>
+			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>kartonche</string>
 			</array>
 		</dict>
 	</array>
+	<key>TeamIdentifier</key>
+	<string>$(DEVELOPMENT_TEAM)</string>
+	<key>UIFileSharingEnabled</key>
+	<true/>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
@@ -45,6 +49,15 @@
 			</array>
 			<key>UTTypeDescription</key>
 			<string>Kartonche Card File</string>
+			<key>UTTypeIcons</key>
+			<dict>
+				<key>UTTypeIconBackgroundName</key>
+				<string>DocIconBackground</string>
+				<key>UTTypeIconBadgeName</key>
+				<string>DocIconBadge</string>
+				<key>UTTypeIconText</key>
+				<string>.kartonche</string>
+			</dict>
 			<key>UTTypeIdentifier</key>
 			<string>com.zbrox.kartonche.card</string>
 			<key>UTTypeTagSpecification</key>
@@ -56,22 +69,7 @@
 				<key>public.mime-type</key>
 				<string>application/x-kartonche</string>
 			</dict>
-			<key>UTTypeIcons</key>
-			<dict>
-				<key>UTTypeIconBackgroundName</key>
-				<string>DocIconBackground</string>
-				<key>UTTypeIconBadgeName</key>
-				<string>DocIconBadge</string>
-				<key>UTTypeIconText</key>
-				<string>.kartonche</string>
-			</dict>
 		</dict>
 	</array>
-	<key>LSSupportsOpeningDocumentsInPlace</key>
-	<true/>
-	<key>UISupportsDocumentBrowser</key>
-	<true/>
-	<key>UIFileSharingEnabled</key>
-	<true/>
 </dict>
 </plist>

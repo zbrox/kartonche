@@ -175,6 +175,16 @@
         }
       }
     },
+    "Add to Apple Wallet" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добавяне в Apple Wallet"
+          }
+        }
+      }
+    },
     "Add to favorites" : {
       "comment" : "Accessibility label for favorite button",
       "localizations" : {
@@ -977,6 +987,16 @@
         }
       }
     },
+    "Failed to create pass" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Грешка при създаване карта в Apple Wallet "
+          }
+        }
+      }
+    },
     "Failed to generate barcode image" : {
       "comment" : "Error message for barcode generation",
       "localizations" : {
@@ -1077,6 +1097,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Бензиностанции"
+          }
+        }
+      }
+    },
+    "Generating pass..." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Създаване на карта в Apple Wallet..."
           }
         }
       }
@@ -2596,6 +2626,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Приложението не съдържа реклами."
+          }
+        }
+      }
+    },
+    "This barcode format is not supported by Apple Wallet" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Този формат на бар код не се поддържа от Apple Wallet"
           }
         }
       }

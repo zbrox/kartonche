@@ -8,6 +8,7 @@
 import SwiftUI
 import UIKit
 import UniformTypeIdentifiers
+import PassKit
 
 /// Full-screen view for displaying a loyalty card barcode
 struct CardDisplayView: View {
@@ -20,6 +21,9 @@ struct CardDisplayView: View {
     @State private var shareItem: ShareItem?
     @State private var barcodeAppeared: Bool = false
     @State private var showNotesSheet: Bool = false
+    @State private var isGeneratingPass = false
+    @State private var passError: String?
+    @State private var passToAdd: PKPass?
     
     var body: some View {
         let primaryColor = card.color.flatMap { Color(hex: $0) } ?? Color.accentColor
@@ -44,7 +48,23 @@ struct CardDisplayView: View {
                     .opacity(barcodeAppeared ? 1.0 : 0.0)
                 
                 Spacer(minLength: 40)
-                
+
+                // Add to Apple Wallet button
+                if card.barcodeType.supportsAppleWallet && !isPassInWallet {
+                    if isGeneratingPass {
+                        ProgressView(String(localized: "Generating pass..."))
+                            .padding(.bottom, 12)
+                    } else {
+                        AddToWalletButton {
+                            generateAndAddPass()
+                        }
+                        .frame(width: 250, height: 48)
+                        .clipShape(RoundedRectangle(cornerRadius: 14))
+                        .accessibilityLabel(String(localized: "Add to Apple Wallet"))
+                        .padding(.bottom, 32)
+                    }
+                }
+
                 // Notes button (if notes exist)
                 if let notes = card.notes, !notes.isEmpty {
                     Button {
@@ -96,6 +116,21 @@ struct CardDisplayView: View {
         .sheet(item: $shareItem) { item in
             ActivityViewController(activityItems: [item.url])
                 .ignoresSafeArea()
+        }
+        .sheet(item: $passToAdd) { pass in
+            AddPassViewController(pass: pass) {
+                passToAdd = nil
+            }
+        }
+        .alert(String(localized: "Failed to create pass"), isPresented: Binding(
+            get: { passError != nil },
+            set: { if !$0 { passError = nil } }
+        )) {
+            Button(String(localized: "OK"), role: .cancel) {}
+        } message: {
+            if let passError {
+                Text(passError)
+            }
         }
     }
     
@@ -212,9 +247,41 @@ struct CardDisplayView: View {
         let url: URL
     }
     
+    private var isPassInWallet: Bool {
+        PKPassLibrary().passes().contains {
+            $0.serialNumber == card.id.uuidString &&
+            $0.passTypeIdentifier == WalletPassConfiguration.passTypeIdentifier
+        }
+    }
+
+    private func generateAndAddPass() {
+        isGeneratingPass = true
+        passError = nil
+
+        Task {
+            do {
+                let passData = try WalletPassGenerator.generate(for: card)
+                let pass = try PKPass(data: passData)
+                await MainActor.run {
+                    isGeneratingPass = false
+                    passToAdd = pass
+                }
+            } catch {
+                await MainActor.run {
+                    isGeneratingPass = false
+                    passError = error.localizedDescription
+                }
+            }
+        }
+    }
+
     private func updateLastUsedDate() {
         card.lastUsedDate = Date()
     }
+}
+
+extension PKPass: @retroactive Identifiable {
+    public var id: String { serialNumber }
 }
 
 /// UIViewRepresentable helper to access UIScreen from SwiftUI
