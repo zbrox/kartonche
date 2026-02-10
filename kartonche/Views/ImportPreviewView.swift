@@ -19,6 +19,7 @@ struct ImportPreviewView: View {
     @State private var isImporting = false
     @State private var importError: Error?
     @State private var showError = false
+    @State private var selectedCard: CardExportDTO?
     
     private var duplicates: [CardImporter.DuplicateInfo] {
         CardImporter.detectDuplicates(container.cards, existingCards: existingCards)
@@ -81,9 +82,16 @@ struct ImportPreviewView: View {
                             card: cardDTO,
                             isDuplicate: duplicates.contains { $0.importedCard.id == cardDTO.id }
                         )
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            selectedCard = cardDTO
+                        }
                     }
                 } header: {
                     Text(String(localized: "Cards"))
+                } footer: {
+                    Text(String(localized: "Tap a card to preview"))
+                        .font(.caption)
                 }
             }
             .navigationTitle(String(localized: "Import Cards"))
@@ -121,6 +129,9 @@ struct ImportPreviewView: View {
                 if let error = importError {
                     Text(error.localizedDescription)
                 }
+            }
+            .sheet(item: $selectedCard) { (card: CardExportDTO) in
+                CardView(card: card, onClose: { selectedCard = nil })
             }
         }
     }
@@ -197,7 +208,7 @@ struct CardImportRow: View {
             Spacer()
             
             // Barcode type badge
-            Text(card.barcodeType.uppercased())
+            Text(card.barcodeType.rawValue.uppercased())
                 .font(.caption2)
                 .fontWeight(.semibold)
                 .padding(.horizontal, 6)

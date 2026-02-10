@@ -35,7 +35,7 @@ struct CardExportDTO: Codable, Identifiable {
     let name: String
     let storeName: String
     let cardNumber: String
-    let barcodeType: String
+    let barcodeType: BarcodeType
     let barcodeData: String
     let color: String?
     let secondaryColor: String?
@@ -53,7 +53,6 @@ struct CardExportDTO: Codable, Identifiable {
     
     /// Validate that this DTO can be safely converted to a LoyaltyCard
     func validate() throws {
-        // Check required fields are not empty
         guard !name.isEmpty else {
             throw CardImportError.invalidData("Card name is empty")
         }
@@ -66,12 +65,6 @@ struct CardExportDTO: Codable, Identifiable {
             throw CardImportError.invalidData("Barcode data is empty")
         }
         
-        // Validate barcode type
-        guard BarcodeType(rawValue: barcodeType) != nil else {
-            throw CardImportError.invalidData("Unknown barcode type: \(barcodeType)")
-        }
-        
-        // Validate base64 image if present
         if let imageBase64 = cardImage, !imageBase64.isEmpty {
             guard Data(base64Encoded: imageBase64) != nil else {
                 throw CardImportError.invalidData("Invalid card image data")
@@ -79,6 +72,10 @@ struct CardExportDTO: Codable, Identifiable {
         }
     }
 }
+
+#if MAIN_APP
+extension CardExportDTO: CardViewable {}
+#endif
 
 /// Codable representation of a CardLocation for export/import
 struct LocationExportDTO: Codable {
@@ -102,7 +99,7 @@ extension CardExportDTO {
         self.name = card.name
         self.storeName = card.storeName
         self.cardNumber = card.cardNumber
-        self.barcodeType = card.barcodeType.rawValue
+        self.barcodeType = card.barcodeType
         self.barcodeData = card.barcodeData
         self.color = card.color
         self.secondaryColor = card.secondaryColor

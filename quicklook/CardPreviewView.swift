@@ -23,13 +23,9 @@ struct CardPreviewView: View {
     }
     
     private var barcodeImage: UIImage? {
-        guard let barcodeType = BarcodeType(rawValue: card.barcodeType) else {
-            return nil
-        }
-        
         let result = BarcodeGenerator.generate(
             from: card.barcodeData,
-            type: barcodeType,
+            type: card.barcodeType,
             scale: 8.0
         )
         
@@ -138,7 +134,7 @@ struct CardPreviewView: View {
         name: "Club Card",
         storeName: "BILLA",
         cardNumber: "1234567890123",
-        barcodeType: "ean13",
+        barcodeType: .ean13,
         barcodeData: "1234567890123",
         color: "#E31E26",
         secondaryColor: "#FFFFFF",
@@ -167,7 +163,7 @@ struct CardPreviewView: View {
         name: "Loyalty Card",
         storeName: "Kaufland",
         cardNumber: "",
-        barcodeType: "qr",
+        barcodeType: .qr,
         barcodeData: "KAUF123456",
         color: "#CC0000",
         secondaryColor: nil,
