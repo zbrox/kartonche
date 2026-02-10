@@ -1373,6 +1373,46 @@
         }
       }
     },
+    "locations_count_%lld" : {
+      "localizations" : {
+        "bg" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld местоположение"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld местоположения"
+                }
+              }
+            }
+          }
+        },
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld location"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld locations"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "Loyalty Card" : {
       "comment" : "Home screen widget name",
       "localizations" : {
@@ -2120,6 +2160,17 @@
         }
       }
     },
+    "Select 'Location' then choose 'Always'" : {
+      "comment" : "Instructions for upgrading location permission in iOS Settings",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изберете 'Местоположение', след това 'Винаги'"
+          }
+        }
+      }
+    },
     "Select Card" : {
       "localizations" : {
         "bg" : {
@@ -2358,6 +2409,17 @@
         }
       }
     },
+    "Tap a card to preview" : {
+      "comment" : "Footer text in import preview list",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Докоснете карта за преглед"
+          }
+        }
+      }
+    },
     "Tap notification to view card" : {
       "localizations" : {
         "bg" : {
@@ -2384,17 +2446,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Докоснете, за да покажете картата си"
-          }
-        }
-      }
-    },
-    "Tap a card to preview" : {
-      "comment" : "Footer text in import preview list",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Докоснете карта за преглед"
           }
         }
       }
@@ -2561,6 +2612,7 @@
       }
     },
     "Upgrade to Always" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2742,46 +2794,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Местоположението ви се използва само за намиране на близки магазини. Влиянието върху батерията е минимално."
-          }
-        }
-      }
-    },
-    "locations_count_%lld" : {
-      "localizations" : {
-        "bg" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld местоположение"
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld местоположения"
-                }
-              }
-            }
-          }
-        },
-        "en" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld location"
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld locations"
-                }
-              }
-            }
           }
         }
       }

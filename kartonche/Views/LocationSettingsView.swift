@@ -275,10 +275,10 @@ struct AlwaysLocationExplanationView: View {
             
             VStack(spacing: 12) {
                 Button {
-                    locationManager.requestAlwaysPermission()
+                    locationManager.openSettings()
                     dismiss()
                 } label: {
-                    Text(String(localized: "Upgrade to Always"))
+                    Text(String(localized: "Open Settings"))
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)
@@ -290,6 +290,10 @@ struct AlwaysLocationExplanationView: View {
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.bordered)
+                
+                Text(String(localized: "Select 'Location' then choose 'Always'"))
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
             }
             .padding(.horizontal)
         }
