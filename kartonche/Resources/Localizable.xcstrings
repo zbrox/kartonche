@@ -2388,6 +2388,17 @@
         }
       }
     },
+    "Tap a card to preview" : {
+      "comment" : "Footer text in import preview list",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Докоснете карта за преглед"
+          }
+        }
+      }
+    },
     "Text Color" : {
       "localizations" : {
         "bg" : {

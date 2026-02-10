@@ -187,16 +187,11 @@ struct CardImporter {
     /// Creates a LoyaltyCard from CardExportDTO
     @MainActor
     private static func createCard(from dto: CardExportDTO, in modelContext: ModelContext) throws {
-        // Convert barcodeType string to enum
-        guard let barcodeType = BarcodeType(rawValue: dto.barcodeType) else {
-            throw ImportError.validationFailed(.invalidData("Invalid barcode type: \(dto.barcodeType)"))
-        }
-        
         let card = LoyaltyCard(
             name: dto.name,
             storeName: dto.storeName,
             cardNumber: dto.cardNumber,
-            barcodeType: barcodeType,
+            barcodeType: dto.barcodeType,
             barcodeData: dto.barcodeData,
             color: dto.color,
             secondaryColor: dto.secondaryColor

@@ -75,3 +75,7 @@ final class LoyaltyCard {
         return expirationDate > Date() && expirationDate <= thirtyDaysFromNow
     }
 }
+
+#if MAIN_APP
+extension LoyaltyCard: CardViewable {}
+#endif

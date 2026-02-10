@@ -97,6 +97,7 @@
 				AppIcon.icon,
 				Models/BarcodeType.swift,
 				Models/CardLocation.swift,
+				Models/CardViewable.swift,
 				Models/LoyaltyCard.swift,
 				Resources/Localizable.xcstrings,
 				Utilities/BarcodeGenerator.swift,
