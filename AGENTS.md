@@ -237,6 +237,10 @@ mise run test-ui        # Run UI tests
 mise run test-all       # Run all tests
 mise run clean          # Clean build artifacts
 mise run dev            # Clean + build + test everything
+
+# Run specific tests
+mise run test kartoncheTests/MerchantTemplateTests/testSearchFindsExactName
+mise run test-ui kartoncheUITests/MerchantSelectionUITests/testSearchMerchants
 ```
 
 **Localization:**
