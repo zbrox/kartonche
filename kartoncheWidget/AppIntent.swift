@@ -26,6 +26,7 @@ struct CardEntity: AppEntity {
 }
 
 struct CardEntityQuery: EntityQuery {
+    @MainActor
     func entities(for identifiers: [UUID]) async throws -> [CardEntity] {
         let allCards = SharedDataManager.fetchAllCards()
         return allCards
@@ -33,11 +34,13 @@ struct CardEntityQuery: EntityQuery {
             .map { CardEntity(id: $0.id, name: $0.name, storeName: $0.storeName) }
     }
     
+    @MainActor
     func suggestedEntities() async throws -> [CardEntity] {
         let allCards = SharedDataManager.fetchAllCards()
         return allCards.map { CardEntity(id: $0.id, name: $0.name, storeName: $0.storeName) }
     }
     
+    @MainActor
     func defaultResult() async -> CardEntity? {
         let allCards = SharedDataManager.fetchAllCards()
         guard let firstCard = allCards.first else { return nil }
