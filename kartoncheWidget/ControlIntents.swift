@@ -97,9 +97,8 @@ struct LaunchAppIntent: AppIntent {
     static var openAppWhenRun: Bool = true
     
     @MainActor
-    func perform() async throws -> some IntentResult & OpensIntent {
-        let url = URL(string: "kartonche://")!
-        return .result(opensIntent: OpenURLIntent(url))
+    func perform() async throws -> some IntentResult {
+        return .result()
     }
 }
 
