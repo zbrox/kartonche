@@ -7,7 +7,7 @@
 
 import Foundation
 import CoreLocation
-import MapKit
+@preconcurrency import MapKit
 
 /// Service for reverse geocoding coordinates to addresses
 enum GeocodingService {

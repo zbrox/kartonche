@@ -18,7 +18,7 @@ struct CardEntity: AppEntity {
         TypeDisplayRepresentation(name: "Loyalty Card")
     }
     
-    static var defaultQuery = CardEntityQuery()
+    nonisolated(unsafe) static var defaultQuery = CardEntityQuery()
     
     var displayRepresentation: DisplayRepresentation {
         DisplayRepresentation(title: "\(name)", subtitle: "\(storeName)")

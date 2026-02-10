@@ -11,8 +11,8 @@ import AppIntents
 
 // App Intents for navigation
 struct NavigateToNextCardIntent: AppIntent {
-    static var title: LocalizedStringResource = "Next Card"
-    static var description: IntentDescription = "Show the next favorite card"
+    nonisolated(unsafe) static var title: LocalizedStringResource = "Next Card"
+    nonisolated(unsafe) static var description: IntentDescription = "Show the next favorite card"
     
     func perform() async throws -> some IntentResult {
         let defaults = UserDefaults(suiteName: "group.com.zbrox.kartonche")
@@ -29,8 +29,8 @@ struct NavigateToNextCardIntent: AppIntent {
 }
 
 struct NavigateToPreviousCardIntent: AppIntent {
-    static var title: LocalizedStringResource = "Previous Card"
-    static var description: IntentDescription = "Show the previous favorite card"
+    nonisolated(unsafe) static var title: LocalizedStringResource = "Previous Card"
+    nonisolated(unsafe) static var description: IntentDescription = "Show the previous favorite card"
     
     func perform() async throws -> some IntentResult {
         let defaults = UserDefaults(suiteName: "group.com.zbrox.kartonche")

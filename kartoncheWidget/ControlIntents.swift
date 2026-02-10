@@ -12,9 +12,9 @@ import CoreLocation
 // MARK: - Open Favorite Card Intent
 
 struct OpenFavoriteCardIntent: AppIntent {
-    static var title: LocalizedStringResource = "Open Favorite Card"
-    static var description: IntentDescription = "Opens your selected favorite loyalty card"
-    static var openAppWhenRun: Bool = true
+    nonisolated(unsafe) static var title: LocalizedStringResource = "Open Favorite Card"
+    nonisolated(unsafe) static var description: IntentDescription = "Opens your selected favorite loyalty card"
+    nonisolated(unsafe) static var openAppWhenRun: Bool = true
     
     @Parameter(title: "Card")
     var cardEntity: CardEntity?
@@ -43,9 +43,9 @@ struct OpenFavoriteCardIntent: AppIntent {
 // MARK: - Open Nearest Store Card Intent
 
 struct OpenNearestCardIntent: AppIntent {
-    static var title: LocalizedStringResource = "Open Nearest Store Card"
-    static var description: IntentDescription = "Opens the loyalty card for the nearest store"
-    static var openAppWhenRun: Bool = true
+    nonisolated(unsafe) static var title: LocalizedStringResource = "Open Nearest Store Card"
+    nonisolated(unsafe) static var description: IntentDescription = "Opens the loyalty card for the nearest store"
+    nonisolated(unsafe) static var openAppWhenRun: Bool = true
     
     @MainActor
     func perform() async throws -> some IntentResult & OpensIntent {
@@ -92,9 +92,9 @@ struct OpenNearestCardIntent: AppIntent {
 // MARK: - Launch App Intent
 
 struct LaunchAppIntent: AppIntent {
-    static var title: LocalizedStringResource = "Launch Kartonche"
-    static var description: IntentDescription = "Opens the Kartonche app"
-    static var openAppWhenRun: Bool = true
+    nonisolated(unsafe) static var title: LocalizedStringResource = "Launch Kartonche"
+    nonisolated(unsafe) static var description: IntentDescription = "Opens the Kartonche app"
+    nonisolated(unsafe) static var openAppWhenRun: Bool = true
     
     @MainActor
     func perform() async throws -> some IntentResult {
@@ -105,8 +105,8 @@ struct LaunchAppIntent: AppIntent {
 // MARK: - Favorite Card Control Configuration
 
 struct FavoriteCardControlConfiguration: ControlConfigurationIntent {
-    static var title: LocalizedStringResource = "Select Favorite Card"
-    static var description: IntentDescription = "Choose which loyalty card to open"
+    nonisolated(unsafe) static var title: LocalizedStringResource = "Select Favorite Card"
+    nonisolated(unsafe) static var description: IntentDescription = "Choose which loyalty card to open"
     
     @Parameter(title: "Card")
     var selectedCard: CardEntity?

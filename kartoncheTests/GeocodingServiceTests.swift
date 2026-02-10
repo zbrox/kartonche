@@ -7,9 +7,10 @@
 
 import Testing
 import CoreLocation
-import MapKit
+@preconcurrency import MapKit
 @testable import kartonche
 
+@MainActor
 struct GeocodingServiceTests {
     @Test func reverseGeocodingSucceeds() async throws {
         // Sofia, Bulgaria - city center coordinates

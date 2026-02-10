@@ -9,6 +9,7 @@ import Testing
 import Foundation
 @testable import kartonche
 
+@MainActor
 struct BarcodeTypeTests {
     
     @Test func allCasesPresent() {

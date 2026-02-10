@@ -9,6 +9,7 @@ import Testing
 import SwiftData
 @testable import kartonche
 
+@MainActor
 struct ModelTests {
     
     @Test func barcodeTypeDisplayNames() {
