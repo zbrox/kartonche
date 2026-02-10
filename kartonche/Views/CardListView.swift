@@ -150,6 +150,17 @@ struct CardListView: View {
                     urlRouter.clearPendingDeepLink()
                 }
             }
+            .onAppear {
+                // Handle URLs that arrived before .onChange registered (cold launch)
+                if let url = urlRouter.pendingDeepLinkURL {
+                    handleDeepLink(url)
+                    urlRouter.clearPendingDeepLink()
+                }
+                if let url = urlRouter.pendingImportURL {
+                    handleFileImport(url)
+                    urlRouter.clearPendingImport()
+                }
+            }
             .searchable(text: $searchText, prompt: String(localized: "Search"))
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
