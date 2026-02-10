@@ -1,5 +1,5 @@
 //
-//  FileImportManager.swift
+//  URLRouter.swift
 //  kartonche
 //
 //  Created on 2026-02-10.
@@ -8,9 +8,9 @@
 import Foundation
 import Observation
 
-/// Manages file import state shared between App and views
+/// Routes incoming URLs to the appropriate view state
 @Observable
-final class FileImportManager {
+final class URLRouter {
     private static let appGroupIdentifier = "group.com.zbrox.kartonche"
     private static let pendingImportFilename = "pending_import.kartonche"
     
