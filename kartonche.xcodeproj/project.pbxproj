@@ -88,6 +88,14 @@
 			);
 			target = 0B5B57A62F33F2C8005DCCA8 /* kartonche */;
 		};
+		0BCB2A3D2F3B5BB200A63750 /* Exceptions for "kartoncheWidget" folder in "kartonche" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AppIntent.swift,
+				ControlIntents.swift,
+			);
+			target = 0B5B57A62F33F2C8005DCCA8 /* kartonche */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -113,6 +121,7 @@
 		0B91F2C72F36A2FC003F33AC /* kartoncheWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				0BCB2A3D2F3B5BB200A63750 /* Exceptions for "kartoncheWidget" folder in "kartonche" target */,
 				0B91F2D82F36A2FD003F33AC /* Exceptions for "kartoncheWidget" folder in "kartoncheWidgetExtension" target */,
 			);
 			path = kartoncheWidget;
