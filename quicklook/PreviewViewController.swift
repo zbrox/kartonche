@@ -23,13 +23,17 @@ class PreviewViewController: UIViewController, QLPreviewingController {
         decoder.dateDecodingStrategy = .iso8601
         let container = try decoder.decode(CardExportContainer.self, from: data)
         
-        guard let firstCard = container.cards.first else {
+        guard !container.cards.isEmpty else {
             throw PreviewError.noCards
         }
-        
-        // Create the preview view
-        let previewView = CardPreviewView(card: firstCard)
-        let hostingController = UIHostingController(rootView: previewView)
+
+        // Single card: detailed preview; multiple cards: list overview
+        let hostingController: UIHostingController<AnyView>
+        if container.cards.count == 1 {
+            hostingController = UIHostingController(rootView: AnyView(CardPreviewView(card: container.cards[0])))
+        } else {
+            hostingController = UIHostingController(rootView: AnyView(MultiCardPreviewView(container: container)))
+        }
         
         // Add as child view controller
         await MainActor.run {
