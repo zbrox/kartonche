@@ -21,7 +21,7 @@ struct PendingCard: Identifiable {
 struct CardListView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.openURL) private var openURL
-    @Environment(FileImportManager.self) private var fileImportManager
+    @Environment(URLRouter.self) private var urlRouter
     @Query private var allCards: [LoyaltyCard]
     
     @State private var searchText = ""
@@ -138,16 +138,16 @@ struct CardListView: View {
             .fullScreenCover(item: $displayCard) { card in
                 CardDisplayView(card: card)
             }
-            .onChange(of: fileImportManager.pendingImportURL) { oldURL, newURL in
+            .onChange(of: urlRouter.pendingImportURL) { oldURL, newURL in
                 if let url = newURL {
                     handleFileImport(url)
-                    fileImportManager.clearPendingImport()
+                    urlRouter.clearPendingImport()
                 }
             }
-            .onChange(of: fileImportManager.pendingDeepLinkURL) { oldURL, newURL in
+            .onChange(of: urlRouter.pendingDeepLinkURL) { oldURL, newURL in
                 if let url = newURL {
                     handleDeepLink(url)
-                    fileImportManager.clearPendingDeepLink()
+                    urlRouter.clearPendingDeepLink()
                 }
             }
             .searchable(text: $searchText, prompt: String(localized: "Search"))
