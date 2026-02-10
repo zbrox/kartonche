@@ -50,6 +50,11 @@ struct kartoncheApp: App {
                 .onOpenURL { url in
                     urlRouter.handleURL(url)
                 }
+                .onReceive(NotificationCenter.default.publisher(for: .controlIntentDeepLink)) { notification in
+                    if let url = notification.userInfo?["url"] as? URL {
+                        urlRouter.handleURL(url)
+                    }
+                }
         }
         .modelContainer(sharedModelContainer)
         .handlesExternalEvents(matching: ["*"])
