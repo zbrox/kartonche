@@ -19,6 +19,7 @@ struct ImageCropView: View {
     @State private var lastScale: CGFloat = 1.0
     @State private var offset: CGSize = .zero
     @State private var lastOffset: CGSize = .zero
+    @State private var viewWidth: CGFloat = 0
 
     private let aspectRatio = WalletPassConfiguration.stripAspectRatio
 
@@ -53,6 +54,8 @@ struct ImageCropView: View {
                     CropOverlay(cropRect: cropRect)
                         .allowsHitTesting(false)
                 }
+                .onAppear { viewWidth = cropWidth }
+                .onChange(of: geometry.size) { viewWidth = geometry.size.width }
             }
             .ignoresSafeArea()
             .navigationBarTitleDisplayMode(.inline)
@@ -66,7 +69,7 @@ struct ImageCropView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button(String(localized: "Done")) {
-                        let data = renderCroppedImage()
+                        let data = renderCroppedImage(cropWidth: viewWidth)
                         onCrop(data)
                         dismiss()
                     }
@@ -141,62 +144,49 @@ struct ImageCropView: View {
 
     // MARK: - Rendering
 
-    private func renderCroppedImage() -> Data {
+    /// Computes the rect to draw the full image into so that the crop window maps to the output bitmap.
+    ///
+    /// Mirrors the on-screen layout: image is `cropWidth * scale` wide, centered with `offset`,
+    /// then scaled up to output pixel size. The crop window occupies the full output rect.
+    static func cropDrawRect(
+        imageAspectRatio: CGFloat,
+        cropAspectRatio: CGFloat,
+        scale: CGFloat,
+        offset: CGSize,
+        cropWidth: CGFloat,
+        outputSize: CGSize
+    ) -> CGRect {
+        let cropHeight = cropWidth / cropAspectRatio
+        let renderScale = outputSize.width / cropWidth
+
+        let imgW = cropWidth * scale
+        let imgH = cropWidth * scale / imageAspectRatio
+
+        let drawW = imgW * renderScale
+        let drawH = imgH * renderScale
+        let drawX = (cropWidth / 2 + offset.width - imgW / 2) * renderScale
+        let drawY = (cropHeight / 2 + offset.height - imgH / 2) * renderScale
+
+        return CGRect(x: drawX, y: drawY, width: drawW, height: drawH)
+    }
+
+    private func renderCroppedImage(cropWidth: CGFloat) -> Data {
         let pixelWidth = WalletPassConfiguration.stripWidth * WalletPassConfiguration.stripScale
         let pixelHeight = WalletPassConfiguration.stripHeight * WalletPassConfiguration.stripScale
         let outputSize = CGSize(width: pixelWidth, height: pixelHeight)
 
+        let drawRect = Self.cropDrawRect(
+            imageAspectRatio: imageAspectRatio,
+            cropAspectRatio: aspectRatio,
+            scale: scale,
+            offset: offset,
+            cropWidth: cropWidth,
+            outputSize: outputSize
+        )
+
         let renderer = UIGraphicsImageRenderer(size: outputSize)
         let rendered = renderer.image { _ in
-            // Determine how the image is displayed on screen.
-            // The image is drawn centered in the full geometry, scaled by `scale`,
-            // with aspect-fill base fitting to the crop width.
-            // We need to figure out which portion of the source image is visible in the crop rect.
-            let sourceW = image.size.width
-            let sourceH = image.size.height
-
-            // At scale=1, the image fills the crop width with aspect-fill
-            // imageDisplayWidth = cropWidth, imageDisplayHeight = cropWidth / imageAspectRatio
-            // The crop rect has cropHeight = cropWidth / aspectRatio
-            // At scale=s, displayed size = cropWidth*s × (cropWidth*s / imageAspect)
-            // The visible region (crop rect) is centered at (center + offset) in image-display space.
-
-            // Fraction of displayed image that the crop rect covers:
-            // We don't have cropWidth here, but the ratio is the same regardless of screen size
-            // since everything is proportional to cropWidth.
-            // displayedW = cropWidth * scale, displayedH = cropWidth * scale / imageAspect
-            // cropW = cropWidth, cropH = cropWidth / aspectRatio
-            // visibleFractionW = cropWidth / (cropWidth * scale) = 1/scale
-            // visibleFractionH = (cropWidth/aspectRatio) / (cropWidth*scale/imageAspect) = imageAspect / (aspectRatio * scale)
-
-            let visibleFractionW = 1.0 / scale
-            let visibleFractionH = imageAspectRatio / (aspectRatio * scale)
-
-            // Offset as fraction of displayed size: offset / displayedSize
-            // offsetFractionX = offset.width / (cropWidth * scale) = offset.width / (cropWidth * scale)
-            // But since we don't have cropWidth, we use: offset fraction = offset.width / (displayedW)
-            // We can set cropWidth = 1 for normalization since all ratios cancel.
-            let offsetFractionX = offset.width / scale  // offset.width / (1 * scale)
-            let offsetFractionY = offset.height / scale
-
-            // Source rect center (0.5 = center of image) shifted by offset fraction
-            // Negative offset means image moved left → we see more of the right side → centerX increases
-            let centerFractionX = 0.5 - offsetFractionX
-            let centerFractionY = 0.5 - offsetFractionY
-
-            let srcX = (centerFractionX - visibleFractionW / 2) * sourceW
-            let srcY = (centerFractionY - visibleFractionH / 2) * sourceH
-            let srcW = visibleFractionW * sourceW
-            let srcH = visibleFractionH * sourceH
-
-            let sourceRect = CGRect(x: srcX, y: srcY, width: srcW, height: srcH)
-
-            if let cgImage = image.cgImage?.cropping(to: sourceRect) {
-                UIImage(cgImage: cgImage).draw(in: CGRect(origin: .zero, size: outputSize))
-            } else {
-                // Fallback: draw the whole image scaled to fit
-                image.draw(in: CGRect(origin: .zero, size: outputSize))
-            }
+            image.draw(in: drawRect)
         }
 
         return rendered.jpegData(compressionQuality: 0.85) ?? Data()
