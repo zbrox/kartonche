@@ -1,5 +1,9 @@
 # kartonche
 
+[![Tests](https://github.com/zbrox/kartonche/actions/workflows/test.yml/badge.svg)](https://github.com/zbrox/kartonche/actions/workflows/test.yml)
+[![Validate Merchants](https://github.com/zbrox/kartonche/actions/workflows/validate-merchants.yml/badge.svg)](https://github.com/zbrox/kartonche/actions/workflows/validate-merchants.yml)
+[![GitHub release](https://img.shields.io/github/v/tag/zbrox/kartonche?label=version&sort=semver)](https://github.com/zbrox/kartonche/releases)
+
 A modern, open-source iOS app for managing loyalty cards.
 
 ## Overview
@@ -136,8 +140,8 @@ kartonche/
 │   ├── Utilities/         # Helper classes (barcode, brightness, permissions)
 │   ├── Resources/         # Localizable.xcstrings
 │   └── Generated/         # Auto-generated code (gitignored)
-├── kartoncheTests/        # Unit tests (45 tests)
-├── kartoncheUITests/      # UI tests (coming soon)
+├── kartoncheTests/        # Unit tests
+├── kartoncheUITests/      # UI tests
 ├── Merchants/             # Community merchant database (14 merchants)
 │   ├── merchants.kdl      # Merchant data in KDL format
 │   ├── schema.kdl         # Schema documentation
@@ -181,7 +185,7 @@ All templates include pre-configured barcode types, suggested colors, and both B
 
 1. Read [AGENTS.md](AGENTS.md) for coding guidelines
 2. Follow conventional commits format
-3. Write tests for new features (we have 87 unit tests with 100% pass rate)
+3. Write tests for new features (CI enforces all tests passing)
 4. Run `mise run test` before committing
 5. Ensure Bulgarian localization uses neutral forms (not imperatives)
 
@@ -193,7 +197,7 @@ We maintain comprehensive test coverage:
 # Run unit tests
 mise run test
 
-# Run UI tests (coming soon)
+# Run UI tests
 mise run test-ui
 
 # Run all tests
@@ -202,22 +206,6 @@ mise run test-all
 # Full CI check (generate + build + test)
 mise run ci
 ```
-
-**Current test coverage:**
-- BarcodeType: 5 tests
-- BarcodeGenerator: 7 tests  
-- BrightnessManager: 5 tests
-- ColoredBarcodeDisplay: 4 tests
-- GeocodingService: 5 tests
-- LocationManager: 10 tests
-- LocationManagerGeofencing: 17 tests
-- MerchantTemplate: 13 tests
-- MerchantSelectionOrder: 4 tests
-- Model (LoyaltyCard): 4 tests
-- PermissionManager: 8 tests
-- PhotoBarcodeScanner: 1 test
-- ScreenManager: 3 tests
-- **Total: 87 tests, 100% passing ✅**
 
 ### Continuous Integration
 
@@ -237,14 +225,14 @@ See [.github/workflows/](.github/workflows/) for workflow definitions.
 - **Storage:** Local-only SwiftData (no cloud sync)
 - **Localization:** String Catalogs (Bulgarian primary, 15+ strings)
 - **Database:** KDL format with build-time code generation
-- **Testing:** Swift Testing framework (87 unit tests)
-- **Dependencies:** Zero runtime dependencies! All native Apple frameworks
+- **Testing:** Swift Testing framework
+- **Dependencies:** Minimal dependencies: swift-crypto, swift-certificates, ZIPFoundation + native Apple frameworks
 
 ## What's Next
 
 - [ ] iCloud sync (CloudKit integration)
-- [ ] Apple Wallet integration
-- [ ] UI test coverage
+- [x] Apple Wallet integration
+- [x] UI test coverage
 - [ ] App Store release
 
 ## License
@@ -257,4 +245,4 @@ Thanks to early testers and friends who provided feedback.
 
 ---
 
-**Status:** Alpha | **Version:** 2026.02 | **Platform:** iOS 26.2+ | **Tests:** 87/87 passing ✅
+**Status:** Alpha | **Version:** 2026.02 | **Platform:** iOS 26.2+
