@@ -25,6 +25,7 @@ struct WalletPassGeneratorTests {
         secondaryColor: String? = "#FFFFFF",
         expirationDate: Date? = nil,
         cardholderName: String? = nil,
+        notes: String? = nil,
         cardImage: Data? = nil
     ) -> LoyaltyCard {
         let card = LoyaltyCard(
@@ -38,6 +39,7 @@ struct WalletPassGeneratorTests {
             expirationDate: expirationDate
         )
         card.cardholderName = cardholderName
+        card.notes = notes
         card.cardImage = cardImage
         return card
     }
@@ -202,6 +204,28 @@ struct WalletPassGeneratorTests {
         let storeCard = json["storeCard"] as! [String: Any]
 
         #expect(storeCard["auxiliaryFields"] == nil)
+    }
+
+    @Test func passJSONContainsBackFieldsWhenNotesSet() throws {
+        let card = makeCard(notes: "Remember to scan at checkout")
+        let data = try WalletPassGenerator.buildPassJSON(for: card)
+        let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
+        let storeCard = json["storeCard"] as! [String: Any]
+
+        let backFields = storeCard["backFields"] as! [[String: Any]]
+        #expect(backFields.count == 1)
+        #expect(backFields[0]["key"] as? String == "notes")
+        #expect(backFields[0]["label"] as? String == "NOTES")
+        #expect(backFields[0]["value"] as? String == "Remember to scan at checkout")
+    }
+
+    @Test func passJSONOmitsBackFieldsWhenNotesNil() throws {
+        let card = makeCard(notes: nil)
+        let data = try WalletPassGenerator.buildPassJSON(for: card)
+        let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
+        let storeCard = json["storeCard"] as! [String: Any]
+
+        #expect(storeCard["backFields"] == nil)
     }
 
     @Test func passJSONUsesHeaderFieldsWhenCardImagePresent() throws {

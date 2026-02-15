@@ -123,6 +123,14 @@ enum WalletPassGenerator {
             ]]
         }
 
+        if let notes = card.notes, !notes.isEmpty {
+            storeCard["backFields"] = [[
+                "key": "notes",
+                "label": "NOTES",
+                "value": notes,
+            ]]
+        }
+
         pass["storeCard"] = storeCard
 
         // Barcode
