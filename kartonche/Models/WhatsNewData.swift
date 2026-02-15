@@ -30,6 +30,32 @@ struct WhatsNewVersion {
 
 let whatsNewVersions: [WhatsNewVersion] = [
     WhatsNewVersion(
+        version: "2026.02.6",
+        features: [
+            WhatsNewFeature(
+                icon: "wallet.pass",
+                titleEN: "Apple Wallet",
+                titleBG: "Apple Wallet",
+                descriptionEN: "Add cards to Apple Wallet with on-device pass signing",
+                descriptionBG: "Добавяне на карти в Apple Wallet с подписване на пространството на устройството"
+            ),
+            WhatsNewFeature(
+                icon: "eye",
+                titleEN: "Quick Look Preview",
+                titleBG: "Бърз преглед",
+                descriptionEN: "Preview .kartonche files with Quick Look before importing",
+                descriptionBG: "Преглед на .kartonche файлове с Бърз преглед преди импортиране"
+            ),
+            WhatsNewFeature(
+                icon: "square.and.arrow.up.on.square",
+                titleEN: "Import & Export",
+                titleBG: "Импортиране и експортиране",
+                descriptionEN: "Revamped data import and export for easy backup and transfer",
+                descriptionBG: "Подобрено импортиране и експортиране за лесно архивиране и прехвърляне"
+            ),
+        ]
+    ),
+    WhatsNewVersion(
         version: "2026.02.5",
         features: [
             WhatsNewFeature(
