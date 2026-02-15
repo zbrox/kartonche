@@ -24,7 +24,8 @@ struct WalletPassGeneratorTests {
         color: String? = "#FF0000",
         secondaryColor: String? = "#FFFFFF",
         expirationDate: Date? = nil,
-        cardholderName: String? = nil
+        cardholderName: String? = nil,
+        cardImage: Data? = nil
     ) -> LoyaltyCard {
         let card = LoyaltyCard(
             name: name,
@@ -37,6 +38,7 @@ struct WalletPassGeneratorTests {
             expirationDate: expirationDate
         )
         card.cardholderName = cardholderName
+        card.cardImage = cardImage
         return card
     }
 
@@ -200,6 +202,20 @@ struct WalletPassGeneratorTests {
         let storeCard = json["storeCard"] as! [String: Any]
 
         #expect(storeCard["auxiliaryFields"] == nil)
+    }
+
+    @Test func passJSONUsesHeaderFieldsWhenCardImagePresent() throws {
+        let card = makeCard(cardImage: Data([0xFF]))
+        let data = try WalletPassGenerator.buildPassJSON(for: card)
+        let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
+        let storeCard = json["storeCard"] as! [String: Any]
+
+        #expect(storeCard["primaryFields"] == nil)
+
+        let headerFields = storeCard["headerFields"] as! [[String: Any]]
+        #expect(headerFields.count == 1)
+        #expect(headerFields[0]["key"] as? String == "cardName")
+        #expect(headerFields[0]["value"] as? String == "Test Card")
     }
 
     @Test func passJSONOmitsLocationsWhenEmpty() throws {
