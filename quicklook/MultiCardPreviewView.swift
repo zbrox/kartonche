@@ -63,6 +63,12 @@ private struct MultiCardRow: View {
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
+
+                if let cardholderName = card.cardholderName, !cardholderName.isEmpty {
+                    Text(cardholderName)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
             }
 
             Spacer()

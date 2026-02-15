@@ -433,7 +433,7 @@
         "bg" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Изображение за картата"
+            "value" : "Изображение"
           }
         }
       }
@@ -494,7 +494,14 @@
       }
     },
     "Cardholder Name" : {
-
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Картопритежател"
+          }
+        }
+      }
     },
     "Cards" : {
       "localizations" : {
@@ -552,7 +559,7 @@
         "bg" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Избор на изображение"
+            "value" : "Изображение"
           }
         }
       }
@@ -2143,7 +2150,7 @@
         "bg" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Премахване на изображението"
+            "value" : "Премахване"
           }
         }
       }
