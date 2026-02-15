@@ -43,6 +43,10 @@ struct CardEditorView: View {
     @State private var editingLocation: CardLocation?
     @State private var pendingLocations: [CardLocation] = []
     @State private var showingNotificationPermission = false
+    @State private var cardImageData: Data?
+    @State private var cardImagePickerItem: PhotosPickerItem?
+    @State private var showingImageCrop = false
+    @State private var rawImageForCrop: UIImage?
     
     private var isEditMode: Bool { card != nil }
     
@@ -93,6 +97,7 @@ struct CardEditorView: View {
             _isFavorite = State(initialValue: card.isFavorite)
             _expirationDate = State(initialValue: card.expirationDate)
             _hasExpirationDate = State(initialValue: card.expirationDate != nil)
+            _cardImageData = State(initialValue: card.cardImage)
         } else if let merchant = merchantTemplate, let program = program {
             // New card from merchant template
             _name = State(initialValue: program.name ?? merchant.name)
@@ -235,6 +240,34 @@ struct CardEditorView: View {
                             set: { selectedSecondaryColor = $0 }
                         ), supportsOpacity: false)
                     }
+
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(String(localized: "Card Image"))
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+
+                        if let cardImageData, let uiImage = UIImage(data: cardImageData) {
+                            Image(uiImage: uiImage)
+                                .resizable()
+                                .aspectRatio(WalletPassConfiguration.stripAspectRatio, contentMode: .fit)
+                                .clipShape(RoundedRectangle(cornerRadius: 8))
+                        }
+
+                        HStack {
+                            PhotosPicker(selection: $cardImagePickerItem, matching: .images) {
+                                Label(String(localized: "Choose Image"), systemImage: "photo")
+                            }
+
+                            if cardImageData != nil {
+                                Spacer()
+                                Button(role: .destructive) {
+                                    cardImageData = nil
+                                } label: {
+                                    Label(String(localized: "Remove Image"), systemImage: "trash")
+                                }
+                            }
+                        }
+                    }
                 } header: {
                     Text(String(localized: "Appearance"))
                 }
@@ -362,6 +395,28 @@ struct CardEditorView: View {
                 guard let item = newValue else { return }
                 scanBarcodeFromPhoto(item)
             }
+            .onChange(of: cardImagePickerItem) { _, newValue in
+                guard let item = newValue else { return }
+                Task {
+                    if let data = try? await item.loadTransferable(type: Data.self),
+                       let uiImage = UIImage(data: data) {
+                        await MainActor.run {
+                            rawImageForCrop = uiImage
+                            showingImageCrop = true
+                        }
+                    }
+                    await MainActor.run {
+                        cardImagePickerItem = nil
+                    }
+                }
+            }
+            .sheet(isPresented: $showingImageCrop) {
+                if let rawImage = rawImageForCrop {
+                    ImageCropView(image: rawImage) { croppedData in
+                        cardImageData = croppedData
+                    }
+                }
+            }
             .alert("Multiple Barcodes Found", isPresented: $showingMultipleBarcodes) {
                 ForEach(detectedBarcodes.indices, id: \.self) { index in
                     Button(detectedBarcodes[index].data) {
@@ -469,6 +524,7 @@ struct CardEditorView: View {
             existingCard.secondaryColor = useAutoTextColor ? nil : selectedSecondaryColor?.toHex()
             existingCard.isFavorite = isFavorite
             existingCard.expirationDate = hasExpirationDate ? expirationDate : nil
+            existingCard.cardImage = cardImageData
             savedCard = existingCard
         } else {
             let newCard = LoyaltyCard(
@@ -481,7 +537,8 @@ struct CardEditorView: View {
                 secondaryColor: useAutoTextColor ? nil : selectedSecondaryColor?.toHex(),
                 notes: notes.isEmpty ? nil : notes,
                 isFavorite: isFavorite,
-                expirationDate: hasExpirationDate ? expirationDate : nil
+                expirationDate: hasExpirationDate ? expirationDate : nil,
+                cardImage: cardImageData
             )
             modelContext.insert(newCard)
             

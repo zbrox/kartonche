@@ -53,7 +53,7 @@ enum WalletPassGenerator {
         }
 
         let passJSON = try buildPassJSON(for: card)
-        let assets = try collectAssets()
+        let assets = try collectAssets(for: card)
         let manifest = try buildManifest(passJSON: passJSON, assets: assets)
         let signature = try signManifest(manifest)
 
@@ -87,25 +87,20 @@ enum WalletPassGenerator {
             pass["foregroundColor"] = color.contrastingTextColor().toPassRGB()
         }
 
-        // Store card fields
-        var storeCard: [String: Any] = [:]
+        pass["logoText"] = card.storeName
 
-        storeCard["headerFields"] = [[
-            "key": "storeName",
-            "label": "STORE",
-            "value": card.storeName,
-        ]]
+        var storeCard: [String: Any] = [:]
 
         storeCard["primaryFields"] = [[
             "key": "cardName",
-            "label": "CARD",
+            "label": "",
             "value": card.name,
         ]]
 
         if !card.cardNumber.isEmpty {
             storeCard["secondaryFields"] = [[
                 "key": "cardNumber",
-                "label": "CARD NUMBER",
+                "label": "NUMBER",
                 "value": card.cardNumber,
             ]]
         }
@@ -147,7 +142,7 @@ enum WalletPassGenerator {
 
     // MARK: - Assets
 
-    static func collectAssets() throws -> [String: Data] {
+    static func collectAssets(for card: LoyaltyCard) throws -> [String: Data] {
         var assets: [String: Data] = [:]
         let bundle = Bundle.main
 
@@ -169,6 +164,13 @@ enum WalletPassGenerator {
             assets["\(asset.archiveName).png"] = renderLogoWithTransparentBackground(image)
         }
 
+        if let imageData = card.cardImage, let sourceImage = UIImage(data: imageData) {
+            let stripAssets = renderStripImages(from: sourceImage)
+            for (filename, data) in stripAssets {
+                assets[filename] = data
+            }
+        }
+
         return assets
     }
 
@@ -184,6 +186,28 @@ enum WalletPassGenerator {
         return renderer.pngData { _ in
             maskedImage.draw(at: .zero)
         }
+    }
+
+    /// Renders strip images at @1x, @2x, and @3x from a source image.
+    private static func renderStripImages(from source: UIImage) -> [String: Data] {
+        let baseWidth = WalletPassConfiguration.stripWidth
+        let baseHeight = WalletPassConfiguration.stripHeight
+        let scales: [(suffix: String, scale: CGFloat)] = [
+            ("strip.png", 1),
+            ("strip@2x.png", 2),
+            ("strip@3x.png", 3),
+        ]
+
+        var result: [String: Data] = [:]
+        for (filename, scale) in scales {
+            let size = CGSize(width: baseWidth * scale, height: baseHeight * scale)
+            let renderer = UIGraphicsImageRenderer(size: size)
+            let rendered = renderer.pngData { context in
+                source.draw(in: CGRect(origin: .zero, size: size))
+            }
+            result[filename] = rendered
+        }
+        return result
     }
 
     // MARK: - Manifest

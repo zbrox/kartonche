@@ -54,16 +54,18 @@ struct WalletPassGeneratorTests {
         let card = makeCard()
         let data = try WalletPassGenerator.buildPassJSON(for: card)
         let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
-        let storeCard = json["storeCard"] as! [String: Any]
 
-        let headerFields = storeCard["headerFields"] as! [[String: Any]]
-        #expect(headerFields[0]["value"] as? String == "Test Store")
+        #expect(json["logoText"] as? String == "Test Store")
+
+        let storeCard = json["storeCard"] as! [String: Any]
+        #expect(storeCard["headerFields"] == nil)
 
         let primaryFields = storeCard["primaryFields"] as! [[String: Any]]
         #expect(primaryFields[0]["value"] as? String == "Test Card")
 
         let secondaryFields = storeCard["secondaryFields"] as! [[String: Any]]
         #expect(secondaryFields[0]["value"] as? String == "1234567890")
+        #expect(secondaryFields[0]["label"] as? String == "NUMBER")
     }
 
     @Test func passJSONOmitsSecondaryFieldsWhenCardNumberEmpty() throws {

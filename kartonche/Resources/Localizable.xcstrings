@@ -428,6 +428,16 @@
         }
       }
     },
+    "Card Image" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изображение за картата"
+          }
+        }
+      }
+    },
     "Card Name" : {
       "comment" : "Label for card name field",
       "localizations" : {
@@ -530,6 +540,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Избор на карта"
+          }
+        }
+      }
+    },
+    "Choose Image" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Избор на изображение"
           }
         }
       }
@@ -2111,6 +2131,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Премахване от любими"
+          }
+        }
+      }
+    },
+    "Remove Image" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Премахване на изображението"
           }
         }
       }
