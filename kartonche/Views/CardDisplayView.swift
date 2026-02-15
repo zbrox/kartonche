@@ -153,10 +153,16 @@ struct CardDisplayView: View {
                         .font(.caption.weight(.medium))
                         .foregroundStyle(secondaryColor.opacity(0.8))
                 }
+
+                if let cardholderName = card.cardholderName, !cardholderName.isEmpty {
+                    Text(cardholderName)
+                        .font(.caption.weight(.medium))
+                        .foregroundStyle(secondaryColor.opacity(0.7))
+                }
             }
-            
+
             Spacer()
-            
+
             // Action buttons
             HStack(spacing: 16) {
                 // Share button
@@ -194,6 +200,9 @@ struct CardDisplayView: View {
         }
         if !card.cardNumber.isEmpty {
             parts.append(String(localized: "card number") + " \(card.cardNumber)")
+        }
+        if let cardholderName = card.cardholderName, !cardholderName.isEmpty {
+            parts.append(cardholderName)
         }
         return parts.joined(separator: ", ")
     }

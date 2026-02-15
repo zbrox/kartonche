@@ -107,6 +107,14 @@ enum WalletPassGenerator {
             ]]
         }
 
+        if let cardholderName = card.cardholderName, !cardholderName.isEmpty {
+            storeCard["auxiliaryFields"] = [[
+                "key": "cardholderName",
+                "label": "CARDHOLDER",
+                "value": cardholderName,
+            ]]
+        }
+
         pass["storeCard"] = storeCard
 
         // Barcode

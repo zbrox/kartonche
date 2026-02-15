@@ -91,6 +91,12 @@ struct CardPreviewView: View {
                     .font(.caption.weight(.medium))
                     .foregroundStyle(secondaryColor.opacity(0.8))
             }
+
+            if let cardholderName = card.cardholderName, !cardholderName.isEmpty {
+                Text(cardholderName)
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(secondaryColor.opacity(0.7))
+            }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, 20)

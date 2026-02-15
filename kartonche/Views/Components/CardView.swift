@@ -76,8 +76,14 @@ struct CardView<Card: CardViewable>: View {
                         .font(.caption.weight(.medium))
                         .foregroundStyle(secondaryColor.opacity(0.8))
                 }
+
+                if let cardholderName = card.cardholderName, !cardholderName.isEmpty {
+                    Text(cardholderName)
+                        .font(.caption.weight(.medium))
+                        .foregroundStyle(secondaryColor.opacity(0.7))
+                }
             }
-            
+
             Spacer()
             
             if let onClose = onClose {
@@ -105,6 +111,9 @@ struct CardView<Card: CardViewable>: View {
         }
         if !card.cardNumber.isEmpty {
             parts.append(String(localized: "card number") + " \(card.cardNumber)")
+        }
+        if let cardholderName = card.cardholderName, !cardholderName.isEmpty {
+            parts.append(cardholderName)
         }
         return parts.joined(separator: ", ")
     }

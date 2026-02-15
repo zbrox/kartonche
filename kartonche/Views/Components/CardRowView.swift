@@ -51,6 +51,12 @@ struct CardRowView: View {
                     }
                 }
                 
+                if let cardholderName = card.cardholderName, !cardholderName.isEmpty {
+                    Text(cardholderName)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+
                 if !card.cardNumber.isEmpty {
                     Text(card.cardNumber)
                         .font(.caption)
@@ -92,12 +98,15 @@ struct CardRowView: View {
         if let storeName = card.storeName, !storeName.isEmpty {
             parts.append(storeName)
         }
+        if let cardholderName = card.cardholderName, !cardholderName.isEmpty {
+            parts.append(cardholderName)
+        }
         if !card.cardNumber.isEmpty {
             parts.append(String(localized: "card number") + " \(card.cardNumber)")
         }
         return parts.joined(separator: ", ")
     }
-    
+
     private func accessibilityExpirationLabel(_ date: Date) -> String {
         if card.isExpired {
             return String(localized: "Expired on") + " \(formatShortDate(date))"

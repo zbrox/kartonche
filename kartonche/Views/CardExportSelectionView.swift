@@ -49,6 +49,11 @@ struct CardExportSelectionView: View {
                                     .font(.subheadline)
                                     .foregroundStyle(.secondary)
                             }
+                            if let cardholderName = card.cardholderName, !cardholderName.isEmpty {
+                                Text(cardholderName)
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
                             if !card.cardNumber.isEmpty {
                                 Text(card.cardNumber)
                                     .font(.caption)

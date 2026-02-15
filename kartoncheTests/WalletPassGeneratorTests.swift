@@ -23,9 +23,10 @@ struct WalletPassGeneratorTests {
         barcodeData: String = "test-barcode-data",
         color: String? = "#FF0000",
         secondaryColor: String? = "#FFFFFF",
-        expirationDate: Date? = nil
+        expirationDate: Date? = nil,
+        cardholderName: String? = nil
     ) -> LoyaltyCard {
-        LoyaltyCard(
+        let card = LoyaltyCard(
             name: name,
             storeName: storeName,
             cardNumber: cardNumber,
@@ -35,6 +36,8 @@ struct WalletPassGeneratorTests {
             secondaryColor: secondaryColor,
             expirationDate: expirationDate
         )
+        card.cardholderName = cardholderName
+        return card
     }
 
     @Test func passJSONContainsRequiredTopLevelFields() throws {
@@ -166,6 +169,37 @@ struct WalletPassGeneratorTests {
         let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
 
         #expect(json["expirationDate"] == nil)
+    }
+
+    @Test func passJSONContainsAuxiliaryFieldsWhenCardholderNameSet() throws {
+        let card = makeCard(cardholderName: "John Doe")
+        let data = try WalletPassGenerator.buildPassJSON(for: card)
+        let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
+        let storeCard = json["storeCard"] as! [String: Any]
+
+        let auxiliaryFields = storeCard["auxiliaryFields"] as! [[String: Any]]
+        #expect(auxiliaryFields.count == 1)
+        #expect(auxiliaryFields[0]["key"] as? String == "cardholderName")
+        #expect(auxiliaryFields[0]["label"] as? String == "CARDHOLDER")
+        #expect(auxiliaryFields[0]["value"] as? String == "John Doe")
+    }
+
+    @Test func passJSONOmitsAuxiliaryFieldsWhenCardholderNameNil() throws {
+        let card = makeCard(cardholderName: nil)
+        let data = try WalletPassGenerator.buildPassJSON(for: card)
+        let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
+        let storeCard = json["storeCard"] as! [String: Any]
+
+        #expect(storeCard["auxiliaryFields"] == nil)
+    }
+
+    @Test func passJSONOmitsAuxiliaryFieldsWhenCardholderNameEmpty() throws {
+        let card = makeCard(cardholderName: "")
+        let data = try WalletPassGenerator.buildPassJSON(for: card)
+        let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
+        let storeCard = json["storeCard"] as! [String: Any]
+
+        #expect(storeCard["auxiliaryFields"] == nil)
     }
 
     @Test func passJSONOmitsLocationsWhenEmpty() throws {
