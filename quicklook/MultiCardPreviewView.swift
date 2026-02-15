@@ -58,9 +58,11 @@ private struct MultiCardRow: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(card.name)
                     .font(.headline)
-                Text(card.storeName)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                if let storeName = card.storeName, !storeName.isEmpty {
+                    Text(storeName)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
             }
 
             Spacer()
@@ -84,25 +86,25 @@ private struct MultiCardRow: View {
             id: UUID(), name: "Club Card", storeName: "BILLA",
             cardNumber: "1234567890123", barcodeType: .ean13,
             barcodeData: "1234567890123", color: "#E31E26",
-            secondaryColor: "#FFFFFF", notes: nil, isFavorite: false,
-            createdDate: Date(), lastUsedDate: nil, expirationDate: nil,
-            cardImage: nil, locations: []
+            secondaryColor: "#FFFFFF", notes: nil, cardholderName: nil,
+            isFavorite: false, createdDate: Date(), lastUsedDate: nil,
+            expirationDate: nil, cardImage: nil, locations: []
         ),
         CardExportDTO(
             id: UUID(), name: "Loyalty Card", storeName: "Kaufland",
             cardNumber: "9876543210", barcodeType: .qr,
             barcodeData: "KAUF123456", color: "#CC0000",
-            secondaryColor: nil, notes: nil, isFavorite: false,
-            createdDate: Date(), lastUsedDate: nil, expirationDate: nil,
-            cardImage: nil, locations: []
+            secondaryColor: nil, notes: nil, cardholderName: nil,
+            isFavorite: false, createdDate: Date(), lastUsedDate: nil,
+            expirationDate: nil, cardImage: nil, locations: []
         ),
         CardExportDTO(
             id: UUID(), name: "Fantastiko Card", storeName: "Fantastiko",
             cardNumber: "5555555555", barcodeType: .code128,
             barcodeData: "5555555555", color: "#00AA44",
-            secondaryColor: nil, notes: nil, isFavorite: false,
-            createdDate: Date(), lastUsedDate: nil, expirationDate: nil,
-            cardImage: nil, locations: []
+            secondaryColor: nil, notes: nil, cardholderName: nil,
+            isFavorite: false, createdDate: Date(), lastUsedDate: nil,
+            expirationDate: nil, cardImage: nil, locations: []
         )
     ]))
 }

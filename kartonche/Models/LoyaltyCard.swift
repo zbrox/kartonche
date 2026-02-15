@@ -12,7 +12,7 @@ import SwiftData
 final class LoyaltyCard {
     var id: UUID
     var name: String
-    var storeName: String
+    var storeName: String?
     var cardNumber: String
     var barcodeType: BarcodeType
     var barcodeData: String
@@ -24,6 +24,8 @@ final class LoyaltyCard {
     var lastUsedDate: Date?
     var expirationDate: Date?
     
+    var cardholderName: String?
+
     @Attribute(.externalStorage)
     var cardImage: Data?
     
@@ -33,13 +35,14 @@ final class LoyaltyCard {
     init(
         id: UUID = UUID(),
         name: String,
-        storeName: String,
+        storeName: String? = nil,
         cardNumber: String,
         barcodeType: BarcodeType,
         barcodeData: String,
         color: String? = nil,
         secondaryColor: String? = nil,
         notes: String? = nil,
+        cardholderName: String? = nil,
         isFavorite: Bool = false,
         createdDate: Date = Date(),
         lastUsedDate: Date? = nil,
@@ -55,6 +58,7 @@ final class LoyaltyCard {
         self.color = color
         self.secondaryColor = secondaryColor
         self.notes = notes
+        self.cardholderName = cardholderName
         self.isFavorite = isFavorite
         self.createdDate = createdDate
         self.lastUsedDate = lastUsedDate

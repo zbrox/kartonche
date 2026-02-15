@@ -194,10 +194,12 @@ struct CardImportRow: View {
                     }
                 }
                 
-                Text(card.storeName)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                
+                if let storeName = card.storeName, !storeName.isEmpty {
+                    Text(storeName)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+
                 if !card.cardNumber.isEmpty {
                     Text(card.cardNumber)
                         .font(.caption)

@@ -12,7 +12,7 @@ import Foundation
 struct CardEntity: AppEntity {
     let id: UUID
     let name: String
-    let storeName: String
+    let storeName: String?
     
     static var typeDisplayRepresentation: TypeDisplayRepresentation {
         TypeDisplayRepresentation(name: "Loyalty Card")
@@ -21,7 +21,10 @@ struct CardEntity: AppEntity {
     nonisolated(unsafe) static var defaultQuery = CardEntityQuery()
     
     var displayRepresentation: DisplayRepresentation {
-        DisplayRepresentation(title: "\(name)", subtitle: "\(storeName)")
+        if let storeName, !storeName.isEmpty {
+            return DisplayRepresentation(title: "\(name)", subtitle: "\(storeName)")
+        }
+        return DisplayRepresentation(title: "\(name)")
     }
 }
 

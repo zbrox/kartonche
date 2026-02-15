@@ -33,10 +33,12 @@ struct CardRowView: View {
                     .font(.headline)
                 
                 HStack(spacing: 6) {
-                    Text(card.storeName)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                    
+                    if let storeName = card.storeName, !storeName.isEmpty {
+                        Text(storeName)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
+
                     // Distance badge for nearby cards
                     if let distance = distance {
                         HStack(spacing: 2) {
@@ -86,11 +88,14 @@ struct CardRowView: View {
     }
     
     private var accessibilityCardLabel: String {
-        var label = "\(card.name), \(card.storeName)"
-        if !card.cardNumber.isEmpty {
-            label += ", " + String(localized: "card number") + " \(card.cardNumber)"
+        var parts = [card.name]
+        if let storeName = card.storeName, !storeName.isEmpty {
+            parts.append(storeName)
         }
-        return label
+        if !card.cardNumber.isEmpty {
+            parts.append(String(localized: "card number") + " \(card.cardNumber)")
+        }
+        return parts.joined(separator: ", ")
     }
     
     private func accessibilityExpirationLabel(_ date: Date) -> String {

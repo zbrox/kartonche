@@ -33,13 +33,14 @@ struct CardExportContainer: Codable {
 struct CardExportDTO: Codable, Identifiable {
     let id: UUID
     let name: String
-    let storeName: String
+    let storeName: String?
     let cardNumber: String
     let barcodeType: BarcodeType
     let barcodeData: String
     let color: String?
     let secondaryColor: String?
     let notes: String?
+    let cardholderName: String?
     let isFavorite: Bool
     let createdDate: Date
     let lastUsedDate: Date?
@@ -56,11 +57,7 @@ struct CardExportDTO: Codable, Identifiable {
         guard !name.isEmpty else {
             throw CardImportError.invalidData("Card name is empty")
         }
-        
-        guard !storeName.isEmpty else {
-            throw CardImportError.invalidData("Store name is empty")
-        }
-        
+
         guard !barcodeData.isEmpty else {
             throw CardImportError.invalidData("Barcode data is empty")
         }
@@ -104,6 +101,7 @@ extension CardExportDTO {
         self.color = card.color
         self.secondaryColor = card.secondaryColor
         self.notes = card.notes
+        self.cardholderName = card.cardholderName
         self.isFavorite = card.isFavorite
         self.createdDate = card.createdDate
         self.lastUsedDate = card.lastUsedDate

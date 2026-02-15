@@ -87,7 +87,9 @@ enum WalletPassGenerator {
             pass["foregroundColor"] = color.contrastingTextColor().toPassRGB()
         }
 
-        pass["logoText"] = card.storeName
+        if let storeName = card.storeName, !storeName.isEmpty {
+            pass["logoText"] = storeName
+        }
 
         var storeCard: [String: Any] = [:]
 

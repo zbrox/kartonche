@@ -137,8 +137,8 @@ struct NearestCardView: View {
                         .foregroundColor(primaryColor.contrastingTextColor)
                         .lineLimit(1)
                     
-                    if family != .systemSmall {
-                        Text(card.storeName)
+                    if family != .systemSmall, let storeName = card.storeName, !storeName.isEmpty {
+                        Text(storeName)
                             .font(.caption)
                             .foregroundColor(primaryColor.contrastingTextColor.opacity(0.8))
                             .lineLimit(1)
