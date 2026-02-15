@@ -15,7 +15,7 @@
       }
     },
     "*" : {
-
+      "shouldTranslate" : false
     },
     "%@" : {
       "shouldTranslate" : false
