@@ -137,7 +137,7 @@ struct CardEditorView: View {
         NavigationStack {
             Form {
                 Section {
-                    TextField(text: $name, prompt: Text(String(localized: "Card Name") + " ") + Text("*").foregroundColor(.red)) {
+                    TextField(text: $name, prompt: Text("\(String(localized: "Card Name")) \(Text("*").foregroundColor(.red))")) {
                         Text(String(localized: "Card Name"))
                     }
                         .accessibilityIdentifier("cardNameField")
@@ -187,7 +187,7 @@ struct CardEditorView: View {
                     }
                     .accessibilityIdentifier("barcodeTypePicker")
                     
-                    TextField(text: $barcodeData, prompt: Text(String(localized: "Barcode Data") + " ") + Text("*").foregroundColor(.red)) {
+                    TextField(text: $barcodeData, prompt: Text("\(String(localized: "Barcode Data")) \(Text("*").foregroundColor(.red))")) {
                         Text(String(localized: "Barcode Data"))
                     }
                         .accessibilityIdentifier("barcodeDataField")
