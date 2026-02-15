@@ -150,13 +150,12 @@ Update app version from $CURRENT_VERSION to $NEXT_VERSION
 
 This is an automated release commit."
 
-# Step 10: Create git tag
-echo "🏷️  Creating git tag v$NEXT_VERSION..."
-git tag "v$NEXT_VERSION"
-
-# Step 11: Create new commit for CHANGELOG
-echo "📋 Generating CHANGELOG..."
+# Step 10: Tag the version bump commit, then start a new one for CHANGELOG
+echo "🏷️  Creating tag v$NEXT_VERSION..."
+jj tag set "v$NEXT_VERSION" -r @
 jj new
+
+echo "📋 Generating CHANGELOG..."
 
 # Step 12: Generate CHANGELOG
 mise run changelog-update
