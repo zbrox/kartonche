@@ -17,7 +17,7 @@ struct WalletPassGeneratorTests {
 
     private func makeCard(
         name: String = "Test Card",
-        storeName: String = "Test Store",
+        storeName: String? = "Test Store",
         cardNumber: String = "1234567890",
         barcodeType: BarcodeType = .qr,
         barcodeData: String = "test-barcode-data",
@@ -66,6 +66,22 @@ struct WalletPassGeneratorTests {
         let secondaryFields = storeCard["secondaryFields"] as! [[String: Any]]
         #expect(secondaryFields[0]["value"] as? String == "1234567890")
         #expect(secondaryFields[0]["label"] as? String == "NUMBER")
+    }
+
+    @Test func passJSONOmitsLogoTextWhenStoreNameNil() throws {
+        let card = makeCard(storeName: nil)
+        let data = try WalletPassGenerator.buildPassJSON(for: card)
+        let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
+
+        #expect(json["logoText"] == nil)
+    }
+
+    @Test func passJSONOmitsLogoTextWhenStoreNameEmpty() throws {
+        let card = makeCard(storeName: "")
+        let data = try WalletPassGenerator.buildPassJSON(for: card)
+        let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
+
+        #expect(json["logoText"] == nil)
     }
 
     @Test func passJSONOmitsSecondaryFieldsWhenCardNumberEmpty() throws {

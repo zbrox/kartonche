@@ -21,6 +21,7 @@ struct CardEditorView: View {
     
     @State private var name: String
     @State private var storeName: String
+    @State private var cardholderName: String
     @State private var cardNumber: String
     @State private var barcodeType: BarcodeType
     @State private var barcodeData: String
@@ -86,7 +87,8 @@ struct CardEditorView: View {
         if let card = card {
             // Edit mode - use card data
             _name = State(initialValue: card.name)
-            _storeName = State(initialValue: card.storeName)
+            _storeName = State(initialValue: card.storeName ?? "")
+            _cardholderName = State(initialValue: card.cardholderName ?? "")
             _cardNumber = State(initialValue: card.cardNumber)
             _barcodeType = State(initialValue: card.barcodeType)
             _barcodeData = State(initialValue: card.barcodeData)
@@ -102,6 +104,7 @@ struct CardEditorView: View {
             // New card from merchant template
             _name = State(initialValue: program.name ?? merchant.name)
             _storeName = State(initialValue: merchant.name)
+            _cardholderName = State(initialValue: "")
             _cardNumber = State(initialValue: "")
             _barcodeType = State(initialValue: program.barcodeType)
             _barcodeData = State(initialValue: "")
@@ -116,6 +119,7 @@ struct CardEditorView: View {
             // New custom card - empty
             _name = State(initialValue: "")
             _storeName = State(initialValue: "")
+            _cardholderName = State(initialValue: "")
             _cardNumber = State(initialValue: "")
             _barcodeType = State(initialValue: .qr)
             _barcodeData = State(initialValue: "")
@@ -137,6 +141,8 @@ struct CardEditorView: View {
                         .accessibilityIdentifier("cardNameField")
                     TextField("Store Name", text: $storeName)
                         .accessibilityIdentifier("storeNameField")
+                    TextField(String(localized: "Cardholder Name"), text: $cardholderName)
+                        .accessibilityIdentifier("cardholderNameField")
                     TextField("Card Number", text: $cardNumber)
                         .accessibilityIdentifier("cardNumberField")
                 }
@@ -433,7 +439,7 @@ struct CardEditorView: View {
                 // Create a temporary card for the LocationEditorView if we're in create mode
                 let editorCard = card ?? LoyaltyCard(
                     name: name,
-                    storeName: storeName,
+                    storeName: storeName.isEmpty ? nil : storeName,
                     cardNumber: cardNumber,
                     barcodeType: barcodeType,
                     barcodeData: barcodeData
@@ -507,7 +513,7 @@ struct CardEditorView: View {
     }
     
     private var isValid: Bool {
-        !name.isEmpty && !storeName.isEmpty && !barcodeData.isEmpty
+        !name.isEmpty && !barcodeData.isEmpty
     }
     
     private func saveCard() {
@@ -515,7 +521,8 @@ struct CardEditorView: View {
         
         if let existingCard = card {
             existingCard.name = name
-            existingCard.storeName = storeName
+            existingCard.storeName = storeName.isEmpty ? nil : storeName
+            existingCard.cardholderName = cardholderName.isEmpty ? nil : cardholderName
             existingCard.cardNumber = cardNumber
             existingCard.barcodeType = barcodeType
             existingCard.barcodeData = barcodeData
@@ -529,13 +536,14 @@ struct CardEditorView: View {
         } else {
             let newCard = LoyaltyCard(
                 name: name,
-                storeName: storeName,
+                storeName: storeName.isEmpty ? nil : storeName,
                 cardNumber: cardNumber,
                 barcodeType: barcodeType,
                 barcodeData: barcodeData,
                 color: selectedColor?.toHex(),
                 secondaryColor: useAutoTextColor ? nil : selectedSecondaryColor?.toHex(),
                 notes: notes.isEmpty ? nil : notes,
+                cardholderName: cardholderName.isEmpty ? nil : cardholderName,
                 isFavorite: isFavorite,
                 expirationDate: hasExpirationDate ? expirationDate : nil,
                 cardImage: cardImageData

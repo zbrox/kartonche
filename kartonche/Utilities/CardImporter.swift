@@ -22,7 +22,7 @@ struct CardImporter {
         /// Returns true if cards are identical (same content, not just same identity)
         var areIdentical: Bool {
             return existingCard.name == importedCard.name &&
-                   existingCard.storeName == importedCard.storeName &&
+                   (existingCard.storeName ?? "") == (importedCard.storeName ?? "") &&
                    existingCard.cardNumber == importedCard.cardNumber
         }
     }
@@ -112,8 +112,8 @@ struct CardImporter {
         
         for importedCard in importedCards {
             for existingCard in existingCards {
-                // Compare by storeName + cardNumber
-                let isDuplicate = importedCard.storeName == existingCard.storeName &&
+                // Compare by storeName + cardNumber (treat nil same as empty)
+                let isDuplicate = (importedCard.storeName ?? "") == (existingCard.storeName ?? "") &&
                                   importedCard.cardNumber == existingCard.cardNumber
                 
                 if isDuplicate {
@@ -199,6 +199,7 @@ struct CardImporter {
         
         // Set optional properties
         card.notes = dto.notes
+        card.cardholderName = dto.cardholderName
         card.isFavorite = dto.isFavorite
         card.createdDate = dto.createdDate
         card.lastUsedDate = dto.lastUsedDate

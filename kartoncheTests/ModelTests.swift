@@ -38,7 +38,7 @@ struct ModelTests {
             barcodeType: .qr,
             barcodeData: "1234567890"
         )
-        
+
         #expect(card.name == "Test Card")
         #expect(card.storeName == "Test Store")
         #expect(card.cardNumber == "1234567890")
@@ -47,10 +47,63 @@ struct ModelTests {
         #expect(card.isFavorite == false)
         #expect(card.color == nil)
         #expect(card.notes == nil)
+        #expect(card.cardholderName == nil)
         #expect(card.lastUsedDate == nil)
         #expect(card.cardImage == nil)
     }
+
+    @Test func loyaltyCardWithNilStoreName() {
+        let card = LoyaltyCard(
+            name: "Test Card",
+            cardNumber: "1234567890",
+            barcodeType: .qr,
+            barcodeData: "1234567890"
+        )
+
+        #expect(card.storeName == nil)
+    }
+
+    @Test func loyaltyCardWithCardholderName() {
+        let card = LoyaltyCard(
+            name: "Test Card",
+            storeName: "Test Store",
+            cardNumber: "1234567890",
+            barcodeType: .qr,
+            barcodeData: "1234567890",
+            cardholderName: "John Doe"
+        )
+
+        #expect(card.cardholderName == "John Doe")
+    }
     
+    @Test func cardExportDTORoundTripsCardholderName() {
+        let card = LoyaltyCard(
+            name: "Test Card",
+            storeName: "Test Store",
+            cardNumber: "1234567890",
+            barcodeType: .qr,
+            barcodeData: "1234567890",
+            cardholderName: "Jane Doe"
+        )
+
+        let dto = CardExportDTO(from: card)
+        #expect(dto.cardholderName == "Jane Doe")
+        #expect(dto.storeName == "Test Store")
+    }
+
+    @Test func cardExportDTORoundTripsNilStoreName() {
+        let card = LoyaltyCard(
+            name: "Test Card",
+            cardNumber: "1234567890",
+            barcodeType: .qr,
+            barcodeData: "1234567890"
+        )
+
+        let dto = CardExportDTO(from: card)
+        #expect(dto.storeName == nil)
+        #expect(dto.cardholderName == nil)
+    }
+
     @Test func loyaltyCardWithOptionalFields() {
         let card = LoyaltyCard(
             name: "Premium Card",

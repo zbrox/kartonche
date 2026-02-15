@@ -137,12 +137,14 @@ struct CardWidgetView: View {
                             .font(.headline)
                             .foregroundColor(primaryColor.contrastingTextColor)
                             .lineLimit(2)
-                        
-                        Text(card.storeName)
-                            .font(.caption)
-                            .foregroundColor(primaryColor.contrastingTextColor.opacity(0.8))
-                            .lineLimit(2)
-                        
+
+                        if let storeName = card.storeName, !storeName.isEmpty {
+                            Text(storeName)
+                                .font(.caption)
+                                .foregroundColor(primaryColor.contrastingTextColor.opacity(0.8))
+                                .lineLimit(2)
+                        }
+
                         Spacer()
                     }
                     .padding(8)
@@ -187,11 +189,13 @@ struct CardWidgetView: View {
                                 .font(.headline)
                                 .foregroundColor(primaryColor.contrastingTextColor)
                                 .lineLimit(1)
-                            
-                            Text(card.storeName)
-                                .font(.caption)
-                                .foregroundColor(primaryColor.contrastingTextColor.opacity(0.8))
-                                .lineLimit(1)
+
+                            if let storeName = card.storeName, !storeName.isEmpty {
+                                Text(storeName)
+                                    .font(.caption)
+                                    .foregroundColor(primaryColor.contrastingTextColor.opacity(0.8))
+                                    .lineLimit(1)
+                            }
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(8)

@@ -138,14 +138,16 @@ struct CardDisplayView: View {
         HStack(spacing: 16) {
             // Card info
             VStack(alignment: .leading, spacing: 4) {
-                Text(card.storeName)
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(secondaryColor)
-                
+                if let storeName = card.storeName, !storeName.isEmpty {
+                    Text(storeName)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(secondaryColor)
+                }
+
                 Text(card.name)
                     .font(.title2.weight(.bold))
                     .foregroundStyle(secondaryColor)
-                
+
                 if !card.cardNumber.isEmpty {
                     Text(card.cardNumber)
                         .font(.caption.weight(.medium))
@@ -182,9 +184,20 @@ struct CardDisplayView: View {
         .padding(.vertical, 20)
         .background(primaryColor)
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("\(card.name), \(card.storeName)" + (card.cardNumber.isEmpty ? "" : ", " + String(localized: "card number") + " \(card.cardNumber)"))
+        .accessibilityLabel(headerAccessibilityLabel)
     }
     
+    private var headerAccessibilityLabel: String {
+        var parts = [card.name]
+        if let storeName = card.storeName, !storeName.isEmpty {
+            parts.append(storeName)
+        }
+        if !card.cardNumber.isEmpty {
+            parts.append(String(localized: "card number") + " \(card.cardNumber)")
+        }
+        return parts.joined(separator: ", ")
+    }
+
     private func barcodeCardView(primaryColor: Color) -> some View {
         BarcodeImageView(
             data: card.barcodeData,

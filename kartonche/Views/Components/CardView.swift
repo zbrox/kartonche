@@ -61,14 +61,16 @@ struct CardView<Card: CardViewable>: View {
     private var headerView: some View {
         HStack(spacing: 16) {
             VStack(alignment: .leading, spacing: 4) {
-                Text(card.storeName)
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(secondaryColor)
-                
+                if let storeName = card.storeName, !storeName.isEmpty {
+                    Text(storeName)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(secondaryColor)
+                }
+
                 Text(card.name)
                     .font(.title2.weight(.bold))
                     .foregroundStyle(secondaryColor)
-                
+
                 if !card.cardNumber.isEmpty {
                     Text(card.cardNumber)
                         .font(.caption.weight(.medium))
@@ -93,9 +95,20 @@ struct CardView<Card: CardViewable>: View {
         .padding(.vertical, 20)
         .background(primaryColor)
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("\(card.name), \(card.storeName)" + (card.cardNumber.isEmpty ? "" : ", " + String(localized: "card number") + " \(card.cardNumber)"))
+        .accessibilityLabel(cardAccessibilityLabel)
     }
     
+    private var cardAccessibilityLabel: String {
+        var parts = [card.name]
+        if let storeName = card.storeName, !storeName.isEmpty {
+            parts.append(storeName)
+        }
+        if !card.cardNumber.isEmpty {
+            parts.append(String(localized: "card number") + " \(card.cardNumber)")
+        }
+        return parts.joined(separator: ", ")
+    }
+
     private var barcodeCardView: some View {
         BarcodeImageView(
             data: card.barcodeData,
@@ -172,23 +185,25 @@ struct CardView<Card: CardViewable>: View {
 /// Preview helper struct conforming to CardViewable
 private struct PreviewCard: CardViewable {
     let name: String
-    let storeName: String
+    let storeName: String?
     let cardNumber: String
     let barcodeType: BarcodeType
     let barcodeData: String
     let color: String?
     let secondaryColor: String?
     let notes: String?
-    
+    let cardholderName: String?
+
     init(
         name: String,
-        storeName: String,
+        storeName: String? = nil,
         cardNumber: String,
         barcodeType: BarcodeType,
         barcodeData: String,
         color: String? = nil,
         secondaryColor: String? = nil,
-        notes: String? = nil
+        notes: String? = nil,
+        cardholderName: String? = nil
     ) {
         self.name = name
         self.storeName = storeName
@@ -198,5 +213,6 @@ private struct PreviewCard: CardViewable {
         self.color = color
         self.secondaryColor = secondaryColor
         self.notes = notes
+        self.cardholderName = cardholderName
     }
 }

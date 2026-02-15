@@ -44,9 +44,11 @@ struct CardExportSelectionView: View {
                         VStack(alignment: .leading, spacing: 4) {
                             Text(card.name)
                                 .font(.headline)
-                            Text(card.storeName)
-                                .font(.subheadline)
-                                .foregroundStyle(.secondary)
+                            if let storeName = card.storeName, !storeName.isEmpty {
+                                Text(storeName)
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                            }
                             if !card.cardNumber.isEmpty {
                                 Text(card.cardNumber)
                                     .font(.caption)

@@ -76,14 +76,16 @@ struct CardPreviewView: View {
     
     private var headerView: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(card.storeName)
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(secondaryColor)
-            
+            if let storeName = card.storeName, !storeName.isEmpty {
+                Text(storeName)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(secondaryColor)
+            }
+
             Text(card.name)
                 .font(.title2.weight(.bold))
                 .foregroundStyle(secondaryColor)
-            
+
             if !card.cardNumber.isEmpty {
                 Text(card.cardNumber)
                     .font(.caption.weight(.medium))
@@ -139,6 +141,7 @@ struct CardPreviewView: View {
         color: "#E31E26",
         secondaryColor: "#FFFFFF",
         notes: nil,
+        cardholderName: nil,
         isFavorite: false,
         createdDate: Date(),
         lastUsedDate: nil,
@@ -168,6 +171,7 @@ struct CardPreviewView: View {
         color: "#CC0000",
         secondaryColor: nil,
         notes: nil,
+        cardholderName: nil,
         isFavorite: false,
         createdDate: Date(),
         lastUsedDate: nil,
