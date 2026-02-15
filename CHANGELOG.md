@@ -5,6 +5,70 @@ All notable changes to kartonche will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Miscellaneous Tasks
+
+- Bump version to 2026.02.6
+
+## [2026.02.6] - 2026-02-15
+
+### Bug Fixes
+
+- Add architecture to simulator destination to avoid ambiguity
+- Remove -quiet flag to show build errors in CI
+- Add comprehensive debugging for CI build failures
+- Install librsvg for About icon generation
+- Add imagemagick to mise and install librsvg via brew
+- Install librsvg and imagemagick via Homebrew
+- Remove brittle tests and update merchant validation
+- Add ControlIntents and AppIntent to main app target
+- Add @MainActor to CardEntityQuery methods for Swift 6
+- Search field interaction with SwiftUI .searchable
+- Open Settings for Always permission upgrade
+- Handle URLs pending before .onChange registers on cold launch
+- Dismiss active sheets before handling incoming URLs
+- Fix control widget intents not navigating to cards
+- Rewrite image crop rendering to fix incorrect crop region
+- Move card name to header when strip image present
+- Replace deprecated Text concatenation with interpolation
+- Use zero-padded month and skip existing What's New entries
+
+### Documentation
+
+- Update CHANGELOG for v2026.02.5
+- Update ARCHITECTURE.md to reflect current implementation
+- Remove stale test counts, fix dependencies, add CI badges
+
+### Features
+
+- Add automated release workflow with mise
+- Add argument support for running specific tests
+- Add Quick Look preview and file import for .kartonche files
+- Add tap-to-preview for cards during import
+- Add Data section with import/export support
+- Show card list for multi-card files
+- Add Apple Wallet pass generation with on-device signing
+- Improve pass appearance and add card image support
+- Make storeName optional and add cardholderName field
+- Display cardholderName in all card views
+- Add required field indicators and fix image button UX
+- Include notes in pass back fields
+- Add 2026.02.6 release notes
+
+### Miscellaneous Tasks
+
+- Migrate to Swift 6 language mode
+- Add localization strings for export and multi-card preview
+- Apply Xcode recommended project settings
+- Update translations
+
+### Refactoring
+
+- Simplify LaunchAppIntent to rely on openAppWhenRun
+- Rename widget target and folder for consistency
+- Rename FileImportManager to URLRouter
+
 ## [2026.02.5] - 2026-02-08
 
 ### Bug Fixes
