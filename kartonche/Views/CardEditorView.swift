@@ -137,7 +137,9 @@ struct CardEditorView: View {
         NavigationStack {
             Form {
                 Section {
-                    TextField("Card Name", text: $name)
+                    TextField(text: $name, prompt: Text(String(localized: "Card Name") + " ") + Text("*").foregroundColor(.red)) {
+                        Text(String(localized: "Card Name"))
+                    }
                         .accessibilityIdentifier("cardNameField")
                     TextField("Store Name", text: $storeName)
                         .accessibilityIdentifier("storeNameField")
@@ -185,7 +187,9 @@ struct CardEditorView: View {
                     }
                     .accessibilityIdentifier("barcodeTypePicker")
                     
-                    TextField("Barcode Data", text: $barcodeData)
+                    TextField(text: $barcodeData, prompt: Text(String(localized: "Barcode Data") + " ") + Text("*").foregroundColor(.red)) {
+                        Text(String(localized: "Barcode Data"))
+                    }
                         .accessibilityIdentifier("barcodeDataField")
                     
                     if !barcodeData.isEmpty {
@@ -259,18 +263,16 @@ struct CardEditorView: View {
                                 .clipShape(RoundedRectangle(cornerRadius: 8))
                         }
 
-                        HStack {
+                        if cardImageData != nil {
+                            Button(role: .destructive) {
+                                cardImageData = nil
+                            } label: {
+                                Label(String(localized: "Remove Image"), systemImage: "trash")
+                                    .foregroundStyle(.red)
+                            }
+                        } else {
                             PhotosPicker(selection: $cardImagePickerItem, matching: .images) {
                                 Label(String(localized: "Choose Image"), systemImage: "photo")
-                            }
-
-                            if cardImageData != nil {
-                                Spacer()
-                                Button(role: .destructive) {
-                                    cardImageData = nil
-                                } label: {
-                                    Label(String(localized: "Remove Image"), systemImage: "trash")
-                                }
                             }
                         }
                     }
