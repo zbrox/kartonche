@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+#MISE description="Archive and upload to TestFlight"
+#MISE depends=["archive"]
+
+set -euo pipefail
+
+ARCHIVE_PATH="build/kartonche.xcarchive"
+EXPORT_OPTIONS="ExportOptions.plist"
+
+if [ ! -d "$ARCHIVE_PATH" ]; then
+  echo "Archive not found at $ARCHIVE_PATH"
+  exit 1
+fi
+
+if [ ! -f "$EXPORT_OPTIONS" ]; then
+  echo "$EXPORT_OPTIONS not found in project root"
+  exit 1
+fi
+
+echo "Uploading to App Store Connect..."
+
+xcodebuild -exportArchive \
+  -archivePath "$ARCHIVE_PATH" \
+  -exportOptionsPlist "$EXPORT_OPTIONS" \
+  -allowProvisioningUpdates
+
+echo ""
+echo "Upload complete! Build should appear in TestFlight shortly."
+
+rm -rf build/
+echo "Cleaned up build artifacts"
