@@ -93,11 +93,19 @@ enum WalletPassGenerator {
 
         var storeCard: [String: Any] = [:]
 
-        storeCard["primaryFields"] = [[
-            "key": "cardName",
-            "label": "",
-            "value": card.name,
-        ]]
+        if card.cardImage != nil {
+            storeCard["headerFields"] = [[
+                "key": "cardName",
+                "label": "",
+                "value": card.name,
+            ]]
+        } else {
+            storeCard["primaryFields"] = [[
+                "key": "cardName",
+                "label": "",
+                "value": card.name,
+            ]]
+        }
 
         if !card.cardNumber.isEmpty {
             storeCard["secondaryFields"] = [[
