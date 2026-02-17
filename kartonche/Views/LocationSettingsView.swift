@@ -39,11 +39,18 @@ struct LocationSettingsView: View {
                     
                     Spacer()
                     
-                    Toggle("", isOn: $nearbyNotificationsEnabled)
-                        .disabled(!canEnableNearbyNotifications)
-                        .onChange(of: nearbyNotificationsEnabled) { oldValue, newValue in
-                            handleNearbyNotificationsToggle(newValue)
+                    Toggle("", isOn: Binding(
+                        get: { nearbyNotificationsEnabled },
+                        set: { newValue in
+                            if newValue {
+                                showingNearbyNotificationsExplanation = true
+                            } else {
+                                nearbyNotificationsEnabled = false
+                                locationManager.stopAllMonitoring()
+                            }
                         }
+                    ))
+                    .disabled(!canEnableNearbyNotifications)
                 }
                 
                 if !canEnableNearbyNotifications {
@@ -161,7 +168,7 @@ struct LocationSettingsView: View {
         .sheet(isPresented: $showingNearbyNotificationsExplanation) {
             NearbyNotificationsExplanationView(
                 onEnable: {
-                    nearbyNotificationsEnabled = true
+                    UserDefaults.standard.set(true, forKey: "nearbyCardNotificationsEnabled")
                     showingNearbyNotificationsExplanation = false
                     let cards = SharedDataManager.fetchAllCards()
                     locationManager.startMonitoringCardLocations(cards)
@@ -211,21 +218,6 @@ struct LocationSettingsView: View {
         return nearbyNotificationsEnabled ?
             String(localized: "Enabled") :
             String(localized: "Disabled")
-    }
-    
-    private func handleNearbyNotificationsToggle(_ enabled: Bool) {
-        if enabled {
-            if !UserDefaults.standard.bool(forKey: "hasSeenNearbyNotificationsPrompt") {
-                showingNearbyNotificationsExplanation = true
-                nearbyNotificationsEnabled = false
-                UserDefaults.standard.set(true, forKey: "hasSeenNearbyNotificationsPrompt")
-            } else {
-                let cards = SharedDataManager.fetchAllCards()
-                locationManager.startMonitoringCardLocations(cards)
-            }
-        } else {
-            locationManager.stopAllMonitoring()
-        }
     }
     
     private func openAppSettings() {
