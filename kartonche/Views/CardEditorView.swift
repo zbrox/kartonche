@@ -202,31 +202,30 @@ struct CardEditorView: View {
                 
                 Section {
                     // Mini card preview
-                    HStack {
-                        Spacer()
-                        VStack(spacing: 8) {
-                            ZStack {
-                                Circle()
-                                    .fill(selectedColor ?? .gray)
-                                    .frame(width: 60, height: 60)
-                                
-                                Text(cardInitials)
-                                    .font(.title2)
-                                    .fontWeight(.bold)
-                                    .foregroundStyle(effectiveSecondaryColor)
-                            }
+                    VStack(spacing: 8) {
+                        ZStack {
+                            Circle()
+                                .fill(selectedColor ?? .gray)
+                                .frame(width: 60, height: 60)
                             
-                            Text(name.isEmpty ? String(localized: "Card Name") : name)
-                                .font(.headline)
-                                .foregroundStyle(.primary)
-                            
-                            Text(storeName.isEmpty ? String(localized: "Store Name") : storeName)
-                                .font(.subheadline)
-                                .foregroundStyle(.secondary)
+                            Text(cardInitials)
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundStyle(effectiveSecondaryColor)
                         }
-                        .padding(.vertical, 8)
-                        Spacer()
+                        
+                        Text(name.isEmpty ? String(localized: "Card Name") : name)
+                            .font(.headline)
+                            .foregroundStyle(.primary)
+                        
+                        Text(storeName.isEmpty ? String(localized: "Store Name") : storeName)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
                     }
+                    .frame(maxWidth: .infinity)
+                    .multilineTextAlignment(.center)
+                    .padding(.vertical, 8)
+                    .alignmentGuide(.listRowSeparatorLeading) { _ in 0 }
                     
                     ColorPicker(String(localized: "Card Color"), selection: Binding(
                         get: { selectedColor ?? .gray },
