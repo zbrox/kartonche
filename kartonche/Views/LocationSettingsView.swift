@@ -246,7 +246,7 @@ struct AlwaysLocationExplanationView: View {
             Image(systemName: "location.circle.fill")
                 .font(.system(size: 56))
                 .foregroundStyle(.blue)
-                .padding(.top, 8)
+                .padding(.top, 48)
             
             Text(String(localized: "Upgrade to 'Always' Location"))
                 .font(.title2)
@@ -269,6 +269,7 @@ struct AlwaysLocationExplanationView: View {
                     .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.center)
             }
+            .fixedSize(horizontal: false, vertical: true)
             .padding(.horizontal)
             
             Spacer()
@@ -296,6 +297,7 @@ struct AlwaysLocationExplanationView: View {
                     .foregroundStyle(.secondary)
             }
             .padding(.horizontal)
+            .padding(.bottom, 16)
         }
         .padding()
         .presentationDetents([.medium, .large])

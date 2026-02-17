@@ -17,7 +17,7 @@ struct NearbyNotificationsExplanationView: View {
             Image(systemName: "location.circle.fill")
                 .font(.system(size: 56))
                 .foregroundStyle(.blue)
-                .padding(.top, 8)
+                .padding(.top, 48)
             
             Text(String(localized: "Nearby Card Notifications"))
                 .font(.title2)
@@ -44,7 +44,9 @@ struct NearbyNotificationsExplanationView: View {
                     .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.center)
             }
+            .fixedSize(horizontal: false, vertical: true)
             .padding(.horizontal)
+            .padding(.bottom, 16)
             
             Spacer()
             

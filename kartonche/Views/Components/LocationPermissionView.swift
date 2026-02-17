@@ -17,7 +17,7 @@ struct LocationPermissionView: View {
             Image(systemName: "location.circle.fill")
                 .font(.system(size: 56))
                 .foregroundStyle(.blue)
-                .padding(.top, 8)
+                .padding(.top, 48)
             
             Text(String(localized: "Location Permission Needed"))
                 .font(.title2)
@@ -44,6 +44,7 @@ struct LocationPermissionView: View {
                     .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.center)
             }
+            .fixedSize(horizontal: false, vertical: true)
             .padding(.horizontal)
             
             Spacer()
@@ -66,6 +67,7 @@ struct LocationPermissionView: View {
                 .buttonStyle(.bordered)
             }
             .padding(.horizontal)
+            .padding(.bottom, 16)
         }
         .padding()
     }
@@ -81,7 +83,7 @@ struct LocationPermissionDeniedView: View {
             Image(systemName: "location.slash.circle.fill")
                 .font(.system(size: 56))
                 .foregroundStyle(.orange)
-                .padding(.top, 8)
+                .padding(.top, 48)
             
             Text(String(localized: "Location Access Denied"))
                 .font(.title2)
@@ -102,6 +104,7 @@ struct LocationPermissionDeniedView: View {
                 }
                 .font(.subheadline)
             }
+            .fixedSize(horizontal: false, vertical: true)
             .padding(.horizontal)
             
             Spacer()
@@ -124,6 +127,7 @@ struct LocationPermissionDeniedView: View {
                 .buttonStyle(.bordered)
             }
             .padding(.horizontal)
+            .padding(.bottom, 16)
         }
         .padding()
     }

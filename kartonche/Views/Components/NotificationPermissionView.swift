@@ -17,7 +17,7 @@ struct NotificationPermissionView: View {
             Image(systemName: "bell.circle.fill")
                 .font(.system(size: 56))
                 .foregroundStyle(.blue)
-                .padding(.top, 8)
+                .padding(.top, 48)
             
             Text(String(localized: "Expiration Reminders"))
                 .font(.title2)
@@ -44,6 +44,7 @@ struct NotificationPermissionView: View {
                     .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.center)
             }
+            .fixedSize(horizontal: false, vertical: true)
             .padding(.horizontal)
             
             Spacer()
@@ -66,6 +67,7 @@ struct NotificationPermissionView: View {
                 .buttonStyle(.bordered)
             }
             .padding(.horizontal)
+            .padding(.bottom, 16)
         }
         .padding()
     }
@@ -81,7 +83,7 @@ struct NotificationPermissionDeniedView: View {
             Image(systemName: "bell.slash.circle.fill")
                 .font(.system(size: 56))
                 .foregroundStyle(.orange)
-                .padding(.top, 8)
+                .padding(.top, 48)
             
             Text(String(localized: "Notifications Disabled"))
                 .font(.title2)
@@ -102,6 +104,7 @@ struct NotificationPermissionDeniedView: View {
                 }
                 .font(.subheadline)
             }
+            .fixedSize(horizontal: false, vertical: true)
             .padding(.horizontal)
             
             Spacer()
@@ -124,6 +127,7 @@ struct NotificationPermissionDeniedView: View {
                 .buttonStyle(.bordered)
             }
             .padding(.horizontal)
+            .padding(.bottom, 16)
         }
         .padding()
     }
