@@ -203,7 +203,7 @@ mise run test-ui
 # Run all tests
 mise run test-all
 
-# Full CI check (generate + build + test)
+# Full CI check (validate + build + test)
 mise run ci
 ```
 
