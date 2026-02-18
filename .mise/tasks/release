@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-#MISE description="Create a new release with auto-versioning"
+#MISE description="Prepare a new release (bump version)"
 
 set -euo pipefail
 
-echo "🚀 Starting release process..."
+echo "🚀 Preparing release..."
 echo ""
 
 # Step 1: Detect current version
@@ -134,7 +134,7 @@ fi
 
 echo "✅ What's New validation passed"
 
-# Step 8: Verify build
+# Step 7: Verify build
 echo "🔨 Verifying build..."
 if ! mise run build > /dev/null 2>&1; then
     echo "❌ Build failed after version update"
@@ -142,38 +142,21 @@ if ! mise run build > /dev/null 2>&1; then
 fi
 echo "✅ Build succeeded"
 
-# Step 9: Commit version bump
-echo "💾 Creating version bump commit..."
-jj describe -m "chore(release): bump version to $NEXT_VERSION
+# Step 8: Commit
+echo "💾 Creating release preparation commit..."
+jj describe -m "chore(release): prepare v$NEXT_VERSION
 
-Update app version from $CURRENT_VERSION to $NEXT_VERSION
+Update app version from $CURRENT_VERSION to $NEXT_VERSION"
 
-This is an automated release commit."
-
-# Step 10: Tag the version bump commit, then start a new one for CHANGELOG
-echo "🏷️  Creating tag v$NEXT_VERSION..."
-jj tag set "v$NEXT_VERSION" -r @
 jj new
-
-echo "📋 Generating CHANGELOG..."
-
-# Step 12: Generate CHANGELOG
-mise run changelog-update
-
-# Step 13: Commit CHANGELOG
-echo "💾 Creating CHANGELOG commit..."
-jj describe -m "docs: update CHANGELOG for v$NEXT_VERSION"
 
 # Done!
 echo ""
-echo "✅ Release v$NEXT_VERSION complete!"
+echo "✅ Release v$NEXT_VERSION prepared!"
 echo ""
 echo "Summary:"
 echo "  • Version: $CURRENT_VERSION → $NEXT_VERSION"
-echo "  • Git tag: v$NEXT_VERSION"
-echo "  • Commits: 2 (version bump + CHANGELOG)"
 echo ""
 echo "Next steps:"
-echo "  1. Test the app to verify What's New displays correctly"
-echo "  2. Push commits: jj git push --all"
-echo "  3. Push tag: git push origin v$NEXT_VERSION"
+echo "  1. Run 'mise run testflight' to build and upload to TestFlight"
+echo "  2. After testing, run 'mise run tag-release' to tag and generate changelog"
