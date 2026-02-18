@@ -8,7 +8,6 @@
 import SwiftUI
 import SwiftData
 import CoreLocation
-import WidgetKit
 import UniformTypeIdentifiers
 import UIKit
 
@@ -550,11 +549,8 @@ struct CardListView: View {
     
     private func deleteCard(_ card: LoyaltyCard) {
         withAnimation {
-            modelContext.delete(card)
+            CardRepository(modelContext: modelContext).delete(card)
         }
-        
-        // Reload all widgets since card was deleted
-        WidgetCenter.shared.reloadAllTimelines()
     }
     
     private func dismissActivePresentation() {
@@ -604,18 +600,7 @@ struct CardListView: View {
     
     @MainActor
     private func importCards(container: CardExportContainer, strategy: CardImporter.ImportStrategy) async throws -> CardImporter.ImportResult {
-        let result = try CardImporter.importCards(
-            from: container,
-            into: modelContext,
-            strategy: strategy
-        )
-        
-        // Reload widgets if cards were imported
-        if result.hasChanges {
-            WidgetCenter.shared.reloadAllTimelines()
-        }
-        
-        return result
+        try CardRepository(modelContext: modelContext).importCards(from: container, strategy: strategy)
     }
     
     private func checkAlwaysPermissionConditions() {

@@ -8,8 +8,6 @@
 import SwiftUI
 import SwiftData
 import UniformTypeIdentifiers
-import WidgetKit
-
 struct DataSettingsView: View {
     @Query private var allCards: [LoyaltyCard]
     @Environment(\.modelContext) private var modelContext
@@ -147,17 +145,7 @@ struct DataSettingsView: View {
 
     @MainActor
     private func importCards(container: CardExportContainer, strategy: CardImporter.ImportStrategy) async throws -> CardImporter.ImportResult {
-        let result = try CardImporter.importCards(
-            from: container,
-            into: modelContext,
-            strategy: strategy
-        )
-
-        if result.hasChanges {
-            WidgetCenter.shared.reloadAllTimelines()
-        }
-
-        return result
+        try CardRepository(modelContext: modelContext).importCards(from: container, strategy: strategy)
     }
 }
 

@@ -8,8 +8,6 @@
 import SwiftUI
 import SwiftData
 import PhotosUI
-import WidgetKit
-import PassKit
 
 /// Editor view for creating or modifying a loyalty card
 struct CardEditorView: View {
@@ -519,7 +517,7 @@ struct CardEditorView: View {
     
     private func saveCard() {
         let savedCard: LoyaltyCard
-        
+
         if let existingCard = card {
             existingCard.name = name
             existingCard.storeName = storeName.isEmpty ? nil : storeName
@@ -550,7 +548,7 @@ struct CardEditorView: View {
                 cardImage: cardImageData
             )
             modelContext.insert(newCard)
-            
+
             // Add pending locations to the new card
             for location in pendingLocations {
                 location.card = newCard
@@ -558,44 +556,15 @@ struct CardEditorView: View {
             }
             savedCard = newCard
         }
-        
-        // Schedule or cancel expiration notifications
-        Task {
-            if hasExpirationDate && expirationDate != nil {
-                await NotificationManager.shared.scheduleExpirationNotifications(for: savedCard)
-            } else {
-                await NotificationManager.shared.cancelNotifications(for: savedCard.id)
-            }
-        }
-        
-        // Reload all widgets to show updated card data
-        WidgetCenter.shared.reloadAllTimelines()
 
-        // Update Apple Wallet pass if one exists for this card
-        if walletPassExists(for: savedCard) {
-            Task {
-                try? await updateWalletPass(for: savedCard)
-            }
-        }
+        CardRepository(modelContext: modelContext).save(savedCard)
 
         dismiss()
     }
     
     private func deleteCard() {
         if let card = card {
-            // Cancel any pending notifications
-            Task {
-                await NotificationManager.shared.cancelNotifications(for: card.id)
-            }
-
-            // Remove Apple Wallet pass if one exists
-            removeWalletPass(for: card)
-
-            modelContext.delete(card)
-
-            // Reload all widgets since card was deleted
-            WidgetCenter.shared.reloadAllTimelines()
-
+            CardRepository(modelContext: modelContext).delete(card)
             dismiss()
         }
     }
@@ -613,28 +582,6 @@ struct CardEditorView: View {
         }
     }
     
-    private func walletPassExists(for card: LoyaltyCard) -> Bool {
-        PKPassLibrary().passes().contains {
-            $0.serialNumber == card.id.uuidString &&
-            $0.passTypeIdentifier == WalletPassConfiguration.passTypeIdentifier
-        }
-    }
-
-    private func updateWalletPass(for card: LoyaltyCard) async throws {
-        let passData = try WalletPassGenerator.generate(for: card)
-        let pass = try PKPass(data: passData)
-        PKPassLibrary().replacePass(with: pass)
-    }
-
-    private func removeWalletPass(for card: LoyaltyCard) {
-        if let pass = PKPassLibrary().passes().first(where: {
-            $0.serialNumber == card.id.uuidString &&
-            $0.passTypeIdentifier == WalletPassConfiguration.passTypeIdentifier
-        }) {
-            PKPassLibrary().removePass(pass)
-        }
-    }
-
     private func saveLocation(_ location: CardLocation) {
         if let card = card {
             // Edit mode: add to card immediately
