@@ -33,6 +33,13 @@ let whatsNewVersions: [WhatsNewVersion] = [
         version: "2026.02.6",
         features: [
             WhatsNewFeature(
+                icon: "magnifyingglass",
+                titleEN: "Spotlight Search",
+                titleBG: "Търсене в Spotlight",
+                descriptionEN: "Find your loyalty cards from the home screen via Spotlight",
+                descriptionBG: "Намерете картите си за лоялност от началния екран чрез Spotlight"
+            ),
+            WhatsNewFeature(
                 icon: "wallet.pass",
                 titleEN: "Apple Wallet",
                 titleBG: "Apple Wallet",
