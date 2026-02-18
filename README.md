@@ -140,14 +140,19 @@ kartonche/
 │   ├── Utilities/         # Helper classes (barcode, brightness, permissions)
 │   ├── Resources/         # Localizable.xcstrings
 │   └── Generated/         # Auto-generated code (gitignored)
+├── action/                # App Action extension
+├── quicklook/             # QuickLook preview extension
+├── widget/                # Home screen, lock screen, and control widgets
 ├── kartoncheTests/        # Unit tests
 ├── kartoncheUITests/      # UI tests
 ├── Merchants/             # Community merchant database (14 merchants)
 │   ├── merchants.kdl      # Merchant data in KDL format
 │   ├── schema.kdl         # Schema documentation
 │   └── README.md          # Contribution guidelines
-└── Scripts/               # Build scripts
-    └── generate-merchants/  # Swift code generator
+└── Scripts/               # Build and code generation scripts
+    ├── generate-merchant-templates.sh  # Xcode build phase for merchants
+    ├── generate-about-icon.sh          # Xcode build phase for app icon
+    └── generate-merchants/             # Swift code generator
 ```
 
 ## Documentation
