@@ -48,7 +48,6 @@ kartonche (картонче, "small card" in Bulgarian) is a native iOS app that
 git clone https://github.com/zbrox/kartonche.git
 cd kartonche
 mise trust
-mise run generate-merchants
 mise run build
 ```
 
@@ -82,19 +81,14 @@ cd kartonche
 mise trust
 ```
 
-3. Generate merchant templates (required before first build):
-```bash
-mise run generate-merchants
-```
-
-4. Build and run:
+3. Build and run:
 ```bash
 mise run build
 ```
 
 Or open `kartonche.xcodeproj` in Xcode and run.
 
-**Note:** The merchant template generator must be run at least once before building. It generates `kartonche/Generated/MerchantTemplates.swift` from the KDL database.
+**Note:** Merchant templates are generated automatically by an Xcode build phase from `Merchants/merchants.kdl`.
 
 ## Development
 
