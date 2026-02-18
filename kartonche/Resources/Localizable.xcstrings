@@ -230,6 +230,16 @@
         }
       }
     },
+    "Added to Apple Wallet. Edits sync automatically." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добавена в Apple Wallet. Промените се синхронизират автоматично."
+          }
+        }
+      }
+    },
     "All Cards" : {
       "comment" : "Section header for all cards",
       "localizations" : {
@@ -2679,6 +2689,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Приложението не съдържа реклами."
+          }
+        }
+      }
+    },
+    "This card is in Apple Wallet. Edits sync automatically." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тази карта е в Apple Wallet. Промените се синхронизират автоматично."
           }
         }
       }
