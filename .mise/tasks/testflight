@@ -11,6 +11,20 @@ if [ ! -f "$EXPORT_OPTIONS" ]; then
   exit 1
 fi
 
+# Read current version info for summary
+MARKETING_VERSION=$(grep -m 1 "MARKETING_VERSION = " kartonche.xcodeproj/project.pbxproj | sed 's/.*= \(.*\);/\1/')
+CURRENT_BUILD=$(grep -m 1 "CURRENT_PROJECT_VERSION = " kartonche.xcodeproj/project.pbxproj | sed 's/.*= \(.*\);/\1/')
+NEXT_BUILD=$((CURRENT_BUILD + 1))
+
+echo "🚀 TestFlight: v$MARKETING_VERSION (build $CURRENT_BUILD → $NEXT_BUILD)"
+echo "   Will bump build number, archive, and upload to TestFlight"
+echo ""
+
+# Isolate build number bump into its own revision (skip if current revision is empty)
+if [ -n "$(jj diff --stat)" ] || [ -n "$(jj log -r @ --no-graph -T description)" ]; then
+    jj new
+fi
+
 # Step 1: Read and increment build number
 CURRENT_BUILD=$(grep -m 1 "CURRENT_PROJECT_VERSION = " kartonche.xcodeproj/project.pbxproj | sed 's/.*= \(.*\);/\1/')
 NEXT_BUILD=$((CURRENT_BUILD + 1))
@@ -23,7 +37,6 @@ BUILD_COUNT=$(grep "CURRENT_PROJECT_VERSION = $NEXT_BUILD;" kartonche.xcodeproj/
 echo "   Updated $BUILD_COUNT occurrences"
 
 # Step 2: Commit build number bump
-MARKETING_VERSION=$(grep -m 1 "MARKETING_VERSION = " kartonche.xcodeproj/project.pbxproj | sed 's/.*= \(.*\);/\1/')
 jj describe -m "chore(release): bump build number to $NEXT_BUILD"
 
 # Step 3: Archive

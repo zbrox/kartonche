@@ -118,6 +118,11 @@ $FEATURES        ]
     echo "   Added What's New entry"
 fi
 
+# Isolate release prep into its own revision (skip if current revision is empty)
+if [ -n "$(jj diff --stat)" ] || [ -n "$(jj log -r @ --no-graph -T description)" ]; then
+    jj new
+fi
+
 # Step 5: Update Xcode project version
 echo "🔢 Updating version to $NEXT_VERSION..."
 sed -i '' "s/MARKETING_VERSION = $CURRENT_VERSION;/MARKETING_VERSION = $NEXT_VERSION;/g" \
@@ -125,6 +130,17 @@ sed -i '' "s/MARKETING_VERSION = $CURRENT_VERSION;/MARKETING_VERSION = $NEXT_VER
 
 COUNT=$(grep "MARKETING_VERSION = $NEXT_VERSION" kartonche.xcodeproj/project.pbxproj | wc -l | tr -d ' ')
 echo "   Updated $COUNT occurrences"
+
+# Bump build number
+CURRENT_BUILD=$(grep -m 1 "CURRENT_PROJECT_VERSION = " kartonche.xcodeproj/project.pbxproj | sed 's/.*= \(.*\);/\1/')
+NEXT_BUILD=$((CURRENT_BUILD + 1))
+
+echo "🔢 Bumping build number: $CURRENT_BUILD → $NEXT_BUILD"
+sed -i '' "s/CURRENT_PROJECT_VERSION = $CURRENT_BUILD;/CURRENT_PROJECT_VERSION = $NEXT_BUILD;/g" \
+    kartonche.xcodeproj/project.pbxproj
+
+BUILD_COUNT=$(grep "CURRENT_PROJECT_VERSION = $NEXT_BUILD;" kartonche.xcodeproj/project.pbxproj | wc -l | tr -d ' ')
+echo "   Updated $BUILD_COUNT occurrences"
 
 # Step 6: Validate What's New was updated
 if ! grep -q "version: \"$NEXT_VERSION\"" kartonche/Models/WhatsNewData.swift; then
@@ -146,7 +162,8 @@ echo "✅ Build succeeded"
 echo "💾 Creating release preparation commit..."
 jj describe -m "chore(release): prepare v$NEXT_VERSION
 
-Update app version from $CURRENT_VERSION to $NEXT_VERSION"
+Update app version from $CURRENT_VERSION to $NEXT_VERSION
+Bump build number from $CURRENT_BUILD to $NEXT_BUILD"
 
 jj new
 
@@ -156,6 +173,7 @@ echo "✅ Release v$NEXT_VERSION prepared!"
 echo ""
 echo "Summary:"
 echo "  • Version: $CURRENT_VERSION → $NEXT_VERSION"
+echo "  • Build: $CURRENT_BUILD → $NEXT_BUILD"
 echo ""
 echo "Next steps:"
 echo "  1. Run 'mise run testflight' to build and upload to TestFlight"
