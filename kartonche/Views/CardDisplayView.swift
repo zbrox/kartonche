@@ -49,9 +49,15 @@ struct CardDisplayView: View {
                 
                 Spacer(minLength: 40)
 
-                // Add to Apple Wallet button
-                if card.barcodeType.supportsAppleWallet && !isPassInWallet {
-                    if isGeneratingPass {
+                // Apple Wallet status
+                if card.barcodeType.supportsAppleWallet {
+                    if isPassInWallet {
+                        Label(String(localized: "Added to Apple Wallet. Edits sync automatically."), systemImage: "wallet.bifold")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                            .accessibilityLabel(String(localized: "This card is in Apple Wallet. Edits sync automatically."))
+                            .padding(.bottom, 12)
+                    } else if isGeneratingPass {
                         ProgressView(String(localized: "Generating pass..."))
                             .padding(.bottom, 12)
                     } else {
@@ -63,6 +69,11 @@ struct CardDisplayView: View {
                         .accessibilityLabel(String(localized: "Add to Apple Wallet"))
                         .padding(.bottom, 32)
                     }
+                } else {
+                    Label(String(localized: "This barcode format is not supported by Apple Wallet"), systemImage: "info.circle")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .padding(.bottom, 12)
                 }
 
                 // Notes button (if notes exist)
