@@ -17,7 +17,7 @@ kartonche (картонче, "small card" in Bulgarian) is a native iOS app that
 - ✅ **Quick Access** - Display barcodes instantly with brightness boost and screen wake
 - ✅ **Merchant Templates** - Pre-configured templates for popular stores
 - ✅ **Smart Search** - Search and sort cards by name, store, or recent usage
-- ✅ **Bulgarian-First** - Complete interface in Bulgarian with English fallback
+- ✅ **Localized** - Full Bulgarian translation with English as base language
 - ✅ **Widgets** - Home screen and lock screen widgets for quick access
 - ✅ **Location Awareness** - Get notified when near stores with your saved cards
 - ✅ **Expiration Tracking** - Track card expiration dates with reminder notifications
@@ -223,7 +223,7 @@ See [.github/workflows/](.github/workflows/) for workflow definitions.
 - **Framework:** SwiftUI + SwiftData (iOS 26.2+)
 - **Barcode:** VisionKit (scanning) + Core Image (generation)
 - **Storage:** Local-only SwiftData (no cloud sync)
-- **Localization:** String Catalogs (Bulgarian primary, 15+ strings)
+- **Localization:** String Catalogs (English base, Bulgarian translation)
 - **Database:** KDL format with build-time code generation
 - **Testing:** Swift Testing framework
 - **Dependencies:** Minimal dependencies: swift-crypto, swift-certificates, ZIPFoundation + native Apple frameworks
