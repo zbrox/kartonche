@@ -36,6 +36,10 @@
 	</array>
 	<key>TeamIdentifier</key>
 	<string>$(DEVELOPMENT_TEAM)</string>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>com.apple.corespotlightitem</string>
+	</array>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>UIFileSharingEnabled</key>

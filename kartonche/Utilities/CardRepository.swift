@@ -36,6 +36,8 @@ final class CardRepository {
                 try? await updateWalletPass(for: card)
             }
         }
+
+        SpotlightIndexer.index(card)
     }
 
     /// Handle all cleanup before deletion, then delete the card.
@@ -45,6 +47,7 @@ final class CardRepository {
         }
 
         removeWalletPass(for: card)
+        SpotlightIndexer.deindex(card)
 
         modelContext.delete(card)
 
@@ -64,6 +67,9 @@ final class CardRepository {
 
         if result.hasChanges {
             WidgetCenter.shared.reloadAllTimelines()
+
+            let allCards = try modelContext.fetch(FetchDescriptor<LoyaltyCard>())
+            SpotlightIndexer.reindexAll(allCards)
         }
 
         return result

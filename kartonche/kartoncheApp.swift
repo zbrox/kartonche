@@ -10,6 +10,7 @@ import SwiftData
 import UserNotifications
 import UIKit
 import Combine
+import CoreSpotlight
 
 @main
 struct kartoncheApp: App {
@@ -36,6 +37,8 @@ struct kartoncheApp: App {
                     Task {
                         await startGeofencingIfEnabled()
                     }
+
+                    SpotlightIndexer.reindexAll(SharedDataManager.fetchAllCards())
                 }
                 .onChange(of: scenePhase) { oldPhase, newPhase in
                     if newPhase == .active {
@@ -54,6 +57,11 @@ struct kartoncheApp: App {
                     if let url = notification.userInfo?["url"] as? URL {
                         urlRouter.handleURL(url)
                     }
+                }
+                .onContinueUserActivity(CSSearchableItemActionType) { userActivity in
+                    guard let identifier = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String,
+                          let url = URL(string: "kartonche://card?id=\(identifier)") else { return }
+                    urlRouter.handleURL(url)
                 }
         }
         .modelContainer(sharedModelContainer)
