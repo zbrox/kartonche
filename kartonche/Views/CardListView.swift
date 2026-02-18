@@ -25,7 +25,7 @@ struct CardListView: View {
     @Query private var allCards: [LoyaltyCard]
     
     @State private var searchText = ""
-    @State private var sortOption: SortOption = .alphabetical
+    @AppStorage("sortOption") private var sortOption: SortOption = .alphabetical
     @AppStorage("showExpiredCards") private var showExpiredCards = true
     @State private var showingMerchantSelection = false
     @State private var merchantForProgramSelection: MerchantTemplate?
