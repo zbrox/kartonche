@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+#MISE description="Tag the release, generate changelog, and print push instructions"
+
+set -euo pipefail
+
+# Step 1: Read current version
+VERSION=$(grep -m 1 "MARKETING_VERSION = " kartonche.xcodeproj/project.pbxproj | sed 's/.*= \(.*\);/\1/')
+TAG="v$VERSION"
+
+echo "🏷️  Finalizing release $TAG..."
+echo ""
+
+# Step 2: Check tag doesn't already exist
+if git tag -l "$TAG" | grep -q "$TAG"; then
+    echo "❌ Tag $TAG already exists"
+    exit 1
+fi
+
+# Step 3: Tag current commit
+echo "🏷️  Creating tag $TAG..."
+jj tag set "$TAG" -r @
+
+# Step 4: Start clean revision for changelog
+jj new
+
+# Step 5: Generate changelog
+echo "📋 Generating CHANGELOG..."
+mise run changelog-update
+
+# Step 6: Commit changelog
+jj describe -m "docs: update CHANGELOG for $TAG"
+
+echo ""
+echo "✅ Release $TAG finalized!"
+echo ""
+echo "Next steps:"
+echo "  1. jj git push --all"
+echo "  2. git push origin $TAG"

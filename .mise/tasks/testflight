@@ -1,31 +1,84 @@
 #!/usr/bin/env bash
-#MISE description="Archive and upload to TestFlight"
-#MISE depends=["archive"]
+#MISE description="Bump build number, archive, and upload to TestFlight"
 
 set -euo pipefail
 
 ARCHIVE_PATH="build/kartonche.xcarchive"
 EXPORT_OPTIONS="ExportOptions.plist"
 
-if [ ! -d "$ARCHIVE_PATH" ]; then
-  echo "Archive not found at $ARCHIVE_PATH"
-  exit 1
-fi
-
 if [ ! -f "$EXPORT_OPTIONS" ]; then
   echo "$EXPORT_OPTIONS not found in project root"
   exit 1
 fi
 
-echo "Uploading to App Store Connect..."
+# Step 1: Read and increment build number
+CURRENT_BUILD=$(grep -m 1 "CURRENT_PROJECT_VERSION = " kartonche.xcodeproj/project.pbxproj | sed 's/.*= \(.*\);/\1/')
+NEXT_BUILD=$((CURRENT_BUILD + 1))
+
+echo "🔢 Bumping build number: $CURRENT_BUILD → $NEXT_BUILD"
+sed -i '' "s/CURRENT_PROJECT_VERSION = $CURRENT_BUILD;/CURRENT_PROJECT_VERSION = $NEXT_BUILD;/g" \
+    kartonche.xcodeproj/project.pbxproj
+
+BUILD_COUNT=$(grep "CURRENT_PROJECT_VERSION = $NEXT_BUILD;" kartonche.xcodeproj/project.pbxproj | wc -l | tr -d ' ')
+echo "   Updated $BUILD_COUNT occurrences"
+
+# Step 2: Commit build number bump
+MARKETING_VERSION=$(grep -m 1 "MARKETING_VERSION = " kartonche.xcodeproj/project.pbxproj | sed 's/.*= \(.*\);/\1/')
+jj describe -m "chore(release): bump build number to $NEXT_BUILD"
+
+# Step 3: Archive
+echo ""
+echo "📦 Archiving kartonche..."
+
+rm -rf "$ARCHIVE_PATH"
+
+set +e
+BUILD_LOG="/tmp/xcodebuild-archive-$$.log"
+xcodebuild archive \
+  -project "$PROJECT" \
+  -scheme "$SCHEME" \
+  -archivePath "$ARCHIVE_PATH" \
+  -destination 'generic/platform=iOS' \
+  -allowProvisioningUpdates 2>&1 | tee "$BUILD_LOG" | xcbeautify
+
+BUILD_EXIT_CODE=${PIPESTATUS[0]}
+set -e
+
+if [ $BUILD_EXIT_CODE -ne 0 ]; then
+  echo ""
+  echo "❌ Archive failed with exit code $BUILD_EXIT_CODE"
+  if [ -f "$BUILD_LOG" ]; then
+    grep -i "error:" "$BUILD_LOG" | head -20 || echo "No 'error:' lines found"
+  fi
+  rm -f "$BUILD_LOG"
+  exit $BUILD_EXIT_CODE
+fi
+
+rm -f "$BUILD_LOG"
+echo "✅ Archive succeeded"
+
+# Step 4: Upload to App Store Connect
+echo ""
+echo "🚀 Uploading to App Store Connect..."
 
 xcodebuild -exportArchive \
   -archivePath "$ARCHIVE_PATH" \
   -exportOptionsPlist "$EXPORT_OPTIONS" \
   -allowProvisioningUpdates
 
-echo ""
-echo "Upload complete! Build should appear in TestFlight shortly."
+echo "✅ Upload complete"
 
 rm -rf build/
-echo "Cleaned up build artifacts"
+echo "🧹 Cleaned up build artifacts"
+
+# Step 5: Start clean revision for next fixes
+jj new
+
+echo ""
+echo "✅ TestFlight upload complete!"
+echo "   Version: $MARKETING_VERSION ($NEXT_BUILD)"
+echo ""
+echo "Next steps:"
+echo "  • Wait for TestFlight processing"
+echo "  • If fixes needed, commit them and run 'mise run testflight' again"
+echo "  • When ready, run 'mise run tag-release' to finalize"
