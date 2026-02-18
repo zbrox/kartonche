@@ -28,7 +28,8 @@
             "value" : "%1$@ %2$@"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "%@ expires in 7 days" : {
       "localizations" : {
@@ -2693,22 +2694,22 @@
         }
       }
     },
-    "This card is in Apple Wallet. Edits sync automatically." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Тази карта е в Apple Wallet. Промените се синхронизират автоматично."
-          }
-        }
-      }
-    },
     "This barcode format is not supported by Apple Wallet" : {
       "localizations" : {
         "bg" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Този формат на бар код не се поддържа от Apple Wallet"
+          }
+        }
+      }
+    },
+    "This card is in Apple Wallet. Edits sync automatically." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тази карта е в Apple Wallet. Промените се синхронизират автоматично."
           }
         }
       }
