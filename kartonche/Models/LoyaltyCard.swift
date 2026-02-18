@@ -13,7 +13,7 @@ final class LoyaltyCard {
     var id: UUID
     var name: String
     var storeName: String?
-    var cardNumber: String
+    var cardNumber: String?
     var barcodeType: BarcodeType
     var barcodeData: String
     var color: String?
@@ -36,7 +36,7 @@ final class LoyaltyCard {
         id: UUID = UUID(),
         name: String,
         storeName: String? = nil,
-        cardNumber: String,
+        cardNumber: String? = nil,
         barcodeType: BarcodeType,
         barcodeData: String,
         color: String? = nil,

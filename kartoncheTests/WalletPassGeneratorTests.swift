@@ -18,7 +18,7 @@ struct WalletPassGeneratorTests {
     private func makeCard(
         name: String = "Test Card",
         storeName: String? = "Test Store",
-        cardNumber: String = "1234567890",
+        cardNumber: String? = "1234567890",
         barcodeType: BarcodeType = .qr,
         barcodeData: String = "test-barcode-data",
         color: String? = "#FF0000",

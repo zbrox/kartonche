@@ -107,11 +107,11 @@ enum WalletPassGenerator {
             ]]
         }
 
-        if !card.cardNumber.isEmpty {
+        if let cardNumber = card.cardNumber, !cardNumber.isEmpty {
             storeCard["secondaryFields"] = [[
                 "key": "cardNumber",
                 "label": "NUMBER",
-                "value": card.cardNumber,
+                "value": cardNumber,
             ]]
         }
 

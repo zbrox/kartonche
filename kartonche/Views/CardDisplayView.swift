@@ -159,8 +159,8 @@ struct CardDisplayView: View {
                     .font(.title2.weight(.bold))
                     .foregroundStyle(secondaryColor)
 
-                if !card.cardNumber.isEmpty {
-                    Text(card.cardNumber)
+                if let cardNumber = card.cardNumber, !cardNumber.isEmpty {
+                    Text(cardNumber)
                         .font(.caption.weight(.medium))
                         .foregroundStyle(secondaryColor.opacity(0.8))
                 }
@@ -209,8 +209,8 @@ struct CardDisplayView: View {
         if let storeName = card.storeName, !storeName.isEmpty {
             parts.append(storeName)
         }
-        if !card.cardNumber.isEmpty {
-            parts.append(String(localized: "card number") + " \(card.cardNumber)")
+        if let cardNumber = card.cardNumber, !cardNumber.isEmpty {
+            parts.append(String(localized: "card number") + " \(cardNumber)")
         }
         if let cardholderName = card.cardholderName, !cardholderName.isEmpty {
             parts.append(cardholderName)

@@ -86,8 +86,8 @@ struct CardPreviewView: View {
                 .font(.title2.weight(.bold))
                 .foregroundStyle(secondaryColor)
 
-            if !card.cardNumber.isEmpty {
-                Text(card.cardNumber)
+            if let cardNumber = card.cardNumber, !cardNumber.isEmpty {
+                Text(cardNumber)
                     .font(.caption.weight(.medium))
                     .foregroundStyle(secondaryColor.opacity(0.8))
             }
@@ -171,7 +171,7 @@ struct CardPreviewView: View {
         id: UUID(),
         name: "Loyalty Card",
         storeName: "Kaufland",
-        cardNumber: "",
+        cardNumber: nil,
         barcodeType: .qr,
         barcodeData: "KAUF123456",
         color: "#CC0000",

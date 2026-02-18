@@ -11,7 +11,7 @@ import Foundation
 protocol CardViewable {
     var name: String { get }
     var storeName: String? { get }
-    var cardNumber: String { get }
+    var cardNumber: String? { get }
     var barcodeType: BarcodeType { get }
     var barcodeData: String { get }
     var color: String? { get }

@@ -71,8 +71,8 @@ struct CardView<Card: CardViewable>: View {
                     .font(.title2.weight(.bold))
                     .foregroundStyle(secondaryColor)
 
-                if !card.cardNumber.isEmpty {
-                    Text(card.cardNumber)
+                if let cardNumber = card.cardNumber, !cardNumber.isEmpty {
+                    Text(cardNumber)
                         .font(.caption.weight(.medium))
                         .foregroundStyle(secondaryColor.opacity(0.8))
                 }
@@ -109,8 +109,8 @@ struct CardView<Card: CardViewable>: View {
         if let storeName = card.storeName, !storeName.isEmpty {
             parts.append(storeName)
         }
-        if !card.cardNumber.isEmpty {
-            parts.append(String(localized: "card number") + " \(card.cardNumber)")
+        if let cardNumber = card.cardNumber, !cardNumber.isEmpty {
+            parts.append(String(localized: "card number") + " \(cardNumber)")
         }
         if let cardholderName = card.cardholderName, !cardholderName.isEmpty {
             parts.append(cardholderName)
@@ -195,7 +195,7 @@ struct CardView<Card: CardViewable>: View {
 private struct PreviewCard: CardViewable {
     let name: String
     let storeName: String?
-    let cardNumber: String
+    let cardNumber: String?
     let barcodeType: BarcodeType
     let barcodeData: String
     let color: String?
@@ -206,7 +206,7 @@ private struct PreviewCard: CardViewable {
     init(
         name: String,
         storeName: String? = nil,
-        cardNumber: String,
+        cardNumber: String? = nil,
         barcodeType: BarcodeType,
         barcodeData: String,
         color: String? = nil,
