@@ -104,22 +104,28 @@ We use [mise](https://mise.jdx.dev/) for task automation:
 
 ```bash
 # Build and test
-mise run build          # Build the app
-mise run test           # Run unit tests
-mise run test-all       # Run all tests
-mise run clean          # Clean build artifacts
-mise run dev            # Clean + build + test
-
-# CHANGELOG management
-mise run changelog-preview    # Preview unreleased changes
-mise run changelog-update     # Update CHANGELOG.md
+mise run build            # Build the app (Debug)
+mise run test             # Run unit tests
+mise run test-ui          # Run UI tests
+mise run test-all         # Run all tests (unit + UI)
+mise run clean            # Clean build artifacts
+mise run check            # Clean build and show all warnings/errors
+mise run check-i18n       # Check localization completeness
+mise run dev              # Clean + build + test
 
 # Merchant database
 mise run merchants-list       # List all merchants
 mise run merchant-add         # Interactive merchant creator
-mise run merchant-info bg.billa    # Show merchant details
 mise run validate-merchants   # Validate KDL syntax
 mise run generate-merchants   # Generate Swift code from KDL
+
+# Release and distribution
+mise run changelog-preview    # Preview unreleased changes
+mise run changelog-update     # Update CHANGELOG.md
+mise run release              # Prepare a new release (bump version)
+mise run tag-release          # Tag release and generate changelog
+mise run archive              # Archive the app for distribution
+mise run testflight           # Bump build, archive, upload to TestFlight
 
 # CI workflow
 mise run ci                   # Full CI check
