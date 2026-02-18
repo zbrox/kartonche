@@ -34,7 +34,7 @@ struct CardExportDTO: Codable, Identifiable {
     let id: UUID
     let name: String
     let storeName: String?
-    let cardNumber: String
+    let cardNumber: String?
     let barcodeType: BarcodeType
     let barcodeData: String
     let color: String?

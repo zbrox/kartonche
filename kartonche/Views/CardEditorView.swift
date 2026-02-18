@@ -89,7 +89,7 @@ struct CardEditorView: View {
             _name = State(initialValue: card.name)
             _storeName = State(initialValue: card.storeName ?? "")
             _cardholderName = State(initialValue: card.cardholderName ?? "")
-            _cardNumber = State(initialValue: card.cardNumber)
+            _cardNumber = State(initialValue: card.cardNumber ?? "")
             _barcodeType = State(initialValue: card.barcodeType)
             _barcodeData = State(initialValue: card.barcodeData)
             _notes = State(initialValue: card.notes ?? "")
@@ -441,7 +441,7 @@ struct CardEditorView: View {
                 let editorCard = card ?? LoyaltyCard(
                     name: name,
                     storeName: storeName.isEmpty ? nil : storeName,
-                    cardNumber: cardNumber,
+                    cardNumber: cardNumber.isEmpty ? nil : cardNumber,
                     barcodeType: barcodeType,
                     barcodeData: barcodeData
                 )
@@ -524,7 +524,7 @@ struct CardEditorView: View {
             existingCard.name = name
             existingCard.storeName = storeName.isEmpty ? nil : storeName
             existingCard.cardholderName = cardholderName.isEmpty ? nil : cardholderName
-            existingCard.cardNumber = cardNumber
+            existingCard.cardNumber = cardNumber.isEmpty ? nil : cardNumber
             existingCard.barcodeType = barcodeType
             existingCard.barcodeData = barcodeData
             existingCard.notes = notes.isEmpty ? nil : notes
@@ -538,7 +538,7 @@ struct CardEditorView: View {
             let newCard = LoyaltyCard(
                 name: name,
                 storeName: storeName.isEmpty ? nil : storeName,
-                cardNumber: cardNumber,
+                cardNumber: cardNumber.isEmpty ? nil : cardNumber,
                 barcodeType: barcodeType,
                 barcodeData: barcodeData,
                 color: selectedColor?.toHex(),

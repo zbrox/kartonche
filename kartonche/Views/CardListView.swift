@@ -84,7 +84,7 @@ struct CardListView: View {
             cards = cards.filter { card in
                 card.name.localizedCaseInsensitiveContains(searchText) ||
                 card.storeName?.localizedCaseInsensitiveContains(searchText) == true ||
-                card.cardNumber.localizedCaseInsensitiveContains(searchText)
+                card.cardNumber?.localizedCaseInsensitiveContains(searchText) == true
             }
         }
         

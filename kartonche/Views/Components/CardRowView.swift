@@ -57,8 +57,8 @@ struct CardRowView: View {
                         .foregroundStyle(.secondary)
                 }
 
-                if !card.cardNumber.isEmpty {
-                    Text(card.cardNumber)
+                if let cardNumber = card.cardNumber, !cardNumber.isEmpty {
+                    Text(cardNumber)
                         .font(.caption)
                         .foregroundStyle(.tertiary)
                 }
@@ -101,8 +101,8 @@ struct CardRowView: View {
         if let cardholderName = card.cardholderName, !cardholderName.isEmpty {
             parts.append(cardholderName)
         }
-        if !card.cardNumber.isEmpty {
-            parts.append(String(localized: "card number") + " \(card.cardNumber)")
+        if let cardNumber = card.cardNumber, !cardNumber.isEmpty {
+            parts.append(String(localized: "card number") + " \(cardNumber)")
         }
         return parts.joined(separator: ", ")
     }

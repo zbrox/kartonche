@@ -206,8 +206,8 @@ struct CardImportRow: View {
                         .foregroundStyle(.secondary)
                 }
 
-                if !card.cardNumber.isEmpty {
-                    Text(card.cardNumber)
+                if let cardNumber = card.cardNumber, !cardNumber.isEmpty {
+                    Text(cardNumber)
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
