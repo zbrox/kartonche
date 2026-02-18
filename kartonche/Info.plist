@@ -36,6 +36,8 @@
 	</array>
 	<key>TeamIdentifier</key>
 	<string>$(DEVELOPMENT_TEAM)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>UIFileSharingEnabled</key>
 	<true/>
 	<key>UTExportedTypeDeclarations</key>
