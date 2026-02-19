@@ -2,26 +2,56 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        }
+      },
       "shouldTranslate" : false
     },
     "'Always' location permission required for nearby notifications" : {
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Необходимо е разрешение на степен ‘Винаги' за известия за близки местоположения"
+            "state" : "new",
+            "value" : "'Always' location permission required for nearby notifications"
           }
         }
       }
     },
     "*" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "*"
+          }
+        }
+      },
       "shouldTranslate" : false
     },
     "%@" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%@"
+          }
+        }
+      },
       "shouldTranslate" : false
     },
     "%@ %@" : {
       "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -35,8 +65,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ изтича след 7 дни"
+            "state" : "new",
+            "value" : "%@ expires in 7 days"
           }
         }
       }
@@ -45,14 +75,20 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ изтича утре"
+            "state" : "new",
+            "value" : "%@ expires tomorrow"
           }
         }
       }
     },
     "%@, %@" : {
       "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@, %2$@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -63,10 +99,24 @@
       "shouldTranslate" : false
     },
     "%lld" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%lld"
+          }
+        }
+      },
       "shouldTranslate" : false
     },
     "%lld / %lld" : {
       "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld / %2$lld"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -78,6 +128,12 @@
     },
     "%lld %@" : {
       "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld %2$@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -91,8 +147,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld карти"
+            "state" : "new",
+            "value" : "%lld Cards"
           }
         }
       }
@@ -101,8 +157,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldм"
+            "state" : "new",
+            "value" : "%lldm"
           }
         }
       }
@@ -111,8 +167,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "1 ден преди изтичане"
+            "state" : "new",
+            "value" : "1 day before expiration"
           }
         }
       }
@@ -121,8 +177,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "7 дни преди изтичане"
+            "state" : "new",
+            "value" : "7 days before expiration"
           }
         }
       }
@@ -131,8 +187,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Просто приложение за организиране на клубните ви карти. Отворен код, фокус върху поверителността, без регистрация."
+            "state" : "new",
+            "value" : "A simple app for organizing your loyalty cards. Open source, privacy-focused, no account required."
           }
         }
       }
@@ -141,8 +197,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Информация"
+            "state" : "new",
+            "value" : "About"
           }
         }
       }
@@ -151,8 +207,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Активно"
+            "state" : "new",
+            "value" : "Active"
           }
         }
       }
@@ -162,8 +218,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавяне на карта"
+            "state" : "new",
+            "value" : "Add Card"
           }
         }
       }
@@ -172,8 +228,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ръчно добавяне на карта"
+            "state" : "new",
+            "value" : "Add Card Manually"
           }
         }
       }
@@ -183,8 +239,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавяне на местоположение"
+            "state" : "new",
+            "value" : "Add Location"
           }
         }
       }
@@ -193,8 +249,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавяне в Apple Wallet"
+            "state" : "new",
+            "value" : "Add to Apple Wallet"
           }
         }
       }
@@ -204,8 +260,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавяне към любими"
+            "state" : "new",
+            "value" : "Add to favorites"
           }
         }
       }
@@ -215,8 +271,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавете първата си клубна карта"
+            "state" : "new",
+            "value" : "Add your first loyalty card"
           }
         }
       }
@@ -225,8 +281,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавете първата си клубна карта, за да започнете"
+            "state" : "new",
+            "value" : "Add your first loyalty card to get started"
           }
         }
       }
@@ -235,8 +291,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавена в Apple Wallet. Промените се синхронизират автоматично."
+            "state" : "new",
+            "value" : "Added to Apple Wallet. Edits sync automatically."
           }
         }
       }
@@ -246,8 +302,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Всички карти"
+            "state" : "new",
+            "value" : "All Cards"
           }
         }
       }
@@ -256,8 +312,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : " Всички карти са изтекли. Превключете 'Показване на изтекли' в менюто за сортиране, за да ги видите"
+            "state" : "new",
+            "value" : "All cards are expired. Toggle 'Show Expired' in the sort menu to see them."
           }
         }
       }
@@ -266,8 +322,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Всички карти ще бъдат импортирани, дори дубликатите"
+            "state" : "new",
+            "value" : "All cards will be imported, even duplicates"
           }
         }
       }
@@ -276,8 +332,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Разрешаване"
+            "state" : "new",
+            "value" : "Allow Location"
           }
         }
       }
@@ -286,8 +342,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Винаги"
+            "state" : "new",
+            "value" : "Always"
           }
         }
       }
@@ -296,8 +352,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изглед"
+            "state" : "new",
+            "value" : "Appearance"
           }
         }
       }
@@ -307,8 +363,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сигурни ли сте, че искате да изтриете тази карта?"
+            "state" : "new",
+            "value" : "Are you sure you want to delete this card?"
           }
         }
       }
@@ -317,8 +373,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Автоматично"
+            "state" : "new",
+            "value" : "Auto"
           }
         }
       }
@@ -327,8 +383,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Виждате карти автоматично в инструменти"
+            "state" : "new",
+            "value" : "Auto-show the right card"
           }
         }
       }
@@ -338,8 +394,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Данни за баркод"
+            "state" : "new",
+            "value" : "Barcode Data"
           }
         }
       }
@@ -349,8 +405,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Баркод за сканиране"
+            "state" : "new",
+            "value" : "Barcode for scanning"
           }
         }
       }
@@ -360,8 +416,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Преглед на баркод"
+            "state" : "new",
+            "value" : "Barcode preview"
           }
         }
       }
@@ -371,8 +427,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "тип баркод"
+            "state" : "new",
+            "value" : "Barcode type"
           }
         }
       }
@@ -382,8 +438,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Тип баркод"
+            "state" : "new",
+            "value" : "Barcode Type"
           }
         }
       }
@@ -392,8 +448,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "По-добра производителност на инструментите:"
+            "state" : "new",
+            "value" : "Better Widget Performance:"
           }
         }
       }
@@ -403,8 +459,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отказ"
+            "state" : "new",
+            "value" : "Cancel"
           }
         }
       }
@@ -413,8 +469,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Карта"
+            "state" : "new",
+            "value" : "Card"
           }
         }
       }
@@ -424,8 +480,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Цвят на картата"
+            "state" : "new",
+            "value" : "Card Color"
           }
         }
       }
@@ -435,8 +491,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картата изтича утре"
+            "state" : "new",
+            "value" : "Card Expires Tomorrow"
           }
         }
       }
@@ -446,8 +502,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картата изтича скоро"
+            "state" : "new",
+            "value" : "Card Expiring Soon"
           }
         }
       }
@@ -456,8 +512,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изображение"
+            "state" : "new",
+            "value" : "Card Image"
           }
         }
       }
@@ -467,8 +523,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Име на картата"
+            "state" : "new",
+            "value" : "Card Name"
           }
         }
       }
@@ -478,8 +534,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "номер на карта"
+            "state" : "new",
+            "value" : "card number"
           }
         }
       }
@@ -489,8 +545,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Номер на картата"
+            "state" : "new",
+            "value" : "Card Number"
           }
         }
       }
@@ -500,8 +556,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картата ще се появи когато сте наблизо"
+            "state" : "new",
+            "value" : "Card will appear when you're nearby"
           }
         }
       }
@@ -511,8 +567,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картата ще се появи когато сте в това разстояние"
+            "state" : "new",
+            "value" : "Card will appear when you're within this distance"
           }
         }
       }
@@ -521,8 +577,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картопритежател"
+            "state" : "new",
+            "value" : "Cardholder Name"
           }
         }
       }
@@ -531,8 +587,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Карти"
+            "state" : "new",
+            "value" : "Cards"
           }
         }
       }
@@ -541,8 +597,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картите се експортират като файлове с окончание .kartonche, които могат да се споделят и импортират обратно на това и други устройства."
+            "state" : "new",
+            "value" : "Cards are exported as .kartonche files that can be shared and imported on other devices."
           }
         }
       }
@@ -551,8 +607,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Карти за импортиране"
+            "state" : "new",
+            "value" : "Cards to import"
           }
         }
       }
@@ -561,8 +617,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Промяна на местоположение"
+            "state" : "new",
+            "value" : "Change Location"
           }
         }
       }
@@ -572,8 +628,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избор на карта"
+            "state" : "new",
+            "value" : "Choose Card"
           }
         }
       }
@@ -582,8 +638,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изображение"
+            "state" : "new",
+            "value" : "Choose Image"
           }
         }
       }
@@ -593,8 +649,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изберете програма"
+            "state" : "new",
+            "value" : "Choose Program"
           }
         }
       }
@@ -603,8 +659,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избери коя карта да е показана"
+            "state" : "new",
+            "value" : "Choose which loyalty card to display"
           }
         }
       }
@@ -613,8 +669,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избери коя карта да се отвори"
+            "state" : "new",
+            "value" : "Choose which loyalty card to open"
           }
         }
       }
@@ -624,8 +680,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Затваряне"
+            "state" : "new",
+            "value" : "Close"
           }
         }
       }
@@ -634,8 +690,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Потвърждаване на местоположение"
+            "state" : "new",
+            "value" : "Confirm Location"
           }
         }
       }
@@ -644,8 +700,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Текущо местоположение"
+            "state" : "new",
+            "value" : "Current Location"
           }
         }
       }
@@ -654,8 +710,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ръчно избран"
+            "state" : "new",
+            "value" : "Custom"
           }
         }
       }
@@ -664,8 +720,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ръчно избран цвят на текста"
+            "state" : "new",
+            "value" : "Custom Text Color"
           }
         }
       }
@@ -674,8 +730,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Информация"
+            "state" : "new",
+            "value" : "Data"
           }
         }
       }
@@ -685,8 +741,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изтриване"
+            "state" : "new",
+            "value" : "Delete"
           }
         }
       }
@@ -695,8 +751,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отказано"
+            "state" : "new",
+            "value" : "Denied"
           }
         }
       }
@@ -705,8 +761,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Никоя"
+            "state" : "new",
+            "value" : "Deselect All"
           }
         }
       }
@@ -716,8 +772,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Радиус на откриване"
+            "state" : "new",
+            "value" : "Detection Radius"
           }
         }
       }
@@ -726,8 +782,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изключено"
+            "state" : "new",
+            "value" : "Disabled"
           }
         }
       }
@@ -737,8 +793,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Показване на конкретна клубна карта"
+            "state" : "new",
+            "value" : "Display a specific loyalty card with scannable barcode"
           }
         }
       }
@@ -747,8 +803,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Готово"
+            "state" : "new",
+            "value" : "Done"
           }
         }
       }
@@ -757,8 +813,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Поставяне на карфица на карта"
+            "state" : "new",
+            "value" : "Drop Pin on Map"
           }
         }
       }
@@ -767,8 +823,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картите дубликати няма да бъдат импортирани"
+            "state" : "new",
+            "value" : "Duplicate cards will not be imported"
           }
         }
       }
@@ -777,8 +833,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Обработка на дубликати"
+            "state" : "new",
+            "value" : "Duplicate handling"
           }
         }
       }
@@ -787,8 +843,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Намерени дубликати"
+            "state" : "new",
+            "value" : "Duplicates found"
           }
         }
       }
@@ -798,8 +854,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "EAN-13 изисква точно 13 цифри (въведени: %d)"
+            "state" : "new",
+            "value" : "EAN-13 requires exactly 13 digits (provided: %d)"
           }
         }
       }
@@ -809,8 +865,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Редактиране"
+            "state" : "new",
+            "value" : "Edit"
           }
         }
       }
@@ -820,8 +876,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Редактиране на местоположение"
+            "state" : "new",
+            "value" : "Edit Location"
           }
         }
       }
@@ -830,8 +886,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Включване"
+            "state" : "new",
+            "value" : "Enable"
           }
         }
       }
@@ -840,8 +896,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Включване на 'Винаги' местоположение"
+            "state" : "new",
+            "value" : "Enable 'Always' Location"
           }
         }
       }
@@ -850,8 +906,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Включете в Настройки:"
+            "state" : "new",
+            "value" : "Enable in Settings:"
           }
         }
       }
@@ -860,8 +916,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Включете местоположението, за да виждате карти за близки магазини"
+            "state" : "new",
+            "value" : "Enable location to see cards for nearby stores"
           }
         }
       }
@@ -870,8 +926,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Включване на известия за близост"
+            "state" : "new",
+            "value" : "Enable Nearby Notifications"
           }
         }
       }
@@ -880,8 +936,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Включване на напомняния"
+            "state" : "new",
+            "value" : "Enable Reminders"
           }
         }
       }
@@ -890,8 +946,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Включено"
+            "state" : "new",
+            "value" : "Enabled"
           }
         }
       }
@@ -900,8 +956,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Временно"
+            "state" : "new",
+            "value" : "Ephemeral"
           }
         }
       }
@@ -910,8 +966,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Съществуващите карти ще бъдат заменени с импортираните версии"
+            "state" : "new",
+            "value" : "Existing cards will be replaced with imported versions"
           }
         }
       }
@@ -921,8 +977,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Дата на изтичане"
+            "state" : "new",
+            "value" : "Expiration Date"
           }
         }
       }
@@ -931,8 +987,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Напомняния за карти с изтекъл срок"
+            "state" : "new",
+            "value" : "Expiration Reminders"
           }
         }
       }
@@ -941,8 +997,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Напомнянията за изтичане изискват достъп до известия."
+            "state" : "new",
+            "value" : "Expiration reminders require notification access."
           }
         }
       }
@@ -952,8 +1008,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изтекла на"
+            "state" : "new",
+            "value" : "Expired on"
           }
         }
       }
@@ -963,8 +1019,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изтича на"
+            "state" : "new",
+            "value" : "Expires on"
           }
         }
       }
@@ -974,8 +1030,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изтича скоро на"
+            "state" : "new",
+            "value" : "Expiring soon on"
           }
         }
       }
@@ -984,8 +1040,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Експортиране"
+            "state" : "new",
+            "value" : "Export"
           }
         }
       }
@@ -994,8 +1050,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Експортиране (%lld)"
+            "state" : "new",
+            "value" : "Export (%lld)"
           }
         }
       }
@@ -1004,8 +1060,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Експортиране на всички"
+            "state" : "new",
+            "value" : "Export All Cards"
           }
         }
       }
@@ -1014,8 +1070,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Дата на експортиране"
+            "state" : "new",
+            "value" : "Export date"
           }
         }
       }
@@ -1024,8 +1080,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Грешка при експортиране"
+            "state" : "new",
+            "value" : "Export Failed"
           }
         }
       }
@@ -1035,8 +1091,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Неуспешно създаване на баркод филтър"
+            "state" : "new",
+            "value" : "Failed to create barcode filter"
           }
         }
       }
@@ -1045,8 +1101,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Грешка при създаване карта в Apple Wallet "
+            "state" : "new",
+            "value" : "Failed to create pass"
           }
         }
       }
@@ -1056,8 +1112,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Неуспешно генериране на баркод изображение"
+            "state" : "new",
+            "value" : "Failed to generate barcode image"
           }
         }
       }
@@ -1067,8 +1123,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Неуспешно зареждане на изображението"
+            "state" : "new",
+            "value" : "Failed to load image"
           }
         }
       }
@@ -1077,8 +1133,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Неуспешно четене на файла: %@"
+            "state" : "new",
+            "value" : "Failed to read file: %@"
           }
         }
       }
@@ -1088,8 +1144,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Любима"
+            "state" : "new",
+            "value" : "Favorite"
           }
         }
       }
@@ -1099,8 +1155,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Любими"
+            "state" : "new",
+            "value" : "Favorites Carousel"
           }
         }
       }
@@ -1109,8 +1165,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Функции"
+            "state" : "new",
+            "value" : "Features"
           }
         }
       }
@@ -1119,8 +1175,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Файлът не е намерен"
+            "state" : "new",
+            "value" : "File not found"
           }
         }
       }
@@ -1129,8 +1185,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Намирате лесно карти за най-близките магазини"
+            "state" : "new",
+            "value" : "Find nearest card in widgets"
           }
         }
       }
@@ -1139,8 +1195,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "По-пресни данни за местоположението ви"
+            "state" : "new",
+            "value" : "Fresher location data"
           }
         }
       }
@@ -1149,8 +1205,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Бензиностанции"
+            "state" : "new",
+            "value" : "Gas Stations"
           }
         }
       }
@@ -1159,8 +1215,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Създаване на карта в Apple Wallet..."
+            "state" : "new",
+            "value" : "Generating pass..."
           }
         }
       }
@@ -1169,8 +1225,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Получете по-добра производителност на инструментите с фоново местоположение"
+            "state" : "new",
+            "value" : "Get better widget performance with background location"
           }
         }
       }
@@ -1179,8 +1235,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Получавайте известия преди картите ви да изтекат, за да не пропуснете да ги подновите."
+            "state" : "new",
+            "value" : "Get notified before your cards expire so you never miss renewing them."
           }
         }
       }
@@ -1189,8 +1245,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Получавайте напомняния за клубните си карти, когато сте близо до магазин, където можете да ги използвате."
+            "state" : "new",
+            "value" : "Get reminded about your loyalty cards when you're near a store where you can use them."
           }
         }
       }
@@ -1199,8 +1255,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Получавайте напомняния преди клубните ви карти да изтекат, за да ги подновите навреме."
+            "state" : "new",
+            "value" : "Get reminded before your loyalty cards expire so you can renew them in time."
           }
         }
       }
@@ -1209,8 +1265,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отидете в Настройки > Известия > kartonche за да включите напомнянията"
+            "state" : "new",
+            "value" : "Go to Settings > Notifications > kartonche to enable reminders"
           }
         }
       }
@@ -1219,8 +1275,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Хранителни магазини"
+            "state" : "new",
+            "value" : "Grocery Stores"
           }
         }
       }
@@ -1230,8 +1286,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Има дата на изтичане"
+            "state" : "new",
+            "value" : "Has Expiration Date"
           }
         }
       }
@@ -1240,8 +1296,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Как да се обработят дубликатите"
+            "state" : "new",
+            "value" : "How to handle duplicates"
           }
         }
       }
@@ -1250,8 +1306,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ако включите функциите за местоположение, то се използва само за показване на карти за близки магазини и никога не се изпраща към сървър."
+            "state" : "new",
+            "value" : "If you enable location features, your location is used only to show cards for nearby stores and is never sent to any server."
           }
         }
       }
@@ -1260,8 +1316,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Импортиране"
+            "state" : "new",
+            "value" : "Import"
           }
         }
       }
@@ -1270,8 +1326,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Импортиране на карти"
+            "state" : "new",
+            "value" : "Import Cards"
           }
         }
       }
@@ -1280,8 +1336,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Импортирането се провали"
+            "state" : "new",
+            "value" : "Import Failed"
           }
         }
       }
@@ -1290,8 +1346,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Импортиране от файл"
+            "state" : "new",
+            "value" : "Import from File"
           }
         }
       }
@@ -1300,8 +1356,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Импортиране..."
+            "state" : "new",
+            "value" : "Importing..."
           }
         }
       }
@@ -1311,8 +1367,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Невалидни данни за баркод"
+            "state" : "new",
+            "value" : "Invalid barcode data"
           }
         }
       }
@@ -1321,8 +1377,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Невалидни данни за карта: %@"
+            "state" : "new",
+            "value" : "Invalid card data: %@"
           }
         }
       }
@@ -1331,8 +1387,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Невалиден файлов формат. Очакван .kartonche файл."
+            "state" : "new",
+            "value" : "Invalid file format. Expected .kartonche file."
           }
         }
       }
@@ -1342,25 +1398,41 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Невалиден формат на изображението"
+            "state" : "new",
+            "value" : "Invalid image format"
           }
         }
       }
     },
     "kartonche" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "kartonche"
+          }
+        }
+      },
       "shouldTranslate" : false
     },
     "Kartonche" : {
       "comment" : "Control widget button label for app launcher\nLock screen circular widget name\nLock screen inline widget app name",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Kartonche"
+          }
+        }
+      },
       "shouldTranslate" : false
     },
     "kartonche stores all data locally on your device. We don't collect, track, or share any personal information." : {
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "kartonche съхранява всички данни локално на устройството ви. Не събираме, проследяваме или споделяме лична информация."
+            "state" : "new",
+            "value" : "kartonche stores all data locally on your device. We don't collect, track, or share any personal information."
           }
         }
       }
@@ -1369,8 +1441,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Запазване на двете"
+            "state" : "new",
+            "value" : "Keep both"
           }
         }
       }
@@ -1379,8 +1451,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Запазване на текущо"
+            "state" : "new",
+            "value" : "Keep Current"
           }
         }
       }
@@ -1389,8 +1461,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Стартиране на Kartonche"
+            "state" : "new",
+            "value" : "Launch Kartonche"
           }
         }
       }
@@ -1399,8 +1471,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Правна информация"
+            "state" : "new",
+            "value" : "Legal"
           }
         }
       }
@@ -1409,8 +1481,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Лиценз"
+            "state" : "new",
+            "value" : "License"
           }
         }
       }
@@ -1419,8 +1491,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ограничено"
+            "state" : "new",
+            "value" : "Limited"
           }
         }
       }
@@ -1429,8 +1501,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Местоположение"
+            "state" : "new",
+            "value" : "Location"
           }
         }
       }
@@ -1439,8 +1511,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Достъпът до местоположение е отказан"
+            "state" : "new",
+            "value" : "Location Access Denied"
           }
         }
       }
@@ -1449,8 +1521,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Достъпът до местоположение е ограничен от родителски контрол или управление на устройството"
+            "state" : "new",
+            "value" : "Location access is restricted by parental controls or device management"
           }
         }
       }
@@ -1459,8 +1531,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Данни за местоположение"
+            "state" : "new",
+            "value" : "Location data"
           }
         }
       }
@@ -1469,8 +1541,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Данните за местоположение никога не напускат устройството ви"
+            "state" : "new",
+            "value" : "Location data never leaves your device"
           }
         }
       }
@@ -1479,8 +1551,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Функциите за местоположение изискват достъп до местоположението ви."
+            "state" : "new",
+            "value" : "Location features require access to your location."
           }
         }
       }
@@ -1490,8 +1562,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Име на местоположението"
+            "state" : "new",
+            "value" : "Location Name"
           }
         }
       }
@@ -1500,8 +1572,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Местоположението не е налично"
+            "state" : "new",
+            "value" : "Location not available"
           }
         }
       }
@@ -1510,8 +1582,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Разрешение за местоположение"
+            "state" : "new",
+            "value" : "Location Permission"
           }
         }
       }
@@ -1520,8 +1592,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Разрешение за ползване на данни за местоположението ви"
+            "state" : "new",
+            "value" : "Location Permission Needed"
           }
         }
       }
@@ -1530,8 +1602,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Разрешението за местоположение не е дадено"
+            "state" : "new",
+            "value" : "Location permission not granted"
           }
         }
       }
@@ -1541,8 +1613,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Местоположения"
+            "state" : "new",
+            "value" : "Locations"
           }
         }
       }
@@ -1554,14 +1626,14 @@
             "plural" : {
               "one" : {
                 "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld местоположение"
+                  "state" : "new",
+                  "value" : "%lld location"
                 }
               },
               "other" : {
                 "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld местоположения"
+                  "state" : "new",
+                  "value" : "%lld locations"
                 }
               }
             }
@@ -1592,8 +1664,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Клубна карта"
+            "state" : "new",
+            "value" : "Loyalty Card"
           }
         }
       }
@@ -1603,8 +1675,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Клубни карти"
+            "state" : "new",
+            "value" : "Loyalty Cards"
           }
         }
       }
@@ -1614,8 +1686,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отбележете карти като любими, за да се появят тук"
+            "state" : "new",
+            "value" : "Mark cards as favorites to see them here"
           }
         }
       }
@@ -1624,21 +1696,29 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Минимално влияние върху батерията"
+            "state" : "new",
+            "value" : "Minimal battery impact"
           }
         }
       }
     },
     "MIT License" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "MIT License"
+          }
+        }
+      },
       "shouldTranslate" : false
     },
     "More" : {
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Още"
+            "state" : "new",
+            "value" : "More"
           }
         }
       }
@@ -1647,8 +1727,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "По-точно откриване на близки магазини"
+            "state" : "new",
+            "value" : "More accurate nearby store detection"
           }
         }
       }
@@ -1658,8 +1738,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Открити са множество баркодове"
+            "state" : "new",
+            "value" : "Multiple Barcodes Found"
           }
         }
       }
@@ -1669,8 +1749,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Разглеждане на любими карти"
+            "state" : "new",
+            "value" : "Navigate through your favorite cards with arrow buttons"
           }
         }
       }
@@ -1680,8 +1760,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Наблизо"
+            "state" : "new",
+            "value" : "Nearby"
           }
         }
       }
@@ -1690,8 +1770,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Известия при близост до местоположение"
+            "state" : "new",
+            "value" : "Nearby Card Notifications"
           }
         }
       }
@@ -1701,8 +1781,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Най-близкият магазин"
+            "state" : "new",
+            "value" : "Nearest Store"
           }
         }
       }
@@ -1711,8 +1791,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Карта за най-близкия магазин"
+            "state" : "new",
+            "value" : "Nearest Store Card"
           }
         }
       }
@@ -1721,8 +1801,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Никога не забравяйте клубната си карта в магазина"
+            "state" : "new",
+            "value" : "Never forget your loyalty card at the store"
           }
         }
       }
@@ -1731,8 +1811,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Следваща карта"
+            "state" : "new",
+            "value" : "Next Card"
           }
         }
       }
@@ -1741,8 +1821,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не е необходима регистрация"
+            "state" : "new",
+            "value" : "No account required"
           }
         }
       }
@@ -1751,8 +1831,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Без реклами"
+            "state" : "new",
+            "value" : "No ads"
           }
         }
       }
@@ -1761,8 +1841,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Без аналитика"
+            "state" : "new",
+            "value" : "No analytics"
           }
         }
       }
@@ -1772,8 +1852,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Няма открити баркодове в изображението"
+            "state" : "new",
+            "value" : "No barcodes found in image"
           }
         }
       }
@@ -1783,8 +1863,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Няма избрана карта"
+            "state" : "new",
+            "value" : "No Card Selected"
           }
         }
       }
@@ -1794,8 +1874,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Няма карти"
+            "state" : "new",
+            "value" : "No Cards"
           }
         }
       }
@@ -1805,8 +1885,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Няма карти, съответстващи на '%@'"
+            "state" : "new",
+            "value" : "No cards matching '%@'"
           }
         }
       }
@@ -1816,8 +1896,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Нямате любими карти"
+            "state" : "new",
+            "value" : "No Favorites"
           }
         }
       }
@@ -1827,8 +1907,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Няма близки магазини"
+            "state" : "new",
+            "value" : "No nearby stores"
           }
         }
       }
@@ -1837,8 +1917,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Няма резултати"
+            "state" : "new",
+            "value" : "No Results"
           }
         }
       }
@@ -1847,8 +1927,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не сега"
+            "state" : "new",
+            "value" : "Not Now"
           }
         }
       }
@@ -1857,8 +1937,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не е зададено"
+            "state" : "new",
+            "value" : "Not Set"
           }
         }
       }
@@ -1867,8 +1947,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не е настроено"
+            "state" : "new",
+            "value" : "Not set up"
           }
         }
       }
@@ -1878,8 +1958,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Бележки"
+            "state" : "new",
+            "value" : "Notes"
           }
         }
       }
@@ -1888,8 +1968,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Разрешение за известия"
+            "state" : "new",
+            "value" : "Notification Permission"
           }
         }
       }
@@ -1898,8 +1978,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Необходимо е разрешение за известия"
+            "state" : "new",
+            "value" : "Notification permission required"
           }
         }
       }
@@ -1908,8 +1988,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Известия"
+            "state" : "new",
+            "value" : "Notifications"
           }
         }
       }
@@ -1918,8 +1998,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Известията са изключени"
+            "state" : "new",
+            "value" : "Notifications Disabled"
           }
         }
       }
@@ -1928,8 +2008,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добре"
+            "state" : "new",
+            "value" : "OK"
           }
         }
       }
@@ -1938,8 +2018,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отваряне на любима карта"
+            "state" : "new",
+            "value" : "Open Favorite Card"
           }
         }
       }
@@ -1949,8 +2029,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отваряне на Kartonche"
+            "state" : "new",
+            "value" : "Open Kartonche"
           }
         }
       }
@@ -1959,8 +2039,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отваряне на картата за най-близкия магазин"
+            "state" : "new",
+            "value" : "Open Nearest Store Card"
           }
         }
       }
@@ -1969,8 +2049,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отваряне на настройки"
+            "state" : "new",
+            "value" : "Open Settings"
           }
         }
       }
@@ -1980,8 +2060,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отваря камера за сканиране на баркод"
+            "state" : "new",
+            "value" : "Opens camera to scan barcode"
           }
         }
       }
@@ -1990,8 +2070,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отваряне на карта за най-близкия магазин"
+            "state" : "new",
+            "value" : "Opens card for nearest store location"
           }
         }
       }
@@ -2000,8 +2080,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отваря Kartonche"
+            "state" : "new",
+            "value" : "Opens the Kartonche app"
           }
         }
       }
@@ -2010,8 +2090,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отваря картата за най-близкия магазин"
+            "state" : "new",
+            "value" : "Opens the loyalty card for the nearest store"
           }
         }
       }
@@ -2020,8 +2100,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отваря избрана любима карта"
+            "state" : "new",
+            "value" : "Opens your selected favorite loyalty card"
           }
         }
       }
@@ -2030,8 +2110,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Други"
+            "state" : "new",
+            "value" : "Other"
           }
         }
       }
@@ -2040,8 +2120,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Разрешение"
+            "state" : "new",
+            "value" : "Permission"
           }
         }
       }
@@ -2050,8 +2130,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изисква се разрешение"
+            "state" : "new",
+            "value" : "Permission required"
           }
         }
       }
@@ -2060,8 +2140,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Бензиностанции"
+            "state" : "new",
+            "value" : "Pharmacies"
           }
         }
       }
@@ -2070,8 +2150,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Предишна карта"
+            "state" : "new",
+            "value" : "Previous Card"
           }
         }
       }
@@ -2080,8 +2160,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Поверителност"
+            "state" : "new",
+            "value" : "Privacy"
           }
         }
       }
@@ -2090,8 +2170,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Политика за поверителност"
+            "state" : "new",
+            "value" : "Privacy Policy"
           }
         }
       }
@@ -2100,8 +2180,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Програми"
+            "state" : "new",
+            "value" : "Programs"
           }
         }
       }
@@ -2110,8 +2190,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Временно"
+            "state" : "new",
+            "value" : "Provisional"
           }
         }
       }
@@ -2121,8 +2201,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Бърз достъп до Kartonche"
+            "state" : "new",
+            "value" : "Quick access to open the app"
           }
         }
       }
@@ -2132,8 +2212,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Бърз достъп до клубни карти"
+            "state" : "new",
+            "value" : "Quick access to your loyalty cards"
           }
         }
       }
@@ -2142,8 +2222,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Радиус: %lldм"
+            "state" : "new",
+            "value" : "Radius: %lldm"
           }
         }
       }
@@ -2152,8 +2232,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Оценяване в App Store"
+            "state" : "new",
+            "value" : "Rate on App Store"
           }
         }
       }
@@ -2163,8 +2243,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Премахване от любими"
+            "state" : "new",
+            "value" : "Remove from favorites"
           }
         }
       }
@@ -2173,8 +2253,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Премахване"
+            "state" : "new",
+            "value" : "Remove Image"
           }
         }
       }
@@ -2183,8 +2263,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Замяна на съществуващи"
+            "state" : "new",
+            "value" : "Replace existing"
           }
         }
       }
@@ -2193,8 +2273,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Докладване на проблем"
+            "state" : "new",
+            "value" : "Report an Issue"
           }
         }
       }
@@ -2203,8 +2283,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изисква местоположение 'Винаги' + Известия"
+            "state" : "new",
+            "value" : "Requires Always location + Notifications"
           }
         }
       }
@@ -2213,8 +2293,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Зачита iOS режими за фокус и 'Не безпокойте'. Само тихи известия."
+            "state" : "new",
+            "value" : "Respects iOS Focus modes and Do Not Disturb. Silent notifications only."
           }
         }
       }
@@ -2223,8 +2303,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ограничено"
+            "state" : "new",
+            "value" : "Restricted"
           }
         }
       }
@@ -2234,8 +2314,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Запазване"
+            "state" : "new",
+            "value" : "Save"
           }
         }
       }
@@ -2245,8 +2325,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сканиране на баркод"
+            "state" : "new",
+            "value" : "Scan Barcode"
           }
         }
       }
@@ -2256,8 +2336,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сканиране от снимка"
+            "state" : "new",
+            "value" : "Scan from Photo"
           }
         }
       }
@@ -2266,8 +2346,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Грешка при сканиране: %@"
+            "state" : "new",
+            "value" : "Scanning failed: %@"
           }
         }
       }
@@ -2277,8 +2357,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сканиране..."
+            "state" : "new",
+            "value" : "Scanning..."
           }
         }
       }
@@ -2287,8 +2367,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Планирани напомняния"
+            "state" : "new",
+            "value" : "Scheduled reminders"
           }
         }
       }
@@ -2298,8 +2378,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Търсене"
+            "state" : "new",
+            "value" : "Search"
           }
         }
       }
@@ -2308,8 +2388,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Търсенето не успя. Проверете интернет връзката си."
+            "state" : "new",
+            "value" : "Search failed. Check your internet connection."
           }
         }
       }
@@ -2318,8 +2398,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Търсене на адрес..."
+            "state" : "new",
+            "value" : "Search for address..."
           }
         }
       }
@@ -2328,8 +2408,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Търсене на магазин"
+            "state" : "new",
+            "value" : "Search Merchant"
           }
         }
       }
@@ -2338,8 +2418,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Виждате карти, когато сте близо до магазина"
+            "state" : "new",
+            "value" : "See cards when you're nearby"
           }
         }
       }
@@ -2349,8 +2429,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изберете 'Местоположение', след това 'Винаги'"
+            "state" : "new",
+            "value" : "Select 'Location' then choose 'Always'"
           }
         }
       }
@@ -2359,8 +2439,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Всички"
+            "state" : "new",
+            "value" : "Select All"
           }
         }
       }
@@ -2369,8 +2449,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избор на карта"
+            "state" : "new",
+            "value" : "Select Card"
           }
         }
       }
@@ -2379,8 +2459,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избиране на карти"
+            "state" : "new",
+            "value" : "Select Cards"
           }
         }
       }
@@ -2389,8 +2469,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избор на карти за експортиране"
+            "state" : "new",
+            "value" : "Select Cards to Export"
           }
         }
       }
@@ -2399,8 +2479,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избор на любима карта"
+            "state" : "new",
+            "value" : "Select Favorite Card"
           }
         }
       }
@@ -2409,8 +2489,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избиране на магазин"
+            "state" : "new",
+            "value" : "Select Merchant"
           }
         }
       }
@@ -2420,8 +2500,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избира снимка от библиотеката за сканиране на баркод"
+            "state" : "new",
+            "value" : "Select photo from library to scan barcode"
           }
         }
       }
@@ -2431,8 +2511,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изберете кой баркод да използвате"
+            "state" : "new",
+            "value" : "Select which barcode to use"
           }
         }
       }
@@ -2441,8 +2521,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избрано местоположение"
+            "state" : "new",
+            "value" : "Selected Location"
           }
         }
       }
@@ -2452,8 +2532,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Настройки"
+            "state" : "new",
+            "value" : "Settings"
           }
         }
       }
@@ -2462,8 +2542,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Настройки > kartonche > Местоположение > Докато използвате приложението"
+            "state" : "new",
+            "value" : "Settings > kartonche > Location > While Using the App"
           }
         }
       }
@@ -2472,8 +2552,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Настройки > Известия > kartonche"
+            "state" : "new",
+            "value" : "Settings > Notifications > kartonche"
           }
         }
       }
@@ -2482,8 +2562,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Споделяне"
+            "state" : "new",
+            "value" : "Share"
           }
         }
       }
@@ -2492,8 +2572,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Споделяне на карта"
+            "state" : "new",
+            "value" : "Share card"
           }
         }
       }
@@ -2502,8 +2582,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Показване на изтекли"
+            "state" : "new",
+            "value" : "Show Expired"
           }
         }
       }
@@ -2512,8 +2592,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Показване на следваща любима карта"
+            "state" : "new",
+            "value" : "Show the next favorite card"
           }
         }
       }
@@ -2522,8 +2602,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Показване на предишна любима карта"
+            "state" : "new",
+            "value" : "Show the previous favorite card"
           }
         }
       }
@@ -2533,8 +2613,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Покажете това на касиера за сканиране"
+            "state" : "new",
+            "value" : "Show this to the cashier to scan"
           }
         }
       }
@@ -2544,8 +2624,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Показва карта за най-близкия магазин"
+            "state" : "new",
+            "value" : "Shows card for nearest store"
           }
         }
       }
@@ -2555,8 +2635,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Показва карта за най-близкия магазин в радиус 1км"
+            "state" : "new",
+            "value" : "Shows card for nearest store within 1km"
           }
         }
       }
@@ -2565,8 +2645,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Пропускане на дубликати"
+            "state" : "new",
+            "value" : "Skip duplicates"
           }
         }
       }
@@ -2576,8 +2656,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сортиране"
+            "state" : "new",
+            "value" : "Sort"
           }
         }
       }
@@ -2586,8 +2666,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изходен код"
+            "state" : "new",
+            "value" : "Source Code"
           }
         }
       }
@@ -2597,8 +2677,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Име на магазина"
+            "state" : "new",
+            "value" : "Store Name"
           }
         }
       }
@@ -2607,8 +2687,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Поддръжка"
+            "state" : "new",
+            "value" : "Support"
           }
         }
       }
@@ -2617,8 +2697,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Подкрепа на разработката"
+            "state" : "new",
+            "value" : "Support Development"
           }
         }
       }
@@ -2628,8 +2708,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Докоснете карта за преглед"
+            "state" : "new",
+            "value" : "Tap a card to preview"
           }
         }
       }
@@ -2638,8 +2718,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Докоснете известието за да видите картата"
+            "state" : "new",
+            "value" : "Tap notification to view card"
           }
         }
       }
@@ -2648,8 +2728,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Докоснете, за да видите картите си"
+            "state" : "new",
+            "value" : "Tap to see your cards"
           }
         }
       }
@@ -2658,8 +2738,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Докоснете, за да покажете картата си"
+            "state" : "new",
+            "value" : "Tap to show your card"
           }
         }
       }
@@ -2668,8 +2748,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Цвят на текста"
+            "state" : "new",
+            "value" : "Text Color"
           }
         }
       }
@@ -2678,8 +2758,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Благодарности на ранните тестери и приятели, които дадоха обратна връзка."
+            "state" : "new",
+            "value" : "Thanks to early testers and friends who provided feedback."
           }
         }
       }
@@ -2688,8 +2768,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Приложението не съдържа реклами."
+            "state" : "new",
+            "value" : "The app contains no advertising."
           }
         }
       }
@@ -2698,8 +2778,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Този формат на бар код не се поддържа от Apple Wallet"
+            "state" : "new",
+            "value" : "This barcode format is not supported by Apple Wallet"
           }
         }
       }
@@ -2708,8 +2788,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Тази карта е в Apple Wallet. Промените се синхронизират автоматично."
+            "state" : "new",
+            "value" : "This card is in Apple Wallet. Edits sync automatically."
           }
         }
       }
@@ -2718,8 +2798,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Това ви помага да:"
+            "state" : "new",
+            "value" : "This helps you:"
           }
         }
       }
@@ -2728,8 +2808,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "За да запазите локации, където ползвате дадена карта, kartonche се нуждае от достъп до информацията за текущото ви местоположението."
+            "state" : "new",
+            "value" : "To save card locations, kartonche needs to access your location."
           }
         }
       }
@@ -2738,8 +2818,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Пишете за търсене, след това докоснете резултат"
+            "state" : "new",
+            "value" : "Type to search, then tap a result"
           }
         }
       }
@@ -2748,8 +2828,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не може да се определи адрес за това местоположение"
+            "state" : "new",
+            "value" : "Unable to determine address for this location"
           }
         }
       }
@@ -2758,8 +2838,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не могат да се намерят подробности за местоположението"
+            "state" : "new",
+            "value" : "Unable to find location details"
           }
         }
       }
@@ -2768,8 +2848,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не може да се определи текущото местоположение"
+            "state" : "new",
+            "value" : "Unable to get current location"
           }
         }
       }
@@ -2779,8 +2859,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Премахване от любими"
+            "state" : "new",
+            "value" : "Unfavorite"
           }
         }
       }
@@ -2789,8 +2869,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Неизвестно"
+            "state" : "new",
+            "value" : "Unknown"
           }
         }
       }
@@ -2799,8 +2879,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Неизвестен адрес"
+            "state" : "new",
+            "value" : "Unknown Address"
           }
         }
       }
@@ -2809,8 +2889,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Неподдържана версия на файла: %@"
+            "state" : "new",
+            "value" : "Unsupported file version: %@"
           }
         }
       }
@@ -2819,8 +2899,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Надграждане"
+            "state" : "new",
+            "value" : "Upgrade"
           }
         }
       }
@@ -2829,8 +2909,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Надградете до 'Винаги' за известия при близост и по-добра производителност на инструментите"
+            "state" : "new",
+            "value" : "Upgrade to 'Always' for nearby notifications and better widget performance"
           }
         }
       }
@@ -2839,8 +2919,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Надграждане на разрешението за местоположението ви"
+            "state" : "new",
+            "value" : "Upgrade to 'Always' Location"
           }
         }
       }
@@ -2849,8 +2929,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Използване на текущо местоположение"
+            "state" : "new",
+            "value" : "Use Current Location"
           }
         }
       }
@@ -2859,8 +2939,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Версия %1$@ (%2$@)"
+            "state" : "new",
+            "value" : "Version %1$@ (%2$@)"
           }
         },
         "en" : {
@@ -2875,8 +2955,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не проследяваме как използвате приложението."
+            "state" : "new",
+            "value" : "We don't track how you use the app."
           }
         }
       }
@@ -2885,8 +2965,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ще ви напомним:"
+            "state" : "new",
+            "value" : "We'll remind you:"
           }
         }
       }
@@ -2895,8 +2975,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Какво ново"
+            "state" : "new",
+            "value" : "What's New"
           }
         }
       }
@@ -2905,8 +2985,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Докато използвате приложението"
+            "state" : "new",
+            "value" : "While Using App"
           }
         }
       }
@@ -2915,8 +2995,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "На едро"
+            "state" : "new",
+            "value" : "Wholesale"
           }
         }
       }
@@ -2925,8 +3005,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Инструментите работят, дори когато приложението е затворено"
+            "state" : "new",
+            "value" : "Widgets work when app is closed"
           }
         }
       }
@@ -2935,8 +3015,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Можете да изключите напомнянията по всяко време от Настройки."
+            "state" : "new",
+            "value" : "You can disable reminders anytime in Settings."
           }
         }
       }
@@ -2945,8 +3025,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ще бъдете уведомени, когато сте близо до запазено местоположение"
+            "state" : "new",
+            "value" : "You'll be notified when you're near a saved card location"
           }
         }
       }
@@ -2955,8 +3035,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Вие сте близо до %lld запазени местоположения"
+            "state" : "new",
+            "value" : "You're near %lld saved locations"
           }
         }
       }
@@ -2965,8 +3045,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Вие сте близо до запазено местоположение"
+            "state" : "new",
+            "value" : "You're near a saved location"
           }
         }
       }
@@ -2975,8 +3055,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картите ви се съхраняват само на вашето устройство."
+            "state" : "new",
+            "value" : "Your cards are stored only on your device."
           }
         }
       }
@@ -2985,8 +3065,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картите ви, винаги готови"
+            "state" : "new",
+            "value" : "Your cards, always ready"
           }
         }
       }
@@ -2995,8 +3075,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Местоположението ви се използва само за изчисляване на разстояние до запазени магазини."
+            "state" : "new",
+            "value" : "Your location is only used to calculate distance to saved stores."
           }
         }
       }
@@ -3005,8 +3085,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Местоположението ви се използва само за намиране на близки магазини"
+            "state" : "new",
+            "value" : "Your location is only used to find nearby stores"
           }
         }
       }
@@ -3015,8 +3095,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Местоположението ви се използва само за намиране на близки магазини. Влиянието върху батерията е минимално."
+            "state" : "new",
+            "value" : "Your location is only used to find nearby stores. Battery impact is minimal."
           }
         }
       }
