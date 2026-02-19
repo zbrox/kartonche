@@ -1,0 +1,7 @@
+files:
+  - source: /kartonche/Resources/Localizable.xcstrings
+    translation: /kartonche/Resources/Localizable.xcstrings
+    type: string_catalog
+    update_option: update_as_unapproved
+    skip_untranslated_strings: false
+    export_approved_only: true
