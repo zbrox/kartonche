@@ -112,9 +112,22 @@ struct CardImporter {
         
         for importedCard in importedCards {
             for existingCard in existingCards {
+                let importedStore = (importedCard.storeName ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+                let existingStore = (existingCard.storeName ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+                let importedNumber = importedCard.cardNumber?.trimmingCharacters(in: .whitespacesAndNewlines)
+                let existingNumber = existingCard.cardNumber?.trimmingCharacters(in: .whitespacesAndNewlines)
+
+                // Don't match cards with missing identity fields.
+                if importedStore.isEmpty, (importedNumber == nil || importedNumber?.isEmpty == true) {
+                    continue
+                }
+                if existingStore.isEmpty, (existingNumber == nil || existingNumber?.isEmpty == true) {
+                    continue
+                }
+
                 // Compare by storeName + cardNumber (treat nil same as empty)
-                let isDuplicate = (importedCard.storeName ?? "") == (existingCard.storeName ?? "") &&
-                                  importedCard.cardNumber == existingCard.cardNumber
+                let isDuplicate = importedStore == existingStore &&
+                                  importedNumber == existingNumber
                 
                 if isDuplicate {
                     duplicates.append(DuplicateInfo(
