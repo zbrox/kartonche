@@ -239,8 +239,8 @@ mise run clean          # Clean build artifacts
 mise run dev            # Clean + build + test everything
 
 # Run specific tests
-mise run test kartoncheTests/MerchantTemplateTests/testSearchFindsExactName
-mise run test-ui kartoncheUITests/MerchantSelectionUITests/testSearchMerchants
+mise run test kartoncheTests/DominantColorExtractorTests/testSolidRedImageExtractsNearRed
+mise run test-ui kartoncheUITests/QuickScanUITests/testAddButtonShowsThreeOptions
 ```
 
 **Localization:**
@@ -256,16 +256,6 @@ Checks for:
 - Bulgarian keys without explicit translations
 
 Uses Xcode's .stringsdata mechanism for accurate detection.
-
-**Merchant database:**
-```bash
-mise run merchants-list        # List all merchants
-mise run merchant-add          # Interactive merchant creator
-mise run merchant-info bg.billa # Show merchant details
-mise run merchant-count        # Statistics by category/barcode type
-mise run validate-merchants    # Validate KDL syntax
-mise run generate-merchants    # Generate Swift code from KDL
-```
 
 **CHANGELOG:**
 ```bash
@@ -390,40 +380,7 @@ platform=iOS Simulator,name=iPhone 17 Pro,OS=26.2
 Tags trigger full test suite (`mise run ci --full`). This includes:
 - Unit tests (`kartoncheTests`)
 - UI tests (`kartoncheUITests`)
-- All merchant validation and generation
-
 Check specific test failures in xcbeautify output.
-
-## Merchant Database
-
-### Community-Maintained Templates
-
-The `Merchants/` directory contains a KDL database of Bulgarian stores/merchants with loyalty card information. This enables quick card setup for users.
-
-**Format:** KDL (KDL Document Language)  
-**Build-time:** Swift code auto-generated from `merchants.kdl`
-
-### Adding Merchants
-
-1. Edit `Merchants/merchants.kdl`
-2. Follow the template:
-
-```kdl
-merchant id="bg.storename" {
-    name "Store Name"
-    name-bg "Име на Магазина"
-    category "grocery"
-    barcode-type "ean13"
-    website "https://store.bg"      // optional
-    suggested-color "#FF0000"       // optional
-}
-```
-
-3. Validate: `mise run validate-merchants`
-4. Generate code: `mise run generate-merchants`
-5. Build: `mise run build`
-
-See `Merchants/README.md` for detailed contributor guide.
 
 ## Git Commit Messages
 
@@ -449,7 +406,7 @@ All commits MUST follow [Conventional Commits](https://www.conventionalcommits.o
 | **fix** | Bug fix | `fix: restore brightness on card dismiss` |
 | **docs** | Documentation only | `docs: update AGENTS.md with localization` |
 | **style** | Code style (formatting, no logic change) | `style: format BarcodeGenerator` |
-| **refactor** | Code refactoring | `refactor: extract merchant search logic` |
+| **refactor** | Code refactoring | `refactor: extract barcode scan logic` |
 | **test** | Adding/updating tests | `test: add unit tests for barcode generation` |
 | **chore** | Maintenance tasks | `chore: update dependencies` |
 
@@ -458,7 +415,7 @@ All commits MUST follow [Conventional Commits](https://www.conventionalcommits.o
 Use scopes to indicate which part of the app changed:
 
 - `barcode` - Barcode generation/scanning
-- `merchant` - Merchant database
+- `quickscan` - Quick Scan add-card flow
 - `ui` - User interface changes
 - `widget` - Widget functionality
 - `sync` - iCloud sync
@@ -469,7 +426,7 @@ Use scopes to indicate which part of the app changed:
 ```
 feat(barcode): add EAN-13 generation support
 fix(widget): deep link to correct card
-docs(merchant): add contributor guide
+docs(quickscan): document scan-first flow
 chore(build): update mise tasks
 ```
 
@@ -483,7 +440,7 @@ chore(build): update mise tasks
 
 **Good examples:**
 ```
-feat: add merchant selection view
+feat: add dominant color extraction
 fix: brightness not restored on dismiss
 docs: update ARCHITECTURE.md
 test: add scanner error handling tests
@@ -491,10 +448,10 @@ test: add scanner error handling tests
 
 **Bad examples:**
 ```
-feat: Added a new merchant selection view for the app  (too long, wrong tense)
+feat: Added a new color extraction utility for the app  (too long, wrong tense)
 Fix brightness.  (not conventional format, vague)
 Updated stuff  (vague, no type)
-feat(merchant): Fixes bug with merchant search  (wrong type - should be 'fix')
+feat(barcode): Fixes bug with barcode scan  (wrong type - should be 'fix')
 ```
 
 ### Breaking Changes
@@ -502,10 +459,10 @@ feat(merchant): Fixes bug with merchant search  (wrong type - should be 'fix')
 If a commit introduces breaking changes, add `!` after type/scope and include `BREAKING CHANGE:` footer:
 
 ```
-feat!: change merchant ID format
+feat!: change card export format
 
-BREAKING CHANGE: Merchant IDs now use reverse domain format (bg.store)
-instead of simple names (store). Existing databases must be migrated.
+BREAKING CHANGE: Card export uses v2 JSON schema. Existing exports
+must be re-exported to use the updated format.
 ```
 
 ### Body and Footer (Optional)

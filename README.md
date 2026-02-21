@@ -1,7 +1,6 @@
 # kartonche
 
 [![Tests](https://github.com/zbrox/kartonche/actions/workflows/test.yml/badge.svg)](https://github.com/zbrox/kartonche/actions/workflows/test.yml)
-[![Validate Merchants](https://github.com/zbrox/kartonche/actions/workflows/validate-merchants.yml/badge.svg)](https://github.com/zbrox/kartonche/actions/workflows/validate-merchants.yml)
 [![GitHub release](https://img.shields.io/github/v/tag/zbrox/kartonche?label=version&sort=semver)](https://github.com/zbrox/kartonche/releases)
 
 A modern, open-source iOS app for managing loyalty cards.
@@ -15,7 +14,7 @@ kartonche (картонче, "small card" in Bulgarian) is a native iOS app that
 - ✅ **Barcode Generation** - Generate QR, Code128, EAN-13, PDF417, and Aztec barcodes
 - ✅ **Barcode Scanning** - Scan physical cards with your camera or photos using VisionKit
 - ✅ **Quick Access** - Display barcodes instantly with brightness boost and screen wake
-- ✅ **Merchant Templates** - Pre-configured templates for popular stores
+- ✅ **Quick Scan** - Snap a photo or pick from library to auto-extract barcode and card color
 - ✅ **Smart Search** - Search and sort cards by name, store, or recent usage
 - ✅ **Localized** - Full Bulgarian translation with English as base language
 - ✅ **Widgets** - Home screen and lock screen widgets for quick access
@@ -34,7 +33,7 @@ kartonche (картонче, "small card" in Bulgarian) is a native iOS app that
 - ✅ Scan barcodes with camera or from photos
 - ✅ Display cards with brightness boost and screen wake
 - ✅ Search and sort cards by name, store, or usage
-- ✅ Pre-configured merchant templates (BILLA, Kaufland, Lidl, OMV, Sopharmacy, etc.)
+- ✅ Quick Scan: auto-extract barcode and color from photo or camera
 - ✅ Home screen and lock screen widgets
 - ✅ Location-based notifications when near stores
 - ✅ Expiration date tracking with reminders
@@ -88,8 +87,6 @@ mise run build
 
 Or open `kartonche.xcodeproj` in Xcode and run.
 
-**Note:** Merchant templates are generated automatically by an Xcode build phase from `Merchants/merchants.kdl`.
-
 ## Development
 
 ### Using mise Tasks
@@ -106,12 +103,6 @@ mise run clean            # Clean build artifacts
 mise run check            # Clean build and show all warnings/errors
 mise run check-i18n       # Check localization completeness
 mise run dev              # Clean + build + test
-
-# Merchant database
-mise run merchants-list       # List all merchants
-mise run merchant-add         # Interactive merchant creator
-mise run validate-merchants   # Validate KDL syntax
-mise run generate-merchants   # Generate Swift code from KDL
 
 # Release and distribution
 mise run changelog-preview    # Preview unreleased changes
@@ -139,20 +130,13 @@ kartonche/
 │   ├── Views/             # SwiftUI views and components
 │   ├── Utilities/         # Helper classes (barcode, brightness, permissions)
 │   ├── Resources/         # Localizable.xcstrings
-│   └── Generated/         # Auto-generated code (gitignored)
 ├── action/                # App Action extension
 ├── quicklook/             # QuickLook preview extension
 ├── widget/                # Home screen, lock screen, and control widgets
 ├── kartoncheTests/        # Unit tests
 ├── kartoncheUITests/      # UI tests
-├── Merchants/             # Community merchant database (14 merchants)
-│   ├── merchants.kdl      # Merchant data in KDL format
-│   ├── schema.kdl         # Schema documentation
-│   └── README.md          # Contribution guidelines
-└── Scripts/               # Build and code generation scripts
-    ├── generate-merchant-templates.sh  # Xcode build phase for merchants
-    ├── generate-about-icon.sh          # Xcode build phase for app icon
-    └── generate-merchants/             # Swift code generator
+└── Scripts/               # Build scripts
+    └── generate-about-icon.sh  # Xcode build phase for app icon
 ```
 
 ## Documentation
@@ -164,27 +148,6 @@ kartonche/
 ## Contributing
 
 We welcome contributions!
-
-### Merchant Database
-
-You can help by adding stores to our merchant template database:
-
-1. Run `mise run merchant-add` for interactive entry
-2. Or manually edit `Merchants/merchants.kdl` following the schema
-3. Validate your changes: `mise run validate-merchants`
-4. Generate code: `mise run generate-merchants`
-5. Test that it builds: `mise run build`
-6. Submit a pull request
-
-See [Merchants/README.md](Merchants/README.md) for detailed contribution guidelines.
-
-**Currently supported merchants (14):**
-- **Grocery:** BILLA, Kaufland, Lidl, Фантастико, T MARKET
-- **Fuel:** OMV, Lukoil, Shell, Petrol, EKO
-- **Pharmacy:** Sopharmacy, Subra
-- **Retail:** dm drogerie markt, CCC
-
-All templates include pre-configured barcode types, suggested colors, and both Bulgarian and English names.
 
 ### Code Contributions
 
@@ -208,17 +171,14 @@ mise run test-ui
 # Run all tests
 mise run test-all
 
-# Full CI check (validate + build + test)
+# Full CI check (build + test)
 mise run ci
 ```
 
 ### Continuous Integration
 
 GitHub Actions automatically:
-- Validates merchant database KDL syntax on PRs
 - Runs unit tests on all PRs and main branch pushes
-- Checks for duplicate merchant IDs
-- Verifies code generation succeeds
 
 See [.github/workflows/](.github/workflows/) for workflow definitions.
 
@@ -229,7 +189,6 @@ See [.github/workflows/](.github/workflows/) for workflow definitions.
 - **Barcode:** VisionKit (scanning) + Core Image (generation)
 - **Storage:** Local-only SwiftData (no cloud sync)
 - **Localization:** String Catalogs (English base, Bulgarian translation)
-- **Database:** KDL format with build-time code generation
 - **Testing:** Swift Testing framework
 - **Dependencies:** Minimal dependencies: swift-crypto, swift-certificates, ZIPFoundation + native Apple frameworks
 

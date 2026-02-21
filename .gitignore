@@ -98,9 +98,6 @@ iOSInjectionProject/
 kartonche/Generated/
 kartonche/Assets.xcassets/AboutIcon.imageset/*.png
 
-# Build scripts
-Scripts/generate-merchants/.build/
-
 # macOS
 .DS_Store
 
