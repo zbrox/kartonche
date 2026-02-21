@@ -157,17 +157,6 @@
         }
       }
     },
-    "Add Card Manually" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ръчно добавяне на карта"
-          }
-        }
-      }
-    },
     "Add Location" : {
       "comment" : "Button to add a location to a card",
       "localizations" : {
@@ -180,7 +169,14 @@
       }
     },
     "Add Manually" : {
-
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добавяне ръчно"
+          }
+        }
+      }
     },
     "Add to Apple Wallet" : {
       "localizations" : {
@@ -355,18 +351,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Преглед на баркод"
-          }
-        }
-      }
-    },
-    "Barcode type" : {
-      "comment" : "Accessibility label for barcode type badge",
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "тип баркод"
           }
         }
       }
@@ -573,7 +557,14 @@
       }
     },
     "Choose from Library" : {
-
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Снимка от библиотеката"
+          }
+        }
+      }
     },
     "Choose Image" : {
       "localizations" : {
@@ -581,18 +572,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Изображение"
-          }
-        }
-      }
-    },
-    "Choose Program" : {
-      "comment" : "Title for program selection view when merchant has multiple loyalty programs",
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изберете програма"
           }
         }
       }
@@ -1143,17 +1122,6 @@
         }
       }
     },
-    "Gas Stations" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Бензиностанции"
-          }
-        }
-      }
-    },
     "Generating pass..." : {
       "localizations" : {
         "bg" : {
@@ -1210,17 +1178,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Отидете в Настройки > Известия > kartonche за да включите напомнянията"
-          }
-        }
-      }
-    },
-    "Grocery Stores" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Хранителни магазини"
           }
         }
       }
@@ -2026,17 +1983,6 @@
         }
       }
     },
-    "Other" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Други"
-          }
-        }
-      }
-    },
     "Permission" : {
       "localizations" : {
         "bg" : {
@@ -2053,17 +1999,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Изисква се разрешение"
-          }
-        }
-      }
-    },
-    "Pharmacies" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Бензиностанции"
           }
         }
       }
@@ -2094,17 +2029,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Политика за поверителност"
-          }
-        }
-      }
-    },
-    "Programs" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Програми"
           }
         }
       }
@@ -2327,17 +2251,6 @@
         }
       }
     },
-    "Search Merchant" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Търсене на магазин"
-          }
-        }
-      }
-    },
     "See cards when you're nearby" : {
       "localizations" : {
         "bg" : {
@@ -2405,17 +2318,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Избор на любима карта"
-          }
-        }
-      }
-    },
-    "Select Merchant" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избиране на магазин"
           }
         }
       }
@@ -2639,7 +2541,14 @@
       }
     },
     "Take a Photo" : {
-
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "През камерата"
+          }
+        }
+      }
     },
     "Tap a card to preview" : {
       "comment" : "Footer text in import preview list",
@@ -2925,17 +2834,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Докато използвате приложението"
-          }
-        }
-      }
-    },
-    "Wholesale" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "На едро"
           }
         }
       }
