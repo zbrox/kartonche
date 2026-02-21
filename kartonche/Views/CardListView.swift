@@ -34,6 +34,7 @@ struct CardListView: View {
     @State private var previousCardCount = 0
     @State private var showingDeleteConfirmation = false
     @State private var cardToDelete: LoyaltyCard?
+    @State private var errorAlert: CardListErrorAlert?
 
     // Quick Scan flow state
     @State private var showingAddOptions = false
@@ -269,6 +270,13 @@ struct CardListView: View {
                     }
                     cardToDelete = nil
                 }
+            }
+            .alert(item: $errorAlert) { alert in
+                Alert(
+                    title: Text(alert.title),
+                    message: Text(alert.message),
+                    dismissButton: .default(Text(String(localized: "OK")))
+                )
             }
             .confetti(isActive: $showConfetti)
             .overlay {
@@ -626,7 +634,7 @@ struct CardListView: View {
             
             shareItem = ShareItem(url: fileURL)
         } catch {
-            print("Failed to export card: \(error)")
+            errorAlert = .shareFailed(error)
         }
     }
     
@@ -673,7 +681,7 @@ struct CardListView: View {
             showingImportPreview = true
             
         } catch {
-            // TODO: Show error alert
+            errorAlert = .importFailed(error)
         }
     }
     
@@ -766,6 +774,26 @@ struct CardListView: View {
         else if !hasDismissedBanner {
             showAlwaysBanner = true
         }
+    }
+}
+
+struct CardListErrorAlert: Identifiable {
+    let id = UUID()
+    let title: String
+    let message: String
+
+    static func shareFailed(_ error: Error) -> CardListErrorAlert {
+        CardListErrorAlert(
+            title: String(localized: "Export Failed"),
+            message: error.localizedDescription
+        )
+    }
+
+    static func importFailed(_ error: Error) -> CardListErrorAlert {
+        CardListErrorAlert(
+            title: String(localized: "Import Failed"),
+            message: error.localizedDescription
+        )
     }
 }
 
