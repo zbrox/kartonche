@@ -628,10 +628,7 @@ struct CardListView: View {
     
     private func shareCard(_ card: LoyaltyCard) {
         do {
-            let data = try CardExporter.exportCard(card)
-            let fileName = CardExporter.generateFileName(cardCount: 1, cardName: card.name)
-            let fileURL = try CardExporter.createTemporaryFile(from: data, fileName: fileName)
-            
+            let fileURL = try CardExporter.createShareFile(for: card)
             shareItem = ShareItem(url: fileURL)
         } catch {
             errorAlert = .shareFailed(error)
