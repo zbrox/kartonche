@@ -678,16 +678,19 @@ struct CardListView: View {
     }
     
     private func handleDeepLink(_ url: URL) {
-        guard url.host == "card",
-              let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
-              let queryItems = components.queryItems,
-              let idString = queryItems.first(where: { $0.name == "id" })?.value,
-              let cardID = UUID(uuidString: idString) else {
-            return
-        }
-        
-        if let card = allCards.first(where: { $0.id == cardID }) {
-            displayCard = card
+        switch CardListDeepLink(url: url) {
+        case .card(let cardID):
+            if let card = allCards.first(where: { $0.id == cardID }) {
+                displayCard = card
+            }
+
+        case .nearbyCards(let cardIDs):
+            if let card = allCards.first(where: { cardIDs.contains($0.id) }) {
+                displayCard = card
+            }
+
+        case .unsupported:
+            break
         }
     }
     
@@ -762,6 +765,48 @@ struct CardListView: View {
         // Otherwise show banner (if not dismissed)
         else if !hasDismissedBanner {
             showAlwaysBanner = true
+        }
+    }
+}
+
+enum CardListDeepLink {
+    case card(UUID)
+    case nearbyCards([UUID])
+    case unsupported
+
+    init(url: URL) {
+        guard let host = url.host,
+              let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
+              let queryItems = components.queryItems else {
+            self = .unsupported
+            return
+        }
+
+        switch host {
+        case "card":
+            guard let idString = queryItems.first(where: { $0.name == "id" })?.value,
+                  let cardID = UUID(uuidString: idString) else {
+                self = .unsupported
+                return
+            }
+            self = .card(cardID)
+
+        case "nearby-cards":
+            guard let idsValue = queryItems.first(where: { $0.name == "ids" })?.value else {
+                self = .unsupported
+                return
+            }
+            let ids = idsValue
+                .split(separator: ",")
+                .compactMap { UUID(uuidString: String($0)) }
+            guard !ids.isEmpty else {
+                self = .unsupported
+                return
+            }
+            self = .nearbyCards(ids)
+
+        default:
+            self = .unsupported
         }
     }
 }
