@@ -8,6 +8,7 @@
 import UIKit
 import Vision
 import VisionKit
+import CoreImage
 
 /// Utility for scanning barcodes from static images using Vision framework
 class PhotoBarcodeScanner {
@@ -34,7 +35,7 @@ class PhotoBarcodeScanner {
     /// - Returns: Array of detected barcodes
     /// - Throws: ScanError if scanning fails
     static func scanBarcodes(from image: UIImage) async throws -> [ScannedBarcode] {
-        guard let cgImage = image.cgImage else {
+        guard let cgImage = readableCGImage(from: image) else {
             throw ScanError.invalidImage
         }
         
@@ -101,5 +102,18 @@ class PhotoBarcodeScanner {
                 resumeOnce(.failure(ScanError.processingFailed(error)))
             }
         }
+    }
+
+    private static func readableCGImage(from image: UIImage) -> CGImage? {
+        if let cgImage = image.cgImage {
+            return cgImage
+        }
+
+        if let ciImage = image.ciImage {
+            let context = CIContext(options: nil)
+            return context.createCGImage(ciImage, from: ciImage.extent)
+        }
+
+        return nil
     }
 }

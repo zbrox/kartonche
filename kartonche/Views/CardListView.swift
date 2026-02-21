@@ -221,9 +221,8 @@ struct CardListView: View {
             .onChange(of: addFlowPickerItem) { _, newValue in
                 guard let item = newValue else { return }
                 Task {
-                    if let data = try? await item.loadTransferable(type: Data.self),
-                       let uiImage = UIImage(data: data) {
-                        processImage(uiImage)
+                    if let data = try? await item.loadTransferable(type: Data.self) {
+                        processImageData(data)
                     }
                     await MainActor.run {
                         addFlowPickerItem = nil
@@ -634,17 +633,25 @@ struct CardListView: View {
 
         Task {
             // Run barcode scan — failure is acceptable
-            if let barcodes = try? await PhotoBarcodeScanner.scanBarcodes(from: image),
-               let first = barcodes.first {
-                scannedBarcodeData = first.data
-                if let detectedType = BarcodeType(from: first.symbology) {
-                    scannedBarcodeType = detectedType
-                }
+            if let matches = try? await BarcodeImageScanner.scan(from: image),
+               let preferred = BarcodeImageScanner.preferredMatch(from: matches) {
+                scannedBarcodeData = preferred.data
+                scannedBarcodeType = preferred.type
             }
 
             // Run dominant color extraction
             scannedColor = DominantColorExtractor.extractDominantColor(from: image)
 
+            showingEditor = true
+        }
+    }
+
+    @MainActor
+    private func processImageData(_ imageData: Data) {
+        if let image = UIImage(data: imageData) {
+            processImage(image)
+        } else {
+            clearScannedState()
             showingEditor = true
         }
     }
