@@ -223,7 +223,7 @@ struct CardListView: View {
                 Task {
                     if let data = try? await item.loadTransferable(type: Data.self),
                        let uiImage = UIImage(data: data) {
-                        await processImage(uiImage)
+                        processImage(uiImage)
                     }
                     await MainActor.run {
                         addFlowPickerItem = nil
