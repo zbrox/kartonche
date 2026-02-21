@@ -46,7 +46,7 @@ struct SpotlightIndexerTests {
 
         #expect(item.attributeSet.title == "Simple Card")
         #expect(item.attributeSet.contentDescription == nil)
-        #expect(item.attributeSet.keywords == [])
+        #expect(item.attributeSet.keywords?.isEmpty ?? true)
     }
 
     @Test func partialOptionalsIncludeOnlyPopulatedFields() {
@@ -78,6 +78,6 @@ struct SpotlightIndexerTests {
         let attrs = SpotlightIndexer.searchableItem(for: card).attributeSet
 
         #expect(attrs.contentDescription == nil)
-        #expect(attrs.keywords == [])
+        #expect(attrs.keywords?.isEmpty ?? true)
     }
 }
