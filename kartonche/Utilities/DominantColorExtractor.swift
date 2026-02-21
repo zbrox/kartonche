@@ -5,6 +5,7 @@
 
 import SwiftUI
 import UIKit
+import CoreImage
 
 /// Extracts the dominant color from a UIImage using pixel-bucketed color quantization
 enum DominantColorExtractor {
@@ -17,7 +18,7 @@ enum DominantColorExtractor {
     /// - Parameter image: The source image
     /// - Returns: The dominant color, or `nil` if the image cannot be read
     static func extractDominantColor(from image: UIImage) -> Color? {
-        guard let cgImage = image.cgImage else { return nil }
+        guard let cgImage = readableCGImage(from: image) else { return nil }
 
         let targetSize = 50
         let width = targetSize
@@ -86,5 +87,28 @@ enum DominantColorExtractor {
         let blue = Double(avg.totalB) / Double(avg.count) / 255.0
 
         return Color(.sRGB, red: red, green: green, blue: blue)
+    }
+
+    private static func readableCGImage(from image: UIImage) -> CGImage? {
+        if let cgImage = image.cgImage {
+            return cgImage
+        }
+
+        if let ciImage = image.ciImage {
+            let context = CIContext(options: nil)
+            return context.createCGImage(ciImage, from: ciImage.extent)
+        }
+
+        guard image.size.width > 0, image.size.height > 0 else {
+            return nil
+        }
+
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1
+        let renderer = UIGraphicsImageRenderer(size: image.size, format: format)
+        let rendered = renderer.image { _ in
+            image.draw(in: CGRect(origin: .zero, size: image.size))
+        }
+        return rendered.cgImage
     }
 }
