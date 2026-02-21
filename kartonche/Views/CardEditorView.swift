@@ -37,6 +37,7 @@ struct CardEditorView: View {
     @State private var scanError: String?
     @State private var showingMultipleBarcodes = false
     @State private var detectedBarcodes: [BarcodeImageMatch] = []
+    @State private var suggestedScanColors: [Color]
     @State private var showingLocationEditor = false
     @State private var editingLocation: CardLocation?
     @State private var pendingLocations: [CardLocation] = []
@@ -81,7 +82,8 @@ struct CardEditorView: View {
         card: LoyaltyCard? = nil,
         scannedBarcodeData: String? = nil,
         scannedBarcodeType: BarcodeType? = nil,
-        scannedColor: Color? = nil
+        scannedColor: Color? = nil,
+        scannedSuggestedColors: [Color] = []
     ) {
         self.card = card
 
@@ -101,7 +103,8 @@ struct CardEditorView: View {
             _expirationDate = State(initialValue: card.expirationDate)
             _hasExpirationDate = State(initialValue: card.expirationDate != nil)
             _cardImageData = State(initialValue: card.cardImage)
-        } else if scannedBarcodeData != nil || scannedBarcodeType != nil || scannedColor != nil {
+            _suggestedScanColors = State(initialValue: [])
+        } else if scannedBarcodeData != nil || scannedBarcodeType != nil || scannedColor != nil || !scannedSuggestedColors.isEmpty {
             // Pre-fill from scan results
             _name = State(initialValue: "")
             _storeName = State(initialValue: "")
@@ -116,6 +119,7 @@ struct CardEditorView: View {
             _isFavorite = State(initialValue: false)
             _expirationDate = State(initialValue: nil)
             _hasExpirationDate = State(initialValue: false)
+            _suggestedScanColors = State(initialValue: scannedSuggestedColors)
         } else {
             // Empty custom card
             _name = State(initialValue: "")
@@ -131,6 +135,7 @@ struct CardEditorView: View {
             _isFavorite = State(initialValue: false)
             _expirationDate = State(initialValue: nil)
             _hasExpirationDate = State(initialValue: false)
+            _suggestedScanColors = State(initialValue: [])
         }
     }
     
@@ -227,6 +232,34 @@ struct CardEditorView: View {
                     .multilineTextAlignment(.center)
                     .padding(.vertical, 8)
                     .alignmentGuide(.listRowSeparatorLeading) { _ in 0 }
+
+                    if !suggestedScanColors.isEmpty {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text(String(localized: "Suggested Colors"))
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 10) {
+                                    ForEach(Array(suggestedScanColors.enumerated()), id: \.offset) { _, color in
+                                        Button {
+                                            selectedColor = color
+                                        } label: {
+                                            Circle()
+                                                .fill(color)
+                                                .frame(width: 30, height: 30)
+                                                .overlay(
+                                                    Circle()
+                                                        .stroke(Color.primary.opacity(0.2), lineWidth: 1)
+                                                )
+                                        }
+                                        .accessibilityLabel(String(localized: "Suggested Colors"))
+                                    }
+                                }
+                                .padding(.vertical, 2)
+                            }
+                        }
+                    }
                     
                     ColorPicker(String(localized: "Card Color"), selection: Binding(
                         get: { selectedColor ?? .gray },

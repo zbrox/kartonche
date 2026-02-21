@@ -2608,6 +2608,16 @@
         }
       }
     },
+    "Suggested Colors" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Предложени цветове"
+          }
+        }
+      }
+    },
     "Support" : {
       "localizations" : {
         "bg" : {
