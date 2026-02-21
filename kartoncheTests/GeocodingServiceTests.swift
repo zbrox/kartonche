@@ -18,9 +18,6 @@ struct GeocodingServiceTests {
         
         let mapItem = try await GeocodingService.reverseGeocode(location: location)
         
-        // Verify we got a valid map item with location
-        #expect(mapItem.location != nil)
-        
         // Verify we have some location information
         // At minimum, we should have city name or address
         let hasLocationInfo = mapItem.name != nil || 
@@ -39,8 +36,8 @@ struct GeocodingServiceTests {
         // At minimum, should have a name or city
         #expect(mapItem.name != nil || mapItem.addressRepresentations?.cityName != nil)
         
-        // Verify map item has expected properties
-        #expect(mapItem.location != nil)
+        #expect(mapItem.location.coordinate.latitude.isFinite)
+        #expect(mapItem.location.coordinate.longitude.isFinite)
     }
     
     @Test func reverseGeocodingHandlesRemoteLocation() async throws {
@@ -50,11 +47,10 @@ struct GeocodingServiceTests {
         
         let mapItem = try await GeocodingService.reverseGeocode(location: location)
         
-        // Should not throw, should return something
-        #expect(mapItem.location != nil)
-        
         // Remote locations may have minimal info, but shouldn't crash
-        let hasBasicInfo = mapItem.location != nil
+        let hasBasicInfo = mapItem.name != nil ||
+                           mapItem.addressRepresentations?.cityName != nil ||
+                           mapItem.address?.fullAddress != nil
         #expect(hasBasicInfo)
     }
     
@@ -66,8 +62,8 @@ struct GeocodingServiceTests {
         // Should either succeed with minimal data or throw GeocodingError
         do {
             let mapItem = try await GeocodingService.reverseGeocode(location: location)
-            // If it succeeds, should have at least basic location
-            #expect(mapItem.location != nil)
+            #expect(mapItem.location.coordinate.latitude.isFinite)
+            #expect(mapItem.location.coordinate.longitude.isFinite)
         } catch let error as GeocodingError {
             // Expected errors are fine
             #expect(error == .noResults || error == .locationUnavailable)
@@ -80,11 +76,9 @@ struct GeocodingServiceTests {
         
         let mapItem = try await GeocodingService.reverseGeocode(location: location)
         
-        // Verify it's the correct type
-        #expect(mapItem is MKMapItem)
-        
         // Verify new iOS 26 properties are available
-        #expect(mapItem.location != nil)
+        #expect(mapItem.location.coordinate.latitude.isFinite)
+        #expect(mapItem.location.coordinate.longitude.isFinite)
         
         // Address representations should be available
         let hasModernAPI = mapItem.address != nil || mapItem.addressRepresentations != nil
