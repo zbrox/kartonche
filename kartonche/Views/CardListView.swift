@@ -10,25 +10,17 @@ import SwiftData
 import CoreLocation
 import UniformTypeIdentifiers
 import UIKit
-
-struct PendingCard: Identifiable {
-    let id = UUID()
-    let merchant: MerchantTemplate
-    let program: ProgramTemplate?
-}
+import PhotosUI
 
 struct CardListView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.openURL) private var openURL
     @Environment(URLRouter.self) private var urlRouter
     @Query private var allCards: [LoyaltyCard]
-    
+
     @State private var searchText = ""
     @AppStorage("sortOption") private var sortOption: SortOption = .alphabetical
     @AppStorage("showExpiredCards") private var showExpiredCards = true
-    @State private var showingMerchantSelection = false
-    @State private var merchantForProgramSelection: MerchantTemplate?
-    @State private var pendingCard: PendingCard?
     @State private var selectedCard: LoyaltyCard?
     @State private var displayCard: LoyaltyCard?
     @State private var navigationPath = NavigationPath()
@@ -42,6 +34,16 @@ struct CardListView: View {
     @State private var previousCardCount = 0
     @State private var showingDeleteConfirmation = false
     @State private var cardToDelete: LoyaltyCard?
+
+    // Quick Scan flow state
+    @State private var showingAddOptions = false
+    @State private var showingCamera = false
+    @State private var addFlowPickerItem: PhotosPickerItem?
+    @State private var showingEditor = false
+    @State private var scannedBarcodeData: String?
+    @State private var scannedBarcodeType: BarcodeType?
+    @State private var scannedColor: Color?
+    @State private var showingPhotoPicker = false
     
     struct ShareItem: Identifiable {
         let id = UUID()
@@ -182,35 +184,51 @@ struct CardListView: View {
                     addButton
                 }
             }
-            .sheet(isPresented: $showingMerchantSelection) {
-                MerchantSelectionView(isPresented: $showingMerchantSelection) { merchant, program in
-                    if merchant.programs.count > 1 {
-                        merchantForProgramSelection = merchant
-                        showingMerchantSelection = false
-                    } else {
-                        pendingCard = PendingCard(merchant: merchant, program: program)
-                        showingMerchantSelection = false
+            .confirmationDialog(
+                String(localized: "Add Card"),
+                isPresented: $showingAddOptions,
+                titleVisibility: .visible
+            ) {
+                Button(String(localized: "Take a Photo")) {
+                    showingCamera = true
+                }
+                Button(String(localized: "Choose from Library")) {
+                    showingPhotoPicker = true
+                }
+                Button(String(localized: "Add Manually")) {
+                    clearScannedState()
+                    showingEditor = true
+                }
+            }
+            .photosPicker(isPresented: $showingPhotoPicker, selection: $addFlowPickerItem, matching: .images)
+            .sheet(isPresented: $showingCamera) {
+                CameraCaptureView(
+                    onCapture: { image in
+                        processImage(image)
+                    },
+                    onDismiss: {
+                        showingCamera = false
+                    }
+                )
+            }
+            .sheet(isPresented: $showingEditor) {
+                CardEditorView(
+                    scannedBarcodeData: scannedBarcodeData,
+                    scannedBarcodeType: scannedBarcodeType,
+                    scannedColor: scannedColor
+                )
+            }
+            .onChange(of: addFlowPickerItem) { _, newValue in
+                guard let item = newValue else { return }
+                Task {
+                    if let data = try? await item.loadTransferable(type: Data.self),
+                       let uiImage = UIImage(data: data) {
+                        await processImage(uiImage)
+                    }
+                    await MainActor.run {
+                        addFlowPickerItem = nil
                     }
                 }
-            }
-            .sheet(item: $merchantForProgramSelection) { merchant in
-                ProgramSelectionView(
-                    merchant: merchant,
-                    isPresented: Binding(
-                        get: { merchantForProgramSelection != nil },
-                        set: { newValue in
-                            if !newValue {
-                                merchantForProgramSelection = nil
-                            }
-                        }
-                    )
-                ) { program in
-                    pendingCard = PendingCard(merchant: merchant, program: program)
-                    merchantForProgramSelection = nil
-                }
-            }
-            .sheet(item: $pendingCard) { pending in
-                CardEditorView(merchantTemplate: pending.merchant, program: pending.program)
             }
             .sheet(item: $selectedCard) { card in
                 CardEditorView(card: card)
@@ -479,7 +497,7 @@ struct CardListView: View {
         } else if allCards.isEmpty {
             // First launch - no cards at all
             EmptyCardListView {
-                showingMerchantSelection = true
+                showingAddOptions = true
             }
         } else {
             // Fallback
@@ -489,7 +507,7 @@ struct CardListView: View {
                 Text(String(localized: "Add your first loyalty card"))
             } actions: {
                 Button(String(localized: "Add Card")) {
-                    showingMerchantSelection = true
+                    showingAddOptions = true
                 }
                 .buttonStyle(.borderedProminent)
             }
@@ -515,7 +533,7 @@ struct CardListView: View {
     }
     
     private var addButton: some View {
-        Button(action: { showingMerchantSelection = true }) {
+        Button(action: { showingAddOptions = true }) {
             Label(String(localized: "Add Card"), systemImage: "plus")
         }
         .accessibilityIdentifier("addCardButton")
@@ -556,14 +574,15 @@ struct CardListView: View {
     private func dismissActivePresentation() {
         displayCard = nil
         showingSettings = false
-        showingMerchantSelection = false
-        merchantForProgramSelection = nil
-        pendingCard = nil
+        showingAddOptions = false
+        showingCamera = false
+        showingEditor = false
         selectedCard = nil
         showingAlwaysPrompt = false
         shareItem = nil
         showingImportPreview = false
         importContainer = nil
+        clearScannedState()
     }
 
     private func handleFileImport(_ url: URL) {
@@ -603,6 +622,33 @@ struct CardListView: View {
         try CardRepository(modelContext: modelContext).importCards(from: container, strategy: strategy)
     }
     
+    private func clearScannedState() {
+        scannedBarcodeData = nil
+        scannedBarcodeType = nil
+        scannedColor = nil
+    }
+
+    @MainActor
+    private func processImage(_ image: UIImage) {
+        clearScannedState()
+
+        Task {
+            // Run barcode scan — failure is acceptable
+            if let barcodes = try? await PhotoBarcodeScanner.scanBarcodes(from: image),
+               let first = barcodes.first {
+                scannedBarcodeData = first.data
+                if let detectedType = BarcodeType(from: first.symbology) {
+                    scannedBarcodeType = detectedType
+                }
+            }
+
+            // Run dominant color extraction
+            scannedColor = DominantColorExtractor.extractDominantColor(from: image)
+
+            showingEditor = true
+        }
+    }
+
     private func checkAlwaysPermissionConditions() {
         // Track app launches
         SharedDataManager.incrementAppLaunchCount()

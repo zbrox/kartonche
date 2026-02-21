@@ -15,7 +15,6 @@ struct CardEditorView: View {
     @Environment(\.dismiss) private var dismiss
     
     let card: LoyaltyCard?
-    let merchantTemplate: MerchantTemplate?
     
     @State private var name: String
     @State private var storeName: String
@@ -78,10 +77,14 @@ struct CardEditorView: View {
         }
     }
     
-    init(card: LoyaltyCard? = nil, merchantTemplate: MerchantTemplate? = nil, program: ProgramTemplate? = nil) {
+    init(
+        card: LoyaltyCard? = nil,
+        scannedBarcodeData: String? = nil,
+        scannedBarcodeType: BarcodeType? = nil,
+        scannedColor: Color? = nil
+    ) {
         self.card = card
-        self.merchantTemplate = merchantTemplate
-        
+
         if let card = card {
             // Edit mode - use card data
             _name = State(initialValue: card.name)
@@ -98,23 +101,23 @@ struct CardEditorView: View {
             _expirationDate = State(initialValue: card.expirationDate)
             _hasExpirationDate = State(initialValue: card.expirationDate != nil)
             _cardImageData = State(initialValue: card.cardImage)
-        } else if let merchant = merchantTemplate, let program = program {
-            // New card from merchant template
-            _name = State(initialValue: program.name ?? merchant.name)
-            _storeName = State(initialValue: merchant.name)
+        } else if scannedBarcodeData != nil || scannedBarcodeType != nil || scannedColor != nil {
+            // Pre-fill from scan results
+            _name = State(initialValue: "")
+            _storeName = State(initialValue: "")
             _cardholderName = State(initialValue: "")
             _cardNumber = State(initialValue: "")
-            _barcodeType = State(initialValue: program.barcodeType)
-            _barcodeData = State(initialValue: "")
+            _barcodeType = State(initialValue: scannedBarcodeType ?? .qr)
+            _barcodeData = State(initialValue: scannedBarcodeData ?? "")
             _notes = State(initialValue: "")
-            _selectedColor = State(initialValue: Color(hex: merchant.suggestedColor))
-            _selectedSecondaryColor = State(initialValue: Color(hex: merchant.secondaryColor))
-            _useAutoTextColor = State(initialValue: merchant.secondaryColor == nil)
+            _selectedColor = State(initialValue: scannedColor)
+            _selectedSecondaryColor = State(initialValue: nil)
+            _useAutoTextColor = State(initialValue: true)
             _isFavorite = State(initialValue: false)
             _expirationDate = State(initialValue: nil)
             _hasExpirationDate = State(initialValue: false)
         } else {
-            // New custom card - empty
+            // Empty custom card
             _name = State(initialValue: "")
             _storeName = State(initialValue: "")
             _cardholderName = State(initialValue: "")
