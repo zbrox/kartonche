@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #MISE description="Run unit tests"
-#USAGE arg "[test]" help="Specific test to run (e.g., kartoncheTests/MerchantTemplateTests/testSearchFindsExactName)"
+#USAGE arg "[test]" help="Specific test to run (e.g., kartoncheTests/DominantColorExtractorTests/testSolidRedImageExtractsNearRed)"
 
 set -euo pipefail
 

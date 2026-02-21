@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#MISE description="Full CI check (validate merchants + build + test)"
+#MISE description="Full CI check (build + test)"
 #usage: ci [--full]
 #arg: --full "Run all tests including UI tests (default: unit tests only)"
 
@@ -13,28 +13,15 @@ fi
 echo "🔄 Running CI workflow..."
 echo ""
 
-# Check if merchants.kdl exists, if so validate
-if [ -f "$MERCHANTS_FILE" ]; then
-  echo "Step 1/3: Validating merchants..."
-  if [ -d "Scripts/generate-merchants" ]; then
-    mise run validate-merchants
-  else
-    echo "⚠️  Merchant validation not set up yet, skipping..."
-  fi
-else
-  echo "⚠️  No merchants.kdl found, skipping merchant validation..."
-fi
-
-echo ""
-echo "Step 2/3: Building..."
+echo "Step 1/2: Building..."
 mise run build
 
 echo ""
 if [ "$FULL_TESTS" = true ]; then
-  echo "Step 3/3: Running all tests (unit + UI)..."
+  echo "Step 2/2: Running all tests (unit + UI)..."
   mise run test-all
 else
-  echo "Step 3/3: Running unit tests..."
+  echo "Step 2/2: Running unit tests..."
   mise run test
 fi
 

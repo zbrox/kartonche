@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #MISE description="Run UI tests"
-#USAGE arg "[test]" help="Specific test to run (e.g., kartoncheUITests/MerchantSelectionUITests/testSearchMerchants)"
+#USAGE arg "[test]" help="Specific test to run (e.g., kartoncheUITests/QuickScanUITests/testAddManuallyOpensEmptyEditor)"
 
 set -euo pipefail
 

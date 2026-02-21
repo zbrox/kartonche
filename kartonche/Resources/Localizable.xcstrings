@@ -76,17 +76,6 @@
       },
       "shouldTranslate" : false
     },
-    "%lld %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lld %2$@"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "%lld Cards" : {
       "localizations" : {
         "bg" : {
@@ -169,6 +158,7 @@
       }
     },
     "Add Card Manually" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -188,6 +178,9 @@
           }
         }
       }
+    },
+    "Add Manually" : {
+
     },
     "Add to Apple Wallet" : {
       "localizations" : {
@@ -368,6 +361,7 @@
     },
     "Barcode type" : {
       "comment" : "Accessibility label for barcode type badge",
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -578,6 +572,9 @@
         }
       }
     },
+    "Choose from Library" : {
+
+    },
     "Choose Image" : {
       "localizations" : {
         "bg" : {
@@ -590,6 +587,7 @@
     },
     "Choose Program" : {
       "comment" : "Title for program selection view when merchant has multiple loyalty programs",
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -1146,6 +1144,7 @@
       }
     },
     "Gas Stations" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -1216,6 +1215,7 @@
       }
     },
     "Grocery Stores" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2027,6 +2027,7 @@
       }
     },
     "Other" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2057,6 +2058,7 @@
       }
     },
     "Pharmacies" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2097,6 +2099,7 @@
       }
     },
     "Programs" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2325,6 +2328,7 @@
       }
     },
     "Search Merchant" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2406,6 +2410,7 @@
       }
     },
     "Select Merchant" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2622,6 +2627,9 @@
           }
         }
       }
+    },
+    "Take a Photo" : {
+
     },
     "Tap a card to preview" : {
       "comment" : "Footer text in import preview list",
@@ -2912,6 +2920,7 @@
       }
     },
     "Wholesale" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {

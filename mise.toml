@@ -22,12 +22,5 @@ IOS_DEVICE = "iPhone 17 Pro"
 # This eliminates "multiple matching destinations" warnings in CI
 IOS_VERSION = "26.2"
 
-# Generated code output
-GENERATED_DIR = "kartonche/Generated"
-
-# Merchant database paths
-MERCHANTS_FILE = "Merchants/merchants.kdl"
-MERCHANTS_SCHEMA = "Merchants/schema.kdl"
-
 # Changelog
 CLIFF_CONFIG = "cliff.toml"
