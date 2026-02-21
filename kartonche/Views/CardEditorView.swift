@@ -36,7 +36,7 @@ struct CardEditorView: View {
     @State private var isProcessingPhoto = false
     @State private var scanError: String?
     @State private var showingMultipleBarcodes = false
-    @State private var detectedBarcodes: [ScannedBarcode] = []
+    @State private var detectedBarcodes: [BarcodeImageMatch] = []
     @State private var showingLocationEditor = false
     @State private var editingLocation: CardLocation?
     @State private var pendingLocations: [CardLocation] = []
@@ -475,7 +475,7 @@ struct CardEditorView: View {
         Task {
             do {
                 guard let imageData = try await item.loadTransferable(type: Data.self),
-                      let uiImage = UIImage(data: imageData) else {
+                      UIImage(data: imageData) != nil else {
                     await MainActor.run {
                         scanError = String(localized: "Failed to load image")
                         isProcessingPhoto = false
@@ -484,7 +484,7 @@ struct CardEditorView: View {
                     return
                 }
                 
-                let barcodes = try await PhotoBarcodeScanner.scanBarcodes(from: uiImage)
+                let barcodes = try await BarcodeImageScanner.scan(from: imageData)
                 
                 await MainActor.run {
                     if barcodes.count == 1 {
@@ -506,9 +506,9 @@ struct CardEditorView: View {
         }
     }
     
-    private func selectBarcode(_ barcode: ScannedBarcode) {
+    private func selectBarcode(_ barcode: BarcodeImageMatch) {
         barcodeData = barcode.data
-        if let detectedType = BarcodeType(from: barcode.symbology) {
+        if let detectedType = barcode.type {
             barcodeType = detectedType
         }
         detectedBarcodes = []
