@@ -24,6 +24,7 @@ struct CardDisplayView: View {
     @State private var isGeneratingPass = false
     @State private var passError: String?
     @State private var passToAdd: PKPass?
+    @State private var errorAlert: CardDisplayErrorAlert?
     
     var body: some View {
         let primaryColor = card.color.flatMap { Color(hex: $0) } ?? Color.accentColor
@@ -142,6 +143,13 @@ struct CardDisplayView: View {
             if let passError {
                 Text(passError)
             }
+        }
+        .alert(item: $errorAlert) { alert in
+            Alert(
+                title: Text(alert.title),
+                message: Text(alert.message),
+                dismissButton: .default(Text(String(localized: "OK")))
+            )
         }
     }
     
@@ -270,8 +278,7 @@ struct CardDisplayView: View {
             
             shareItem = ShareItem(url: fileURL)
         } catch {
-            // TODO: Show error alert
-            print("Failed to export card: \(error)")
+            errorAlert = .shareFailed(error)
         }
     }
     
@@ -315,6 +322,19 @@ struct CardDisplayView: View {
 
 extension PKPass: @retroactive Identifiable {
     public var id: String { serialNumber }
+}
+
+struct CardDisplayErrorAlert: Identifiable {
+    let id = UUID()
+    let title: String
+    let message: String
+
+    static func shareFailed(_ error: Error) -> CardDisplayErrorAlert {
+        CardDisplayErrorAlert(
+            title: String(localized: "Export Failed"),
+            message: error.localizedDescription
+        )
+    }
 }
 
 /// UIViewRepresentable helper to access UIScreen from SwiftUI
