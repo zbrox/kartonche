@@ -67,45 +67,6 @@ enum BarcodeType: String, Codable {
 }
 ```
 
-### MerchantTemplate (Generated)
-
-```swift
-// Generated from Merchants/merchants.kdl at build time
-struct MerchantTemplate: Identifiable {
-    let id: String                    // e.g., "bg.billa"
-    let name: String                  // Primary name
-    let otherNames: [String]          // Alternate names (localized, abbreviations)
-    let country: String               // ISO country code
-    let category: MerchantCategory
-    let website: String?
-    let suggestedColor: String?
-    let secondaryColor: String?
-    let programs: [ProgramTemplate]   // Loyalty programs offered
-}
-```
-
-### ProgramTemplate (Generated)
-
-```swift
-struct ProgramTemplate: Identifiable {
-    let id: String
-    let name: String?                 // Program name (nil if merchant has single program)
-    let barcodeType: BarcodeType
-}
-```
-
-### MerchantCategory (Enum)
-
-```swift
-enum MerchantCategory: String, Codable, CaseIterable {
-    case grocery    // Grocery Stores
-    case fuel       // Gas Stations
-    case pharmacy   // Pharmacies
-    case retail     // Other Retail
-    case wholesale  // Wholesale
-}
-```
-
 ## Directory Structure
 
 ```
@@ -117,35 +78,33 @@ kartonche/
 │   ├── CardExportDTO.swift       # Export/import data transfer
 │   └── WhatsNewData.swift        # What's new content
 ├── Views/
-│   ├── CardListView.swift        # Main list view
+│   ├── CardListView.swift        # Main list view + Quick Scan flow
 │   ├── CardDisplayView.swift     # Full-screen card display
-│   ├── CardEditorView.swift      # Edit card properties
-│   ├── MerchantSelectionView.swift
+│   ├── CardEditorView.swift      # Create/edit card properties
 │   ├── SettingsView.swift        # App settings
 │   ├── AboutView.swift           # About screen
 │   ├── ImportPreviewView.swift   # Import preview
 │   └── Components/
 │       ├── CardRowView.swift     # List item
 │       ├── BarcodeImageView.swift
-│       ├── BarcodeScannerView.swift  # VisionKit wrapper
-│       ├── MerchantRowView.swift
+│       ├── BarcodeScannerView.swift   # VisionKit live scanner
+│       ├── CameraCaptureView.swift    # Camera photo capture
 │       ├── EmptyCardListView.swift
 │       ├── LocationEditorView.swift
 │       └── MapLocationPicker.swift
 ├── Utilities/
-│   ├── BarcodeGenerator.swift    # Core Image barcode generation
-│   ├── BarcodeTypeDetector.swift # Auto-detect barcode format
-│   ├── PermissionManager.swift   # Camera/photo permissions
-│   ├── BrightnessManager.swift   # Screen brightness control
-│   ├── ScreenManager.swift       # Idle timer management
-│   ├── LocationManager.swift     # Location services
-│   ├── GeocodingService.swift    # Address lookup
-│   ├── NotificationManager.swift # Local notifications
-│   ├── CardExporter.swift        # Export cards
-│   ├── CardImporter.swift        # Import cards
-│   └── PhotoBarcodeScanner.swift # Scan from photos
-├── Generated/
-│   └── MerchantTemplates.swift   # Auto-generated (build time)
+│   ├── BarcodeGenerator.swift         # Core Image barcode generation
+│   ├── BarcodeTypeDetector.swift      # Auto-detect barcode format
+│   ├── DominantColorExtractor.swift   # Extract primary color from image
+│   ├── PhotoBarcodeScanner.swift      # Scan barcodes from photos
+│   ├── PermissionManager.swift        # Camera/photo permissions
+│   ├── BrightnessManager.swift        # Screen brightness control
+│   ├── ScreenManager.swift            # Idle timer management
+│   ├── LocationManager.swift          # Location services
+│   ├── GeocodingService.swift         # Address lookup
+│   ├── NotificationManager.swift      # Local notifications
+│   ├── CardExporter.swift             # Export cards
+│   └── CardImporter.swift             # Import cards
 ├── Assets.xcassets/              # Images, colors, app icon
 ├── Localizable.xcstrings         # English + Bulgarian
 └── kartoncheApp.swift            # App entry + ModelContainer
@@ -157,32 +116,27 @@ kartoncheWidget/                  # Widget extension target
 ├── NearestLocationWidget.swift   # Location-based widget
 └── Assets.xcassets/
 
-Merchants/
-├── merchants.kdl                 # Community database (seed data)
-├── schema.kdl                    # KDL schema
-└── README.md                     # Contributor guide
-
-Scripts/
-└── generate-merchants/
-    └── Package.swift             # kdl-swift dependency
-
 .mise/
 └── tasks/                        # Development tasks
 ```
 
 ## Data Flow
 
-### Adding a Card (Quick Flow with Merchant Template)
+### Adding a Card (Quick Scan)
 
-1. User taps "Add Card"
-2. `MerchantSelectionView` shows searchable list of `MerchantTemplate.all`
-3. User selects "Билла" → pre-fills barcode type (EAN-13)
-4. `BarcodeScannerView` presents VisionKit scanner
-5. Scanner returns barcode data
-6. Create `LoyaltyCard` with merchant name + scanned data
-7. Insert into `ModelContext` → automatic save
-8. iCloud sync happens automatically (CloudKit)
-9. View updates via `@Query` observation
+1. User taps "Add Card" → `confirmationDialog` with 3 options
+2. **Take a Photo** → `CameraCaptureView` captures UIImage
+3. **Choose from Library** → `PhotosPicker` selects UIImage
+4. **Add Manually** → open `CardEditorView` empty
+5. Image path runs `processImage(_:)`:
+   - `PhotoBarcodeScanner` attempts barcode extraction (failure is acceptable)
+   - `DominantColorExtractor` extracts dominant color (failure is acceptable)
+   - Derived contrasting text color via `Color.contrastingTextColor()`
+6. `CardEditorView` opens pre-filled with gathered values (barcode data, type, color)
+7. User completes remaining fields and saves
+8. Insert into `ModelContext` → automatic save
+9. iCloud sync happens automatically (CloudKit)
+10. View updates via `@Query` observation
 
 ### Displaying a Card for Scanning
 
@@ -225,13 +179,6 @@ Scripts/
 - **Built-in UI** - Scanner interface provided by system
 - **Supports all formats** - Same formats we generate
 
-### Why KDL for Merchant Database?
-
-- **Human-friendly** - Easy for contributors to edit
-- **Schema validation** - Built-in validation support
-- **No nesting issues** - Unlike YAML significant whitespace
-- **Comments supported** - Document merchants inline
-
 ### Why File-based mise Tasks?
 
 - **Better for complex logic** - Full bash capabilities
@@ -265,19 +212,19 @@ Scripts/
 
 ## Testing Strategy
 
-### Unit Tests (Swift Testing)
+### Unit Tests (Swift Testing + XCTest)
 - `BarcodeGenerator` - all supported formats
-- `MerchantTemplate.search()` - Bulgarian + English queries
+- `DominantColorExtractor` - color extraction from various images
+- Image processing pipeline - color + barcode extraction integration
 - Model validation logic
 - Barcode type conversions
 
 ### UI Tests (XCTest)
-- Add card flow (manual entry)
-- Display card (brightness/idle timer)
-- Edit card
-- Delete card
-- Search/filter cards
-- Widget tap opens app
+- Quick Scan add dialog (3 options appear)
+- Manual add opens empty editor
+- Cancel dismisses dialog cleanly
+- Editor cancel returns to list
+- Cancel-then-add does not leak stale scanned state
 
 ### Manual Testing Checklist
 - Physical device required (camera, brightness)
@@ -323,22 +270,11 @@ Scripts/
 
 ## Build Process
 
-### Build-Time Code Generation
-
-1. Xcode build phase runs before compilation
-2. Checks if `Merchants/merchants.kdl` changed
-3. If changed, runs `mise run generate-merchants`
-4. Swift script with kdl-swift parses KDL
-5. Generates `kartonche/Generated/MerchantTemplates.swift`
-6. Xcode compiles generated code
-
 ### CI/CD
 
 GitHub Actions workflow:
-1. Validate `merchants.kdl` syntax
-2. Generate merchant templates
-3. Build app
-4. Run tests
+1. Build app
+2. Run tests
 
 ## Deployment
 
@@ -349,7 +285,6 @@ GitHub Actions workflow:
 
 ## Maintenance
 
-- **Merchant database:** Community contributions via PRs
 - **Localization:** String catalog updates as needed
 - **Dependencies:** None to maintain (all Apple frameworks)
 - **Breaking changes:** iOS version updates only
