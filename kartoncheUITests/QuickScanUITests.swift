@@ -37,33 +37,27 @@ final class QuickScanUITests: XCTestCase {
 
     /// Taps the cancel action of the currently presented add-card dialog.
     @MainActor
-    private func dismissAddDialog(_ sheet: XCUIElement) {
-        // Prefer gesture dismissal to avoid selecting any dialog action.
-        sheet.swipeDown()
-        if !sheet.exists {
+    private func dismissAddDialog() {
+        let cancel = app.buttons["addOptionsCancelButton"]
+        if cancel.waitForExistence(timeout: 2) {
+            cancel.tap()
+            return
+        }
+
+        let addDialog = app.buttons["Take a Photo"]
+        if !addDialog.exists {
             return
         }
 
         let window = app.windows.element(boundBy: 0)
         if window.exists {
-            // Top edge tap is outside the action sheet on iPhone layouts.
             window.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.02)).tap()
-            if !sheet.exists {
+            if !addDialog.exists {
                 return
             }
         }
 
-        let cancelLabels = ["Cancel", "Отказ"]
-        for label in cancelLabels {
-            let cancel = sheet.buttons[label]
-            if cancel.exists {
-                cancel.tap()
-                return
-            }
-        }
-
-        let fallbackCancel = sheet.buttons.element(boundBy: sheet.buttons.count - 1)
-        fallbackCancel.tap()
+        app.swipeDown()
     }
 
     // MARK: - Add dialog
@@ -110,10 +104,7 @@ final class QuickScanUITests: XCTestCase {
         let takePhoto = app.buttons["Take a Photo"]
         XCTAssertTrue(takePhoto.waitForExistence(timeout: 3))
 
-        // iOS confirmationDialog action sheets have a system Cancel button in the sheets collection
-        let sheets = app.sheets
-        XCTAssertTrue(sheets.element.exists, "Action sheet should be presented")
-        dismissAddDialog(sheets.element)
+        dismissAddDialog()
 
         waitForDisappearance(of: takePhoto)
     }
@@ -145,8 +136,7 @@ final class QuickScanUITests: XCTestCase {
         let takePhoto = app.buttons["Take a Photo"]
         XCTAssertTrue(takePhoto.waitForExistence(timeout: 3))
 
-        let sheets = app.sheets
-        dismissAddDialog(sheets.element)
+        dismissAddDialog()
         waitForDisappearance(of: takePhoto)
 
         // Defensive: if an action was selected while dismissing, close editor and continue from list.

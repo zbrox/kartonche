@@ -6,9 +6,16 @@
 import SwiftUI
 import UIKit
 import CoreImage
+import Vision
 
 /// Extracts the dominant color from a UIImage using pixel-bucketed color quantization
 enum DominantColorExtractor {
+
+    struct Analysis {
+        let primaryColor: Color?
+        let suggestedColors: [Color]
+        let confidence: Double
+    }
 
     /// Extracts the dominant color from an image.
     ///
@@ -18,7 +25,17 @@ enum DominantColorExtractor {
     /// - Parameter image: The source image
     /// - Returns: The dominant color, or `nil` if the image cannot be read
     static func extractDominantColor(from image: UIImage) -> Color? {
-        guard let cgImage = readableCGImage(from: image) else { return nil }
+        let analysis = analyzeColors(from: image)
+        guard analysis.confidence >= 0.12 else { return nil }
+        return analysis.primaryColor
+    }
+
+    static func analyzeColors(from image: UIImage) -> Analysis {
+        guard let sourceCGImage = readableCGImage(from: image) else {
+            return Analysis(primaryColor: nil, suggestedColors: [], confidence: 0)
+        }
+
+        let cgImage = cropToLikelyCardRegion(from: sourceCGImage) ?? sourceCGImage
 
         let targetSize = 50
         let width = targetSize
@@ -38,7 +55,7 @@ enum DominantColorExtractor {
             bytesPerRow: bytesPerRow,
             space: colorSpace,
             bitmapInfo: bitmapInfo
-        ) else { return nil }
+        ) else { return Analysis(primaryColor: nil, suggestedColors: [], confidence: 0) }
 
         context.draw(cgImage, in: CGRect(x: 0, y: 0, width: width, height: height))
 
@@ -79,14 +96,60 @@ enum DominantColorExtractor {
             buckets[key] = acc
         }
 
-        guard let winner = buckets.max(by: { $0.value.count < $1.value.count }) else { return nil }
+        guard !buckets.isEmpty else {
+            return Analysis(primaryColor: nil, suggestedColors: [], confidence: 0)
+        }
 
-        let avg = winner.value
-        let red = Double(avg.totalR) / Double(avg.count) / 255.0
-        let green = Double(avg.totalG) / Double(avg.count) / 255.0
-        let blue = Double(avg.totalB) / Double(avg.count) / 255.0
+        let totalPixels = Double(width * height)
 
-        return Color(.sRGB, red: red, green: green, blue: blue)
+        struct ScoredBucket {
+            let color: Color
+            let coverage: Double
+            let score: Double
+        }
+
+        let scored: [ScoredBucket] = buckets.compactMap { (_, bucket) in
+            guard bucket.count > 0 else { return nil }
+            let red = Double(bucket.totalR) / Double(bucket.count) / 255.0
+            let green = Double(bucket.totalG) / Double(bucket.count) / 255.0
+            let blue = Double(bucket.totalB) / Double(bucket.count) / 255.0
+
+            let maxChannel = max(red, max(green, blue))
+            let minChannel = min(red, min(green, blue))
+            let saturation = maxChannel == 0 ? 0 : (maxChannel - minChannel) / maxChannel
+            let brightness = maxChannel
+            let coverage = Double(bucket.count) / totalPixels
+
+            // Penalize tiny, highly saturated regions that are likely logos/accents.
+            let saturationPenalty = saturation * 0.6
+            let brightnessPenalty = (brightness < 0.12 || brightness > 0.95) ? 0.35 : 0.0
+            let score = coverage * max(0.05, 1.0 - saturationPenalty - brightnessPenalty)
+
+            return ScoredBucket(
+                color: Color(.sRGB, red: red, green: green, blue: blue),
+                coverage: coverage,
+                score: score
+            )
+        }
+
+        let rankedByScore = scored.sorted { $0.score > $1.score }
+        let rankedByCoverage = scored.sorted { $0.coverage > $1.coverage }
+
+        let primary = rankedByScore.first?.color
+        let confidence = rankedByScore.first?.coverage ?? 0
+
+        var suggestions: [Color] = []
+        for candidate in rankedByCoverage {
+            if suggestions.count >= 3 {
+                break
+            }
+            let ui = UIColor(candidate.color)
+            if !suggestions.contains(where: { UIColor($0).isNear(ui) }) {
+                suggestions.append(candidate.color)
+            }
+        }
+
+        return Analysis(primaryColor: primary, suggestedColors: suggestions, confidence: confidence)
     }
 
     private static func readableCGImage(from image: UIImage) -> CGImage? {
@@ -110,5 +173,58 @@ enum DominantColorExtractor {
             image.draw(in: CGRect(origin: .zero, size: image.size))
         }
         return rendered.cgImage
+    }
+
+    private static func cropToLikelyCardRegion(from cgImage: CGImage) -> CGImage? {
+        let request = VNDetectRectanglesRequest()
+        request.maximumObservations = 1
+        request.minimumAspectRatio = 0.35
+        request.maximumAspectRatio = 1.2
+        request.minimumSize = 0.25
+        request.quadratureTolerance = 20
+
+        let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+        do {
+            try handler.perform([request])
+        } catch {
+            return nil
+        }
+
+        guard let rect = request.results?.first else { return nil }
+
+        let imageWidth = CGFloat(cgImage.width)
+        let imageHeight = CGFloat(cgImage.height)
+        let box = rect.boundingBox
+        let cropRect = CGRect(
+            x: box.origin.x * imageWidth,
+            y: (1 - box.origin.y - box.height) * imageHeight,
+            width: box.width * imageWidth,
+            height: box.height * imageHeight
+        ).integral
+
+        guard cropRect.width > 10, cropRect.height > 10 else { return nil }
+        return cgImage.cropping(to: cropRect)
+    }
+}
+
+private extension UIColor {
+    func isNear(_ other: UIColor, tolerance: CGFloat = 0.08) -> Bool {
+        var r1: CGFloat = 0
+        var g1: CGFloat = 0
+        var b1: CGFloat = 0
+        var a1: CGFloat = 0
+        var r2: CGFloat = 0
+        var g2: CGFloat = 0
+        var b2: CGFloat = 0
+        var a2: CGFloat = 0
+
+        guard self.getRed(&r1, green: &g1, blue: &b1, alpha: &a1),
+              other.getRed(&r2, green: &g2, blue: &b2, alpha: &a2) else {
+            return false
+        }
+
+        return abs(r1 - r2) < tolerance
+            && abs(g1 - g2) < tolerance
+            && abs(b1 - b2) < tolerance
     }
 }

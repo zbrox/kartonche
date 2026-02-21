@@ -43,7 +43,9 @@ struct CardListView: View {
     @State private var scannedBarcodeData: String?
     @State private var scannedBarcodeType: BarcodeType?
     @State private var scannedColor: Color?
+    @State private var scannedSuggestedColors: [Color] = []
     @State private var showingPhotoPicker = false
+    @State private var isProcessingQuickScan = false
     
     struct ShareItem: Identifiable {
         let id = UUID()
@@ -202,15 +204,25 @@ struct CardListView: View {
                 CardEditorView(
                     scannedBarcodeData: scannedBarcodeData,
                     scannedBarcodeType: scannedBarcodeType,
-                    scannedColor: scannedColor
+                    scannedColor: scannedColor,
+                    scannedSuggestedColors: scannedSuggestedColors
                 )
             }
             .onChange(of: addFlowPickerItem) { _, newValue in
                 guard let item = newValue else { return }
                 Task {
+                    await MainActor.run {
+                        isProcessingQuickScan = true
+                    }
+
                     if let data = try? await item.loadTransferable(type: Data.self) {
                         processImageData(data)
+                    } else {
+                        await MainActor.run {
+                            isProcessingQuickScan = false
+                        }
                     }
+
                     await MainActor.run {
                         addFlowPickerItem = nil
                     }
@@ -259,6 +271,11 @@ struct CardListView: View {
                 }
             }
             .confetti(isActive: $showConfetti)
+            .overlay {
+                if isProcessingQuickScan {
+                    quickScanProgressOverlay
+                }
+            }
             .onAppear {
                 previousCardCount = allCards.count
             }
@@ -557,6 +574,7 @@ struct CardListView: View {
 
             Button {
                 clearScannedState()
+                isProcessingQuickScan = false
                 showingAddOptions = false
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                     showingEditor = true
@@ -571,10 +589,27 @@ struct CardListView: View {
             Button(String(localized: "Cancel"), role: .cancel) {
                 showingAddOptions = false
             }
+            .accessibilityIdentifier("addOptionsCancelButton")
             .padding(.top, 4)
         }
         .padding(.horizontal, 20)
         .presentationDetents([.height(320)])
+    }
+
+    private var quickScanProgressOverlay: some View {
+        ZStack {
+            Color.black.opacity(0.2)
+                .ignoresSafeArea()
+
+            VStack(spacing: 10) {
+                ProgressView()
+                Text(String(localized: "Scanning..."))
+                    .font(.subheadline)
+            }
+            .padding(.vertical, 14)
+            .padding(.horizontal, 18)
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 12))
+        }
     }
     
     private func toggleFavorite(_ card: LoyaltyCard) {
@@ -615,6 +650,7 @@ struct CardListView: View {
         showingAddOptions = false
         showingCamera = false
         showingEditor = false
+        isProcessingQuickScan = false
         selectedCard = nil
         showingAlwaysPrompt = false
         shareItem = nil
@@ -664,11 +700,13 @@ struct CardListView: View {
         scannedBarcodeData = nil
         scannedBarcodeType = nil
         scannedColor = nil
+        scannedSuggestedColors = []
     }
 
     @MainActor
     private func processImage(_ image: UIImage) {
         clearScannedState()
+        isProcessingQuickScan = true
 
         Task {
             // Run barcode scan — failure is acceptable
@@ -678,19 +716,24 @@ struct CardListView: View {
                 scannedBarcodeType = preferred.type
             }
 
-            // Run dominant color extraction
-            scannedColor = DominantColorExtractor.extractDominantColor(from: image)
+            // Run color extraction with confidence + suggestions.
+            let analysis = DominantColorExtractor.analyzeColors(from: image)
+            scannedColor = analysis.confidence >= 0.12 ? analysis.primaryColor : nil
+            scannedSuggestedColors = analysis.suggestedColors
 
+            isProcessingQuickScan = false
             showingEditor = true
         }
     }
 
     @MainActor
     private func processImageData(_ imageData: Data) {
+        isProcessingQuickScan = true
         if let image = UIImage(data: imageData) {
             processImage(image)
         } else {
             clearScannedState()
+            isProcessingQuickScan = false
             showingEditor = true
         }
     }
