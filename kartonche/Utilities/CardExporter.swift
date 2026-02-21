@@ -39,6 +39,15 @@ enum CardExporter {
         
         return try encoder.encode(container)
     }
+
+    /// Create a shareable .kartonche file for a single card.
+    /// - Parameter card: Card to export
+    /// - Returns: URL to temporary file
+    static func createShareFile(for card: LoyaltyCard) throws -> URL {
+        let data = try exportCard(card)
+        let fileName = generateFileName(cardCount: 1, cardName: card.name)
+        return try createTemporaryFile(from: data, fileName: fileName)
+    }
     
     /// Create a temporary file URL for sharing
     /// - Parameters:
