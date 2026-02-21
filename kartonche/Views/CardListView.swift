@@ -184,21 +184,8 @@ struct CardListView: View {
                     addButton
                 }
             }
-            .confirmationDialog(
-                String(localized: "Add Card"),
-                isPresented: $showingAddOptions,
-                titleVisibility: .visible
-            ) {
-                Button(String(localized: "Take a Photo")) {
-                    showingCamera = true
-                }
-                Button(String(localized: "Choose from Library")) {
-                    showingPhotoPicker = true
-                }
-                Button(String(localized: "Add Manually")) {
-                    clearScannedState()
-                    showingEditor = true
-                }
+            .sheet(isPresented: $showingAddOptions) {
+                addOptionsSheet
             }
             .photosPicker(isPresented: $showingPhotoPicker, selection: $addFlowPickerItem, matching: .images)
             .sheet(isPresented: $showingCamera) {
@@ -536,6 +523,58 @@ struct CardListView: View {
             Label(String(localized: "Add Card"), systemImage: "plus")
         }
         .accessibilityIdentifier("addCardButton")
+    }
+
+    private var addOptionsSheet: some View {
+        VStack(spacing: 16) {
+            Text(String(localized: "Add Card"))
+                .font(.headline)
+                .padding(.top, 8)
+
+            Button {
+                showingAddOptions = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    showingCamera = true
+                }
+            } label: {
+                Label(String(localized: "Take a Photo"), systemImage: "camera")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .frame(minHeight: 46)
+            }
+            .buttonStyle(.borderedProminent)
+
+            Button {
+                showingAddOptions = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    showingPhotoPicker = true
+                }
+            } label: {
+                Label(String(localized: "Choose from Library"), systemImage: "photo.on.rectangle")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .frame(minHeight: 46)
+            }
+            .buttonStyle(.borderedProminent)
+
+            Button {
+                clearScannedState()
+                showingAddOptions = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    showingEditor = true
+                }
+            } label: {
+                Label(String(localized: "Add Manually"), systemImage: "square.and.pencil")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .frame(minHeight: 46)
+            }
+            .buttonStyle(.bordered)
+
+            Button(String(localized: "Cancel"), role: .cancel) {
+                showingAddOptions = false
+            }
+            .padding(.top, 4)
+        }
+        .padding(.horizontal, 20)
+        .presentationDetents([.height(320)])
     }
     
     private func toggleFavorite(_ card: LoyaltyCard) {
