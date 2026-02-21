@@ -33,6 +33,13 @@ let whatsNewVersions: [WhatsNewVersion] = [
         version: "2026.02.6",
         features: [
             WhatsNewFeature(
+                icon: "camera.viewfinder",
+                titleEN: "Quick Scan",
+                titleBG: "Бързо сканиране",
+                descriptionEN: "Add cards faster by scanning from camera or photo library with automatic barcode and color detection",
+                descriptionBG: "По-бързо добавяне на карти чрез сканиране от камера или снимка с автоматично разпознаване на баркод и цвят"
+            ),
+            WhatsNewFeature(
                 icon: "magnifyingglass",
                 titleEN: "Spotlight Search",
                 titleBG: "Търсене в Spotlight",
