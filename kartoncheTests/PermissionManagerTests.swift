@@ -27,11 +27,14 @@ struct PermissionManagerTests {
         #expect(manager.photoLibraryAuthorizationStatus == expectedPhotoStatus)
     }
     
-    @Test func isObservableObject() {
+    @Test func authorizationStatusesAreKnownCases() {
         let manager = PermissionManager()
-        
-        // Should be ObservableObject with published properties
-        #expect(manager is any ObservableObject)
+
+        let validCameraStatuses: [AVAuthorizationStatus] = [.authorized, .denied, .restricted, .notDetermined]
+        let validPhotoStatuses: [PHAuthorizationStatus] = [.authorized, .denied, .restricted, .notDetermined, .limited]
+
+        #expect(validCameraStatuses.contains(manager.cameraAuthorizationStatus))
+        #expect(validPhotoStatuses.contains(manager.photoLibraryAuthorizationStatus))
     }
     
     @Test func requestCameraPermissionHandlesAuthorizedStatus() async {

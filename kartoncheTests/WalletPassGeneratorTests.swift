@@ -297,10 +297,7 @@ struct WalletPassGeneratorTests {
         #expect(!archiveData.isEmpty)
 
         // Verify ZIP contains expected entries by reading it back
-        guard let archive = Archive(data: archiveData, accessMode: .read) else {
-            Issue.record("Could not read generated archive")
-            return
-        }
+        let archive = try Archive(data: archiveData, accessMode: .read)
 
         let entryNames = Set(archive.map(\.path))
         #expect(entryNames.contains("pass.json"))
@@ -322,10 +319,7 @@ struct WalletPassGeneratorTests {
             assets: assets
         )
 
-        guard let archive = Archive(data: archiveData, accessMode: .read) else {
-            Issue.record("Could not read generated archive")
-            return
-        }
+        let archive = try Archive(data: archiveData, accessMode: .read)
 
         guard let entry = archive["pass.json"] else {
             Issue.record("pass.json not found in archive")
