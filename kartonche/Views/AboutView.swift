@@ -240,12 +240,12 @@ struct WhatsNewView: View {
                         ForEach(version.features, id: \.icon) { feature in
                             FeatureRow(
                                 icon: feature.icon,
-                                title: feature.localizedTitle,
-                                description: feature.localizedDescription
+                                title: String(localized: feature.title),
+                                description: String(localized: feature.description)
                             )
                         }
                     } header: {
-                        Text(verbatim: "Version \(version.version)")
+                        Text(verbatim: String(format: String(localized: "whats_new.version_format"), version.version))
                     }
                 }
             }

@@ -2966,6 +2966,534 @@
           }
         }
       }
+    },
+    "whats_new.2026_02_3.expiration_reminders.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Никога не пропускайте подновяване на карта"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Never miss a card renewal"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_3.expiration_reminders.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Напомняния за изтичане"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Expiration Reminders"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_3.export_share.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Споделяне на карти чрез AirDrop"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share cards via AirDrop"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_3.export_share.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Експортиране и споделяне"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Export & Share"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_3.location_features.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Известия при близост до запазени магазини"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get notified when near your saved stores"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_3.location_features.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Функции за местоположение"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Location Features"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_3.widgets.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бърз достъп от началния и заключен екран"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quick access from home and lock screen"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_3.widgets.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Инструменти"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widgets"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_4.about_whats_new.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Научете за новите функции и информация за приложението"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Learn about new features and app info"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_4.about_whats_new.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Относно и Какво ново"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About & What's New"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_4.collapsible_notes.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Докоснете за разгъване или свиване на бележките"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap to expand or collapse card notes"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_4.collapsible_notes.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сгъваеми бележки"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collapsible Notes"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_4.merchant_country_flags.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вижте от коя държава са търговците"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "See which country merchants are from"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_4.merchant_country_flags.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Флагове на държави"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Merchant Country Flags"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_5.control_center_widgets.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бърз достъп до карти от Контролния център"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quick access to cards from Control Center"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_5.control_center_widgets.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Инструменти за Контролен център"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Control Center Widgets"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_5.redesigned_card_display.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Картите вече се показват с изявени цветове на марката"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cards now display with prominent brand colors"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_5.redesigned_card_display.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Преработен дизайн на картите"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redesigned Card Display"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_5.swipe_actions.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Плъзнете карти за бързо означаване, редактиране или изтриване"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swipe cards to quickly favorite, edit, or delete"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_5.swipe_actions.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Действия при плъзгане"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swipe Actions"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_6.apple_wallet.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добавяне на карти в Apple Wallet с подписване на пространството на устройството"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add cards to Apple Wallet with on-device pass signing"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_6.apple_wallet.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Wallet"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Wallet"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_6.import_export.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Подобрено импортиране и експортиране за лесно архивиране и прехвърляне"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revamped data import and export for easy backup and transfer"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_6.import_export.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Импортиране и експортиране"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import & Export"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_6.quick_look_preview.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Преглед на .kartonche файлове с Бърз преглед преди импортиране"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preview .kartonche files with Quick Look before importing"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_6.quick_look_preview.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бърз преглед"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quick Look Preview"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_6.quick_scan.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "По-бързо добавяне на карти чрез сканиране от камера или снимка с автоматично разпознаване на баркод и цвят"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add cards faster by scanning from camera or photo library with automatic barcode and color detection"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_6.quick_scan.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бързо сканиране"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quick Scan"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_6.spotlight_search.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Намерете картите си за лоялност от началния екран чрез Spotlight"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Find your loyalty cards from the home screen via Spotlight"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_6.spotlight_search.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Търсене в Spotlight"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spotlight Search"
+          }
+        }
+      }
+    },
+    "whats_new.2026_03_1.icloud_sync.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Картите вече се синхронизират автоматично между устройствата ви, когато iCloud е наличен"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cards now sync automatically across your devices when iCloud is available"
+          }
+        }
+      }
+    },
+    "whats_new.2026_03_1.icloud_sync.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Синхронизация с iCloud"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud Sync"
+          }
+        }
+      }
+    },
+    "whats_new.version_format" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Версия %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version %@"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
