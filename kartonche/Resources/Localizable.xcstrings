@@ -855,53 +855,6 @@
         }
       }
     },
-    "Add Card Manually" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ръчно добавяне на карта"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Add Card Manually"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Add Card Manually"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Add Card Manually"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Add Card Manually"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Add Card Manually"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Add Card Manually"
-          }
-        }
-      }
-    },
     "Add Location" : {
       "comment" : "Button to add a location to a card",
       "localizations" : {
@@ -1780,54 +1733,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Barcode preview"
-          }
-        }
-      }
-    },
-    "Barcode type" : {
-      "comment" : "Accessibility label for barcode type badge",
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "тип баркод"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Barcode type"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Barcode type"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Barcode type"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Barcode type"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Barcode type"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Barcode type"
           }
         }
       }
@@ -2805,54 +2710,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Choose Image"
-          }
-        }
-      }
-    },
-    "Choose Program" : {
-      "comment" : "Title for program selection view when merchant has multiple loyalty programs",
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изберете програма"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Choose Program"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Choose Program"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Choose Program"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Choose Program"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Choose Program"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Choose Program"
           }
         }
       }
@@ -5311,53 +5168,6 @@
         }
       }
     },
-    "Gas Stations" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Бензиностанции"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Gas Stations"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Gas Stations"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Gas Stations"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Gas Stations"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Gas Stations"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Gas Stations"
-          }
-        }
-      }
-    },
     "Generating pass..." : {
       "localizations" : {
         "bg" : {
@@ -5634,53 +5444,6 @@
         }
       }
     },
-    "Grocery Stores" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Хранителни магазини"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Grocery Stores"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Grocery Stores"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Grocery Stores"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Grocery Stores"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Grocery Stores"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Grocery Stores"
-          }
-        }
-      }
-    },
     "Has Expiration Date" : {
       "comment" : "Toggle for enabling expiration date",
       "localizations" : {
@@ -5770,6 +5533,144 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "How to handle duplicates"
+          }
+        }
+      }
+    },
+    "iCloud Signed Out" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Signed Out"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Signed Out"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Signed Out"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Signed Out"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Signed Out"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Signed Out"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Signed Out"
+          }
+        }
+      }
+    },
+    "iCloud Sync" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Sync"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Sync"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Sync"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Sync"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Sync"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Sync"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Sync"
+          }
+        }
+      }
+    },
+    "iCloud Unavailable" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Unavailable"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Unavailable"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Unavailable"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Unavailable"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Unavailable"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Unavailable"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Unavailable"
           }
         }
       }
@@ -6331,48 +6232,48 @@
       },
       "shouldTranslate" : false
     },
-    "kartonche stores all data locally on your device. We don't collect, track, or share any personal information." : {
+    "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information." : {
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "kartonche съхранява всички данни локално на устройството ви. Не събираме, проследяваме или споделяме лична информация."
+            "state" : "new",
+            "value" : "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "kartonche stores all data locally on your device. We don't collect, track, or share any personal information."
+            "value" : "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "kartonche stores all data locally on your device. We don't collect, track, or share any personal information."
+            "value" : "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "kartonche stores all data locally on your device. We don't collect, track, or share any personal information."
+            "value" : "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information."
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "kartonche stores all data locally on your device. We don't collect, track, or share any personal information."
+            "value" : "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information."
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "kartonche stores all data locally on your device. We don't collect, track, or share any personal information."
+            "value" : "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "kartonche stores all data locally on your device. We don't collect, track, or share any personal information."
+            "value" : "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information."
           }
         }
       }
@@ -6465,6 +6366,52 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Keep Current"
+          }
+        }
+      }
+    },
+    "Last checked" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Last checked"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Last checked"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Last checked"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Last checked"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Last checked"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Last checked"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Last checked"
           }
         }
       }
@@ -9362,53 +9309,6 @@
         }
       }
     },
-    "Other" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Други"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Other"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Other"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Other"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Other"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Other"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Other"
-          }
-        }
-      }
-    },
     "Permission" : {
       "localizations" : {
         "bg" : {
@@ -9497,53 +9397,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Permission required"
-          }
-        }
-      }
-    },
-    "Pharmacies" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Бензиностанции"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Pharmacies"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Pharmacies"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Pharmacies"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Pharmacies"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Pharmacies"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Pharmacies"
           }
         }
       }
@@ -9682,53 +9535,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Privacy Policy"
-          }
-        }
-      }
-    },
-    "Programs" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Програми"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Programs"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Programs"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Programs"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Programs"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Programs"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Programs"
           }
         }
       }
@@ -9961,6 +9767,52 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Rate on App Store"
+          }
+        }
+      }
+    },
+    "Refresh Sync Status" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Refresh Sync Status"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Refresh Sync Status"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Refresh Sync Status"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Refresh Sync Status"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Refresh Sync Status"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Refresh Sync Status"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Refresh Sync Status"
           }
         }
       }
@@ -10707,53 +10559,6 @@
         }
       }
     },
-    "Search Merchant" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Търсене на магазин"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Search Merchant"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Search Merchant"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Search Merchant"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Search Merchant"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Search Merchant"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Search Merchant"
-          }
-        }
-      }
-    },
     "See cards when you're nearby" : {
       "localizations" : {
         "bg" : {
@@ -11073,53 +10878,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Select Favorite Card"
-          }
-        }
-      }
-    },
-    "Select Merchant" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избиране на магазин"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Select Merchant"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Select Merchant"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Select Merchant"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Select Merchant"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Select Merchant"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Select Merchant"
           }
         }
       }
@@ -12094,6 +11852,98 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Support Development"
+          }
+        }
+      }
+    },
+    "Sync Active" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sync Active"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sync Active"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sync Active"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sync Active"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sync Active"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sync Active"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sync Active"
+          }
+        }
+      }
+    },
+    "Sync Error" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sync Error"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sync Error"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sync Error"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sync Error"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sync Error"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sync Error"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sync Error"
           }
         }
       }
@@ -13394,6 +13244,1722 @@
         }
       }
     },
+    "whats_new.2026_02_3.expiration_reminders.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Never miss a card renewal"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Never miss a card renewal"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Never miss a card renewal"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Never miss a card renewal"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Never miss a card renewal"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Never miss a card renewal"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Never miss a card renewal"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Never miss a card renewal"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_3.expiration_reminders.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expiration Reminders"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expiration Reminders"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Expiration Reminders"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expiration Reminders"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expiration Reminders"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expiration Reminders"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expiration Reminders"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expiration Reminders"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_3.export_share.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Share cards via AirDrop"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Share cards via AirDrop"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share cards via AirDrop"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Share cards via AirDrop"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Share cards via AirDrop"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Share cards via AirDrop"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Share cards via AirDrop"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Share cards via AirDrop"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_3.export_share.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Export & Share"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Export & Share"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Export & Share"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Export & Share"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Export & Share"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Export & Share"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Export & Share"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Export & Share"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_3.location_features.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get notified when near your saved stores"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get notified when near your saved stores"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get notified when near your saved stores"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get notified when near your saved stores"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get notified when near your saved stores"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get notified when near your saved stores"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get notified when near your saved stores"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get notified when near your saved stores"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_3.location_features.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Location Features"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Location Features"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Location Features"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Location Features"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Location Features"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Location Features"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Location Features"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Location Features"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_3.widgets.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick access from home and lock screen"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick access from home and lock screen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quick access from home and lock screen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick access from home and lock screen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick access from home and lock screen"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick access from home and lock screen"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick access from home and lock screen"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick access from home and lock screen"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_3.widgets.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Widgets"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Widgets"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widgets"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Widgets"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Widgets"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Widgets"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Widgets"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Widgets"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_4.about_whats_new.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Learn about new features and app info"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Learn about new features and app info"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Learn about new features and app info"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Learn about new features and app info"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Learn about new features and app info"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Learn about new features and app info"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Learn about new features and app info"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Learn about new features and app info"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_4.about_whats_new.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "About & What's New"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "About & What's New"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About & What's New"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "About & What's New"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "About & What's New"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "About & What's New"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "About & What's New"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "About & What's New"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_4.collapsible_notes.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tap to expand or collapse card notes"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tap to expand or collapse card notes"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap to expand or collapse card notes"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tap to expand or collapse card notes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tap to expand or collapse card notes"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tap to expand or collapse card notes"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tap to expand or collapse card notes"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tap to expand or collapse card notes"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_4.collapsible_notes.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Collapsible Notes"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Collapsible Notes"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collapsible Notes"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Collapsible Notes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Collapsible Notes"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Collapsible Notes"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Collapsible Notes"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Collapsible Notes"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_4.merchant_country_flags.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "See which country merchants are from"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "See which country merchants are from"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "See which country merchants are from"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "See which country merchants are from"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "See which country merchants are from"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "See which country merchants are from"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "See which country merchants are from"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "See which country merchants are from"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_4.merchant_country_flags.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Merchant Country Flags"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Merchant Country Flags"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Merchant Country Flags"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Merchant Country Flags"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Merchant Country Flags"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Merchant Country Flags"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Merchant Country Flags"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Merchant Country Flags"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_5.control_center_widgets.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick access to cards from Control Center"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick access to cards from Control Center"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quick access to cards from Control Center"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick access to cards from Control Center"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick access to cards from Control Center"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick access to cards from Control Center"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick access to cards from Control Center"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick access to cards from Control Center"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_5.control_center_widgets.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Control Center Widgets"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Control Center Widgets"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Control Center Widgets"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Control Center Widgets"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Control Center Widgets"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Control Center Widgets"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Control Center Widgets"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Control Center Widgets"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_5.redesigned_card_display.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cards now display with prominent brand colors"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cards now display with prominent brand colors"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cards now display with prominent brand colors"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cards now display with prominent brand colors"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cards now display with prominent brand colors"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cards now display with prominent brand colors"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cards now display with prominent brand colors"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cards now display with prominent brand colors"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_5.redesigned_card_display.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Redesigned Card Display"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Redesigned Card Display"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redesigned Card Display"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Redesigned Card Display"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Redesigned Card Display"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Redesigned Card Display"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Redesigned Card Display"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Redesigned Card Display"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_5.swipe_actions.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe cards to quickly favorite, edit, or delete"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe cards to quickly favorite, edit, or delete"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swipe cards to quickly favorite, edit, or delete"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe cards to quickly favorite, edit, or delete"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe cards to quickly favorite, edit, or delete"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe cards to quickly favorite, edit, or delete"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe cards to quickly favorite, edit, or delete"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe cards to quickly favorite, edit, or delete"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_5.swipe_actions.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe Actions"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe Actions"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swipe Actions"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe Actions"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe Actions"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe Actions"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe Actions"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe Actions"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_6.apple_wallet.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add cards to Apple Wallet with on-device pass signing"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add cards to Apple Wallet with on-device pass signing"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add cards to Apple Wallet with on-device pass signing"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add cards to Apple Wallet with on-device pass signing"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add cards to Apple Wallet with on-device pass signing"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add cards to Apple Wallet with on-device pass signing"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add cards to Apple Wallet with on-device pass signing"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add cards to Apple Wallet with on-device pass signing"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_6.apple_wallet.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Apple Wallet"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Apple Wallet"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Wallet"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Apple Wallet"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Apple Wallet"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Apple Wallet"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Apple Wallet"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Apple Wallet"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_6.import_export.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Revamped data import and export for easy backup and transfer"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Revamped data import and export for easy backup and transfer"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revamped data import and export for easy backup and transfer"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Revamped data import and export for easy backup and transfer"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Revamped data import and export for easy backup and transfer"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Revamped data import and export for easy backup and transfer"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Revamped data import and export for easy backup and transfer"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Revamped data import and export for easy backup and transfer"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_6.import_export.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Import & Export"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Import & Export"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import & Export"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Import & Export"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Import & Export"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Import & Export"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Import & Export"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Import & Export"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_6.quick_look_preview.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview .kartonche files with Quick Look before importing"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview .kartonche files with Quick Look before importing"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preview .kartonche files with Quick Look before importing"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview .kartonche files with Quick Look before importing"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview .kartonche files with Quick Look before importing"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview .kartonche files with Quick Look before importing"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview .kartonche files with Quick Look before importing"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview .kartonche files with Quick Look before importing"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_6.quick_look_preview.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick Look Preview"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick Look Preview"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quick Look Preview"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick Look Preview"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick Look Preview"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick Look Preview"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick Look Preview"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick Look Preview"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_6.quick_scan.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add cards faster by scanning from camera or photo library with automatic barcode and color detection"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add cards faster by scanning from camera or photo library with automatic barcode and color detection"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add cards faster by scanning from camera or photo library with automatic barcode and color detection"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add cards faster by scanning from camera or photo library with automatic barcode and color detection"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add cards faster by scanning from camera or photo library with automatic barcode and color detection"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add cards faster by scanning from camera or photo library with automatic barcode and color detection"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add cards faster by scanning from camera or photo library with automatic barcode and color detection"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add cards faster by scanning from camera or photo library with automatic barcode and color detection"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_6.quick_scan.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick Scan"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick Scan"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quick Scan"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick Scan"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick Scan"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick Scan"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick Scan"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick Scan"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_6.spotlight_search.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Find your loyalty cards from the home screen via Spotlight"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Find your loyalty cards from the home screen via Spotlight"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Find your loyalty cards from the home screen via Spotlight"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Find your loyalty cards from the home screen via Spotlight"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Find your loyalty cards from the home screen via Spotlight"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Find your loyalty cards from the home screen via Spotlight"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Find your loyalty cards from the home screen via Spotlight"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Find your loyalty cards from the home screen via Spotlight"
+          }
+        }
+      }
+    },
+    "whats_new.2026_02_6.spotlight_search.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Spotlight Search"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Spotlight Search"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spotlight Search"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Spotlight Search"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Spotlight Search"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Spotlight Search"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Spotlight Search"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Spotlight Search"
+          }
+        }
+      }
+    },
+    "whats_new.2026_03_1.icloud_sync.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cards now sync automatically across your devices when iCloud is available"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cards now sync automatically across your devices when iCloud is available"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cards now sync automatically across your devices when iCloud is available"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cards now sync automatically across your devices when iCloud is available"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cards now sync automatically across your devices when iCloud is available"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cards now sync automatically across your devices when iCloud is available"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cards now sync automatically across your devices when iCloud is available"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cards now sync automatically across your devices when iCloud is available"
+          }
+        }
+      }
+    },
+    "whats_new.2026_03_1.icloud_sync.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Sync"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Sync"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud Sync"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Sync"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Sync"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Sync"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Sync"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Sync"
+          }
+        }
+      }
+    },
+    "whats_new.version_format" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Version %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Version %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Version %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Version %@"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Version %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Version %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Version %@"
+          }
+        }
+      }
+    },
     "While Using App" : {
       "localizations" : {
         "bg" : {
@@ -13436,53 +15002,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "While Using App"
-          }
-        }
-      }
-    },
-    "Wholesale" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "На едро"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Wholesale"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Wholesale"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Wholesale"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Wholesale"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Wholesale"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Wholesale"
           }
         }
       }
@@ -13717,48 +15236,48 @@
         }
       }
     },
-    "Your cards are stored only on your device." : {
+    "Your cards stay on this device by default. If iCloud is enabled, they also sync through your private iCloud database." : {
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картите ви се съхраняват само на вашето устройство."
+            "state" : "new",
+            "value" : "Your cards stay on this device by default. If iCloud is enabled, they also sync through your private iCloud database."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Your cards are stored only on your device."
+            "value" : "Your cards stay on this device by default. If iCloud is enabled, they also sync through your private iCloud database."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Your cards are stored only on your device."
+            "value" : "Your cards stay on this device by default. If iCloud is enabled, they also sync through your private iCloud database."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Your cards are stored only on your device."
+            "value" : "Your cards stay on this device by default. If iCloud is enabled, they also sync through your private iCloud database."
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Your cards are stored only on your device."
+            "value" : "Your cards stay on this device by default. If iCloud is enabled, they also sync through your private iCloud database."
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Your cards are stored only on your device."
+            "value" : "Your cards stay on this device by default. If iCloud is enabled, they also sync through your private iCloud database."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Your cards are stored only on your device."
+            "value" : "Your cards stay on this device by default. If iCloud is enabled, they also sync through your private iCloud database."
           }
         }
       }
