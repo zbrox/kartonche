@@ -177,6 +177,7 @@ struct CardListView: View {
                     } label: {
                         Image(systemName: "gear")
                     }
+                    .accessibilityIdentifier("settingsButton")
                 }
                 
                 ToolbarItem(placement: .principal) {

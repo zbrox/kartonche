@@ -11,12 +11,12 @@ import CoreLocation
 
 @Model
 final class CardLocation {
-    var id: UUID
-    var name: String
-    var address: String
-    var latitude: Double
-    var longitude: Double
-    var radius: Double // in meters
+    var id: UUID = UUID()
+    var name: String = ""
+    var address: String = ""
+    var latitude: Double = 0
+    var longitude: Double = 0
+    var radius: Double = 500.0 // in meters
     
     // Relationship to card (inverse of LoyaltyCard.locations)
     var card: LoyaltyCard?

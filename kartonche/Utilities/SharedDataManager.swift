@@ -7,9 +7,12 @@
 
 import Foundation
 import SwiftData
+import CloudKit
 
 enum SharedDataManager {
     static let appGroupIdentifier = "group.com.zbrox.kartonche.app"
+    static let cloudContainerIdentifier = "iCloud.com.zbrox.kartonche.app"
+    static let sharedModelContainer: ModelContainer = createSharedModelContainer()
     
     private static var sharedUserDefaults: UserDefaults? {
         UserDefaults(suiteName: appGroupIdentifier)
@@ -74,6 +77,18 @@ enum SharedDataManager {
     static func markAlwaysBannerDismissed() {
         sharedUserDefaults?.set(true, forKey: "hasDismissedAlwaysBanner")
     }
+
+    // MARK: - Sync Status
+
+    static let lastSyncCheckDateKey = "lastSyncCheckDate"
+
+    static func saveLastSyncCheckDate(_ date: Date) {
+        sharedUserDefaults?.set(date, forKey: lastSyncCheckDateKey)
+    }
+
+    static func getLastSyncCheckDate() -> Date? {
+        sharedUserDefaults?.object(forKey: lastSyncCheckDateKey) as? Date
+    }
     
     // MARK: - Model Container
     
@@ -92,7 +107,7 @@ enum SharedDataManager {
         let storeURL = sharedContainer.appendingPathComponent("kartonche.store")
         let modelConfiguration = ModelConfiguration(
             url: storeURL,
-            cloudKitDatabase: .none
+            cloudKitDatabase: resolveCloudKitDatabase()
         )
         
         do {
@@ -101,10 +116,44 @@ enum SharedDataManager {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }
+
+    static func cloudKitDatabase(for accountStatus: CKAccountStatus) -> ModelConfiguration.CloudKitDatabase {
+        switch accountStatus {
+        case .available:
+            return .automatic
+        case .noAccount, .couldNotDetermine, .restricted, .temporarilyUnavailable:
+            return .none
+        @unknown default:
+            return .none
+        }
+    }
+
+    private static func resolveCloudKitDatabase() -> ModelConfiguration.CloudKitDatabase {
+        guard let accountStatus = fetchCloudAccountStatus(timeout: 1.5) else {
+            return .none
+        }
+        return cloudKitDatabase(for: accountStatus)
+    }
+
+    private static func fetchCloudAccountStatus(timeout: TimeInterval) -> CKAccountStatus? {
+        let semaphore = DispatchSemaphore(value: 0)
+        nonisolated(unsafe) var status: CKAccountStatus?
+
+        CKContainer(identifier: cloudContainerIdentifier).accountStatus { accountStatus, _ in
+            status = accountStatus
+            semaphore.signal()
+        }
+
+        let waitResult = semaphore.wait(timeout: .now() + timeout)
+        guard waitResult == .success else {
+            return nil
+        }
+
+        return status
+    }
     
     static func fetchAllCards() -> [LoyaltyCard] {
-        let container = createSharedModelContainer()
-        let context = ModelContext(container)
+        let context = ModelContext(sharedModelContainer)
         
         let descriptor = FetchDescriptor<LoyaltyCard>(
             sortBy: [SortDescriptor(\.name)]
@@ -119,8 +168,7 @@ enum SharedDataManager {
     }
     
     static func fetchCard(id: UUID) -> LoyaltyCard? {
-        let container = createSharedModelContainer()
-        let context = ModelContext(container)
+        let context = ModelContext(sharedModelContainer)
         
         let predicate = #Predicate<LoyaltyCard> { card in
             card.id == id

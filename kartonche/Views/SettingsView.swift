@@ -35,6 +35,7 @@ struct SettingsView: View {
                     } label: {
                         Label(String(localized: "Data"), systemImage: "externaldrive")
                     }
+                    .accessibilityIdentifier("dataSettingsRow")
                 }
 
                 // About

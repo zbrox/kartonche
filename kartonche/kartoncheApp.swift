@@ -14,7 +14,7 @@ import CoreSpotlight
 
 @main
 struct kartoncheApp: App {
-    var sharedModelContainer: ModelContainer = SharedDataManager.createSharedModelContainer()
+    var sharedModelContainer: ModelContainer = SharedDataManager.sharedModelContainer
     @StateObject private var locationManager = LocationManager()
     @StateObject private var notificationDelegate = NotificationDelegate()
     @State private var urlRouter = URLRouter()
