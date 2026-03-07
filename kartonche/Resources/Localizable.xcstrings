@@ -1207,7 +1207,14 @@
 
     },
     "iCloud Sync" : {
-
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Синхронизиране с iCloud"
+          }
+        }
+      }
     },
     "iCloud Unavailable" : {
 
@@ -1321,19 +1328,15 @@
       "comment" : "Control widget button label for app launcher\nLock screen circular widget name\nLock screen inline widget app name",
       "shouldTranslate" : false
     },
-    "kartonche stores all data locally on your device. We don't collect, track, or share any personal information." : {
-      "extractionState" : "stale",
+    "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information." : {
       "localizations" : {
         "bg" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "kartonche съхранява всички данни локално на устройството ви. Не събираме, проследяваме или споделяме лична информация."
+            "value" : "Kartonche съхранява вашите карти на устройството Ви и може да ги синхронизира с личният ви акаунт в iCloud. Не събиране, проследяваме или споделяме личната Ви информация."
           }
         }
       }
-    },
-    "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information." : {
-
     },
     "Keep both" : {
       "localizations" : {
@@ -1356,7 +1359,14 @@
       }
     },
     "Last checked" : {
-
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Последна проверка"
+          }
+        }
+      }
     },
     "Launch Kartonche" : {
       "localizations" : {
@@ -2853,120 +2863,6 @@
         }
       }
     },
-    "While Using App" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Докато използвате приложението"
-          }
-        }
-      }
-    },
-    "Widgets work when app is closed" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Инструментите работят, дори когато приложението е затворено"
-          }
-        }
-      }
-    },
-    "You can disable reminders anytime in Settings." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Можете да изключите напомнянията по всяко време от Настройки."
-          }
-        }
-      }
-    },
-    "You'll be notified when you're near a saved card location" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ще бъдете уведомени, когато сте близо до запазено местоположение"
-          }
-        }
-      }
-    },
-    "You're near %lld saved locations" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Вие сте близо до %lld запазени местоположения"
-          }
-        }
-      }
-    },
-    "You're near a saved location" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Вие сте близо до запазено местоположение"
-          }
-        }
-      }
-    },
-    "Your cards are stored only on your device." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картите ви се съхраняват само на вашето устройство."
-          }
-        }
-      }
-    },
-    "Your cards stay on this device by default. If iCloud is enabled, they also sync through your private iCloud database." : {
-
-    },
-    "Your cards, always ready" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картите ви, винаги готови"
-          }
-        }
-      }
-    },
-    "Your location is only used to calculate distance to saved stores." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Местоположението ви се използва само за изчисляване на разстояние до запазени магазини."
-          }
-        }
-      }
-    },
-    "Your location is only used to find nearby stores" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Местоположението ви се използва само за намиране на близки магазини"
-          }
-        }
-      }
-    },
-    "Your location is only used to find nearby stores. Battery impact is minimal." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Местоположението ви се използва само за намиране на близки магазини. Влиянието върху батерията е минимално."
-          }
-        }
-      }
-    },
     "whats_new.2026_02_3.expiration_reminders.description" : {
       "localizations" : {
         "bg" : {
@@ -3491,6 +3387,116 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Version %@"
+          }
+        }
+      }
+    },
+    "While Using App" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Докато използвате приложението"
+          }
+        }
+      }
+    },
+    "Widgets work when app is closed" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Инструментите работят, дори когато приложението е затворено"
+          }
+        }
+      }
+    },
+    "You can disable reminders anytime in Settings." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Можете да изключите напомнянията по всяко време от Настройки."
+          }
+        }
+      }
+    },
+    "You'll be notified when you're near a saved card location" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ще бъдете уведомени, когато сте близо до запазено местоположение"
+          }
+        }
+      }
+    },
+    "You're near %lld saved locations" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вие сте близо до %lld запазени местоположения"
+          }
+        }
+      }
+    },
+    "You're near a saved location" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вие сте близо до запазено местоположение"
+          }
+        }
+      }
+    },
+    "Your cards stay on this device by default. If iCloud is enabled, they also sync through your private iCloud database." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вашите карти остават на вашето устройство по подразбиране. Ако имате настроен достъп до iCloud, те също така ще бъдат синхронизирани с личният ви iCloud."
+          }
+        }
+      }
+    },
+    "Your cards, always ready" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Картите ви, винаги готови"
+          }
+        }
+      }
+    },
+    "Your location is only used to calculate distance to saved stores." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Местоположението ви се използва само за изчисляване на разстояние до запазени магазини."
+          }
+        }
+      }
+    },
+    "Your location is only used to find nearby stores" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Местоположението ви се използва само за намиране на близки магазини"
+          }
+        }
+      }
+    },
+    "Your location is only used to find nearby stores. Battery impact is minimal." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Местоположението ви се използва само за намиране на близки магазини. Влиянието върху батерията е минимално."
           }
         }
       }
