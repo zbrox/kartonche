@@ -5,20 +5,8 @@ import Foundation
 
 struct WhatsNewFeature {
     let icon: String
-    let titleEN: String
-    let titleBG: String
-    let descriptionEN: String
-    let descriptionBG: String
-    
-    var localizedTitle: String {
-        let lang = Locale.current.language.languageCode?.identifier ?? "en"
-        return lang == "bg" ? titleBG : titleEN
-    }
-    
-    var localizedDescription: String {
-        let lang = Locale.current.language.languageCode?.identifier ?? "en"
-        return lang == "bg" ? descriptionBG : descriptionEN
-    }
+    let title: LocalizedStringResource
+    let description: LocalizedStringResource
 }
 
 struct WhatsNewVersion {
@@ -34,10 +22,8 @@ let whatsNewVersions: [WhatsNewVersion] = [
         features: [
             WhatsNewFeature(
                 icon: "icloud",
-                titleEN: "iCloud Sync",
-                titleBG: "Синхронизация с iCloud",
-                descriptionEN: "Cards now sync automatically across your devices when iCloud is available",
-                descriptionBG: "Картите вече се синхронизират автоматично между устройствата ви, когато iCloud е наличен"
+                title: "whats_new.2026_03_1.icloud_sync.title",
+                description: "whats_new.2026_03_1.icloud_sync.description"
             ),
         ]
     ),
@@ -46,38 +32,28 @@ let whatsNewVersions: [WhatsNewVersion] = [
         features: [
             WhatsNewFeature(
                 icon: "camera.viewfinder",
-                titleEN: "Quick Scan",
-                titleBG: "Бързо сканиране",
-                descriptionEN: "Add cards faster by scanning from camera or photo library with automatic barcode and color detection",
-                descriptionBG: "По-бързо добавяне на карти чрез сканиране от камера или снимка с автоматично разпознаване на баркод и цвят"
+                title: "whats_new.2026_02_6.quick_scan.title",
+                description: "whats_new.2026_02_6.quick_scan.description"
             ),
             WhatsNewFeature(
                 icon: "magnifyingglass",
-                titleEN: "Spotlight Search",
-                titleBG: "Търсене в Spotlight",
-                descriptionEN: "Find your loyalty cards from the home screen via Spotlight",
-                descriptionBG: "Намерете картите си за лоялност от началния екран чрез Spotlight"
+                title: "whats_new.2026_02_6.spotlight_search.title",
+                description: "whats_new.2026_02_6.spotlight_search.description"
             ),
             WhatsNewFeature(
                 icon: "wallet.pass",
-                titleEN: "Apple Wallet",
-                titleBG: "Apple Wallet",
-                descriptionEN: "Add cards to Apple Wallet with on-device pass signing",
-                descriptionBG: "Добавяне на карти в Apple Wallet с подписване на пространството на устройството"
+                title: "whats_new.2026_02_6.apple_wallet.title",
+                description: "whats_new.2026_02_6.apple_wallet.description"
             ),
             WhatsNewFeature(
                 icon: "eye",
-                titleEN: "Quick Look Preview",
-                titleBG: "Бърз преглед",
-                descriptionEN: "Preview .kartonche files with Quick Look before importing",
-                descriptionBG: "Преглед на .kartonche файлове с Бърз преглед преди импортиране"
+                title: "whats_new.2026_02_6.quick_look_preview.title",
+                description: "whats_new.2026_02_6.quick_look_preview.description"
             ),
             WhatsNewFeature(
                 icon: "square.and.arrow.up.on.square",
-                titleEN: "Import & Export",
-                titleBG: "Импортиране и експортиране",
-                descriptionEN: "Revamped data import and export for easy backup and transfer",
-                descriptionBG: "Подобрено импортиране и експортиране за лесно архивиране и прехвърляне"
+                title: "whats_new.2026_02_6.import_export.title",
+                description: "whats_new.2026_02_6.import_export.description"
             ),
         ]
     ),
@@ -86,24 +62,18 @@ let whatsNewVersions: [WhatsNewVersion] = [
         features: [
             WhatsNewFeature(
                 icon: "hand.draw",
-                titleEN: "Swipe Actions",
-                titleBG: "Действия при плъзгане",
-                descriptionEN: "Swipe cards to quickly favorite, edit, or delete",
-                descriptionBG: "Плъзнете карти за бързо означаване, редактиране или изтриване"
+                title: "whats_new.2026_02_5.swipe_actions.title",
+                description: "whats_new.2026_02_5.swipe_actions.description"
             ),
             WhatsNewFeature(
                 icon: "switch.2",
-                titleEN: "Control Center Widgets",
-                titleBG: "Инструменти за Контролен център",
-                descriptionEN: "Quick access to cards from Control Center",
-                descriptionBG: "Бърз достъп до карти от Контролния център"
+                title: "whats_new.2026_02_5.control_center_widgets.title",
+                description: "whats_new.2026_02_5.control_center_widgets.description"
             ),
             WhatsNewFeature(
                 icon: "paintpalette",
-                titleEN: "Redesigned Card Display",
-                titleBG: "Преработен дизайн на картите",
-                descriptionEN: "Cards now display with prominent brand colors",
-                descriptionBG: "Картите вече се показват с изявени цветове на марката"
+                title: "whats_new.2026_02_5.redesigned_card_display.title",
+                description: "whats_new.2026_02_5.redesigned_card_display.description"
             ),
         ]
     ),
@@ -112,24 +82,18 @@ let whatsNewVersions: [WhatsNewVersion] = [
         features: [
             WhatsNewFeature(
                 icon: "info.circle",
-                titleEN: "About & What's New",
-                titleBG: "Относно и Какво ново",
-                descriptionEN: "Learn about new features and app info",
-                descriptionBG: "Научете за новите функции и информация за приложението"
+                title: "whats_new.2026_02_4.about_whats_new.title",
+                description: "whats_new.2026_02_4.about_whats_new.description"
             ),
             WhatsNewFeature(
                 icon: "note.text",
-                titleEN: "Collapsible Notes",
-                titleBG: "Сгъваеми бележки",
-                descriptionEN: "Tap to expand or collapse card notes",
-                descriptionBG: "Докоснете за разгъване или свиване на бележките"
+                title: "whats_new.2026_02_4.collapsible_notes.title",
+                description: "whats_new.2026_02_4.collapsible_notes.description"
             ),
             WhatsNewFeature(
                 icon: "flag",
-                titleEN: "Merchant Country Flags",
-                titleBG: "Флагове на държави",
-                descriptionEN: "See which country merchants are from",
-                descriptionBG: "Вижте от коя държава са търговците"
+                title: "whats_new.2026_02_4.merchant_country_flags.title",
+                description: "whats_new.2026_02_4.merchant_country_flags.description"
             ),
         ]
     ),
@@ -138,31 +102,23 @@ let whatsNewVersions: [WhatsNewVersion] = [
         features: [
             WhatsNewFeature(
                 icon: "location.fill",
-                titleEN: "Location Features",
-                titleBG: "Функции за местоположение",
-                descriptionEN: "Get notified when near your saved stores",
-                descriptionBG: "Известия при близост до запазени магазини"
+                title: "whats_new.2026_02_3.location_features.title",
+                description: "whats_new.2026_02_3.location_features.description"
             ),
             WhatsNewFeature(
                 icon: "square.grid.2x2",
-                titleEN: "Widgets",
-                titleBG: "Инструменти",
-                descriptionEN: "Quick access from home and lock screen",
-                descriptionBG: "Бърз достъп от началния и заключен екран"
+                title: "whats_new.2026_02_3.widgets.title",
+                description: "whats_new.2026_02_3.widgets.description"
             ),
             WhatsNewFeature(
                 icon: "bell.badge",
-                titleEN: "Expiration Reminders",
-                titleBG: "Напомняния за изтичане",
-                descriptionEN: "Never miss a card renewal",
-                descriptionBG: "Никога не пропускайте подновяване на карта"
+                title: "whats_new.2026_02_3.expiration_reminders.title",
+                description: "whats_new.2026_02_3.expiration_reminders.description"
             ),
             WhatsNewFeature(
                 icon: "square.and.arrow.up",
-                titleEN: "Export & Share",
-                titleBG: "Експортиране и споделяне",
-                descriptionEN: "Share cards via AirDrop",
-                descriptionBG: "Споделяне на карти чрез AirDrop"
+                title: "whats_new.2026_02_3.export_share.title",
+                description: "whats_new.2026_02_3.export_share.description"
             ),
         ]
     ),
