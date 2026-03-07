@@ -30,6 +30,18 @@ struct WhatsNewVersion {
 
 let whatsNewVersions: [WhatsNewVersion] = [
     WhatsNewVersion(
+        version: "2026.03.1",
+        features: [
+            WhatsNewFeature(
+                icon: "icloud",
+                titleEN: "iCloud Sync",
+                titleBG: "Синхронизация с iCloud",
+                descriptionEN: "Cards now sync automatically across your devices when iCloud is available",
+                descriptionBG: "Картите вече се синхронизират автоматично между устройствата ви, когато iCloud е наличен"
+            ),
+        ]
+    ),
+    WhatsNewVersion(
         version: "2026.02.6",
         features: [
             WhatsNewFeature(
