@@ -190,11 +190,11 @@ struct PrivacyView: View {
                         .fontWeight(.bold)
                     
                     VStack(alignment: .leading, spacing: 12) {
-                        Text(String(localized: "kartonche stores all data locally on your device. We don't collect, track, or share any personal information."))
+                        Text(String(localized: "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information."))
                         
                         Text(String(localized: "No account required"))
                             .fontWeight(.semibold)
-                        Text(String(localized: "Your cards are stored only on your device."))
+                        Text(String(localized: "Your cards stay on this device by default. If iCloud is enabled, they also sync through your private iCloud database."))
                             .foregroundStyle(.secondary)
                         
                         Text(String(localized: "No analytics"))

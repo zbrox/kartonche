@@ -187,14 +187,14 @@ See [.github/workflows/](.github/workflows/) for workflow definitions.
 - **Language:** Swift 6.2+
 - **Framework:** SwiftUI + SwiftData (iOS 26.2+)
 - **Barcode:** VisionKit (scanning) + Core Image (generation)
-- **Storage:** Local-only SwiftData (no cloud sync)
+- **Storage:** SwiftData with optional iCloud sync (CloudKit private database)
 - **Localization:** String Catalogs (English base, Bulgarian translation)
 - **Testing:** Swift Testing framework
 - **Dependencies:** Minimal dependencies: swift-crypto, swift-certificates, ZIPFoundation + native Apple frameworks
 
 ## What's Next
 
-- [ ] iCloud sync (CloudKit integration)
+- [x] iCloud sync (CloudKit integration)
 - [x] Apple Wallet integration
 - [x] UI test coverage
 - [ ] App Store release

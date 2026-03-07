@@ -10,17 +10,17 @@ import SwiftData
 
 @Model
 final class LoyaltyCard {
-    var id: UUID
-    var name: String
+    var id: UUID = UUID()
+    var name: String = ""
     var storeName: String?
     var cardNumber: String?
-    var barcodeType: BarcodeType
-    var barcodeData: String
+    var barcodeType: BarcodeType = BarcodeType.qr
+    var barcodeData: String = ""
     var color: String?
     var secondaryColor: String?
     var notes: String?
-    var isFavorite: Bool
-    var createdDate: Date
+    var isFavorite: Bool = false
+    var createdDate: Date = Date()
     var lastUsedDate: Date?
     var expirationDate: Date?
     
@@ -30,7 +30,7 @@ final class LoyaltyCard {
     var cardImage: Data?
     
     @Relationship(deleteRule: .cascade, inverse: \CardLocation.card)
-    var locations: [CardLocation] = []
+    var locations: [CardLocation]! = []
     
     init(
         id: UUID = UUID(),

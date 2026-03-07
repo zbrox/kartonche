@@ -12,6 +12,10 @@ struct DataSettingsView: View {
     @Query private var allCards: [LoyaltyCard]
     @Environment(\.modelContext) private var modelContext
 
+    @State private var syncSnapshot = SyncStatusSnapshot(
+        status: .unavailable,
+        lastCheckedAt: SharedDataManager.getLastSyncCheckDate()
+    )
     @State private var shareItem: ShareItem?
     @State private var exportError: Error?
     @State private var showExportError = false
@@ -31,6 +35,33 @@ struct DataSettingsView: View {
         List {
             // Export
             Section {
+                HStack {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(String(localized: "iCloud Sync"))
+                        Text(syncStatusTitle)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                        if let lastCheckedAt = syncSnapshot.lastCheckedAt {
+                            HStack(spacing: 4) {
+                                Text(String(localized: "Last checked"))
+                                Text(lastCheckedAt, style: .relative)
+                            }
+                            .font(.caption2)
+                            .foregroundStyle(.tertiary)
+                        }
+                    }
+                    Spacer()
+                    Button {
+                        Task {
+                            await refreshSyncStatus()
+                        }
+                    } label: {
+                        Image(systemName: "arrow.clockwise")
+                    }
+                    .accessibilityLabel(String(localized: "Refresh Sync Status"))
+                }
+                .accessibilityIdentifier("iCloudSyncStatusRow")
+
                 Button {
                     exportAllCards()
                 } label: {
@@ -68,6 +99,9 @@ struct DataSettingsView: View {
         }
         .navigationTitle(String(localized: "Data"))
         .navigationBarTitleDisplayMode(.inline)
+        .task {
+            await refreshSyncStatus()
+        }
         .fileImporter(
             isPresented: $showingFilePicker,
             allowedContentTypes: [.kartonche]
@@ -146,6 +180,24 @@ struct DataSettingsView: View {
     @MainActor
     private func importCards(container: CardExportContainer, strategy: CardImporter.ImportStrategy) async throws -> CardImporter.ImportResult {
         try CardRepository(modelContext: modelContext).importCards(from: container, strategy: strategy)
+    }
+
+    @MainActor
+    private func refreshSyncStatus() async {
+        syncSnapshot = await SyncStatusService().refreshStatus()
+    }
+
+    private var syncStatusTitle: String {
+        switch syncSnapshot.status {
+        case .active:
+            return String(localized: "Sync Active")
+        case .signedOut:
+            return String(localized: "iCloud Signed Out")
+        case .unavailable:
+            return String(localized: "iCloud Unavailable")
+        case .error:
+            return String(localized: "Sync Error")
+        }
     }
 }
 

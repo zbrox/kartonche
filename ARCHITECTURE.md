@@ -135,7 +135,7 @@ kartoncheWidget/                  # Widget extension target
 6. `CardEditorView` opens pre-filled with gathered values (barcode data, type, color)
 7. User completes remaining fields and saves
 8. Insert into `ModelContext` → automatic save
-9. iCloud sync happens automatically (CloudKit)
+9. If iCloud is available, CloudKit sync happens automatically
 10. View updates via `@Query` observation
 
 ### Displaying a Card for Scanning
@@ -162,7 +162,7 @@ kartoncheWidget/                  # Widget extension target
 
 - **Zero backend code** - Apple handles sync infrastructure
 - **Automatic conflict resolution** - CloudKit manages merges
-- **iCloud account required** - Acceptable for target audience
+- **Local fallback** - App remains fully usable without iCloud
 - **Privacy-first** - Data stays in user's iCloud, not our servers
 
 ### Why Core Image for Barcodes?
