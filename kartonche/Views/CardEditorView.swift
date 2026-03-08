@@ -15,6 +15,7 @@ struct CardEditorView: View {
     @Environment(\.dismiss) private var dismiss
     
     let card: LoyaltyCard?
+    let onOpenExistingCard: ((UUID) -> Void)?
     
     @State private var name: String
     @State private var storeName: String
@@ -46,6 +47,8 @@ struct CardEditorView: View {
     @State private var cardImagePickerItem: PhotosPickerItem?
     @State private var showingImageCrop = false
     @State private var rawImageForCrop: UIImage?
+    @State private var duplicateCard: LoyaltyCard?
+    @State private var showingDuplicateAlert = false
     
     private var isEditMode: Bool { card != nil }
     
@@ -83,9 +86,11 @@ struct CardEditorView: View {
         scannedBarcodeData: String? = nil,
         scannedBarcodeType: BarcodeType? = nil,
         scannedColor: Color? = nil,
-        scannedSuggestedColors: [Color] = []
+        scannedSuggestedColors: [Color] = [],
+        onOpenExistingCard: ((UUID) -> Void)? = nil
     ) {
         self.card = card
+        self.onOpenExistingCard = onOpenExistingCard
 
         if let card = card {
             // Edit mode - use card data
@@ -470,6 +475,17 @@ struct CardEditorView: View {
             } message: {
                 Text("Select which barcode to use")
             }
+            .alert(String(localized: "Duplicate Barcode"), isPresented: $showingDuplicateAlert, presenting: duplicateCard) { duplicate in
+                Button(String(localized: "Open Existing")) {
+                    onOpenExistingCard?(duplicate.id)
+                }
+                Button(String(localized: "Save Anyway")) {
+                    persistCard()
+                }
+                Button(String(localized: "Cancel"), role: .cancel) {}
+            } message: { _ in
+                Text(String(localized: "A card with this barcode already exists"))
+            }
             .sheet(isPresented: $showingLocationEditor) {
                 // Create a temporary card for the LocationEditorView if we're in create mode
                 let editorCard = card ?? LoyaltyCard(
@@ -552,6 +568,22 @@ struct CardEditorView: View {
     }
     
     private func saveCard() {
+        let repository = CardRepository(modelContext: modelContext)
+        if let existingDuplicate = repository.findCard(
+            withBarcodeData: barcodeData,
+            barcodeType: barcodeType,
+            excludingCardID: card?.id
+        ) {
+            duplicateCard = existingDuplicate
+            showingDuplicateAlert = true
+            return
+        }
+
+        persistCard()
+    }
+
+    private func persistCard() {
+        let repository = CardRepository(modelContext: modelContext)
         let savedCard: LoyaltyCard
 
         if let existingCard = card {
@@ -593,7 +625,7 @@ struct CardEditorView: View {
             savedCard = newCard
         }
 
-        CardRepository(modelContext: modelContext).save(savedCard)
+        repository.save(savedCard)
 
         dismiss()
     }

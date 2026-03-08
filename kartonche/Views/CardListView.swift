@@ -47,6 +47,7 @@ struct CardListView: View {
     @State private var scannedSuggestedColors: [Color] = []
     @State private var showingPhotoPicker = false
     @State private var isProcessingQuickScan = false
+    @State private var pendingOpenExistingCardID: UUID?
     
     struct ShareItem: Identifiable {
         let id = UUID()
@@ -202,12 +203,17 @@ struct CardListView: View {
                     }
                 )
             }
-            .sheet(isPresented: $showingEditor) {
+            .sheet(isPresented: $showingEditor, onDismiss: {
+                presentPendingExistingCardEditorIfNeeded()
+            }) {
                 CardEditorView(
                     scannedBarcodeData: scannedBarcodeData,
                     scannedBarcodeType: scannedBarcodeType,
                     scannedColor: scannedColor,
-                    scannedSuggestedColors: scannedSuggestedColors
+                    scannedSuggestedColors: scannedSuggestedColors,
+                    onOpenExistingCard: { duplicateCardID in
+                        requestOpenExistingCardEditor(cardID: duplicateCardID)
+                    }
                 )
             }
             .onChange(of: addFlowPickerItem) { _, newValue in
@@ -230,8 +236,15 @@ struct CardListView: View {
                     }
                 }
             }
-            .sheet(item: $selectedCard) { card in
-                CardEditorView(card: card)
+            .sheet(item: $selectedCard, onDismiss: {
+                presentPendingExistingCardEditorIfNeeded()
+            }) { card in
+                CardEditorView(
+                    card: card,
+                    onOpenExistingCard: { duplicateCardID in
+                        requestOpenExistingCardEditor(cardID: duplicateCardID)
+                    }
+                )
             }
             .sheet(isPresented: $showingSettings) {
                 SettingsView()
@@ -710,6 +723,29 @@ struct CardListView: View {
         scannedBarcodeType = nil
         scannedColor = nil
         scannedSuggestedColors = []
+    }
+
+    private func requestOpenExistingCardEditor(cardID: UUID) {
+        pendingOpenExistingCardID = cardID
+        showingEditor = false
+        selectedCard = nil
+        presentPendingExistingCardEditorIfNeeded()
+    }
+
+    private func presentPendingExistingCardEditorIfNeeded() {
+        guard !showingEditor, selectedCard == nil else {
+            return
+        }
+        guard let pendingCardID = pendingOpenExistingCardID else {
+            return
+        }
+        guard let targetCard = allCards.first(where: { $0.id == pendingCardID }) else {
+            pendingOpenExistingCardID = nil
+            return
+        }
+
+        pendingOpenExistingCardID = nil
+        selectedCard = targetCard
     }
 
     @MainActor

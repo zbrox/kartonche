@@ -116,6 +116,9 @@
         }
       }
     },
+    "A card with this barcode already exists" : {
+
+    },
     "A simple app for organizing your loyalty cards. Open source, privacy-focused, no account required." : {
       "localizations" : {
         "bg" : {
@@ -739,6 +742,9 @@
           }
         }
       }
+    },
+    "Duplicate Barcode" : {
+
     },
     "Duplicate cards will not be imported" : {
       "localizations" : {
@@ -1917,6 +1923,9 @@
         }
       }
     },
+    "Open Existing" : {
+
+    },
     "Open Favorite Card" : {
       "localizations" : {
         "bg" : {
@@ -2195,6 +2204,9 @@
           }
         }
       }
+    },
+    "Save Anyway" : {
+
     },
     "Scan Barcode" : {
       "comment" : "Button to scan a barcode with camera",

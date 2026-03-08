@@ -144,4 +144,80 @@ struct CardRepositoryTests {
         #expect(result.skippedCount == 1)
         #expect(!result.hasChanges)
     }
+
+    @Test func findCardWithBarcodeDataFindsDuplicate() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+
+        let existingCard = LoyaltyCard(
+            name: "Existing",
+            barcodeType: .qr,
+            barcodeData: "ABC-123"
+        )
+        context.insert(existingCard)
+        try context.save()
+
+        let repo = CardRepository(modelContext: context)
+        let duplicate = repo.findCard(withBarcodeData: "ABC-123", barcodeType: .qr)
+
+        #expect(duplicate?.id == existingCard.id)
+    }
+
+    @Test func findCardWithBarcodeDataIgnoresExcludedCardID() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+
+        let existingCard = LoyaltyCard(
+            name: "Existing",
+            barcodeType: .qr,
+            barcodeData: "ABC-123"
+        )
+        context.insert(existingCard)
+        try context.save()
+
+        let repo = CardRepository(modelContext: context)
+        let duplicate = repo.findCard(
+            withBarcodeData: "ABC-123",
+            barcodeType: .qr,
+            excludingCardID: existingCard.id
+        )
+
+        #expect(duplicate == nil)
+    }
+
+    @Test func findCardWithBarcodeDataTrimsWhitespace() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+
+        let existingCard = LoyaltyCard(
+            name: "Existing",
+            barcodeType: .qr,
+            barcodeData: "ABC-123"
+        )
+        context.insert(existingCard)
+        try context.save()
+
+        let repo = CardRepository(modelContext: context)
+        let duplicate = repo.findCard(withBarcodeData: "  ABC-123 \n", barcodeType: .qr)
+
+        #expect(duplicate?.id == existingCard.id)
+    }
+
+    @Test func findCardWithBarcodeDataIgnoresDifferentBarcodeType() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+
+        let existingCard = LoyaltyCard(
+            name: "Existing",
+            barcodeType: .qr,
+            barcodeData: "ABC-123"
+        )
+        context.insert(existingCard)
+        try context.save()
+
+        let repo = CardRepository(modelContext: context)
+        let duplicate = repo.findCard(withBarcodeData: "ABC-123", barcodeType: .code128)
+
+        #expect(duplicate == nil)
+    }
 }

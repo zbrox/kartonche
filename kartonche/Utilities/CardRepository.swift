@@ -40,6 +40,28 @@ final class CardRepository {
         SpotlightIndexer.index(card)
     }
 
+    /// Find another card that uses the same barcode payload and barcode type.
+    func findCard(
+        withBarcodeData barcodeData: String,
+        barcodeType: BarcodeType,
+        excludingCardID: UUID? = nil
+    ) -> LoyaltyCard? {
+        let normalizedBarcode = barcodeData.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !normalizedBarcode.isEmpty else {
+            return nil
+        }
+
+        let allCards = (try? modelContext.fetch(FetchDescriptor<LoyaltyCard>())) ?? []
+        return allCards.first { card in
+            if let excludingCardID, card.id == excludingCardID {
+                return false
+            }
+
+            return card.barcodeType == barcodeType &&
+                card.barcodeData.trimmingCharacters(in: .whitespacesAndNewlines) == normalizedBarcode
+        }
+    }
+
     /// Handle all cleanup before deletion, then delete the card.
     func delete(_ card: LoyaltyCard) {
         Task {
