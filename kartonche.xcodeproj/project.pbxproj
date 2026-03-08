@@ -302,7 +302,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B5B57CA2F33F2C9005DCCA8 /* Build configuration list for PBXNativeTarget "kartonche" */;
 			buildPhases = (
-				EF209ABCBA474E908D645E7E /* Generate About Icon */,
+				EF209ABCBA474E908D645E7E /* Generate Icons */,
 				0B5B57A32F33F2C8005DCCA8 /* Sources */,
 				0B5B57A42F33F2C8005DCCA8 /* Frameworks */,
 				0B5B57A52F33F2C8005DCCA8 /* Resources */,
@@ -546,7 +546,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		EF209ABCBA474E908D645E7E /* Generate About Icon */ = {
+		EF209ABCBA474E908D645E7E /* Generate Icons */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -555,20 +555,26 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Scripts/generate-about-icon.sh",
+				"$(SRCROOT)/Scripts/generate-icons.sh",
 				"$(SRCROOT)/kartonche/AppIcon.icon/Assets/0_background.svg",
 				"$(SRCROOT)/kartonche/AppIcon.icon/Assets/1_orange_card.svg",
 				"$(SRCROOT)/kartonche/AppIcon.icon/Assets/2_blue_card.svg",
 			);
-			name = "Generate About Icon";
+			name = "Generate Icons";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"$(SRCROOT)/kartonche/Assets.xcassets/AboutIcon.imageset/AboutIcon.png",
+				"$(SRCROOT)/kartonche/Resources/PassAssets/pass-icon.png",
+				"$(SRCROOT)/kartonche/Resources/PassAssets/pass-icon@2x.png",
+				"$(SRCROOT)/kartonche/Resources/PassAssets/pass-icon@3x.png",
+				"$(SRCROOT)/kartonche/Resources/PassAssets/pass-logo.png",
+				"$(SRCROOT)/kartonche/Resources/PassAssets/pass-logo@2x.png",
+				"$(SRCROOT)/kartonche/Resources/PassAssets/pass-logo@3x.png",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "source \"${SRCROOT}/Scripts/generate-about-icon.sh\"\n";
+			shellScript = "source \"${SRCROOT}/Scripts/generate-icons.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

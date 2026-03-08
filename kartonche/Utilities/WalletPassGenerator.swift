@@ -176,11 +176,11 @@ enum WalletPassGenerator {
 
         for asset in WalletPassConfiguration.logoAssets {
             guard let url = bundle.url(forResource: asset.resource, withExtension: "png"),
-                  let image = UIImage(contentsOfFile: url.path)
+                  let data = try? Data(contentsOf: url)
             else {
                 throw WalletPassGeneratorError.missingResource("\(asset.resource).png")
             }
-            assets["\(asset.archiveName).png"] = renderLogoWithTransparentBackground(image)
+            assets["\(asset.archiveName).png"] = data
         }
 
         if card.barcodeType == .ean13 {
@@ -196,20 +196,6 @@ enum WalletPassGenerator {
         }
 
         return assets
-    }
-
-    /// Strips near-white background pixels from a logo image, making them transparent.
-    private static func renderLogoWithTransparentBackground(_ source: UIImage) -> Data {
-        guard let cgImage = source.cgImage,
-              let masked = cgImage.copy(maskingColorComponents: [220, 255, 220, 255, 220, 255])
-        else {
-            return source.pngData() ?? Data()
-        }
-        let maskedImage = UIImage(cgImage: masked, scale: source.scale, orientation: source.imageOrientation)
-        let renderer = UIGraphicsImageRenderer(size: source.size)
-        return renderer.pngData { _ in
-            maskedImage.draw(at: .zero)
-        }
     }
 
     /// Renders strip images at @1x, @2x, and @3x from a source image.

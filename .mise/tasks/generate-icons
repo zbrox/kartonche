@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#MISE description="Generate AboutIcon and pass icon/logo PNGs from SVG layers"
+
+set -euo pipefail
+
+source "Scripts/generate-icons.sh"
