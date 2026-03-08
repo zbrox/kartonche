@@ -1,0 +1,93 @@
+#!/usr/bin/env bash
+#MISE description="Capture App Store screenshots via UI tests"
+
+set -euo pipefail
+
+OUTPUT_DIR="screenshots"
+ARCH="${IOS_ARCH:-arm64}"
+OS_VERSION="${IOS_VERSION:-26.2}"
+
+DEVICES=(
+    "iPhone 17 Pro Max"
+    "iPhone 17 Pro"
+)
+
+LOCALES=(
+    "bg"
+    "en"
+)
+
+# Map locale codes to fastlane-style locale directories
+declare -A LOCALE_DIRS=(
+    ["bg"]="bg"
+    ["en"]="en-US"
+)
+
+# Clean previous output
+rm -rf "$OUTPUT_DIR"
+mkdir -p "$OUTPUT_DIR"
+
+echo "==> Building for testing..."
+xcodebuild build-for-testing \
+    -project "$PROJECT" \
+    -scheme "$SCHEME" \
+    -destination "platform=iOS Simulator,name=${DEVICES[0]},OS=$OS_VERSION,arch=$ARCH" \
+    -quiet
+
+for device in "${DEVICES[@]}"; do
+    for locale in "${LOCALES[@]}"; do
+        echo "==> Running: $device / $locale"
+
+        # Uninstall the app to clear persisted data from previous runs
+        xcrun simctl uninstall "$device" com.zbrox.kartonche 2>/dev/null || true
+
+        locale_dir="${LOCALE_DIRS[$locale]}"
+        bundle_path=".build/screenshots-${device// /-}-${locale}.xcresult"
+        rm -rf "$bundle_path"
+
+        xcodebuild test-without-building \
+            -project "$PROJECT" \
+            -scheme "$SCHEME" \
+            -destination "platform=iOS Simulator,name=$device,OS=$OS_VERSION,arch=$ARCH" \
+            -only-testing:kartoncheUITests/ScreenshotTests \
+            -testLanguage "$locale" \
+            -testRegion "${locale}_${locale^^}" \
+            -resultBundlePath "$bundle_path" \
+            -quiet || true
+
+        # Extract attachments from the result bundle
+        extract_dir=".build/screenshots-extract-${device// /-}-${locale}"
+        rm -rf "$extract_dir"
+        mkdir -p "$extract_dir"
+
+        xcrun xcresulttool export attachments \
+            --path "$bundle_path" \
+            --output-path "$extract_dir"
+
+        # Parse manifest and rename UUID files to deterministic names
+        dest_dir="$OUTPUT_DIR/$locale_dir/$device"
+        mkdir -p "$dest_dir"
+
+        if [ -f "$extract_dir/manifest.json" ]; then
+            # Manifest is an array of test results, each with an attachments array.
+            # Screenshot names follow the pattern "NN-name_0_UUID.png".
+            jq -r '.[].attachments[] | select(.suggestedHumanReadableName | test("^[0-9]{2}-")) | "\(.exportedFileName) \(.suggestedHumanReadableName)"' \
+                "$extract_dir/manifest.json" | while read -r filename suggested; do
+                # Extract the screen name (e.g. "01-card-list" from "01-card-list_0_UUID.png")
+                screen_name=$(echo "$suggested" | sed 's/_0_.*$//')
+                src="$extract_dir/$filename"
+                if [ -f "$src" ]; then
+                    cp "$src" "$dest_dir/${screen_name}.png"
+                    echo "    $dest_dir/${screen_name}.png"
+                fi
+            done
+        fi
+
+        rm -rf "$extract_dir"
+        rm -rf "$bundle_path"
+    done
+done
+
+echo ""
+echo "==> Screenshots saved to: $OUTPUT_DIR"
+find "$OUTPUT_DIR" -name "*.png" | sort
