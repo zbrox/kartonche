@@ -14,8 +14,6 @@
 		0B91F2D72F36A2FD003F33AC /* widget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0B91F2C12F36A2FC003F33AC /* widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0BCB2AF32F3B700400A63750 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCB2AF22F3B700400A63750 /* QuickLook.framework */; };
 		0BCB2AFF2F3B700400A63750 /* quicklook.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0BCB2AF12F3B700400A63750 /* quicklook.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		0BCB2D372F3B778A00A63750 /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCB2D362F3B778A00A63750 /* UniformTypeIdentifiers.framework */; };
-		0BCB2D432F3B778A00A63750 /* action.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0BCB2D352F3B778A00A63750 /* action.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,13 +45,6 @@
 			remoteGlobalIDString = 0BCB2AF02F3B700400A63750;
 			remoteInfo = quicklook;
 		};
-		0BCB2D412F3B778A00A63750 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0B5B579F2F33F2C8005DCCA8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0BCB2D342F3B778A00A63750;
-			remoteInfo = action;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,7 +55,6 @@
 			dstSubfolderSpec = 13;
 			files = (
 				0B91F2D72F36A2FD003F33AC /* widget.appex in Embed Foundation Extensions */,
-				0BCB2D432F3B778A00A63750 /* action.appex in Embed Foundation Extensions */,
 				0BCB2AFF2F3B700400A63750 /* quicklook.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
@@ -81,8 +71,6 @@
 		0B91F2C52F36A2FC003F33AC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		0BCB2AF12F3B700400A63750 /* quicklook.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = quicklook.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BCB2AF22F3B700400A63750 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
-		0BCB2D352F3B778A00A63750 /* action.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = action.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		0BCB2D362F3B778A00A63750 /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -140,20 +128,6 @@
 			);
 			target = 0BCB2AF02F3B700400A63750 /* quicklook */;
 		};
-		0BCB2D472F3B778A00A63750 /* Exceptions for "action" folder in "action" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 0BCB2D342F3B778A00A63750 /* action */;
-		};
-		0BCB2D4D2F3B7D1600A63750 /* Exceptions for "kartonche" folder in "action" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Resources/Localizable.xcstrings,
-			);
-			target = 0BCB2D342F3B778A00A63750 /* action */;
-		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -163,7 +137,6 @@
 				0B91F2EA2F36A4FE003F33AC /* Exceptions for "kartonche" folder in "kartonche" target */,
 				0B91F2E42F36A425003F33AC /* Exceptions for "kartonche" folder in "widget" target */,
 				0BCB2B0B2F3B70AC00A63750 /* Exceptions for "kartonche" folder in "quicklook" target */,
-				0BCB2D4D2F3B7D1600A63750 /* Exceptions for "kartonche" folder in "action" target */,
 			);
 			path = kartonche;
 			sourceTree = "<group>";
@@ -193,14 +166,6 @@
 				0BCB2B032F3B700400A63750 /* Exceptions for "quicklook" folder in "quicklook" target */,
 			);
 			path = quicklook;
-			sourceTree = "<group>";
-		};
-		0BCB2D382F3B778A00A63750 /* action */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				0BCB2D472F3B778A00A63750 /* Exceptions for "action" folder in "action" target */,
-			);
-			path = action;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -246,14 +211,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0BCB2D322F3B778A00A63750 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0BCB2D372F3B778A00A63750 /* UniformTypeIdentifiers.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -265,7 +222,6 @@
 				0B5B57C32F33F2C9005DCCA8 /* kartoncheUITests */,
 				0B91F2C72F36A2FC003F33AC /* widget */,
 				0BCB2AF42F3B700400A63750 /* quicklook */,
-				0BCB2D382F3B778A00A63750 /* action */,
 				0B91F2C22F36A2FC003F33AC /* Frameworks */,
 				0B5B57A82F33F2C8005DCCA8 /* Products */,
 			);
@@ -279,7 +235,6 @@
 				0B5B57C02F33F2C9005DCCA8 /* kartoncheUITests.xctest */,
 				0B91F2C12F36A2FC003F33AC /* widget.appex */,
 				0BCB2AF12F3B700400A63750 /* quicklook.appex */,
-				0BCB2D352F3B778A00A63750 /* action.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -290,7 +245,6 @@
 				0B91F2C32F36A2FC003F33AC /* WidgetKit.framework */,
 				0B91F2C52F36A2FC003F33AC /* SwiftUI.framework */,
 				0BCB2AF22F3B700400A63750 /* QuickLook.framework */,
-				0BCB2D362F3B778A00A63750 /* UniformTypeIdentifiers.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -313,7 +267,6 @@
 			dependencies = (
 				0B91F2D62F36A2FD003F33AC /* PBXTargetDependency */,
 				0BCB2AFE2F3B700400A63750 /* PBXTargetDependency */,
-				0BCB2D422F3B778A00A63750 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				0B5B57A92F33F2C8005DCCA8 /* kartonche */,
@@ -417,28 +370,6 @@
 			productReference = 0BCB2AF12F3B700400A63750 /* quicklook.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		0BCB2D342F3B778A00A63750 /* action */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0BCB2D462F3B778A00A63750 /* Build configuration list for PBXNativeTarget "action" */;
-			buildPhases = (
-				0BCB2D312F3B778A00A63750 /* Sources */,
-				0BCB2D322F3B778A00A63750 /* Frameworks */,
-				0BCB2D332F3B778A00A63750 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				0BCB2D382F3B778A00A63750 /* action */,
-			);
-			name = action;
-			packageProductDependencies = (
-			);
-			productName = action;
-			productReference = 0BCB2D352F3B778A00A63750 /* action.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -464,9 +395,6 @@
 						CreatedOnToolsVersion = 26.2;
 					};
 					0BCB2AF02F3B700400A63750 = {
-						CreatedOnToolsVersion = 26.2;
-					};
-					0BCB2D342F3B778A00A63750 = {
 						CreatedOnToolsVersion = 26.2;
 					};
 				};
@@ -495,7 +423,6 @@
 				0B5B57BF2F33F2C9005DCCA8 /* kartoncheUITests */,
 				0B91F2C02F36A2FC003F33AC /* widget */,
 				0BCB2AF02F3B700400A63750 /* quicklook */,
-				0BCB2D342F3B778A00A63750 /* action */,
 			);
 		};
 /* End PBXProject section */
@@ -530,13 +457,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0BCB2AEF2F3B700400A63750 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0BCB2D332F3B778A00A63750 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -614,13 +534,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0BCB2D312F3B778A00A63750 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -643,11 +556,6 @@
 			isa = PBXTargetDependency;
 			target = 0BCB2AF02F3B700400A63750 /* quicklook */;
 			targetProxy = 0BCB2AFD2F3B700400A63750 /* PBXContainerItemProxy */;
-		};
-		0BCB2D422F3B778A00A63750 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0BCB2D342F3B778A00A63750 /* action */;
-			targetProxy = 0BCB2D412F3B778A00A63750 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1065,62 +973,6 @@
 			};
 			name = Release;
 		};
-		0BCB2D442F3B778A00A63750 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = action/action.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = action/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = action;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 2026.03.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zbrox.kartonche.app.action;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		0BCB2D452F3B778A00A63750 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = action/action.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = action/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = action;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 2026.03.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zbrox.kartonche.app.action;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1174,15 +1026,6 @@
 			buildConfigurations = (
 				0BCB2B012F3B700400A63750 /* Debug */,
 				0BCB2B022F3B700400A63750 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0BCB2D462F3B778A00A63750 /* Build configuration list for PBXNativeTarget "action" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0BCB2D442F3B778A00A63750 /* Debug */,
-				0BCB2D452F3B778A00A63750 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
