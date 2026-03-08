@@ -1,1642 +1,1708 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "" : {
-      "shouldTranslate" : false
+  "sourceLanguage": "en",
+  "strings": {
+    "": {
+      "shouldTranslate": false
     },
-    "'Always' location permission required for nearby notifications" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Необходимо е разрешение на степен ‘Винаги' за известия за близки местоположения"
+    "'Always' location permission required for nearby notifications": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Необходимо е разрешение на степен ‘Винаги' за известия за близки местоположения"
           }
         }
       }
     },
-    "*" : {
-      "shouldTranslate" : false
+    "*": {
+      "shouldTranslate": false
     },
-    "%@" : {
-      "shouldTranslate" : false
+    "%@": {
+      "shouldTranslate": false
     },
-    "%@ %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ %2$@"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
-    "%@ expires in 7 days" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ изтича след 7 дни"
-          }
-        }
-      }
-    },
-    "%@ expires tomorrow" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ изтича утре"
-          }
-        }
-      }
-    },
-    "%@, %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@, %2$@"
+    "%@ %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@ %2$@"
           }
         }
       },
-      "shouldTranslate" : false
+      "shouldTranslate": false
     },
-    "%lld" : {
-      "shouldTranslate" : false
+    "%@ expires in 7 days": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ изтича след 7 дни"
+          }
+        }
+      }
     },
-    "%lld / %lld" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lld / %2$lld"
+    "%@ expires tomorrow": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ изтича утре"
+          }
+        }
+      }
+    },
+    "%@, %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@, %2$@"
           }
         }
       },
-      "shouldTranslate" : false
+      "shouldTranslate": false
     },
-    "%lld Cards" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld карти"
+    "%lld": {
+      "shouldTranslate": false
+    },
+    "%lld / %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$lld / %2$lld"
+          }
+        }
+      },
+      "shouldTranslate": false
+    },
+    "%lld Cards": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld карти"
+          }
+        }
+      }
+    },
+    "%lldm": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lldм"
+          }
+        }
+      }
+    },
+    "1 day before expiration": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 ден преди изтичане"
+          }
+        }
+      }
+    },
+    "7 days before expiration": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "7 дни преди изтичане"
+          }
+        }
+      }
+    },
+    "10% off on Tuesdays for premium members": {
+      "comment": "Screenshot sample card notes",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10% отстъпка във вторник за премиум членове"
+          }
+        }
+      }
+    },
+    "42 Market Street": {
+      "comment": "Screenshot sample location address",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ул. Пазарска 42"
+          }
+        }
+      }
+    },
+    "A card with this barcode already exists": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вече имате карта с този баркод"
           }
         }
       }
     },
-    "%lldm" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lldм"
+    "A simple app for organizing your loyalty cards. Open source, privacy-focused, no account required.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Просто приложение за организиране на клубните ви карти. Отворен код, фокус върху поверителността, без регистрация."
           }
         }
       }
     },
-    "1 day before expiration" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1 ден преди изтичане"
+    "About": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Информация"
           }
         }
       }
     },
-    "7 days before expiration" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "7 дни преди изтичане"
+    "Active": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Активно"
           }
         }
       }
     },
-    "A card with this barcode already exists" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Вече имате карта с този баркод"
+    "Add Card": {
+      "comment": "Button to create a new loyalty card",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавяне на карта"
           }
         }
       }
     },
-    "A simple app for organizing your loyalty cards. Open source, privacy-focused, no account required." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Просто приложение за организиране на клубните ви карти. Отворен код, фокус върху поверителността, без регистрация."
+    "Add Location": {
+      "comment": "Button to add a location to a card",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавяне на местоположение"
           }
         }
       }
     },
-    "About" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Информация"
+    "Add Manually": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавяне ръчно"
           }
         }
       }
     },
-    "Active" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Активно"
+    "Add to Apple Wallet": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавяне в Apple Wallet"
           }
         }
       }
     },
-    "Add Card" : {
-      "comment" : "Button to create a new loyalty card",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавяне на карта"
+    "Add to favorites": {
+      "comment": "Accessibility label for favorite button",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавяне към любими"
           }
         }
       }
     },
-    "Add Location" : {
-      "comment" : "Button to add a location to a card",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавяне на местоположение"
+    "Add to Wallet": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавяне в Apple Wallet"
           }
         }
       }
     },
-    "Add Manually" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавяне ръчно"
+    "Add your first loyalty card": {
+      "comment": "Empty state message",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавете първата си клубна карта"
           }
         }
       }
     },
-    "Add to Apple Wallet" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавяне в Apple Wallet"
+    "Add your first loyalty card to get started": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавете първата си клубна карта, за да започнете"
           }
         }
       }
     },
-    "Add to favorites" : {
-      "comment" : "Accessibility label for favorite button",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавяне към любими"
+    "Added to Apple Wallet. Edits sync automatically.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавена в Apple Wallet. Промените се синхронизират автоматично."
           }
         }
       }
     },
-    "Add to Wallet" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавяне в Apple Wallet"
+    "All Cards": {
+      "comment": "Section header for all cards",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Всички карти"
           }
         }
       }
     },
-    "Add your first loyalty card" : {
-      "comment" : "Empty state message",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавете първата си клубна карта"
+    "All cards are expired. Toggle 'Show Expired' in the sort menu to see them.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " Всички карти са изтекли. Превключете 'Показване на изтекли' в менюто за сортиране, за да ги видите"
           }
         }
       }
     },
-    "Add your first loyalty card to get started" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавете първата си клубна карта, за да започнете"
+    "All cards will be imported, even duplicates": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Всички карти ще бъдат импортирани, дори дубликатите"
           }
         }
       }
     },
-    "Added to Apple Wallet. Edits sync automatically." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавена в Apple Wallet. Промените се синхронизират автоматично."
+    "Allow Location": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разрешаване"
           }
         }
       }
     },
-    "All Cards" : {
-      "comment" : "Section header for all cards",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Всички карти"
+    "Always": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Винаги"
           }
         }
       }
     },
-    "All cards are expired. Toggle 'Show Expired' in the sort menu to see them." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : " Всички карти са изтекли. Превключете 'Показване на изтекли' в менюто за сортиране, за да ги видите"
+    "Appearance": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изглед"
           }
         }
       }
     },
-    "All cards will be imported, even duplicates" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Всички карти ще бъдат импортирани, дори дубликатите"
+    "Are you sure you want to delete this card?": {
+      "comment": "Confirmation dialog message",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сигурни ли сте, че искате да изтриете тази карта?"
           }
         }
       }
     },
-    "Allow Location" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Разрешаване"
+    "Auto": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Автоматично"
           }
         }
       }
     },
-    "Always" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Винаги"
+    "Auto-show the right card": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Виждате карти автоматично в инструменти"
           }
         }
       }
     },
-    "Appearance" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изглед"
+    "Barcode Data": {
+      "comment": "Label for barcode data field",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Данни за баркод"
           }
         }
       }
     },
-    "Are you sure you want to delete this card?" : {
-      "comment" : "Confirmation dialog message",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сигурни ли сте, че искате да изтриете тази карта?"
+    "Barcode for scanning": {
+      "comment": "Accessibility label for barcode display",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Баркод за сканиране"
           }
         }
       }
     },
-    "Auto" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Автоматично"
+    "Barcode preview": {
+      "comment": "Accessibility label for barcode preview image",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Преглед на баркод"
           }
         }
       }
     },
-    "Auto-show the right card" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Виждате карти автоматично в инструменти"
+    "Barcode Type": {
+      "comment": "Label for barcode type field",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тип баркод"
           }
         }
       }
     },
-    "Barcode Data" : {
-      "comment" : "Label for barcode data field",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Данни за баркод"
+    "Better Widget Performance:": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "По-добра производителност на инструментите:"
           }
         }
       }
     },
-    "Barcode for scanning" : {
-      "comment" : "Accessibility label for barcode display",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Баркод за сканиране"
+    "Cancel": {
+      "comment": "Button to cancel an action",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отказ"
           }
         }
       }
     },
-    "Barcode preview" : {
-      "comment" : "Accessibility label for barcode preview image",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Преглед на баркод"
+    "Card": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Карта"
           }
         }
       }
     },
-    "Barcode Type" : {
-      "comment" : "Label for barcode type field",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Тип баркод"
+    "Card Color": {
+      "comment": "Label for card color picker",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Цвят на картата"
           }
         }
       }
     },
-    "Better Widget Performance:" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "По-добра производителност на инструментите:"
+    "Card Expires Tomorrow": {
+      "comment": "Notification title for 1-day expiration warning",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Картата изтича утре"
           }
         }
       }
     },
-    "Cancel" : {
-      "comment" : "Button to cancel an action",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отказ"
+    "Card Expiring Soon": {
+      "comment": "Notification title for 7-day expiration warning",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Картата изтича скоро"
           }
         }
       }
     },
-    "Card" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Карта"
+    "Card Image": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изображение"
           }
         }
       }
     },
-    "Card Color" : {
-      "comment" : "Label for card color picker",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Цвят на картата"
+    "Card Name": {
+      "comment": "Label for card name field",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Име на картата"
           }
         }
       }
     },
-    "Card Expires Tomorrow" : {
-      "comment" : "Notification title for 1-day expiration warning",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картата изтича утре"
+    "card number": {
+      "comment": "Accessibility label for card number",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "номер на карта"
           }
         }
       }
     },
-    "Card Expiring Soon" : {
-      "comment" : "Notification title for 7-day expiration warning",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картата изтича скоро"
+    "Card Number": {
+      "comment": "Label for card number field",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Номер на картата"
           }
         }
       }
     },
-    "Card Image" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изображение"
+    "Card will appear when you're nearby": {
+      "comment": "Location section footer text",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Картата ще се появи когато сте наблизо"
           }
         }
       }
     },
-    "Card Name" : {
-      "comment" : "Label for card name field",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Име на картата"
+    "Card will appear when you're within this distance": {
+      "comment": "Radius slider description",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Картата ще се появи когато сте в това разстояние"
           }
         }
       }
     },
-    "card number" : {
-      "comment" : "Accessibility label for card number",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "номер на карта"
+    "Cardholder Name": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Картопритежател"
           }
         }
       }
     },
-    "Card Number" : {
-      "comment" : "Label for card number field",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Номер на картата"
+    "Cards": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Карти"
           }
         }
       }
     },
-    "Card will appear when you're nearby" : {
-      "comment" : "Location section footer text",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картата ще се появи когато сте наблизо"
+    "Cards are exported as .kartonche files that can be shared and imported on other devices.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Картите се експортират като файлове с окончание .kartonche, които могат да се споделят и импортират обратно на това и други устройства."
           }
         }
       }
     },
-    "Card will appear when you're within this distance" : {
-      "comment" : "Radius slider description",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картата ще се появи когато сте в това разстояние"
+    "Cards to import": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Карти за импортиране"
           }
         }
       }
     },
-    "Cardholder Name" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картопритежател"
+    "Change Location": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Промяна на местоположение"
           }
         }
       }
     },
-    "Cards" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Карти"
+    "Choose Card": {
+      "comment": "Control widget button label when no card configured",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Избор на карта"
           }
         }
       }
     },
-    "Cards are exported as .kartonche files that can be shared and imported on other devices." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картите се експортират като файлове с окончание .kartonche, които могат да се споделят и импортират обратно на това и други устройства."
+    "Choose from Library": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Снимка от библиотеката"
           }
         }
       }
     },
-    "Cards to import" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Карти за импортиране"
+    "Choose Image": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изображение"
           }
         }
       }
     },
-    "Change Location" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Промяна на местоположение"
+    "Choose which loyalty card to display": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Избери коя карта да е показана"
           }
         }
       }
     },
-    "Choose Card" : {
-      "comment" : "Control widget button label when no card configured",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избор на карта"
+    "Choose which loyalty card to open": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Избери коя карта да се отвори"
           }
         }
       }
     },
-    "Choose from Library" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Снимка от библиотеката"
+    "City Library": {
+      "comment": "Screenshot sample card name",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Градска библиотека"
           }
         }
       }
     },
-    "Choose Image" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изображение"
+    "Close": {
+      "comment": "Button to dismiss a view",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Затваряне"
           }
         }
       }
     },
-    "Choose which loyalty card to display" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избери коя карта да е показана"
+    "Confirm Location": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Потвърждаване на местоположение"
           }
         }
       }
     },
-    "Choose which loyalty card to open" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избери коя карта да се отвори"
+    "Current Location": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Текущо местоположение"
           }
         }
       }
     },
-    "Close" : {
-      "comment" : "Button to dismiss a view",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Затваряне"
+    "Custom": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ръчно избран"
           }
         }
       }
     },
-    "Confirm Location" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Потвърждаване на местоположение"
+    "Custom Text Color": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ръчно избран цвят на текста"
           }
         }
       }
     },
-    "Current Location" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Текущо местоположение"
+    "Data": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Информация"
           }
         }
       }
     },
-    "Custom" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ръчно избран"
+    "Delete": {
+      "comment": "Button to delete an item",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изтриване"
           }
         }
       }
     },
-    "Custom Text Color" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ръчно избран цвят на текста"
+    "Denied": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отказано"
           }
         }
       }
     },
-    "Data" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Информация"
+    "Deselect All": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Никоя"
           }
         }
       }
     },
-    "Delete" : {
-      "comment" : "Button to delete an item",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изтриване"
+    "Detection Radius": {
+      "comment": "Section header for radius setting",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Радиус на откриване"
           }
         }
       }
     },
-    "Denied" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отказано"
+    "Disabled": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изключено"
           }
         }
       }
     },
-    "Deselect All" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Никоя"
+    "Display a specific loyalty card with scannable barcode": {
+      "comment": "Home screen widget description",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показване на конкретна клубна карта"
           }
         }
       }
     },
-    "Detection Radius" : {
-      "comment" : "Section header for radius setting",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Радиус на откриване"
+    "Done": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Готово"
           }
         }
       }
     },
-    "Disabled" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изключено"
+    "Downtown Gym": {
+      "comment": "Screenshot sample card name",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Фитнес в центъра"
           }
         }
       }
     },
-    "Display a specific loyalty card with scannable barcode" : {
-      "comment" : "Home screen widget description",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Показване на конкретна клубна карта"
+    "Drop Pin on Map": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поставяне на карфица на карта"
           }
         }
       }
     },
-    "Done" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Готово"
+    "Duplicate Barcode": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Повтарящ се баркод"
           }
         }
       }
     },
-    "Drop Pin on Map" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Поставяне на карфица на карта"
+    "Duplicate cards will not be imported": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Картите дубликати няма да бъдат импортирани"
           }
         }
       }
     },
-    "Duplicate Barcode" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Повтарящ се баркод"
+    "Duplicate handling": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Обработка на дубликати"
           }
         }
       }
     },
-    "Duplicate cards will not be imported" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картите дубликати няма да бъдат импортирани"
+    "Duplicates found": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Намерени дубликати"
           }
         }
       }
     },
-    "Duplicate handling" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Обработка на дубликати"
+    "EAN-13 barcodes are added as images and may not scan everywhere.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Баркодове от вида EAN-13 не се поддържат официално от Apple Wallet и затова са добавени като статично изображение. Това може да доведе до евентуални проблеми със сканирането в определени случаи."
           }
         }
       }
     },
-    "Duplicates found" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Намерени дубликати"
+    "EAN-13 cards use the barcode as the Apple Wallet strip image. This image won't be used.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Това изображение няма да бъде ползвано. Карти с баркод от вида EAN-13 използват позицията за изображение в Apple Wallet."
           }
         }
       }
     },
-    "EAN-13 barcodes are added as images and may not scan everywhere." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Баркодове от вида EAN-13 не се поддържат официално от Apple Wallet и затова са добавени като статично изображение. Това може да доведе до евентуални проблеми със сканирането в определени случаи."
+    "EAN-13 requires exactly 13 digits (provided: %d)": {
+      "comment": "Error message for EAN-13 digit validation",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EAN-13 изисква точно 13 цифри (въведени: %d)"
           }
         }
       }
     },
-    "EAN-13 cards use the barcode as the Apple Wallet strip image. This image won't be used." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Това изображение няма да бъде ползвано. Карти с баркод от вида EAN-13 използват позицията за изображение в Apple Wallet."
+    "Edit": {
+      "comment": "Button to edit an item",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Редактиране"
           }
         }
       }
     },
-    "EAN-13 requires exactly 13 digits (provided: %d)" : {
-      "comment" : "Error message for EAN-13 digit validation",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "EAN-13 изисква точно 13 цифри (въведени: %d)"
+    "Edit Location": {
+      "comment": "Navigation title for editing location",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Редактиране на местоположение"
           }
         }
       }
     },
-    "Edit" : {
-      "comment" : "Button to edit an item",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Редактиране"
+    "Enable": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Включване"
           }
         }
       }
     },
-    "Edit Location" : {
-      "comment" : "Navigation title for editing location",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Редактиране на местоположение"
+    "Enable 'Always' Location": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Включване на 'Винаги' местоположение"
           }
         }
       }
     },
-    "Enable" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Включване"
+    "Enable in Settings:": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Включете в Настройки:"
           }
         }
       }
     },
-    "Enable 'Always' Location" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Включване на 'Винаги' местоположение"
+    "Enable location to see cards for nearby stores": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Включете местоположението, за да виждате карти за близки магазини"
           }
         }
       }
     },
-    "Enable in Settings:" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Включете в Настройки:"
+    "Enable Nearby Notifications": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Включване на известия за близост"
           }
         }
       }
     },
-    "Enable location to see cards for nearby stores" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Включете местоположението, за да виждате карти за близки магазини"
+    "Enable Reminders": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Включване на напомняния"
           }
         }
       }
     },
-    "Enable Nearby Notifications" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Включване на известия за близост"
+    "Enabled": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Включено"
           }
         }
       }
     },
-    "Enable Reminders" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Включване на напомняния"
+    "Ephemeral": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Временно"
           }
         }
       }
     },
-    "Enabled" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Включено"
+    "Existing cards will be replaced with imported versions": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Съществуващите карти ще бъдат заменени с импортираните версии"
           }
         }
       }
     },
-    "Ephemeral" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Временно"
+    "Experimental Feature": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Експериментална функция"
           }
         }
       }
     },
-    "Existing cards will be replaced with imported versions" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Съществуващите карти ще бъдат заменени с импортираните версии"
+    "Expiration Date": {
+      "comment": "Label for expiration date picker",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дата на изтичане"
           }
         }
       }
     },
-    "Experimental Feature" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Експериментална функция"
+    "Expiration Reminders": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Напомняния за карти с изтекъл срок"
           }
         }
       }
     },
-    "Expiration Date" : {
-      "comment" : "Label for expiration date picker",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Дата на изтичане"
+    "Expiration reminders require notification access.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Напомнянията за изтичане изискват достъп до известия."
           }
         }
       }
     },
-    "Expiration Reminders" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Напомняния за карти с изтекъл срок"
+    "Expired on": {
+      "comment": "Accessibility label for expired date",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изтекла на"
           }
         }
       }
     },
-    "Expiration reminders require notification access." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Напомнянията за изтичане изискват достъп до известия."
+    "Expires on": {
+      "comment": "Accessibility label for expiration date",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изтича на"
           }
         }
       }
     },
-    "Expired on" : {
-      "comment" : "Accessibility label for expired date",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изтекла на"
+    "Expiring soon on": {
+      "comment": "Accessibility label for card expiring soon",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изтича скоро на"
           }
         }
       }
     },
-    "Expires on" : {
-      "comment" : "Accessibility label for expiration date",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изтича на"
+    "Export": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Експортиране"
           }
         }
       }
     },
-    "Expiring soon on" : {
-      "comment" : "Accessibility label for card expiring soon",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изтича скоро на"
+    "Export (%lld)": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Експортиране (%lld)"
           }
         }
       }
     },
-    "Export" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Експортиране"
+    "Export All Cards": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Експортиране на всички"
           }
         }
       }
     },
-    "Export (%lld)" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Експортиране (%lld)"
+    "Export date": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дата на експортиране"
           }
         }
       }
     },
-    "Export All Cards" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Експортиране на всички"
+    "Export Failed": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Грешка при експортиране"
           }
         }
       }
     },
-    "Export date" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Дата на експортиране"
+    "Failed to create barcode filter": {
+      "comment": "Error message for barcode filter creation",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Неуспешно създаване на баркод филтър"
           }
         }
       }
     },
-    "Export Failed" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Грешка при експортиране"
+    "Failed to create pass": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Грешка при създаване карта в Apple Wallet "
           }
         }
       }
     },
-    "Failed to create barcode filter" : {
-      "comment" : "Error message for barcode filter creation",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Неуспешно създаване на баркод филтър"
+    "Failed to generate barcode image": {
+      "comment": "Error message for barcode generation",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Неуспешно генериране на баркод изображение"
           }
         }
       }
     },
-    "Failed to create pass" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Грешка при създаване карта в Apple Wallet "
+    "Failed to load image": {
+      "comment": "Error message when image cannot be loaded",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Неуспешно зареждане на изображението"
           }
         }
       }
     },
-    "Failed to generate barcode image" : {
-      "comment" : "Error message for barcode generation",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Неуспешно генериране на баркод изображение"
+    "Failed to read file: %@": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Неуспешно четене на файла: %@"
           }
         }
       }
     },
-    "Failed to load image" : {
-      "comment" : "Error message when image cannot be loaded",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Неуспешно зареждане на изображението"
+    "Favorite": {
+      "comment": "Swipe action to mark card as favorite",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Любима"
           }
         }
       }
     },
-    "Failed to read file: %@" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Неуспешно четене на файла: %@"
+    "Favorites Carousel": {
+      "comment": "Home screen widget name",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Любими"
           }
         }
       }
     },
-    "Favorite" : {
-      "comment" : "Swipe action to mark card as favorite",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Любима"
+    "Features": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Функции"
           }
         }
       }
     },
-    "Favorites Carousel" : {
-      "comment" : "Home screen widget name",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Любими"
+    "File not found": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Файлът не е намерен"
           }
         }
       }
     },
-    "Features" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Функции"
+    "Find nearest card in widgets": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Намирате лесно карти за най-близките магазини"
           }
         }
       }
     },
-    "File not found" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Файлът не е намерен"
+    "Fresh Market": {
+      "comment": "Screenshot sample card name",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Свеж пазар"
           }
         }
       }
     },
-    "Find nearest card in widgets" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Намирате лесно карти за най-близките магазини"
+    "Fresh Market - Downtown": {
+      "comment": "Screenshot sample location name",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Свеж пазар - Център"
           }
         }
       }
     },
-    "Fresher location data" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "По-пресни данни за местоположението ви"
+    "Fresher location data": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "По-пресни данни за местоположението ви"
           }
         }
       }
     },
-    "Generating pass..." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Създаване на карта в Apple Wallet..."
+    "Generating pass...": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Създаване на карта в Apple Wallet..."
           }
         }
       }
     },
-    "Get better widget performance with background location" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Получете по-добра производителност на инструментите с фоново местоположение"
+    "Get better widget performance with background location": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Получете по-добра производителност на инструментите с фоново местоположение"
           }
         }
       }
     },
-    "Get notified before your cards expire so you never miss renewing them." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Получавайте известия преди картите ви да изтекат, за да не пропуснете да ги подновите."
+    "Get notified before your cards expire so you never miss renewing them.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Получавайте известия преди картите ви да изтекат, за да не пропуснете да ги подновите."
           }
         }
       }
     },
-    "Get reminded about your loyalty cards when you're near a store where you can use them." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Получавайте напомняния за клубните си карти, когато сте близо до магазин, където можете да ги използвате."
+    "Get reminded about your loyalty cards when you're near a store where you can use them.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Получавайте напомняния за клубните си карти, когато сте близо до магазин, където можете да ги използвате."
           }
         }
       }
     },
-    "Get reminded before your loyalty cards expire so you can renew them in time." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Получавайте напомняния преди клубните ви карти да изтекат, за да ги подновите навреме."
+    "Get reminded before your loyalty cards expire so you can renew them in time.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Получавайте напомняния преди клубните ви карти да изтекат, за да ги подновите навреме."
           }
         }
       }
     },
-    "Go to Settings > Notifications > kartonche to enable reminders" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отидете в Настройки > Известия > kartonche за да включите напомнянията"
+    "Go to Settings > Notifications > kartonche to enable reminders": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отидете в Настройки > Известия > kartonche за да включите напомнянията"
           }
         }
       }
     },
-    "Has Expiration Date" : {
-      "comment" : "Toggle for enabling expiration date",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Има дата на изтичане"
+    "Has Expiration Date": {
+      "comment": "Toggle for enabling expiration date",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Има дата на изтичане"
           }
         }
       }
     },
-    "How to handle duplicates" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Как да се обработят дубликатите"
+    "How to handle duplicates": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Как да се обработят дубликатите"
           }
         }
       }
     },
-    "iCloud Signed Out" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Излезли сте от iCloud"
+    "iCloud Signed Out": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Излезли сте от iCloud"
           }
         }
       }
     },
-    "iCloud Sync" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Синхронизиране с iCloud"
+    "iCloud Sync": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Синхронизиране с iCloud"
           }
         }
       }
     },
-    "iCloud Unavailable" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Неналичен iCloud"
+    "iCloud Unavailable": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Неналичен iCloud"
           }
         }
       }
     },
-    "If you enable location features, your location is used only to show cards for nearby stores and is never sent to any server." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ако включите функциите за местоположение, то се използва само за показване на карти за близки магазини и никога не се изпраща към сървър."
+    "If you enable location features, your location is used only to show cards for nearby stores and is never sent to any server.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ако включите функциите за местоположение, то се използва само за показване на карти за близки магазини и никога не се изпраща към сървър."
           }
         }
       }
     },
-    "Import" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Импортиране"
+    "Import": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импортиране"
           }
         }
       }
     },
-    "Import Cards" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Импортиране на карти"
+    "Import Cards": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импортиране на карти"
           }
         }
       }
     },
-    "Import Failed" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Импортирането се провали"
+    "Import Failed": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импортирането се провали"
           }
         }
       }
     },
-    "Import from File" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Импортиране от файл"
+    "Import from File": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импортиране от файл"
           }
         }
       }
     },
-    "Importing..." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Импортиране..."
+    "Importing...": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импортиране..."
           }
         }
       }
     },
-    "Invalid barcode data" : {
-      "comment" : "Error message for invalid barcode",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Невалидни данни за баркод"
+    "Invalid barcode data": {
+      "comment": "Error message for invalid barcode",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Невалидни данни за баркод"
           }
         }
       }
     },
-    "Invalid card data: %@" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Невалидни данни за карта: %@"
+    "Invalid card data: %@": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Невалидни данни за карта: %@"
           }
         }
       }
     },
-    "Invalid file format. Expected .kartonche file." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Невалиден файлов формат. Очакван .kartonche файл."
+    "Invalid file format. Expected .kartonche file.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Невалиден файлов формат. Очакван .kartonche файл."
           }
         }
       }
     },
-    "Invalid image format" : {
-      "comment" : "Error message for invalid image format",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Невалиден формат на изображението"
+    "Invalid image format": {
+      "comment": "Error message for invalid image format",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Невалиден формат на изображението"
           }
         }
       }
     },
-    "kartonche" : {
-      "shouldTranslate" : false
+    "kartonche": {
+      "shouldTranslate": false
     },
-    "Kartonche" : {
-      "comment" : "Control widget button label for app launcher\nLock screen circular widget name\nLock screen inline widget app name",
-      "shouldTranslate" : false
+    "Kartonche": {
+      "comment": "Control widget button label for app launcher\nLock screen circular widget name\nLock screen inline widget app name",
+      "shouldTranslate": false
     },
-    "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kartonche съхранява вашите карти на устройството Ви и може да ги синхронизира с личният ви акаунт в iCloud. Не събиране, проследяваме или споделяме личната Ви информация."
+    "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kartonche съхранява вашите карти на устройството Ви и може да ги синхронизира с личният ви акаунт в iCloud. Не събиране, проследяваме или споделяме личната Ви информация."
           }
         }
       }
     },
-    "Keep both" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Запазване на двете"
+    "Keep both": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запазване на двете"
           }
         }
       }
     },
-    "Keep Current" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Запазване на текущо"
+    "Keep Current": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запазване на текущо"
           }
         }
       }
     },
-    "Last checked" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Последна проверка"
+    "Last checked": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Последна проверка"
           }
         }
       }
     },
-    "Launch Kartonche" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Стартиране на Kartonche"
+    "Launch Kartonche": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Стартиране на Kartonche"
           }
         }
       }
     },
-    "Legal" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Правна информация"
+    "Legal": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Правна информация"
           }
         }
       }
     },
-    "License" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Лиценз"
+    "License": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Лиценз"
           }
         }
       }
     },
-    "Limited" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ограничено"
+    "Limited": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ограничено"
           }
         }
       }
     },
-    "Location" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Местоположение"
+    "Location": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Местоположение"
           }
         }
       }
     },
-    "Location Access Denied" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Достъпът до местоположение е отказан"
+    "Location Access Denied": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Достъпът до местоположение е отказан"
           }
         }
       }
     },
-    "Location access is restricted by parental controls or device management" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Достъпът до местоположение е ограничен от родителски контрол или управление на устройството"
+    "Location access is restricted by parental controls or device management": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Достъпът до местоположение е ограничен от родителски контрол или управление на устройството"
           }
         }
       }
     },
-    "Location data" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Данни за местоположение"
+    "Location data": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Данни за местоположение"
           }
         }
       }
     },
-    "Location data never leaves your device" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Данните за местоположение никога не напускат устройството ви"
+    "Location data never leaves your device": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Данните за местоположение никога не напускат устройството ви"
           }
         }
       }
     },
-    "Location features require access to your location." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Функциите за местоположение изискват достъп до местоположението ви."
+    "Location features require access to your location.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Функциите за местоположение изискват достъп до местоположението ви."
           }
         }
       }
     },
-    "Location Name" : {
-      "comment" : "Label for location name field",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Име на местоположението"
+    "Location Name": {
+      "comment": "Label for location name field",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Име на местоположението"
           }
         }
       }
     },
-    "Location not available" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Местоположението не е налично"
+    "Location not available": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Местоположението не е налично"
           }
         }
       }
     },
-    "Location Permission" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Разрешение за местоположение"
+    "Location Permission": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разрешение за местоположение"
           }
         }
       }
     },
-    "Location Permission Needed" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Разрешение за ползване на данни за местоположението ви"
+    "Location Permission Needed": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разрешение за ползване на данни за местоположението ви"
           }
         }
       }
     },
-    "Location permission not granted" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Разрешението за местоположение не е дадено"
+    "Location permission not granted": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разрешението за местоположение не е дадено"
           }
         }
       }
     },
-    "Locations" : {
-      "comment" : "Section header for locations list",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Местоположения"
+    "Locations": {
+      "comment": "Section header for locations list",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Местоположения"
           }
         }
       }
     },
-    "locations_count_%lld" : {
-      "localizations" : {
-        "bg" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld местоположение"
+    "locations_count_%lld": {
+      "localizations": {
+        "bg": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld местоположение"
                 }
               },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld местоположения"
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld местоположения"
                 }
               }
             }
           }
         },
-        "en" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld location"
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld location"
                 }
               },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld locations"
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld locations"
                 }
               }
             }
@@ -1644,2010 +1710,2043 @@
         }
       }
     },
-    "Loyalty Card" : {
-      "comment" : "Home screen widget name",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Клубна карта"
+    "Loyalty Card": {
+      "comment": "Home screen widget name",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Клубна карта"
           }
         }
       }
     },
-    "Loyalty Cards" : {
-      "comment" : "Main screen title",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Клубни карти"
+    "Loyalty Cards": {
+      "comment": "Main screen title",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Клубни карти"
           }
         }
       }
     },
-    "Mark cards as favorites to see them here" : {
-      "comment" : "Favorites carousel widget empty state message",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отбележете карти като любими, за да се появят тук"
+    "Mark cards as favorites to see them here": {
+      "comment": "Favorites carousel widget empty state message",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отбележете карти като любими, за да се появят тук"
           }
         }
       }
     },
-    "Minimal battery impact" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Минимално влияние върху батерията"
+    "Minimal battery impact": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Минимално влияние върху батерията"
           }
         }
       }
     },
-    "MIT License" : {
-      "shouldTranslate" : false
+    "MIT License": {
+      "shouldTranslate": false
     },
-    "More" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Още"
+    "More": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Още"
           }
         }
       }
     },
-    "More accurate nearby store detection" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "По-точно откриване на близки магазини"
+    "More accurate nearby store detection": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "По-точно откриване на близки магазини"
           }
         }
       }
     },
-    "Multiple Barcodes Found" : {
-      "comment" : "Alert title when multiple barcodes detected",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Открити са множество баркодове"
+    "Morning Brew Coffee": {
+      "comment": "Screenshot sample card name",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сутрешно кафе"
           }
         }
       }
     },
-    "Navigate through your favorite cards with arrow buttons" : {
-      "comment" : "Home screen widget description",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Разглеждане на любими карти"
+    "Multiple Barcodes Found": {
+      "comment": "Alert title when multiple barcodes detected",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Открити са множество баркодове"
           }
         }
       }
     },
-    "Nearby" : {
-      "comment" : "Section header for nearby cards",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Наблизо"
+    "Navigate through your favorite cards with arrow buttons": {
+      "comment": "Home screen widget description",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разглеждане на любими карти"
           }
         }
       }
     },
-    "Nearby Card Notifications" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Известия при близост до местоположение"
+    "Nearby": {
+      "comment": "Section header for nearby cards",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Наблизо"
           }
         }
       }
     },
-    "Nearest Store" : {
-      "comment" : "Control widget button label for opening card of nearest store\nHome screen widget name\nLock screen rectangular widget name",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Най-близкият магазин"
+    "Nearby Card Notifications": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Известия при близост до местоположение"
           }
         }
       }
     },
-    "Nearest Store Card" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Карта за най-близкия магазин"
+    "Nearest Store": {
+      "comment": "Control widget button label for opening card of nearest store\nHome screen widget name\nLock screen rectangular widget name",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Най-близкият магазин"
           }
         }
       }
     },
-    "Never forget your loyalty card at the store" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Никога не забравяйте клубната си карта в магазина"
+    "Nearest Store Card": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Карта за най-близкия магазин"
           }
         }
       }
     },
-    "Next Card" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Следваща карта"
+    "Never forget your loyalty card at the store": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Никога не забравяйте клубната си карта в магазина"
           }
         }
       }
     },
-    "No account required" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не е необходима регистрация"
+    "Next Card": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Следваща карта"
           }
         }
       }
     },
-    "No ads" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Без реклами"
+    "No account required": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не е необходима регистрация"
           }
         }
       }
     },
-    "No analytics" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Без аналитика"
+    "No ads": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Без реклами"
           }
         }
       }
     },
-    "No barcodes found in image" : {
-      "comment" : "Error message when no barcodes detected",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Няма открити баркодове в изображението"
+    "No analytics": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Без аналитика"
           }
         }
       }
     },
-    "No Card Selected" : {
-      "comment" : "Individual card widget empty state message",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Няма избрана карта"
+    "No barcodes found in image": {
+      "comment": "Error message when no barcodes detected",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Няма открити баркодове в изображението"
           }
         }
       }
     },
-    "No Cards" : {
-      "comment" : "Empty state title",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Няма карти"
+    "No Card Selected": {
+      "comment": "Individual card widget empty state message",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Няма избрана карта"
           }
         }
       }
     },
-    "No cards matching '%@'" : {
-      "comment" : "Empty search results message",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Няма карти, съответстващи на '%@'"
+    "No Cards": {
+      "comment": "Empty state title",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Няма карти"
           }
         }
       }
     },
-    "No Favorites" : {
-      "comment" : "Favorites carousel widget empty state title",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Нямате любими карти"
+    "No cards matching '%@'": {
+      "comment": "Empty search results message",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Няма карти, съответстващи на '%@'"
           }
         }
       }
     },
-    "No nearby stores" : {
-      "comment" : "Lock screen rectangular widget message when no stores within 1km\nNearest location widget message when no stores within 1km",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Няма близки магазини"
+    "No Favorites": {
+      "comment": "Favorites carousel widget empty state title",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нямате любими карти"
           }
         }
       }
     },
-    "No Results" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Няма резултати"
+    "No nearby stores": {
+      "comment": "Lock screen rectangular widget message when no stores within 1km\nNearest location widget message when no stores within 1km",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Няма близки магазини"
           }
         }
       }
     },
-    "Not Now" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не сега"
+    "No Results": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Няма резултати"
           }
         }
       }
     },
-    "Not Set" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не е зададено"
+    "Not Now": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не сега"
           }
         }
       }
     },
-    "Not set up" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не е настроено"
+    "Not Set": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не е зададено"
           }
         }
       }
     },
-    "Notes" : {
-      "comment" : "Label for notes field",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Бележки"
+    "Not set up": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не е настроено"
           }
         }
       }
     },
-    "Notification Permission" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Разрешение за известия"
+    "Notes": {
+      "comment": "Label for notes field",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бележки"
           }
         }
       }
     },
-    "Notification permission required" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Необходимо е разрешение за известия"
+    "Notification Permission": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разрешение за известия"
           }
         }
       }
     },
-    "Notifications" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Известия"
+    "Notification permission required": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Необходимо е разрешение за известия"
           }
         }
       }
     },
-    "Notifications Disabled" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Известията са изключени"
+    "Notifications": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Известия"
           }
         }
       }
     },
-    "OK" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добре"
+    "Notifications Disabled": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Известията са изключени"
           }
         }
       }
     },
-    "Open Existing" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отворете съществуващата"
+    "OK": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добре"
           }
         }
       }
     },
-    "Open Favorite Card" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отваряне на любима карта"
+    "Open Existing": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отворете съществуващата"
           }
         }
       }
     },
-    "Open Kartonche" : {
-      "comment" : "Lock screen inline widget name",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отваряне на Kartonche"
+    "Open Favorite Card": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отваряне на любима карта"
           }
         }
       }
     },
-    "Open Nearest Store Card" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отваряне на картата за най-близкия магазин"
+    "Open Kartonche": {
+      "comment": "Lock screen inline widget name",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отваряне на Kartonche"
           }
         }
       }
     },
-    "Open Settings" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отваряне на настройки"
+    "Open Nearest Store Card": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отваряне на картата за най-близкия магазин"
           }
         }
       }
     },
-    "Opens camera to scan barcode" : {
-      "comment" : "Accessibility hint for camera scan button",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отваря камера за сканиране на баркод"
+    "Open Settings": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отваряне на настройки"
           }
         }
       }
     },
-    "Opens card for nearest store location" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отваряне на карта за най-близкия магазин"
+    "Opens camera to scan barcode": {
+      "comment": "Accessibility hint for camera scan button",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отваря камера за сканиране на баркод"
           }
         }
       }
     },
-    "Opens the Kartonche app" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отваря Kartonche"
+    "Opens card for nearest store location": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отваряне на карта за най-близкия магазин"
           }
         }
       }
     },
-    "Opens the loyalty card for the nearest store" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отваря картата за най-близкия магазин"
+    "Opens the Kartonche app": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отваря Kartonche"
           }
         }
       }
     },
-    "Opens your selected favorite loyalty card" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Отваря избрана любима карта"
+    "Opens the loyalty card for the nearest store": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отваря картата за най-близкия магазин"
           }
         }
       }
     },
-    "Permission" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Разрешение"
+    "Opens your selected favorite loyalty card": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отваря избрана любима карта"
           }
         }
       }
     },
-    "Permission required" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изисква се разрешение"
+    "Permission": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разрешение"
           }
         }
       }
     },
-    "Previous Card" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Предишна карта"
+    "Permission required": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изисква се разрешение"
           }
         }
       }
     },
-    "Privacy" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Поверителност"
+    "Pet Paradise": {
+      "comment": "Screenshot sample card name",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Зоо Свят"
           }
         }
       }
     },
-    "Privacy Policy" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Политика за поверителност"
+    "Previous Card": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Предишна карта"
           }
         }
       }
     },
-    "Provisional" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Временно"
+    "Privacy": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поверителност"
           }
         }
       }
     },
-    "Quick access to open the app" : {
-      "comment" : "Lock screen inline widget description",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Бърз достъп до Kartonche"
+    "Privacy Policy": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Политика за поверителност"
           }
         }
       }
     },
-    "Quick access to your loyalty cards" : {
-      "comment" : "Lock screen circular widget description",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Бърз достъп до клубни карти"
+    "Provisional": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Временно"
           }
         }
       }
     },
-    "Radius: %lldm" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Радиус: %lldм"
+    "Quick access to open the app": {
+      "comment": "Lock screen inline widget description",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бърз достъп до Kartonche"
           }
         }
       }
     },
-    "Rate on App Store" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Оценяване в App Store"
+    "Quick access to your loyalty cards": {
+      "comment": "Lock screen circular widget description",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бърз достъп до клубни карти"
           }
         }
       }
     },
-    "Refresh Sync Status" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Обновяване"
+    "Radius: %lldm": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Радиус: %lldм"
           }
         }
       }
     },
-    "Remove from favorites" : {
-      "comment" : "Accessibility label for unfavorite button",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Премахване от любими"
+    "Rate on App Store": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оценяване в App Store"
           }
         }
       }
     },
-    "Remove Image" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Премахване"
+    "Refresh Sync Status": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Обновяване"
           }
         }
       }
     },
-    "Replace existing" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Замяна на съществуващи"
+    "Remove from favorites": {
+      "comment": "Accessibility label for unfavorite button",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Премахване от любими"
           }
         }
       }
     },
-    "Report an Issue" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Докладване на проблем"
+    "Remove Image": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Премахване"
           }
         }
       }
     },
-    "Requires Always location + Notifications" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изисква местоположение 'Винаги' + Известия"
+    "Replace existing": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Замяна на съществуващи"
           }
         }
       }
     },
-    "Respects iOS Focus modes and Do Not Disturb. Silent notifications only." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Зачита iOS режими за фокус и 'Не безпокойте'. Само тихи известия."
+    "Report an Issue": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Докладване на проблем"
           }
         }
       }
     },
-    "Restricted" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ограничено"
+    "Requires Always location + Notifications": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изисква местоположение 'Винаги' + Известия"
           }
         }
       }
     },
-    "Save" : {
-      "comment" : "Button to save changes",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Запазване"
+    "Respects iOS Focus modes and Do Not Disturb. Silent notifications only.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Зачита iOS режими за фокус и 'Не безпокойте'. Само тихи известия."
           }
         }
       }
     },
-    "Save Anyway" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Запазете дупликата"
+    "Restricted": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ограничено"
           }
         }
       }
     },
-    "Scan Barcode" : {
-      "comment" : "Button to scan a barcode with camera",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сканиране на баркод"
+    "Save": {
+      "comment": "Button to save changes",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запазване"
           }
         }
       }
     },
-    "Scan from Photo" : {
-      "comment" : "Button to scan barcode from photo",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сканиране от снимка"
+    "Save Anyway": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запазете дупликата"
           }
         }
       }
     },
-    "Scanning failed: %@" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Грешка при сканиране: %@"
+    "Scan Barcode": {
+      "comment": "Button to scan a barcode with camera",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сканиране на баркод"
           }
         }
       }
     },
-    "Scanning..." : {
-      "comment" : "Progress indicator while scanning photo",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сканиране..."
+    "Scan from Photo": {
+      "comment": "Button to scan barcode from photo",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сканиране от снимка"
           }
         }
       }
     },
-    "Scheduled reminders" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Планирани напомняния"
+    "Scanning failed: %@": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Грешка при сканиране: %@"
           }
         }
       }
     },
-    "Search" : {
-      "comment" : "Search action",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Търсене"
+    "Scanning...": {
+      "comment": "Progress indicator while scanning photo",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сканиране..."
           }
         }
       }
     },
-    "Search failed. Check your internet connection." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Търсенето не успя. Проверете интернет връзката си."
+    "Scheduled reminders": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Планирани напомняния"
           }
         }
       }
     },
-    "Search for address..." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Търсене на адрес..."
+    "Search": {
+      "comment": "Search action",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Търсене"
           }
         }
       }
     },
-    "See cards when you're nearby" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Виждате карти, когато сте близо до магазина"
+    "Search failed. Check your internet connection.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Търсенето не успя. Проверете интернет връзката си."
           }
         }
       }
     },
-    "Select 'Location' then choose 'Always'" : {
-      "comment" : "Instructions for upgrading location permission in iOS Settings",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изберете 'Местоположение', след това 'Винаги'"
+    "Search for address...": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Търсене на адрес..."
           }
         }
       }
     },
-    "Select All" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Всички"
+    "See cards when you're nearby": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Виждате карти, когато сте близо до магазина"
           }
         }
       }
     },
-    "Select Card" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избор на карта"
+    "Select 'Location' then choose 'Always'": {
+      "comment": "Instructions for upgrading location permission in iOS Settings",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изберете 'Местоположение', след това 'Винаги'"
           }
         }
       }
     },
-    "Select Cards" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избиране на карти"
+    "Select All": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Всички"
           }
         }
       }
     },
-    "Select Cards to Export" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избор на карти за експортиране"
+    "Select Card": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Избор на карта"
           }
         }
       }
     },
-    "Select Favorite Card" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избор на любима карта"
+    "Select Cards": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Избиране на карти"
           }
         }
       }
     },
-    "Select photo from library to scan barcode" : {
-      "comment" : "Accessibility hint for photo scan button",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избира снимка от библиотеката за сканиране на баркод"
+    "Select Cards to Export": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Избор на карти за експортиране"
           }
         }
       }
     },
-    "Select which barcode to use" : {
-      "comment" : "Alert message for multiple barcode selection",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изберете кой баркод да използвате"
+    "Select Favorite Card": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Избор на любима карта"
           }
         }
       }
     },
-    "Selected Location" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Избрано местоположение"
+    "Select photo from library to scan barcode": {
+      "comment": "Accessibility hint for photo scan button",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Избира снимка от библиотеката за сканиране на баркод"
           }
         }
       }
     },
-    "Settings" : {
-      "comment" : "Settings screen title",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Настройки"
+    "Select which barcode to use": {
+      "comment": "Alert message for multiple barcode selection",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изберете кой баркод да използвате"
           }
         }
       }
     },
-    "Settings > kartonche > Location > While Using the App" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Настройки > kartonche > Местоположение > Докато използвате приложението"
+    "Selected Location": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Избрано местоположение"
           }
         }
       }
     },
-    "Settings > Notifications > kartonche" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Настройки > Известия > kartonche"
+    "Settings": {
+      "comment": "Settings screen title",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Настройки"
           }
         }
       }
     },
-    "Share" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Споделяне"
+    "Settings > kartonche > Location > While Using the App": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Настройки > kartonche > Местоположение > Докато използвате приложението"
           }
         }
       }
     },
-    "Share card" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Споделяне на карта"
+    "Settings > Notifications > kartonche": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Настройки > Известия > kartonche"
           }
         }
       }
     },
-    "Show Expired" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Показване на изтекли"
+    "Share": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Споделяне"
           }
         }
       }
     },
-    "Show the next favorite card" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Показване на следваща любима карта"
+    "Share card": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Споделяне на карта"
           }
         }
       }
     },
-    "Show the previous favorite card" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Показване на предишна любима карта"
+    "Show Expired": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показване на изтекли"
           }
         }
       }
     },
-    "Show this to the cashier to scan" : {
-      "comment" : "Accessibility hint for barcode display",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Покажете това на касиера за сканиране"
+    "Show the next favorite card": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показване на следваща любима карта"
           }
         }
       }
     },
-    "Shows card for nearest store" : {
-      "comment" : "Lock screen rectangular widget description",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Показва карта за най-близкия магазин"
+    "Show the previous favorite card": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показване на предишна любима карта"
           }
         }
       }
     },
-    "Shows card for nearest store within 1km" : {
-      "comment" : "Home screen widget description",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Показва карта за най-близкия магазин в радиус 1км"
+    "Show this to the cashier to scan": {
+      "comment": "Accessibility hint for barcode display",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Покажете това на касиера за сканиране"
           }
         }
       }
     },
-    "Skip duplicates" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Пропускане на дубликати"
+    "Shows card for nearest store": {
+      "comment": "Lock screen rectangular widget description",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показва карта за най-близкия магазин"
           }
         }
       }
     },
-    "Sort" : {
-      "comment" : "Sort menu label",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сортиране"
+    "Shows card for nearest store within 1km": {
+      "comment": "Home screen widget description",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показва карта за най-близкия магазин в радиус 1км"
           }
         }
       }
     },
-    "Source Code" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Изходен код"
+    "Skip duplicates": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пропускане на дубликати"
           }
         }
       }
     },
-    "Store Name" : {
-      "comment" : "Label for store name field",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Име на магазина"
+    "Sort": {
+      "comment": "Sort menu label",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сортиране"
           }
         }
       }
     },
-    "Suggested Colors" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Предложени цветове"
+    "Source Code": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изходен код"
           }
         }
       }
     },
-    "Support" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Поддръжка"
+    "Store Name": {
+      "comment": "Label for store name field",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Име на магазина"
           }
         }
       }
     },
-    "Support Development" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Подкрепа на разработката"
+    "Suggested Colors": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Предложени цветове"
           }
         }
       }
     },
-    "Sync Active" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Синхронизацията е активна"
+    "Support": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поддръжка"
           }
         }
       }
     },
-    "Sync Error" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Грешка при синхронизиране"
+    "Support Development": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Подкрепа на разработката"
           }
         }
       }
     },
-    "Take a Photo" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "През камерата"
+    "Sync Active": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Синхронизацията е активна"
           }
         }
       }
     },
-    "Tap a card to preview" : {
-      "comment" : "Footer text in import preview list",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Докоснете карта за преглед"
+    "Sync Error": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Грешка при синхронизиране"
           }
         }
       }
     },
-    "Tap notification to view card" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Докоснете известието за да видите картата"
+    "Take a Photo": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "През камерата"
           }
         }
       }
     },
-    "Tap to see your cards" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Докоснете, за да видите картите си"
+    "Tap a card to preview": {
+      "comment": "Footer text in import preview list",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Докоснете карта за преглед"
           }
         }
       }
     },
-    "Tap to show your card" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Докоснете, за да покажете картата си"
+    "Tap notification to view card": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Докоснете известието за да видите картата"
           }
         }
       }
     },
-    "Text Color" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Цвят на текста"
+    "Tap to see your cards": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Докоснете, за да видите картите си"
           }
         }
       }
     },
-    "Thanks to early testers and friends who provided feedback." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Благодарности на ранните тестери и приятели, които дадоха обратна връзка."
+    "Tap to show your card": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Докоснете, за да покажете картата си"
           }
         }
       }
     },
-    "The app contains no advertising." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Приложението не съдържа реклами."
+    "Text Color": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Цвят на текста"
           }
         }
       }
     },
-    "This card is in Apple Wallet. Edits sync automatically." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Тази карта е в Apple Wallet. Промените се синхронизират автоматично."
+    "Thanks to early testers and friends who provided feedback.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Благодарности на ранните тестери и приятели, които дадоха обратна връзка."
           }
         }
       }
     },
-    "This helps you:" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Това ви помага да:"
+    "The app contains no advertising.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Приложението не съдържа реклами."
           }
         }
       }
     },
-    "This image is used only for Apple Wallet passes." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Това изображение се ползва само при ползване на Apple Wallet"
+    "This card is in Apple Wallet. Edits sync automatically.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тази карта е в Apple Wallet. Промените се синхронизират автоматично."
           }
         }
       }
     },
-    "To save card locations, kartonche needs to access your location." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "За да запазите локации, където ползвате дадена карта, kartonche се нуждае от достъп до информацията за текущото ви местоположението."
+    "This helps you:": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Това ви помага да:"
           }
         }
       }
     },
-    "Type to search, then tap a result" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Пишете за търсене, след това докоснете резултат"
+    "This image is used only for Apple Wallet passes.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Това изображение се ползва само при ползване на Apple Wallet"
           }
         }
       }
     },
-    "Unable to determine address for this location" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не може да се определи адрес за това местоположение"
+    "To save card locations, kartonche needs to access your location.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "За да запазите локации, където ползвате дадена карта, kartonche се нуждае от достъп до информацията за текущото ви местоположението."
           }
         }
       }
     },
-    "Unable to find location details" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не могат да се намерят подробности за местоположението"
+    "Type to search, then tap a result": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пишете за търсене, след това докоснете резултат"
           }
         }
       }
     },
-    "Unable to get current location" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не може да се определи текущото местоположение"
+    "Unable to determine address for this location": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не може да се определи адрес за това местоположение"
           }
         }
       }
     },
-    "Unfavorite" : {
-      "comment" : "Swipe action to remove card from favorites",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Премахване от любими"
+    "Unable to find location details": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не могат да се намерят подробности за местоположението"
           }
         }
       }
     },
-    "Unknown" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Неизвестно"
+    "Unable to get current location": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не може да се определи текущото местоположение"
           }
         }
       }
     },
-    "Unknown Address" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Неизвестен адрес"
+    "Unfavorite": {
+      "comment": "Swipe action to remove card from favorites",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Премахване от любими"
           }
         }
       }
     },
-    "Unsupported file version: %@" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Неподдържана версия на файла: %@"
+    "Unknown": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Неизвестно"
           }
         }
       }
     },
-    "Upgrade" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Надграждане"
+    "Unknown Address": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Неизвестен адрес"
           }
         }
       }
     },
-    "Upgrade to 'Always' for nearby notifications and better widget performance" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Надградете до 'Винаги' за известия при близост и по-добра производителност на инструментите"
+    "Unsupported file version: %@": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Неподдържана версия на файла: %@"
           }
         }
       }
     },
-    "Upgrade to 'Always' Location" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Надграждане на разрешението за местоположението ви"
+    "Upgrade": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Надграждане"
           }
         }
       }
     },
-    "Use Current Location" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Използване на текущо местоположение"
+    "Upgrade to 'Always' for nearby notifications and better widget performance": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Надградете до 'Винаги' за известия при близост и по-добра производителност на инструментите"
           }
         }
       }
     },
-    "Version %@ (%@)" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Версия %1$@ (%2$@)"
+    "Upgrade to 'Always' Location": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Надграждане на разрешението за местоположението ви"
+          }
+        }
+      }
+    },
+    "Use Current Location": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Използване на текущо местоположение"
+          }
+        }
+      }
+    },
+    "Version %@ (%@)": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Версия %1$@ (%2$@)"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Version %1$@ (%2$@)"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version %1$@ (%2$@)"
           }
         }
       }
     },
-    "We don't track how you use the app." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не проследяваме как използвате приложението."
+    "We don't track how you use the app.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не проследяваме как използвате приложението."
           }
         }
       }
     },
-    "We'll remind you:" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ще ви напомним:"
+    "We'll remind you:": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ще ви напомним:"
           }
         }
       }
     },
-    "What's New" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Какво ново"
+    "What's New": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Какво ново"
           }
         }
       }
     },
-    "whats_new.2026_02_3.expiration_reminders.description" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Никога не пропускайте подновяване на карта"
+    "whats_new.2026_02_3.expiration_reminders.description": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Никога не пропускайте подновяване на карта"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Never miss a card renewal"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Never miss a card renewal"
           }
         }
       }
     },
-    "whats_new.2026_02_3.expiration_reminders.title" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Напомняния за изтичане"
+    "whats_new.2026_02_3.expiration_reminders.title": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Напомняния за изтичане"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Expiration Reminders"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Expiration Reminders"
           }
         }
       }
     },
-    "whats_new.2026_02_3.export_share.description" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Споделяне на карти чрез AirDrop"
+    "whats_new.2026_02_3.export_share.description": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Споделяне на карти чрез AirDrop"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Share cards via AirDrop"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share cards via AirDrop"
           }
         }
       }
     },
-    "whats_new.2026_02_3.export_share.title" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Експортиране и споделяне"
+    "whats_new.2026_02_3.export_share.title": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Експортиране и споделяне"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Export & Share"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export & Share"
           }
         }
       }
     },
-    "whats_new.2026_02_3.location_features.description" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Известия при близост до запазени магазини"
+    "whats_new.2026_02_3.location_features.description": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Известия при близост до запазени магазини"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Get notified when near your saved stores"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Get notified when near your saved stores"
           }
         }
       }
     },
-    "whats_new.2026_02_3.location_features.title" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Функции за местоположение"
+    "whats_new.2026_02_3.location_features.title": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Функции за местоположение"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Location Features"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Location Features"
           }
         }
       }
     },
-    "whats_new.2026_02_3.widgets.description" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Бърз достъп от началния и заключен екран"
+    "whats_new.2026_02_3.widgets.description": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бърз достъп от началния и заключен екран"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quick access from home and lock screen"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quick access from home and lock screen"
           }
         }
       }
     },
-    "whats_new.2026_02_3.widgets.title" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Инструменти"
+    "whats_new.2026_02_3.widgets.title": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Инструменти"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Widgets"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Widgets"
           }
         }
       }
     },
-    "whats_new.2026_02_4.about_whats_new.description" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Научете за новите функции и информация за приложението"
+    "whats_new.2026_02_4.about_whats_new.description": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Научете за новите функции и информация за приложението"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Learn about new features and app info"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Learn about new features and app info"
           }
         }
       }
     },
-    "whats_new.2026_02_4.about_whats_new.title" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Относно и Какво ново"
+    "whats_new.2026_02_4.about_whats_new.title": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Относно и Какво ново"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "About & What's New"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "About & What's New"
           }
         }
       }
     },
-    "whats_new.2026_02_4.collapsible_notes.description" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Докоснете за разгъване или свиване на бележките"
+    "whats_new.2026_02_4.collapsible_notes.description": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Докоснете за разгъване или свиване на бележките"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tap to expand or collapse card notes"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap to expand or collapse card notes"
           }
         }
       }
     },
-    "whats_new.2026_02_4.collapsible_notes.title" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сгъваеми бележки"
+    "whats_new.2026_02_4.collapsible_notes.title": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сгъваеми бележки"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Collapsible Notes"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collapsible Notes"
           }
         }
       }
     },
-    "whats_new.2026_02_4.merchant_country_flags.description" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Вижте от коя държава са търговците"
+    "whats_new.2026_02_4.merchant_country_flags.description": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вижте от коя държава са търговците"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "See which country merchants are from"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See which country merchants are from"
           }
         }
       }
     },
-    "whats_new.2026_02_4.merchant_country_flags.title" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Флагове на държави"
+    "whats_new.2026_02_4.merchant_country_flags.title": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Флагове на държави"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Merchant Country Flags"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Merchant Country Flags"
           }
         }
       }
     },
-    "whats_new.2026_02_5.control_center_widgets.description" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Бърз достъп до карти от Контролния център"
+    "whats_new.2026_02_5.control_center_widgets.description": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бърз достъп до карти от Контролния център"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quick access to cards from Control Center"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quick access to cards from Control Center"
           }
         }
       }
     },
-    "whats_new.2026_02_5.control_center_widgets.title" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Инструменти за Контролен център"
+    "whats_new.2026_02_5.control_center_widgets.title": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Инструменти за Контролен център"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Control Center Widgets"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Control Center Widgets"
           }
         }
       }
     },
-    "whats_new.2026_02_5.redesigned_card_display.description" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картите вече се показват с изявени цветове на марката"
+    "whats_new.2026_02_5.redesigned_card_display.description": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Картите вече се показват с изявени цветове на марката"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cards now display with prominent brand colors"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cards now display with prominent brand colors"
           }
         }
       }
     },
-    "whats_new.2026_02_5.redesigned_card_display.title" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Преработен дизайн на картите"
+    "whats_new.2026_02_5.redesigned_card_display.title": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Преработен дизайн на картите"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Redesigned Card Display"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Redesigned Card Display"
           }
         }
       }
     },
-    "whats_new.2026_02_5.swipe_actions.description" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Плъзнете карти за бързо означаване, редактиране или изтриване"
+    "whats_new.2026_02_5.swipe_actions.description": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Плъзнете карти за бързо означаване, редактиране или изтриване"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Swipe cards to quickly favorite, edit, or delete"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Swipe cards to quickly favorite, edit, or delete"
           }
         }
       }
     },
-    "whats_new.2026_02_5.swipe_actions.title" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Действия при плъзгане"
+    "whats_new.2026_02_5.swipe_actions.title": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Действия при плъзгане"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Swipe Actions"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Swipe Actions"
           }
         }
       }
     },
-    "whats_new.2026_02_6.apple_wallet.description" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавяне на карти в Apple Wallet с подписване на пространството на устройството"
+    "whats_new.2026_02_6.apple_wallet.description": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавяне на карти в Apple Wallet с подписване на пространството на устройството"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add cards to Apple Wallet with on-device pass signing"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add cards to Apple Wallet with on-device pass signing"
           }
         }
       }
     },
-    "whats_new.2026_02_6.apple_wallet.title" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apple Wallet"
+    "whats_new.2026_02_6.apple_wallet.title": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Wallet"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apple Wallet"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Wallet"
           }
         }
       }
     },
-    "whats_new.2026_02_6.import_export.description" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Подобрено импортиране и експортиране за лесно архивиране и прехвърляне"
+    "whats_new.2026_02_6.import_export.description": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Подобрено импортиране и експортиране за лесно архивиране и прехвърляне"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Revamped data import and export for easy backup and transfer"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revamped data import and export for easy backup and transfer"
           }
         }
       }
     },
-    "whats_new.2026_02_6.import_export.title" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Импортиране и експортиране"
+    "whats_new.2026_02_6.import_export.title": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Импортиране и експортиране"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Import & Export"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Import & Export"
           }
         }
       }
     },
-    "whats_new.2026_02_6.quick_look_preview.description" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Преглед на .kartonche файлове с Бърз преглед преди импортиране"
+    "whats_new.2026_02_6.quick_look_preview.description": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Преглед на .kartonche файлове с Бърз преглед преди импортиране"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Preview .kartonche files with Quick Look before importing"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preview .kartonche files with Quick Look before importing"
           }
         }
       }
     },
-    "whats_new.2026_02_6.quick_look_preview.title" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Бърз преглед"
+    "whats_new.2026_02_6.quick_look_preview.title": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бърз преглед"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quick Look Preview"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quick Look Preview"
           }
         }
       }
     },
-    "whats_new.2026_02_6.quick_scan.description" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "По-бързо добавяне на карти чрез сканиране от камера или снимка с автоматично разпознаване на баркод и цвят"
+    "whats_new.2026_02_6.quick_scan.description": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "По-бързо добавяне на карти чрез сканиране от камера или снимка с автоматично разпознаване на баркод и цвят"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add cards faster by scanning from camera or photo library with automatic barcode and color detection"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add cards faster by scanning from camera or photo library with automatic barcode and color detection"
           }
         }
       }
     },
-    "whats_new.2026_02_6.quick_scan.title" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Бързо сканиране"
+    "whats_new.2026_02_6.quick_scan.title": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бързо сканиране"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quick Scan"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quick Scan"
           }
         }
       }
     },
-    "whats_new.2026_02_6.spotlight_search.description" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Намерете картите си за лоялност от началния екран чрез Spotlight"
+    "whats_new.2026_02_6.spotlight_search.description": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Намерете картите си за лоялност от началния екран чрез Spotlight"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Find your loyalty cards from the home screen via Spotlight"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find your loyalty cards from the home screen via Spotlight"
           }
         }
       }
     },
-    "whats_new.2026_02_6.spotlight_search.title" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Търсене в Spotlight"
+    "whats_new.2026_02_6.spotlight_search.title": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Търсене в Spotlight"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spotlight Search"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spotlight Search"
           }
         }
       }
     },
-    "whats_new.2026_03_1.ean13_support.description" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "EAN-13 баркодовете вече се изобразяват правилно и могат да се добавят в Apple Wallet."
+    "whats_new.2026_03_1.ean13_support.description": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EAN-13 баркодовете вече се изобразяват правилно и могат да се добавят в Apple Wallet."
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "EAN-13 barcodes now render authentically and can be added to Apple Wallet."
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EAN-13 barcodes now render authentically and can be added to Apple Wallet."
           }
         }
       }
     },
-    "whats_new.2026_03_1.ean13_support.title" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Поддръжка на EAN-13 баркодове"
+    "whats_new.2026_03_1.ean13_support.title": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поддръжка на EAN-13 баркодове"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "EAN-13 Barcode Support"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EAN-13 Barcode Support"
           }
         }
       }
     },
-    "whats_new.2026_03_1.icloud_sync.description" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картите вече се синхронизират автоматично между устройствата ви, когато iCloud е наличен"
+    "whats_new.2026_03_1.icloud_sync.description": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Картите вече се синхронизират автоматично между устройствата ви, когато iCloud е наличен"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cards now sync automatically across your devices when iCloud is available"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cards now sync automatically across your devices when iCloud is available"
           }
         }
       }
     },
-    "whats_new.2026_03_1.icloud_sync.title" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Синхронизация с iCloud"
+    "whats_new.2026_03_1.icloud_sync.title": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Синхронизация с iCloud"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "iCloud Sync"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud Sync"
           }
         }
       }
     },
-    "whats_new.version_format" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Версия %@"
+    "whats_new.version_format": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Версия %@"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Version %@"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version %@"
           }
         }
       }
     },
-    "While Using App" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Докато използвате приложението"
+    "While Using App": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Докато използвате приложението"
           }
         }
       }
     },
-    "Widgets work when app is closed" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Инструментите работят, дори когато приложението е затворено"
+    "Widgets work when app is closed": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Инструментите работят, дори когато приложението е затворено"
           }
         }
       }
     },
-    "You can disable reminders anytime in Settings." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Можете да изключите напомнянията по всяко време от Настройки."
+    "You can disable reminders anytime in Settings.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Можете да изключите напомнянията по всяко време от Настройки."
           }
         }
       }
     },
-    "You'll be notified when you're near a saved card location" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ще бъдете уведомени, когато сте близо до запазено местоположение"
+    "You'll be notified when you're near a saved card location": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ще бъдете уведомени, когато сте близо до запазено местоположение"
           }
         }
       }
     },
-    "You're near %lld saved locations" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Вие сте близо до %lld запазени местоположения"
+    "You're near %lld saved locations": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вие сте близо до %lld запазени местоположения"
           }
         }
       }
     },
-    "You're near a saved location" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Вие сте близо до запазено местоположение"
+    "You're near a saved location": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вие сте близо до запазено местоположение"
           }
         }
       }
     },
-    "Your cards stay on this device by default. If iCloud is enabled, they also sync through your private iCloud database." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Вашите карти остават на вашето устройство по подразбиране. Ако имате настроен достъп до iCloud, те също така ще бъдат синхронизирани с личният ви iCloud."
+    "Your cards stay on this device by default. If iCloud is enabled, they also sync through your private iCloud database.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вашите карти остават на вашето устройство по подразбиране. Ако имате настроен достъп до iCloud, те също така ще бъдат синхронизирани с личният ви iCloud."
           }
         }
       }
     },
-    "Your cards, always ready" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Картите ви, винаги готови"
+    "Your cards, always ready": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Картите ви, винаги готови"
           }
         }
       }
     },
-    "Your location is only used to calculate distance to saved stores." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Местоположението ви се използва само за изчисляване на разстояние до запазени магазини."
+    "Your location is only used to calculate distance to saved stores.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Местоположението ви се използва само за изчисляване на разстояние до запазени магазини."
           }
         }
       }
     },
-    "Your location is only used to find nearby stores" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Местоположението ви се използва само за намиране на близки магазини"
+    "Your location is only used to find nearby stores": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Местоположението ви се използва само за намиране на близки магазини"
           }
         }
       }
     },
-    "Your location is only used to find nearby stores. Battery impact is minimal." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Местоположението ви се използва само за намиране на близки магазини. Влиянието върху батерията е минимално."
+    "Your location is only used to find nearby stores. Battery impact is minimal.": {
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Местоположението ви се използва само за намиране на близки магазини. Влиянието върху батерията е минимално."
+          }
+        }
+      }
+    },
+    "Maria Ivanova": {
+      "comment": "Screenshot sample cardholder name",
+      "localizations": {
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Мария Иванова"
           }
         }
       }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }
