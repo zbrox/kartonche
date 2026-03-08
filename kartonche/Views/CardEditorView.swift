@@ -313,6 +313,16 @@ struct CardEditorView: View {
                                 Label(String(localized: "Choose Image"), systemImage: "photo")
                             }
                         }
+
+                        if barcodeType == .ean13 {
+                            Label(String(localized: "EAN-13 cards use the barcode as the Apple Wallet strip image. This image won't be used."), systemImage: "info.circle")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        } else {
+                            Label(String(localized: "This image is used only for Apple Wallet passes."), systemImage: "info.circle")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
                     }
                 } header: {
                     Text(String(localized: "Appearance"))

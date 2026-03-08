@@ -209,6 +209,16 @@
         }
       }
     },
+    "Add to Wallet" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добавяне в Apple Wallet"
+          }
+        }
+      }
+    },
     "Add your first loyalty card" : {
       "comment" : "Empty state message",
       "localizations" : {
@@ -790,6 +800,26 @@
         }
       }
     },
+    "EAN-13 barcodes are added as images and may not scan everywhere." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Баркодове от вида EAN-13 не се поддържат официално от Apple Wallet и затова са добавени като статично изображение. Това може да доведе до евентуални проблеми със сканирането в определени случаи."
+          }
+        }
+      }
+    },
+    "EAN-13 cards use the barcode as the Apple Wallet strip image. This image won't be used." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Това изображение няма да бъде ползвано. Карти с баркод от вида EAN-13 използват позицията за изображение в Apple Wallet."
+          }
+        }
+      }
+    },
     "EAN-13 requires exactly 13 digits (provided: %d)" : {
       "comment" : "Error message for EAN-13 digit validation",
       "localizations" : {
@@ -909,6 +939,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Съществуващите карти ще бъдат заменени с импортираните версии"
+          }
+        }
+      }
+    },
+    "Experimental Feature" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Експериментална функция"
           }
         }
       }
@@ -2731,16 +2771,6 @@
         }
       }
     },
-    "This barcode format is not supported by Apple Wallet" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Този формат на бар код не се поддържа от Apple Wallet"
-          }
-        }
-      }
-    },
     "This card is in Apple Wallet. Edits sync automatically." : {
       "localizations" : {
         "bg" : {
@@ -2757,6 +2787,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Това ви помага да:"
+          }
+        }
+      }
+    },
+    "This image is used only for Apple Wallet passes." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Това изображение се ползва само при ползване на Apple Wallet"
           }
         }
       }

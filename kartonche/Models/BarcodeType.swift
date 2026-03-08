@@ -30,7 +30,7 @@ enum BarcodeType: String, Codable, CaseIterable {
     }
 
     var supportsAppleWallet: Bool {
-        self != .ean13
+        true
     }
 
     var walletFormatString: String? {

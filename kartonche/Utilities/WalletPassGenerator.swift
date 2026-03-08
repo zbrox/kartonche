@@ -15,7 +15,6 @@ import _CryptoExtras
 import ZIPFoundation
 
 enum WalletPassGeneratorError: LocalizedError {
-    case unsupportedBarcodeType
     case missingResource(String)
     case invalidCertificate
     case invalidPrivateKey
@@ -25,8 +24,6 @@ enum WalletPassGeneratorError: LocalizedError {
 
     var errorDescription: String? {
         switch self {
-        case .unsupportedBarcodeType:
-            return String(localized: "This barcode format is not supported by Apple Wallet")
         case .missingResource(let name):
             return "Missing resource: \(name)"
         case .invalidCertificate:
@@ -48,10 +45,6 @@ enum WalletPassGenerator {
     // MARK: - Public
 
     static func generate(for card: LoyaltyCard) throws -> Data {
-        guard card.barcodeType.supportsAppleWallet else {
-            throw WalletPassGeneratorError.unsupportedBarcodeType
-        }
-
         let passJSON = try buildPassJSON(for: card)
         let assets = try collectAssets(for: card)
         let manifest = try buildManifest(passJSON: passJSON, assets: assets)
@@ -93,7 +86,7 @@ enum WalletPassGenerator {
 
         var storeCard: [String: Any] = [:]
 
-        if card.cardImage != nil {
+        if card.cardImage != nil || card.barcodeType == .ean13 {
             storeCard["headerFields"] = [[
                 "key": "cardName",
                 "label": "",
@@ -190,7 +183,12 @@ enum WalletPassGenerator {
             assets["\(asset.archiveName).png"] = renderLogoWithTransparentBackground(image)
         }
 
-        if let imageData = card.cardImage, let sourceImage = UIImage(data: imageData) {
+        if card.barcodeType == .ean13 {
+            let stripAssets = renderEAN13StripImages(for: card)
+            for (filename, data) in stripAssets {
+                assets[filename] = data
+            }
+        } else if let imageData = card.cardImage, let sourceImage = UIImage(data: imageData) {
             let stripAssets = renderStripImages(from: sourceImage)
             for (filename, data) in stripAssets {
                 assets[filename] = data
@@ -230,6 +228,41 @@ enum WalletPassGenerator {
             let renderer = UIGraphicsImageRenderer(size: size)
             let rendered = renderer.pngData { context in
                 source.draw(in: CGRect(origin: .zero, size: size))
+            }
+            result[filename] = rendered
+        }
+        return result
+    }
+
+    /// Renders an EAN-13 barcode centered on a white strip at @1x/@2x/@3x.
+    static func renderEAN13StripImages(for card: LoyaltyCard) -> [String: Data] {
+        let baseWidth = WalletPassConfiguration.stripWidth
+        let baseHeight = WalletPassConfiguration.stripHeight
+        let scales: [(suffix: String, scale: CGFloat)] = [
+            ("strip.png", 1),
+            ("strip@2x.png", 2),
+            ("strip@3x.png", 3),
+        ]
+
+        var result: [String: Data] = [:]
+        for (filename, scale) in scales {
+            let stripSize = CGSize(width: baseWidth * scale, height: baseHeight * scale)
+            let barcodeHeight = stripSize.height * 0.8
+            let barcodeWidth = stripSize.width * 0.7
+            let barcodeSize = CGSize(width: barcodeWidth, height: barcodeHeight)
+
+            guard let barcode = BarcodeGenerator.renderEAN13(digits: card.barcodeData, size: barcodeSize) else {
+                continue
+            }
+
+            let renderer = UIGraphicsImageRenderer(size: stripSize)
+            let rendered = renderer.pngData { ctx in
+                ctx.cgContext.setFillColor(UIColor.white.cgColor)
+                ctx.cgContext.fill(CGRect(origin: .zero, size: stripSize))
+
+                let x = (stripSize.width - barcodeSize.width) / 2
+                let y = (stripSize.height - barcodeSize.height) / 2
+                barcode.draw(in: CGRect(x: x, y: y, width: barcodeSize.width, height: barcodeSize.height))
             }
             result[filename] = rendered
         }

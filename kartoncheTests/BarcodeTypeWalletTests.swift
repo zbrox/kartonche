@@ -27,8 +27,8 @@ struct BarcodeTypeWalletTests {
         #expect(BarcodeType.aztec.supportsAppleWallet == true)
     }
 
-    @Test func ean13DoesNotSupportAppleWallet() {
-        #expect(BarcodeType.ean13.supportsAppleWallet == false)
+    @Test func ean13SupportsAppleWallet() {
+        #expect(BarcodeType.ean13.supportsAppleWallet == true)
     }
 
     @Test func qrWalletFormatString() {

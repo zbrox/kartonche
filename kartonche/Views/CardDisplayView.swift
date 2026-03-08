@@ -25,6 +25,7 @@ struct CardDisplayView: View {
     @State private var passError: String?
     @State private var passToAdd: PKPass?
     @State private var errorAlert: CardDisplayErrorAlert?
+    @State private var showEAN13Warning = false
     
     var body: some View {
         let primaryColor = card.color.flatMap { Color(hex: $0) } ?? Color.accentColor
@@ -51,30 +52,27 @@ struct CardDisplayView: View {
                 Spacer(minLength: 40)
 
                 // Apple Wallet status
-                if card.barcodeType.supportsAppleWallet {
-                    if isPassInWallet {
-                        Label(String(localized: "Added to Apple Wallet. Edits sync automatically."), systemImage: "wallet.bifold")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                            .accessibilityLabel(String(localized: "This card is in Apple Wallet. Edits sync automatically."))
-                            .padding(.bottom, 12)
-                    } else if isGeneratingPass {
-                        ProgressView(String(localized: "Generating pass..."))
-                            .padding(.bottom, 12)
-                    } else {
-                        AddToWalletButton {
-                            generateAndAddPass()
-                        }
-                        .frame(width: 250, height: 48)
-                        .clipShape(RoundedRectangle(cornerRadius: 14))
-                        .accessibilityLabel(String(localized: "Add to Apple Wallet"))
-                        .padding(.bottom, 32)
-                    }
-                } else {
-                    Label(String(localized: "This barcode format is not supported by Apple Wallet"), systemImage: "info.circle")
+                if isPassInWallet {
+                    Label(String(localized: "Added to Apple Wallet. Edits sync automatically."), systemImage: "wallet.bifold")
                         .font(.caption)
                         .foregroundStyle(.secondary)
+                        .accessibilityLabel(String(localized: "This card is in Apple Wallet. Edits sync automatically."))
                         .padding(.bottom, 12)
+                } else if isGeneratingPass {
+                    ProgressView(String(localized: "Generating pass..."))
+                        .padding(.bottom, 12)
+                } else {
+                    AddToWalletButton {
+                        if card.barcodeType == .ean13 {
+                            showEAN13Warning = true
+                        } else {
+                            generateAndAddPass()
+                        }
+                    }
+                    .frame(width: 250, height: 48)
+                    .clipShape(RoundedRectangle(cornerRadius: 14))
+                    .accessibilityLabel(String(localized: "Add to Apple Wallet"))
+                    .padding(.bottom, 32)
                 }
 
                 // Notes button (if notes exist)
@@ -143,6 +141,18 @@ struct CardDisplayView: View {
             if let passError {
                 Text(passError)
             }
+        }
+        .confirmationDialog(
+            String(localized: "Experimental Feature"),
+            isPresented: $showEAN13Warning,
+            titleVisibility: .visible
+        ) {
+            Button(String(localized: "Add to Wallet")) {
+                generateAndAddPass()
+            }
+            Button(String(localized: "Cancel"), role: .cancel) {}
+        } message: {
+            Text(String(localized: "EAN-13 barcodes are added as images and may not scan everywhere."))
         }
         .alert(item: $errorAlert) { alert in
             Alert(
