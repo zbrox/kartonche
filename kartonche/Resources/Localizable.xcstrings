@@ -670,6 +670,52 @@
         }
       }
     },
+    "A card with this barcode already exists" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "A card with this barcode already exists"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "A card with this barcode already exists"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "A card with this barcode already exists"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "A card with this barcode already exists"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "A card with this barcode already exists"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "A card with this barcode already exists"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "A card with this barcode already exists"
+          }
+        }
+      }
+    },
     "A simple app for organizing your loyalty cards. Open source, privacy-focused, no account required." : {
       "localizations" : {
         "bg" : {
@@ -1037,6 +1083,52 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Add to favorites"
+          }
+        }
+      }
+    },
+    "Add to Wallet" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add to Wallet"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add to Wallet"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add to Wallet"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add to Wallet"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add to Wallet"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add to Wallet"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add to Wallet"
           }
         }
       }
@@ -3454,6 +3546,52 @@
         }
       }
     },
+    "Duplicate Barcode" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Duplicate Barcode"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Duplicate Barcode"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Duplicate Barcode"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Duplicate Barcode"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Duplicate Barcode"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Duplicate Barcode"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Duplicate Barcode"
+          }
+        }
+      }
+    },
     "Duplicate cards will not be imported" : {
       "localizations" : {
         "bg" : {
@@ -3588,6 +3726,98 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Duplicates found"
+          }
+        }
+      }
+    },
+    "EAN-13 barcodes are added as images and may not scan everywhere." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 barcodes are added as images and may not scan everywhere."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 barcodes are added as images and may not scan everywhere."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 barcodes are added as images and may not scan everywhere."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 barcodes are added as images and may not scan everywhere."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 barcodes are added as images and may not scan everywhere."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 barcodes are added as images and may not scan everywhere."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 barcodes are added as images and may not scan everywhere."
+          }
+        }
+      }
+    },
+    "EAN-13 cards use the barcode as the Apple Wallet strip image. This image won't be used." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 cards use the barcode as the Apple Wallet strip image. This image won't be used."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 cards use the barcode as the Apple Wallet strip image. This image won't be used."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 cards use the barcode as the Apple Wallet strip image. This image won't be used."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 cards use the barcode as the Apple Wallet strip image. This image won't be used."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 cards use the barcode as the Apple Wallet strip image. This image won't be used."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 cards use the barcode as the Apple Wallet strip image. This image won't be used."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 cards use the barcode as the Apple Wallet strip image. This image won't be used."
           }
         }
       }
@@ -4143,6 +4373,52 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Existing cards will be replaced with imported versions"
+          }
+        }
+      }
+    },
+    "Experimental Feature" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Experimental Feature"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Experimental Feature"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Experimental Feature"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Experimental Feature"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Experimental Feature"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Experimental Feature"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Experimental Feature"
           }
         }
       }
@@ -8893,6 +9169,52 @@
         }
       }
     },
+    "Open Existing" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open Existing"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open Existing"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open Existing"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open Existing"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open Existing"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open Existing"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open Existing"
+          }
+        }
+      }
+    },
     "Open Favorite Card" : {
       "localizations" : {
         "bg" : {
@@ -10183,6 +10505,52 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Save"
+          }
+        }
+      }
+    },
+    "Save Anyway" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Save Anyway"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Save Anyway"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Save Anyway"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Save Anyway"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Save Anyway"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Save Anyway"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Save Anyway"
           }
         }
       }
@@ -12317,52 +12685,6 @@
         }
       }
     },
-    "This barcode format is not supported by Apple Wallet" : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Този формат на бар код не се поддържа от Apple Wallet"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "This barcode format is not supported by Apple Wallet"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "This barcode format is not supported by Apple Wallet"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "This barcode format is not supported by Apple Wallet"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "This barcode format is not supported by Apple Wallet"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "This barcode format is not supported by Apple Wallet"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "This barcode format is not supported by Apple Wallet"
-          }
-        }
-      }
-    },
     "This card is in Apple Wallet. Edits sync automatically." : {
       "localizations" : {
         "bg" : {
@@ -12451,6 +12773,52 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "This helps you:"
+          }
+        }
+      }
+    },
+    "This image is used only for Apple Wallet passes." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This image is used only for Apple Wallet passes."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This image is used only for Apple Wallet passes."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This image is used only for Apple Wallet passes."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This image is used only for Apple Wallet passes."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This image is used only for Apple Wallet passes."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This image is used only for Apple Wallet passes."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This image is used only for Apple Wallet passes."
           }
         }
       }
@@ -14800,6 +15168,110 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Spotlight Search"
+          }
+        }
+      }
+    },
+    "whats_new.2026_03_1.ean13_support.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 barcodes now render authentically and can be added to Apple Wallet."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 barcodes now render authentically and can be added to Apple Wallet."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EAN-13 barcodes now render authentically and can be added to Apple Wallet."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 barcodes now render authentically and can be added to Apple Wallet."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 barcodes now render authentically and can be added to Apple Wallet."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 barcodes now render authentically and can be added to Apple Wallet."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 barcodes now render authentically and can be added to Apple Wallet."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 barcodes now render authentically and can be added to Apple Wallet."
+          }
+        }
+      }
+    },
+    "whats_new.2026_03_1.ean13_support.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 Barcode Support"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 Barcode Support"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EAN-13 Barcode Support"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 Barcode Support"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 Barcode Support"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 Barcode Support"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 Barcode Support"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13 Barcode Support"
           }
         }
       }
