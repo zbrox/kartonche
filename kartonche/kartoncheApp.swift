@@ -14,6 +14,8 @@ import CoreSpotlight
 
 @main
 struct kartoncheApp: App {
+    static let isScreenshotMode = ProcessInfo.processInfo.arguments.contains("--screenshot-mode")
+
     var sharedModelContainer: ModelContainer = SharedDataManager.sharedModelContainer
     @StateObject private var locationManager = LocationManager()
     @StateObject private var notificationDelegate = NotificationDelegate()
@@ -24,15 +26,21 @@ struct kartoncheApp: App {
         WindowGroup {
             CardListView()
                 .onAppear {
+                    if Self.isScreenshotMode {
+                        UIView.setAnimationsEnabled(false)
+                        ScreenshotSampleData.seed(into: sharedModelContainer.mainContext)
+                        return
+                    }
+
                     // Request location on app launch to populate shared storage for widgets
                     // Only if we have cards with locations
                     if hasCardsWithLocations() {
                         locationManager.requestLocation()
                     }
-                    
+
                     // Set notification delegate
                     UNUserNotificationCenter.current().delegate = notificationDelegate
-                    
+
                     // Start geofencing if enabled
                     Task {
                         await startGeofencingIfEnabled()
