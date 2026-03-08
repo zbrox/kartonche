@@ -3458,6 +3458,38 @@
         }
       }
     },
+    "whats_new.2026_03_1.ean13_support.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EAN-13 баркодовете вече се изобразяват правилно и могат да се добавят в Apple Wallet."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EAN-13 barcodes now render authentically and can be added to Apple Wallet."
+          }
+        }
+      }
+    },
+    "whats_new.2026_03_1.ean13_support.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поддръжка на EAN-13 баркодове"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EAN-13 Barcode Support"
+          }
+        }
+      }
+    },
     "whats_new.2026_03_1.icloud_sync.description" : {
       "localizations" : {
         "bg" : {
