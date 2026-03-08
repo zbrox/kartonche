@@ -117,7 +117,14 @@
       }
     },
     "A card with this barcode already exists" : {
-
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вече имате карта с този баркод"
+          }
+        }
+      }
     },
     "A simple app for organizing your loyalty cards. Open source, privacy-focused, no account required." : {
       "localizations" : {
@@ -744,7 +751,14 @@
       }
     },
     "Duplicate Barcode" : {
-
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Повтарящ се баркод"
+          }
+        }
+      }
     },
     "Duplicate cards will not be imported" : {
       "localizations" : {
@@ -1210,7 +1224,14 @@
       }
     },
     "iCloud Signed Out" : {
-
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Излезли сте от iCloud"
+          }
+        }
+      }
     },
     "iCloud Sync" : {
       "localizations" : {
@@ -1223,7 +1244,14 @@
       }
     },
     "iCloud Unavailable" : {
-
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неналичен iCloud"
+          }
+        }
+      }
     },
     "If you enable location features, your location is used only to show cards for nearby stores and is never sent to any server." : {
       "localizations" : {
@@ -1924,7 +1952,14 @@
       }
     },
     "Open Existing" : {
-
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отворете съществуващата"
+          }
+        }
+      }
     },
     "Open Favorite Card" : {
       "localizations" : {
@@ -2121,7 +2156,14 @@
       }
     },
     "Refresh Sync Status" : {
-
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Обновяване"
+          }
+        }
+      }
     },
     "Remove from favorites" : {
       "comment" : "Accessibility label for unfavorite button",
@@ -2206,7 +2248,14 @@
       }
     },
     "Save Anyway" : {
-
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Запазете дупликата"
+          }
+        }
+      }
     },
     "Scan Barcode" : {
       "comment" : "Button to scan a barcode with camera",
@@ -2582,10 +2631,24 @@
       }
     },
     "Sync Active" : {
-
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Синхронизацията е активна"
+          }
+        }
+      }
     },
     "Sync Error" : {
-
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Грешка при синхронизиране"
+          }
+        }
+      }
     },
     "Take a Photo" : {
       "localizations" : {
