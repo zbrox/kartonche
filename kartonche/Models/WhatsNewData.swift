@@ -25,6 +25,11 @@ let whatsNewVersions: [WhatsNewVersion] = [
                 title: "whats_new.2026_03_1.icloud_sync.title",
                 description: "whats_new.2026_03_1.icloud_sync.description"
             ),
+            WhatsNewFeature(
+                icon: "barcode",
+                title: "whats_new.2026_03_1.ean13_support.title",
+                description: "whats_new.2026_03_1.ean13_support.description"
+            ),
         ]
     ),
     WhatsNewVersion(
