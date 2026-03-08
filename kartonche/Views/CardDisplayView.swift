@@ -71,6 +71,7 @@ struct CardDisplayView: View {
                     }
                     .frame(width: 250, height: 48)
                     .clipShape(RoundedRectangle(cornerRadius: 14))
+                    .accessibilityIdentifier("addToWalletButton")
                     .accessibilityLabel(String(localized: "Add to Apple Wallet"))
                     .padding(.bottom, 32)
                 }
@@ -202,8 +203,9 @@ struct CardDisplayView: View {
                         .font(.title2)
                         .foregroundStyle(secondaryColor)
                 }
+                .accessibilityIdentifier("shareCardButton")
                 .accessibilityLabel(String(localized: "Share card"))
-                
+
                 // Close button
                 Button {
                     dismiss()
@@ -218,7 +220,7 @@ struct CardDisplayView: View {
         .padding(.horizontal, 20)
         .padding(.vertical, 20)
         .background(primaryColor)
-        .accessibilityElement(children: .combine)
+        .accessibilityElement(children: .contain)
         .accessibilityLabel(headerAccessibilityLabel)
     }
     
@@ -252,6 +254,7 @@ struct CardDisplayView: View {
                 .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 5)
         )
         .padding(.horizontal, 24)
+        .accessibilityIdentifier("barcodeImage")
         .accessibilityLabel(String(localized: "Barcode for scanning"))
         .accessibilityValue("\(card.barcodeType.displayName), \(card.barcodeData)")
         .accessibilityHint(String(localized: "Show this to the cashier to scan"))

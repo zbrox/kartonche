@@ -423,13 +423,15 @@ struct CardListView: View {
                         } label: {
                             Label(String(localized: "Share"), systemImage: "square.and.arrow.up")
                         }
-                        
+                        .accessibilityIdentifier("contextMenuShare")
+
                         Button {
                             selectedCard = card
                         } label: {
                             Label(String(localized: "Edit"), systemImage: "pencil")
                         }
-                        
+                        .accessibilityIdentifier("contextMenuEdit")
+
                         Button(role: .destructive) {
                             cardToDelete = card
                             showingDeleteConfirmation = true
@@ -606,6 +608,7 @@ struct CardListView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .frame(minHeight: 46)
             }
+            .accessibilityIdentifier("addManuallyButton")
             .buttonStyle(.bordered)
 
             Button(String(localized: "Cancel"), role: .cancel) {
