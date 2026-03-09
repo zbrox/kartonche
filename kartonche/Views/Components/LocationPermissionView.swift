@@ -64,6 +64,7 @@ struct LocationPermissionView: View {
                     Text(String(localized: "Not Now"))
                         .frame(maxWidth: .infinity)
                 }
+                .accessibilityIdentifier("locationPermissionDeny")
                 .buttonStyle(.bordered)
             }
             .padding(.horizontal)

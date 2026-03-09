@@ -95,6 +95,7 @@ struct CardExportSelectionView: View {
                          ? String(localized: "Deselect All")
                          : String(localized: "Select All"))
                 }
+                .accessibilityIdentifier("selectAllButton")
             }
         }
         .sheet(item: $shareItem) { item in

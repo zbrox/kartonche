@@ -8,8 +8,8 @@ import SwiftData
 
 enum ScreenshotSampleData {
     static func seed(into context: ModelContext) {
-        let existing = (try? context.fetchCount(FetchDescriptor<LoyaltyCard>())) ?? 0
-        guard existing == 0 else { return }
+        try? context.delete(model: CardLocation.self)
+        try? context.delete(model: LoyaltyCard.self)
 
         let cards = [
             LoyaltyCard(

@@ -79,6 +79,7 @@ struct DataSettingsView: View {
                 } label: {
                     Text(String(localized: "Select Cards to Export"))
                 }
+                .accessibilityIdentifier("selectCardsToExportRow")
                 .disabled(allCards.isEmpty)
             } header: {
                 Text(String(localized: "Export"))

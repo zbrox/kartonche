@@ -393,6 +393,7 @@ struct CardEditorView: View {
                     } label: {
                         Label(String(localized: "Add Location"), systemImage: "plus.circle.fill")
                     }
+                    .accessibilityIdentifier("addLocationButton")
                 } header: {
                     Text(String(localized: "Locations"))
                 } footer: {

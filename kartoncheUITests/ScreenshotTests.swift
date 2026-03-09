@@ -55,21 +55,22 @@ final class ScreenshotTests: XCTestCase {
     }
 
     @MainActor
-    func testPhotoScan() throws {
+    func testCardEditor() throws {
         app.launch()
 
-        let addButton = app.buttons["addCardButton"]
-        XCTAssertTrue(addButton.waitForExistence(timeout: 5))
-        addButton.tap()
+        // Open editor for Downtown Gym (4th card, index 3)
+        let gymCard = app.cells.element(boundBy: 3)
+        XCTAssertTrue(gymCard.waitForExistence(timeout: 5))
 
-        let addManually = app.buttons["addManuallyButton"]
-        XCTAssertTrue(addManually.waitForExistence(timeout: 3))
-        addManually.tap()
+        gymCard.press(forDuration: 1.0)
+        let editButton = app.buttons["contextMenuEdit"]
+        XCTAssertTrue(editButton.waitForExistence(timeout: 3))
+        editButton.tap()
 
         let cardNameField = app.textFields["cardNameField"]
         XCTAssertTrue(cardNameField.waitForExistence(timeout: 3))
 
-        capture("03-photo-scan")
+        capture("03-card-edit")
     }
 
     @MainActor
@@ -82,15 +83,22 @@ final class ScreenshotTests: XCTestCase {
 
         let walletButton = app.buttons["addToWalletButton"]
         XCTAssertTrue(walletButton.waitForExistence(timeout: 10), "Add to Wallet button should appear")
+        walletButton.tap()
+
+        // Wait for pass generation and the system Add Pass sheet
+        sleep(3)
 
         capture("04-wallet-pass")
+
+        // Dismiss any system sheet so the next test can launch cleanly
+        app.swipeDown()
     }
 
     @MainActor
     func testAddLocation() throws {
         app.launch()
 
-        // Open editor for a card that has a location (Fresh Market)
+        // Open editor for Fresh Market (2nd card, index 1) — has a seeded location
         let freshMarket = app.cells.element(boundBy: 1)
         XCTAssertTrue(freshMarket.waitForExistence(timeout: 5))
 
@@ -99,33 +107,50 @@ final class ScreenshotTests: XCTestCase {
         XCTAssertTrue(editButton.waitForExistence(timeout: 3))
         editButton.tap()
 
-        // Wait for editor to appear then scroll to locations
+        // Wait for editor to appear then scroll until Add Location is visible
         let cardNameField = app.textFields["cardNameField"]
         XCTAssertTrue(cardNameField.waitForExistence(timeout: 3))
-        app.swipeUp()
+
+        let addLocationButton = app.buttons["addLocationButton"]
+        for _ in 0..<5 {
+            if addLocationButton.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(addLocationButton.isHittable, "Add Location button should be visible")
+        addLocationButton.tap()
+
+        let dropPinButton = app.buttons["dropPinOnMapButton"]
+        XCTAssertTrue(dropPinButton.waitForExistence(timeout: 5))
+        dropPinButton.tap()
+
+        // Wait for map to render
+        sleep(3)
 
         capture("05-add-location")
     }
 
     @MainActor
-    func testShareExport() throws {
+    func testExportSelection() throws {
         app.launch()
 
-        let firstCard = app.cells.firstMatch
-        XCTAssertTrue(firstCard.waitForExistence(timeout: 5))
-        firstCard.tap()
+        let settingsButton = app.buttons["settingsButton"]
+        XCTAssertTrue(settingsButton.waitForExistence(timeout: 5))
+        settingsButton.tap()
 
-        let shareButton = app.buttons["shareCardButton"]
-        XCTAssertTrue(shareButton.waitForExistence(timeout: 10))
-        shareButton.tap()
+        let dataRow = app.buttons["dataSettingsRow"]
+        XCTAssertTrue(dataRow.waitForExistence(timeout: 3))
+        dataRow.tap()
 
-        // Wait for the system share sheet to appear
-        let shareSheet = app.navigationBars["UIActivityContentView"]
-        if !shareSheet.waitForExistence(timeout: 5) {
-            // Fallback: some iOS versions use a different identifier
-            sleep(2)
+        let selectCardsRow = app.buttons["selectCardsToExportRow"]
+        XCTAssertTrue(selectCardsRow.waitForExistence(timeout: 3))
+        selectCardsRow.tap()
+
+        // Select all cards to show the selection UI
+        let selectAllButton = app.buttons["selectAllButton"]
+        if selectAllButton.waitForExistence(timeout: 3) {
+            selectAllButton.tap()
         }
 
-        capture("06-share-export")
+        capture("06-export")
     }
 }

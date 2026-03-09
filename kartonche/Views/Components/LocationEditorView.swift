@@ -92,6 +92,7 @@ struct LocationEditorView: View {
                                 Text(String(localized: "Drop Pin on Map"))
                             }
                         }
+                        .accessibilityIdentifier("dropPinOnMapButton")
                         
                         if let error = currentLocationError {
                             Text(error)
@@ -268,7 +269,8 @@ struct LocationEditorView: View {
     private func checkLocationPermission() {
         // Only check permission if we're adding a new location (not editing)
         guard location == nil else { return }
-        
+        guard !ProcessInfo.processInfo.arguments.contains("--screenshot-mode") else { return }
+
         switch locationManager.authorizationStatus {
         case .notDetermined:
             showingPermissionRequest = true
