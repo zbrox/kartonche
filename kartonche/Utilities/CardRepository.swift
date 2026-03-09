@@ -21,6 +21,8 @@ final class CardRepository {
     /// Run all post-save side-effects for a card.
     /// The caller is responsible for setting properties and inserting new cards beforehand.
     func save(_ card: LoyaltyCard) {
+        try? modelContext.save()
+
         Task {
             if card.expirationDate != nil {
                 await NotificationManager.shared.scheduleExpirationNotifications(for: card)
@@ -72,6 +74,7 @@ final class CardRepository {
         SpotlightIndexer.deindex(card)
 
         modelContext.delete(card)
+        try? modelContext.save()
 
         WidgetCenter.shared.reloadAllTimelines()
     }
