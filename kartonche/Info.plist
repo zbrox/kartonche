@@ -40,6 +40,13 @@
 	<array>
 		<string>com.apple.corespotlightitem</string>
 	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>LaunchScreenBackground</string>
+		<key>UINavigationBar</key>
+		<dict/>
+	</dict>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>UIFileSharingEnabled</key>
