@@ -81,6 +81,14 @@ struct CardRowView: View {
                 .accessibilityLabel(accessibilityExpirationLabel(expirationDate))
             }
             
+            // Show pin when card has locations but distance badge isn't shown
+            if distance == nil && hasLocations {
+                Image(systemName: "mappin")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .accessibilityHidden(true)
+            }
+
             // Favorite star
             Button(action: onFavoriteToggle) {
                 Image(systemName: card.isFavorite ? "star.fill" : "star")
@@ -104,6 +112,9 @@ struct CardRowView: View {
         if let cardNumber = card.cardNumber, !cardNumber.isEmpty {
             parts.append(String(localized: "card number") + " \(cardNumber)")
         }
+        if hasLocations {
+            parts.append(String(localized: "has locations"))
+        }
         return parts.joined(separator: ", ")
     }
 
@@ -117,6 +128,10 @@ struct CardRowView: View {
         }
     }
     
+    private var hasLocations: Bool {
+        card.locations != nil && !card.locations.isEmpty
+    }
+
     private func formatShortDate(_ date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "d.M.yy"
