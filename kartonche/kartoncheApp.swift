@@ -11,6 +11,7 @@ import UserNotifications
 import UIKit
 import Combine
 import CoreSpotlight
+import TipKit
 
 @main
 struct kartoncheApp: App {
@@ -25,6 +26,18 @@ struct kartoncheApp: App {
     var body: some Scene {
         WindowGroup {
             CardListView()
+                .task {
+                    if Self.isScreenshotMode {
+                        Tips.hideAllTipsForTesting()
+                    }
+                    #if DEBUG
+                    if UserDefaults.standard.bool(forKey: "debugPreviewAllTips") {
+                        UserDefaults.standard.set(false, forKey: "debugPreviewAllTips")
+                        Tips.showAllTipsForTesting()
+                    }
+                    #endif
+                    try? Tips.configure([.displayFrequency(.daily)])
+                }
                 .onAppear {
                     if Self.isScreenshotMode {
                         UIView.setAnimationsEnabled(false)

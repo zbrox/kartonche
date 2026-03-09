@@ -11,6 +11,7 @@ import CoreLocation
 import UniformTypeIdentifiers
 import UIKit
 import PhotosUI
+import TipKit
 
 struct CardListView: View {
     @Environment(\.modelContext) private var modelContext
@@ -48,6 +49,13 @@ struct CardListView: View {
     @State private var showingPhotoPicker = false
     @State private var isProcessingQuickScan = false
     @State private var pendingOpenExistingCardID: UUID?
+
+    private let quickScanTip = QuickScanTip()
+    private let swipeActionsTip = SwipeActionsTip()
+    private let shareTip = ShareTip()
+    private let homeScreenWidgetTip = HomeScreenWidgetTip()
+    private let lockScreenWidgetTip = LockScreenWidgetTip()
+    private let controlCenterWidgetTip = ControlCenterWidgetTip()
     
     struct ShareItem: Identifiable {
         let id = UUID()
@@ -447,15 +455,28 @@ struct CardListView: View {
                         showingDeleteConfirmation = true
                     }
                 }
+
             } header: {
                 if !nearbyCards.isEmpty && searchText.isEmpty {
                     Text(String(localized: "All Cards"))
                 }
             }
         }
+        .safeAreaInset(edge: .top, spacing: 0) {
+            VStack(spacing: 4) {
+                TipView(quickScanTip)
+                TipView(swipeActionsTip)
+                TipView(shareTip)
+                TipView(homeScreenWidgetTip)
+                TipView(lockScreenWidgetTip)
+                TipView(controlCenterWidgetTip)
+            }
+            .padding(.horizontal)
+            .padding(.bottom, 4)
+        }
         .onAppear {
             checkAlwaysPermissionConditions()
-            
+
             // Request location for widgets if user has cards with locations
             if allCards.contains(where: { !$0.locations.isEmpty }) {
                 locationManager.requestLocation()

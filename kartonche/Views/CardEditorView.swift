@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 import PhotosUI
+import TipKit
 
 /// Editor view for creating or modifying a loyalty card
 struct CardEditorView: View {
@@ -49,7 +50,10 @@ struct CardEditorView: View {
     @State private var rawImageForCrop: UIImage?
     @State private var duplicateCard: LoyaltyCard?
     @State private var showingDuplicateAlert = false
-    
+
+    private let isScannedCard: Bool
+    private let locationTip = LocationTip()
+
     private var isEditMode: Bool { card != nil }
     
     private var effectiveSecondaryColor: Color {
@@ -91,6 +95,7 @@ struct CardEditorView: View {
     ) {
         self.card = card
         self.onOpenExistingCard = onOpenExistingCard
+        self.isScannedCard = scannedBarcodeData != nil || scannedBarcodeType != nil
 
         if let card = card {
             // Edit mode - use card data
@@ -368,6 +373,10 @@ struct CardEditorView: View {
                 
                 // Locations section
                 Section {
+                    if displayedLocations.isEmpty {
+                        TipView(locationTip)
+                    }
+
                     ForEach(displayedLocations) { location in
                         Button {
                             editingLocation = location
@@ -637,6 +646,13 @@ struct CardEditorView: View {
         }
 
         repository.save(savedCard)
+
+        if !isEditMode {
+            CardEvents.cardAdded.sendDonation()
+            if !isScannedCard {
+                CardEvents.cardAddedManually.sendDonation()
+            }
+        }
 
         dismiss()
     }

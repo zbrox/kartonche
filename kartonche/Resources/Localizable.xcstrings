@@ -168,6 +168,9 @@
         }
       }
     },
+    "Access your favorite cards right from your Home Screen." : {
+
+    },
     "Active" : {
       "localizations" : {
         "bg" : {
@@ -177,6 +180,21 @@
           }
         }
       }
+    },
+    "Add a Control Center Toggle" : {
+
+    },
+    "Add a Home Screen Widget" : {
+
+    },
+    "Add a location to your card and it will appear automatically when you're nearby." : {
+
+    },
+    "Add a Lock Screen Widget" : {
+
+    },
+    "Add a Store Location" : {
+
     },
     "Add Card" : {
       "comment" : "Button to create a new loyalty card",
@@ -709,6 +727,9 @@
           }
         }
       }
+    },
+    "Debug" : {
+
     },
     "Delete" : {
       "comment" : "Button to delete an item",
@@ -1713,6 +1734,9 @@
         }
       }
     },
+    "Long press a card to share it with friends and family." : {
+
+    },
     "Loyalty Card" : {
       "comment" : "Home screen widget name",
       "localizations" : {
@@ -1884,6 +1908,9 @@
           }
         }
       }
+    },
+    "Next time, try adding a card by taking a photo or choosing one from your library." : {
+
     },
     "No account required" : {
       "localizations" : {
@@ -2133,6 +2160,9 @@
         }
       }
     },
+    "Open your favorite card with a quick tap from Control Center." : {
+
+    },
     "Opens camera to scan barcode" : {
       "comment" : "Accessibility hint for camera scan button",
       "localizations" : {
@@ -2214,6 +2244,12 @@
           }
         }
       }
+    },
+    "Preview All Tips (next launch)" : {
+
+    },
+    "Preview forces all tips visible on next launch (they won't dismiss until you relaunch again). Reset clears donation history so tips reappear as rules are met." : {
+
     },
     "Previous Card" : {
       "localizations" : {
@@ -2358,6 +2394,9 @@
         }
       }
     },
+    "Reset Tips History" : {
+
+    },
     "Respects iOS Focus modes and Do Not Disturb. Silent notifications only." : {
       "localizations" : {
         "bg" : {
@@ -2409,6 +2448,9 @@
           }
         }
       }
+    },
+    "Scan from a Photo" : {
+
     },
     "Scan from Photo" : {
       "comment" : "Button to scan barcode from photo",
@@ -2492,6 +2534,9 @@
           }
         }
       }
+    },
+    "See your favorite cards without even unlocking your phone." : {
+
     },
     "Select 'Location' then choose 'Always'" : {
       "comment" : "Instructions for upgrading location permission in iOS Settings",
@@ -2637,6 +2682,9 @@
         }
       }
     },
+    "Share Your Cards" : {
+
+    },
     "Show Expired" : {
       "localizations" : {
         "bg" : {
@@ -2772,6 +2820,12 @@
         }
       }
     },
+    "Swipe a card to favorite or delete it." : {
+
+    },
+    "Swipe for Quick Actions" : {
+
+    },
     "Sync Active" : {
       "localizations" : {
         "bg" : {
@@ -2902,6 +2956,9 @@
           }
         }
       }
+    },
+    "TipKit" : {
+
     },
     "To save card locations, kartonche needs to access your location." : {
       "localizations" : {
