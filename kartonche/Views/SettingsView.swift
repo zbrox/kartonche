@@ -46,6 +46,16 @@ struct SettingsView: View {
                         Label(String(localized: "About"), systemImage: "info.circle")
                     }
                 }
+
+                #if DEBUG
+                Section {
+                    NavigationLink {
+                        DebugSettingsView()
+                    } label: {
+                        Label("Debug", systemImage: "ant")
+                    }
+                }
+                #endif
             }
             .navigationTitle(String(localized: "Settings"))
             .navigationBarTitleDisplayMode(.inline)
