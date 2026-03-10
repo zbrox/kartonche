@@ -15,10 +15,11 @@ struct ScannedBarcode: Equatable {
 }
 
 struct BarcodeScannerView: UIViewControllerRepresentable {
-    
+
     @Binding var scannedBarcode: ScannedBarcode?
     let onDismiss: () -> Void
-    
+    var onScanWithPhoto: ((ScannedBarcode, UIImage?) -> Void)?
+
     func makeUIViewController(context: Context) -> DataScannerViewController {
         let recognizedDataTypes: Set<DataScannerViewController.RecognizedDataType> = [
             .barcode(symbologies: [
@@ -38,7 +39,7 @@ struct BarcodeScannerView: UIViewControllerRepresentable {
                 .ean8,
             ])
         ]
-        
+
         let scanner = DataScannerViewController(
             recognizedDataTypes: recognizedDataTypes,
             qualityLevel: .balanced,
@@ -48,72 +49,84 @@ struct BarcodeScannerView: UIViewControllerRepresentable {
             isGuidanceEnabled: true,
             isHighlightingEnabled: true
         )
-        
+
         scanner.delegate = context.coordinator
-        
+        context.coordinator.scanner = scanner
+
         // Start scanning immediately
         try? scanner.startScanning()
-        
+
         return scanner
     }
-    
+
     func updateUIViewController(_ uiViewController: DataScannerViewController, context: Context) {
         if !uiViewController.isScanning {
             try? uiViewController.startScanning()
         }
     }
-    
+
     static func dismantleUIViewController(_ uiViewController: DataScannerViewController, coordinator: Coordinator) {
         uiViewController.stopScanning()
     }
-    
+
     func makeCoordinator() -> Coordinator {
-        Coordinator(scannedBarcode: $scannedBarcode, onDismiss: onDismiss)
+        Coordinator(
+            scannedBarcode: $scannedBarcode,
+            onDismiss: onDismiss,
+            onScanWithPhoto: onScanWithPhoto
+        )
     }
-    
+
     class Coordinator: NSObject, DataScannerViewControllerDelegate {
         @Binding var scannedBarcode: ScannedBarcode?
         let onDismiss: () -> Void
-        
-        init(scannedBarcode: Binding<ScannedBarcode?>, onDismiss: @escaping () -> Void) {
+        let onScanWithPhoto: ((ScannedBarcode, UIImage?) -> Void)?
+        weak var scanner: DataScannerViewController?
+
+        init(
+            scannedBarcode: Binding<ScannedBarcode?>,
+            onDismiss: @escaping () -> Void,
+            onScanWithPhoto: ((ScannedBarcode, UIImage?) -> Void)?
+        ) {
             self._scannedBarcode = scannedBarcode
             self.onDismiss = onDismiss
+            self.onScanWithPhoto = onScanWithPhoto
         }
-        
+
         func dataScanner(_ dataScanner: DataScannerViewController, didTapOn item: RecognizedItem) {
-            switch item {
-            case .barcode(let barcode):
-                if let payloadString = barcode.payloadStringValue {
-                    scannedBarcode = ScannedBarcode(
-                        data: payloadString,
-                        symbology: barcode.observation.symbology
-                    )
-                    onDismiss()
-                }
-            default:
-                break
-            }
+            handleRecognizedItem(item, from: dataScanner)
         }
-        
+
         func dataScanner(_ dataScanner: DataScannerViewController, didAdd addedItems: [RecognizedItem], allItems: [RecognizedItem]) {
-            for item in addedItems {
-                if case .barcode(let barcode) = item {
-                    if let payloadString = barcode.payloadStringValue {
-                        scannedBarcode = ScannedBarcode(
-                            data: payloadString,
-                            symbology: barcode.observation.symbology
-                        )
-                        onDismiss()
-                        return
-                    }
+            guard let item = addedItems.first else { return }
+            handleRecognizedItem(item, from: dataScanner)
+        }
+
+        private func handleRecognizedItem(_ item: RecognizedItem, from dataScanner: DataScannerViewController) {
+            guard case .barcode(let barcode) = item,
+                  let payloadString = barcode.payloadStringValue else { return }
+
+            let scanned = ScannedBarcode(
+                data: payloadString,
+                symbology: barcode.observation.symbology
+            )
+
+            if let onScanWithPhoto {
+                dataScanner.stopScanning()
+                Task { @MainActor in
+                    let photo = try? await dataScanner.capturePhoto()
+                    onScanWithPhoto(scanned, photo)
                 }
+            } else {
+                scannedBarcode = scanned
+                onDismiss()
             }
         }
     }
-    
+
     /// Check if device supports barcode scanning
     static var isSupported: Bool {
-        DataScannerViewController.isSupported && 
+        DataScannerViewController.isSupported &&
         DataScannerViewController.isAvailable
     }
 }

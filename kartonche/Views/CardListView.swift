@@ -47,6 +47,7 @@ struct CardListView: View {
     @State private var scannedColor: Color?
     @State private var scannedSuggestedColors: [Color] = []
     @State private var showingPhotoPicker = false
+    @State private var showingBarcodeScanner = false
     @State private var isProcessingQuickScan = false
     @State private var pendingOpenExistingCardID: UUID?
 
@@ -208,6 +209,17 @@ struct CardListView: View {
                     },
                     onDismiss: {
                         showingCamera = false
+                    }
+                )
+            }
+            .sheet(isPresented: $showingBarcodeScanner) {
+                BarcodeScannerView(
+                    scannedBarcode: .constant(nil),
+                    onDismiss: {
+                        showingBarcodeScanner = false
+                    },
+                    onScanWithPhoto: { barcode, photo in
+                        handleScannerResult(barcode: barcode, photo: photo)
                     }
                 )
             }
@@ -593,17 +605,31 @@ struct CardListView: View {
                 .font(.headline)
                 .padding(.top, 8)
 
-            Button {
-                showingAddOptions = false
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                    showingCamera = true
+            if BarcodeScannerView.isSupported {
+                Button {
+                    showingAddOptions = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        showingBarcodeScanner = true
+                    }
+                } label: {
+                    Label(String(localized: "Scan Barcode"), systemImage: "barcode.viewfinder")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .frame(minHeight: 46)
                 }
-            } label: {
-                Label(String(localized: "Take a Photo"), systemImage: "camera")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .frame(minHeight: 46)
+                .buttonStyle(.borderedProminent)
+            } else {
+                Button {
+                    showingAddOptions = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        showingCamera = true
+                    }
+                } label: {
+                    Label(String(localized: "Take a Photo"), systemImage: "camera")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .frame(minHeight: 46)
+                }
+                .buttonStyle(.borderedProminent)
             }
-            .buttonStyle(.borderedProminent)
 
             Button {
                 showingAddOptions = false
@@ -692,6 +718,7 @@ struct CardListView: View {
         showingSettings = false
         showingAddOptions = false
         showingCamera = false
+        showingBarcodeScanner = false
         showingEditor = false
         isProcessingQuickScan = false
         selectedCard = nil
@@ -770,6 +797,23 @@ struct CardListView: View {
 
         pendingOpenExistingCardID = nil
         selectedCard = targetCard
+    }
+
+    @MainActor
+    private func handleScannerResult(barcode: ScannedBarcode, photo: UIImage?) {
+        clearScannedState()
+        showingBarcodeScanner = false
+
+        scannedBarcodeData = barcode.data
+        scannedBarcodeType = BarcodeType(from: barcode.symbology)
+
+        if let photo {
+            let analysis = DominantColorExtractor.analyzeColors(from: photo)
+            scannedColor = analysis.confidence >= 0.12 ? analysis.primaryColor : nil
+            scannedSuggestedColors = analysis.suggestedColors
+        }
+
+        showingEditor = true
     }
 
     @MainActor
