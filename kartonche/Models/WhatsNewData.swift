@@ -26,9 +26,14 @@ let whatsNewVersions: [WhatsNewVersion] = [
                 description: "whats_new.2026_03_1.icloud_sync.description"
             ),
             WhatsNewFeature(
+                icon: "barcode.viewfinder",
+                title: "whats_new.2026_03_1.scan_flow.title",
+                description: "whats_new.2026_03_1.scan_flow.description"
+            ),
+            WhatsNewFeature(
                 icon: "barcode",
-                title: "whats_new.2026_03_1.ean13_support.title",
-                description: "whats_new.2026_03_1.ean13_support.description"
+                title: "whats_new.2026_03_1.barcode_support.title",
+                description: "whats_new.2026_03_1.barcode_support.description"
             ),
         ]
     ),
