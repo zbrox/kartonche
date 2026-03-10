@@ -64,6 +64,32 @@ final class CardRepository {
         }
     }
 
+    /// Represents a detected duplicate: an imported card matched to an existing one.
+    struct DuplicateInfo {
+        let importedCard: CardExportDTO
+        let existingCard: LoyaltyCard
+    }
+
+    /// Find existing cards that share barcodeData + barcodeType with the imported cards.
+    func findDuplicates(for importedCards: [CardExportDTO]) -> [DuplicateInfo] {
+        let allCards = (try? modelContext.fetch(FetchDescriptor<LoyaltyCard>())) ?? []
+        var duplicates: [DuplicateInfo] = []
+
+        for imported in importedCards {
+            let normalizedBarcode = imported.barcodeData.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !normalizedBarcode.isEmpty else { continue }
+
+            if let match = allCards.first(where: {
+                $0.barcodeType == imported.barcodeType &&
+                $0.barcodeData.trimmingCharacters(in: .whitespacesAndNewlines) == normalizedBarcode
+            }) {
+                duplicates.append(DuplicateInfo(importedCard: imported, existingCard: match))
+            }
+        }
+
+        return duplicates
+    }
+
     /// Handle all cleanup before deletion, then delete the card.
     func delete(_ card: LoyaltyCard) {
         Task {
@@ -84,9 +110,11 @@ final class CardRepository {
         from container: CardExportContainer,
         strategy: CardImporter.ImportStrategy
     ) throws -> CardImporter.ImportResult {
+        let duplicates = findDuplicates(for: container.cards)
         let result = try CardImporter.importCards(
             from: container,
             into: modelContext,
+            duplicates: duplicates,
             strategy: strategy
         )
 

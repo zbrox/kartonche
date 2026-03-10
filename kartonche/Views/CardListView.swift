@@ -281,7 +281,7 @@ struct CardListView: View {
                 if let container = importContainer {
                     ImportPreviewView(
                         container: container,
-                        existingCards: allCards,
+                        duplicates: CardRepository(modelContext: modelContext).findDuplicates(for: container.cards),
                         onImport: { strategy in
                             try await importCards(container: container, strategy: strategy)
                         },

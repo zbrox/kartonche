@@ -12,21 +12,6 @@ import UIKit
 /// Imports loyalty cards from .kartonche files
 struct CardImporter {
     
-    // MARK: - Duplicate Detection
-    
-    /// Represents a detected duplicate card
-    struct DuplicateInfo {
-        let importedCard: CardExportDTO
-        let existingCard: LoyaltyCard
-        
-        /// Returns true if cards are identical (same content, not just same identity)
-        var areIdentical: Bool {
-            return existingCard.name == importedCard.name &&
-                   (existingCard.storeName ?? "") == (importedCard.storeName ?? "") &&
-                   existingCard.cardNumber == importedCard.cardNumber
-        }
-    }
-    
     enum ImportStrategy {
         case skipDuplicates      // Don't import duplicates
         case replaceDuplicates   // Replace existing cards with imported versions
@@ -101,47 +86,6 @@ struct CardImporter {
         return container
     }
     
-    // MARK: - Duplicate Detection
-    
-    /// Detects duplicate cards by comparing cardNumber + storeName, or just storeName if cardNumber is nil
-    static func detectDuplicates(
-        _ importedCards: [CardExportDTO],
-        existingCards: [LoyaltyCard]
-    ) -> [DuplicateInfo] {
-        var duplicates: [DuplicateInfo] = []
-        
-        for importedCard in importedCards {
-            for existingCard in existingCards {
-                let importedStore = (importedCard.storeName ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
-                let existingStore = (existingCard.storeName ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
-                let importedNumber = importedCard.cardNumber?.trimmingCharacters(in: .whitespacesAndNewlines)
-                let existingNumber = existingCard.cardNumber?.trimmingCharacters(in: .whitespacesAndNewlines)
-
-                // Don't match cards with missing identity fields.
-                if importedStore.isEmpty, (importedNumber == nil || importedNumber?.isEmpty == true) {
-                    continue
-                }
-                if existingStore.isEmpty, (existingNumber == nil || existingNumber?.isEmpty == true) {
-                    continue
-                }
-
-                // Compare by storeName + cardNumber (treat nil same as empty)
-                let isDuplicate = importedStore == existingStore &&
-                                  importedNumber == existingNumber
-                
-                if isDuplicate {
-                    duplicates.append(DuplicateInfo(
-                        importedCard: importedCard,
-                        existingCard: existingCard
-                    ))
-                    break // Only count first match per imported card
-                }
-            }
-        }
-        
-        return duplicates
-    }
-    
     // MARK: - Import Cards into SwiftData
     
     /// Imports cards into SwiftData model context with specified strategy
@@ -149,10 +93,9 @@ struct CardImporter {
     static func importCards(
         from container: CardExportContainer,
         into modelContext: ModelContext,
+        duplicates: [CardRepository.DuplicateInfo],
         strategy: ImportStrategy = .skipDuplicates
     ) throws -> ImportResult {
-        let existingCards = try modelContext.fetch(FetchDescriptor<LoyaltyCard>())
-        let duplicates = detectDuplicates(container.cards, existingCards: existingCards)
         
         var importedCount = 0
         var skippedCount = 0

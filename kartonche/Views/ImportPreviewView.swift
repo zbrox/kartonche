@@ -11,19 +11,15 @@ import SwiftData
 /// Preview view for importing cards from .kartonche files
 struct ImportPreviewView: View {
     let container: CardExportContainer
-    let existingCards: [LoyaltyCard]
+    let duplicates: [CardRepository.DuplicateInfo]
     let onImport: (CardImporter.ImportStrategy) async throws -> CardImporter.ImportResult
     let onCancel: () -> Void
-    
+
     @State private var importStrategy: CardImporter.ImportStrategy = .skipDuplicates
     @State private var isImporting = false
     @State private var importError: Error?
     @State private var showError = false
     @State private var selectedCard: CardExportDTO?
-    
-    private var duplicates: [CardImporter.DuplicateInfo] {
-        CardImporter.detectDuplicates(container.cards, existingCards: existingCards)
-    }
     
     var body: some View {
         NavigationStack {
@@ -259,9 +255,11 @@ struct CardImportRow: View {
     
     let exportContainer = CardExportContainer(cards: [importDTO1, importDTO2])
     
+    let duplicates = [CardRepository.DuplicateInfo(importedCard: importDTO1, existingCard: existingCard)]
+
     ImportPreviewView(
         container: exportContainer,
-        existingCards: [existingCard],
+        duplicates: duplicates,
         onImport: { strategy in
             try await Task.sleep(for: .seconds(1))
             return CardImporter.ImportResult(

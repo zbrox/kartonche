@@ -106,7 +106,7 @@ struct CardRepositoryTests {
         let container = try makeContainer()
         let context = container.mainContext
 
-        // Insert existing card that will match the imported one
+        // Insert existing card that will match the imported one by barcode
         let existingCard = LoyaltyCard(
             name: "Existing",
             storeName: "Store",
@@ -119,9 +119,9 @@ struct CardRepositoryTests {
 
         let dto = CardExportDTO(
             id: UUID(),
-            name: "Existing",
-            storeName: "Store",
-            cardNumber: "111",
+            name: "Different Name",
+            storeName: "Different Store",
+            cardNumber: "999",
             barcodeType: .qr,
             barcodeData: "DATA",
             color: nil,
@@ -144,6 +144,130 @@ struct CardRepositoryTests {
         #expect(result.skippedCount == 1)
         #expect(!result.hasChanges)
     }
+
+    // MARK: - findDuplicates
+
+    @Test func findDuplicatesMatchesSameBarcodeDataAndType() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+
+        let existingCard = LoyaltyCard(
+            name: "Existing",
+            storeName: "Store A",
+            cardNumber: "111",
+            barcodeType: .qr,
+            barcodeData: "BARCODE-1"
+        )
+        context.insert(existingCard)
+        try context.save()
+
+        let dto = CardExportDTO(
+            id: UUID(),
+            name: "Imported",
+            storeName: "Store B",
+            cardNumber: "222",
+            barcodeType: .qr,
+            barcodeData: "BARCODE-1",
+            color: nil, secondaryColor: nil, notes: nil, cardholderName: nil,
+            isFavorite: false, createdDate: Date(), lastUsedDate: nil,
+            expirationDate: nil, cardImage: nil, locations: []
+        )
+
+        let repo = CardRepository(modelContext: context)
+        let duplicates = repo.findDuplicates(for: [dto])
+
+        #expect(duplicates.count == 1)
+        #expect(duplicates.first?.existingCard.id == existingCard.id)
+    }
+
+    @Test func findDuplicatesDoesNotMatchDifferentBarcodeData() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+
+        let existingCard = LoyaltyCard(
+            name: "Existing",
+            barcodeType: .qr,
+            barcodeData: "BARCODE-1"
+        )
+        context.insert(existingCard)
+        try context.save()
+
+        let dto = CardExportDTO(
+            id: UUID(),
+            name: "Imported",
+            storeName: nil, cardNumber: nil,
+            barcodeType: .qr,
+            barcodeData: "BARCODE-2",
+            color: nil, secondaryColor: nil, notes: nil, cardholderName: nil,
+            isFavorite: false, createdDate: Date(), lastUsedDate: nil,
+            expirationDate: nil, cardImage: nil, locations: []
+        )
+
+        let repo = CardRepository(modelContext: context)
+        let duplicates = repo.findDuplicates(for: [dto])
+
+        #expect(duplicates.isEmpty)
+    }
+
+    @Test func findDuplicatesDoesNotMatchDifferentBarcodeType() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+
+        let existingCard = LoyaltyCard(
+            name: "Existing",
+            barcodeType: .qr,
+            barcodeData: "BARCODE-1"
+        )
+        context.insert(existingCard)
+        try context.save()
+
+        let dto = CardExportDTO(
+            id: UUID(),
+            name: "Imported",
+            storeName: nil, cardNumber: nil,
+            barcodeType: .code128,
+            barcodeData: "BARCODE-1",
+            color: nil, secondaryColor: nil, notes: nil, cardholderName: nil,
+            isFavorite: false, createdDate: Date(), lastUsedDate: nil,
+            expirationDate: nil, cardImage: nil, locations: []
+        )
+
+        let repo = CardRepository(modelContext: context)
+        let duplicates = repo.findDuplicates(for: [dto])
+
+        #expect(duplicates.isEmpty)
+    }
+
+    @Test func findDuplicatesSkipsEmptyBarcodeData() throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+
+        let existingCard = LoyaltyCard(
+            name: "Existing",
+            barcodeType: .qr,
+            barcodeData: ""
+        )
+        context.insert(existingCard)
+        try context.save()
+
+        let dto = CardExportDTO(
+            id: UUID(),
+            name: "Imported",
+            storeName: nil, cardNumber: nil,
+            barcodeType: .qr,
+            barcodeData: "",
+            color: nil, secondaryColor: nil, notes: nil, cardholderName: nil,
+            isFavorite: false, createdDate: Date(), lastUsedDate: nil,
+            expirationDate: nil, cardImage: nil, locations: []
+        )
+
+        let repo = CardRepository(modelContext: context)
+        let duplicates = repo.findDuplicates(for: [dto])
+
+        #expect(duplicates.isEmpty)
+    }
+
+    // MARK: - findCard
 
     @Test func findCardWithBarcodeDataFindsDuplicate() throws {
         let container = try makeContainer()
