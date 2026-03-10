@@ -63,14 +63,24 @@ struct AboutView: View {
                 Button {
                     showingLicense = true
                 } label: {
-                    Label(String(localized: "License"), systemImage: "doc.text")
+                    Label {
+                        Text(String(localized: "License"))
+                    } icon: {
+                        Image(systemName: "doc.text")
+                            .foregroundStyle(.tint)
+                    }
                 }
                 .foregroundStyle(.primary)
                 
                 Button {
                     showingPrivacy = true
                 } label: {
-                    Label(String(localized: "Privacy"), systemImage: "hand.raised")
+                    Label {
+                        Text(String(localized: "Privacy"))
+                    } icon: {
+                        Image(systemName: "hand.raised")
+                            .foregroundStyle(.tint)
+                    }
                 }
                 .foregroundStyle(.primary)
             } header: {
@@ -93,12 +103,22 @@ struct AboutView: View {
                 Button {
                     requestReview()
                 } label: {
-                    Label(String(localized: "Rate on App Store"), systemImage: "star")
+                    Label {
+                        Text(String(localized: "Rate on App Store"))
+                    } icon: {
+                        Image(systemName: "star")
+                            .foregroundStyle(.tint)
+                    }
                 }
                 .foregroundStyle(.primary)
                 
                 Link(destination: URL(string: "https://github.com/zbrox/kartonche/issues")!) {
-                    Label(String(localized: "Report an Issue"), systemImage: "ladybug")
+                    Label {
+                        Text(String(localized: "Report an Issue"))
+                    } icon: {
+                        Image(systemName: "ladybug")
+                            .foregroundStyle(.tint)
+                    }
                 }
                 .foregroundStyle(.primary)
                 
@@ -118,12 +138,22 @@ struct AboutView: View {
                 Button {
                     showingWhatsNew = true
                 } label: {
-                    Label(String(localized: "What's New"), systemImage: "sparkles")
+                    Label {
+                        Text(String(localized: "What's New"))
+                    } icon: {
+                        Image(systemName: "sparkles")
+                            .foregroundStyle(.tint)
+                    }
                 }
                 .foregroundStyle(.primary)
                 
                 Link(destination: URL(string: "https://github.com/zbrox/kartonche")!) {
-                    Label(String(localized: "Source Code"), systemImage: "chevron.left.forwardslash.chevron.right")
+                    Label {
+                        Text(String(localized: "Source Code"))
+                    } icon: {
+                        Image(systemName: "chevron.left.forwardslash.chevron.right")
+                            .foregroundStyle(.tint)
+                    }
                 }
                 .foregroundStyle(.primary)
             } header: {
