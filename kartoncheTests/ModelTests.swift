@@ -22,12 +22,17 @@ struct ModelTests {
     
     @Test func barcodeTypeCaseIterable() {
         let allCases = BarcodeType.allCases
-        #expect(allCases.count == 5)
+        #expect(allCases.count == 10)
         #expect(allCases.contains(.qr))
         #expect(allCases.contains(.code128))
         #expect(allCases.contains(.ean13))
         #expect(allCases.contains(.pdf417))
         #expect(allCases.contains(.aztec))
+        #expect(allCases.contains(.code39))
+        #expect(allCases.contains(.upcE))
+        #expect(allCases.contains(.interleaved2of5))
+        #expect(allCases.contains(.dataMatrix))
+        #expect(allCases.contains(.ean8))
     }
     
     @Test func loyaltyCardInitialization() {
