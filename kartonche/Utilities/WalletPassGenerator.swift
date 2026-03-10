@@ -233,17 +233,28 @@ enum WalletPassGenerator {
         var result: [String: Data] = [:]
         for (filename, scale) in scales {
             let stripSize = CGSize(width: baseWidth * scale, height: baseHeight * scale)
-            let barcodeHeight = stripSize.height * 0.8
-            let barcodeWidth = stripSize.width * 0.7
-            let barcodeSize = CGSize(width: barcodeWidth, height: barcodeHeight)
+            let maxWidth = stripSize.width * 0.7
+            let maxHeight = stripSize.height * 0.8
 
             let barcodeResult = BarcodeGenerator.generate(
                 from: card.barcodeData,
                 type: card.barcodeType,
-                scale: barcodeWidth / 95
+                scale: maxWidth / 95
             )
             guard case .success(let barcode) = barcodeResult else {
                 continue
+            }
+
+            // Aspect-fit the barcode within the available area
+            let barcodeAspect = barcode.size.width / barcode.size.height
+            let fitWidth: CGFloat
+            let fitHeight: CGFloat
+            if barcodeAspect > maxWidth / maxHeight {
+                fitWidth = maxWidth
+                fitHeight = maxWidth / barcodeAspect
+            } else {
+                fitHeight = maxHeight
+                fitWidth = maxHeight * barcodeAspect
             }
 
             let renderer = UIGraphicsImageRenderer(size: stripSize)
@@ -251,9 +262,9 @@ enum WalletPassGenerator {
                 ctx.cgContext.setFillColor(UIColor.white.cgColor)
                 ctx.cgContext.fill(CGRect(origin: .zero, size: stripSize))
 
-                let x = (stripSize.width - barcodeSize.width) / 2
-                let y = (stripSize.height - barcodeSize.height) / 2
-                barcode.draw(in: CGRect(x: x, y: y, width: barcodeSize.width, height: barcodeSize.height))
+                let x = (stripSize.width - fitWidth) / 2
+                let y = (stripSize.height - fitHeight) / 2
+                barcode.draw(in: CGRect(x: x, y: y, width: fitWidth, height: fitHeight))
             }
             result[filename] = rendered
         }
