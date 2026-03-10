@@ -333,7 +333,7 @@ struct WalletPassGeneratorTests {
         #expect(extractedData == passJSON)
     }
 
-    // MARK: - EAN-13 Wallet support
+    // MARK: - Strip-based barcode Wallet support
 
     @Test func passJSONOmitsBarcodeForEAN13() throws {
         let card = makeCard(barcodeType: .ean13, barcodeData: "1234567890123")
@@ -344,7 +344,16 @@ struct WalletPassGeneratorTests {
         #expect(json["barcodes"] == nil)
     }
 
-    @Test func ean13UsesHeaderFieldsToAvoidStripOverlap() throws {
+    @Test func passJSONOmitsBarcodeForCode39() throws {
+        let card = makeCard(barcodeType: .code39, barcodeData: "METRO123")
+        let data = try WalletPassGenerator.buildPassJSON(for: card)
+        let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
+
+        #expect(json["barcode"] == nil)
+        #expect(json["barcodes"] == nil)
+    }
+
+    @Test func stripBasedTypeUsesHeaderFields() throws {
         let card = makeCard(barcodeType: .ean13, barcodeData: "1234567890123")
         let data = try WalletPassGenerator.buildPassJSON(for: card)
         let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
@@ -355,9 +364,20 @@ struct WalletPassGeneratorTests {
         #expect(headerFields[0]["key"] as? String == "cardName")
     }
 
-    @Test func renderEAN13StripImagesProducesAllScales() throws {
+    @Test func code39UsesHeaderFields() throws {
+        let card = makeCard(barcodeType: .code39, barcodeData: "METRO123")
+        let data = try WalletPassGenerator.buildPassJSON(for: card)
+        let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
+        let storeCard = json["storeCard"] as! [String: Any]
+
+        #expect(storeCard["primaryFields"] == nil)
+        let headerFields = storeCard["headerFields"] as! [[String: Any]]
+        #expect(headerFields.count == 1)
+    }
+
+    @Test func renderBarcodeStripImagesProducesAllScales() throws {
         let card = makeCard(barcodeType: .ean13, barcodeData: "1234567890123")
-        let assets = WalletPassGenerator.renderEAN13StripImages(for: card)
+        let assets = WalletPassGenerator.renderBarcodeStripImages(for: card)
 
         #expect(assets["strip.png"] != nil)
         #expect(assets["strip@2x.png"] != nil)

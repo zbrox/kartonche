@@ -86,7 +86,7 @@ enum WalletPassGenerator {
 
         var storeCard: [String: Any] = [:]
 
-        if card.cardImage != nil || card.barcodeType == .ean13 {
+        if card.cardImage != nil || card.barcodeType.walletFormatString == nil {
             storeCard["headerFields"] = [[
                 "key": "cardName",
                 "label": "",
@@ -183,8 +183,8 @@ enum WalletPassGenerator {
             assets["\(asset.archiveName).png"] = data
         }
 
-        if card.barcodeType == .ean13 {
-            let stripAssets = renderEAN13StripImages(for: card)
+        if card.barcodeType.walletFormatString == nil {
+            let stripAssets = renderBarcodeStripImages(for: card)
             for (filename, data) in stripAssets {
                 assets[filename] = data
             }
@@ -220,8 +220,8 @@ enum WalletPassGenerator {
         return result
     }
 
-    /// Renders an EAN-13 barcode centered on a white strip at @1x/@2x/@3x.
-    static func renderEAN13StripImages(for card: LoyaltyCard) -> [String: Data] {
+    /// Renders a barcode centered on a white strip at @1x/@2x/@3x for types without a native wallet format.
+    static func renderBarcodeStripImages(for card: LoyaltyCard) -> [String: Data] {
         let baseWidth = WalletPassConfiguration.stripWidth
         let baseHeight = WalletPassConfiguration.stripHeight
         let scales: [(suffix: String, scale: CGFloat)] = [
@@ -237,7 +237,12 @@ enum WalletPassGenerator {
             let barcodeWidth = stripSize.width * 0.7
             let barcodeSize = CGSize(width: barcodeWidth, height: barcodeHeight)
 
-            guard let barcode = BarcodeGenerator.renderEAN13(digits: card.barcodeData, size: barcodeSize) else {
+            let barcodeResult = BarcodeGenerator.generate(
+                from: card.barcodeData,
+                type: card.barcodeType,
+                scale: barcodeWidth / 95
+            )
+            guard case .success(let barcode) = barcodeResult else {
                 continue
             }
 

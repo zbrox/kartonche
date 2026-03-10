@@ -25,7 +25,7 @@ struct CardDisplayView: View {
     @State private var passError: String?
     @State private var passToAdd: PKPass?
     @State private var errorAlert: CardDisplayErrorAlert?
-    @State private var showEAN13Warning = false
+    @State private var showStripBarcodeWarning = false
     
     var body: some View {
         let primaryColor = card.color.flatMap { Color(hex: $0) } ?? Color.accentColor
@@ -63,8 +63,8 @@ struct CardDisplayView: View {
                         .padding(.bottom, 12)
                 } else {
                     AddToWalletButton {
-                        if card.barcodeType == .ean13 {
-                            showEAN13Warning = true
+                        if card.barcodeType.walletFormatString == nil {
+                            showStripBarcodeWarning = true
                         } else {
                             generateAndAddPass()
                         }
@@ -145,7 +145,7 @@ struct CardDisplayView: View {
         }
         .confirmationDialog(
             String(localized: "Experimental Feature"),
-            isPresented: $showEAN13Warning,
+            isPresented: $showStripBarcodeWarning,
             titleVisibility: .visible
         ) {
             Button(String(localized: "Add to Wallet")) {
@@ -153,7 +153,7 @@ struct CardDisplayView: View {
             }
             Button(String(localized: "Cancel"), role: .cancel) {}
         } message: {
-            Text(String(localized: "EAN-13 barcodes are added as images and may not scan everywhere."))
+            Text(String(localized: "This barcode type is added as an image and may not scan everywhere."))
         }
         .alert(item: $errorAlert) { alert in
             Alert(
