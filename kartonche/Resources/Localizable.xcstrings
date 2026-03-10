@@ -1562,6 +1562,9 @@
         }
       }
     },
+    "Licenses" : {
+
+    },
     "Limited" : {
       "localizations" : {
         "bg" : {
@@ -2926,6 +2929,9 @@
           }
         }
       }
+    },
+    "Third-Party Licenses" : {
+
     },
     "This card is in Apple Wallet. Edits sync automatically." : {
       "localizations" : {
