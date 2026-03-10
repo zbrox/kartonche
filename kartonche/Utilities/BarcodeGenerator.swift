@@ -46,8 +46,21 @@ struct BarcodeGenerator {
         
         let context = CIContext()
         
-        if type == .ean13 {
+        switch type {
+        case .ean13:
             return generateEAN13(from: data, scale: scale, context: context)
+        case .ean8:
+            return .failure(.filterCreationFailed)
+        case .code39:
+            return .failure(.filterCreationFailed)
+        case .interleaved2of5:
+            return .failure(.filterCreationFailed)
+        case .upcE:
+            return .failure(.filterCreationFailed)
+        case .dataMatrix:
+            return .failure(.filterCreationFailed)
+        default:
+            break
         }
         
         guard let dataToEncode = data.data(using: .ascii) else {
@@ -207,12 +220,12 @@ struct BarcodeGenerator {
             return CIFilter(name: "CIQRCodeGenerator")
         case .code128:
             return CIFilter(name: "CICode128BarcodeGenerator")
-        case .ean13:
-            return CIFilter(name: "CIBarcodeGenerator")
         case .pdf417:
             return CIFilter(name: "CIPDF417BarcodeGenerator")
         case .aztec:
             return CIFilter(name: "CIAztecCodeGenerator")
+        case .ean13, .code39, .upcE, .interleaved2of5, .dataMatrix, .ean8:
+            return nil
         }
     }
 }

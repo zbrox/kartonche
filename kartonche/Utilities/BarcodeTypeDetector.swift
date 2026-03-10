@@ -20,6 +20,16 @@ extension BarcodeType {
             self = .pdf417
         case .aztec:
             self = .aztec
+        case .code39, .code39Checksum, .code39FullASCII, .code39FullASCIIChecksum:
+            self = .code39
+        case .upce:
+            self = .upcE
+        case .i2of5, .i2of5Checksum:
+            self = .interleaved2of5
+        case .dataMatrix:
+            self = .dataMatrix
+        case .ean8:
+            self = .ean8
         default:
             return nil
         }

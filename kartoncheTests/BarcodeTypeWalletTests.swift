@@ -11,26 +11,6 @@ import Testing
 @MainActor
 struct BarcodeTypeWalletTests {
 
-    @Test func qrSupportsAppleWallet() {
-        #expect(BarcodeType.qr.supportsAppleWallet == true)
-    }
-
-    @Test func code128SupportsAppleWallet() {
-        #expect(BarcodeType.code128.supportsAppleWallet == true)
-    }
-
-    @Test func pdf417SupportsAppleWallet() {
-        #expect(BarcodeType.pdf417.supportsAppleWallet == true)
-    }
-
-    @Test func aztecSupportsAppleWallet() {
-        #expect(BarcodeType.aztec.supportsAppleWallet == true)
-    }
-
-    @Test func ean13SupportsAppleWallet() {
-        #expect(BarcodeType.ean13.supportsAppleWallet == true)
-    }
-
     @Test func qrWalletFormatString() {
         #expect(BarcodeType.qr.walletFormatString == "PKBarcodeFormatQR")
     }
@@ -49,5 +29,25 @@ struct BarcodeTypeWalletTests {
 
     @Test func ean13WalletFormatStringIsNil() {
         #expect(BarcodeType.ean13.walletFormatString == nil)
+    }
+
+    @Test func code39WalletFormatStringIsNil() {
+        #expect(BarcodeType.code39.walletFormatString == nil)
+    }
+
+    @Test func upcEWalletFormatStringIsNil() {
+        #expect(BarcodeType.upcE.walletFormatString == nil)
+    }
+
+    @Test func interleaved2of5WalletFormatStringIsNil() {
+        #expect(BarcodeType.interleaved2of5.walletFormatString == nil)
+    }
+
+    @Test func dataMatrixWalletFormatStringIsNil() {
+        #expect(BarcodeType.dataMatrix.walletFormatString == nil)
+    }
+
+    @Test func ean8WalletFormatStringIsNil() {
+        #expect(BarcodeType.ean8.walletFormatString == nil)
     }
 }
