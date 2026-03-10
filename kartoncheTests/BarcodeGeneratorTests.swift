@@ -272,6 +272,29 @@ struct BarcodeGeneratorTests {
         }
     }
 
+    // MARK: - DataMatrix
+
+    @Test func generateDataMatrix() {
+        let result = BarcodeGenerator.generate(from: "Hello DataMatrix", type: .dataMatrix, scale: 5.0)
+        switch result {
+        case .success(let image):
+            #expect(image.size.width > 0)
+            #expect(image.size.height > 0)
+        case .failure(let error):
+            Issue.record("DataMatrix generation failed: \(error)")
+        }
+    }
+
+    @Test func dataMatrixSingleCharacter() {
+        let result = BarcodeGenerator.generate(from: "A", type: .dataMatrix, scale: 3.0)
+        switch result {
+        case .success(let image):
+            #expect(image.size.width > 0)
+        case .failure(let error):
+            Issue.record("DataMatrix single char failed: \(error)")
+        }
+    }
+
     // MARK: - EAN-13 digit count error
 
     @Test func ean13WrongDigitCountReturnsDigitCountMismatch() {

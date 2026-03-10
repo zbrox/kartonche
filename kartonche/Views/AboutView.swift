@@ -309,6 +309,7 @@ fileprivate enum ThirdPartyLicense: String, CaseIterable, Identifiable {
     case swiftCertificates
     case swiftCrypto
     case swiftASN1
+    case swiftDataMatrix
     case zipFoundation
 
     var id: String { rawValue }
@@ -318,6 +319,7 @@ fileprivate enum ThirdPartyLicense: String, CaseIterable, Identifiable {
         case .swiftCertificates: "swift-certificates"
         case .swiftCrypto: "swift-crypto"
         case .swiftASN1: "swift-asn1"
+        case .swiftDataMatrix: "SwiftDataMatrix"
         case .zipFoundation: "ZIPFoundation"
         }
     }
@@ -325,14 +327,15 @@ fileprivate enum ThirdPartyLicense: String, CaseIterable, Identifiable {
     var licenseType: String {
         switch self {
         case .swiftCertificates, .swiftCrypto, .swiftASN1: "Apache 2.0"
-        case .zipFoundation: "MIT"
+        case .swiftDataMatrix, .zipFoundation: "MIT"
         }
     }
 
     var licenseText: String {
         switch self {
         case .swiftCertificates, .swiftCrypto, .swiftASN1: ThirdPartyLicenseTexts.apache2
-        case .zipFoundation: ThirdPartyLicenseTexts.mit
+        case .zipFoundation: ThirdPartyLicenseTexts.mitZIPFoundation
+        case .swiftDataMatrix: ThirdPartyLicenseTexts.mitSwiftDataMatrix
         }
     }
 
@@ -341,6 +344,7 @@ fileprivate enum ThirdPartyLicense: String, CaseIterable, Identifiable {
         case .swiftCertificates: "Copyright 2022 The SwiftCertificates Project"
         case .swiftCrypto: "Copyright 2019 The SwiftCrypto Project"
         case .swiftASN1: "Copyright 2022 The SwiftASN1 Project"
+        case .swiftDataMatrix: "Copyright 2026 Daniel Höpfl"
         case .zipFoundation: "Copyright (c) 2017-2025 Thomas Zoechling (https://www.peakstep.com)"
         }
     }
@@ -554,7 +558,7 @@ private enum ThirdPartyLicenseTexts {
     """
 
     // Verbatim from ZIPFoundation LICENSE
-    static let mit = """
+    static let mitZIPFoundation = """
     MIT License
 
     Copyright (c) 2017-2025 Thomas Zoechling (https://www.peakstep.com)
@@ -576,6 +580,17 @@ private enum ThirdPartyLicenseTexts {
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
+    """
+
+    // Verbatim from SwiftDataMatrix LICENSE.txt
+    static let mitSwiftDataMatrix = """
+    Copyright 2026 Daniel Höpfl <daniel@hoepfl.de>
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     """
 }
 

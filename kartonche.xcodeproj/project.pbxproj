@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0B6CADB42F3BE9930074B747 /* X509 in Frameworks */ = {isa = PBXBuildFile; productRef = 0B6CADB32F3BE9930074B747 /* X509 */; };
 		0B6CADB72F3BE9A30074B747 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 0B6CADB62F3BE9A30074B747 /* ZIPFoundation */; };
+		0BDATAMATRIX001 /* SwiftDataMatrix in Frameworks */ = {isa = PBXBuildFile; productRef = 0BDATAMATRIX002 /* SwiftDataMatrix */; };
+		0BDATAMATRIX011 /* SwiftDataMatrix in Frameworks */ = {isa = PBXBuildFile; productRef = 0BDATAMATRIX012 /* SwiftDataMatrix */; };
+		0BDATAMATRIX021 /* SwiftDataMatrix in Frameworks */ = {isa = PBXBuildFile; productRef = 0BDATAMATRIX022 /* SwiftDataMatrix */; };
 		0B91F2C42F36A2FC003F33AC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B91F2C32F36A2FC003F33AC /* WidgetKit.framework */; };
 		0B91F2C62F36A2FC003F33AC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B91F2C52F36A2FC003F33AC /* SwiftUI.framework */; };
 		0B91F2D72F36A2FD003F33AC /* widget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0B91F2C12F36A2FC003F33AC /* widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -177,6 +180,7 @@
 			files = (
 				0B6CADB42F3BE9930074B747 /* X509 in Frameworks */,
 				0B6CADB72F3BE9A30074B747 /* ZIPFoundation in Frameworks */,
+				0BDATAMATRIX001 /* SwiftDataMatrix in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +204,7 @@
 			files = (
 				0B91F2C62F36A2FC003F33AC /* SwiftUI.framework in Frameworks */,
 				0B91F2C42F36A2FC003F33AC /* WidgetKit.framework in Frameworks */,
+				0BDATAMATRIX021 /* SwiftDataMatrix in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BCB2AF32F3B700400A63750 /* QuickLook.framework in Frameworks */,
+				0BDATAMATRIX011 /* SwiftDataMatrix in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +281,7 @@
 			packageProductDependencies = (
 				0B6CADB32F3BE9930074B747 /* X509 */,
 				0B6CADB62F3BE9A30074B747 /* ZIPFoundation */,
+				0BDATAMATRIX002 /* SwiftDataMatrix */,
 			);
 			productName = kartonche;
 			productReference = 0B5B57A72F33F2C8005DCCA8 /* kartonche.app */;
@@ -343,6 +350,7 @@
 			);
 			name = widget;
 			packageProductDependencies = (
+				0BDATAMATRIX022 /* SwiftDataMatrix */,
 			);
 			productName = kartoncheWidgetExtension;
 			productReference = 0B91F2C12F36A2FC003F33AC /* widget.appex */;
@@ -365,6 +373,7 @@
 			);
 			name = quicklook;
 			packageProductDependencies = (
+				0BDATAMATRIX012 /* SwiftDataMatrix */,
 			);
 			productName = quicklook;
 			productReference = 0BCB2AF12F3B700400A63750 /* quicklook.appex */;
@@ -412,6 +421,7 @@
 			packageReferences = (
 				0B6CADB22F3BE9930074B747 /* XCRemoteSwiftPackageReference "swift-certificates" */,
 				0B6CADB52F3BE9A30074B747 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
+				0BDATAMATRIX003 /* XCRemoteSwiftPackageReference "SwiftDataMatrix" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 0B5B57A82F33F2C8005DCCA8 /* Products */;
@@ -1047,6 +1057,14 @@
 				minimumVersion = 0.9.20;
 			};
 		};
+		0BDATAMATRIX003 /* XCRemoteSwiftPackageReference "SwiftDataMatrix" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dhoepfl/SwiftDataMatrix";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1059,6 +1077,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0B6CADB52F3BE9A30074B747 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
 			productName = ZIPFoundation;
+		};
+		0BDATAMATRIX002 /* SwiftDataMatrix */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0BDATAMATRIX003 /* XCRemoteSwiftPackageReference "SwiftDataMatrix" */;
+			productName = SwiftDataMatrix;
+		};
+		0BDATAMATRIX012 /* SwiftDataMatrix */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0BDATAMATRIX003 /* XCRemoteSwiftPackageReference "SwiftDataMatrix" */;
+			productName = SwiftDataMatrix;
+		};
+		0BDATAMATRIX022 /* SwiftDataMatrix */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0BDATAMATRIX003 /* XCRemoteSwiftPackageReference "SwiftDataMatrix" */;
+			productName = SwiftDataMatrix;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

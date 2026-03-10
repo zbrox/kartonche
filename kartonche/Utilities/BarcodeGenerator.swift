@@ -7,6 +7,9 @@
 
 import CoreImage
 import UIKit
+#if canImport(SwiftDataMatrix)
+import SwiftDataMatrix
+#endif
 
 struct BarcodeGenerator {
     
@@ -58,7 +61,7 @@ struct BarcodeGenerator {
         case .upcE:
             return generateUPCE(from: data, scale: scale)
         case .dataMatrix:
-            return .failure(.filterCreationFailed)
+            return generateDataMatrix(from: data, scale: scale)
         default:
             break
         }
@@ -524,6 +527,89 @@ struct BarcodeGenerator {
         }
         return (10 - (sum % 10)) % 10
     }
+
+    // MARK: - DataMatrix rendering
+
+    #if canImport(SwiftDataMatrix)
+    private static func generateDataMatrix(
+        from data: String,
+        scale: CGFloat
+    ) -> Result<UIImage, GenerationError> {
+        guard let inputData = data.data(using: .utf8) else {
+            return .failure(.invalidData)
+        }
+
+        let result: SwiftDataMatrixResult
+        do {
+            result = try dataMatrix(for: inputData)
+        } catch {
+            return .failure(.imageGenerationFailed)
+        }
+
+        guard let image = renderDataMatrixBitmap(result, scale: scale) else {
+            return .failure(.imageGenerationFailed)
+        }
+        return .success(image)
+    }
+
+    private static func renderDataMatrixBitmap(_ result: SwiftDataMatrixResult, scale: CGFloat) -> UIImage? {
+        let quietZone = 1
+        let moduleSize = Int(scale)
+        guard moduleSize >= 1 else { return nil }
+
+        let bitmapData = result.bitmap as CFData
+        guard let provider = CGDataProvider(data: bitmapData) else { return nil }
+
+        let colorSpace = CGColorSpace(name: CGColorSpace.linearGray)!
+        guard let bitmapImage = CGImage(
+            width: result.width,
+            height: result.height,
+            bitsPerComponent: 1,
+            bitsPerPixel: 1,
+            bytesPerRow: result.bytesPerRow,
+            space: colorSpace,
+            bitmapInfo: CGBitmapInfo(),
+            provider: provider,
+            decode: nil,
+            shouldInterpolate: false,
+            intent: .defaultIntent
+        ) else { return nil }
+
+        let totalWidth = (result.width + 2 * quietZone) * moduleSize
+        let totalHeight = (result.height + 2 * quietZone) * moduleSize
+
+        guard let context = CGContext(
+            data: nil,
+            width: totalWidth,
+            height: totalHeight,
+            bitsPerComponent: 8,
+            bytesPerRow: 0,
+            space: CGColorSpaceCreateDeviceGray(),
+            bitmapInfo: CGImageAlphaInfo.none.rawValue
+        ) else { return nil }
+
+        context.setFillColor(gray: 1.0, alpha: 1.0)
+        context.fill(CGRect(x: 0, y: 0, width: totalWidth, height: totalHeight))
+
+        context.interpolationQuality = .none
+        context.draw(bitmapImage, in: CGRect(
+            x: quietZone * moduleSize,
+            y: quietZone * moduleSize,
+            width: result.width * moduleSize,
+            height: result.height * moduleSize
+        ))
+
+        guard let scaledImage = context.makeImage() else { return nil }
+        return UIImage(cgImage: scaledImage)
+    }
+    #else
+    private static func generateDataMatrix(
+        from data: String,
+        scale: CGFloat
+    ) -> Result<UIImage, GenerationError> {
+        .failure(.filterCreationFailed)
+    }
+    #endif
 
     // MARK: - Linear barcode rendering helper
 
