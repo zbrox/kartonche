@@ -48,6 +48,7 @@ struct CardListView: View {
     @State private var scannedSuggestedColors: [Color] = []
     @State private var showingPhotoPicker = false
     @State private var showingBarcodeScanner = false
+    @State private var photoPickerScanFailed = false
     @State private var isProcessingQuickScan = false
     @State private var pendingOpenExistingCardID: UUID?
 
@@ -304,6 +305,20 @@ struct CardListView: View {
                     }
                     cardToDelete = nil
                 }
+            }
+            .alert(
+                String(localized: "No Barcode Found"),
+                isPresented: $photoPickerScanFailed
+            ) {
+                Button(String(localized: "Try Another Photo")) {
+                    showingPhotoPicker = true
+                }
+                Button(String(localized: "Add Manually")) {
+                    showingEditor = true
+                }
+                Button(String(localized: "Cancel"), role: .cancel) {}
+            } message: {
+                Text(String(localized: "Could not detect a barcode in the selected image."))
             }
             .alert(item: $errorAlert) { alert in
                 Alert(
@@ -822,11 +837,14 @@ struct CardListView: View {
         isProcessingQuickScan = true
 
         Task {
+            var foundBarcode = false
+
             // Run barcode scan — failure is acceptable
             if let matches = try? await BarcodeImageScanner.scan(from: image),
                let preferred = BarcodeImageScanner.preferredMatch(from: matches) {
                 scannedBarcodeData = preferred.data
                 scannedBarcodeType = preferred.type
+                foundBarcode = true
             }
 
             // Run color extraction with confidence + suggestions.
@@ -835,7 +853,12 @@ struct CardListView: View {
             scannedSuggestedColors = analysis.suggestedColors
 
             isProcessingQuickScan = false
-            showingEditor = true
+
+            if foundBarcode {
+                showingEditor = true
+            } else {
+                photoPickerScanFailed = true
+            }
         }
     }
 
