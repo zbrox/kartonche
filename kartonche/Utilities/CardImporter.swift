@@ -159,6 +159,7 @@ struct CardImporter {
         card.isFavorite = dto.isFavorite
         card.createdDate = dto.createdDate
         card.lastUsedDate = dto.lastUsedDate
+        card.lastModifiedDate = dto.lastModifiedDate
         card.expirationDate = dto.expirationDate
         
         // Decode and set card image if present

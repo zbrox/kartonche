@@ -619,6 +619,7 @@ struct CardEditorView: View {
             existingCard.isFavorite = isFavorite
             existingCard.expirationDate = hasExpirationDate ? expirationDate : nil
             existingCard.cardImage = cardImageData
+            existingCard.lastModifiedDate = Date()
             savedCard = existingCard
         } else {
             let newCard = LoyaltyCard(
@@ -632,6 +633,7 @@ struct CardEditorView: View {
                 notes: notes.isEmpty ? nil : notes,
                 cardholderName: cardholderName.isEmpty ? nil : cardholderName,
                 isFavorite: isFavorite,
+                lastModifiedDate: Date(),
                 expirationDate: hasExpirationDate ? expirationDate : nil,
                 cardImage: cardImageData
             )

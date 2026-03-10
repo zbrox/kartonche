@@ -67,10 +67,11 @@ struct CardListView: View {
     
     enum SortOption: String, CaseIterable {
         case alphabetical = "Alphabetical"
-        case recent = "Recent"
+        case recentlyUsed = "Recently Used"
+        case recentlyEdited = "Recently Edited"
         case favorites = "Favorites"
         case expiring = "Expiring Soon"
-        
+
         var localizedName: String {
             String(localized: String.LocalizationValue(rawValue))
         }
@@ -112,8 +113,10 @@ struct CardListView: View {
         switch sortOption {
         case .alphabetical:
             cards.sort { $0.name.localizedCompare($1.name) == .orderedAscending }
-        case .recent:
+        case .recentlyUsed:
             cards.sort { ($0.lastUsedDate ?? .distantPast) > ($1.lastUsedDate ?? .distantPast) }
+        case .recentlyEdited:
+            cards.sort { ($0.lastModifiedDate ?? $0.createdDate) > ($1.lastModifiedDate ?? $1.createdDate) }
         case .favorites:
             cards.sort { card1, card2 in
                 if card1.isFavorite == card2.isFavorite {

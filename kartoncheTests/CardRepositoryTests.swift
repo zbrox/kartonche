@@ -85,7 +85,7 @@ struct CardRepositoryTests {
             isFavorite: false,
             createdDate: Date(),
             lastUsedDate: nil,
-            expirationDate: nil,
+            lastModifiedDate: nil, expirationDate: nil,
             cardImage: nil,
             locations: []
         )
@@ -131,7 +131,7 @@ struct CardRepositoryTests {
             isFavorite: false,
             createdDate: Date(),
             lastUsedDate: nil,
-            expirationDate: nil,
+            lastModifiedDate: nil, expirationDate: nil,
             cardImage: nil,
             locations: []
         )
@@ -170,7 +170,7 @@ struct CardRepositoryTests {
             barcodeData: "BARCODE-1",
             color: nil, secondaryColor: nil, notes: nil, cardholderName: nil,
             isFavorite: false, createdDate: Date(), lastUsedDate: nil,
-            expirationDate: nil, cardImage: nil, locations: []
+            lastModifiedDate: nil, expirationDate: nil, cardImage: nil, locations: []
         )
 
         let repo = CardRepository(modelContext: context)
@@ -200,7 +200,7 @@ struct CardRepositoryTests {
             barcodeData: "BARCODE-2",
             color: nil, secondaryColor: nil, notes: nil, cardholderName: nil,
             isFavorite: false, createdDate: Date(), lastUsedDate: nil,
-            expirationDate: nil, cardImage: nil, locations: []
+            lastModifiedDate: nil, expirationDate: nil, cardImage: nil, locations: []
         )
 
         let repo = CardRepository(modelContext: context)
@@ -229,7 +229,7 @@ struct CardRepositoryTests {
             barcodeData: "BARCODE-1",
             color: nil, secondaryColor: nil, notes: nil, cardholderName: nil,
             isFavorite: false, createdDate: Date(), lastUsedDate: nil,
-            expirationDate: nil, cardImage: nil, locations: []
+            lastModifiedDate: nil, expirationDate: nil, cardImage: nil, locations: []
         )
 
         let repo = CardRepository(modelContext: context)
@@ -258,7 +258,7 @@ struct CardRepositoryTests {
             barcodeData: "",
             color: nil, secondaryColor: nil, notes: nil, cardholderName: nil,
             isFavorite: false, createdDate: Date(), lastUsedDate: nil,
-            expirationDate: nil, cardImage: nil, locations: []
+            lastModifiedDate: nil, expirationDate: nil, cardImage: nil, locations: []
         )
 
         let repo = CardRepository(modelContext: context)

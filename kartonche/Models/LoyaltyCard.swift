@@ -22,6 +22,7 @@ final class LoyaltyCard {
     var isFavorite: Bool = false
     var createdDate: Date = Date()
     var lastUsedDate: Date?
+    var lastModifiedDate: Date?
     var expirationDate: Date?
     
     var cardholderName: String?
@@ -46,6 +47,7 @@ final class LoyaltyCard {
         isFavorite: Bool = false,
         createdDate: Date = Date(),
         lastUsedDate: Date? = nil,
+        lastModifiedDate: Date? = nil,
         expirationDate: Date? = nil,
         cardImage: Data? = nil
     ) {
@@ -62,6 +64,7 @@ final class LoyaltyCard {
         self.isFavorite = isFavorite
         self.createdDate = createdDate
         self.lastUsedDate = lastUsedDate
+        self.lastModifiedDate = lastModifiedDate
         self.expirationDate = expirationDate
         self.cardImage = cardImage
     }

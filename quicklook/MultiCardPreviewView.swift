@@ -94,7 +94,7 @@ private struct MultiCardRow: View {
             barcodeData: "1234567890123", color: "#E31E26",
             secondaryColor: "#FFFFFF", notes: nil, cardholderName: nil,
             isFavorite: false, createdDate: Date(), lastUsedDate: nil,
-            expirationDate: nil, cardImage: nil, locations: []
+            lastModifiedDate: nil, expirationDate: nil, cardImage: nil, locations: []
         ),
         CardExportDTO(
             id: UUID(), name: "Loyalty Card", storeName: "Kaufland",
@@ -102,7 +102,7 @@ private struct MultiCardRow: View {
             barcodeData: "KAUF123456", color: "#CC0000",
             secondaryColor: nil, notes: nil, cardholderName: nil,
             isFavorite: false, createdDate: Date(), lastUsedDate: nil,
-            expirationDate: nil, cardImage: nil, locations: []
+            lastModifiedDate: nil, expirationDate: nil, cardImage: nil, locations: []
         ),
         CardExportDTO(
             id: UUID(), name: "Fantastiko Card", storeName: "Fantastiko",
@@ -110,7 +110,7 @@ private struct MultiCardRow: View {
             barcodeData: "5555555555", color: "#00AA44",
             secondaryColor: nil, notes: nil, cardholderName: nil,
             isFavorite: false, createdDate: Date(), lastUsedDate: nil,
-            expirationDate: nil, cardImage: nil, locations: []
+            lastModifiedDate: nil, expirationDate: nil, cardImage: nil, locations: []
         )
     ]))
 }

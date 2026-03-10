@@ -151,6 +151,7 @@ struct CardPreviewView: View {
         isFavorite: false,
         createdDate: Date(),
         lastUsedDate: nil,
+        lastModifiedDate: nil,
         expirationDate: nil,
         cardImage: nil,
         locations: [
@@ -181,6 +182,7 @@ struct CardPreviewView: View {
         isFavorite: false,
         createdDate: Date(),
         lastUsedDate: nil,
+        lastModifiedDate: nil,
         expirationDate: nil,
         cardImage: nil,
         locations: []

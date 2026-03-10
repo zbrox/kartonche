@@ -44,6 +44,7 @@ struct CardExportDTO: Codable, Identifiable {
     let isFavorite: Bool
     let createdDate: Date
     let lastUsedDate: Date?
+    let lastModifiedDate: Date?
     let expirationDate: Date?
     
     /// Base64-encoded image data (optional, can be large)
@@ -105,6 +106,7 @@ extension CardExportDTO {
         self.isFavorite = card.isFavorite
         self.createdDate = card.createdDate
         self.lastUsedDate = card.lastUsedDate
+        self.lastModifiedDate = card.lastModifiedDate
         self.expirationDate = card.expirationDate
         
         // Convert image Data to base64 string for JSON serialization

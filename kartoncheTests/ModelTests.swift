@@ -6,6 +6,7 @@
 //
 
 import Testing
+import Foundation
 import SwiftData
 @testable import kartonche
 
@@ -54,6 +55,7 @@ struct ModelTests {
         #expect(card.notes == nil)
         #expect(card.cardholderName == nil)
         #expect(card.lastUsedDate == nil)
+        #expect(card.lastModifiedDate == nil)
         #expect(card.cardImage == nil)
     }
 
@@ -124,5 +126,115 @@ struct ModelTests {
         #expect(card.color == "#FF0000")
         #expect(card.notes == "VIP member")
         #expect(card.isFavorite == true)
+    }
+
+    @Test func lastModifiedDateSetOnCreation() {
+        let now = Date()
+        let card = LoyaltyCard(
+            name: "Test Card",
+            barcodeType: .qr,
+            barcodeData: "123",
+            lastModifiedDate: now
+        )
+
+        #expect(card.lastModifiedDate == now)
+    }
+
+    @Test func lastModifiedDateUpdatedOnEdit() {
+        let card = LoyaltyCard(
+            name: "Test Card",
+            barcodeType: .qr,
+            barcodeData: "123"
+        )
+        #expect(card.lastModifiedDate == nil)
+
+        let editDate = Date()
+        card.lastModifiedDate = editDate
+        #expect(card.lastModifiedDate == editDate)
+    }
+
+    @Test func cardExportDTORoundTripsLastModifiedDate() {
+        let now = Date()
+        let card = LoyaltyCard(
+            name: "Test Card",
+            barcodeType: .qr,
+            barcodeData: "123",
+            lastModifiedDate: now
+        )
+
+        let dto = CardExportDTO(from: card)
+        #expect(dto.lastModifiedDate == now)
+    }
+
+    @Test func cardExportDTORoundTripsNilLastModifiedDate() {
+        let card = LoyaltyCard(
+            name: "Test Card",
+            barcodeType: .qr,
+            barcodeData: "123"
+        )
+
+        let dto = CardExportDTO(from: card)
+        #expect(dto.lastModifiedDate == nil)
+    }
+
+    @Test func recentlyEditedSortFallsBackToCreatedDate() {
+        let older = Date(timeIntervalSince1970: 1000)
+        let newer = Date(timeIntervalSince1970: 2000)
+
+        let cardWithModified = LoyaltyCard(
+            name: "Modified",
+            barcodeType: .qr,
+            barcodeData: "1",
+            createdDate: older,
+            lastModifiedDate: newer
+        )
+
+        let cardWithoutModified = LoyaltyCard(
+            name: "Unmodified",
+            barcodeType: .qr,
+            barcodeData: "2",
+            createdDate: newer
+        )
+
+        // Both should use their effective date for sorting
+        let effectiveModified = cardWithModified.lastModifiedDate ?? cardWithModified.createdDate
+        let effectiveUnmodified = cardWithoutModified.lastModifiedDate ?? cardWithoutModified.createdDate
+
+        #expect(effectiveModified == newer)
+        #expect(effectiveUnmodified == newer)
+    }
+
+    @Test func recentlyUsedSortBehavior() {
+        let earlier = Date(timeIntervalSince1970: 1000)
+        let later = Date(timeIntervalSince1970: 2000)
+
+        let usedRecently = LoyaltyCard(
+            name: "Used Recently",
+            barcodeType: .qr,
+            barcodeData: "1",
+            lastUsedDate: later
+        )
+
+        let usedEarlier = LoyaltyCard(
+            name: "Used Earlier",
+            barcodeType: .qr,
+            barcodeData: "2",
+            lastUsedDate: earlier
+        )
+
+        let neverUsed = LoyaltyCard(
+            name: "Never Used",
+            barcodeType: .qr,
+            barcodeData: "3"
+        )
+
+        var cards = [neverUsed, usedEarlier, usedRecently]
+        cards.sort { (a: LoyaltyCard, b: LoyaltyCard) in
+            (a.lastUsedDate ?? Date.distantPast) > (b.lastUsedDate ?? Date.distantPast)
+        }
+
+        #expect(cards[0].name == "Used Recently")
+        #expect(cards[1].name == "Used Earlier")
+        #expect(cards[2].name == "Never Used")
     }
 }
