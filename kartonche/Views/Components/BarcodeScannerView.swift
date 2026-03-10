@@ -26,7 +26,16 @@ struct BarcodeScannerView: UIViewControllerRepresentable {
                 .code128,
                 .ean13,
                 .pdf417,
-                .aztec
+                .aztec,
+                .code39,
+                .code39Checksum,
+                .code39FullASCII,
+                .code39FullASCIIChecksum,
+                .upce,
+                .i2of5,
+                .i2of5Checksum,
+                .dataMatrix,
+                .ean8,
             ])
         ]
         
