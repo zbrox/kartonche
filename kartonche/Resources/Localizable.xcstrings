@@ -670,6 +670,100 @@
         }
       }
     },
+    "10% off on Tuesdays for premium members" : {
+      "comment" : "Screenshot sample card notes",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "10% off on Tuesdays for premium members"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "10% off on Tuesdays for premium members"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "10% off on Tuesdays for premium members"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "10% off on Tuesdays for premium members"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "10% off on Tuesdays for premium members"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "10% off on Tuesdays for premium members"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "10% off on Tuesdays for premium members"
+          }
+        }
+      }
+    },
+    "42 Market Street" : {
+      "comment" : "Screenshot sample location address",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "42 Market Street"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "42 Market Street"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "42 Market Street"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "42 Market Street"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "42 Market Street"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "42 Market Street"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "42 Market Street"
+          }
+        }
+      }
+    },
     "A card with this barcode already exists" : {
       "localizations" : {
         "bg" : {
@@ -808,6 +902,52 @@
         }
       }
     },
+    "Access your favorite cards right from your Home Screen." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Access your favorite cards right from your Home Screen."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Access your favorite cards right from your Home Screen."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Access your favorite cards right from your Home Screen."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Access your favorite cards right from your Home Screen."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Access your favorite cards right from your Home Screen."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Access your favorite cards right from your Home Screen."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Access your favorite cards right from your Home Screen."
+          }
+        }
+      }
+    },
     "Active" : {
       "localizations" : {
         "bg" : {
@@ -850,6 +990,236 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Active"
+          }
+        }
+      }
+    },
+    "Add a Control Center Toggle" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Control Center Toggle"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Control Center Toggle"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Control Center Toggle"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Control Center Toggle"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Control Center Toggle"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Control Center Toggle"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Control Center Toggle"
+          }
+        }
+      }
+    },
+    "Add a Home Screen Widget" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Home Screen Widget"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Home Screen Widget"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Home Screen Widget"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Home Screen Widget"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Home Screen Widget"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Home Screen Widget"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Home Screen Widget"
+          }
+        }
+      }
+    },
+    "Add a location to your card and it will appear automatically when you're nearby." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a location to your card and it will appear automatically when you're nearby."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a location to your card and it will appear automatically when you're nearby."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a location to your card and it will appear automatically when you're nearby."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a location to your card and it will appear automatically when you're nearby."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a location to your card and it will appear automatically when you're nearby."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a location to your card and it will appear automatically when you're nearby."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a location to your card and it will appear automatically when you're nearby."
+          }
+        }
+      }
+    },
+    "Add a Lock Screen Widget" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Lock Screen Widget"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Lock Screen Widget"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Lock Screen Widget"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Lock Screen Widget"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Lock Screen Widget"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Lock Screen Widget"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Lock Screen Widget"
+          }
+        }
+      }
+    },
+    "Add a Store Location" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Store Location"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Store Location"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Store Location"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Store Location"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Store Location"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Store Location"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Store Location"
           }
         }
       }
@@ -2898,6 +3268,53 @@
         }
       }
     },
+    "City Library" : {
+      "comment" : "Screenshot sample card name",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "City Library"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "City Library"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "City Library"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "City Library"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "City Library"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "City Library"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "City Library"
+          }
+        }
+      }
+    },
     "Close" : {
       "comment" : "Button to dismiss a view",
       "localizations" : {
@@ -2987,6 +3404,52 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Confirm Location"
+          }
+        }
+      }
+    },
+    "Could not detect a barcode in the selected image." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Could not detect a barcode in the selected image."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Could not detect a barcode in the selected image."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Could not detect a barcode in the selected image."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Could not detect a barcode in the selected image."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Could not detect a barcode in the selected image."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Could not detect a barcode in the selected image."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Could not detect a barcode in the selected image."
           }
         }
       }
@@ -3171,6 +3634,52 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Data"
+          }
+        }
+      }
+    },
+    "Debug" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Debug"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Debug"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Debug"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Debug"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Debug"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Debug"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Debug"
           }
         }
       }
@@ -3500,6 +4009,53 @@
         }
       }
     },
+    "Downtown Gym" : {
+      "comment" : "Screenshot sample card name",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Downtown Gym"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Downtown Gym"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Downtown Gym"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Downtown Gym"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Downtown Gym"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Downtown Gym"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Downtown Gym"
+          }
+        }
+      }
+    },
     "Drop Pin on Map" : {
       "localizations" : {
         "bg" : {
@@ -3726,145 +4282,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Duplicates found"
-          }
-        }
-      }
-    },
-    "EAN-13 barcodes are added as images and may not scan everywhere." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "EAN-13 barcodes are added as images and may not scan everywhere."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "EAN-13 barcodes are added as images and may not scan everywhere."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "EAN-13 barcodes are added as images and may not scan everywhere."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "EAN-13 barcodes are added as images and may not scan everywhere."
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "EAN-13 barcodes are added as images and may not scan everywhere."
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "EAN-13 barcodes are added as images and may not scan everywhere."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "EAN-13 barcodes are added as images and may not scan everywhere."
-          }
-        }
-      }
-    },
-    "EAN-13 cards use the barcode as the Apple Wallet strip image. This image won't be used." : {
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "EAN-13 cards use the barcode as the Apple Wallet strip image. This image won't be used."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "EAN-13 cards use the barcode as the Apple Wallet strip image. This image won't be used."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "EAN-13 cards use the barcode as the Apple Wallet strip image. This image won't be used."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "EAN-13 cards use the barcode as the Apple Wallet strip image. This image won't be used."
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "EAN-13 cards use the barcode as the Apple Wallet strip image. This image won't be used."
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "EAN-13 cards use the barcode as the Apple Wallet strip image. This image won't be used."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "EAN-13 cards use the barcode as the Apple Wallet strip image. This image won't be used."
-          }
-        }
-      }
-    },
-    "EAN-13 requires exactly 13 digits (provided: %d)" : {
-      "comment" : "Error message for EAN-13 digit validation",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "EAN-13 изисква точно 13 цифри (въведени: %d)"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "EAN-13 requires exactly 13 digits (provided: %d)"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "EAN-13 requires exactly 13 digits (provided: %d)"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "EAN-13 requires exactly 13 digits (provided: %d)"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "EAN-13 requires exactly 13 digits (provided: %d)"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "EAN-13 requires exactly 13 digits (provided: %d)"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "EAN-13 requires exactly 13 digits (provided: %d)"
           }
         }
       }
@@ -4373,6 +4790,59 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Existing cards will be replaced with imported versions"
+          }
+        }
+      }
+    },
+    "Expected exactly %d digits (provided: %d)" : {
+      "comment" : "Error message for barcode digit validation",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expected exactly %1$d digits (provided: %2$d)"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expected exactly %1$d digits (provided: %2$d)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expected exactly %1$d digits (provided: %2$d)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expected exactly %1$d digits (provided: %2$d)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expected exactly %1$d digits (provided: %2$d)"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expected exactly %1$d digits (provided: %2$d)"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expected exactly %1$d digits (provided: %2$d)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expected exactly %1$d digits (provided: %2$d)"
           }
         }
       }
@@ -5398,6 +5868,100 @@
         }
       }
     },
+    "Fresh Market" : {
+      "comment" : "Screenshot sample card name",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Fresh Market"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Fresh Market"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Fresh Market"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Fresh Market"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Fresh Market"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Fresh Market"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Fresh Market"
+          }
+        }
+      }
+    },
+    "Fresh Market - Downtown" : {
+      "comment" : "Screenshot sample location name",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Fresh Market - Downtown"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Fresh Market - Downtown"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Fresh Market - Downtown"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Fresh Market - Downtown"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Fresh Market - Downtown"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Fresh Market - Downtown"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Fresh Market - Downtown"
+          }
+        }
+      }
+    },
     "Fresher location data" : {
       "localizations" : {
         "bg" : {
@@ -5763,6 +6327,52 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Has Expiration Date"
+          }
+        }
+      }
+    },
+    "has locations" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "has locations"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "has locations"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "has locations"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "has locations"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "has locations"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "has locations"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "has locations"
           }
         }
       }
@@ -6830,6 +7440,52 @@
         }
       }
     },
+    "Licenses" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Licenses"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Licenses"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Licenses"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Licenses"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Licenses"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Licenses"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Licenses"
+          }
+        }
+      }
+    },
     "Limited" : {
       "localizations" : {
         "bg" : {
@@ -7590,6 +8246,52 @@
         }
       }
     },
+    "Long press a card to share it with friends and family." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long press a card to share it with friends and family."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long press a card to share it with friends and family."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long press a card to share it with friends and family."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long press a card to share it with friends and family."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long press a card to share it with friends and family."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long press a card to share it with friends and family."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long press a card to share it with friends and family."
+          }
+        }
+      }
+    },
     "Loyalty Card" : {
       "comment" : "Home screen widget name",
       "localizations" : {
@@ -7680,6 +8382,53 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Loyalty Cards"
+          }
+        }
+      }
+    },
+    "Maria Ivanova" : {
+      "comment" : "Screenshot sample cardholder name",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Maria Ivanova"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Maria Ivanova"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Maria Ivanova"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Maria Ivanova"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Maria Ivanova"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Maria Ivanova"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Maria Ivanova"
           }
         }
       }
@@ -7912,6 +8661,53 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "More accurate nearby store detection"
+          }
+        }
+      }
+    },
+    "Morning Brew Coffee" : {
+      "comment" : "Screenshot sample card name",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Morning Brew Coffee"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Morning Brew Coffee"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Morning Brew Coffee"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Morning Brew Coffee"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Morning Brew Coffee"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Morning Brew Coffee"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Morning Brew Coffee"
           }
         }
       }
@@ -8288,6 +9084,52 @@
         }
       }
     },
+    "Next time, try adding a card by taking a photo or choosing one from your library." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Next time, try adding a card by taking a photo or choosing one from your library."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Next time, try adding a card by taking a photo or choosing one from your library."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Next time, try adding a card by taking a photo or choosing one from your library."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Next time, try adding a card by taking a photo or choosing one from your library."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Next time, try adding a card by taking a photo or choosing one from your library."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Next time, try adding a card by taking a photo or choosing one from your library."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Next time, try adding a card by taking a photo or choosing one from your library."
+          }
+        }
+      }
+    },
     "No account required" : {
       "localizations" : {
         "bg" : {
@@ -8422,6 +9264,52 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "No analytics"
+          }
+        }
+      }
+    },
+    "No Barcode Found" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No Barcode Found"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No Barcode Found"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No Barcode Found"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No Barcode Found"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No Barcode Found"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No Barcode Found"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No Barcode Found"
           }
         }
       }
@@ -9400,6 +10288,52 @@
         }
       }
     },
+    "Open your favorite card with a quick tap from Control Center." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open your favorite card with a quick tap from Control Center."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open your favorite card with a quick tap from Control Center."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open your favorite card with a quick tap from Control Center."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open your favorite card with a quick tap from Control Center."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open your favorite card with a quick tap from Control Center."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open your favorite card with a quick tap from Control Center."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open your favorite card with a quick tap from Control Center."
+          }
+        }
+      }
+    },
     "Opens camera to scan barcode" : {
       "comment" : "Accessibility hint for camera scan button",
       "localizations" : {
@@ -9719,6 +10653,145 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Permission required"
+          }
+        }
+      }
+    },
+    "Pet Paradise" : {
+      "comment" : "Screenshot sample card name",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pet Paradise"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pet Paradise"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pet Paradise"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pet Paradise"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pet Paradise"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pet Paradise"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pet Paradise"
+          }
+        }
+      }
+    },
+    "Preview All Tips (next launch)" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview All Tips (next launch)"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview All Tips (next launch)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview All Tips (next launch)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview All Tips (next launch)"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview All Tips (next launch)"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview All Tips (next launch)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview All Tips (next launch)"
+          }
+        }
+      }
+    },
+    "Preview forces all tips visible on next launch (they won't dismiss until you relaunch again). Reset clears donation history so tips reappear as rules are met." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview forces all tips visible on next launch (they won't dismiss until you relaunch again). Reset clears donation history so tips reappear as rules are met."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview forces all tips visible on next launch (they won't dismiss until you relaunch again). Reset clears donation history so tips reappear as rules are met."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview forces all tips visible on next launch (they won't dismiss until you relaunch again). Reset clears donation history so tips reappear as rules are met."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview forces all tips visible on next launch (they won't dismiss until you relaunch again). Reset clears donation history so tips reappear as rules are met."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview forces all tips visible on next launch (they won't dismiss until you relaunch again). Reset clears donation history so tips reappear as rules are met."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview forces all tips visible on next launch (they won't dismiss until you relaunch again). Reset clears donation history so tips reappear as rules are met."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview forces all tips visible on next launch (they won't dismiss until you relaunch again). Reset clears donation history so tips reappear as rules are met."
           }
         }
       }
@@ -10370,6 +11443,52 @@
         }
       }
     },
+    "Reset Tips History" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Reset Tips History"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Reset Tips History"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Reset Tips History"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Reset Tips History"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Reset Tips History"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Reset Tips History"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Reset Tips History"
+          }
+        }
+      }
+    },
     "Respects iOS Focus modes and Do Not Disturb. Silent notifications only." : {
       "localizations" : {
         "bg" : {
@@ -10598,6 +11717,52 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Scan Barcode"
+          }
+        }
+      }
+    },
+    "Scan from a Photo" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Scan from a Photo"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Scan from a Photo"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Scan from a Photo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Scan from a Photo"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Scan from a Photo"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Scan from a Photo"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Scan from a Photo"
           }
         }
       }
@@ -10969,6 +12134,52 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "See cards when you're nearby"
+          }
+        }
+      }
+    },
+    "See your favorite cards without even unlocking your phone." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "See your favorite cards without even unlocking your phone."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "See your favorite cards without even unlocking your phone."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "See your favorite cards without even unlocking your phone."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "See your favorite cards without even unlocking your phone."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "See your favorite cards without even unlocking your phone."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "See your favorite cards without even unlocking your phone."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "See your favorite cards without even unlocking your phone."
           }
         }
       }
@@ -11621,6 +12832,52 @@
         }
       }
     },
+    "Share Your Cards" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Share Your Cards"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Share Your Cards"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Share Your Cards"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Share Your Cards"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Share Your Cards"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Share Your Cards"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Share Your Cards"
+          }
+        }
+      }
+    },
     "Show Expired" : {
       "localizations" : {
         "bg" : {
@@ -12224,6 +13481,98 @@
         }
       }
     },
+    "Swipe a card to favorite or delete it." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe a card to favorite or delete it."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe a card to favorite or delete it."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe a card to favorite or delete it."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe a card to favorite or delete it."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe a card to favorite or delete it."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe a card to favorite or delete it."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe a card to favorite or delete it."
+          }
+        }
+      }
+    },
+    "Swipe for Quick Actions" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe for Quick Actions"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe for Quick Actions"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe for Quick Actions"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe for Quick Actions"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe for Quick Actions"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe for Quick Actions"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe for Quick Actions"
+          }
+        }
+      }
+    },
     "Sync Active" : {
       "localizations" : {
         "bg" : {
@@ -12685,6 +14034,144 @@
         }
       }
     },
+    "Third-Party Licenses" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Third-Party Licenses"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Third-Party Licenses"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Third-Party Licenses"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Third-Party Licenses"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Third-Party Licenses"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Third-Party Licenses"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Third-Party Licenses"
+          }
+        }
+      }
+    },
+    "This barcode type is added as an image and may not scan everywhere." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This barcode type is added as an image and may not scan everywhere."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This barcode type is added as an image and may not scan everywhere."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This barcode type is added as an image and may not scan everywhere."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This barcode type is added as an image and may not scan everywhere."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This barcode type is added as an image and may not scan everywhere."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This barcode type is added as an image and may not scan everywhere."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This barcode type is added as an image and may not scan everywhere."
+          }
+        }
+      }
+    },
+    "This barcode type uses the barcode as the Apple Wallet strip image. This image won't be used." : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This barcode type uses the barcode as the Apple Wallet strip image. This image won't be used."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This barcode type uses the barcode as the Apple Wallet strip image. This image won't be used."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This barcode type uses the barcode as the Apple Wallet strip image. This image won't be used."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This barcode type uses the barcode as the Apple Wallet strip image. This image won't be used."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This barcode type uses the barcode as the Apple Wallet strip image. This image won't be used."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This barcode type uses the barcode as the Apple Wallet strip image. This image won't be used."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This barcode type uses the barcode as the Apple Wallet strip image. This image won't be used."
+          }
+        }
+      }
+    },
     "This card is in Apple Wallet. Edits sync automatically." : {
       "localizations" : {
         "bg" : {
@@ -12823,6 +14310,53 @@
         }
       }
     },
+    "TipKit" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "TipKit"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "TipKit"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "TipKit"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "TipKit"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "TipKit"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "TipKit"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "TipKit"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "To save card locations, kartonche needs to access your location." : {
       "localizations" : {
         "bg" : {
@@ -12865,6 +14399,52 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "To save card locations, kartonche needs to access your location."
+          }
+        }
+      }
+    },
+    "Try Another Photo" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Try Another Photo"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Try Another Photo"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Try Another Photo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Try Another Photo"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Try Another Photo"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Try Another Photo"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Try Another Photo"
           }
         }
       }
@@ -15172,106 +16752,106 @@
         }
       }
     },
-    "whats_new.2026_03_1.ean13_support.description" : {
+    "whats_new.2026_03_1.barcode_support.description" : {
       "localizations" : {
         "bg" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "EAN-13 barcodes now render authentically and can be added to Apple Wallet."
+            "value" : "Supports EAN-13, EAN-8, Code 39, UPC-E, Interleaved 2 of 5, and DataMatrix barcodes with authentic rendering and Apple Wallet integration."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "EAN-13 barcodes now render authentically and can be added to Apple Wallet."
+            "value" : "Supports EAN-13, EAN-8, Code 39, UPC-E, Interleaved 2 of 5, and DataMatrix barcodes with authentic rendering and Apple Wallet integration."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "EAN-13 barcodes now render authentically and can be added to Apple Wallet."
+            "value" : "Supports EAN-13, EAN-8, Code 39, UPC-E, Interleaved 2 of 5, and DataMatrix barcodes with authentic rendering and Apple Wallet integration."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "EAN-13 barcodes now render authentically and can be added to Apple Wallet."
+            "value" : "Supports EAN-13, EAN-8, Code 39, UPC-E, Interleaved 2 of 5, and DataMatrix barcodes with authentic rendering and Apple Wallet integration."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "EAN-13 barcodes now render authentically and can be added to Apple Wallet."
+            "value" : "Supports EAN-13, EAN-8, Code 39, UPC-E, Interleaved 2 of 5, and DataMatrix barcodes with authentic rendering and Apple Wallet integration."
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "EAN-13 barcodes now render authentically and can be added to Apple Wallet."
+            "value" : "Supports EAN-13, EAN-8, Code 39, UPC-E, Interleaved 2 of 5, and DataMatrix barcodes with authentic rendering and Apple Wallet integration."
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "EAN-13 barcodes now render authentically and can be added to Apple Wallet."
+            "value" : "Supports EAN-13, EAN-8, Code 39, UPC-E, Interleaved 2 of 5, and DataMatrix barcodes with authentic rendering and Apple Wallet integration."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "EAN-13 barcodes now render authentically and can be added to Apple Wallet."
+            "value" : "Supports EAN-13, EAN-8, Code 39, UPC-E, Interleaved 2 of 5, and DataMatrix barcodes with authentic rendering and Apple Wallet integration."
           }
         }
       }
     },
-    "whats_new.2026_03_1.ean13_support.title" : {
+    "whats_new.2026_03_1.barcode_support.title" : {
       "localizations" : {
         "bg" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "EAN-13 Barcode Support"
+            "value" : "Barcode Support"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "EAN-13 Barcode Support"
+            "value" : "Barcode Support"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "EAN-13 Barcode Support"
+            "value" : "Barcode Support"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "EAN-13 Barcode Support"
+            "value" : "Barcode Support"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "EAN-13 Barcode Support"
+            "value" : "Barcode Support"
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "EAN-13 Barcode Support"
+            "value" : "Barcode Support"
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "EAN-13 Barcode Support"
+            "value" : "Barcode Support"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "EAN-13 Barcode Support"
+            "value" : "Barcode Support"
           }
         }
       }
@@ -15376,6 +16956,110 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "iCloud Sync"
+          }
+        }
+      }
+    },
+    "whats_new.2026_03_1.scan_flow.description" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Point your camera at a barcode to add a card instantly."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Point your camera at a barcode to add a card instantly."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Point your camera at a barcode to add a card instantly."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Point your camera at a barcode to add a card instantly."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Point your camera at a barcode to add a card instantly."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Point your camera at a barcode to add a card instantly."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Point your camera at a barcode to add a card instantly."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Point your camera at a barcode to add a card instantly."
+          }
+        }
+      }
+    },
+    "whats_new.2026_03_1.scan_flow.title" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Live Barcode Scanner"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Live Barcode Scanner"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Live Barcode Scanner"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Live Barcode Scanner"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Live Barcode Scanner"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Live Barcode Scanner"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Live Barcode Scanner"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Live Barcode Scanner"
           }
         }
       }
