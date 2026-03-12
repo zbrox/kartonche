@@ -27,6 +27,12 @@
             "value" : ""
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -69,6 +75,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "'Always' location permission required for nearby notifications"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "'Always' location permission required for nearby notifications"
@@ -120,6 +132,12 @@
             "value" : "*"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "*"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -162,6 +180,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%@"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "%@"
@@ -220,6 +244,12 @@
             "value" : "%1$@ %2$@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -267,6 +297,12 @@
             "value" : "%@ expires in 7 days"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%@ expires in 7 days"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -308,6 +344,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%@ expires tomorrow"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "%@ expires tomorrow"
@@ -365,6 +407,12 @@
             "value" : "%1$@, %2$@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@, %2$@"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -407,6 +455,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%lld"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "%lld"
@@ -465,6 +519,12 @@
             "value" : "%1$lld / %2$lld"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld / %2$lld"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -507,6 +567,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%lld Cards"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "%lld Cards"
@@ -558,6 +624,12 @@
             "value" : "%lldm"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%lldm"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -599,6 +671,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "1 day before expiration"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "1 day before expiration"
@@ -650,6 +728,12 @@
             "value" : "7 days before expiration"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "7 days before expiration"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -675,8 +759,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "10% off on Tuesdays for premium members"
+            "state" : "translated",
+            "value" : "10% отстъпка във вторник за премиум членове"
           }
         },
         "de" : {
@@ -692,6 +776,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "10% off on Tuesdays for premium members"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "10% off on Tuesdays for premium members"
@@ -722,8 +812,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "42 Market Street"
+            "state" : "translated",
+            "value" : "ул. Пазарска 42"
           }
         },
         "de" : {
@@ -739,6 +829,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "42 Market Street"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "42 Market Street"
@@ -768,8 +864,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "A card with this barcode already exists"
+            "state" : "translated",
+            "value" : "Вече имате карта с този баркод"
           }
         },
         "de" : {
@@ -785,6 +881,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "A card with this barcode already exists"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "A card with this barcode already exists"
@@ -836,6 +938,12 @@
             "value" : "A simple app for organizing your loyalty cards. Open source, privacy-focused, no account required."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "A simple app for organizing your loyalty cards. Open source, privacy-focused, no account required."
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -877,6 +985,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "About"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "About"
@@ -928,6 +1042,12 @@
             "value" : "Access your favorite cards right from your Home Screen."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Access your favorite cards right from your Home Screen."
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -969,6 +1089,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Active"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Active"
@@ -1020,6 +1146,12 @@
             "value" : "Add a Control Center Toggle"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Control Center Toggle"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -1061,6 +1193,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Home Screen Widget"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Add a Home Screen Widget"
@@ -1112,6 +1250,12 @@
             "value" : "Add a location to your card and it will appear automatically when you're nearby."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a location to your card and it will appear automatically when you're nearby."
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -1158,6 +1302,12 @@
             "value" : "Add a Lock Screen Widget"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Lock Screen Widget"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -1199,6 +1349,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add a Store Location"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Add a Store Location"
@@ -1251,6 +1407,12 @@
             "value" : "Add Card"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add Card"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -1298,6 +1460,12 @@
             "value" : "Add Location"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add Location"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -1322,8 +1490,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Add Manually"
+            "state" : "translated",
+            "value" : "Добавяне ръчно"
           }
         },
         "de" : {
@@ -1339,6 +1507,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add Manually"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Add Manually"
@@ -1385,6 +1559,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add to Apple Wallet"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Add to Apple Wallet"
@@ -1437,6 +1617,12 @@
             "value" : "Add to favorites"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add to favorites"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -1461,8 +1647,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Add to Wallet"
+            "state" : "translated",
+            "value" : "Добавяне в Apple Wallet"
           }
         },
         "de" : {
@@ -1478,6 +1664,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add to Wallet"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Add to Wallet"
@@ -1530,6 +1722,12 @@
             "value" : "Add your first loyalty card"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add your first loyalty card"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -1576,6 +1774,12 @@
             "value" : "Add your first loyalty card to get started"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add your first loyalty card to get started"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -1617,6 +1821,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Added to Apple Wallet. Edits sync automatically."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Added to Apple Wallet. Edits sync automatically."
@@ -1669,6 +1879,12 @@
             "value" : "All Cards"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "All Cards"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -1710,6 +1926,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "All cards are expired. Toggle 'Show Expired' in the sort menu to see them."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "All cards are expired. Toggle 'Show Expired' in the sort menu to see them."
@@ -1761,6 +1983,12 @@
             "value" : "All cards will be imported, even duplicates"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "All cards will be imported, even duplicates"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -1802,6 +2030,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Allow Location"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Allow Location"
@@ -1853,6 +2087,12 @@
             "value" : "Always"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Always"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -1894,6 +2134,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Appearance"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Appearance"
@@ -1946,6 +2192,12 @@
             "value" : "Are you sure you want to delete this card?"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Are you sure you want to delete this card?"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -1992,6 +2244,12 @@
             "value" : "Auto"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Auto"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -2033,6 +2291,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Auto-show the right card"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Auto-show the right card"
@@ -2085,6 +2349,12 @@
             "value" : "Barcode Data"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Barcode Data"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -2127,6 +2397,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Barcode for scanning"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Barcode for scanning"
@@ -2179,6 +2455,12 @@
             "value" : "Barcode preview"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Barcode preview"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -2226,6 +2508,12 @@
             "value" : "Barcode Type"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Barcode Type"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -2267,6 +2555,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Better Widget Performance:"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Better Widget Performance:"
@@ -2319,6 +2613,12 @@
             "value" : "Cancel"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cancel"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -2360,6 +2660,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Card"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Card"
@@ -2412,6 +2718,12 @@
             "value" : "Card Color"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Card Color"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -2454,6 +2766,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Card Expires Tomorrow"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Card Expires Tomorrow"
@@ -2506,6 +2824,12 @@
             "value" : "Card Expiring Soon"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Card Expiring Soon"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -2547,6 +2871,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Card Image"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Card Image"
@@ -2599,6 +2929,12 @@
             "value" : "Card Name"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Card Name"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -2641,6 +2977,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "card number"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "card number"
@@ -2693,6 +3035,12 @@
             "value" : "Card Number"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Card Number"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -2735,6 +3083,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Card will appear when you're nearby"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Card will appear when you're nearby"
@@ -2787,6 +3141,12 @@
             "value" : "Card will appear when you're within this distance"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Card will appear when you're within this distance"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -2828,6 +3188,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cardholder Name"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Cardholder Name"
@@ -2879,6 +3245,12 @@
             "value" : "Cards"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cards"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -2920,6 +3292,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cards are exported as .kartonche files that can be shared and imported on other devices."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Cards are exported as .kartonche files that can be shared and imported on other devices."
@@ -2971,6 +3349,12 @@
             "value" : "Cards to import"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cards to import"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -3012,6 +3396,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Change Location"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Change Location"
@@ -3064,6 +3454,12 @@
             "value" : "Choose Card"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Choose Card"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -3088,8 +3484,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Choose from Library"
+            "state" : "translated",
+            "value" : "Снимка от библиотеката"
           }
         },
         "de" : {
@@ -3105,6 +3501,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Choose from Library"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Choose from Library"
@@ -3156,6 +3558,12 @@
             "value" : "Choose Image"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Choose Image"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -3197,6 +3605,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Choose which loyalty card to display"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Choose which loyalty card to display"
@@ -3248,6 +3662,12 @@
             "value" : "Choose which loyalty card to open"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Choose which loyalty card to open"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -3273,8 +3693,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "City Library"
+            "state" : "translated",
+            "value" : "Градска библиотека"
           }
         },
         "de" : {
@@ -3290,6 +3710,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "City Library"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "City Library"
@@ -3342,6 +3768,12 @@
             "value" : "Close"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Close"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -3383,6 +3815,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Confirm Location"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Confirm Location"
@@ -3434,6 +3872,12 @@
             "value" : "Could not detect a barcode in the selected image."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Could not detect a barcode in the selected image."
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -3475,6 +3919,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Current Location"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Current Location"
@@ -3526,6 +3976,12 @@
             "value" : "Custom"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Custom"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -3567,6 +4023,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Custom Text Color"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Custom Text Color"
@@ -3618,6 +4080,12 @@
             "value" : "Data"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Data"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -3642,8 +4110,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Debug"
+            "state" : "translated",
+            "value" : "Дебъгване"
           }
         },
         "de" : {
@@ -3659,6 +4127,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Debug"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Debug"
@@ -3711,6 +4185,12 @@
             "value" : "Delete"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Delete"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -3757,6 +4237,12 @@
             "value" : "Denied"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Denied"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -3798,6 +4284,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Deselect All"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Deselect All"
@@ -3850,6 +4342,12 @@
             "value" : "Detection Radius"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Detection Radius"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -3891,6 +4389,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Disabled"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Disabled"
@@ -3943,6 +4447,12 @@
             "value" : "Display a specific loyalty card with scannable barcode"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Display a specific loyalty card with scannable barcode"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -3989,6 +4499,12 @@
             "value" : "Done"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Done"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -4014,8 +4530,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Downtown Gym"
+            "state" : "translated",
+            "value" : "Фитнес в центъра"
           }
         },
         "de" : {
@@ -4031,6 +4547,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Downtown Gym"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Downtown Gym"
@@ -4082,6 +4604,12 @@
             "value" : "Drop Pin on Map"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Drop Pin on Map"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -4106,8 +4634,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Duplicate Barcode"
+            "state" : "translated",
+            "value" : "Повтарящ се баркод"
           }
         },
         "de" : {
@@ -4123,6 +4651,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Duplicate Barcode"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Duplicate Barcode"
@@ -4174,6 +4708,12 @@
             "value" : "Duplicate cards will not be imported"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Duplicate cards will not be imported"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -4220,6 +4760,12 @@
             "value" : "Duplicate handling"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Duplicate handling"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -4261,6 +4807,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Duplicates found"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Duplicates found"
@@ -4313,6 +4865,12 @@
             "value" : "Edit"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Edit"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -4355,6 +4913,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Edit Location"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Edit Location"
@@ -4406,6 +4970,12 @@
             "value" : "Enable"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Enable"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -4447,6 +5017,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Enable 'Always' Location"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Enable 'Always' Location"
@@ -4498,6 +5074,12 @@
             "value" : "Enable in Settings:"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Enable in Settings:"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -4539,6 +5121,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Enable location to see cards for nearby stores"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Enable location to see cards for nearby stores"
@@ -4590,6 +5178,12 @@
             "value" : "Enable Nearby Notifications"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Enable Nearby Notifications"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -4631,6 +5225,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Enable Reminders"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Enable Reminders"
@@ -4682,6 +5282,12 @@
             "value" : "Enabled"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Enabled"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -4728,6 +5334,12 @@
             "value" : "Ephemeral"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Ephemeral"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -4769,6 +5381,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Existing cards will be replaced with imported versions"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Existing cards will be replaced with imported versions"
@@ -4827,6 +5445,12 @@
             "value" : "Expected exactly %1$d digits (provided: %2$d)"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expected exactly %1$d digits (provided: %2$d)"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -4851,8 +5475,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Experimental Feature"
+            "state" : "translated",
+            "value" : "Експериментална функция"
           }
         },
         "de" : {
@@ -4868,6 +5492,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Experimental Feature"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Experimental Feature"
@@ -4920,6 +5550,12 @@
             "value" : "Expiration Date"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expiration Date"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -4966,6 +5602,12 @@
             "value" : "Expiration Reminders"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expiration Reminders"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -5007,6 +5649,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expiration reminders require notification access."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Expiration reminders require notification access."
@@ -5059,6 +5707,12 @@
             "value" : "Expired on"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expired on"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -5101,6 +5755,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expires on"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Expires on"
@@ -5153,6 +5813,12 @@
             "value" : "Expiring soon on"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expiring soon on"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -5194,6 +5860,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Export"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Export"
@@ -5245,6 +5917,12 @@
             "value" : "Export (%lld)"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Export (%lld)"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -5286,6 +5964,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Export All Cards"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Export All Cards"
@@ -5337,6 +6021,12 @@
             "value" : "Export date"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Export date"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -5378,6 +6068,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Export Failed"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Export Failed"
@@ -5430,6 +6126,12 @@
             "value" : "Failed to create barcode filter"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Failed to create barcode filter"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -5471,6 +6173,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Failed to create pass"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Failed to create pass"
@@ -5523,6 +6231,12 @@
             "value" : "Failed to generate barcode image"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Failed to generate barcode image"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -5570,6 +6284,12 @@
             "value" : "Failed to load image"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Failed to load image"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -5611,6 +6331,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Failed to read file: %@"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Failed to read file: %@"
@@ -5663,6 +6389,12 @@
             "value" : "Favorite"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Favorite"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -5705,6 +6437,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Favorites Carousel"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Favorites Carousel"
@@ -5756,6 +6494,12 @@
             "value" : "Features"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Features"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -5797,6 +6541,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "File not found"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "File not found"
@@ -5848,6 +6598,12 @@
             "value" : "Find nearest card in widgets"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Find nearest card in widgets"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -5873,8 +6629,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Fresh Market"
+            "state" : "translated",
+            "value" : "Свеж пазар"
           }
         },
         "de" : {
@@ -5890,6 +6646,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Fresh Market"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Fresh Market"
@@ -5920,8 +6682,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Fresh Market - Downtown"
+            "state" : "translated",
+            "value" : "Свеж пазар - Център"
           }
         },
         "de" : {
@@ -5937,6 +6699,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Fresh Market - Downtown"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Fresh Market - Downtown"
@@ -5988,6 +6756,12 @@
             "value" : "Fresher location data"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Fresher location data"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -6029,6 +6803,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generating pass..."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Generating pass..."
@@ -6080,6 +6860,12 @@
             "value" : "Get better widget performance with background location"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get better widget performance with background location"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -6121,6 +6907,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get notified before your cards expire so you never miss renewing them."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Get notified before your cards expire so you never miss renewing them."
@@ -6172,6 +6964,12 @@
             "value" : "Get reminded about your loyalty cards when you're near a store where you can use them."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get reminded about your loyalty cards when you're near a store where you can use them."
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -6218,6 +7016,12 @@
             "value" : "Get reminded before your loyalty cards expire so you can renew them in time."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get reminded before your loyalty cards expire so you can renew them in time."
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -6259,6 +7063,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Go to Settings > Notifications > kartonche to enable reminders"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Go to Settings > Notifications > kartonche to enable reminders"
@@ -6311,6 +7121,12 @@
             "value" : "Has Expiration Date"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Has Expiration Date"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -6335,8 +7151,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "has locations"
+            "state" : "translated",
+            "value" : "има локации"
           }
         },
         "de" : {
@@ -6352,6 +7168,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "has locations"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "has locations"
@@ -6403,6 +7225,12 @@
             "value" : "How to handle duplicates"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "How to handle duplicates"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -6427,8 +7255,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "iCloud Signed Out"
+            "state" : "translated",
+            "value" : "Излезли сте от iCloud"
           }
         },
         "de" : {
@@ -6444,6 +7272,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Signed Out"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "iCloud Signed Out"
@@ -6473,8 +7307,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "iCloud Sync"
+            "state" : "translated",
+            "value" : "Синхронизиране с iCloud"
           }
         },
         "de" : {
@@ -6490,6 +7324,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Sync"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "iCloud Sync"
@@ -6519,8 +7359,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "iCloud Unavailable"
+            "state" : "translated",
+            "value" : "Неналичен iCloud"
           }
         },
         "de" : {
@@ -6536,6 +7376,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Unavailable"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "iCloud Unavailable"
@@ -6587,6 +7433,12 @@
             "value" : "If you enable location features, your location is used only to show cards for nearby stores and is never sent to any server."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "If you enable location features, your location is used only to show cards for nearby stores and is never sent to any server."
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -6628,6 +7480,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Import"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Import"
@@ -6679,6 +7537,12 @@
             "value" : "Import Cards"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Import Cards"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -6720,6 +7584,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Import Failed"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Import Failed"
@@ -6771,6 +7641,12 @@
             "value" : "Import from File"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Import from File"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -6812,6 +7688,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Importing..."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Importing..."
@@ -6864,6 +7746,12 @@
             "value" : "Invalid barcode data"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Invalid barcode data"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -6910,6 +7798,12 @@
             "value" : "Invalid card data: %@"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Invalid card data: %@"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -6951,6 +7845,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Invalid file format. Expected .kartonche file."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Invalid file format. Expected .kartonche file."
@@ -7003,6 +7903,12 @@
             "value" : "Invalid image format"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Invalid image format"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -7044,6 +7950,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "kartonche"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "kartonche"
@@ -7097,6 +8009,12 @@
             "value" : "Kartonche"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Kartonche"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -7122,8 +8040,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information."
+            "state" : "translated",
+            "value" : "Kartonche съхранява вашите карти на устройството Ви и може да ги синхронизира с личният ви акаунт в iCloud. Не събиране, проследяваме или споделяме личната Ви информация."
           }
         },
         "de" : {
@@ -7139,6 +8057,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information."
@@ -7190,6 +8114,12 @@
             "value" : "Keep both"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Keep both"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -7236,6 +8166,12 @@
             "value" : "Keep Current"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Keep Current"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -7260,8 +8196,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Last checked"
+            "state" : "translated",
+            "value" : "Последна проверка"
           }
         },
         "de" : {
@@ -7277,6 +8213,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Last checked"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Last checked"
@@ -7328,6 +8270,12 @@
             "value" : "Launch Kartonche"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Launch Kartonche"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -7369,6 +8317,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Legal"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Legal"
@@ -7420,6 +8374,12 @@
             "value" : "License"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "License"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -7444,8 +8404,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Licenses"
+            "state" : "translated",
+            "value" : "Лицензи"
           }
         },
         "de" : {
@@ -7461,6 +8421,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Licenses"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Licenses"
@@ -7512,6 +8478,12 @@
             "value" : "Limited"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Limited"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -7553,6 +8525,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Location"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Location"
@@ -7604,6 +8582,12 @@
             "value" : "Location Access Denied"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Location Access Denied"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -7645,6 +8629,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Location access is restricted by parental controls or device management"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Location access is restricted by parental controls or device management"
@@ -7696,6 +8686,12 @@
             "value" : "Location data"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Location data"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -7742,6 +8738,12 @@
             "value" : "Location data never leaves your device"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Location data never leaves your device"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -7783,6 +8785,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Location features require access to your location."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Location features require access to your location."
@@ -7835,6 +8843,12 @@
             "value" : "Location Name"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Location Name"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -7876,6 +8890,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Location not available"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Location not available"
@@ -7927,6 +8947,12 @@
             "value" : "Location Permission"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Location Permission"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -7968,6 +8994,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Location Permission Needed"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Location Permission Needed"
@@ -8019,6 +9051,12 @@
             "value" : "Location permission not granted"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Location permission not granted"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -8061,6 +9099,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Locations"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Locations"
@@ -8178,6 +9222,24 @@
             }
           }
         },
+        "it" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "%lld location"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "%lld locations"
+                }
+              }
+            }
+          }
+        },
         "pt" : {
           "variations" : {
             "plural" : {
@@ -8250,8 +9312,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Long press a card to share it with friends and family."
+            "state" : "translated",
+            "value" : "Задръжте пръста си на карта по-дълго, за да видите опцията за споделяне."
           }
         },
         "de" : {
@@ -8267,6 +9329,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long press a card to share it with friends and family."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Long press a card to share it with friends and family."
@@ -8319,6 +9387,12 @@
             "value" : "Loyalty Card"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Loyalty Card"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -8366,6 +9440,12 @@
             "value" : "Loyalty Cards"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Loyalty Cards"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -8391,8 +9471,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Maria Ivanova"
+            "state" : "translated",
+            "value" : "Мария Иванова"
           }
         },
         "de" : {
@@ -8408,6 +9488,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Maria Ivanova"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Maria Ivanova"
@@ -8460,6 +9546,12 @@
             "value" : "Mark cards as favorites to see them here"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Mark cards as favorites to see them here"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -8506,6 +9598,12 @@
             "value" : "Minimal battery impact"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Minimal battery impact"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -8547,6 +9645,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "MIT License"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "MIT License"
@@ -8599,6 +9703,12 @@
             "value" : "More"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "More"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -8645,6 +9755,12 @@
             "value" : "More accurate nearby store detection"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "More accurate nearby store detection"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -8670,8 +9786,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Morning Brew Coffee"
+            "state" : "translated",
+            "value" : "Сутрешно кафе"
           }
         },
         "de" : {
@@ -8687,6 +9803,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Morning Brew Coffee"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Morning Brew Coffee"
@@ -8739,6 +9861,12 @@
             "value" : "Multiple Barcodes Found"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Multiple Barcodes Found"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -8781,6 +9909,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Navigate through your favorite cards with arrow buttons"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Navigate through your favorite cards with arrow buttons"
@@ -8833,6 +9967,12 @@
             "value" : "Nearby"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Nearby"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -8874,6 +10014,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Nearby Card Notifications"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Nearby Card Notifications"
@@ -8926,6 +10072,12 @@
             "value" : "Nearest Store"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Nearest Store"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -8967,6 +10119,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Nearest Store Card"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Nearest Store Card"
@@ -9018,6 +10176,12 @@
             "value" : "Never forget your loyalty card at the store"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Never forget your loyalty card at the store"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -9064,6 +10228,12 @@
             "value" : "Next Card"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Next Card"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -9088,8 +10258,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Next time, try adding a card by taking a photo or choosing one from your library."
+            "state" : "translated",
+            "value" : "Следващият път, пробвайте да добавите карта директно през камерата или от снимка във Вашата колекция."
           }
         },
         "de" : {
@@ -9105,6 +10275,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Next time, try adding a card by taking a photo or choosing one from your library."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Next time, try adding a card by taking a photo or choosing one from your library."
@@ -9156,6 +10332,12 @@
             "value" : "No account required"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No account required"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -9197,6 +10379,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No ads"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "No ads"
@@ -9248,6 +10436,12 @@
             "value" : "No analytics"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No analytics"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -9272,8 +10466,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "No Barcode Found"
+            "state" : "translated",
+            "value" : "Не е открит баркод"
           }
         },
         "de" : {
@@ -9289,6 +10483,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No Barcode Found"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "No Barcode Found"
@@ -9341,6 +10541,12 @@
             "value" : "No barcodes found in image"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No barcodes found in image"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -9383,6 +10589,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No Card Selected"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "No Card Selected"
@@ -9435,6 +10647,12 @@
             "value" : "No Cards"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No Cards"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -9477,6 +10695,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No cards matching '%@'"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "No cards matching '%@'"
@@ -9529,6 +10753,12 @@
             "value" : "No Favorites"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No Favorites"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -9571,6 +10801,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No nearby stores"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "No nearby stores"
@@ -9622,6 +10858,12 @@
             "value" : "No Results"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No Results"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -9663,6 +10905,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Not Now"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Not Now"
@@ -9714,6 +10962,12 @@
             "value" : "Not Set"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Not Set"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -9755,6 +11009,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Not set up"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Not set up"
@@ -9807,6 +11067,12 @@
             "value" : "Notes"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Notes"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -9848,6 +11114,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Notification Permission"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Notification Permission"
@@ -9899,6 +11171,12 @@
             "value" : "Notification permission required"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Notification permission required"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -9940,6 +11218,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Notifications"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Notifications"
@@ -9991,6 +11275,12 @@
             "value" : "Notifications Disabled"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Notifications Disabled"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -10037,6 +11327,12 @@
             "value" : "OK"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "OK"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -10061,8 +11357,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Open Existing"
+            "state" : "translated",
+            "value" : "Отворете съществуващата"
           }
         },
         "de" : {
@@ -10078,6 +11374,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open Existing"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Open Existing"
@@ -10124,6 +11426,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open Favorite Card"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Open Favorite Card"
@@ -10176,6 +11484,12 @@
             "value" : "Open Kartonche"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open Kartonche"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -10217,6 +11531,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open Nearest Store Card"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Open Nearest Store Card"
@@ -10268,6 +11588,12 @@
             "value" : "Open Settings"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open Settings"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -10292,8 +11618,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Open your favorite card with a quick tap from Control Center."
+            "state" : "translated",
+            "value" : "Отворете любима карта с едно натисканe през бутон в Control Center."
           }
         },
         "de" : {
@@ -10309,6 +11635,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open your favorite card with a quick tap from Control Center."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Open your favorite card with a quick tap from Control Center."
@@ -10361,6 +11693,12 @@
             "value" : "Opens camera to scan barcode"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Opens camera to scan barcode"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -10402,6 +11740,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Opens card for nearest store location"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Opens card for nearest store location"
@@ -10453,6 +11797,12 @@
             "value" : "Opens the Kartonche app"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Opens the Kartonche app"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -10494,6 +11844,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Opens the loyalty card for the nearest store"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Opens the loyalty card for the nearest store"
@@ -10545,6 +11901,12 @@
             "value" : "Opens your selected favorite loyalty card"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Opens your selected favorite loyalty card"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -10586,6 +11948,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Permission"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Permission"
@@ -10637,6 +12005,12 @@
             "value" : "Permission required"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Permission required"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -10662,8 +12036,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Pet Paradise"
+            "state" : "translated",
+            "value" : "Зоо Свят"
           }
         },
         "de" : {
@@ -10679,6 +12053,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pet Paradise"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Pet Paradise"
@@ -10730,6 +12110,12 @@
             "value" : "Preview All Tips (next launch)"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview All Tips (next launch)"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -10771,6 +12157,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview forces all tips visible on next launch (they won't dismiss until you relaunch again). Reset clears donation history so tips reappear as rules are met."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Preview forces all tips visible on next launch (they won't dismiss until you relaunch again). Reset clears donation history so tips reappear as rules are met."
@@ -10822,6 +12214,12 @@
             "value" : "Previous Card"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Previous Card"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -10863,6 +12261,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Privacy"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Privacy"
@@ -10914,6 +12318,12 @@
             "value" : "Privacy Policy"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Privacy Policy"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -10955,6 +12365,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Provisional"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Provisional"
@@ -11007,6 +12423,12 @@
             "value" : "Quick access to open the app"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick access to open the app"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -11049,6 +12471,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick access to your loyalty cards"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Quick access to your loyalty cards"
@@ -11100,6 +12528,12 @@
             "value" : "Radius: %lldm"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Radius: %lldm"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -11146,6 +12580,12 @@
             "value" : "Rate on App Store"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Rate on App Store"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -11170,8 +12610,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Refresh Sync Status"
+            "state" : "translated",
+            "value" : "Обновяване"
           }
         },
         "de" : {
@@ -11187,6 +12627,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Refresh Sync Status"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Refresh Sync Status"
@@ -11239,6 +12685,12 @@
             "value" : "Remove from favorites"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Remove from favorites"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -11280,6 +12732,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Remove Image"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Remove Image"
@@ -11331,6 +12789,12 @@
             "value" : "Replace existing"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Replace existing"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -11372,6 +12836,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Report an Issue"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Report an Issue"
@@ -11423,6 +12893,12 @@
             "value" : "Requires Always location + Notifications"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Requires Always location + Notifications"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -11464,6 +12940,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Reset Tips History"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Reset Tips History"
@@ -11515,6 +12997,12 @@
             "value" : "Respects iOS Focus modes and Do Not Disturb. Silent notifications only."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Respects iOS Focus modes and Do Not Disturb. Silent notifications only."
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -11556,6 +13044,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Restricted"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Restricted"
@@ -11608,6 +13102,12 @@
             "value" : "Save"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Save"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -11632,8 +13132,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Save Anyway"
+            "state" : "translated",
+            "value" : "Запазете дубликата"
           }
         },
         "de" : {
@@ -11649,6 +13149,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Save Anyway"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Save Anyway"
@@ -11701,6 +13207,12 @@
             "value" : "Scan Barcode"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Scan Barcode"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -11725,8 +13237,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Scan from a Photo"
+            "state" : "translated",
+            "value" : "Сканиране на снимка"
           }
         },
         "de" : {
@@ -11742,6 +13254,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Scan from a Photo"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Scan from a Photo"
@@ -11794,6 +13312,12 @@
             "value" : "Scan from Photo"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Scan from Photo"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -11835,6 +13359,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Scanning failed: %@"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Scanning failed: %@"
@@ -11887,6 +13417,12 @@
             "value" : "Scanning..."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Scanning..."
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -11928,6 +13464,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Scheduled reminders"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Scheduled reminders"
@@ -11980,6 +13522,12 @@
             "value" : "Search"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Search"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -12021,6 +13569,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Search failed. Check your internet connection."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Search failed. Check your internet connection."
@@ -12072,6 +13626,12 @@
             "value" : "Search for address..."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Search for address..."
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -12118,6 +13678,12 @@
             "value" : "See cards when you're nearby"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "See cards when you're nearby"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -12159,6 +13725,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "See your favorite cards without even unlocking your phone."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "See your favorite cards without even unlocking your phone."
@@ -12211,6 +13783,12 @@
             "value" : "Select 'Location' then choose 'Always'"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Select 'Location' then choose 'Always'"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -12252,6 +13830,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Select All"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Select All"
@@ -12303,6 +13887,12 @@
             "value" : "Select Card"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Select Card"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -12344,6 +13934,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Select Cards"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Select Cards"
@@ -12395,6 +13991,12 @@
             "value" : "Select Cards to Export"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Select Cards to Export"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -12436,6 +14038,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Select Favorite Card"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Select Favorite Card"
@@ -12488,6 +14096,12 @@
             "value" : "Select photo from library to scan barcode"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Select photo from library to scan barcode"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -12535,6 +14149,12 @@
             "value" : "Select which barcode to use"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Select which barcode to use"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -12576,6 +14196,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Selected Location"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Selected Location"
@@ -12628,6 +14254,12 @@
             "value" : "Settings"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Settings"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -12669,6 +14301,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Settings > kartonche > Location > While Using the App"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Settings > kartonche > Location > While Using the App"
@@ -12720,6 +14358,12 @@
             "value" : "Settings > Notifications > kartonche"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Settings > Notifications > kartonche"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -12761,6 +14405,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Share"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Share"
@@ -12812,6 +14462,12 @@
             "value" : "Share card"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Share card"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -12853,6 +14509,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Share Your Cards"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Share Your Cards"
@@ -12904,6 +14566,12 @@
             "value" : "Show Expired"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show Expired"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -12950,6 +14618,12 @@
             "value" : "Show the next favorite card"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show the next favorite card"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -12991,6 +14665,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show the previous favorite card"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Show the previous favorite card"
@@ -13043,6 +14723,12 @@
             "value" : "Show this to the cashier to scan"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show this to the cashier to scan"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -13085,6 +14771,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Shows card for nearest store"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Shows card for nearest store"
@@ -13137,6 +14829,12 @@
             "value" : "Shows card for nearest store within 1km"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Shows card for nearest store within 1km"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -13178,6 +14876,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Skip duplicates"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Skip duplicates"
@@ -13230,6 +14934,12 @@
             "value" : "Sort"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sort"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -13271,6 +14981,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Source Code"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Source Code"
@@ -13323,6 +15039,12 @@
             "value" : "Store Name"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Store Name"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -13347,8 +15069,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Suggested Colors"
+            "state" : "translated",
+            "value" : "Предложени цветове"
           }
         },
         "de" : {
@@ -13364,6 +15086,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Suggested Colors"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Suggested Colors"
@@ -13415,6 +15143,12 @@
             "value" : "Support"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Support"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -13456,6 +15190,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Support Development"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Support Development"
@@ -13507,6 +15247,12 @@
             "value" : "Swipe a card to favorite or delete it."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe a card to favorite or delete it."
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -13553,6 +15299,12 @@
             "value" : "Swipe for Quick Actions"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe for Quick Actions"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -13577,8 +15329,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Sync Active"
+            "state" : "translated",
+            "value" : "Синхронизацията е активна"
           }
         },
         "de" : {
@@ -13594,6 +15346,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sync Active"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Sync Active"
@@ -13623,8 +15381,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Sync Error"
+            "state" : "translated",
+            "value" : "Грешка при синхронизиране"
           }
         },
         "de" : {
@@ -13640,6 +15398,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sync Error"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Sync Error"
@@ -13669,8 +15433,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Take a Photo"
+            "state" : "translated",
+            "value" : "През камерата"
           }
         },
         "de" : {
@@ -13686,6 +15450,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Take a Photo"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Take a Photo"
@@ -13738,6 +15508,12 @@
             "value" : "Tap a card to preview"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tap a card to preview"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -13779,6 +15555,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tap notification to view card"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Tap notification to view card"
@@ -13830,6 +15612,12 @@
             "value" : "Tap to see your cards"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tap to see your cards"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -13871,6 +15659,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tap to show your card"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Tap to show your card"
@@ -13922,6 +15716,12 @@
             "value" : "Text Color"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Text Color"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -13963,6 +15763,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Thanks to early testers and friends who provided feedback."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Thanks to early testers and friends who provided feedback."
@@ -14014,6 +15820,12 @@
             "value" : "The app contains no advertising."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The app contains no advertising."
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -14038,8 +15850,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Third-Party Licenses"
+            "state" : "translated",
+            "value" : "Лицензи на външни библиотеки"
           }
         },
         "de" : {
@@ -14055,6 +15867,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Third-Party Licenses"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Third-Party Licenses"
@@ -14106,6 +15924,12 @@
             "value" : "This barcode type is added as an image and may not scan everywhere."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This barcode type is added as an image and may not scan everywhere."
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -14147,6 +15971,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This barcode type uses the barcode as the Apple Wallet strip image. This image won't be used."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "This barcode type uses the barcode as the Apple Wallet strip image. This image won't be used."
@@ -14198,6 +16028,12 @@
             "value" : "This card is in Apple Wallet. Edits sync automatically."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This card is in Apple Wallet. Edits sync automatically."
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -14244,6 +16080,12 @@
             "value" : "This helps you:"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This helps you:"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -14268,8 +16110,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "This image is used only for Apple Wallet passes."
+            "state" : "translated",
+            "value" : "Това изображение се ползва само при ползване на Apple Wallet"
           }
         },
         "de" : {
@@ -14285,6 +16127,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This image is used only for Apple Wallet passes."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "This image is used only for Apple Wallet passes."
@@ -14331,6 +16179,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "TipKit"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "TipKit"
@@ -14383,6 +16237,12 @@
             "value" : "To save card locations, kartonche needs to access your location."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "To save card locations, kartonche needs to access your location."
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -14407,8 +16267,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Try Another Photo"
+            "state" : "translated",
+            "value" : "Друго изображение"
           }
         },
         "de" : {
@@ -14424,6 +16284,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Try Another Photo"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Try Another Photo"
@@ -14475,6 +16341,12 @@
             "value" : "Type to search, then tap a result"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Type to search, then tap a result"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -14516,6 +16388,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unable to determine address for this location"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Unable to determine address for this location"
@@ -14567,6 +16445,12 @@
             "value" : "Unable to find location details"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unable to find location details"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -14608,6 +16492,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unable to get current location"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Unable to get current location"
@@ -14660,6 +16550,12 @@
             "value" : "Unfavorite"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unfavorite"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -14701,6 +16597,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unknown"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Unknown"
@@ -14752,6 +16654,12 @@
             "value" : "Unknown Address"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unknown Address"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -14793,6 +16701,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unsupported file version: %@"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Unsupported file version: %@"
@@ -14844,6 +16758,12 @@
             "value" : "Upgrade"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Upgrade"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -14885,6 +16805,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Upgrade to 'Always' for nearby notifications and better widget performance"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Upgrade to 'Always' for nearby notifications and better widget performance"
@@ -14936,6 +16862,12 @@
             "value" : "Upgrade to 'Always' Location"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Upgrade to 'Always' Location"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -14977,6 +16909,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use Current Location"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Use Current Location"
@@ -15034,6 +16972,12 @@
             "value" : "Version %1$@ (%2$@)"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Version %1$@ (%2$@)"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -15075,6 +17019,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "We don't track how you use the app."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "We don't track how you use the app."
@@ -15126,6 +17076,12 @@
             "value" : "We'll remind you:"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "We'll remind you:"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -15172,6 +17128,12 @@
             "value" : "What's New"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "What's New"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -15196,8 +17158,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Never miss a card renewal"
+            "state" : "translated",
+            "value" : "Никога не пропускайте подновяване на карта"
           }
         },
         "de" : {
@@ -15219,6 +17181,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Never miss a card renewal"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Never miss a card renewal"
@@ -15248,8 +17216,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Expiration Reminders"
+            "state" : "translated",
+            "value" : "Напомняния за изтичане"
           }
         },
         "de" : {
@@ -15271,6 +17239,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Expiration Reminders"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Expiration Reminders"
@@ -15300,8 +17274,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Share cards via AirDrop"
+            "state" : "translated",
+            "value" : "Споделяне на карти чрез AirDrop"
           }
         },
         "de" : {
@@ -15323,6 +17297,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Share cards via AirDrop"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Share cards via AirDrop"
@@ -15352,8 +17332,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Export & Share"
+            "state" : "translated",
+            "value" : "Експортиране и споделяне"
           }
         },
         "de" : {
@@ -15375,6 +17355,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Export & Share"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Export & Share"
@@ -15404,8 +17390,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Get notified when near your saved stores"
+            "state" : "translated",
+            "value" : "Известия при близост до запазени магазини"
           }
         },
         "de" : {
@@ -15427,6 +17413,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get notified when near your saved stores"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Get notified when near your saved stores"
@@ -15456,8 +17448,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Location Features"
+            "state" : "translated",
+            "value" : "Функции за местоположение"
           }
         },
         "de" : {
@@ -15479,6 +17471,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Location Features"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Location Features"
@@ -15508,8 +17506,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Quick access from home and lock screen"
+            "state" : "translated",
+            "value" : "Бърз достъп от началния и заключен екран"
           }
         },
         "de" : {
@@ -15531,6 +17529,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick access from home and lock screen"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Quick access from home and lock screen"
@@ -15560,8 +17564,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Widgets"
+            "state" : "translated",
+            "value" : "Инструменти"
           }
         },
         "de" : {
@@ -15583,6 +17587,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Widgets"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Widgets"
@@ -15612,8 +17622,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Learn about new features and app info"
+            "state" : "translated",
+            "value" : "Научете за новите функции и информация за приложението"
           }
         },
         "de" : {
@@ -15635,6 +17645,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Learn about new features and app info"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Learn about new features and app info"
@@ -15664,8 +17680,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "About & What's New"
+            "state" : "translated",
+            "value" : "Относно и Какво ново"
           }
         },
         "de" : {
@@ -15687,6 +17703,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "About & What's New"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "About & What's New"
@@ -15716,8 +17738,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Tap to expand or collapse card notes"
+            "state" : "translated",
+            "value" : "Докоснете за разгъване или свиване на бележките"
           }
         },
         "de" : {
@@ -15739,6 +17761,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tap to expand or collapse card notes"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Tap to expand or collapse card notes"
@@ -15768,8 +17796,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Collapsible Notes"
+            "state" : "translated",
+            "value" : "Сгъваеми бележки"
           }
         },
         "de" : {
@@ -15791,6 +17819,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Collapsible Notes"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Collapsible Notes"
@@ -15820,8 +17854,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "See which country merchants are from"
+            "state" : "translated",
+            "value" : "Вижте от коя държава са търговците"
           }
         },
         "de" : {
@@ -15843,6 +17877,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "See which country merchants are from"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "See which country merchants are from"
@@ -15872,8 +17912,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Merchant Country Flags"
+            "state" : "translated",
+            "value" : "Флагове на държави"
           }
         },
         "de" : {
@@ -15895,6 +17935,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Merchant Country Flags"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Merchant Country Flags"
@@ -15924,8 +17970,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Quick access to cards from Control Center"
+            "state" : "translated",
+            "value" : "Бърз достъп до карти от Контролния център"
           }
         },
         "de" : {
@@ -15947,6 +17993,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick access to cards from Control Center"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Quick access to cards from Control Center"
@@ -15976,8 +18028,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Control Center Widgets"
+            "state" : "translated",
+            "value" : "Инструменти за Контролен център"
           }
         },
         "de" : {
@@ -15999,6 +18051,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Control Center Widgets"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Control Center Widgets"
@@ -16028,8 +18086,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Cards now display with prominent brand colors"
+            "state" : "translated",
+            "value" : "Картите вече се показват с изявени цветове на марката"
           }
         },
         "de" : {
@@ -16051,6 +18109,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cards now display with prominent brand colors"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Cards now display with prominent brand colors"
@@ -16080,8 +18144,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Redesigned Card Display"
+            "state" : "translated",
+            "value" : "Преработен дизайн на картите"
           }
         },
         "de" : {
@@ -16103,6 +18167,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Redesigned Card Display"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Redesigned Card Display"
@@ -16132,8 +18202,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Swipe cards to quickly favorite, edit, or delete"
+            "state" : "translated",
+            "value" : "Плъзнете карти за бързо означаване, редактиране или изтриване"
           }
         },
         "de" : {
@@ -16155,6 +18225,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe cards to quickly favorite, edit, or delete"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Swipe cards to quickly favorite, edit, or delete"
@@ -16184,8 +18260,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Swipe Actions"
+            "state" : "translated",
+            "value" : "Действия при плъзгане"
           }
         },
         "de" : {
@@ -16207,6 +18283,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Swipe Actions"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Swipe Actions"
@@ -16236,8 +18318,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Add cards to Apple Wallet with on-device pass signing"
+            "state" : "translated",
+            "value" : "Добавяне на карти в Apple Wallet с подписване на пространството на устройството"
           }
         },
         "de" : {
@@ -16259,6 +18341,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add cards to Apple Wallet with on-device pass signing"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Add cards to Apple Wallet with on-device pass signing"
@@ -16316,6 +18404,12 @@
             "value" : "Apple Wallet"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Apple Wallet"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -16340,8 +18434,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Revamped data import and export for easy backup and transfer"
+            "state" : "translated",
+            "value" : "Подобрено импортиране и експортиране за лесно архивиране и прехвърляне"
           }
         },
         "de" : {
@@ -16363,6 +18457,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Revamped data import and export for easy backup and transfer"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Revamped data import and export for easy backup and transfer"
@@ -16392,8 +18492,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Import & Export"
+            "state" : "translated",
+            "value" : "Импортиране и експортиране"
           }
         },
         "de" : {
@@ -16415,6 +18515,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Import & Export"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Import & Export"
@@ -16444,8 +18550,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Preview .kartonche files with Quick Look before importing"
+            "state" : "translated",
+            "value" : "Преглед на .kartonche файлове с Бърз преглед преди импортиране"
           }
         },
         "de" : {
@@ -16467,6 +18573,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Preview .kartonche files with Quick Look before importing"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Preview .kartonche files with Quick Look before importing"
@@ -16496,8 +18608,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Quick Look Preview"
+            "state" : "translated",
+            "value" : "Бърз преглед"
           }
         },
         "de" : {
@@ -16519,6 +18631,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick Look Preview"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Quick Look Preview"
@@ -16548,8 +18666,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Add cards faster by scanning from camera or photo library with automatic barcode and color detection"
+            "state" : "translated",
+            "value" : "По-бързо добавяне на карти чрез сканиране от камера или снимка с автоматично разпознаване на баркод и цвят"
           }
         },
         "de" : {
@@ -16571,6 +18689,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add cards faster by scanning from camera or photo library with automatic barcode and color detection"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Add cards faster by scanning from camera or photo library with automatic barcode and color detection"
@@ -16600,8 +18724,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Quick Scan"
+            "state" : "translated",
+            "value" : "Бързо сканиране"
           }
         },
         "de" : {
@@ -16623,6 +18747,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quick Scan"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Quick Scan"
@@ -16652,8 +18782,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Find your loyalty cards from the home screen via Spotlight"
+            "state" : "translated",
+            "value" : "Намерете картите си за лоялност от началния екран чрез Spotlight"
           }
         },
         "de" : {
@@ -16675,6 +18805,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Find your loyalty cards from the home screen via Spotlight"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Find your loyalty cards from the home screen via Spotlight"
@@ -16704,8 +18840,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Spotlight Search"
+            "state" : "translated",
+            "value" : "Търсене в Spotlight"
           }
         },
         "de" : {
@@ -16727,6 +18863,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Spotlight Search"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Spotlight Search"
@@ -16756,8 +18898,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Supports EAN-13, EAN-8, Code 39, UPC-E, Interleaved 2 of 5, and DataMatrix barcodes with authentic rendering and Apple Wallet integration."
+            "state" : "translated",
+            "value" : "Поддръжка на EAN-13, EAN-8, Code 39, UPC-E, Interleaved 2 of 5, DataMatrix с коректно изобразяване и интеграция с Apple Wallet."
           }
         },
         "de" : {
@@ -16779,6 +18921,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Supports EAN-13, EAN-8, Code 39, UPC-E, Interleaved 2 of 5, and DataMatrix barcodes with authentic rendering and Apple Wallet integration."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Supports EAN-13, EAN-8, Code 39, UPC-E, Interleaved 2 of 5, and DataMatrix barcodes with authentic rendering and Apple Wallet integration."
@@ -16808,8 +18956,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Barcode Support"
+            "state" : "translated",
+            "value" : "Повече поддържани баркодове"
           }
         },
         "de" : {
@@ -16831,6 +18979,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Barcode Support"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Barcode Support"
@@ -16860,8 +19014,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Cards now sync automatically across your devices when iCloud is available"
+            "state" : "translated",
+            "value" : "Картите вече се синхронизират автоматично между устройствата ви, когато iCloud е наличен"
           }
         },
         "de" : {
@@ -16883,6 +19037,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cards now sync automatically across your devices when iCloud is available"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Cards now sync automatically across your devices when iCloud is available"
@@ -16912,8 +19072,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "iCloud Sync"
+            "state" : "translated",
+            "value" : "Синхронизация с iCloud"
           }
         },
         "de" : {
@@ -16935,6 +19095,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "iCloud Sync"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "iCloud Sync"
@@ -16964,8 +19130,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Point your camera at a barcode to add a card instantly."
+            "state" : "translated",
+            "value" : "Насочете камерата си към баркод и го добавете мигновенно."
           }
         },
         "de" : {
@@ -16987,6 +19153,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Point your camera at a barcode to add a card instantly."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Point your camera at a barcode to add a card instantly."
@@ -17016,8 +19188,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Live Barcode Scanner"
+            "state" : "translated",
+            "value" : "Мигновен скенер на баркодове"
           }
         },
         "de" : {
@@ -17039,6 +19211,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Live Barcode Scanner"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Live Barcode Scanner"
@@ -17068,8 +19246,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Version %@"
+            "state" : "translated",
+            "value" : "Версия %@"
           }
         },
         "de" : {
@@ -17091,6 +19269,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Version %@"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Version %@"
@@ -17142,6 +19326,12 @@
             "value" : "While Using App"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "While Using App"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -17183,6 +19373,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Widgets work when app is closed"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Widgets work when app is closed"
@@ -17234,6 +19430,12 @@
             "value" : "You can disable reminders anytime in Settings."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You can disable reminders anytime in Settings."
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -17275,6 +19477,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You'll be notified when you're near a saved card location"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "You'll be notified when you're near a saved card location"
@@ -17326,6 +19534,12 @@
             "value" : "You're near %lld saved locations"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You're near %lld saved locations"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -17372,6 +19586,12 @@
             "value" : "You're near a saved location"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You're near a saved location"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -17396,8 +19616,8 @@
       "localizations" : {
         "bg" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Your cards stay on this device by default. If iCloud is enabled, they also sync through your private iCloud database."
+            "state" : "translated",
+            "value" : "Вашите карти остават на вашето устройство по подразбиране. Ако имате настроен достъп до iCloud, те също така ще бъдат синхронизирани с личният ви iCloud."
           }
         },
         "de" : {
@@ -17413,6 +19633,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your cards stay on this device by default. If iCloud is enabled, they also sync through your private iCloud database."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Your cards stay on this device by default. If iCloud is enabled, they also sync through your private iCloud database."
@@ -17464,6 +19690,12 @@
             "value" : "Your cards, always ready"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your cards, always ready"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -17505,6 +19737,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your location is only used to calculate distance to saved stores."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Your location is only used to calculate distance to saved stores."
@@ -17556,6 +19794,12 @@
             "value" : "Your location is only used to find nearby stores"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your location is only used to find nearby stores"
+          }
+        },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
@@ -17597,6 +19841,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your location is only used to find nearby stores. Battery impact is minimal."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Your location is only used to find nearby stores. Battery impact is minimal."
