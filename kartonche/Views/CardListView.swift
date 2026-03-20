@@ -356,6 +356,19 @@ struct CardListView: View {
     
     private var cardListView: some View {
         List {
+            Section {
+                TipView(quickScanTip)
+                TipView(swipeActionsTip)
+                TipView(shareTip)
+                TipView(homeScreenWidgetTip)
+                TipView(lockScreenWidgetTip)
+                TipView(controlCenterWidgetTip)
+            }
+            .listRowSeparator(.hidden)
+            .listRowBackground(Color.clear)
+            .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+            .listSectionSpacing(0)
+
             // Nearby Cards section
             if !nearbyCards.isEmpty && searchText.isEmpty {
                 Section {
@@ -491,18 +504,6 @@ struct CardListView: View {
                     Text(String(localized: "All Cards"))
                 }
             }
-        }
-        .safeAreaInset(edge: .top, spacing: 0) {
-            VStack(spacing: 4) {
-                TipView(quickScanTip)
-                TipView(swipeActionsTip)
-                TipView(shareTip)
-                TipView(homeScreenWidgetTip)
-                TipView(lockScreenWidgetTip)
-                TipView(controlCenterWidgetTip)
-            }
-            .padding(.horizontal)
-            .padding(.bottom, 4)
         }
         .onAppear {
             checkAlwaysPermissionConditions()
