@@ -48,7 +48,7 @@ struct ImageCropView: View {
                         .offset(offset)
                         .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
                         .gesture(dragGesture(cropRect: cropRect, cropWidth: cropWidth))
-                        .gesture(magnifyGesture(cropRect: cropRect, cropWidth: cropWidth))
+                        .simultaneousGesture(magnifyGesture(cropRect: cropRect, cropWidth: cropWidth))
 
                     // Dimming overlay with transparent crop window
                     CropOverlay(cropRect: cropRect)
