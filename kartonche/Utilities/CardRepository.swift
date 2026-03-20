@@ -8,8 +8,11 @@
 import SwiftData
 import WidgetKit
 import PassKit
+import os
 
 /// Centralizes card mutation side-effects (notifications, widgets, wallet passes)
+private let logger = Logger(subsystem: "com.zbrox.kartonche.app", category: "wallet")
+
 @MainActor
 final class CardRepository {
     private let modelContext: ModelContext
@@ -33,9 +36,16 @@ final class CardRepository {
 
         WidgetCenter.shared.reloadAllTimelines()
 
-        if walletPassExists(for: card) {
+        let passExists = walletPassExists(for: card)
+        logger.info("Wallet pass exists for \(card.id): \(passExists)")
+        if passExists {
             Task {
-                try? await updateWalletPass(for: card)
+                do {
+                    try await updateWalletPass(for: card)
+                    logger.info("Wallet pass updated for \(card.id)")
+                } catch {
+                    logger.error("Failed to update wallet pass: \(error.localizedDescription)")
+                }
             }
         }
 
@@ -139,6 +149,7 @@ final class CardRepository {
 
     private func updateWalletPass(for card: LoyaltyCard) async throws {
         let passData = try WalletPassGenerator.generate(for: card)
+        logger.info("Generated pass data: \(passData.count) bytes")
         let pass = try PKPass(data: passData)
         PKPassLibrary().replacePass(with: pass)
     }

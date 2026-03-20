@@ -208,10 +208,13 @@ enum WalletPassGenerator {
             ("strip@3x.png", 3),
         ]
 
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1
+
         var result: [String: Data] = [:]
         for (filename, scale) in scales {
             let size = CGSize(width: baseWidth * scale, height: baseHeight * scale)
-            let renderer = UIGraphicsImageRenderer(size: size)
+            let renderer = UIGraphicsImageRenderer(size: size, format: format)
             let rendered = renderer.pngData { context in
                 source.draw(in: CGRect(origin: .zero, size: size))
             }
@@ -229,6 +232,9 @@ enum WalletPassGenerator {
             ("strip@2x.png", 2),
             ("strip@3x.png", 3),
         ]
+
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1
 
         var result: [String: Data] = [:]
         for (filename, scale) in scales {
@@ -257,7 +263,7 @@ enum WalletPassGenerator {
                 fitWidth = maxHeight * barcodeAspect
             }
 
-            let renderer = UIGraphicsImageRenderer(size: stripSize)
+            let renderer = UIGraphicsImageRenderer(size: stripSize, format: format)
             let rendered = renderer.pngData { ctx in
                 ctx.cgContext.setFillColor(UIColor.white.cgColor)
                 ctx.cgContext.fill(CGRect(origin: .zero, size: stripSize))
