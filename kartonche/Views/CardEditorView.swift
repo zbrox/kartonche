@@ -153,13 +153,13 @@ struct CardEditorView: View {
         NavigationStack {
             Form {
                 Section {
-                    TextField(text: $name, prompt: Text("\(String(localized: "Card Name")) \(Text("*").foregroundColor(.red))")) {
-                        Text(String(localized: "Card Name"))
+                    TextField(text: $name, prompt: Text("\(String(localized: "Card Name", comment: "Text field placeholder for the card's display name")) \(Text("*").foregroundColor(.red))")) {
+                        Text(String(localized: "Card Name", comment: "Text field label for the card's display name"))
                     }
                         .accessibilityIdentifier("cardNameField")
                     TextField("Store Name", text: $storeName)
                         .accessibilityIdentifier("storeNameField")
-                    TextField(String(localized: "Cardholder Name"), text: $cardholderName)
+                    TextField(String(localized: "Cardholder Name", comment: "Text field for the name of the person who owns the card"), text: $cardholderName)
                         .accessibilityIdentifier("cardholderNameField")
                     TextField("Card Number", text: $cardNumber)
                         .accessibilityIdentifier("cardNumberField")
@@ -170,23 +170,23 @@ struct CardEditorView: View {
                         Button {
                             showingScanner = true
                         } label: {
-                            Label(String(localized: "Scan Barcode"), systemImage: "barcode.viewfinder")
+                            Label(String(localized: "Scan Barcode", comment: "Button to open camera barcode scanner in card editor"), systemImage: "barcode.viewfinder")
                         }
                         .accessibilityIdentifier("scanBarcodeButton")
-                        .accessibilityHint(String(localized: "Opens camera to scan barcode"))
+                        .accessibilityHint(String(localized: "Opens camera to scan barcode", comment: "Accessibility hint for scan barcode button"))
                     }
                     
                     PhotosPicker(selection: $photoPickerItem, matching: .images) {
-                        Label(String(localized: "Scan from Photo"), systemImage: "photo")
+                        Label(String(localized: "Scan from Photo", comment: "Button to pick a photo and scan barcode from it"), systemImage: "photo")
                     }
                     .disabled(isProcessingPhoto)
                     .accessibilityIdentifier("scanPhotoButton")
-                    .accessibilityHint(String(localized: "Select photo from library to scan barcode"))
+                    .accessibilityHint(String(localized: "Select photo from library to scan barcode", comment: "Accessibility hint for scan from photo button"))
                     
                     if isProcessingPhoto {
                         HStack {
                             ProgressView()
-                            Text(String(localized: "Scanning..."))
+                            Text(String(localized: "Scanning...", comment: "Progress indicator while scanning barcode from photo"))
                         }
                     }
                     
@@ -203,15 +203,15 @@ struct CardEditorView: View {
                     }
                     .accessibilityIdentifier("barcodeTypePicker")
                     
-                    TextField(text: $barcodeData, prompt: Text("\(String(localized: "Barcode Data")) \(Text("*").foregroundColor(.red))")) {
-                        Text(String(localized: "Barcode Data"))
+                    TextField(text: $barcodeData, prompt: Text("\(String(localized: "Barcode Data", comment: "Text field placeholder for barcode content")) \(Text("*").foregroundColor(.red))")) {
+                        Text(String(localized: "Barcode Data", comment: "Text field label for barcode content"))
                     }
                         .accessibilityIdentifier("barcodeDataField")
                     
                     if !barcodeData.isEmpty {
                         BarcodeImageView(data: barcodeData, type: barcodeType)
                             .frame(height: 120)
-                            .accessibilityLabel(String(localized: "Barcode preview"))
+                            .accessibilityLabel(String(localized: "Barcode preview", comment: "Accessibility label for the barcode image preview"))
                             .accessibilityValue("\(barcodeType.displayName), \(barcodeData)")
                     }
                 }
@@ -230,11 +230,11 @@ struct CardEditorView: View {
                                 .foregroundStyle(effectiveSecondaryColor)
                         }
                         
-                        Text(name.isEmpty ? String(localized: "Card Name") : name)
+                        Text(name.isEmpty ? String(localized: "Card Name", comment: "Placeholder in card preview when no name is entered") : name)
                             .font(.headline)
                             .foregroundStyle(.primary)
                         
-                        Text(storeName.isEmpty ? String(localized: "Store Name") : storeName)
+                        Text(storeName.isEmpty ? String(localized: "Store Name", comment: "Placeholder in card preview when no store name is entered") : storeName)
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                     }
@@ -245,7 +245,7 @@ struct CardEditorView: View {
 
                     if !suggestedScanColors.isEmpty {
                         VStack(alignment: .leading, spacing: 8) {
-                            Text(String(localized: "Suggested Colors"))
+                            Text(String(localized: "Suggested Colors", comment: "Label above color swatches extracted from scanned card image"))
                                 .font(.subheadline)
                                 .foregroundStyle(.secondary)
 
@@ -263,7 +263,7 @@ struct CardEditorView: View {
                                                         .stroke(Color.primary.opacity(0.2), lineWidth: 1)
                                                 )
                                         }
-                                        .accessibilityLabel(String(localized: "Suggested Colors"))
+                                        .accessibilityLabel(String(localized: "Suggested Colors", comment: "Accessibility label for a suggested color swatch"))
                                     }
                                 }
                                 .padding(.vertical, 2)
@@ -271,14 +271,14 @@ struct CardEditorView: View {
                         }
                     }
                     
-                    ColorPicker(String(localized: "Card Color"), selection: Binding(
+                    ColorPicker(String(localized: "Card Color", comment: "Color picker for the card's background color"), selection: Binding(
                         get: { selectedColor ?? .gray },
                         set: { selectedColor = $0 }
                     ), supportsOpacity: false)
                     
-                    Picker(String(localized: "Text Color"), selection: $useAutoTextColor) {
-                        Text(String(localized: "Auto")).tag(true)
-                        Text(String(localized: "Custom")).tag(false)
+                    Picker(String(localized: "Text Color", comment: "Picker label for choosing auto or custom text color on card"), selection: $useAutoTextColor) {
+                        Text(String(localized: "Auto", comment: "Option for automatic text color based on card background")).tag(true)
+                        Text(String(localized: "Custom", comment: "Option for manually choosing text color on card")).tag(false)
                     }
                     .pickerStyle(.segmented)
                     .onChange(of: useAutoTextColor) { _, newValue in
@@ -288,14 +288,14 @@ struct CardEditorView: View {
                     }
                     
                     if !useAutoTextColor {
-                        ColorPicker(String(localized: "Custom Text Color"), selection: Binding(
+                        ColorPicker(String(localized: "Custom Text Color", comment: "Color picker for manually chosen text color on card"), selection: Binding(
                             get: { selectedSecondaryColor ?? .white },
                             set: { selectedSecondaryColor = $0 }
                         ), supportsOpacity: false)
                     }
 
                     VStack(alignment: .leading, spacing: 8) {
-                        Text(String(localized: "Card Image"))
+                        Text(String(localized: "Card Image", comment: "Label for the card image section in appearance settings"))
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
 
@@ -310,35 +310,35 @@ struct CardEditorView: View {
                             Button(role: .destructive) {
                                 cardImageData = nil
                             } label: {
-                                Label(String(localized: "Remove Image"), systemImage: "trash")
+                                Label(String(localized: "Remove Image", comment: "Button to remove the card's strip image"), systemImage: "trash")
                                     .foregroundStyle(.red)
                             }
                         } else {
                             PhotosPicker(selection: $cardImagePickerItem, matching: .images) {
-                                Label(String(localized: "Choose Image"), systemImage: "photo")
+                                Label(String(localized: "Choose Image", comment: "Button to pick a strip image for the card"), systemImage: "photo")
                             }
                         }
 
                         if barcodeType.walletFormatString == nil {
-                            Label(String(localized: "This barcode type uses the barcode as the Apple Wallet strip image. This image won't be used."), systemImage: "info.circle")
+                            Label(String(localized: "This barcode type uses the barcode as the Apple Wallet strip image. This image won't be used.", comment: "Info text explaining strip image is ignored for this barcode type"), systemImage: "info.circle")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         } else {
-                            Label(String(localized: "This image is used only for Apple Wallet passes."), systemImage: "info.circle")
+                            Label(String(localized: "This image is used only for Apple Wallet passes.", comment: "Info text about card image usage"), systemImage: "info.circle")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }
                     }
                 } header: {
-                    Text(String(localized: "Appearance"))
+                    Text(String(localized: "Appearance", comment: "Section header for card color and image settings"))
                 }
                 
                 Section {
-                    Toggle(String(localized: "Favorite"), isOn: $isFavorite)
+                    Toggle(String(localized: "Favorite", comment: "Toggle to mark card as favorite in card editor"), isOn: $isFavorite)
                 }
                 
                 Section {
-                    Toggle(String(localized: "Has Expiration Date"), isOn: $hasExpirationDate)
+                    Toggle(String(localized: "Has Expiration Date", comment: "Toggle to enable expiration date for the card"), isOn: $hasExpirationDate)
                         .onChange(of: hasExpirationDate) { oldValue, newValue in
                             if newValue {
                                 // Initialize with a date 1 year from now when toggle is enabled
@@ -356,7 +356,7 @@ struct CardEditorView: View {
                     
                     if hasExpirationDate {
                         DatePicker(
-                            String(localized: "Expiration Date"),
+                            String(localized: "Expiration Date", comment: "Date picker label for card expiration date"),
                             selection: Binding(
                                 get: { expirationDate ?? Date() },
                                 set: { expirationDate = $0 }
@@ -388,7 +388,7 @@ struct CardEditorView: View {
                                 Text(location.address)
                                     .font(.caption)
                                     .foregroundStyle(.secondary)
-                                Text(String(localized: "Radius: \(Int(location.radius))m"))
+                                Text(String(localized: "Radius: \(Int(location.radius))m", comment: "Geofence radius in meters for a card location"))
                                     .font(.caption2)
                                     .foregroundStyle(.tertiary)
                             }
@@ -400,35 +400,35 @@ struct CardEditorView: View {
                         editingLocation = nil
                         showingLocationEditor = true
                     } label: {
-                        Label(String(localized: "Add Location"), systemImage: "plus.circle.fill")
+                        Label(String(localized: "Add Location", comment: "Button to add a store location to the card"), systemImage: "plus.circle.fill")
                     }
                     .accessibilityIdentifier("addLocationButton")
                 } header: {
-                    Text(String(localized: "Locations"))
+                    Text(String(localized: "Locations", comment: "Section header for store locations associated with the card"))
                 } footer: {
-                    Text(String(localized: "Card will appear when you're nearby"))
+                    Text(String(localized: "Card will appear when you're nearby", comment: "Footer explaining that the card shows automatically near saved locations"))
                 }
                 
                 if isEditMode {
                     Section {
                         Button(role: .destructive, action: { showingDeleteConfirmation = true }) {
-                            Text(String(localized: "Delete"))
+                            Text(String(localized: "Delete", comment: "Button to delete the card in card editor"))
                         }
                     }
                 }
             }
-            .navigationTitle(isEditMode ? String(localized: "Edit") : String(localized: "Add Card"))
+            .navigationTitle(isEditMode ? String(localized: "Edit", comment: "Navigation title when editing an existing card") : String(localized: "Add Card", comment: "Navigation title when creating a new card"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button(String(localized: "Cancel")) {
+                    Button(String(localized: "Cancel", comment: "Toolbar button to dismiss card editor without saving")) {
                         dismiss()
                     }
                     .accessibilityIdentifier("cancelButton")
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(String(localized: "Save")) {
+                    Button(String(localized: "Save", comment: "Toolbar button to save card changes")) {
                         saveCard()
                     }
                     .disabled(!isValid)
@@ -495,16 +495,16 @@ struct CardEditorView: View {
             } message: {
                 Text("Select which barcode to use")
             }
-            .alert(String(localized: "Duplicate Barcode"), isPresented: $showingDuplicateAlert, presenting: duplicateCard) { duplicate in
-                Button(String(localized: "Open Existing")) {
+            .alert(String(localized: "Duplicate Barcode", comment: "Alert title when barcode matches an existing card"), isPresented: $showingDuplicateAlert, presenting: duplicateCard) { duplicate in
+                Button(String(localized: "Open Existing", comment: "Alert button to open the existing card with same barcode")) {
                     onOpenExistingCard?(duplicate.id)
                 }
-                Button(String(localized: "Save Anyway")) {
+                Button(String(localized: "Save Anyway", comment: "Alert button to save card despite duplicate barcode")) {
                     persistCard()
                 }
-                Button(String(localized: "Cancel"), role: .cancel) {}
+                Button(String(localized: "Cancel", comment: "Alert button to cancel saving duplicate card"), role: .cancel) {}
             } message: { _ in
-                Text(String(localized: "A card with this barcode already exists"))
+                Text(String(localized: "A card with this barcode already exists", comment: "Alert message explaining a duplicate barcode was found"))
             }
             .sheet(isPresented: $showingLocationEditor) {
                 // Create a temporary card for the LocationEditorView if we're in create mode
@@ -546,7 +546,7 @@ struct CardEditorView: View {
                 guard let imageData = try await item.loadTransferable(type: Data.self),
                       UIImage(data: imageData) != nil else {
                     await MainActor.run {
-                        scanError = String(localized: "Failed to load image")
+                        scanError = String(localized: "Failed to load image", comment: "Error when selected photo could not be loaded for barcode scanning")
                         isProcessingPhoto = false
                         photoPickerItem = nil
                     }

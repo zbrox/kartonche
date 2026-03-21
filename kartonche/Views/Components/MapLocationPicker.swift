@@ -108,7 +108,7 @@ struct MapLocationPicker: View {
                         } label: {
                             HStack {
                                 Image(systemName: "checkmark.circle.fill")
-                                Text(String(localized: "Confirm Location"))
+                                Text(String(localized: "Confirm Location", comment: "Button to confirm selected map pin location"))
                             }
                             .font(.headline)
                             .foregroundStyle(.white)
@@ -124,11 +124,11 @@ struct MapLocationPicker: View {
                     .padding(.bottom, 32)
                 }
             }
-            .navigationTitle(String(localized: "Drop Pin on Map"))
+            .navigationTitle(String(localized: "Drop Pin on Map", comment: "Navigation title for map pin picker"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button(String(localized: "Cancel")) {
+                    Button(String(localized: "Cancel", comment: "Button to dismiss map pin picker")) {
                         dismiss()
                     }
                 }

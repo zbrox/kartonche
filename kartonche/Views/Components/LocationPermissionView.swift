@@ -19,26 +19,26 @@ struct LocationPermissionView: View {
                 .foregroundStyle(.blue)
                 .padding(.top, 48)
             
-            Text(String(localized: "Location Permission Needed"))
+            Text(String(localized: "Location Permission Needed", comment: "Title on the location permission request screen."))
                 .font(.title2)
                 .fontWeight(.bold)
             
             VStack(alignment: .leading, spacing: 12) {
-                Text(String(localized: "To save card locations, kartonche needs to access your location."))
+                Text(String(localized: "To save card locations, kartonche needs to access your location.", comment: "Description on the location permission request screen."))
                     .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.center)
                 
                 VStack(alignment: .leading, spacing: 6) {
-                    Text(String(localized: "This helps you:"))
+                    Text(String(localized: "This helps you:", comment: "Label above the list of location feature benefits."))
                         .fontWeight(.semibold)
                     
-                    Label(String(localized: "See cards when you're nearby"), systemImage: "mappin.and.ellipse")
-                    Label(String(localized: "Auto-show the right card"), systemImage: "sparkles")
-                    Label(String(localized: "Find nearest card in widgets"), systemImage: "apps.iphone")
+                    Label(String(localized: "See cards when you're nearby", comment: "Location feature benefit on the permission screen."), systemImage: "mappin.and.ellipse")
+                    Label(String(localized: "Auto-show the right card", comment: "Location feature benefit on the permission screen."), systemImage: "sparkles")
+                    Label(String(localized: "Find nearest card in widgets", comment: "Location feature benefit on the permission screen."), systemImage: "apps.iphone")
                 }
                 .font(.subheadline)
                 
-                Text(String(localized: "Your location is only used to calculate distance to saved stores."))
+                Text(String(localized: "Your location is only used to calculate distance to saved stores.", comment: "Privacy reassurance on the location permission screen."))
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity)
@@ -53,7 +53,7 @@ struct LocationPermissionView: View {
                 Button {
                     onAllow()
                 } label: {
-                    Text(String(localized: "Allow Location"))
+                    Text(String(localized: "Allow Location", comment: "Button to grant location permission."))
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)
@@ -61,7 +61,7 @@ struct LocationPermissionView: View {
                 Button {
                     onDeny()
                 } label: {
-                    Text(String(localized: "Not Now"))
+                    Text(String(localized: "Not Now", comment: "Button to dismiss the location permission screen."))
                         .frame(maxWidth: .infinity)
                 }
                 .accessibilityIdentifier("locationPermissionDeny")
@@ -86,20 +86,20 @@ struct LocationPermissionDeniedView: View {
                 .foregroundStyle(.orange)
                 .padding(.top, 48)
             
-            Text(String(localized: "Location Access Denied"))
+            Text(String(localized: "Location Access Denied", comment: "Title on the location permission denied screen."))
                 .font(.title2)
                 .fontWeight(.bold)
             
             VStack(alignment: .leading, spacing: 12) {
-                Text(String(localized: "Location features require access to your location."))
+                Text(String(localized: "Location features require access to your location.", comment: "Explanation on the location permission denied screen."))
                     .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.center)
                 
                 VStack(alignment: .leading, spacing: 6) {
-                    Text(String(localized: "Enable in Settings:"))
+                    Text(String(localized: "Enable in Settings:", comment: "Label above navigation path for enabling location access."))
                         .fontWeight(.semibold)
-                    
-                    Text(String(localized: "Settings > kartonche > Location > While Using the App"))
+
+                    Text(String(localized: "Settings > kartonche > Location > While Using the App", comment: "Navigation path to enable location in iOS Settings."))
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
@@ -114,15 +114,15 @@ struct LocationPermissionDeniedView: View {
                 Button {
                     onOpenSettings()
                 } label: {
-                    Text(String(localized: "Open Settings"))
+                    Text(String(localized: "Open Settings", comment: "Button to open iOS Settings from the location denied screen."))
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)
-                
+
                 Button {
                     onCancel()
                 } label: {
-                    Text(String(localized: "Cancel"))
+                    Text(String(localized: "Cancel", comment: "Button to dismiss the location permission denied screen."))
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.bordered)

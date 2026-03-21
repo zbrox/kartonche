@@ -21,11 +21,11 @@ class PhotoBarcodeScanner {
         var errorDescription: String? {
             switch self {
             case .invalidImage:
-                return String(localized: "Invalid image format")
+                return String(localized: "Invalid image format", comment: "Error when photo cannot be processed for barcode scanning")
             case .noBarcodesFound:
-                return String(localized: "No barcodes found in image")
+                return String(localized: "No barcodes found in image", comment: "Error when barcode scan finds nothing in photo")
             case .processingFailed(let error):
-                return String(localized: "Scanning failed: \(error.localizedDescription)")
+                return String(localized: "Scanning failed: \(error.localizedDescription)", comment: "Error when barcode scanning encounters a failure")
             }
         }
     }

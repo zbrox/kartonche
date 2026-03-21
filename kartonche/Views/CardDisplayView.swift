@@ -53,13 +53,13 @@ struct CardDisplayView: View {
 
                 // Apple Wallet status
                 if isPassInWallet {
-                    Label(String(localized: "Added to Apple Wallet. Edits sync automatically."), systemImage: "wallet.bifold")
+                    Label(String(localized: "Added to Apple Wallet. Edits sync automatically.", comment: "Status text when card is already in Apple Wallet"), systemImage: "wallet.bifold")
                         .font(.caption)
                         .foregroundStyle(.secondary)
-                        .accessibilityLabel(String(localized: "This card is in Apple Wallet. Edits sync automatically."))
+                        .accessibilityLabel(String(localized: "This card is in Apple Wallet. Edits sync automatically.", comment: "Accessibility label for Apple Wallet status"))
                         .padding(.bottom, 12)
                 } else if isGeneratingPass {
-                    ProgressView(String(localized: "Generating pass..."))
+                    ProgressView(String(localized: "Generating pass...", comment: "Progress text while creating Apple Wallet pass"))
                         .padding(.bottom, 12)
                 } else {
                     AddToWalletButton {
@@ -72,7 +72,7 @@ struct CardDisplayView: View {
                     .frame(width: 250, height: 48)
                     .clipShape(RoundedRectangle(cornerRadius: 14))
                     .accessibilityIdentifier("addToWalletButton")
-                    .accessibilityLabel(String(localized: "Add to Apple Wallet"))
+                    .accessibilityLabel(String(localized: "Add to Apple Wallet", comment: "Accessibility label for Add to Wallet button"))
                     .padding(.bottom, 32)
                 }
 
@@ -81,7 +81,7 @@ struct CardDisplayView: View {
                     Button {
                         showNotesSheet = true
                     } label: {
-                        Label(String(localized: "Notes"), systemImage: "note.text")
+                        Label(String(localized: "Notes", comment: "Button to view card notes on display screen"), systemImage: "note.text")
                             .font(.subheadline)
                             .fontWeight(.medium)
                             .foregroundStyle(primaryColor)
@@ -133,33 +133,33 @@ struct CardDisplayView: View {
                 passToAdd = nil
             }
         }
-        .alert(String(localized: "Failed to create pass"), isPresented: Binding(
+        .alert(String(localized: "Failed to create pass", comment: "Alert title when Apple Wallet pass generation fails"), isPresented: Binding(
             get: { passError != nil },
             set: { if !$0 { passError = nil } }
         )) {
-            Button(String(localized: "OK"), role: .cancel) {}
+            Button(String(localized: "OK", comment: "Button to dismiss pass error alert"), role: .cancel) {}
         } message: {
             if let passError {
                 Text(passError)
             }
         }
         .confirmationDialog(
-            String(localized: "Experimental Feature"),
+            String(localized: "Experimental Feature", comment: "Dialog title warning about experimental barcode-as-image wallet pass"),
             isPresented: $showStripBarcodeWarning,
             titleVisibility: .visible
         ) {
-            Button(String(localized: "Add to Wallet")) {
+            Button(String(localized: "Add to Wallet", comment: "Button to confirm adding card to Apple Wallet")) {
                 generateAndAddPass()
             }
-            Button(String(localized: "Cancel"), role: .cancel) {}
+            Button(String(localized: "Cancel", comment: "Button to cancel adding card to Apple Wallet"), role: .cancel) {}
         } message: {
-            Text(String(localized: "This barcode type is added as an image and may not scan everywhere."))
+            Text(String(localized: "This barcode type is added as an image and may not scan everywhere.", comment: "Warning that barcode-as-image wallet pass may not scan reliably"))
         }
         .alert(item: $errorAlert) { alert in
             Alert(
                 title: Text(alert.title),
                 message: Text(alert.message),
-                dismissButton: .default(Text(String(localized: "OK")))
+                dismissButton: .default(Text(String(localized: "OK", comment: "Button to dismiss error alert")))
             )
         }
     }
@@ -204,7 +204,7 @@ struct CardDisplayView: View {
                         .foregroundStyle(secondaryColor)
                 }
                 .accessibilityIdentifier("shareCardButton")
-                .accessibilityLabel(String(localized: "Share card"))
+                .accessibilityLabel(String(localized: "Share card", comment: "Accessibility label for share button on card display"))
 
                 // Close button
                 Button {
@@ -214,7 +214,7 @@ struct CardDisplayView: View {
                         .font(.title2)
                         .foregroundStyle(secondaryColor)
                 }
-                .accessibilityLabel(String(localized: "Close"))
+                .accessibilityLabel(String(localized: "Close", comment: "Accessibility label for close button on card display"))
             }
         }
         .padding(.horizontal, 20)
@@ -230,7 +230,7 @@ struct CardDisplayView: View {
             parts.append(storeName)
         }
         if let cardNumber = card.cardNumber, !cardNumber.isEmpty {
-            parts.append(String(localized: "card number") + " \(cardNumber)")
+            parts.append(String(localized: "card number", comment: "Accessibility prefix before the card number value") + " \(cardNumber)")
         }
         if let cardholderName = card.cardholderName, !cardholderName.isEmpty {
             parts.append(cardholderName)
@@ -255,9 +255,9 @@ struct CardDisplayView: View {
         )
         .padding(.horizontal, 24)
         .accessibilityIdentifier("barcodeImage")
-        .accessibilityLabel(String(localized: "Barcode for scanning"))
+        .accessibilityLabel(String(localized: "Barcode for scanning", comment: "Accessibility label for the barcode image on card display"))
         .accessibilityValue("\(card.barcodeType.displayName), \(card.barcodeData)")
-        .accessibilityHint(String(localized: "Show this to the cashier to scan"))
+        .accessibilityHint(String(localized: "Show this to the cashier to scan", comment: "Accessibility hint for barcode image"))
     }
     
     private var notesSheetView: some View {
@@ -271,11 +271,11 @@ struct CardDisplayView: View {
                 }
                 .padding()
             }
-            .navigationTitle(String(localized: "Notes"))
+            .navigationTitle(String(localized: "Notes", comment: "Navigation title for card notes sheet"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(String(localized: "Done")) {
+                    Button(String(localized: "Done", comment: "Button to dismiss card notes sheet")) {
                         showNotesSheet = false
                     }
                 }
@@ -341,7 +341,7 @@ struct CardDisplayErrorAlert: Identifiable {
 
     static func shareFailed(_ error: Error) -> CardDisplayErrorAlert {
         CardDisplayErrorAlert(
-            title: String(localized: "Export Failed"),
+            title: String(localized: "Export Failed", comment: "Alert title when card export fails"),
             message: error.localizedDescription
         )
     }

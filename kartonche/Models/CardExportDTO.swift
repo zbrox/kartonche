@@ -144,15 +144,15 @@ enum CardImportError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .invalidFileFormat:
-            return String(localized: "Invalid file format. Expected .kartonche file.")
+            return String(localized: "Invalid file format. Expected .kartonche file.", comment: "Error when imported file is not a valid kartonche file")
         case .unsupportedVersion(let version):
-            return String(localized: "Unsupported file version: \(version)")
+            return String(localized: "Unsupported file version: \(version)", comment: "Error when imported file uses an unsupported format version")
         case .invalidData(let details):
-            return String(localized: "Invalid card data: \(details)")
+            return String(localized: "Invalid card data: \(details)", comment: "Error when card data in import file is malformed")
         case .decodingFailed(let error):
-            return String(localized: "Failed to read file: \(error.localizedDescription)")
+            return String(localized: "Failed to read file: \(error.localizedDescription)", comment: "Error when import file cannot be decoded")
         case .fileNotFound:
-            return String(localized: "File not found")
+            return String(localized: "File not found", comment: "Error when import file does not exist")
         }
     }
 }

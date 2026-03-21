@@ -152,7 +152,7 @@ struct CardListView: View {
                     }
                 }
             }
-            .navigationTitle(String(localized: "Loyalty Cards"))
+            .navigationTitle(String(localized: "Loyalty Cards", comment: "Navigation title for the main card list screen"))
             .fullScreenCover(item: $displayCard) { card in
                 CardDisplayView(card: card)
             }
@@ -183,7 +183,7 @@ struct CardListView: View {
                     urlRouter.clearPendingImport()
                 }
             }
-            .searchable(text: $searchText, prompt: String(localized: "Search"))
+            .searchable(text: $searchText, prompt: String(localized: "Search", comment: "Search bar placeholder in card list"))
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
@@ -296,13 +296,13 @@ struct CardListView: View {
                 }
             }
             .alert(
-                String(localized: "Are you sure you want to delete this card?"),
+                String(localized: "Are you sure you want to delete this card?", comment: "Alert title confirming card deletion"),
                 isPresented: $showingDeleteConfirmation
             ) {
-                Button(String(localized: "Cancel"), role: .cancel) {
+                Button(String(localized: "Cancel", comment: "Button to cancel card deletion"), role: .cancel) {
                     cardToDelete = nil
                 }
-                Button(String(localized: "Delete"), role: .destructive) {
+                Button(String(localized: "Delete", comment: "Button to confirm card deletion"), role: .destructive) {
                     if let card = cardToDelete {
                         deleteCard(card)
                     }
@@ -310,24 +310,24 @@ struct CardListView: View {
                 }
             }
             .alert(
-                String(localized: "No Barcode Found"),
+                String(localized: "No Barcode Found", comment: "Alert title when photo scan finds no barcode"),
                 isPresented: $photoPickerScanFailed
             ) {
-                Button(String(localized: "Try Another Photo")) {
+                Button(String(localized: "Try Another Photo", comment: "Alert button to retry barcode scan with different photo")) {
                     showingPhotoPicker = true
                 }
-                Button(String(localized: "Add Manually")) {
+                Button(String(localized: "Add Manually", comment: "Alert button to create card without scanning")) {
                     showingEditor = true
                 }
-                Button(String(localized: "Cancel"), role: .cancel) {}
+                Button(String(localized: "Cancel", comment: "Button to dismiss no-barcode alert"), role: .cancel) {}
             } message: {
-                Text(String(localized: "Could not detect a barcode in the selected image."))
+                Text(String(localized: "Could not detect a barcode in the selected image.", comment: "Alert message when barcode scan fails"))
             }
             .alert(item: $errorAlert) { alert in
                 Alert(
                     title: Text(alert.title),
                     message: Text(alert.message),
-                    dismissButton: .default(Text(String(localized: "OK")))
+                    dismissButton: .default(Text(String(localized: "OK", comment: "Button to dismiss error alert")))
                 )
             }
             .confetti(isActive: $showConfetti)
@@ -396,13 +396,13 @@ struct CardListView: View {
                                 cardToDelete = nearby.card
                                 showingDeleteConfirmation = true
                             } label: {
-                                Label(String(localized: "Delete"), systemImage: "trash")
+                                Label(String(localized: "Delete", comment: "Swipe action to delete a card"), systemImage: "trash")
                             }
-                            
+
                             Button {
                                 selectedCard = nearby.card
                             } label: {
-                                Label(String(localized: "Edit"), systemImage: "pencil")
+                                Label(String(localized: "Edit", comment: "Swipe action to edit a card"), systemImage: "pencil")
                             }
                             .tint(.blue)
                         }
@@ -410,25 +410,25 @@ struct CardListView: View {
                             Button {
                                 shareCard(nearby.card)
                             } label: {
-                                Label(String(localized: "Share"), systemImage: "square.and.arrow.up")
+                                Label(String(localized: "Share", comment: "Context menu action to share a card"), systemImage: "square.and.arrow.up")
                             }
-                            
+
                             Button {
                                 selectedCard = nearby.card
                             } label: {
-                                Label(String(localized: "Edit"), systemImage: "pencil")
+                                Label(String(localized: "Edit", comment: "Context menu action to edit a card"), systemImage: "pencil")
                             }
-                            
+
                             Button(role: .destructive) {
                                 cardToDelete = nearby.card
                                 showingDeleteConfirmation = true
                             } label: {
-                                Label(String(localized: "Delete"), systemImage: "trash")
+                                Label(String(localized: "Delete", comment: "Context menu action to delete a card"), systemImage: "trash")
                             }
                         }
                     }
                 } header: {
-                    Label(String(localized: "Nearby"), systemImage: "location.fill")
+                    Label(String(localized: "Nearby", comment: "Section header for cards near the user's location"), systemImage: "location.fill")
                 }
             }
             
@@ -458,13 +458,13 @@ struct CardListView: View {
                             cardToDelete = card
                             showingDeleteConfirmation = true
                         } label: {
-                            Label(String(localized: "Delete"), systemImage: "trash")
+                            Label(String(localized: "Delete", comment: "Swipe action to delete a card"), systemImage: "trash")
                         }
-                        
+
                         Button {
                             selectedCard = card
                         } label: {
-                            Label(String(localized: "Edit"), systemImage: "pencil")
+                            Label(String(localized: "Edit", comment: "Swipe action to edit a card"), systemImage: "pencil")
                         }
                         .tint(.blue)
                     }
@@ -472,14 +472,14 @@ struct CardListView: View {
                         Button {
                             shareCard(card)
                         } label: {
-                            Label(String(localized: "Share"), systemImage: "square.and.arrow.up")
+                            Label(String(localized: "Share", comment: "Context menu action to share a card"), systemImage: "square.and.arrow.up")
                         }
                         .accessibilityIdentifier("contextMenuShare")
 
                         Button {
                             selectedCard = card
                         } label: {
-                            Label(String(localized: "Edit"), systemImage: "pencil")
+                            Label(String(localized: "Edit", comment: "Context menu action to edit a card"), systemImage: "pencil")
                         }
                         .accessibilityIdentifier("contextMenuEdit")
 
@@ -487,7 +487,7 @@ struct CardListView: View {
                             cardToDelete = card
                             showingDeleteConfirmation = true
                         } label: {
-                            Label(String(localized: "Delete"), systemImage: "trash")
+                            Label(String(localized: "Delete", comment: "Context menu action to delete a card"), systemImage: "trash")
                         }
                     }
                     .accessibilityAction(named: Text("Edit")) {
@@ -501,7 +501,7 @@ struct CardListView: View {
 
             } header: {
                 if !nearbyCards.isEmpty && searchText.isEmpty {
-                    Text(String(localized: "All Cards"))
+                    Text(String(localized: "All Cards", comment: "Section header for complete card list, shown when nearby section is visible"))
                 }
             }
         }
@@ -522,10 +522,10 @@ struct CardListView: View {
                 .font(.title3)
             
             VStack(alignment: .leading, spacing: 4) {
-                Text(String(localized: "Enable 'Always' Location"))
+                Text(String(localized: "Enable 'Always' Location", comment: "Banner title prompting user to upgrade location permission"))
                     .font(.subheadline)
                     .fontWeight(.semibold)
-                Text(String(localized: "Get better widget performance with background location"))
+                Text(String(localized: "Get better widget performance with background location", comment: "Banner subtitle explaining benefit of always-on location"))
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -537,7 +537,7 @@ struct CardListView: View {
                 showAlwaysBanner = false
                 showingSettings = true
             } label: {
-                Text(String(localized: "Enable"))
+                Text(String(localized: "Enable", comment: "Banner button to enable always-on location permission"))
                     .font(.subheadline)
                     .fontWeight(.semibold)
             }
@@ -562,16 +562,16 @@ struct CardListView: View {
         if !searchText.isEmpty {
             // Search with no results
             ContentUnavailableView {
-                Label(String(localized: "No Results"), systemImage: "magnifyingglass")
+                Label(String(localized: "No Results", comment: "Empty state title when search finds no cards"), systemImage: "magnifyingglass")
             } description: {
-                Text(String(localized: "No cards matching '\(searchText)'"))
+                Text(String(localized: "No cards matching '\(searchText)'", comment: "Empty state message showing search term that had no results"))
             }
         } else if !showExpiredCards && !allCards.filter({ $0.isExpired }).isEmpty {
             // All cards are expired and hidden
             ContentUnavailableView {
-                Label(String(localized: "No Cards"), systemImage: "creditcard")
+                Label(String(localized: "No Cards", comment: "Empty state title when all cards are hidden because they expired"), systemImage: "creditcard")
             } description: {
-                Text(String(localized: "All cards are expired. Toggle 'Show Expired' in the sort menu to see them."))
+                Text(String(localized: "All cards are expired. Toggle 'Show Expired' in the sort menu to see them.", comment: "Empty state message explaining how to show expired cards"))
             }
         } else if allCards.isEmpty {
             // First launch - no cards at all
@@ -581,11 +581,11 @@ struct CardListView: View {
         } else {
             // Fallback
             ContentUnavailableView {
-                Label(String(localized: "No Cards"), systemImage: "creditcard")
+                Label(String(localized: "No Cards", comment: "Empty state title when user has no cards yet"), systemImage: "creditcard")
             } description: {
-                Text(String(localized: "Add your first loyalty card"))
+                Text(String(localized: "Add your first loyalty card", comment: "Empty state message encouraging user to add their first card"))
             } actions: {
-                Button(String(localized: "Add Card")) {
+                Button(String(localized: "Add Card", comment: "Button in empty state to start adding a card")) {
                     showingAddOptions = true
                 }
                 .buttonStyle(.borderedProminent)
@@ -604,7 +604,7 @@ struct CardListView: View {
             Divider()
             
             Toggle(isOn: $showExpiredCards) {
-                Label(String(localized: "Show Expired"), systemImage: "calendar.badge.exclamationmark")
+                Label(String(localized: "Show Expired", comment: "Toggle in sort menu to show or hide expired cards"), systemImage: "calendar.badge.exclamationmark")
             }
         } label: {
             Label("Sort", systemImage: "arrow.up.arrow.down")
@@ -613,14 +613,14 @@ struct CardListView: View {
     
     private var addButton: some View {
         Button(action: { showingAddOptions = true }) {
-            Label(String(localized: "Add Card"), systemImage: "plus")
+            Label(String(localized: "Add Card", comment: "Toolbar button to add a new card"), systemImage: "plus")
         }
         .accessibilityIdentifier("addCardButton")
     }
 
     private var addOptionsSheet: some View {
         VStack(spacing: 16) {
-            Text(String(localized: "Add Card"))
+            Text(String(localized: "Add Card", comment: "Title of the add card options sheet"))
                 .font(.headline)
                 .padding(.top, 8)
 
@@ -631,7 +631,7 @@ struct CardListView: View {
                         showingBarcodeScanner = true
                     }
                 } label: {
-                    Label(String(localized: "Scan Barcode"), systemImage: "barcode.viewfinder")
+                    Label(String(localized: "Scan Barcode", comment: "Button in add card sheet to open barcode scanner"), systemImage: "barcode.viewfinder")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .frame(minHeight: 46)
                 }
@@ -643,7 +643,7 @@ struct CardListView: View {
                         showingCamera = true
                     }
                 } label: {
-                    Label(String(localized: "Take a Photo"), systemImage: "camera")
+                    Label(String(localized: "Take a Photo", comment: "Button in add card sheet to capture photo with camera"), systemImage: "camera")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .frame(minHeight: 46)
                 }
@@ -656,7 +656,7 @@ struct CardListView: View {
                     showingPhotoPicker = true
                 }
             } label: {
-                Label(String(localized: "Choose from Library"), systemImage: "photo.on.rectangle")
+                Label(String(localized: "Choose from Library", comment: "Button in add card sheet to pick photo from library"), systemImage: "photo.on.rectangle")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .frame(minHeight: 46)
             }
@@ -670,14 +670,14 @@ struct CardListView: View {
                     showingEditor = true
                 }
             } label: {
-                Label(String(localized: "Add Manually"), systemImage: "square.and.pencil")
+                Label(String(localized: "Add Manually", comment: "Button in add card sheet to create card without scanning"), systemImage: "square.and.pencil")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .frame(minHeight: 46)
             }
             .accessibilityIdentifier("addManuallyButton")
             .buttonStyle(.bordered)
 
-            Button(String(localized: "Cancel"), role: .cancel) {
+            Button(String(localized: "Cancel", comment: "Button to dismiss add card options sheet"), role: .cancel) {
                 showingAddOptions = false
             }
             .accessibilityIdentifier("addOptionsCancelButton")
@@ -694,7 +694,7 @@ struct CardListView: View {
 
             VStack(spacing: 10) {
                 ProgressView()
-                Text(String(localized: "Scanning..."))
+                Text(String(localized: "Scanning...", comment: "Progress overlay while scanning barcode from photo"))
                     .font(.subheadline)
             }
             .padding(.vertical, 14)
@@ -916,14 +916,14 @@ struct CardListErrorAlert: Identifiable {
 
     static func shareFailed(_ error: Error) -> CardListErrorAlert {
         CardListErrorAlert(
-            title: String(localized: "Export Failed"),
+            title: String(localized: "Export Failed", comment: "Alert title when card export fails"),
             message: error.localizedDescription
         )
     }
 
     static func importFailed(_ error: Error) -> CardListErrorAlert {
         CardListErrorAlert(
-            title: String(localized: "Import Failed"),
+            title: String(localized: "Import Failed", comment: "Alert title when card import fails"),
             message: error.localizedDescription
         )
     }

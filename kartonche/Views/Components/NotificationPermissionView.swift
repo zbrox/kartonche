@@ -19,26 +19,26 @@ struct NotificationPermissionView: View {
                 .foregroundStyle(.blue)
                 .padding(.top, 48)
             
-            Text(String(localized: "Expiration Reminders"))
+            Text(String(localized: "Expiration Reminders", comment: "Title on the notification permission request screen."))
                 .font(.title2)
                 .fontWeight(.bold)
             
             VStack(alignment: .leading, spacing: 12) {
-                Text(String(localized: "Get notified before your cards expire so you never miss renewing them."))
+                Text(String(localized: "Get notified before your cards expire so you never miss renewing them.", comment: "Description on the notification permission request screen."))
                     .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.center)
                 
                 VStack(alignment: .leading, spacing: 6) {
-                    Text(String(localized: "We'll remind you:"))
+                    Text(String(localized: "We'll remind you:", comment: "Label above the list of reminder timing options."))
                         .fontWeight(.semibold)
                     
-                    Label(String(localized: "7 days before expiration"), systemImage: "calendar.badge.clock")
-                    Label(String(localized: "1 day before expiration"), systemImage: "clock.badge.exclamationmark")
-                    Label(String(localized: "Tap notification to view card"), systemImage: "hand.tap")
+                    Label(String(localized: "7 days before expiration", comment: "Reminder timing option on the notification permission screen."), systemImage: "calendar.badge.clock")
+                    Label(String(localized: "1 day before expiration", comment: "Reminder timing option on the notification permission screen."), systemImage: "clock.badge.exclamationmark")
+                    Label(String(localized: "Tap notification to view card", comment: "Feature description on the notification permission screen."), systemImage: "hand.tap")
                 }
                 .font(.subheadline)
                 
-                Text(String(localized: "You can disable reminders anytime in Settings."))
+                Text(String(localized: "You can disable reminders anytime in Settings.", comment: "Reassurance note on the notification permission screen."))
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity)
@@ -53,7 +53,7 @@ struct NotificationPermissionView: View {
                 Button {
                     onAllow()
                 } label: {
-                    Text(String(localized: "Enable Reminders"))
+                    Text(String(localized: "Enable Reminders", comment: "Button to grant notification permission."))
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)
@@ -61,7 +61,7 @@ struct NotificationPermissionView: View {
                 Button {
                     onDeny()
                 } label: {
-                    Text(String(localized: "Not Now"))
+                    Text(String(localized: "Not Now", comment: "Button to dismiss the notification permission screen."))
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.bordered)
@@ -85,20 +85,20 @@ struct NotificationPermissionDeniedView: View {
                 .foregroundStyle(.orange)
                 .padding(.top, 48)
             
-            Text(String(localized: "Notifications Disabled"))
+            Text(String(localized: "Notifications Disabled", comment: "Title on the notification permission denied screen."))
                 .font(.title2)
                 .fontWeight(.bold)
             
             VStack(alignment: .leading, spacing: 12) {
-                Text(String(localized: "Expiration reminders require notification access."))
+                Text(String(localized: "Expiration reminders require notification access.", comment: "Explanation on the notification permission denied screen."))
                     .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.center)
                 
                 VStack(alignment: .leading, spacing: 6) {
-                    Text(String(localized: "Enable in Settings:"))
+                    Text(String(localized: "Enable in Settings:", comment: "Label above navigation path for enabling notifications."))
                         .fontWeight(.semibold)
-                    
-                    Text(String(localized: "Settings > Notifications > kartonche"))
+
+                    Text(String(localized: "Settings > Notifications > kartonche", comment: "Navigation path to enable notifications in iOS Settings."))
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
@@ -113,15 +113,15 @@ struct NotificationPermissionDeniedView: View {
                 Button {
                     onOpenSettings()
                 } label: {
-                    Text(String(localized: "Open Settings"))
+                    Text(String(localized: "Open Settings", comment: "Button to open iOS Settings from the notification denied screen."))
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)
-                
+
                 Button {
                     onCancel()
                 } label: {
-                    Text(String(localized: "Cancel"))
+                    Text(String(localized: "Cancel", comment: "Button to dismiss the notification permission denied screen."))
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.bordered)

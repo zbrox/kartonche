@@ -19,26 +19,26 @@ struct NearbyNotificationsExplanationView: View {
                 .foregroundStyle(.blue)
                 .padding(.top, 48)
             
-            Text(String(localized: "Nearby Card Notifications"))
+            Text(String(localized: "Nearby Card Notifications", comment: "Title of nearby notifications explanation sheet"))
                 .font(.title2)
                 .fontWeight(.bold)
             
             VStack(alignment: .leading, spacing: 12) {
-                Text(String(localized: "Never forget your loyalty card at the store"))
+                Text(String(localized: "Never forget your loyalty card at the store", comment: "Subtitle in nearby notifications explanation sheet"))
                     .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.center)
                 
                 VStack(alignment: .leading, spacing: 6) {
-                    Text(String(localized: "This helps you:"))
+                    Text(String(localized: "This helps you:", comment: "Heading before list of nearby notification benefits"))
                         .fontWeight(.semibold)
-                    
-                    Label(String(localized: "Auto-show the right card"), systemImage: "sparkles")
-                    Label(String(localized: "See cards when you're nearby"), systemImage: "mappin.and.ellipse")
-                    Label(String(localized: "Find nearest card in widgets"), systemImage: "apps.iphone")
+
+                    Label(String(localized: "Auto-show the right card", comment: "Benefit of nearby notifications"), systemImage: "sparkles")
+                    Label(String(localized: "See cards when you're nearby", comment: "Benefit of nearby notifications"), systemImage: "mappin.and.ellipse")
+                    Label(String(localized: "Find nearest card in widgets", comment: "Benefit of nearby notifications"), systemImage: "apps.iphone")
                 }
                 .font(.subheadline)
                 
-                Text(String(localized: "Respects iOS Focus modes and Do Not Disturb. Silent notifications only."))
+                Text(String(localized: "Respects iOS Focus modes and Do Not Disturb. Silent notifications only.", comment: "Privacy note about nearby notification behavior"))
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity)
@@ -54,7 +54,7 @@ struct NearbyNotificationsExplanationView: View {
                 Button {
                     onEnable()
                 } label: {
-                    Text(String(localized: "Enable Nearby Notifications"))
+                    Text(String(localized: "Enable Nearby Notifications", comment: "Button to opt in to nearby card notifications"))
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)
@@ -62,7 +62,7 @@ struct NearbyNotificationsExplanationView: View {
                 Button {
                     onNotNow()
                 } label: {
-                    Text(String(localized: "Not Now"))
+                    Text(String(localized: "Not Now", comment: "Button to decline nearby notifications for now"))
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.bordered)

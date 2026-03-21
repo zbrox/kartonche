@@ -62,13 +62,13 @@ struct ImageCropView: View {
             .toolbarBackground(.hidden, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button(String(localized: "Cancel")) {
+                    Button(String(localized: "Cancel", comment: "Button to cancel image cropping")) {
                         dismiss()
                     }
                     .foregroundStyle(.white)
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(String(localized: "Done")) {
+                    Button(String(localized: "Done", comment: "Button to confirm image crop")) {
                         let data = renderCroppedImage(cropWidth: viewWidth)
                         onCrop(data)
                         dismiss()

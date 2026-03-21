@@ -27,7 +27,7 @@ struct ImportPreviewView: View {
                 // Summary section
                 Section {
                     HStack {
-                        Text(String(localized: "Cards to import"))
+                        Text(String(localized: "Cards to import", comment: "Label showing number of cards in import file"))
                         Spacer()
                         Text("\(container.cards.count)")
                             .foregroundStyle(.secondary)
@@ -37,7 +37,7 @@ struct ImportPreviewView: View {
                         HStack {
                             Image(systemName: "exclamationmark.triangle.fill")
                                 .foregroundStyle(.orange)
-                            Text(String(localized: "Duplicates found"))
+                            Text(String(localized: "Duplicates found", comment: "Label showing number of duplicate cards detected during import"))
                             Spacer()
                             Text("\(duplicates.count)")
                                 .foregroundStyle(.secondary)
@@ -45,7 +45,7 @@ struct ImportPreviewView: View {
                     }
                     
                     HStack {
-                        Text(String(localized: "Export date"))
+                        Text(String(localized: "Export date", comment: "Label showing when the import file was exported"))
                         Spacer()
                         Text(container.exportDate, style: .date)
                             .foregroundStyle(.secondary)
@@ -55,17 +55,17 @@ struct ImportPreviewView: View {
                 // Duplicate handling strategy (only if duplicates exist)
                 if !duplicates.isEmpty {
                     Section {
-                        Picker(String(localized: "Duplicate handling"), selection: $importStrategy) {
-                            Text(String(localized: "Skip duplicates"))
+                        Picker(String(localized: "Duplicate handling", comment: "Picker label for choosing how to handle duplicate cards"), selection: $importStrategy) {
+                            Text(String(localized: "Skip duplicates", comment: "Import strategy: don't import cards that already exist"))
                                 .tag(CardImporter.ImportStrategy.skipDuplicates)
-                            Text(String(localized: "Replace existing"))
+                            Text(String(localized: "Replace existing", comment: "Import strategy: overwrite existing cards with imported versions"))
                                 .tag(CardImporter.ImportStrategy.replaceDuplicates)
-                            Text(String(localized: "Keep both"))
+                            Text(String(localized: "Keep both", comment: "Import strategy: import all cards including duplicates"))
                                 .tag(CardImporter.ImportStrategy.keepBoth)
                         }
                         .pickerStyle(.inline)
                     } header: {
-                        Text(String(localized: "How to handle duplicates"))
+                        Text(String(localized: "How to handle duplicates", comment: "Section header for import duplicate strategy picker"))
                     } footer: {
                         Text(strategyDescription)
                     }
@@ -84,24 +84,24 @@ struct ImportPreviewView: View {
                         }
                     }
                 } header: {
-                    Text(String(localized: "Cards"))
+                    Text(String(localized: "Cards", comment: "Section header for list of cards being imported"))
                 } footer: {
-                    Text(String(localized: "Tap a card to preview"))
+                    Text(String(localized: "Tap a card to preview", comment: "Footer hint in import card list"))
                         .font(.caption)
                 }
             }
-            .navigationTitle(String(localized: "Import Cards"))
+            .navigationTitle(String(localized: "Import Cards", comment: "Navigation title for import preview screen"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button(String(localized: "Cancel")) {
+                    Button(String(localized: "Cancel", comment: "Button to cancel card import")) {
                         onCancel()
                     }
                     .disabled(isImporting)
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(String(localized: "Import")) {
+                    Button(String(localized: "Import", comment: "Button to confirm importing cards")) {
                         Task {
                             await performImport()
                         }
@@ -111,14 +111,14 @@ struct ImportPreviewView: View {
             }
             .overlay {
                 if isImporting {
-                    ProgressView(String(localized: "Importing..."))
+                    ProgressView(String(localized: "Importing...", comment: "Progress overlay while importing cards"))
                         .padding()
                         .background(.regularMaterial)
                         .cornerRadius(12)
                 }
             }
-            .alert(String(localized: "Import Failed"), isPresented: $showError) {
-                Button(String(localized: "OK")) {
+            .alert(String(localized: "Import Failed", comment: "Alert title when card import fails"), isPresented: $showError) {
+                Button(String(localized: "OK", comment: "Button to dismiss import error alert")) {
                     showError = false
                 }
             } message: {
@@ -135,11 +135,11 @@ struct ImportPreviewView: View {
     private var strategyDescription: String {
         switch importStrategy {
         case .skipDuplicates:
-            return String(localized: "Duplicate cards will not be imported")
+            return String(localized: "Duplicate cards will not be imported", comment: "Description of skip-duplicates import strategy")
         case .replaceDuplicates:
-            return String(localized: "Existing cards will be replaced with imported versions")
+            return String(localized: "Existing cards will be replaced with imported versions", comment: "Description of replace-duplicates import strategy")
         case .keepBoth:
-            return String(localized: "All cards will be imported, even duplicates")
+            return String(localized: "All cards will be imported, even duplicates", comment: "Description of keep-both import strategy")
         }
     }
     

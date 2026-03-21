@@ -62,7 +62,7 @@ struct LocationEditorView: View {
             Form {
                 // Name field
                 Section {
-                    TextField(String(localized: "Location Name"), text: $name)
+                    TextField(String(localized: "Location Name", comment: "Text field placeholder for naming a location"), text: $name)
                         .accessibilityIdentifier("locationNameField")
                 }
                 
@@ -75,7 +75,7 @@ struct LocationEditorView: View {
                         } label: {
                             HStack {
                                 Image(systemName: "location.circle.fill")
-                                Text(String(localized: "Use Current Location"))
+                                Text(String(localized: "Use Current Location", comment: "Button to set location from device GPS"))
                                 Spacer()
                                 if isUsingCurrentLocation {
                                     ProgressView()
@@ -89,7 +89,7 @@ struct LocationEditorView: View {
                         } label: {
                             HStack {
                                 Image(systemName: "mappin.circle.fill")
-                                Text(String(localized: "Drop Pin on Map"))
+                                Text(String(localized: "Drop Pin on Map", comment: "Button to open map and select a location"))
                             }
                         }
                         .accessibilityIdentifier("dropPinOnMapButton")
@@ -102,7 +102,7 @@ struct LocationEditorView: View {
                     }
                     
                     Section {
-                        TextField(String(localized: "Search for address..."), text: $searchText)
+                        TextField(String(localized: "Search for address...", comment: "Placeholder in the address search field"), text: $searchText)
                             .accessibilityIdentifier("addressSearchField")
                             .onChange(of: searchText) { _, newValue in
                                 if !newValue.isEmpty {
@@ -121,7 +121,7 @@ struct LocationEditorView: View {
                                 .foregroundColor(.red)
                         }
                     } footer: {
-                        Text(String(localized: "Type to search, then tap a result"))
+                        Text(String(localized: "Type to search, then tap a result", comment: "Footer hint below the address search field"))
                             .font(.caption)
                     }
                     
@@ -173,7 +173,7 @@ struct LocationEditorView: View {
                             } label: {
                                 HStack {
                                     Image(systemName: "arrow.triangle.2.circlepath")
-                                    Text(String(localized: "Change Location"))
+                                    Text(String(localized: "Change Location", comment: "Button to clear selected location and pick a different one"))
                                 }
                                 .frame(maxWidth: .infinity)
                             }
@@ -191,24 +191,24 @@ struct LocationEditorView: View {
                         Slider(value: $radius, in: 100...2000, step: 50)
                     }
                 } header: {
-                    Text(String(localized: "Detection Radius"))
+                    Text(String(localized: "Detection Radius", comment: "Section header for the geofence radius slider"))
                 } footer: {
-                    Text(String(localized: "Card will appear when you're within this distance"))
+                    Text(String(localized: "Card will appear when you're within this distance", comment: "Footer explaining what the detection radius controls"))
                         .font(.caption)
                 }
             }
-            .navigationTitle(isEditMode ? String(localized: "Edit Location") : String(localized: "Add Location"))
+            .navigationTitle(isEditMode ? String(localized: "Edit Location", comment: "Navigation title when editing an existing location") : String(localized: "Add Location", comment: "Navigation title when creating a new location"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button(String(localized: "Cancel")) {
+                    Button(String(localized: "Cancel", comment: "Toolbar button to dismiss the location editor")) {
                         dismiss()
                     }
                     .accessibilityIdentifier("cancelButton")
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(String(localized: "Save")) {
+                    Button(String(localized: "Save", comment: "Toolbar button to save the location")) {
                         saveLocation()
                     }
                     .disabled(!isValid)
@@ -301,7 +301,7 @@ struct LocationEditorView: View {
                 searchError = nil
             },
             onError: { [self] error in
-                searchError = String(localized: "Search failed. Check your internet connection.")
+                searchError = String(localized: "Search failed. Check your internet connection.", comment: "Error shown when address search fails")
                 searchResults = []
             }
         )
@@ -316,7 +316,7 @@ struct LocationEditorView: View {
         
         search.start { response, error in
             guard let response = response, let mapItem = response.mapItems.first else {
-                searchError = String(localized: "Unable to find location details")
+                searchError = String(localized: "Unable to find location details", comment: "Error when a search result can't be resolved to coordinates")
                 return
             }
             
@@ -345,15 +345,15 @@ struct LocationEditorView: View {
                 let mapItem = try await GeocodingService.reverseGeocode(location: location)
                 
                 // Extract name - prefer POI name, fall back to city
-                let geocodedName = mapItem.name ?? mapItem.addressRepresentations?.cityName ?? String(localized: "Current Location")
-                let geocodedAddress = mapItem.address?.fullAddress ?? mapItem.addressRepresentations?.fullAddress(includingRegion: false, singleLine: true) ?? String(localized: "Unknown Address")
-                
+                let geocodedName = mapItem.name ?? mapItem.addressRepresentations?.cityName ?? String(localized: "Current Location", comment: "Fallback location name when reverse geocoding has no name")
+                let geocodedAddress = mapItem.address?.fullAddress ?? mapItem.addressRepresentations?.fullAddress(includingRegion: false, singleLine: true) ?? String(localized: "Unknown Address", comment: "Fallback when reverse geocoding returns no address")
+
                 await MainActor.run {
                     // Auto-fill name if empty
                     if name.isEmpty {
                         name = geocodedName
                     }
-                    
+
                     address = geocodedAddress
                     latitude = coordinate.latitude
                     longitude = coordinate.longitude
@@ -362,7 +362,7 @@ struct LocationEditorView: View {
                 await MainActor.run {
                     // Even if geocoding fails, use the coordinates
                     if name.isEmpty {
-                        name = String(localized: "Selected Location")
+                        name = String(localized: "Selected Location", comment: "Fallback location name when geocoding fails for a map pin")
                     }
                     address = String(format: "%.6f° N, %.6f° E", coordinate.latitude, coordinate.longitude)
                     latitude = coordinate.latitude
@@ -375,7 +375,7 @@ struct LocationEditorView: View {
     private func useCurrentLocation() {
         guard locationManager.authorizationStatus == .authorizedWhenInUse ||
               locationManager.authorizationStatus == .authorizedAlways else {
-            currentLocationError = String(localized: "Location permission not granted")
+            currentLocationError = String(localized: "Location permission not granted", comment: "Error when user tries to use GPS without permission")
             if locationManager.authorizationStatus == .notDetermined {
                 showingPermissionRequest = true
             } else {
@@ -398,7 +398,7 @@ struct LocationEditorView: View {
             
             guard let currentLocation = locationManager.currentLocation else {
                 await MainActor.run {
-                    currentLocationError = String(localized: "Unable to get current location")
+                    currentLocationError = String(localized: "Unable to get current location", comment: "Error when GPS fails to return a position")
                     isUsingCurrentLocation = false
                 }
                 return
@@ -408,19 +408,19 @@ struct LocationEditorView: View {
                 let mapItem = try await GeocodingService.reverseGeocode(location: currentLocation)
                 
                 // Extract name - prefer POI name, fall back to city
-                let geocodedName = mapItem.name ?? mapItem.addressRepresentations?.cityName ?? String(localized: "Current Location")
-                let geocodedAddress = mapItem.address?.fullAddress ?? mapItem.addressRepresentations?.fullAddress(includingRegion: false, singleLine: true) ?? String(localized: "Unknown Address")
-                
+                let geocodedName = mapItem.name ?? mapItem.addressRepresentations?.cityName ?? String(localized: "Current Location", comment: "Fallback location name when reverse geocoding has no name")
+                let geocodedAddress = mapItem.address?.fullAddress ?? mapItem.addressRepresentations?.fullAddress(includingRegion: false, singleLine: true) ?? String(localized: "Unknown Address", comment: "Fallback when reverse geocoding returns no address")
+
                 await MainActor.run {
                     // Auto-fill name if empty
                     if name.isEmpty {
                         name = geocodedName
                     }
-                    
+
                     address = geocodedAddress
                     latitude = currentLocation.coordinate.latitude
                     longitude = currentLocation.coordinate.longitude
-                    
+
                     isUsingCurrentLocation = false
                     currentLocationError = nil
                 }

@@ -30,7 +30,7 @@ struct LocationSettingsView: View {
                 // Nearby Card Notifications
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(String(localized: "Nearby Card Notifications"))
+                        Text(String(localized: "Nearby Card Notifications", comment: "Feature title for location-based card reminders"))
                             .font(.headline)
                         Text(nearbyNotificationStatusText)
                             .font(.caption)
@@ -55,32 +55,32 @@ struct LocationSettingsView: View {
                 
                 if !canEnableNearbyNotifications {
                     if locationManager.authorizationStatus != .authorizedAlways {
-                        Text(String(localized: "'Always' location permission required for nearby notifications"))
+                        Text(String(localized: "'Always' location permission required for nearby notifications", comment: "Warning when always-on location permission is needed"))
                             .font(.caption)
                             .foregroundStyle(.orange)
                     } else if notificationManager.authorizationStatus != .authorized {
-                        Text(String(localized: "Notification permission required"))
+                        Text(String(localized: "Notification permission required", comment: "Warning when notification permission is needed for nearby alerts"))
                             .font(.caption)
                             .foregroundStyle(.orange)
                     }
                 } else if nearbyNotificationsEnabled {
-                    Text(String(localized: "You'll be notified when you're near a saved card location"))
+                    Text(String(localized: "You'll be notified when you're near a saved card location", comment: "Status text when nearby notifications are active"))
                         .font(.caption)
                         .foregroundStyle(.blue)
                 }
                 
-                Text(String(localized: "Get reminded about your loyalty cards when you're near a store where you can use them."))
+                Text(String(localized: "Get reminded about your loyalty cards when you're near a store where you can use them.", comment: "Description of nearby card notifications feature"))
                     .font(.caption)
                     .foregroundStyle(.secondary)
             } header: {
-                Text(String(localized: "Features"))
+                Text(String(localized: "Features", comment: "Section header in location settings"))
             }
             
             // Permission Section
             Section {
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(String(localized: "Location Permission"))
+                        Text(String(localized: "Location Permission", comment: "Label for location permission status row"))
                             .font(.subheadline)
                         Text(permissionStatusText)
                             .font(.caption)
@@ -93,21 +93,21 @@ struct LocationSettingsView: View {
                         Button {
                             showingLocationPermission = true
                         } label: {
-                            Text(String(localized: "Enable"))
+                            Text(String(localized: "Enable", comment: "Button to request location permission"))
                         }
                         .buttonStyle(.bordered)
                     } else if locationManager.authorizationStatus == .denied {
                         Button {
                             openAppSettings()
                         } label: {
-                            Text(String(localized: "Settings"))
+                            Text(String(localized: "Settings", comment: "Button to open device Settings app for location permission"))
                         }
                         .buttonStyle(.bordered)
                     } else if locationManager.authorizationStatus == .authorizedWhenInUse {
                         Button {
                             showingAlwaysExplanation = true
                         } label: {
-                            Text(String(localized: "Upgrade"))
+                            Text(String(localized: "Upgrade", comment: "Button to upgrade from when-in-use to always location permission"))
                         }
                         .buttonStyle(.bordered)
                     }
@@ -115,40 +115,40 @@ struct LocationSettingsView: View {
                 
                 // Status-specific help text
                 if locationManager.authorizationStatus == .notDetermined {
-                    Text(String(localized: "Enable location to see cards for nearby stores"))
+                    Text(String(localized: "Enable location to see cards for nearby stores", comment: "Help text when location permission is not yet requested"))
                         .font(.caption)
                         .foregroundStyle(.blue)
                 } else if locationManager.authorizationStatus == .denied {
-                    Text(String(localized: "Settings > kartonche > Location > While Using the App"))
+                    Text(String(localized: "Settings > kartonche > Location > While Using the App", comment: "Instructions to fix denied location permission in iOS Settings"))
                         .font(.caption)
                         .foregroundStyle(.orange)
                 } else if locationManager.authorizationStatus == .restricted {
-                    Text(String(localized: "Location access is restricted by parental controls or device management"))
+                    Text(String(localized: "Location access is restricted by parental controls or device management", comment: "Help text when location is restricted by MDM or parental controls"))
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 } else if locationManager.authorizationStatus == .authorizedWhenInUse {
-                    Text(String(localized: "Upgrade to 'Always' for nearby notifications and better widget performance"))
+                    Text(String(localized: "Upgrade to 'Always' for nearby notifications and better widget performance", comment: "Help text suggesting always-on location for better experience"))
                         .font(.caption)
                         .foregroundStyle(.blue)
                 }
             } header: {
-                Text(String(localized: "Permission"))
+                Text(String(localized: "Permission", comment: "Section header for location permission status"))
             }
             
             // Info Section
             Section {
                 VStack(alignment: .leading, spacing: 8) {
-                    Label(String(localized: "Your location is only used to find nearby stores"), systemImage: "checkmark.shield")
-                    Label(String(localized: "Location data never leaves your device"), systemImage: "checkmark.shield")
-                    Label(String(localized: "Minimal battery impact"), systemImage: "checkmark.shield")
+                    Label(String(localized: "Your location is only used to find nearby stores", comment: "Privacy assurance about location data usage"), systemImage: "checkmark.shield")
+                    Label(String(localized: "Location data never leaves your device", comment: "Privacy assurance about location data storage"), systemImage: "checkmark.shield")
+                    Label(String(localized: "Minimal battery impact", comment: "Privacy assurance about battery usage"), systemImage: "checkmark.shield")
                 }
                 .font(.caption)
                 .foregroundStyle(.secondary)
             } header: {
-                Text(String(localized: "Privacy"))
+                Text(String(localized: "Privacy", comment: "Section header for privacy information about location"))
             }
         }
-        .navigationTitle(String(localized: "Location"))
+        .navigationTitle(String(localized: "Location", comment: "Navigation title for location settings screen"))
         .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $showingLocationPermission) {
             LocationPermissionView(
@@ -184,17 +184,17 @@ struct LocationSettingsView: View {
     private var permissionStatusText: String {
         switch locationManager.authorizationStatus {
         case .notDetermined:
-            return String(localized: "Not Set")
+            return String(localized: "Not Set", comment: "Location permission status: not yet requested")
         case .restricted:
-            return String(localized: "Restricted")
+            return String(localized: "Restricted", comment: "Location permission status: restricted by system")
         case .denied:
-            return String(localized: "Denied")
+            return String(localized: "Denied", comment: "Location permission status: denied by user")
         case .authorizedWhenInUse:
-            return String(localized: "While Using App")
+            return String(localized: "While Using App", comment: "Location permission status: only while app is open")
         case .authorizedAlways:
-            return String(localized: "Always")
+            return String(localized: "Always", comment: "Location permission status: always available")
         @unknown default:
-            return String(localized: "Unknown")
+            return String(localized: "Unknown", comment: "Location permission status: unrecognized value")
         }
     }
     
@@ -213,11 +213,11 @@ struct LocationSettingsView: View {
     
     private var nearbyNotificationStatusText: String {
         if !canEnableNearbyNotifications {
-            return String(localized: "Requires Always location + Notifications")
+            return String(localized: "Requires Always location + Notifications", comment: "Status when prerequisites for nearby notifications are not met")
         }
         return nearbyNotificationsEnabled ?
-            String(localized: "Enabled") :
-            String(localized: "Disabled")
+            String(localized: "Enabled", comment: "Nearby notifications toggle status: on") :
+            String(localized: "Disabled", comment: "Nearby notifications toggle status: off")
     }
     
     private func openAppSettings() {
@@ -240,22 +240,22 @@ struct AlwaysLocationExplanationView: View {
                 .foregroundStyle(.blue)
                 .padding(.top, 48)
             
-            Text(String(localized: "Upgrade to 'Always' Location"))
+            Text(String(localized: "Upgrade to 'Always' Location", comment: "Title of sheet explaining always-on location benefits"))
                 .font(.title2)
                 .fontWeight(.bold)
             
             VStack(alignment: .leading, spacing: 12) {
                 VStack(alignment: .leading, spacing: 6) {
-                    Text(String(localized: "Better Widget Performance:"))
+                    Text(String(localized: "Better Widget Performance:", comment: "Heading for list of always-on location benefits"))
                         .fontWeight(.semibold)
-                    
-                    Label(String(localized: "Widgets work when app is closed"), systemImage: "apps.iphone")
-                    Label(String(localized: "Fresher location data"), systemImage: "arrow.clockwise")
-                    Label(String(localized: "More accurate nearby store detection"), systemImage: "location.fill")
+
+                    Label(String(localized: "Widgets work when app is closed", comment: "Benefit of always-on location"), systemImage: "apps.iphone")
+                    Label(String(localized: "Fresher location data", comment: "Benefit of always-on location"), systemImage: "arrow.clockwise")
+                    Label(String(localized: "More accurate nearby store detection", comment: "Benefit of always-on location"), systemImage: "location.fill")
                 }
                 .font(.subheadline)
                 
-                Text(String(localized: "Your location is only used to find nearby stores. Battery impact is minimal."))
+                Text(String(localized: "Your location is only used to find nearby stores. Battery impact is minimal.", comment: "Privacy note in always-on location explanation sheet"))
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity)
@@ -271,20 +271,20 @@ struct AlwaysLocationExplanationView: View {
                     locationManager.openSettings()
                     dismiss()
                 } label: {
-                    Text(String(localized: "Open Settings"))
+                    Text(String(localized: "Open Settings", comment: "Button to open iOS Settings to change location permission"))
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)
-                
+
                 Button {
                     dismiss()
                 } label: {
-                    Text(String(localized: "Keep Current"))
+                    Text(String(localized: "Keep Current", comment: "Button to keep current location permission and dismiss"))
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.bordered)
-                
-                Text(String(localized: "Select 'Location' then choose 'Always'"))
+
+                Text(String(localized: "Select 'Location' then choose 'Always'", comment: "Instruction text guiding user through iOS Settings"))
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }

@@ -84,8 +84,8 @@ class NotificationManager: ObservableObject {
            sevenDaysBefore > Date() {
             await scheduleNotification(
                 identifier: sevenDayIdentifier(for: card.id),
-                title: String(localized: "Card Expiring Soon"),
-                body: String(localized: "\(card.name) expires in 7 days"),
+                title: String(localized: "Card Expiring Soon", comment: "Notification title for 7-day expiration warning"),
+                body: String(localized: "\(card.name) expires in 7 days", comment: "Notification body for 7-day expiration warning"),
                 date: sevenDaysBefore,
                 cardID: card.id
             )
@@ -96,8 +96,8 @@ class NotificationManager: ObservableObject {
            oneDayBefore > Date() {
             await scheduleNotification(
                 identifier: oneDayIdentifier(for: card.id),
-                title: String(localized: "Card Expires Tomorrow"),
-                body: String(localized: "\(card.name) expires tomorrow"),
+                title: String(localized: "Card Expires Tomorrow", comment: "Notification title for 1-day expiration warning"),
+                body: String(localized: "\(card.name) expires tomorrow", comment: "Notification body for 1-day expiration warning"),
                 date: oneDayBefore,
                 cardID: card.id
             )
@@ -184,16 +184,16 @@ class NotificationManager: ObservableObject {
         
         if cardIDs.count == 1 {
             // Single card - notification for one saved location
-            content.title = String(localized: "You're near a saved location")
-            content.body = String(localized: "Tap to show your card")
+            content.title = String(localized: "You're near a saved location", comment: "Notification title when near a single card location")
+            content.body = String(localized: "Tap to show your card", comment: "Notification body for single nearby card")
             content.userInfo = [
                 "cardID": cardIDs[0].uuidString,
                 "type": "nearby_single"
             ]
         } else {
             // Multiple cards - multiple saved locations at this spot
-            content.title = String(localized: "You're near \(cardIDs.count) saved locations")
-            content.body = String(localized: "Tap to see your cards")
+            content.title = String(localized: "You're near \(cardIDs.count) saved locations", comment: "Notification title when near multiple card locations")
+            content.body = String(localized: "Tap to see your cards", comment: "Notification body for multiple nearby cards")
             content.userInfo = [
                 "cardIDs": cardIDs.map { $0.uuidString },
                 "type": "nearby_multiple"

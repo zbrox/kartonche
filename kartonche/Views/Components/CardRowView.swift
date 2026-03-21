@@ -95,7 +95,7 @@ struct CardRowView: View {
                     .foregroundStyle(card.isFavorite ? .yellow : .gray)
             }
             .buttonStyle(.plain)
-            .accessibilityLabel(card.isFavorite ? String(localized: "Remove from favorites") : String(localized: "Add to favorites"))
+            .accessibilityLabel(card.isFavorite ? String(localized: "Remove from favorites", comment: "Accessibility label for favorite star when card is favorited") : String(localized: "Add to favorites", comment: "Accessibility label for favorite star when card is not favorited"))
             .accessibilityAddTraits(.isButton)
         }
         .padding(.vertical, 4)
@@ -110,21 +110,21 @@ struct CardRowView: View {
             parts.append(cardholderName)
         }
         if let cardNumber = card.cardNumber, !cardNumber.isEmpty {
-            parts.append(String(localized: "card number") + " \(cardNumber)")
+            parts.append(String(localized: "card number", comment: "Accessibility prefix before the card number value") + " \(cardNumber)")
         }
         if hasLocations {
-            parts.append(String(localized: "has locations"))
+            parts.append(String(localized: "has locations", comment: "Accessibility note that card has saved store locations"))
         }
         return parts.joined(separator: ", ")
     }
 
     private func accessibilityExpirationLabel(_ date: Date) -> String {
         if card.isExpired {
-            return String(localized: "Expired on") + " \(formatShortDate(date))"
+            return String(localized: "Expired on", comment: "Accessibility prefix for past expiration date") + " \(formatShortDate(date))"
         } else if card.isExpiringSoon {
-            return String(localized: "Expiring soon on") + " \(formatShortDate(date))"
+            return String(localized: "Expiring soon on", comment: "Accessibility prefix for upcoming expiration date") + " \(formatShortDate(date))"
         } else {
-            return String(localized: "Expires on") + " \(formatShortDate(date))"
+            return String(localized: "Expires on", comment: "Accessibility prefix for future expiration date") + " \(formatShortDate(date))"
         }
     }
     

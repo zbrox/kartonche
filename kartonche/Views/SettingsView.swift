@@ -18,13 +18,13 @@ struct SettingsView: View {
                     NavigationLink {
                         NotificationsSettingsView()
                     } label: {
-                        Label(String(localized: "Notifications"), systemImage: "bell.badge")
+                        Label(String(localized: "Notifications", comment: "Settings row to open notification settings"), systemImage: "bell.badge")
                     }
                     
                     NavigationLink {
                         LocationSettingsView()
                     } label: {
-                        Label(String(localized: "Location"), systemImage: "location")
+                        Label(String(localized: "Location", comment: "Settings row to open location settings"), systemImage: "location")
                     }
                 }
                 
@@ -33,7 +33,7 @@ struct SettingsView: View {
                     NavigationLink {
                         DataSettingsView()
                     } label: {
-                        Label(String(localized: "Data"), systemImage: "externaldrive")
+                        Label(String(localized: "Data", comment: "Settings row to open data management (export/import)"), systemImage: "externaldrive")
                     }
                     .accessibilityIdentifier("dataSettingsRow")
                 }
@@ -43,7 +43,7 @@ struct SettingsView: View {
                     NavigationLink {
                         AboutView()
                     } label: {
-                        Label(String(localized: "About"), systemImage: "info.circle")
+                        Label(String(localized: "About", comment: "Settings row to open About screen"), systemImage: "info.circle")
                     }
                 }
 
@@ -57,11 +57,11 @@ struct SettingsView: View {
                 }
                 #endif
             }
-            .navigationTitle(String(localized: "Settings"))
+            .navigationTitle(String(localized: "Settings", comment: "Navigation title for settings screen"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(String(localized: "Done")) {
+                    Button(String(localized: "Done", comment: "Button to dismiss settings")) {
                         dismiss()
                     }
                 }

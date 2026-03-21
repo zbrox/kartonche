@@ -42,7 +42,7 @@ struct CardView<Card: CardViewable>: View {
                     Button {
                         showNotesSheet = true
                     } label: {
-                        Label(String(localized: "Notes"), systemImage: "note.text")
+                        Label(String(localized: "Notes", comment: "Button to view card notes"), systemImage: "note.text")
                             .font(.subheadline)
                             .fontWeight(.medium)
                             .foregroundStyle(primaryColor)
@@ -94,7 +94,7 @@ struct CardView<Card: CardViewable>: View {
                         .font(.title2)
                         .foregroundStyle(secondaryColor)
                 }
-                .accessibilityLabel(String(localized: "Close"))
+                .accessibilityLabel(String(localized: "Close", comment: "Accessibility label for close button on card preview"))
             }
         }
         .padding(.horizontal, 20)
@@ -110,7 +110,7 @@ struct CardView<Card: CardViewable>: View {
             parts.append(storeName)
         }
         if let cardNumber = card.cardNumber, !cardNumber.isEmpty {
-            parts.append(String(localized: "card number") + " \(cardNumber)")
+            parts.append(String(localized: "card number", comment: "Accessibility prefix before the card number value") + " \(cardNumber)")
         }
         if let cardholderName = card.cardholderName, !cardholderName.isEmpty {
             parts.append(cardholderName)
@@ -134,9 +134,9 @@ struct CardView<Card: CardViewable>: View {
                 .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 5)
         )
         .padding(.horizontal, 24)
-        .accessibilityLabel(String(localized: "Barcode for scanning"))
+        .accessibilityLabel(String(localized: "Barcode for scanning", comment: "Accessibility label for the barcode image"))
         .accessibilityValue("\(card.barcodeType.displayName), \(card.barcodeData)")
-        .accessibilityHint(String(localized: "Show this to the cashier to scan"))
+        .accessibilityHint(String(localized: "Show this to the cashier to scan", comment: "Accessibility hint for barcode image"))
     }
     
     private var notesSheetView: some View {
@@ -150,11 +150,11 @@ struct CardView<Card: CardViewable>: View {
                 }
                 .padding()
             }
-            .navigationTitle(String(localized: "Notes"))
+            .navigationTitle(String(localized: "Notes", comment: "Navigation title for card notes sheet"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(String(localized: "Done")) {
+                    Button(String(localized: "Done", comment: "Button to dismiss card notes sheet")) {
                         showNotesSheet = false
                     }
                 }

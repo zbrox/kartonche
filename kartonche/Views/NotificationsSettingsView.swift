@@ -19,7 +19,7 @@ struct NotificationsSettingsView: View {
             Section {
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(String(localized: "Expiration Reminders"))
+                        Text(String(localized: "Expiration Reminders", comment: "Feature title for card expiration notifications"))
                             .font(.headline)
                         Text(featureStatusText)
                             .font(.caption)
@@ -36,7 +36,7 @@ struct NotificationsSettingsView: View {
                 
                 if notificationManager.authorizationStatus == .authorized && pendingNotificationCount > 0 {
                     HStack {
-                        Text(String(localized: "Scheduled reminders"))
+                        Text(String(localized: "Scheduled reminders", comment: "Label showing count of pending expiration reminders"))
                             .font(.subheadline)
                         Spacer()
                         Text("\(pendingNotificationCount)")
@@ -45,18 +45,18 @@ struct NotificationsSettingsView: View {
                     }
                 }
                 
-                Text(String(localized: "Get reminded before your loyalty cards expire so you can renew them in time."))
+                Text(String(localized: "Get reminded before your loyalty cards expire so you can renew them in time.", comment: "Description of the expiration reminders feature"))
                     .font(.caption)
                     .foregroundStyle(.secondary)
             } header: {
-                Text(String(localized: "Features"))
+                Text(String(localized: "Features", comment: "Section header in notification settings"))
             }
-            
+
             // Permission Section
             Section {
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(String(localized: "Notification Permission"))
+                        Text(String(localized: "Notification Permission", comment: "Label for notification permission status row"))
                             .font(.subheadline)
                         Text(permissionStatusText)
                             .font(.caption)
@@ -69,29 +69,29 @@ struct NotificationsSettingsView: View {
                         Button {
                             showingNotificationPermission = true
                         } label: {
-                            Text(String(localized: "Enable"))
+                            Text(String(localized: "Enable", comment: "Button to request notification permission"))
                         }
                         .buttonStyle(.bordered)
                     } else if notificationManager.authorizationStatus == .denied {
                         Button {
                             openAppSettings()
                         } label: {
-                            Text(String(localized: "Settings"))
+                            Text(String(localized: "Settings", comment: "Button to open device Settings for notification permission"))
                         }
                         .buttonStyle(.bordered)
                     }
                 }
                 
                 if notificationManager.authorizationStatus == .denied {
-                    Text(String(localized: "Go to Settings > Notifications > kartonche to enable reminders"))
+                    Text(String(localized: "Go to Settings > Notifications > kartonche to enable reminders", comment: "Instructions to fix denied notification permission in iOS Settings"))
                         .font(.caption)
                         .foregroundStyle(.orange)
                 }
             } header: {
-                Text(String(localized: "Permission"))
+                Text(String(localized: "Permission", comment: "Section header for notification permission status"))
             }
         }
-        .navigationTitle(String(localized: "Notifications"))
+        .navigationTitle(String(localized: "Notifications", comment: "Navigation title for notification settings screen"))
         .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $showingNotificationPermission) {
             NotificationPermissionView(
@@ -115,30 +115,30 @@ struct NotificationsSettingsView: View {
     private var featureStatusText: String {
         switch notificationManager.authorizationStatus {
         case .authorized:
-            return String(localized: "Active")
+            return String(localized: "Active", comment: "Notification feature status: working")
         case .denied:
-            return String(localized: "Permission required")
+            return String(localized: "Permission required", comment: "Notification feature status: permission denied")
         case .notDetermined:
-            return String(localized: "Not set up")
+            return String(localized: "Not set up", comment: "Notification feature status: not yet configured")
         default:
-            return String(localized: "Limited")
+            return String(localized: "Limited", comment: "Notification feature status: partially available")
         }
     }
     
     private var permissionStatusText: String {
         switch notificationManager.authorizationStatus {
         case .notDetermined:
-            return String(localized: "Not Set")
+            return String(localized: "Not Set", comment: "Notification permission status: not yet requested")
         case .denied:
-            return String(localized: "Denied")
+            return String(localized: "Denied", comment: "Notification permission status: denied by user")
         case .authorized:
-            return String(localized: "Enabled")
+            return String(localized: "Enabled", comment: "Notification permission status: fully authorized")
         case .provisional:
-            return String(localized: "Provisional")
+            return String(localized: "Provisional", comment: "Notification permission status: provisional delivery")
         case .ephemeral:
-            return String(localized: "Ephemeral")
+            return String(localized: "Ephemeral", comment: "Notification permission status: ephemeral/temporary")
         @unknown default:
-            return String(localized: "Unknown")
+            return String(localized: "Unknown", comment: "Notification permission status: unrecognized value")
         }
     }
     

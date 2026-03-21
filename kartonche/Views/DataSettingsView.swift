@@ -37,13 +37,13 @@ struct DataSettingsView: View {
             Section {
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(String(localized: "iCloud Sync"))
+                        Text(String(localized: "iCloud Sync", comment: "Label for iCloud sync status row in data settings."))
                         Text(syncStatusTitle)
                             .font(.caption)
                             .foregroundStyle(.secondary)
                         if let lastCheckedAt = syncSnapshot.lastCheckedAt {
                             HStack(spacing: 4) {
-                                Text(String(localized: "Last checked"))
+                                Text(String(localized: "Last checked", comment: "Label preceding the relative time of last sync check."))
                                 Text(lastCheckedAt, style: .relative)
                             }
                             .font(.caption2)
@@ -58,7 +58,7 @@ struct DataSettingsView: View {
                     } label: {
                         Image(systemName: "arrow.clockwise")
                     }
-                    .accessibilityLabel(String(localized: "Refresh Sync Status"))
+                    .accessibilityLabel(String(localized: "Refresh Sync Status", comment: "Accessibility label for the refresh sync status button."))
                 }
                 .accessibilityIdentifier("iCloudSyncStatusRow")
 
@@ -66,7 +66,7 @@ struct DataSettingsView: View {
                     exportAllCards()
                 } label: {
                     HStack {
-                        Text(String(localized: "Export All Cards"))
+                        Text(String(localized: "Export All Cards", comment: "Button to export all loyalty cards at once."))
                         Spacer()
                         Text("\(allCards.count)")
                             .foregroundStyle(.secondary)
@@ -77,14 +77,14 @@ struct DataSettingsView: View {
                 NavigationLink {
                     CardExportSelectionView()
                 } label: {
-                    Text(String(localized: "Select Cards to Export"))
+                    Text(String(localized: "Select Cards to Export", comment: "Button to choose specific cards for export."))
                 }
                 .accessibilityIdentifier("selectCardsToExportRow")
                 .disabled(allCards.isEmpty)
             } header: {
-                Text(String(localized: "Export"))
+                Text(String(localized: "Export", comment: "Section header for card export options."))
             } footer: {
-                Text(String(localized: "Cards are exported as .kartonche files that can be shared and imported on other devices."))
+                Text(String(localized: "Cards are exported as .kartonche files that can be shared and imported on other devices.", comment: "Footer explaining the export file format."))
             }
 
             // Import
@@ -92,13 +92,13 @@ struct DataSettingsView: View {
                 Button {
                     showingFilePicker = true
                 } label: {
-                    Text(String(localized: "Import from File"))
+                    Text(String(localized: "Import from File", comment: "Button to import cards from a .kartonche file."))
                 }
             } header: {
-                Text(String(localized: "Import"))
+                Text(String(localized: "Import", comment: "Section header for card import options."))
             }
         }
-        .navigationTitle(String(localized: "Data"))
+        .navigationTitle(String(localized: "Data", comment: "Navigation title for the data settings screen."))
         .navigationBarTitleDisplayMode(.inline)
         .task {
             await refreshSyncStatus()
@@ -128,15 +128,15 @@ struct DataSettingsView: View {
                 )
             }
         }
-        .alert(String(localized: "Export Failed"), isPresented: $showExportError) {
-            Button(String(localized: "OK")) {}
+        .alert(String(localized: "Export Failed", comment: "Alert title when card export fails."), isPresented: $showExportError) {
+            Button(String(localized: "OK", comment: "Dismiss button on the export error alert.")) {}
         } message: {
             if let error = exportError {
                 Text(error.localizedDescription)
             }
         }
-        .alert(String(localized: "Import Failed"), isPresented: $showImportError) {
-            Button(String(localized: "OK")) {}
+        .alert(String(localized: "Import Failed", comment: "Alert title when card import fails."), isPresented: $showImportError) {
+            Button(String(localized: "OK", comment: "Dismiss button on the import error alert.")) {}
         } message: {
             if let error = importError {
                 Text(error.localizedDescription)
@@ -191,13 +191,13 @@ struct DataSettingsView: View {
     private var syncStatusTitle: String {
         switch syncSnapshot.status {
         case .active:
-            return String(localized: "Sync Active")
+            return String(localized: "Sync Active", comment: "Status text when iCloud sync is working.")
         case .signedOut:
-            return String(localized: "iCloud Signed Out")
+            return String(localized: "iCloud Signed Out", comment: "Status text when user is signed out of iCloud.")
         case .unavailable:
-            return String(localized: "iCloud Unavailable")
+            return String(localized: "iCloud Unavailable", comment: "Status text when iCloud is not available on the device.")
         case .error:
-            return String(localized: "Sync Error")
+            return String(localized: "Sync Error", comment: "Status text when iCloud sync encountered an error.")
         }
     }
 }

@@ -40,7 +40,7 @@ struct AboutView: View {
                         .font(.title2)
                         .fontWeight(.bold)
                     
-                    Text(String(localized: "Version \(appVersion) (\(buildNumber))"))
+                    Text(String(localized: "Version \(appVersion) (\(buildNumber))", comment: "App version and build number in About screen"))
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
@@ -51,20 +51,20 @@ struct AboutView: View {
             
             // About Section
             Section {
-                Text(String(localized: "A simple app for organizing your loyalty cards. Open source, privacy-focused, no account required."))
+                Text(String(localized: "A simple app for organizing your loyalty cards. Open source, privacy-focused, no account required.", comment: "App description in About screen"))
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             } header: {
-                Text(String(localized: "About"))
+                Text(String(localized: "About", comment: "Section header in About screen"))
             }
-            
+
             // Legal Section
             Section {
                 Button {
                     showingLicense = true
                 } label: {
                     Label {
-                        Text(String(localized: "License"))
+                        Text(String(localized: "License", comment: "Button to view the app's open source license"))
                     } icon: {
                         Image(systemName: "doc.text")
                             .foregroundStyle(.tint)
@@ -76,7 +76,7 @@ struct AboutView: View {
                     showingPrivacy = true
                 } label: {
                     Label {
-                        Text(String(localized: "Privacy"))
+                        Text(String(localized: "Privacy", comment: "Button to view privacy policy"))
                     } icon: {
                         Image(systemName: "hand.raised")
                             .foregroundStyle(.tint)
@@ -84,7 +84,7 @@ struct AboutView: View {
                 }
                 .foregroundStyle(.primary)
             } header: {
-                Text(String(localized: "Legal"))
+                Text(String(localized: "Legal", comment: "Section header for license and privacy links"))
             }
             
             // Third-Party Licenses Section
@@ -92,10 +92,10 @@ struct AboutView: View {
                 NavigationLink {
                     ThirdPartyLicensesView()
                 } label: {
-                    Label(String(localized: "Third-Party Licenses"), systemImage: "doc.on.doc")
+                    Label(String(localized: "Third-Party Licenses", comment: "Link to view licenses of third-party libraries"), systemImage: "doc.on.doc")
                 }
             } header: {
-                Text(String(localized: "Licenses"))
+                Text(String(localized: "Licenses", comment: "Section header for third-party license links"))
             }
 
             // Support Section
@@ -104,7 +104,7 @@ struct AboutView: View {
                     requestReview()
                 } label: {
                     Label {
-                        Text(String(localized: "Rate on App Store"))
+                        Text(String(localized: "Rate on App Store", comment: "Button to leave a review on the App Store"))
                     } icon: {
                         Image(systemName: "star")
                             .foregroundStyle(.tint)
@@ -114,7 +114,7 @@ struct AboutView: View {
                 
                 Link(destination: URL(string: "https://github.com/zbrox/kartonche/issues")!) {
                     Label {
-                        Text(String(localized: "Report an Issue"))
+                        Text(String(localized: "Report an Issue", comment: "Link to open GitHub issues page for bug reports"))
                     } icon: {
                         Image(systemName: "ladybug")
                             .foregroundStyle(.tint)
@@ -125,12 +125,12 @@ struct AboutView: View {
                 Button {
                     // Placeholder for future donation link
                 } label: {
-                    Label(String(localized: "Support Development"), systemImage: "cup.and.saucer")
+                    Label(String(localized: "Support Development", comment: "Button for future donation/support feature"), systemImage: "cup.and.saucer")
                 }
                 .foregroundStyle(.secondary)
                 .disabled(true)
             } header: {
-                Text(String(localized: "Support"))
+                Text(String(localized: "Support", comment: "Section header for support and feedback links"))
             }
             
             // More Section
@@ -139,7 +139,7 @@ struct AboutView: View {
                     showingWhatsNew = true
                 } label: {
                     Label {
-                        Text(String(localized: "What's New"))
+                        Text(String(localized: "What's New", comment: "Button to view changelog / release notes"))
                     } icon: {
                         Image(systemName: "sparkles")
                             .foregroundStyle(.tint)
@@ -149,7 +149,7 @@ struct AboutView: View {
                 
                 Link(destination: URL(string: "https://github.com/zbrox/kartonche")!) {
                     Label {
-                        Text(String(localized: "Source Code"))
+                        Text(String(localized: "Source Code", comment: "Link to view the app's source code on GitHub"))
                     } icon: {
                         Image(systemName: "chevron.left.forwardslash.chevron.right")
                             .foregroundStyle(.tint)
@@ -157,12 +157,12 @@ struct AboutView: View {
                 }
                 .foregroundStyle(.primary)
             } header: {
-                Text(String(localized: "More"))
+                Text(String(localized: "More", comment: "Section header for additional links like changelog and source code"))
             }
             
             // Credits
             Section {
-                Text(String(localized: "Thanks to early testers and friends who provided feedback."))
+                Text(String(localized: "Thanks to early testers and friends who provided feedback.", comment: "Credits message at the bottom of About screen"))
                     .font(.footnote)
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity)
@@ -170,7 +170,7 @@ struct AboutView: View {
                     .listRowBackground(Color.clear)
             }
         }
-        .navigationTitle(String(localized: "About"))
+        .navigationTitle(String(localized: "About", comment: "Navigation title for About screen"))
         .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $showingLicense) {
             LicenseView()
@@ -206,11 +206,11 @@ struct LicenseView: View {
                     .font(.footnote)
                     .padding()
             }
-            .navigationTitle(String(localized: "MIT License"))
+            .navigationTitle(String(localized: "MIT License", comment: "Navigation title for license text view"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(String(localized: "Done")) {
+                    Button(String(localized: "Done", comment: "Button to dismiss license view")) {
                         dismiss()
                     }
                 }
@@ -226,42 +226,42 @@ struct PrivacyView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
-                    Text(String(localized: "Privacy Policy"))
+                    Text(String(localized: "Privacy Policy", comment: "Title of the privacy policy page"))
                         .font(.title2)
                         .fontWeight(.bold)
                     
                     VStack(alignment: .leading, spacing: 12) {
-                        Text(String(localized: "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information."))
+                        Text(String(localized: "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information.", comment: "Privacy policy overview paragraph"))
                         
-                        Text(String(localized: "No account required"))
+                        Text(String(localized: "No account required", comment: "Privacy policy heading: no signup needed"))
                             .fontWeight(.semibold)
-                        Text(String(localized: "Your cards stay on this device by default. If iCloud is enabled, they also sync through your private iCloud database."))
+                        Text(String(localized: "Your cards stay on this device by default. If iCloud is enabled, they also sync through your private iCloud database.", comment: "Privacy policy explanation of data storage"))
                             .foregroundStyle(.secondary)
                         
-                        Text(String(localized: "No analytics"))
+                        Text(String(localized: "No analytics", comment: "Privacy policy heading: no usage tracking"))
                             .fontWeight(.semibold)
-                        Text(String(localized: "We don't track how you use the app."))
+                        Text(String(localized: "We don't track how you use the app.", comment: "Privacy policy explanation of no-analytics policy"))
                             .foregroundStyle(.secondary)
                         
-                        Text(String(localized: "No ads"))
+                        Text(String(localized: "No ads", comment: "Privacy policy heading: no advertising"))
                             .fontWeight(.semibold)
-                        Text(String(localized: "The app contains no advertising."))
+                        Text(String(localized: "The app contains no advertising.", comment: "Privacy policy explanation of no-ads policy"))
                             .foregroundStyle(.secondary)
                         
-                        Text(String(localized: "Location data"))
+                        Text(String(localized: "Location data", comment: "Privacy policy heading: location data usage"))
                             .fontWeight(.semibold)
-                        Text(String(localized: "If you enable location features, your location is used only to show cards for nearby stores and is never sent to any server."))
+                        Text(String(localized: "If you enable location features, your location is used only to show cards for nearby stores and is never sent to any server.", comment: "Privacy policy explanation of location data handling"))
                             .foregroundStyle(.secondary)
                     }
                     .font(.subheadline)
                 }
                 .padding()
             }
-            .navigationTitle(String(localized: "Privacy"))
+            .navigationTitle(String(localized: "Privacy", comment: "Navigation title for privacy policy screen"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(String(localized: "Done")) {
+                    Button(String(localized: "Done", comment: "Button to dismiss privacy policy view")) {
                         dismiss()
                     }
                 }
@@ -290,11 +290,11 @@ struct WhatsNewView: View {
                     }
                 }
             }
-            .navigationTitle(String(localized: "What's New"))
+            .navigationTitle(String(localized: "What's New", comment: "Navigation title for changelog screen"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(String(localized: "Done")) {
+                    Button(String(localized: "Done", comment: "Button to dismiss changelog view")) {
                         dismiss()
                     }
                 }
@@ -611,7 +611,7 @@ struct ThirdPartyLicensesView: View {
                 }
             }
         }
-        .navigationTitle(String(localized: "Third-Party Licenses"))
+        .navigationTitle(String(localized: "Third-Party Licenses", comment: "Navigation title for list of open source library licenses"))
         .navigationBarTitleDisplayMode(.inline)
     }
 }

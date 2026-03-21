@@ -41,9 +41,9 @@ enum GeocodingError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .noResults:
-            return String(localized: "Unable to determine address for this location")
+            return String(localized: "Unable to determine address for this location", comment: "Error when reverse geocoding returns no results")
         case .locationUnavailable:
-            return String(localized: "Location not available")
+            return String(localized: "Location not available", comment: "Error when location service cannot provide coordinates")
         }
     }
 }

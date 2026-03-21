@@ -22,11 +22,11 @@ struct BarcodeGenerator {
         var localizedDescription: String {
             switch self {
             case .invalidData:
-                return String(localized: "Invalid barcode data")
+                return String(localized: "Invalid barcode data", comment: "Error when barcode data is not valid for the selected type")
             case .filterCreationFailed:
-                return String(localized: "Failed to create barcode filter")
+                return String(localized: "Failed to create barcode filter", comment: "Error when barcode CIFilter cannot be created")
             case .imageGenerationFailed:
-                return String(localized: "Failed to generate barcode image")
+                return String(localized: "Failed to generate barcode image", comment: "Error when barcode image rendering fails")
             case .digitCountMismatch(let expected, let provided):
                 let format = NSLocalizedString(
                     "Expected exactly %d digits (provided: %d)",

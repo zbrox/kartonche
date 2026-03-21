@@ -75,14 +75,14 @@ struct CardExportSelectionView: View {
                 .tint(.primary)
             }
         }
-        .navigationTitle(String(localized: "Select Cards"))
+        .navigationTitle(String(localized: "Select Cards", comment: "Navigation title for card selection export screen"))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button {
                     exportSelectedCards()
                 } label: {
-                    Text(String(localized: "Export (\(selectedCards.count))"))
+                    Text(String(localized: "Export (\(selectedCards.count))", comment: "Toolbar button showing count of selected cards to export"))
                 }
                 .disabled(selectedCards.isEmpty)
             }
@@ -92,8 +92,8 @@ struct CardExportSelectionView: View {
                     toggleSelectAll()
                 } label: {
                     Text(allSelected
-                         ? String(localized: "Deselect All")
-                         : String(localized: "Select All"))
+                         ? String(localized: "Deselect All", comment: "Button to deselect all cards in export selection")
+                         : String(localized: "Select All", comment: "Button to select all cards for export"))
                 }
                 .accessibilityIdentifier("selectAllButton")
             }

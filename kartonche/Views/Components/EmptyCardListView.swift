@@ -27,12 +27,12 @@ struct EmptyCardListView: View {
             
             // Title and subtitle
             VStack(spacing: 12) {
-                Text(String(localized: "Your cards, always ready"))
+                Text(String(localized: "Your cards, always ready", comment: "Title on first-launch empty card list"))
                     .font(.title2)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                 
-                Text(String(localized: "Add your first loyalty card to get started"))
+                Text(String(localized: "Add your first loyalty card to get started", comment: "Subtitle on first-launch empty card list"))
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -43,7 +43,7 @@ struct EmptyCardListView: View {
             Button {
                 onAddCard()
             } label: {
-                Label(String(localized: "Add Card"), systemImage: "plus")
+                Label(String(localized: "Add Card", comment: "Button on first-launch empty card list"), systemImage: "plus")
                     .font(.headline)
                     .frame(minWidth: 160)
             }
