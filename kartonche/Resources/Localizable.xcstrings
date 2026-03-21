@@ -4042,6 +4042,74 @@
         }
       }
     },
+    "whats_new.2026_03_1.siri_shortcuts.title" : {
+      "comment" : "What's New feature title for Siri & Shortcuts support",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri и Бързи команди"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri & Shortcuts"
+          }
+        }
+      }
+    },
+    "whats_new.2026_03_1.siri_shortcuts.description" : {
+      "comment" : "What's New feature description for Siri & Shortcuts support",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показвайте карти, търсете и генерирайте баркодове чрез Siri и приложението Бързи команди."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show cards, search, and generate barcodes using Siri and the Shortcuts app."
+          }
+        }
+      }
+    },
+    "whats_new.2026_03_1.quick_action.title" : {
+      "comment" : "What's New feature title for Home Screen quick action",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бързо сканиране от началния екран"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home Screen Quick Action"
+          }
+        }
+      }
+    },
+    "whats_new.2026_03_1.quick_action.description" : {
+      "comment" : "What's New feature description for Home Screen quick action",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Натиснете и задръжте иконата на приложението, за да сканирате баркод директно."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Long-press the app icon to scan a barcode directly."
+          }
+        }
+      }
+    },
     "whats_new.version_format" : {
       "localizations" : {
         "bg" : {

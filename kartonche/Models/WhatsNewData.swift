@@ -35,6 +35,16 @@ let whatsNewVersions: [WhatsNewVersion] = [
                 title: "whats_new.2026_03_1.barcode_support.title",
                 description: "whats_new.2026_03_1.barcode_support.description"
             ),
+            WhatsNewFeature(
+                icon: "sparkles.rectangle.stack",
+                title: "whats_new.2026_03_1.siri_shortcuts.title",
+                description: "whats_new.2026_03_1.siri_shortcuts.description"
+            ),
+            WhatsNewFeature(
+                icon: "hand.tap",
+                title: "whats_new.2026_03_1.quick_action.title",
+                description: "whats_new.2026_03_1.quick_action.description"
+            ),
         ]
     ),
     WhatsNewVersion(
