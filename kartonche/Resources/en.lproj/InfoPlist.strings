@@ -13,3 +13,6 @@
 
 /* Notification permission */
 "NSUserNotificationsUsageDescription" = "Notifications remind you before your loyalty cards expire.";
+
+/* Home Screen Quick Action */
+"Scan Barcode" = "Scan Barcode";

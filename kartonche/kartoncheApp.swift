@@ -13,8 +13,45 @@ import Combine
 import CoreSpotlight
 import TipKit
 
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(
+        _ application: UIApplication,
+        configurationForConnecting connectingSceneSession: UISceneSession,
+        options: UIScene.ConnectionOptions
+    ) -> UISceneConfiguration {
+        if let shortcutItem = options.shortcutItem {
+            handleShortcut(shortcutItem)
+        }
+        let config = UISceneConfiguration(name: nil, sessionRole: connectingSceneSession.role)
+        return config
+    }
+
+    func application(
+        _ application: UIApplication,
+        performActionFor shortcutItem: UIApplicationShortcutItem,
+        completionHandler: @escaping (Bool) -> Void
+    ) {
+        completionHandler(handleShortcut(shortcutItem))
+    }
+
+    @discardableResult
+    private func handleShortcut(_ shortcutItem: UIApplicationShortcutItem) -> Bool {
+        switch shortcutItem.type {
+        case "com.zbrox.kartonche.scanBarcode":
+            if let url = URL(string: "kartonche://scan") {
+                UIApplication.shared.open(url)
+            }
+            return true
+        default:
+            return false
+        }
+    }
+}
+
 @main
 struct kartoncheApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     static let isScreenshotMode = ProcessInfo.processInfo.arguments.contains("--screenshot-mode")
 
     var sharedModelContainer: ModelContainer = SharedDataManager.sharedModelContainer

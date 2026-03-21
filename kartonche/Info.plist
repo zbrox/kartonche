@@ -51,6 +51,17 @@
 	<false/>
 	<key>UIFileSharingEnabled</key>
 	<true/>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.zbrox.kartonche.scanBarcode</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Scan Barcode</string>
+			<key>UIApplicationShortcutItemIconSymbolName</key>
+			<string>barcode.viewfinder</string>
+		</dict>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

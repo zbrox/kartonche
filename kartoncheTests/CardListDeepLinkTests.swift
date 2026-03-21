@@ -24,6 +24,19 @@ struct CardListDeepLinkTests {
         }
     }
 
+    @Test @MainActor func parsesScanDeepLink() throws {
+        let url = try #require(URL(string: "kartonche://scan"))
+
+        let deepLink = CardListDeepLink(url: url)
+
+        switch deepLink {
+        case .scan:
+            break
+        default:
+            Issue.record("Expected scan deep link")
+        }
+    }
+
     @Test @MainActor func parsesNearbyCardsDeepLink() throws {
         let firstID = UUID()
         let secondID = UUID()

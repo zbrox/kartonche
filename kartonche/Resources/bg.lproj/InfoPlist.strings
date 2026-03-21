@@ -13,3 +13,6 @@
 
 /* Notification permission */
 "NSUserNotificationsUsageDescription" = "Известията ви напомнят преди клубните карти да изтекат.";
+
+/* Home Screen Quick Action */
+"Scan Barcode" = "Сканиране на баркод";

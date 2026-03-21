@@ -778,6 +778,9 @@ struct CardListView: View {
                 displayCard = card
             }
 
+        case .scan:
+            showingBarcodeScanner = true
+
         case .unsupported:
             break
         }
@@ -929,19 +932,21 @@ struct CardListErrorAlert: Identifiable {
 enum CardListDeepLink {
     case card(UUID)
     case nearbyCards([UUID])
+    case scan
     case unsupported
 
     init(url: URL) {
-        guard let host = url.host,
-              let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
-              let queryItems = components.queryItems else {
+        guard let host = url.host else {
             self = .unsupported
             return
         }
 
+        let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+        let queryItems = components?.queryItems
+
         switch host {
         case "card":
-            guard let idString = queryItems.first(where: { $0.name == "id" })?.value,
+            guard let idString = queryItems?.first(where: { $0.name == "id" })?.value,
                   let cardID = UUID(uuidString: idString) else {
                 self = .unsupported
                 return
@@ -949,7 +954,7 @@ enum CardListDeepLink {
             self = .card(cardID)
 
         case "nearby-cards":
-            guard let idsValue = queryItems.first(where: { $0.name == "ids" })?.value else {
+            guard let idsValue = queryItems?.first(where: { $0.name == "ids" })?.value else {
                 self = .unsupported
                 return
             }
@@ -961,6 +966,9 @@ enum CardListDeepLink {
                 return
             }
             self = .nearbyCards(ids)
+
+        case "scan":
+            self = .scan
 
         default:
             self = .unsupported
