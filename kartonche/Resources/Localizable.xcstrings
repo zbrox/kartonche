@@ -55,6 +55,7 @@
       "shouldTranslate" : false
     },
     "'Always' location permission required for nearby notifications" : {
+      "comment" : "Warning when always-on location permission is needed",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -272,6 +273,7 @@
       "shouldTranslate" : false
     },
     "%@ expires in 7 days" : {
+      "comment" : "Notification body for 7-day expiration warning",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -324,6 +326,7 @@
       }
     },
     "%@ expires tomorrow" : {
+      "comment" : "Notification body for 1-day expiration warning",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -651,6 +654,7 @@
       }
     },
     "1 day before expiration" : {
+      "comment" : "Reminder timing option on the notification permission screen.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -703,6 +707,7 @@
       }
     },
     "7 days before expiration" : {
+      "comment" : "Reminder timing option on the notification permission screen.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -861,6 +866,7 @@
       }
     },
     "A card with this barcode already exists" : {
+      "comment" : "Alert message explaining a duplicate barcode was found",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -913,6 +919,7 @@
       }
     },
     "A simple app for organizing your loyalty cards. Open source, privacy-focused, no account required." : {
+      "comment" : "App description in About screen",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -965,6 +972,7 @@
       }
     },
     "About" : {
+      "comment" : "Navigation title for About screen\nSection header in About screen\nSettings row to open About screen",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -1069,6 +1077,7 @@
       }
     },
     "Active" : {
+      "comment" : "Notification feature status: working",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -1381,7 +1390,7 @@
       }
     },
     "Add Card" : {
-      "comment" : "Button to create a new loyalty card",
+      "comment" : "Button in empty state to start adding a card\nButton on first-launch empty card list\nNavigation title when creating a new card\nTitle of the add card options sheet\nToolbar button to add a new card",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -1434,7 +1443,7 @@
       }
     },
     "Add Location" : {
-      "comment" : "Button to add a location to a card",
+      "comment" : "Button to add a store location to the card\nNavigation title when creating a new location",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -1487,6 +1496,7 @@
       }
     },
     "Add Manually" : {
+      "comment" : "Alert button to create card without scanning\nButton in add card sheet to create card without scanning",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -1539,6 +1549,7 @@
       }
     },
     "Add to Apple Wallet" : {
+      "comment" : "Accessibility label for Add to Wallet button",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -1591,7 +1602,7 @@
       }
     },
     "Add to favorites" : {
-      "comment" : "Accessibility label for favorite button",
+      "comment" : "Accessibility label for favorite star when card is not favorited",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -1644,6 +1655,7 @@
       }
     },
     "Add to Wallet" : {
+      "comment" : "Button to confirm adding card to Apple Wallet",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -1696,7 +1708,7 @@
       }
     },
     "Add your first loyalty card" : {
-      "comment" : "Empty state message",
+      "comment" : "Empty state message encouraging user to add their first card",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -1749,6 +1761,7 @@
       }
     },
     "Add your first loyalty card to get started" : {
+      "comment" : "Subtitle on first-launch empty card list",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -1801,6 +1814,7 @@
       }
     },
     "Added to Apple Wallet. Edits sync automatically." : {
+      "comment" : "Status text when card is already in Apple Wallet",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -1853,7 +1867,7 @@
       }
     },
     "All Cards" : {
-      "comment" : "Section header for all cards",
+      "comment" : "Section header for complete card list, shown when nearby section is visible",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -1906,6 +1920,7 @@
       }
     },
     "All cards are expired. Toggle 'Show Expired' in the sort menu to see them." : {
+      "comment" : "Empty state message explaining how to show expired cards",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -1958,6 +1973,7 @@
       }
     },
     "All cards will be imported, even duplicates" : {
+      "comment" : "Description of keep-both import strategy",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2010,6 +2026,7 @@
       }
     },
     "Allow Location" : {
+      "comment" : "Button to grant location permission.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2062,6 +2079,7 @@
       }
     },
     "Always" : {
+      "comment" : "Location permission status: always available",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2114,6 +2132,7 @@
       }
     },
     "Appearance" : {
+      "comment" : "Section header for card color and image settings",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2166,7 +2185,7 @@
       }
     },
     "Are you sure you want to delete this card?" : {
-      "comment" : "Confirmation dialog message",
+      "comment" : "Alert title confirming card deletion",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2219,6 +2238,7 @@
       }
     },
     "Auto" : {
+      "comment" : "Option for automatic text color based on card background",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2271,6 +2291,7 @@
       }
     },
     "Auto-show the right card" : {
+      "comment" : "Benefit of nearby notifications\nLocation feature benefit on the permission screen.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2322,8 +2343,60 @@
         }
       }
     },
+    "Aztec" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Aztec"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Aztec"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Aztec"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Aztec"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Aztec"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Aztec"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Aztec"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Aztec"
+          }
+        }
+      }
+    },
     "Barcode Data" : {
-      "comment" : "Label for barcode data field",
+      "comment" : "Text field label for barcode content\nText field placeholder for barcode content",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2376,7 +2449,7 @@
       }
     },
     "Barcode for scanning" : {
-      "comment" : "Accessibility label for barcode display",
+      "comment" : "Accessibility label for the barcode image\nAccessibility label for the barcode image on card display",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2428,8 +2501,60 @@
         }
       }
     },
+    "Barcode generation failed: %@" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Barcode generation failed: %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Barcode generation failed: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Barcode generation failed: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Barcode generation failed: %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Barcode generation failed: %@"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Barcode generation failed: %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Barcode generation failed: %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Barcode generation failed: %@"
+          }
+        }
+      }
+    },
     "Barcode preview" : {
-      "comment" : "Accessibility label for barcode preview image",
+      "comment" : "Accessibility label for the barcode image preview",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2535,6 +2660,7 @@
       }
     },
     "Better Widget Performance:" : {
+      "comment" : "Heading for list of always-on location benefits",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2587,7 +2713,7 @@
       }
     },
     "Cancel" : {
-      "comment" : "Button to cancel an action",
+      "comment" : "Alert button to cancel saving duplicate card\nButton to cancel adding card to Apple Wallet\nButton to cancel card deletion\nButton to cancel card import\nButton to cancel image cropping\nButton to dismiss add card options sheet\nButton to dismiss map pin picker\nButton to dismiss no-barcode alert\nButton to dismiss the location permission denied screen.\nButton to dismiss the notification permission denied screen.\nToolbar button to dismiss card editor without saving\nToolbar button to dismiss the location editor",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2691,8 +2817,60 @@
         }
       }
     },
+    "Card Barcode" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Card Barcode"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Card Barcode"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Card Barcode"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Card Barcode"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Card Barcode"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Card Barcode"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Card Barcode"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Card Barcode"
+          }
+        }
+      }
+    },
     "Card Color" : {
-      "comment" : "Label for card color picker",
+      "comment" : "Color picker for the card's background color",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2851,6 +3029,7 @@
       }
     },
     "Card Image" : {
+      "comment" : "Label for the card image section in appearance settings",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2903,7 +3082,7 @@
       }
     },
     "Card Name" : {
-      "comment" : "Label for card name field",
+      "comment" : "Placeholder in card preview when no name is entered\nText field label for the card's display name\nText field placeholder for the card's display name",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -2956,7 +3135,7 @@
       }
     },
     "card number" : {
-      "comment" : "Accessibility label for card number",
+      "comment" : "Accessibility prefix before the card number value",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -3062,7 +3241,7 @@
       }
     },
     "Card will appear when you're nearby" : {
-      "comment" : "Location section footer text",
+      "comment" : "Footer explaining that the card shows automatically near saved locations",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -3115,7 +3294,7 @@
       }
     },
     "Card will appear when you're within this distance" : {
-      "comment" : "Radius slider description",
+      "comment" : "Footer explaining what the detection radius controls",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -3168,6 +3347,7 @@
       }
     },
     "Cardholder Name" : {
+      "comment" : "Text field for the name of the person who owns the card",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -3220,6 +3400,7 @@
       }
     },
     "Cards" : {
+      "comment" : "Section header for list of cards being imported",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -3272,6 +3453,7 @@
       }
     },
     "Cards are exported as .kartonche files that can be shared and imported on other devices." : {
+      "comment" : "Footer explaining the export file format.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -3324,6 +3506,7 @@
       }
     },
     "Cards to import" : {
+      "comment" : "Label showing number of cards in import file",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -3376,6 +3559,7 @@
       }
     },
     "Change Location" : {
+      "comment" : "Button to clear selected location and pick a different one",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -3481,6 +3665,7 @@
       }
     },
     "Choose from Library" : {
+      "comment" : "Button in add card sheet to pick photo from library",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -3533,6 +3718,7 @@
       }
     },
     "Choose Image" : {
+      "comment" : "Button to pick a strip image for the card",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -3742,7 +3928,7 @@
       }
     },
     "Close" : {
-      "comment" : "Button to dismiss a view",
+      "comment" : "Accessibility label for close button on card display\nAccessibility label for close button on card preview",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -3794,7 +3980,112 @@
         }
       }
     },
+    "Code 39" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Code 39"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Code 39"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Code 39"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Code 39"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Code 39"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Code 39"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Code 39"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Code 39"
+          }
+        }
+      }
+    },
+    "Code 128" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Code 128"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Code 128"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Code 128"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Code 128"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Code 128"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Code 128"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Code 128"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Code 128"
+          }
+        }
+      }
+    },
     "Confirm Location" : {
+      "comment" : "Button to confirm selected map pin location",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -3847,6 +4138,7 @@
       }
     },
     "Could not detect a barcode in the selected image." : {
+      "comment" : "Alert message when barcode scan fails",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -3899,6 +4191,7 @@
       }
     },
     "Current Location" : {
+      "comment" : "Fallback location name when reverse geocoding has no name",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -3951,6 +4244,7 @@
       }
     },
     "Custom" : {
+      "comment" : "Option for manually choosing text color on card",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -4003,6 +4297,7 @@
       }
     },
     "Custom Text Color" : {
+      "comment" : "Color picker for manually chosen text color on card",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -4055,6 +4350,7 @@
       }
     },
     "Data" : {
+      "comment" : "Navigation title for the data settings screen.\nSettings row to open data management (export/import)",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -4102,6 +4398,58 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Data"
+          }
+        }
+      }
+    },
+    "DataMatrix" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "DataMatrix"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "DataMatrix"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "DataMatrix"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "DataMatrix"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "DataMatrix"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "DataMatrix"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "DataMatrix"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "DataMatrix"
           }
         }
       }
@@ -4159,7 +4507,7 @@
       }
     },
     "Delete" : {
-      "comment" : "Button to delete an item",
+      "comment" : "Button to confirm card deletion\nButton to delete the card in card editor\nContext menu action to delete a card\nSwipe action to delete a card",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -4212,6 +4560,7 @@
       }
     },
     "Denied" : {
+      "comment" : "Location permission status: denied by user\nNotification permission status: denied by user",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -4264,6 +4613,7 @@
       }
     },
     "Deselect All" : {
+      "comment" : "Button to deselect all cards in export selection",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -4316,7 +4666,7 @@
       }
     },
     "Detection Radius" : {
-      "comment" : "Section header for radius setting",
+      "comment" : "Section header for the geofence radius slider",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -4369,6 +4719,7 @@
       }
     },
     "Disabled" : {
+      "comment" : "Nearby notifications toggle status: off",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -4474,6 +4825,7 @@
       }
     },
     "Done" : {
+      "comment" : "Button to confirm image crop\nButton to dismiss card notes sheet\nButton to dismiss changelog view\nButton to dismiss license view\nButton to dismiss privacy policy view\nButton to dismiss settings",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -4579,6 +4931,7 @@
       }
     },
     "Drop Pin on Map" : {
+      "comment" : "Button to open map and select a location\nNavigation title for map pin picker",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -4631,6 +4984,7 @@
       }
     },
     "Duplicate Barcode" : {
+      "comment" : "Alert title when barcode matches an existing card",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -4683,6 +5037,7 @@
       }
     },
     "Duplicate cards will not be imported" : {
+      "comment" : "Description of skip-duplicates import strategy",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -4735,6 +5090,7 @@
       }
     },
     "Duplicate handling" : {
+      "comment" : "Picker label for choosing how to handle duplicate cards",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -4787,6 +5143,7 @@
       }
     },
     "Duplicates found" : {
+      "comment" : "Label showing number of duplicate cards detected during import",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -4838,8 +5195,112 @@
         }
       }
     },
+    "EAN-8" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-8"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-8"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-8"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-8"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-8"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-8"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-8"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-8"
+          }
+        }
+      }
+    },
+    "EAN-13" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EAN-13"
+          }
+        }
+      }
+    },
     "Edit" : {
-      "comment" : "Button to edit an item",
+      "comment" : "Context menu action to edit a card\nNavigation title when editing an existing card\nSwipe action to edit a card",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -4892,7 +5353,7 @@
       }
     },
     "Edit Location" : {
-      "comment" : "Navigation title for editing location",
+      "comment" : "Navigation title when editing an existing location",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -4945,6 +5406,7 @@
       }
     },
     "Enable" : {
+      "comment" : "Banner button to enable always-on location permission\nButton to request location permission\nButton to request notification permission",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -4997,6 +5459,7 @@
       }
     },
     "Enable 'Always' Location" : {
+      "comment" : "Banner title prompting user to upgrade location permission",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -5049,6 +5512,7 @@
       }
     },
     "Enable in Settings:" : {
+      "comment" : "Label above navigation path for enabling location access.\nLabel above navigation path for enabling notifications.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -5101,6 +5565,7 @@
       }
     },
     "Enable location to see cards for nearby stores" : {
+      "comment" : "Help text when location permission is not yet requested",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -5153,6 +5618,7 @@
       }
     },
     "Enable Nearby Notifications" : {
+      "comment" : "Button to opt in to nearby card notifications",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -5205,6 +5671,7 @@
       }
     },
     "Enable Reminders" : {
+      "comment" : "Button to grant notification permission.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -5257,6 +5724,7 @@
       }
     },
     "Enabled" : {
+      "comment" : "Nearby notifications toggle status: on\nNotification permission status: fully authorized",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -5309,6 +5777,7 @@
       }
     },
     "Ephemeral" : {
+      "comment" : "Notification permission status: ephemeral/temporary",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -5361,6 +5830,7 @@
       }
     },
     "Existing cards will be replaced with imported versions" : {
+      "comment" : "Description of replace-duplicates import strategy",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -5472,6 +5942,7 @@
       }
     },
     "Experimental Feature" : {
+      "comment" : "Dialog title warning about experimental barcode-as-image wallet pass",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -5524,7 +5995,7 @@
       }
     },
     "Expiration Date" : {
-      "comment" : "Label for expiration date picker",
+      "comment" : "Date picker label for card expiration date",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -5577,6 +6048,7 @@
       }
     },
     "Expiration Reminders" : {
+      "comment" : "Feature title for card expiration notifications\nTitle on the notification permission request screen.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -5629,6 +6101,7 @@
       }
     },
     "Expiration reminders require notification access." : {
+      "comment" : "Explanation on the notification permission denied screen.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -5681,7 +6154,7 @@
       }
     },
     "Expired on" : {
-      "comment" : "Accessibility label for expired date",
+      "comment" : "Accessibility prefix for past expiration date",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -5734,7 +6207,7 @@
       }
     },
     "Expires on" : {
-      "comment" : "Accessibility label for expiration date",
+      "comment" : "Accessibility prefix for future expiration date",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -5787,7 +6260,7 @@
       }
     },
     "Expiring soon on" : {
-      "comment" : "Accessibility label for card expiring soon",
+      "comment" : "Accessibility prefix for upcoming expiration date",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -5840,6 +6313,7 @@
       }
     },
     "Export" : {
+      "comment" : "Section header for card export options.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -5892,6 +6366,7 @@
       }
     },
     "Export (%lld)" : {
+      "comment" : "Toolbar button showing count of selected cards to export",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -5944,6 +6419,7 @@
       }
     },
     "Export All Cards" : {
+      "comment" : "Button to export all loyalty cards at once.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -5996,6 +6472,7 @@
       }
     },
     "Export date" : {
+      "comment" : "Label showing when the import file was exported",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -6048,6 +6525,7 @@
       }
     },
     "Export Failed" : {
+      "comment" : "Alert title when card export fails\nAlert title when card export fails.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -6099,8 +6577,60 @@
         }
       }
     },
+    "Failed to convert barcode image to PNG" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Failed to convert barcode image to PNG"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Failed to convert barcode image to PNG"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Failed to convert barcode image to PNG"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Failed to convert barcode image to PNG"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Failed to convert barcode image to PNG"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Failed to convert barcode image to PNG"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Failed to convert barcode image to PNG"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Failed to convert barcode image to PNG"
+          }
+        }
+      }
+    },
     "Failed to create barcode filter" : {
-      "comment" : "Error message for barcode filter creation",
+      "comment" : "Error when barcode CIFilter cannot be created",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -6153,6 +6683,7 @@
       }
     },
     "Failed to create pass" : {
+      "comment" : "Alert title when Apple Wallet pass generation fails",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -6205,7 +6736,7 @@
       }
     },
     "Failed to generate barcode image" : {
-      "comment" : "Error message for barcode generation",
+      "comment" : "Error when barcode image rendering fails",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -6258,7 +6789,7 @@
       }
     },
     "Failed to load image" : {
-      "comment" : "Error message when image cannot be loaded",
+      "comment" : "Error when selected photo could not be loaded for barcode scanning",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -6311,6 +6842,7 @@
       }
     },
     "Failed to read file: %@" : {
+      "comment" : "Error when import file cannot be decoded",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -6363,7 +6895,7 @@
       }
     },
     "Favorite" : {
-      "comment" : "Swipe action to mark card as favorite",
+      "comment" : "Swipe action to mark card as favorite\nToggle to mark card as favorite in card editor",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -6469,6 +7001,7 @@
       }
     },
     "Features" : {
+      "comment" : "Section header in location settings\nSection header in notification settings",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -6521,6 +7054,7 @@
       }
     },
     "File not found" : {
+      "comment" : "Error when import file does not exist",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -6573,6 +7107,7 @@
       }
     },
     "Find nearest card in widgets" : {
+      "comment" : "Benefit of nearby notifications\nLocation feature benefit on the permission screen.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -6731,6 +7266,7 @@
       }
     },
     "Fresher location data" : {
+      "comment" : "Benefit of always-on location",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -6782,7 +7318,164 @@
         }
       }
     },
+    "Generate Barcode" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generate Barcode"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generate Barcode"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generate Barcode"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generate Barcode"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generate Barcode"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generate Barcode"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generate Barcode"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generate Barcode"
+          }
+        }
+      }
+    },
+    "Generate Barcode Image" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generate Barcode Image"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generate Barcode Image"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generate Barcode Image"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generate Barcode Image"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generate Barcode Image"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generate Barcode Image"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generate Barcode Image"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generate Barcode Image"
+          }
+        }
+      }
+    },
+    "Generates a barcode image from the given type and data" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generates a barcode image from the given type and data"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generates a barcode image from the given type and data"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generates a barcode image from the given type and data"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generates a barcode image from the given type and data"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generates a barcode image from the given type and data"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generates a barcode image from the given type and data"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generates a barcode image from the given type and data"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Generates a barcode image from the given type and data"
+          }
+        }
+      }
+    },
     "Generating pass..." : {
+      "comment" : "Progress text while creating Apple Wallet pass",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -6835,6 +7528,7 @@
       }
     },
     "Get better widget performance with background location" : {
+      "comment" : "Banner subtitle explaining benefit of always-on location",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -6886,7 +7580,60 @@
         }
       }
     },
+    "Get Card Barcode" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get Card Barcode"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get Card Barcode"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get Card Barcode"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get Card Barcode"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get Card Barcode"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get Card Barcode"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get Card Barcode"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get Card Barcode"
+          }
+        }
+      }
+    },
     "Get notified before your cards expire so you never miss renewing them." : {
+      "comment" : "Description on the notification permission request screen.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -6939,6 +7686,7 @@
       }
     },
     "Get reminded about your loyalty cards when you're near a store where you can use them." : {
+      "comment" : "Description of nearby card notifications feature",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -6991,6 +7739,7 @@
       }
     },
     "Get reminded before your loyalty cards expire so you can renew them in time." : {
+      "comment" : "Description of the expiration reminders feature",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -7043,6 +7792,7 @@
       }
     },
     "Go to Settings > Notifications > kartonche to enable reminders" : {
+      "comment" : "Instructions to fix denied notification permission in iOS Settings",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -7095,7 +7845,7 @@
       }
     },
     "Has Expiration Date" : {
-      "comment" : "Toggle for enabling expiration date",
+      "comment" : "Toggle to enable expiration date for the card",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -7148,6 +7898,7 @@
       }
     },
     "has locations" : {
+      "comment" : "Accessibility note that card has saved store locations",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -7200,6 +7951,7 @@
       }
     },
     "How to handle duplicates" : {
+      "comment" : "Section header for import duplicate strategy picker",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -7252,6 +8004,7 @@
       }
     },
     "iCloud Signed Out" : {
+      "comment" : "Status text when user is signed out of iCloud.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -7304,6 +8057,7 @@
       }
     },
     "iCloud Sync" : {
+      "comment" : "Label for iCloud sync status row in data settings.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -7356,6 +8110,7 @@
       }
     },
     "iCloud Unavailable" : {
+      "comment" : "Status text when iCloud is not available on the device.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -7408,6 +8163,7 @@
       }
     },
     "If you enable location features, your location is used only to show cards for nearby stores and is never sent to any server." : {
+      "comment" : "Privacy policy explanation of location data handling",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -7460,6 +8216,7 @@
       }
     },
     "Import" : {
+      "comment" : "Button to confirm importing cards\nSection header for card import options.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -7512,6 +8269,7 @@
       }
     },
     "Import Cards" : {
+      "comment" : "Navigation title for import preview screen",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -7564,6 +8322,7 @@
       }
     },
     "Import Failed" : {
+      "comment" : "Alert title when card import fails\nAlert title when card import fails.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -7616,6 +8375,7 @@
       }
     },
     "Import from File" : {
+      "comment" : "Button to import cards from a .kartonche file.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -7668,6 +8428,7 @@
       }
     },
     "Importing..." : {
+      "comment" : "Progress overlay while importing cards",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -7719,8 +8480,60 @@
         }
       }
     },
+    "Interleaved 2 of 5" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Interleaved 2 of 5"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Interleaved 2 of 5"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Interleaved 2 of 5"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Interleaved 2 of 5"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Interleaved 2 of 5"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Interleaved 2 of 5"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Interleaved 2 of 5"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Interleaved 2 of 5"
+          }
+        }
+      }
+    },
     "Invalid barcode data" : {
-      "comment" : "Error message for invalid barcode",
+      "comment" : "Error when barcode data is not valid for the selected type",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -7773,6 +8586,7 @@
       }
     },
     "Invalid card data: %@" : {
+      "comment" : "Error when card data in import file is malformed",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -7825,6 +8639,7 @@
       }
     },
     "Invalid file format. Expected .kartonche file." : {
+      "comment" : "Error when imported file is not a valid kartonche file",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -7877,7 +8692,7 @@
       }
     },
     "Invalid image format" : {
-      "comment" : "Error message for invalid image format",
+      "comment" : "Error when photo cannot be processed for barcode scanning",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -8037,6 +8852,7 @@
       "shouldTranslate" : false
     },
     "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information." : {
+      "comment" : "Privacy policy overview paragraph",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -8089,6 +8905,7 @@
       }
     },
     "Keep both" : {
+      "comment" : "Import strategy: import all cards including duplicates",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -8141,6 +8958,7 @@
       }
     },
     "Keep Current" : {
+      "comment" : "Button to keep current location permission and dismiss",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -8193,6 +9011,7 @@
       }
     },
     "Last checked" : {
+      "comment" : "Label preceding the relative time of last sync check.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -8297,6 +9116,7 @@
       }
     },
     "Legal" : {
+      "comment" : "Section header for license and privacy links",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -8349,6 +9169,7 @@
       }
     },
     "License" : {
+      "comment" : "Button to view the app's open source license",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -8401,6 +9222,7 @@
       }
     },
     "Licenses" : {
+      "comment" : "Section header for third-party license links",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -8453,6 +9275,7 @@
       }
     },
     "Limited" : {
+      "comment" : "Notification feature status: partially available",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -8505,6 +9328,7 @@
       }
     },
     "Location" : {
+      "comment" : "Navigation title for location settings screen\nSettings row to open location settings",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -8557,6 +9381,7 @@
       }
     },
     "Location Access Denied" : {
+      "comment" : "Title on the location permission denied screen.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -8609,6 +9434,7 @@
       }
     },
     "Location access is restricted by parental controls or device management" : {
+      "comment" : "Help text when location is restricted by MDM or parental controls",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -8661,6 +9487,7 @@
       }
     },
     "Location data" : {
+      "comment" : "Privacy policy heading: location data usage",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -8713,6 +9540,7 @@
       }
     },
     "Location data never leaves your device" : {
+      "comment" : "Privacy assurance about location data storage",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -8765,6 +9593,7 @@
       }
     },
     "Location features require access to your location." : {
+      "comment" : "Explanation on the location permission denied screen.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -8817,7 +9646,7 @@
       }
     },
     "Location Name" : {
-      "comment" : "Label for location name field",
+      "comment" : "Text field placeholder for naming a location",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -8870,6 +9699,7 @@
       }
     },
     "Location not available" : {
+      "comment" : "Error when location service cannot provide coordinates",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -8922,6 +9752,7 @@
       }
     },
     "Location Permission" : {
+      "comment" : "Label for location permission status row",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -8974,6 +9805,7 @@
       }
     },
     "Location Permission Needed" : {
+      "comment" : "Title on the location permission request screen.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -9026,6 +9858,7 @@
       }
     },
     "Location permission not granted" : {
+      "comment" : "Error when user tries to use GPS without permission",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -9078,7 +9911,7 @@
       }
     },
     "Locations" : {
-      "comment" : "Section header for locations list",
+      "comment" : "Section header for store locations associated with the card",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -9414,7 +10247,7 @@
       }
     },
     "Loyalty Cards" : {
-      "comment" : "Main screen title",
+      "comment" : "Navigation title for the main card list screen",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -9573,6 +10406,7 @@
       }
     },
     "Minimal battery impact" : {
+      "comment" : "Privacy assurance about battery usage",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -9625,6 +10459,7 @@
       }
     },
     "MIT License" : {
+      "comment" : "Navigation title for license text view",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -9678,6 +10513,7 @@
       "shouldTranslate" : false
     },
     "More" : {
+      "comment" : "Section header for additional links like changelog and source code",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -9730,6 +10566,7 @@
       }
     },
     "More accurate nearby store detection" : {
+      "comment" : "Benefit of always-on location",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -9941,7 +10778,7 @@
       }
     },
     "Nearby" : {
-      "comment" : "Section header for nearby cards",
+      "comment" : "Section header for cards near the user's location",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -9994,6 +10831,7 @@
       }
     },
     "Nearby Card Notifications" : {
+      "comment" : "Feature title for location-based card reminders\nTitle of nearby notifications explanation sheet",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -10151,6 +10989,7 @@
       }
     },
     "Never forget your loyalty card at the store" : {
+      "comment" : "Subtitle in nearby notifications explanation sheet",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -10307,6 +11146,7 @@
       }
     },
     "No account required" : {
+      "comment" : "Privacy policy heading: no signup needed",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -10359,6 +11199,7 @@
       }
     },
     "No ads" : {
+      "comment" : "Privacy policy heading: no advertising",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -10411,6 +11252,7 @@
       }
     },
     "No analytics" : {
+      "comment" : "Privacy policy heading: no usage tracking",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -10463,6 +11305,7 @@
       }
     },
     "No Barcode Found" : {
+      "comment" : "Alert title when photo scan finds no barcode",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -10515,7 +11358,7 @@
       }
     },
     "No barcodes found in image" : {
-      "comment" : "Error message when no barcodes detected",
+      "comment" : "Error when barcode scan finds nothing in photo",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -10621,7 +11464,7 @@
       }
     },
     "No Cards" : {
-      "comment" : "Empty state title",
+      "comment" : "Empty state title when all cards are hidden because they expired\nEmpty state title when user has no cards yet",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -10674,7 +11517,7 @@
       }
     },
     "No cards matching '%@'" : {
-      "comment" : "Empty search results message",
+      "comment" : "Empty state message showing search term that had no results",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -10833,6 +11676,7 @@
       }
     },
     "No Results" : {
+      "comment" : "Empty state title when search finds no cards",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -10885,6 +11729,7 @@
       }
     },
     "Not Now" : {
+      "comment" : "Button to decline nearby notifications for now\nButton to dismiss the location permission screen.\nButton to dismiss the notification permission screen.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -10937,6 +11782,7 @@
       }
     },
     "Not Set" : {
+      "comment" : "Location permission status: not yet requested\nNotification permission status: not yet requested",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -10989,6 +11835,7 @@
       }
     },
     "Not set up" : {
+      "comment" : "Notification feature status: not yet configured",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -11041,7 +11888,7 @@
       }
     },
     "Notes" : {
-      "comment" : "Label for notes field",
+      "comment" : "Button to view card notes\nButton to view card notes on display screen\nNavigation title for card notes sheet",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -11094,6 +11941,7 @@
       }
     },
     "Notification Permission" : {
+      "comment" : "Label for notification permission status row",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -11146,6 +11994,7 @@
       }
     },
     "Notification permission required" : {
+      "comment" : "Warning when notification permission is needed for nearby alerts",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -11198,6 +12047,7 @@
       }
     },
     "Notifications" : {
+      "comment" : "Navigation title for notification settings screen\nSettings row to open notification settings",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -11250,6 +12100,7 @@
       }
     },
     "Notifications Disabled" : {
+      "comment" : "Title on the notification permission denied screen.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -11302,6 +12153,7 @@
       }
     },
     "OK" : {
+      "comment" : "Button to dismiss error alert\nButton to dismiss import error alert\nButton to dismiss pass error alert\nDismiss button on the export error alert.\nDismiss button on the import error alert.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -11354,6 +12206,7 @@
       }
     },
     "Open Existing" : {
+      "comment" : "Alert button to open the existing card with same barcode",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -11563,6 +12416,7 @@
       }
     },
     "Open Settings" : {
+      "comment" : "Button to open iOS Settings from the location denied screen.\nButton to open iOS Settings from the notification denied screen.\nButton to open iOS Settings to change location permission",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -11667,7 +12521,7 @@
       }
     },
     "Opens camera to scan barcode" : {
-      "comment" : "Accessibility hint for camera scan button",
+      "comment" : "Accessibility hint for scan barcode button",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -11767,6 +12621,58 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Opens card for nearest store location"
+          }
+        }
+      }
+    },
+    "Opens Kartonche and navigates to a specific loyalty card" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Opens Kartonche and navigates to a specific loyalty card"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Opens Kartonche and navigates to a specific loyalty card"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Opens Kartonche and navigates to a specific loyalty card"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Opens Kartonche and navigates to a specific loyalty card"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Opens Kartonche and navigates to a specific loyalty card"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Opens Kartonche and navigates to a specific loyalty card"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Opens Kartonche and navigates to a specific loyalty card"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Opens Kartonche and navigates to a specific loyalty card"
           }
         }
       }
@@ -11927,7 +12833,60 @@
         }
       }
     },
+    "PDF417" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "PDF417"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "PDF417"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "PDF417"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "PDF417"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "PDF417"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "PDF417"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "PDF417"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "PDF417"
+          }
+        }
+      }
+    },
     "Permission" : {
+      "comment" : "Section header for location permission status\nSection header for notification permission status",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -11980,6 +12939,7 @@
       }
     },
     "Permission required" : {
+      "comment" : "Notification feature status: permission denied",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -12241,6 +13201,7 @@
       }
     },
     "Privacy" : {
+      "comment" : "Button to view privacy policy\nNavigation title for privacy policy screen\nSection header for privacy information about location",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -12293,6 +13254,7 @@
       }
     },
     "Privacy Policy" : {
+      "comment" : "Title of the privacy policy page",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -12345,6 +13307,7 @@
       }
     },
     "Provisional" : {
+      "comment" : "Notification permission status: provisional delivery",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -12392,6 +13355,58 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Provisional"
+          }
+        }
+      }
+    },
+    "QR Code" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "QR Code"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "QR Code"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "QR Code"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "QR Code"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "QR Code"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "QR Code"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "QR Code"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "QR Code"
           }
         }
       }
@@ -12503,6 +13518,7 @@
       }
     },
     "Radius: %lldm" : {
+      "comment" : "Geofence radius in meters for a card location",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -12555,6 +13571,7 @@
       }
     },
     "Rate on App Store" : {
+      "comment" : "Button to leave a review on the App Store",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -12607,6 +13624,7 @@
       }
     },
     "Refresh Sync Status" : {
+      "comment" : "Accessibility label for the refresh sync status button.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -12659,7 +13677,7 @@
       }
     },
     "Remove from favorites" : {
-      "comment" : "Accessibility label for unfavorite button",
+      "comment" : "Accessibility label for favorite star when card is favorited",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -12712,6 +13730,7 @@
       }
     },
     "Remove Image" : {
+      "comment" : "Button to remove the card's strip image",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -12764,6 +13783,7 @@
       }
     },
     "Replace existing" : {
+      "comment" : "Import strategy: overwrite existing cards with imported versions",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -12816,6 +13836,7 @@
       }
     },
     "Report an Issue" : {
+      "comment" : "Link to open GitHub issues page for bug reports",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -12868,6 +13889,7 @@
       }
     },
     "Requires Always location + Notifications" : {
+      "comment" : "Status when prerequisites for nearby notifications are not met",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -12972,6 +13994,7 @@
       }
     },
     "Respects iOS Focus modes and Do Not Disturb. Silent notifications only." : {
+      "comment" : "Privacy note about nearby notification behavior",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -13024,6 +14047,7 @@
       }
     },
     "Restricted" : {
+      "comment" : "Location permission status: restricted by system",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -13075,8 +14099,60 @@
         }
       }
     },
+    "Returns the barcode type and data for a loyalty card" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Returns the barcode type and data for a loyalty card"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Returns the barcode type and data for a loyalty card"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Returns the barcode type and data for a loyalty card"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Returns the barcode type and data for a loyalty card"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Returns the barcode type and data for a loyalty card"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Returns the barcode type and data for a loyalty card"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Returns the barcode type and data for a loyalty card"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Returns the barcode type and data for a loyalty card"
+          }
+        }
+      }
+    },
     "Save" : {
-      "comment" : "Button to save changes",
+      "comment" : "Toolbar button to save card changes\nToolbar button to save the location",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -13129,6 +14205,7 @@
       }
     },
     "Save Anyway" : {
+      "comment" : "Alert button to save card despite duplicate barcode",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -13181,7 +14258,7 @@
       }
     },
     "Scan Barcode" : {
-      "comment" : "Button to scan a barcode with camera",
+      "comment" : "Button in add card sheet to open barcode scanner\nButton to open camera barcode scanner in card editor",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -13286,7 +14363,7 @@
       }
     },
     "Scan from Photo" : {
-      "comment" : "Button to scan barcode from photo",
+      "comment" : "Button to pick a photo and scan barcode from it",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -13339,6 +14416,7 @@
       }
     },
     "Scanning failed: %@" : {
+      "comment" : "Error when barcode scanning encounters a failure",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -13391,7 +14469,7 @@
       }
     },
     "Scanning..." : {
-      "comment" : "Progress indicator while scanning photo",
+      "comment" : "Progress indicator while scanning barcode from photo\nProgress overlay while scanning barcode from photo",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -13444,6 +14522,7 @@
       }
     },
     "Scheduled reminders" : {
+      "comment" : "Label showing count of pending expiration reminders",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -13496,7 +14575,7 @@
       }
     },
     "Search" : {
-      "comment" : "Search action",
+      "comment" : "Search bar placeholder in card list",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -13548,7 +14627,60 @@
         }
       }
     },
+    "Search Cards" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Search Cards"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Search Cards"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Search Cards"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Search Cards"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Search Cards"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Search Cards"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Search Cards"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Search Cards"
+          }
+        }
+      }
+    },
     "Search failed. Check your internet connection." : {
+      "comment" : "Error shown when address search fails",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -13601,6 +14733,7 @@
       }
     },
     "Search for address..." : {
+      "comment" : "Placeholder in the address search field",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -13652,7 +14785,112 @@
         }
       }
     },
+    "Search Query" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Search Query"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Search Query"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Search Query"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Search Query"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Search Query"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Search Query"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Search Query"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Search Query"
+          }
+        }
+      }
+    },
+    "Searches your loyalty cards by name or store" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Searches your loyalty cards by name or store"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Searches your loyalty cards by name or store"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Searches your loyalty cards by name or store"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Searches your loyalty cards by name or store"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Searches your loyalty cards by name or store"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Searches your loyalty cards by name or store"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Searches your loyalty cards by name or store"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Searches your loyalty cards by name or store"
+          }
+        }
+      }
+    },
     "See cards when you're nearby" : {
+      "comment" : "Benefit of nearby notifications\nLocation feature benefit on the permission screen.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -13757,7 +14995,7 @@
       }
     },
     "Select 'Location' then choose 'Always'" : {
-      "comment" : "Instructions for upgrading location permission in iOS Settings",
+      "comment" : "Instruction text guiding user through iOS Settings",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -13810,6 +15048,7 @@
       }
     },
     "Select All" : {
+      "comment" : "Button to select all cards for export",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -13914,6 +15153,7 @@
       }
     },
     "Select Cards" : {
+      "comment" : "Navigation title for card selection export screen",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -13966,6 +15206,7 @@
       }
     },
     "Select Cards to Export" : {
+      "comment" : "Button to choose specific cards for export.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -14070,7 +15311,7 @@
       }
     },
     "Select photo from library to scan barcode" : {
-      "comment" : "Accessibility hint for photo scan button",
+      "comment" : "Accessibility hint for scan from photo button",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -14176,6 +15417,7 @@
       }
     },
     "Selected Location" : {
+      "comment" : "Fallback location name when geocoding fails for a map pin",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -14228,7 +15470,7 @@
       }
     },
     "Settings" : {
-      "comment" : "Settings screen title",
+      "comment" : "Button to open device Settings app for location permission\nButton to open device Settings for notification permission\nNavigation title for settings screen",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -14281,6 +15523,7 @@
       }
     },
     "Settings > kartonche > Location > While Using the App" : {
+      "comment" : "Instructions to fix denied location permission in iOS Settings\nNavigation path to enable location in iOS Settings.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -14333,6 +15576,7 @@
       }
     },
     "Settings > Notifications > kartonche" : {
+      "comment" : "Navigation path to enable notifications in iOS Settings.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -14385,6 +15629,7 @@
       }
     },
     "Share" : {
+      "comment" : "Context menu action to share a card",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -14437,6 +15682,7 @@
       }
     },
     "Share card" : {
+      "comment" : "Accessibility label for share button on card display",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -14540,7 +15786,60 @@
         }
       }
     },
+    "Show Card" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show Card"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show Card"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show Card"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show Card"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show Card"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show Card"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show Card"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show Card"
+          }
+        }
+      }
+    },
     "Show Expired" : {
+      "comment" : "Toggle in sort menu to show or hide expired cards",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -14697,7 +15996,7 @@
       }
     },
     "Show this to the cashier to scan" : {
-      "comment" : "Accessibility hint for barcode display",
+      "comment" : "Accessibility hint for barcode image",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -14856,6 +16155,7 @@
       }
     },
     "Skip duplicates" : {
+      "comment" : "Import strategy: don't import cards that already exist",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -14961,6 +16261,7 @@
       }
     },
     "Source Code" : {
+      "comment" : "Link to view the app's source code on GitHub",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -15013,7 +16314,7 @@
       }
     },
     "Store Name" : {
-      "comment" : "Label for store name field",
+      "comment" : "Placeholder in card preview when no store name is entered",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -15066,6 +16367,7 @@
       }
     },
     "Suggested Colors" : {
+      "comment" : "Accessibility label for a suggested color swatch\nLabel above color swatches extracted from scanned card image",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -15118,6 +16420,7 @@
       }
     },
     "Support" : {
+      "comment" : "Section header for support and feedback links",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -15170,6 +16473,7 @@
       }
     },
     "Support Development" : {
+      "comment" : "Button for future donation/support feature",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -15326,6 +16630,7 @@
       }
     },
     "Sync Active" : {
+      "comment" : "Status text when iCloud sync is working.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -15378,6 +16683,7 @@
       }
     },
     "Sync Error" : {
+      "comment" : "Status text when iCloud sync encountered an error.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -15430,6 +16736,7 @@
       }
     },
     "Take a Photo" : {
+      "comment" : "Button in add card sheet to capture photo with camera",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -15482,7 +16789,7 @@
       }
     },
     "Tap a card to preview" : {
-      "comment" : "Footer text in import preview list",
+      "comment" : "Footer hint in import card list",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -15535,6 +16842,7 @@
       }
     },
     "Tap notification to view card" : {
+      "comment" : "Feature description on the notification permission screen.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -15587,6 +16895,7 @@
       }
     },
     "Tap to see your cards" : {
+      "comment" : "Notification body for multiple nearby cards",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -15639,6 +16948,7 @@
       }
     },
     "Tap to show your card" : {
+      "comment" : "Notification body for single nearby card",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -15691,6 +17001,7 @@
       }
     },
     "Text Color" : {
+      "comment" : "Picker label for choosing auto or custom text color on card",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -15743,6 +17054,7 @@
       }
     },
     "Thanks to early testers and friends who provided feedback." : {
+      "comment" : "Credits message at the bottom of About screen",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -15795,6 +17107,7 @@
       }
     },
     "The app contains no advertising." : {
+      "comment" : "Privacy policy explanation of no-ads policy",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -15847,6 +17160,7 @@
       }
     },
     "Third-Party Licenses" : {
+      "comment" : "Link to view licenses of third-party libraries\nNavigation title for list of open source library licenses",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -15899,6 +17213,7 @@
       }
     },
     "This barcode type is added as an image and may not scan everywhere." : {
+      "comment" : "Warning that barcode-as-image wallet pass may not scan reliably",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -15951,6 +17266,7 @@
       }
     },
     "This barcode type uses the barcode as the Apple Wallet strip image. This image won't be used." : {
+      "comment" : "Info text explaining strip image is ignored for this barcode type",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -16003,6 +17319,7 @@
       }
     },
     "This card is in Apple Wallet. Edits sync automatically." : {
+      "comment" : "Accessibility label for Apple Wallet status",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -16055,6 +17372,7 @@
       }
     },
     "This helps you:" : {
+      "comment" : "Heading before list of nearby notification benefits\nLabel above the list of location feature benefits.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -16107,6 +17425,7 @@
       }
     },
     "This image is used only for Apple Wallet passes." : {
+      "comment" : "Info text about card image usage",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -16212,6 +17531,7 @@
       "shouldTranslate" : false
     },
     "To save card locations, kartonche needs to access your location." : {
+      "comment" : "Description on the location permission request screen.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -16264,6 +17584,7 @@
       }
     },
     "Try Another Photo" : {
+      "comment" : "Alert button to retry barcode scan with different photo",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -16316,6 +17637,7 @@
       }
     },
     "Type to search, then tap a result" : {
+      "comment" : "Footer hint below the address search field",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -16368,6 +17690,7 @@
       }
     },
     "Unable to determine address for this location" : {
+      "comment" : "Error when reverse geocoding returns no results",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -16420,6 +17743,7 @@
       }
     },
     "Unable to find location details" : {
+      "comment" : "Error when a search result can't be resolved to coordinates",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -16472,6 +17796,7 @@
       }
     },
     "Unable to get current location" : {
+      "comment" : "Error when GPS fails to return a position",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -16577,6 +17902,7 @@
       }
     },
     "Unknown" : {
+      "comment" : "Location permission status: unrecognized value\nNotification permission status: unrecognized value",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -16629,6 +17955,7 @@
       }
     },
     "Unknown Address" : {
+      "comment" : "Fallback when reverse geocoding returns no address",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -16681,6 +18008,7 @@
       }
     },
     "Unsupported file version: %@" : {
+      "comment" : "Error when imported file uses an unsupported format version",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -16732,7 +18060,60 @@
         }
       }
     },
+    "UPC-E" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "UPC-E"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "UPC-E"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "UPC-E"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "UPC-E"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "UPC-E"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "UPC-E"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "UPC-E"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "UPC-E"
+          }
+        }
+      }
+    },
     "Upgrade" : {
+      "comment" : "Button to upgrade from when-in-use to always location permission",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -16785,6 +18166,7 @@
       }
     },
     "Upgrade to 'Always' for nearby notifications and better widget performance" : {
+      "comment" : "Help text suggesting always-on location for better experience",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -16837,6 +18219,7 @@
       }
     },
     "Upgrade to 'Always' Location" : {
+      "comment" : "Title of sheet explaining always-on location benefits",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -16889,6 +18272,7 @@
       }
     },
     "Use Current Location" : {
+      "comment" : "Button to set location from device GPS",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -16941,6 +18325,7 @@
       }
     },
     "Version %@ (%@)" : {
+      "comment" : "App version and build number in About screen",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -16999,6 +18384,7 @@
       }
     },
     "We don't track how you use the app." : {
+      "comment" : "Privacy policy explanation of no-analytics policy",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -17051,6 +18437,7 @@
       }
     },
     "We'll remind you:" : {
+      "comment" : "Label above the list of reminder timing options.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -17103,6 +18490,7 @@
       }
     },
     "What's New" : {
+      "comment" : "Button to view changelog / release notes\nNavigation title for changelog screen",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -19242,6 +20630,242 @@
         }
       }
     },
+    "whats_new.2026_03_1.siri_shortcuts.title" : {
+      "comment" : "What's New feature title for Siri & Shortcuts support",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Siri & Shortcuts"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Siri & Shortcuts"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siri & Shortcuts"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Siri & Shortcuts"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Siri & Shortcuts"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Siri & Shortcuts"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Siri & Shortcuts"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Siri & Shortcuts"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Siri & Shortcuts"
+          }
+        }
+      }
+    },
+    "whats_new.2026_03_1.siri_shortcuts.description" : {
+      "comment" : "What's New feature description for Siri & Shortcuts support",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show cards, search, and generate barcodes using Siri and the Shortcuts app."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show cards, search, and generate barcodes using Siri and the Shortcuts app."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show cards, search, and generate barcodes using Siri and the Shortcuts app."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show cards, search, and generate barcodes using Siri and the Shortcuts app."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show cards, search, and generate barcodes using Siri and the Shortcuts app."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show cards, search, and generate barcodes using Siri and the Shortcuts app."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show cards, search, and generate barcodes using Siri and the Shortcuts app."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show cards, search, and generate barcodes using Siri and the Shortcuts app."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show cards, search, and generate barcodes using Siri and the Shortcuts app."
+          }
+        }
+      }
+    },
+    "whats_new.2026_03_1.quick_action.title" : {
+      "comment" : "What's New feature title for Home Screen quick action",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Home Screen Quick Action"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Home Screen Quick Action"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home Screen Quick Action"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Home Screen Quick Action"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Home Screen Quick Action"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Home Screen Quick Action"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Home Screen Quick Action"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Home Screen Quick Action"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Home Screen Quick Action"
+          }
+        }
+      }
+    },
+    "whats_new.2026_03_1.quick_action.description" : {
+      "comment" : "What's New feature description for Home Screen quick action",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long-press the app icon to scan a barcode directly."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long-press the app icon to scan a barcode directly."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Long-press the app icon to scan a barcode directly."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long-press the app icon to scan a barcode directly."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long-press the app icon to scan a barcode directly."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long-press the app icon to scan a barcode directly."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long-press the app icon to scan a barcode directly."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long-press the app icon to scan a barcode directly."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long-press the app icon to scan a barcode directly."
+          }
+        }
+      }
+    },
     "whats_new.version_format" : {
       "localizations" : {
         "bg" : {
@@ -19301,6 +20925,7 @@
       }
     },
     "While Using App" : {
+      "comment" : "Location permission status: only while app is open",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -19353,6 +20978,7 @@
       }
     },
     "Widgets work when app is closed" : {
+      "comment" : "Benefit of always-on location",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -19405,6 +21031,7 @@
       }
     },
     "You can disable reminders anytime in Settings." : {
+      "comment" : "Reassurance note on the notification permission screen.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -19457,6 +21084,7 @@
       }
     },
     "You'll be notified when you're near a saved card location" : {
+      "comment" : "Status text when nearby notifications are active",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -19509,6 +21137,7 @@
       }
     },
     "You're near %lld saved locations" : {
+      "comment" : "Notification title when near multiple card locations",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -19561,6 +21190,7 @@
       }
     },
     "You're near a saved location" : {
+      "comment" : "Notification title when near a single card location",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -19613,6 +21243,7 @@
       }
     },
     "Your cards stay on this device by default. If iCloud is enabled, they also sync through your private iCloud database." : {
+      "comment" : "Privacy policy explanation of data storage",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -19665,6 +21296,7 @@
       }
     },
     "Your cards, always ready" : {
+      "comment" : "Title on first-launch empty card list",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -19717,6 +21349,7 @@
       }
     },
     "Your location is only used to calculate distance to saved stores." : {
+      "comment" : "Privacy reassurance on the location permission screen.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -19769,6 +21402,7 @@
       }
     },
     "Your location is only used to find nearby stores" : {
+      "comment" : "Privacy assurance about location data usage",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -19821,6 +21455,7 @@
       }
     },
     "Your location is only used to find nearby stores. Battery impact is minimal." : {
+      "comment" : "Privacy note in always-on location explanation sheet",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
