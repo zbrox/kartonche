@@ -403,6 +403,9 @@
         }
       }
     },
+    "Aztec" : {
+
+    },
     "Barcode Data" : {
       "comment" : "Text field label for barcode content\nText field placeholder for barcode content",
       "localizations" : {
@@ -424,6 +427,9 @@
           }
         }
       }
+    },
+    "Barcode generation failed: %@" : {
+
     },
     "Barcode preview" : {
       "comment" : "Accessibility label for the barcode image preview",
@@ -478,6 +484,9 @@
           }
         }
       }
+    },
+    "Card Barcode" : {
+
     },
     "Card Color" : {
       "comment" : "Color picker for the card's background color",
@@ -708,6 +717,12 @@
         }
       }
     },
+    "Code 39" : {
+
+    },
+    "Code 128" : {
+
+    },
     "Confirm Location" : {
       "comment" : "Button to confirm selected map pin location",
       "localizations" : {
@@ -765,6 +780,9 @@
           }
         }
       }
+    },
+    "DataMatrix" : {
+
     },
     "Debug" : {
       "localizations" : {
@@ -918,6 +936,12 @@
           }
         }
       }
+    },
+    "EAN-8" : {
+
+    },
+    "EAN-13" : {
+
     },
     "Edit" : {
       "comment" : "Context menu action to edit a card\nNavigation title when editing an existing card\nSwipe action to edit a card",
@@ -1183,6 +1207,9 @@
         }
       }
     },
+    "Failed to convert barcode image to PNG" : {
+
+    },
     "Failed to create barcode filter" : {
       "comment" : "Error when barcode CIFilter cannot be created",
       "localizations" : {
@@ -1326,6 +1353,15 @@
         }
       }
     },
+    "Generate Barcode" : {
+
+    },
+    "Generate Barcode Image" : {
+
+    },
+    "Generates a barcode image from the given type and data" : {
+
+    },
     "Generating pass..." : {
       "comment" : "Progress text while creating Apple Wallet pass",
       "localizations" : {
@@ -1347,6 +1383,9 @@
           }
         }
       }
+    },
+    "Get Card Barcode" : {
+
     },
     "Get notified before your cards expire so you never miss renewing them." : {
       "comment" : "Description on the notification permission request screen.",
@@ -1523,6 +1562,9 @@
           }
         }
       }
+    },
+    "Interleaved 2 of 5" : {
+
     },
     "Invalid barcode data" : {
       "comment" : "Error when barcode data is not valid for the selected type",
@@ -2347,6 +2389,9 @@
         }
       }
     },
+    "Opens Kartonche and navigates to a specific loyalty card" : {
+
+    },
     "Opens the Kartonche app" : {
       "localizations" : {
         "bg" : {
@@ -2376,6 +2421,9 @@
           }
         }
       }
+    },
+    "PDF417" : {
+
     },
     "Permission" : {
       "comment" : "Section header for location permission status\nSection header for notification permission status",
@@ -2458,6 +2506,9 @@
           }
         }
       }
+    },
+    "QR Code" : {
+
     },
     "Quick access to open the app" : {
       "comment" : "Lock screen inline widget description",
@@ -2594,6 +2645,9 @@
         }
       }
     },
+    "Returns the barcode type and data for a loyalty card" : {
+
+    },
     "Save" : {
       "comment" : "Toolbar button to save card changes\nToolbar button to save the location",
       "localizations" : {
@@ -2692,6 +2746,9 @@
         }
       }
     },
+    "Search Cards" : {
+
+    },
     "Search failed. Check your internet connection." : {
       "comment" : "Error shown when address search fails",
       "localizations" : {
@@ -2713,6 +2770,12 @@
           }
         }
       }
+    },
+    "Search Query" : {
+
+    },
+    "Searches your loyalty cards by name or store" : {
+
     },
     "See cards when you're nearby" : {
       "comment" : "Benefit of nearby notifications\nLocation feature benefit on the permission screen.",
@@ -2881,6 +2944,9 @@
       }
     },
     "Share Your Cards" : {
+
+    },
+    "Show Card" : {
 
     },
     "Show Expired" : {
@@ -3302,6 +3368,9 @@
           }
         }
       }
+    },
+    "UPC-E" : {
+
     },
     "Upgrade" : {
       "comment" : "Button to upgrade from when-in-use to always location permission",

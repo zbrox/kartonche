@@ -33,7 +33,7 @@ struct OpenFavoriteCardIntent: AppIntent {
     }
 
     @MainActor
-    func perform() async throws -> some IntentResult & OpensIntent {
+    func perform() async throws -> some IntentResult {
         if let cardEntity = cardEntity {
             let urlString = "kartonche://card?id=\(cardEntity.id.uuidString)"
             if let url = URL(string: urlString) {
@@ -42,8 +42,8 @@ struct OpenFavoriteCardIntent: AppIntent {
                     object: nil,
                     userInfo: ["url": url]
                 )
-                return .result(opensIntent: OpenURLIntent(url))
             }
+            return .result()
         }
 
         // No card configured - show configuration prompt by returning needsValueError
@@ -59,7 +59,7 @@ struct OpenNearestCardIntent: AppIntent {
     nonisolated(unsafe) static var openAppWhenRun: Bool = true
 
     @MainActor
-    func perform() async throws -> some IntentResult & OpensIntent {
+    func perform() async throws -> some IntentResult {
         let allCards = SharedDataManager.fetchAllCards()
         var nearestCard: (card: LoyaltyCard, distance: Double)?
 
@@ -87,13 +87,14 @@ struct OpenNearestCardIntent: AppIntent {
             urlString = "kartonche://"
         }
 
-        let url = URL(string: urlString)!
-        NotificationCenter.default.post(
-            name: .controlIntentDeepLink,
-            object: nil,
-            userInfo: ["url": url]
-        )
-        return .result(opensIntent: OpenURLIntent(url))
+        if let url = URL(string: urlString) {
+            NotificationCenter.default.post(
+                name: .controlIntentDeepLink,
+                object: nil,
+                userInfo: ["url": url]
+            )
+        }
+        return .result()
     }
 }
 
