@@ -2,6 +2,7 @@
 
 [![Tests](https://github.com/zbrox/kartonche/actions/workflows/test.yml/badge.svg)](https://github.com/zbrox/kartonche/actions/workflows/test.yml)
 [![GitHub release](https://img.shields.io/github/v/tag/zbrox/kartonche?label=version&sort=semver)](https://github.com/zbrox/kartonche/releases)
+[![Crowdin](https://badges.crowdin.net/kartonche/localized.svg)](https://crowdin.com/project/kartonche)
 
 A modern, open-source iOS app for managing loyalty cards.
 
