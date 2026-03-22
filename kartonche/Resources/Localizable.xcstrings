@@ -4825,7 +4825,7 @@
       }
     },
     "Done" : {
-      "comment" : "Button to confirm image crop\nButton to dismiss card notes sheet\nButton to dismiss changelog view\nButton to dismiss license view\nButton to dismiss privacy policy view\nButton to dismiss settings",
+      "comment" : "Button to confirm image crop\nButton to dismiss card notes sheet\nButton to dismiss changelog view\nButton to dismiss license view\nButton to dismiss privacy policy view\nButton to dismiss settings\nButton to dismiss tip jar sheet",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -8851,6 +8851,59 @@
       },
       "shouldTranslate" : false
     },
+    "Kartonche is free and open-source, and always will be. If you find it useful, a tip helps cover the annual Apple Developer fee. Tips don't unlock anything — they're purely voluntary." : {
+      "comment" : "Explanatory text in the tip jar sheet",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Kartonche is free and open-source, and always will be. If you find it useful, a tip helps cover the annual Apple Developer fee. Tips don't unlock anything — they're purely voluntary."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Kartonche is free and open-source, and always will be. If you find it useful, a tip helps cover the annual Apple Developer fee. Tips don't unlock anything — they're purely voluntary."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Kartonche is free and open-source, and always will be. If you find it useful, a tip helps cover the annual Apple Developer fee. Tips don't unlock anything — they're purely voluntary."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Kartonche is free and open-source, and always will be. If you find it useful, a tip helps cover the annual Apple Developer fee. Tips don't unlock anything — they're purely voluntary."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Kartonche is free and open-source, and always will be. If you find it useful, a tip helps cover the annual Apple Developer fee. Tips don't unlock anything — they're purely voluntary."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Kartonche is free and open-source, and always will be. If you find it useful, a tip helps cover the annual Apple Developer fee. Tips don't unlock anything — they're purely voluntary."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Kartonche is free and open-source, and always will be. If you find it useful, a tip helps cover the annual Apple Developer fee. Tips don't unlock anything — they're purely voluntary."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Kartonche is free and open-source, and always will be. If you find it useful, a tip helps cover the annual Apple Developer fee. Tips don't unlock anything — they're purely voluntary."
+          }
+        }
+      }
+    },
     "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information." : {
       "comment" : "Privacy policy overview paragraph",
       "localizations" : {
@@ -12153,7 +12206,7 @@
       }
     },
     "OK" : {
-      "comment" : "Button to dismiss error alert\nButton to dismiss import error alert\nButton to dismiss pass error alert\nDismiss button on the export error alert.\nDismiss button on the import error alert.",
+      "comment" : "Button to dismiss error alert\nButton to dismiss import error alert\nButton to dismiss pass error alert\nDismiss button for thank-you alert\nDismiss button on the export error alert.\nDismiss button on the import error alert.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -16473,7 +16526,7 @@
       }
     },
     "Support Development" : {
-      "comment" : "Button for future donation/support feature",
+      "comment" : "Button to open the tip jar for voluntary donations\nNavigation title for the tip jar sheet",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -17049,6 +17102,59 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Text Color"
+          }
+        }
+      }
+    },
+    "Thank You!" : {
+      "comment" : "Title of the thank-you alert after a successful tip",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Thank You!"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Thank You!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Thank You!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Thank You!"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Thank You!"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Thank You!"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Thank You!"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Thank You!"
           }
         }
       }
@@ -17844,6 +17950,59 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Unable to get current location"
+          }
+        }
+      }
+    },
+    "Unable to load products. Please try again later." : {
+      "comment" : "Error message when tip jar products fail to load",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unable to load products. Please try again later."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unable to load products. Please try again later."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unable to load products. Please try again later."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unable to load products. Please try again later."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unable to load products. Please try again later."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unable to load products. Please try again later."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unable to load products. Please try again later."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unable to load products. Please try again later."
           }
         }
       }
@@ -20514,6 +20673,124 @@
         }
       }
     },
+    "whats_new.2026_03_1.quick_action.description" : {
+      "comment" : "What's New feature description for Home Screen quick action",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long-press the app icon to scan a barcode directly."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long-press the app icon to scan a barcode directly."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Long-press the app icon to scan a barcode directly."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long-press the app icon to scan a barcode directly."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long-press the app icon to scan a barcode directly."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long-press the app icon to scan a barcode directly."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long-press the app icon to scan a barcode directly."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long-press the app icon to scan a barcode directly."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Long-press the app icon to scan a barcode directly."
+          }
+        }
+      }
+    },
+    "whats_new.2026_03_1.quick_action.title" : {
+      "comment" : "What's New feature title for Home Screen quick action",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Home Screen Quick Action"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Home Screen Quick Action"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home Screen Quick Action"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Home Screen Quick Action"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Home Screen Quick Action"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Home Screen Quick Action"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Home Screen Quick Action"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Home Screen Quick Action"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Home Screen Quick Action"
+          }
+        }
+      }
+    },
     "whats_new.2026_03_1.scan_flow.description" : {
       "localizations" : {
         "bg" : {
@@ -20630,65 +20907,6 @@
         }
       }
     },
-    "whats_new.2026_03_1.siri_shortcuts.title" : {
-      "comment" : "What's New feature title for Siri & Shortcuts support",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Siri & Shortcuts"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Siri & Shortcuts"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Siri & Shortcuts"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Siri & Shortcuts"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Siri & Shortcuts"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Siri & Shortcuts"
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Siri & Shortcuts"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Siri & Shortcuts"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Siri & Shortcuts"
-          }
-        }
-      }
-    },
     "whats_new.2026_03_1.siri_shortcuts.description" : {
       "comment" : "What's New feature description for Siri & Shortcuts support",
       "localizations" : {
@@ -20748,120 +20966,61 @@
         }
       }
     },
-    "whats_new.2026_03_1.quick_action.title" : {
-      "comment" : "What's New feature title for Home Screen quick action",
+    "whats_new.2026_03_1.siri_shortcuts.title" : {
+      "comment" : "What's New feature title for Siri & Shortcuts support",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Home Screen Quick Action"
+            "value" : "Siri & Shortcuts"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Home Screen Quick Action"
+            "value" : "Siri & Shortcuts"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Home Screen Quick Action"
+            "value" : "Siri & Shortcuts"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Home Screen Quick Action"
+            "value" : "Siri & Shortcuts"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Home Screen Quick Action"
+            "value" : "Siri & Shortcuts"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Home Screen Quick Action"
+            "value" : "Siri & Shortcuts"
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Home Screen Quick Action"
+            "value" : "Siri & Shortcuts"
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Home Screen Quick Action"
+            "value" : "Siri & Shortcuts"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Home Screen Quick Action"
-          }
-        }
-      }
-    },
-    "whats_new.2026_03_1.quick_action.description" : {
-      "comment" : "What's New feature description for Home Screen quick action",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Long-press the app icon to scan a barcode directly."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Long-press the app icon to scan a barcode directly."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Long-press the app icon to scan a barcode directly."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Long-press the app icon to scan a barcode directly."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Long-press the app icon to scan a barcode directly."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Long-press the app icon to scan a barcode directly."
-          }
-        },
-        "pt" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Long-press the app icon to scan a barcode directly."
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Long-press the app icon to scan a barcode directly."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Long-press the app icon to scan a barcode directly."
+            "value" : "Siri & Shortcuts"
           }
         }
       }
@@ -21503,6 +21662,59 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Your location is only used to find nearby stores. Battery impact is minimal."
+          }
+        }
+      }
+    },
+    "Your support means a lot and helps cover the cost of keeping Kartonche on the App Store. Thank you!" : {
+      "comment" : "Thank-you message after a successful tip",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your support means a lot and helps cover the cost of keeping Kartonche on the App Store. Thank you!"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your support means a lot and helps cover the cost of keeping Kartonche on the App Store. Thank you!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your support means a lot and helps cover the cost of keeping Kartonche on the App Store. Thank you!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your support means a lot and helps cover the cost of keeping Kartonche on the App Store. Thank you!"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your support means a lot and helps cover the cost of keeping Kartonche on the App Store. Thank you!"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your support means a lot and helps cover the cost of keeping Kartonche on the App Store. Thank you!"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your support means a lot and helps cover the cost of keeping Kartonche on the App Store. Thank you!"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your support means a lot and helps cover the cost of keeping Kartonche on the App Store. Thank you!"
           }
         }
       }
