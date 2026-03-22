@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B3050892F7049EA00C7F81D /* TipProducts.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 0B3050882F7049EA00C7F81D /* TipProducts.storekit */; };
+		0B30508B2F704ACD00C7F81D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B30508A2F704ACD00C7F81D /* StoreKit.framework */; };
 		0B6CADB42F3BE9930074B747 /* X509 in Frameworks */ = {isa = PBXBuildFile; productRef = 0B6CADB32F3BE9930074B747 /* X509 */; };
 		0B6CADB72F3BE9A30074B747 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 0B6CADB62F3BE9A30074B747 /* ZIPFoundation */; };
 		0B91F2C42F36A2FC003F33AC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B91F2C32F36A2FC003F33AC /* WidgetKit.framework */; };
@@ -66,6 +68,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B3050882F7049EA00C7F81D /* TipProducts.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = TipProducts.storekit; sourceTree = "<group>"; };
+		0B30508A2F704ACD00C7F81D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0B5B57A72F33F2C8005DCCA8 /* kartonche.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kartonche.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5B57B62F33F2C9005DCCA8 /* kartoncheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kartoncheTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5B57C02F33F2C9005DCCA8 /* kartoncheUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kartoncheUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +185,7 @@
 				0B6CADB42F3BE9930074B747 /* X509 in Frameworks */,
 				0B6CADB72F3BE9A30074B747 /* ZIPFoundation in Frameworks */,
 				0BDATAMATRIX001 /* SwiftDataMatrix in Frameworks */,
+				0B30508B2F704ACD00C7F81D /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +228,7 @@
 		0B5B579E2F33F2C8005DCCA8 = {
 			isa = PBXGroup;
 			children = (
+				0B3050882F7049EA00C7F81D /* TipProducts.storekit */,
 				0B5B57A92F33F2C8005DCCA8 /* kartonche */,
 				0B5B57B92F33F2C9005DCCA8 /* kartoncheTests */,
 				0B5B57C32F33F2C9005DCCA8 /* kartoncheUITests */,
@@ -248,6 +254,7 @@
 		0B91F2C22F36A2FC003F33AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0B30508A2F704ACD00C7F81D /* StoreKit.framework */,
 				0B91F2C32F36A2FC003F33AC /* WidgetKit.framework */,
 				0B91F2C52F36A2FC003F33AC /* SwiftUI.framework */,
 				0BCB2AF22F3B700400A63750 /* QuickLook.framework */,
@@ -442,6 +449,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B3050892F7049EA00C7F81D /* TipProducts.storekit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

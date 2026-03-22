@@ -861,7 +861,7 @@
       }
     },
     "Done" : {
-      "comment" : "Button to confirm image crop\nButton to dismiss card notes sheet\nButton to dismiss changelog view\nButton to dismiss license view\nButton to dismiss privacy policy view\nButton to dismiss settings",
+      "comment" : "Button to confirm image crop\nButton to dismiss card notes sheet\nButton to dismiss changelog view\nButton to dismiss license view\nButton to dismiss privacy policy view\nButton to dismiss settings\nButton to dismiss tip jar sheet",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -1617,6 +1617,9 @@
       "comment" : "Control widget button label for app launcher\nLock screen circular widget name\nLock screen inline widget app name",
       "shouldTranslate" : false
     },
+    "Kartonche is free and open-source, and always will be. If you find it useful, a tip helps cover the annual Apple Developer fee. Tips don't unlock anything — they're purely voluntary." : {
+      "comment" : "Explanatory text in the tip jar sheet"
+    },
     "kartonche stores your cards on-device and can sync them through your private iCloud account. We don't collect, track, or share personal information." : {
       "comment" : "Privacy policy overview paragraph",
       "localizations" : {
@@ -2295,7 +2298,7 @@
       }
     },
     "OK" : {
-      "comment" : "Button to dismiss error alert\nButton to dismiss import error alert\nButton to dismiss pass error alert\nDismiss button on the export error alert.\nDismiss button on the import error alert.",
+      "comment" : "Button to dismiss error alert\nButton to dismiss import error alert\nButton to dismiss pass error alert\nDismiss button for thank-you alert\nDismiss button on the export error alert.\nDismiss button on the import error alert.",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -3080,7 +3083,7 @@
       }
     },
     "Support Development" : {
-      "comment" : "Button for future donation/support feature",
+      "comment" : "Button to open the tip jar for voluntary donations\nNavigation title for the tip jar sheet",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -3183,6 +3186,9 @@
           }
         }
       }
+    },
+    "Thank You!" : {
+      "comment" : "Title of the thank-you alert after a successful tip"
     },
     "Thanks to early testers and friends who provided feedback." : {
       "comment" : "Credits message at the bottom of About screen",
@@ -3324,6 +3330,9 @@
           }
         }
       }
+    },
+    "Unable to load products. Please try again later." : {
+      "comment" : "Error message when tip jar products fail to load"
     },
     "Unfavorite" : {
       "comment" : "Swipe action to remove card from favorites",
@@ -4010,6 +4019,40 @@
         }
       }
     },
+    "whats_new.2026_03_1.quick_action.description" : {
+      "comment" : "What's New feature description for Home Screen quick action",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Натиснете и задръжте иконата на приложението, за да сканирате баркод директно."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Long-press the app icon to scan a barcode directly."
+          }
+        }
+      }
+    },
+    "whats_new.2026_03_1.quick_action.title" : {
+      "comment" : "What's New feature title for Home Screen quick action",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бързо сканиране от началния екран"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home Screen Quick Action"
+          }
+        }
+      }
+    },
     "whats_new.2026_03_1.scan_flow.description" : {
       "localizations" : {
         "bg" : {
@@ -4042,23 +4085,6 @@
         }
       }
     },
-    "whats_new.2026_03_1.siri_shortcuts.title" : {
-      "comment" : "What's New feature title for Siri & Shortcuts support",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Siri и Бързи команди"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Siri & Shortcuts"
-          }
-        }
-      }
-    },
     "whats_new.2026_03_1.siri_shortcuts.description" : {
       "comment" : "What's New feature description for Siri & Shortcuts support",
       "localizations" : {
@@ -4076,36 +4102,19 @@
         }
       }
     },
-    "whats_new.2026_03_1.quick_action.title" : {
-      "comment" : "What's New feature title for Home Screen quick action",
+    "whats_new.2026_03_1.siri_shortcuts.title" : {
+      "comment" : "What's New feature title for Siri & Shortcuts support",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Бързо сканиране от началния екран"
+            "value" : "Siri и Бързи команди"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Home Screen Quick Action"
-          }
-        }
-      }
-    },
-    "whats_new.2026_03_1.quick_action.description" : {
-      "comment" : "What's New feature description for Home Screen quick action",
-      "localizations" : {
-        "bg" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Натиснете и задръжте иконата на приложението, за да сканирате баркод директно."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Long-press the app icon to scan a barcode directly."
+            "value" : "Siri & Shortcuts"
           }
         }
       }
@@ -4246,6 +4255,9 @@
           }
         }
       }
+    },
+    "Your support means a lot and helps cover the cost of keeping Kartonche on the App Store. Thank you!" : {
+      "comment" : "Thank-you message after a successful tip"
     }
   },
   "version" : "1.0"

@@ -13,6 +13,7 @@ struct AboutView: View {
     @State private var showingLicense = false
     @State private var showingPrivacy = false
     @State private var showingWhatsNew = false
+    @State private var showingTipJar = false
     
     private var appVersion: String {
         Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
@@ -123,12 +124,16 @@ struct AboutView: View {
                 .foregroundStyle(.primary)
                 
                 Button {
-                    // Placeholder for future donation link
+                    showingTipJar = true
                 } label: {
-                    Label(String(localized: "Support Development", comment: "Button for future donation/support feature"), systemImage: "cup.and.saucer")
+                    Label {
+                        Text(String(localized: "Support Development", comment: "Button to open the tip jar for voluntary donations"))
+                    } icon: {
+                        Image(systemName: "cup.and.saucer")
+                            .foregroundStyle(.tint)
+                    }
                 }
-                .foregroundStyle(.secondary)
-                .disabled(true)
+                .foregroundStyle(.primary)
             } header: {
                 Text(String(localized: "Support", comment: "Section header for support and feedback links"))
             }
@@ -180,6 +185,9 @@ struct AboutView: View {
         }
         .sheet(isPresented: $showingWhatsNew) {
             WhatsNewView()
+        }
+        .sheet(isPresented: $showingTipJar) {
+            TipJarView()
         }
     }
 }
