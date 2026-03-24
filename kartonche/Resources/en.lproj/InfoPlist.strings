@@ -11,6 +11,12 @@
 /* Location permission - Always (includes When In Use) */
 "NSLocationAlwaysAndWhenInUseUsageDescription" = "Location is always used to show nearby loyalty cards in widgets even when the app is closed.";
 
+/* Camera permission */
+"NSCameraUsageDescription" = "The camera is used to scan barcodes from your loyalty cards.";
+
+/* Photo Library permission */
+"NSPhotoLibraryUsageDescription" = "Photo library access is used to scan barcodes from photos.";
+
 /* Notification permission */
 "NSUserNotificationsUsageDescription" = "Notifications remind you before your loyalty cards expire.";
 

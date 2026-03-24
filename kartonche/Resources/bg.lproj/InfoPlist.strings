@@ -11,6 +11,12 @@
 /* Location permission - Always (includes When In Use) */
 "NSLocationAlwaysAndWhenInUseUsageDescription" = "Местоположението се използва постоянно за показване на близки клубни карти в инструменти дори когато приложението е затворено.";
 
+/* Camera permission */
+"NSCameraUsageDescription" = "Камерата се използва за сканиране на баркодове от вашите клубни карти.";
+
+/* Photo Library permission */
+"NSPhotoLibraryUsageDescription" = "Достъпът до снимките се използва за сканиране на баркодове от снимки.";
+
 /* Notification permission */
 "NSUserNotificationsUsageDescription" = "Известията ви напомнят преди клубните карти да изтекат.";
 
