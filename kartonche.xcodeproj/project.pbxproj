@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B3050892F7049EA00C7F81D /* TipProducts.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 0B3050882F7049EA00C7F81D /* TipProducts.storekit */; };
 		0B30508B2F704ACD00C7F81D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B30508A2F704ACD00C7F81D /* StoreKit.framework */; };
 		0B6CADB42F3BE9930074B747 /* X509 in Frameworks */ = {isa = PBXBuildFile; productRef = 0B6CADB32F3BE9930074B747 /* X509 */; };
 		0B6CADB72F3BE9A30074B747 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 0B6CADB62F3BE9A30074B747 /* ZIPFoundation */; };
@@ -449,7 +448,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B3050892F7049EA00C7F81D /* TipProducts.storekit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
