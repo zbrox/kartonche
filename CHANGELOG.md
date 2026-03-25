@@ -5,13 +5,94 @@ All notable changes to kartonche will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [2026.03.1] - 2026-03-25
+
+### Bug Fixes
+
+- Handle nearby-cards deep link
+- Avoid false duplicates with missing identity
+- Show import and export errors
+- Resolve duplicate card editor flow
+- Remove background layer from pass icon/logo PNGs
+- Add test targets to kartonche scheme
+- Improve screenshot tests and seed data
+- Explicit SwiftData saves to prevent data loss on app kill
+- Consistent tint-colored icons on all About screen rows
+- Fix model tests after new barcode support
+- Generalize EAN-13 strip image warning for all non-native barcode types
+- Aspect-fit barcode images in wallet pass strip
+- Less hacky tip showing, fix some animation issues
+- Updates of passes with strip images
+- Allow pinch-to-zoom by using simultaneousGesture
+- Remove storekit file from resource build phase
+- Add missing translations for permissions
+
+### Documentation
+
+- Add privacy policy
+- Add translator comments
+- Add Crowdin localization badge
+- Add App Store badge and update status to released
+
+### Features
+
+- Enable iCloud sync with status UI
+- Add iCloud sync to What's New
+- Reduce GitHub Actions usage with PR/tag/manual triggers
+- EAN-13 Apple Wallet fallback via strip image
+- Add EAN-13 support to What's New screen
+- Add sample data for screenshot mode
+- Add --screenshot-mode launch argument
+- Add accessibility identifiers for screenshot tests
+- Add capture script and mise task
+- Show location indicator on card rows
+- Custom launch screen matching CardListView background
+- TipKit integration with contextual tips for feature discovery
+- Debug settings for TipKit
+- Third-party license attribution
+- Add new barcode symbologies
+- Generate EAN-8, Code 39, I2of5, UPC-E barcodes
+- Add SwiftDataMatrix dependency and DataMatrix generation
+- Add new symbologies to scanner and photo detector
+- Live barcode scanner for add card flow
+- Photo library scan failure handling
+- Scan flow and barcode type improvements entry
+- Split Recent into Recently Used and Recently Edited
+- Add Home Screen quick action for Scan Barcode
+- Add Siri and Shortcuts app intents
+- Add Siri Shortcuts and Home Screen Quick Action entries
+- Add tip jar with StoreKit 2 in-app purchases
+- Add privacy manifests for App Store submission
 
 ### Miscellaneous Tasks
 
-- Bump version to 2026.02.6
+- Update translations
+- Add missing Bulgarian translations
+- Bump version to 2026.03.1
+- Add missing Bulgarian translations
+- Lock iPhone orientation to portrait
+- Correct some Bulgarian translations
+- Add shared Xcode schemes
+- Remove redundant action extension
+- Update localization strings
 
-## [2026.02.6] - 2026-02-15
+### Refactoring
+
+- Extract single-card share helper
+- Move What's New content to string catalog keys
+- Generalize strip image approach for all barcode types
+- Unify duplicate detection in CardRepository
+
+### Styling
+
+- Set AccentColor to branded blue (#2196F3)
+
+### Testing
+
+- Remove warning-only assertions and deprecations
+- Add UI tests for App Store screenshot capture
+
+## [2026.02.6] - 2026-03-08
 
 ### Bug Fixes
 
@@ -33,12 +114,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Move card name to header when strip image present
 - Replace deprecated Text concatenation with interpolation
 - Use zero-padded month and skip existing What's New entries
+- Tag version bump commit using jj tag instead of git tag
+- Fix card preview row separator width in card editor
+- Improve permission modal spacing and layout
+- Always show nearby notifications explanation before enabling
+- Correct localization description in README
+- Guard photo scan continuation resume
+- Support ci-backed images in color extraction
+- Show scan progress and stabilize color extraction
 
 ### Documentation
 
 - Update CHANGELOG for v2026.02.5
 - Update ARCHITECTURE.md to reflect current implementation
 - Remove stale test counts, fix dependencies, add CI badges
+- Update CHANGELOG for v2026.02.6
+- Update mise tasks to match actual available tasks
+- Remove incorrect manual merchant generation step
+- Update project structure diagram
+- Update architecture for Quick Scan
+- Add Quick Scan to 2026.02.6 what's new
 
 ### Features
 
@@ -55,6 +150,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add required field indicators and fix image button UX
 - Include notes in pass back fields
 - Add 2026.02.6 release notes
+- Add archive and testflight upload mise tasks
+- Persist sort option across app launches
+- Show Apple Wallet status labels in card display view
+- Bump build number alongside marketing version
+- Add CoreSpotlight indexing for loyalty cards
+- Add Spotlight search to What's New
+- Add dominant color extraction
+- Add camera capture view
+- Scan-first add-card flow
+- Present add-card options in bottom sheet
 
 ### Miscellaneous Tasks
 
@@ -62,14 +167,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add localization strings for export and multi-card preview
 - Apply Xcode recommended project settings
 - Update translations
+- Bump version to 2026.02.6
+- Silence App Store Connect encryption compliance dialog
+- Mark format string as non-translatable
+- Add Crowdin configuration
 
 ### Refactoring
 
 - Simplify LaunchAppIntent to rely on openAppWhenRun
 - Rename widget target and folder for consistency
 - Rename FileImportManager to URLRouter
+- Remove redundant merchant generation from ci task
+- Make cardNumber properly optional (String?)
+- Centralize card mutation side-effects in CardRepository
+- Remove merchant template infrastructure
+- Unify photo barcode scan flow
 
-## [2026.02.5] - 2026-02-08
+### Testing
+
+- Add scan-first tests
+- Add ci-backed image scanner coverage
+
+### Ci
+
+- Restructure release pipeline into discrete steps
+
+## [2026.02.5] - 2026-03-08
 
 ### Bug Fixes
 
@@ -94,7 +217,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Consolidate Color extensions into shared utility file
 
-## [2026.02.4] - 2026-02-08
+## [2026.02.4] - 2026-03-08
 
 ### Bug Fixes
 
@@ -143,7 +266,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Miscellaneous Tasks
 
-- Remove TODO
 - Update CI to use macOS 15 with Xcode 26.2
 - Limit app to iPhone only
 - Update version to 2026.02.4
@@ -153,7 +275,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Simplify CI workflows to use mise tasks
 - Make i18n check support multiple languages dynamically
 
-## [2026.02.3] - 2026-02-07
+## [2026.02.3] - 2026-03-08
 
 ### Bug Fixes
 
@@ -194,7 +316,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add comprehensive UI tests for merchant selection and card creation
 - Add comprehensive LocationManager unit tests
 
-## [2026.02.2] - 2026-02-06
+## [2026.02.2] - 2026-03-08
 
 ### Bug Fixes
 
@@ -206,12 +328,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Documentation
 
-- Update TODO.md to reflect actual completion status
-- Update TODO.md to reflect testing and localization progress
 - Update README and TODO with current progress
 - Add MIT license
-- Mark favorites system as complete in TODO
-- Mark Sprint 7 features as complete in TODO
 
 ### Features
 
@@ -244,7 +362,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add GitHub Actions workflows for validation and testing
 
-## [2026.02.1] - 2026-02-06
+## [2026.02.1] - 2026-03-08
 
 ### Documentation
 

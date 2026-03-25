@@ -16,18 +16,15 @@ if git tag -l "$TAG" | grep -q "$TAG"; then
     exit 1
 fi
 
-# Step 3: Tag current commit
+# Step 3: Tag parent commit (the actual release)
 echo "🏷️  Creating tag $TAG..."
-jj tag set "$TAG" -r @
+jj tag set "$TAG" -r @-
 
-# Step 4: Start clean revision for changelog
-jj new
-
-# Step 5: Generate changelog
+# Step 4: Generate changelog
 echo "📋 Generating CHANGELOG..."
 mise run changelog-update
 
-# Step 6: Commit changelog
+# Step 5: Commit changelog
 jj describe -m "docs: update CHANGELOG for $TAG"
 
 echo ""
