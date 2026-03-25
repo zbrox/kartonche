@@ -1,5 +1,7 @@
 # kartonche
 
+[![Download on the App Store](https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg)](https://apps.apple.com/us/app/kartonche/id6759227670)
+
 [![Tests](https://github.com/zbrox/kartonche/actions/workflows/test.yml/badge.svg)](https://github.com/zbrox/kartonche/actions/workflows/test.yml)
 [![GitHub release](https://img.shields.io/github/v/tag/zbrox/kartonche?label=version&sort=semver)](https://github.com/zbrox/kartonche/releases)
 [![Crowdin](https://badges.crowdin.net/kartonche/localized.svg)](https://crowdin.com/project/kartonche)
@@ -26,7 +28,7 @@ kartonche (картонче, "small card" in Bulgarian) is a native iOS app that
 
 ## Current Status
 
-🚀 **Alpha Release** - Feature Complete, Testing in Progress
+🚀 **Released** - [Available on the App Store](https://apps.apple.com/us/app/kartonche/id6759227670)
 
 **What Works:**
 - ✅ Add/edit/delete loyalty cards
@@ -198,7 +200,7 @@ See [.github/workflows/](.github/workflows/) for workflow definitions.
 - [x] iCloud sync (CloudKit integration)
 - [x] Apple Wallet integration
 - [x] UI test coverage
-- [ ] App Store release
+- [x] App Store release
 
 ## License
 
@@ -210,4 +212,4 @@ Thanks to early testers and friends who provided feedback.
 
 ---
 
-**Status:** Alpha | **Version:** 2026.02 | **Platform:** iOS 26.2+
+**Status:** Released | **Version:** 2026.02 | **Platform:** iOS 26.2+
