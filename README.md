@@ -14,34 +14,23 @@ kartonche (картонче, "small card" in Bulgarian) is a native iOS app that
 
 ### Key Features
 
-- ✅ **Barcode Generation** - Generate QR, Code128, EAN-13, PDF417, and Aztec barcodes
+- ✅ **Barcode Generation** - Generate QR, Code128, Code 39, EAN-13, EAN-8, UPC-E, PDF417, Aztec, DataMatrix, and Interleaved 2 of 5 barcodes
 - ✅ **Barcode Scanning** - Scan physical cards with your camera or photos using VisionKit
 - ✅ **Quick Access** - Display barcodes instantly with brightness boost and screen wake
 - ✅ **Quick Scan** - Snap a photo or pick from library to auto-extract barcode and card color
+- ✅ **Card Photos** - Attach and crop photos for your cards
 - ✅ **Smart Search** - Search and sort cards by name, store, or recent usage
 - ✅ **Localized** - Full Bulgarian translation with English as base language
-- ✅ **Widgets** - Home screen and lock screen widgets for quick access
+- ✅ **Widgets** - Home screen, lock screen, and Control Center widgets for quick access
+- ✅ **Apple Wallet** - Generate Wallet passes for all supported barcode types
+- ✅ **iCloud Sync** - CloudKit-based sync across your devices
+- ✅ **Spotlight Search** - Cards indexed and searchable from iOS search
+- ✅ **Siri Shortcuts** - App Intents for showing cards, generating barcodes, and searching
+- ✅ **Deep Linking** - `kartonche://` URL scheme for card access and Quick Scan
 - ✅ **Location Awareness** - Get notified when near stores with your saved cards
 - ✅ **Expiration Tracking** - Track card expiration dates with reminder notifications
 - ✅ **Export/Import** - Share cards via AirDrop or save to files
 - 💾 **Local Storage** - SwiftData-based storage (no cloud account required)
-
-## Current Status
-
-🚀 **Released** - [Available on the App Store](https://apps.apple.com/us/app/kartonche/id6759227670)
-
-**What Works:**
-- ✅ Add/edit/delete loyalty cards
-- ✅ Generate all major barcode types (QR, Code128, EAN-13, PDF417, Aztec)
-- ✅ Scan barcodes with camera or from photos
-- ✅ Display cards with brightness boost and screen wake
-- ✅ Search and sort cards by name, store, or usage
-- ✅ Quick Scan: auto-extract barcode and color from photo or camera
-- ✅ Home screen and lock screen widgets
-- ✅ Location-based notifications when near stores
-- ✅ Expiration date tracking with reminders
-- ✅ Export/import cards via AirDrop
-- ✅ Full Bulgarian localization with VoiceOver and Dynamic Type support
 
 ## Quick Start
 
@@ -195,13 +184,6 @@ See [.github/workflows/](.github/workflows/) for workflow definitions.
 - **Testing:** Swift Testing framework
 - **Dependencies:** Minimal dependencies: swift-crypto, swift-certificates, ZIPFoundation + native Apple frameworks
 
-## What's Next
-
-- [x] iCloud sync (CloudKit integration)
-- [x] Apple Wallet integration
-- [x] UI test coverage
-- [x] App Store release
-
 ## License
 
 MIT License - See [LICENSE](LICENSE) file for details.
@@ -212,4 +194,4 @@ Thanks to early testers and friends who provided feedback.
 
 ---
 
-**Status:** Released | **Version:** 2026.02 | **Platform:** iOS 26.2+
+**Status:** Released | **Version:** 2026.03.1 | **Platform:** iOS 26.2+
